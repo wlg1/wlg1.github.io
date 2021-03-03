@@ -29,6 +29,8 @@ FOOTNOTE: Everything else will be introduced as the paper progresses; if a prere
 
 **[ch1](ch1.md)**
 
+**[ch2.1](ch2.1.md)**
+
 
 <!---
 <span style="color:lghtgray">
