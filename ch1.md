@@ -2,6 +2,13 @@ To compress an image, an autoencoder consists of two neural networks: <span styl
 
 Instead of mapping each image to a single point in Z, the Variational AutoEncoder (VAE) maps image x onto a probability distribution P(z\|X), assigning a probability to every z to find the code z with the highest probability of matching with image x. Since the actual P(z\|X) isn’t known, the encoder Q(z\|X) approximates P(z\|X). Thus the latent space distribution Q(z) is inferred using the image space distribution Q(X). 
 
+![Figure 1.1: VAE](/images/figure1.1.png)
+
 <img src="{{site.url}}/images/figure1.1.png" style="display: block; margin: auto;" />
 
 Q(z\|X) is represented by learning two vectors: a mean vector and standard deviation vector. To generate an image with similar features to images that the VAE was trained on, a sample that is close to the distributions of similar images is passed through the decoder. 
+
+<!---
+your comment goes here
+and here
+-->
