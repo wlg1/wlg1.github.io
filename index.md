@@ -25,7 +25,7 @@ An introduction to the latent spaces of generative models is given in section 1.
 PREREQUISITES: This guide is for anyone who has a basic understanding of neural networks and linear algebra, but is unfamiliar with the math used to identify how features and learned and composed in a neural network. The only recommended course prerequisites are those 2 playlists, both which only take a few hours to go through in total [cite NN and LA in 3b1br].
 FOOTNOTE: Everything else will be introduced as the paper progresses; if a prerequisite is needed that is not explained in the paper, a link will be given to a specific part such that it would only take 5-10 minutes to get an intuitive understanding of it. Only a high level understanding of these concepts is required, not a detailed one, although a detailed one would allow you to make more connections that a high level one by itself cannot.
 
-<span style="color:lightgray">Statements backed up by only “weak evidence” are in gray</span>, and <span style="color:whitesmoke">statements that are “pure speculation” are in light gray</span>.
+<span style="color:silver">Statements backed up by only “weak evidence” are in gray</span>, and <span style="color:lightgray">statements that are “pure speculation” are in light gray</span>.
 
 **[ch1](ch1.md)**
 
