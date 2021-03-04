@@ -31,6 +31,7 @@ FOOTNOTE: Everything else will be introduced as the paper progresses; if a prere
 
 **[ch2.1](ch2.1.md)**
 
+**[ch3](ch3.md)**
 
 <!---
 <span style="color:lghtgray">
