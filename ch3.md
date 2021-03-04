@@ -1,8 +1,7 @@
 <span style="color:silver">
 **Composing neurons to get circuit gates**
 
-Now that we identified how to describe directions in the latent space in terms of neurons, we’ll further describe how these neurons relate to each other. In section 2, we used the spatial perspective and transformations; now, we look at it the perspective of analogies that complex systems move towards, relating them to show they are describing the same system from two different perspectives (or models), each with its own pros/cons when it comes to interpretation.
-Then we’ll see how composability makes NN better than other techniques, and also is related to its Universality in function approximation
+In section 2, we described how features are related to one another from the perspective of transformations in latent space; in this section, we will look at feature relationships from the perspective of neuron circuits. These two types of models reveal different hidden aspects of feature relationships, and have their own pros/cons when it comes to interpretation.
 
 Techniques:
 
@@ -21,13 +20,59 @@ Papers:
 <li>[There are many papers about persistence homology on NN, such as "Topology of Deep Neural Networks"]</li>
 </ol>
 
-First, a high level introduction to composability.
+3.1: A high level introduction to neuron composability
 
-**XOR gate**
+**Collective decision making**
 
-In the hidden layer, the network requires 2 neurons to make a decision because one neuron cannot as it specializes in only one binary separation. Then it requires a 3rd output neuron to compose the 2 hidden layer neurons into one that makes a final decision based on the previous two. Due to the continuous outputs of a neuron function, each neuron's decision is not associated with a strict decision boundary that's used in algorithms such as logistic classification, which is akin to how logic gates use discrete values to compute outputs. Instead of saying "if a data point is on the RHS of hyperplane A and on the LHS of hyperplane B, then 0 or 1", the output neuron (which outputs the probability for a binary class) is saying "if hyperplane A says it's sure by a degree of "22" that the observation is in class 0 (based on its distance from the LHS of the hyperplane) while hyperplane B says it's only sure by a degree of "4" that it's in class 1 (based on its position from its RHS), and I trust neuron A only 0.2 but trust neuron B with 0.7, then by -0.02\*22 + 4\*0.7 = 2.36 (using bias=0 and the sigmoid as the activation function that squishes 2.36 into 0.91), I still think it's most likely in class 1 because A's belief that it's in class 0 is not strong enough compared to how much I trust A and B and to B's belief."
+No hidden layers:
 
-[figure of neurons making decisions using continuous values]
+We will start with how a single neuron makes its decisions, and then show how the decisions of individual neurons affect the decisions of other neurons in a neural network. Using a linear activation function such as the identity, an output neuron function o=g(XW+b) becomes o=XW+b, which is a hyperplane acting as a decision boundary that can be fitted onto the input space X, with basis {x1,x2}, by solving for x2 in terms of x1, or vice versa (both equations will give the same hyperplane); a hyperplane can be generalized to higher dimensions of X. When a nonlinear activation function is used, this decision boundary is a hypersurface. For multiple classes, multiple hyperplanes are fitted to obtain a score for each class, and the highest score is taken; thus, a neural network with C classes has C output neurons, each with its own decision boundary.
+
+Note how similar this is to logistic regression: in both cases, the final output value (which can be thought of as a probability for a binary class) for each hypersurface is compared to a threshold, and is converted into a discrete value of 0 or 1. [ng 6.3, 2m and 8m]
+
+FOOTNOTE: Hypersurfaces are manifolds embedded in ambient space
+
+[figure fitting hyperplane showing how classification works. label pts and planes with equations for a= and x1= and x2= in actv space and input space, resp. another plot showing hypersurfaces. use matlab
+
+[figure with z = XW + b, showing g(z) > 0.5 when z > 0, then showing how log regr discretizes the sigmoid output into 0 or 1] [Ng, 6.3, 2:20]
+[compared to another plot single neuron function]
+
+o = w11\*x1 + w12\*x2 + b 
+x2  = (o - b) / w12 - w11/w12 \* x1 
+y = b + mx
+]
+
+One hidden layer:
+
+A well-known issue is that the XOR problem cannot be solved by neural networks with a single neuron because the neuron can only model one line, while the XOR problem requires two hyperplanes to partition correctly. Thus the output neuron requires two neurons in a "hidden layer" to help it makes its final decision of 0 or 1. The output neuron to composes the 2 hidden layer neurons into one function; without it, the outputs of the 2 hidden layer neurons cannot communicate with each other, and thus will only each see one perspective of the data, while the output neuron can take into account multiple perspectives. [Deep Learning Book, pg173: XOR problem]
+
+[figure of XOR with hyperplanes, arrows of each plane to a neuron in neural network]
+
+Unlike an output neuron, a hidden layer neuron doesn't have a threshold function that converts continuous values into binary discrete values. Thus, hidden layer neurons are not treated like functions in logistic regression, and only the output layer neurons are associated with decision boundaries that can be plotted in input space. 
+
+[o = w1\*a1 + b1 + (w2...) = <- substitute a1(x1,x2), show o(x1,x2) ]
+
+But we saw a picture where XOR was solved with 2 lines; doesn't each line correspond with a hidden layer neuron function? Those 2 lines do not make up a function; in that mapping, there exist x1 values with have 2 values of x2, which contradicts the definition of a function. Thus, the ACTUAL hypersurface associated with the output neuron is a curvy, nonlinear function as shown in the figure below:
+
+[figure comparing non-function hypersurface on X vs nonlinear function hypersurface x1(o,x2) on XOR input space]
+
+Instead of associating hidden layer neurons with decision boundaries, it is better to see their activation values as introducing a different dimension onto the input space X. 
+
+[fig: x1 vs x2 vs a1; x1 vs x2 vs a2; a1 vs a2 each with their own x1x2-plane]
+
+FOOTNOTE: ?? Remember, the activation space axis always exists in the input space; it’s just hidden as a vector. [3B1Br projections, duality and functionals?] We are simply changing to their basis using the neuron function: First linear rotation, then linear shift, then a nonlinear "squeeze"- do non-linear operations change into a different basis? actv space is still a linear subspace ??
+
+With the logistic regression model or the single neuron perceptron, an analogy from the function to a human making a decision can be made: we think of the neuron as saying "If a data point is on one side of my decision boundary, then 0, else 1".
+
+With hidden layer neurons, we can still make an analogy from the output neuron to a human, but the human analogous to it has a more complicated thought process: "If hyperplane A says it's sure by a degree of '22' that the observation is in class 0 (based on its distance from the LHS of the hyperplane) while hyperplane B says it's only sure by a degree of '4' that it's in class 1 (based on its position from its RHS), and I trust neuron A only 0.2 but trust neuron B with 0.7, then by -0.02\*22 + 4\*0.7 = 2.36 (using bias=0 and the sigmoid as the activation function that squishes 2.36 into 0.91), I still think it's most likely in class 1 because A's belief that it's in class 0 is not strong enough compared to how much I trust A and B and to B's belief."
+
+[figure of XOR output neuron making decisions using continuous values]
+
+By knowing that each neuron has a role in decision making, we can better understand why multiple neurons passing on information to successive layers can model almost any function for partitioning data [cite univ approx]. Each output neuron function can be seen as a piecewise function of hypersurfaces, such that each piece of the function is approximated by a hidden layer neuron’s hypersurface. Although it was mentioned that the final output layer function was not simply just the collection of hypersurfaces associated with each hidden layer neuron, each neuron does end up contributing to the final function in some way, just much more nuanced than just taking the collection of them.
+CITE:
+https://towardsdatascience.com/every-machine-learning-algorithm-can-be-represented-as-a-neural-network-82dcdfb627e3
+
+[This link also shows how composability makes NN more general than every other machine learning technique; every ML technique can be represented as a NN.]
 
 **A neuron’s “meaning” can only be derived in relation to other neurons**
 
@@ -82,6 +127,9 @@ In a loose analogy, just like how each person makes a decision based on the opin
 
 <!--
 What determines what each neuron specializes in? Is it their ‘random’ initialization value in relation to other random initialization values?
+
+complex systems "converge" towards learning analogies? (eg. same relational graph, not necc in the same circuit subgraph, appears in similar networks?)
+
 -->
 
 </span>
