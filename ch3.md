@@ -9,18 +9,20 @@ Section A: decomposition of circuits to find motifs (matrix factorization, compl
 Section B: saliency maps and attribution, gradient ascent on inputs to max neuron activation, TDA for feature interpretation (measuring by betti number)
 
 Papers:
-Compositional Explanations of Neurons
-Distill: Building Blocks, Feature Visualization, Grand Tour, Circuits (Thread), etc.
-The why, how, and when of representations for complex systems
-Network Dissection
-The Structure-Mapping Engine (1986)
-Analogy as the Core of Cognition (2005)
-[There are many papers about persistence homology on NN, such as "Topology of Deep Neural Networks"]
+<ol>
+<li>Compositional Explanations of Neurons</li>
+<li>Distill: Building Blocks, Feature Visualization, Grand Tour, Circuits (Thread), etc.</li>
+<li>The why, how, and when of representations for complex systems</li>
+<li>Network Dissection</li>
+<li>The Structure-Mapping Engine (1986)</li>
+<li>Analogy as the Core of Cognition (2005)</li>
+<li>[There are many papers about persistence homology on NN, such as "Topology of Deep Neural Networks"]</li>
+</ol>
 
 First, a high level introduction to composability.
 
 **XOR gate**
-In the hidden layer, the network requires 2 neurons to make a decision because one neuron cannot as it specializes in only one binary separation. Then it requires a 3rd output neuron to compose the 2 hidden layer neurons into one that makes a final decision based on the previous two. Due to the weights of a neuron, each neuron is not associated with a strict decision boundary that's used in algorithms such as logistic classification, which is akin to how logic gates use discrete values to compute outputs. Instead of saying "if a data point is on the RHS of hyperplane A and on the LHS of hyperplane B, then 0 or 1", the output neuron (which outputs the probability for a binary class) is saying "if hyperplane A says it's sure by a degree of "22" that the observation is in class 0 (based on its distance from the LHS of the hyperplane) while hyperplane B says it's only sure by a degree of "4" that it's in class 1 (based on its position from its RHS), and I trust neuron A only 0.2 but trust neuron B with 0.7, then by -0.02\*22 + 4\*0.7 = 2.36 (using bias=0 and the sigmoid as the activation function that squishes 2.36 into 0.91), I still think it's most likely in class 1 because A's belief that it's in class 0 is not strong enough compared to how much I trust A and B and to B's belief."
+In the hidden layer, the network requires 2 neurons to make a decision because one neuron cannot as it specializes in only one binary separation. Then it requires a 3rd output neuron to compose the 2 hidden layer neurons into one that makes a final decision based on the previous two. Due to the continuous values of the neuron function, each neuron is not associated with a strict decision boundary that's used in algorithms such as logistic classification, which is akin to how logic gates use discrete values to compute outputs. Instead of saying "if a data point is on the RHS of hyperplane A and on the LHS of hyperplane B, then 0 or 1", the output neuron (which outputs the probability for a binary class) is saying "if hyperplane A says it's sure by a degree of "22" that the observation is in class 0 (based on its distance from the LHS of the hyperplane) while hyperplane B says it's only sure by a degree of "4" that it's in class 1 (based on its position from its RHS), and I trust neuron A only 0.2 but trust neuron B with 0.7, then by -0.02\*22 + 4\*0.7 = 2.36 (using bias=0 and the sigmoid as the activation function that squishes 2.36 into 0.91), I still think it's most likely in class 1 because A's belief that it's in class 0 is not strong enough compared to how much I trust A and B and to B's belief."
 
 [figure of neurons making decisions using continuous values]
 
