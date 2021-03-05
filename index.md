@@ -33,6 +33,9 @@ FOOTNOTE: Everything else will be introduced as the paper progresses; if a prere
 
 **[ch3](ch3.md)**
 
+
+[link to compendium of issue->solns and techniques]
+
 <!---
 <span style="color:lghtgray">
 </span>
