@@ -102,8 +102,10 @@ Change multiple attributes at once: subtract the projection from the primal dire
     
 | Issue       | Solution |
 | ----------- | ----------- |
-| Find hidden relationships in data | Encode using transformation with a ‘good’ basis |
+| [Find hidden relationships in data](issue_solns/issuesoln_template.md) | [Encode using transformation with a ‘good’ basis](techniques/technique_template.md) |
 | Find relationship between encoding and attributes- semantic scores | Dot products |
 |  Measure attribute direction | Normal vector of hyperplane |
 | Measure entanglement of attributes | Covariance Matrix of scores as normal vectors |
 | Find new attribute direction in encoding space | Orthogonal projection |
+
+[Diagram combining all of these. Show them all in same figure.]
