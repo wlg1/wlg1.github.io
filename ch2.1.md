@@ -24,7 +24,7 @@ Dot product is the amount of one vector goes in the direction of another.
 
 Other areas used: word2vec (don’t go into detail, just mention. Details is when click on this technique to get its page. We want to extract techniques from a paper one by one, not multiple papers at once.)
 
-TECHNIQUES SO FAR: Dot product to measure relationship strength. In figure, bold the relationship and comment on it in bold in writing too
+TECHNIQUES SO FAR: Dot product to measure relationship strength. In figure, bold the relationship and comment on it in bold in writing too. Include link to technq page.
 
 **Normal vector to define hyperplane direction**
 
@@ -96,3 +96,14 @@ Semantic scoring function f: Image to Score, so use s : Latent → Image → Sco
 [Figure 2.7 breaking down covariance matrix and N]
 
 Change multiple attributes at once: subtract the projection from the primal direction onto the plane that is constructed by all conditioned directions. 
+
+
+**Techniques so far to describe latent space in human terms:**
+    
+| Issue       | Solution |
+| ----------- | ----------- |
+| Find hidden relationships in data | Encode using transformation with a ‘good’ basis |
+| Find relationship between encoding and attributes- semantic scores | Dot products |
+|  Measure attribute direction | Normal vector of hyperplane |
+| Measure entanglement of attributes | Covariance Matrix of scores as normal vectors |
+| Find new attribute direction in encoding space | Orthogonal projection |
