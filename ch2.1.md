@@ -20,11 +20,12 @@ Recall in (ch9, 3b1br) that vector multiplication is a projection onto the 1D nu
 https://www.youtube.com/watch?v=KDHuWxy53uM&feature=youtu.be&ab_channel=KhanAcademy
 Dot product is the amount of one vector goes in the direction of another. 
 
+[In figure 2.1, bold the relationship and comment on it in bold in writing too.]
 [Figure 2.1] Magnitude of vector can be negative because it’s not absolute length, but is where the vector is from the origin in a relative coordinate system. So if the vector is negative to the origin, the magnitude is negative. If 2 vectors have different signs, they’re pulling in 2 different directions. If they were in the same direction, they enhance each other, and thus multiply. Work = Force \* dist pulled
 
 Other areas used: word2vec (don’t go into detail, just mention. Details is when click on this technique to get its page. We want to extract techniques from a paper one by one, not multiple papers at once.)
 
-TECHNIQUES SO FAR: Dot product to measure relationship strength. In figure, bold the relationship and comment on it in bold in writing too. Include link to technq page.
+TECHNIQUES SO FAR: [Dot product to measure relationship strength](techniques/technique_template.md)
 
 **Normal vector to define hyperplane direction**
 

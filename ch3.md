@@ -1,4 +1,3 @@
-<span style="color:silver">
 **Composing neurons to get circuit gates**
 
 In section 2, we described how features are related to one another from the perspective of transformations in latent space; in this section, we will look at feature relationships from the perspective of neuron circuits. These two types of models reveal different hidden aspects of feature relationships, and have their own pros/cons when it comes to interpretation.
@@ -64,7 +63,7 @@ FOOTNOTE: ?? Remember, the activation space axis always exists in the input spac
 
 With the logistic regression model or the single neuron perceptron, an analogy from the function to a human making a decision can be made: we think of the neuron as saying "If a data point is on one side of my decision boundary, then 0, else 1".
 
-With hidden layer neurons, we can still make an analogy from the output neuron to a human, but the human analogous to it has a more complicated thought process: "If hyperplane A says it's sure by a degree of '22' that the observation is in class 0 (based on its distance from the LHS of the hyperplane) while hyperplane B says it's only sure by a degree of '4' that it's in class 1 (based on its position from its RHS), and I trust neuron A only 0.2 but trust neuron B with 0.7, then by -0.02\*22 + 4\*0.7 = 2.36 (using bias=0 and the sigmoid as the activation function that squishes 2.36 into 0.91), I still think it's most likely in class 1 because A's belief that it's in class 0 is not strong enough compared to how much I trust A and B and to B's belief."
+With hidden layer neurons, we can still make an analogy from the output neuron to a human, but the human analogous to it has a more complicated thought process: "If neuron A says it's sure by a degree of '22' that the observation is in class 0, while neuron B says it's only sure by a degree of '4' that it's in class 1, and I trust neuron A only 0.2 but trust neuron B with 0.7, then by -0.02\*22 + 4\*0.7 = 2.36 (using bias=0 and the sigmoid as the activation function that squishes 2.36 into 0.91), I still think it's most likely in class 1 because A's belief that it's in class 0 is not strong enough compared to how much I trust A and B and to B's belief."
 
 [figure of XOR output neuron making decisions using continuous values]
 
@@ -74,11 +73,12 @@ https://towardsdatascience.com/every-machine-learning-algorithm-can-be-represent
 
 [This link also shows how composability makes NN more general than every other machine learning technique; every ML technique can be represented as a NN.]
 
+We can extend this analogy about a neuron being analogous to a human to an entire neural network, which would be analogous to a society in which each person makes judgments based on the opinions of multiple people, each specializing in looking at observations from their own perspetive, and taking into account multiple other opinions at once based on how much they trust each other individual.
+
 **A neuron’s “meaning” can only be derived in relation to other neurons**
 
-Let an observation be a data point in X. We will informally define a feature as some aspect of an observation. Since each neuron measures some aspect of an observation, each neuron gives its own opinion about some feature. But these features may not be human-interpretable. Some of these features measure the location of an observation relative to a hypersurface associated with a neuron, such as in the XOR example. Although this feature of a neuron can be described in human-interpretable terms, it is not linked to an aspect that human brains easily recognize, such as eyes or squares in an image, or the concept of friendliness. However, neural networks have been designed such that the neurons in the last layer ARE human-interpretable, as each one gives its opinion about one of the classes. While Convolutional Neural Networks can be intuitive to interpret because they compose spatial features from smallest to largest (eg. edges to eyes), other neural network neurons are harder to interpret because the input space is not spatially interpretable to us like an image is. 
-
-A neural network can be analogously described as a society in which each person makes judgments based on the opinions of multiple people, each specializing in looking at a different feature, and taking into account all of their opinions at once based on how much they trust that person. 
+<span style="color:silver">
+Let an observation be a data point in X. We will informally define a feature as some aspect of an observation. Since each neuron measures some aspect of an observation, each neuron gives its own opinion about some feature. But these features may not be human-interpretable (although neural networks have been designed such that the neurons in the last layer ARE human-interpretable, as each one gives its opinion about one of the classes). While Convolutional Neural Networks can be intuitive to interpret because they compose spatial features from smallest to largest (eg. edges to eyes), other neural network neurons are harder to interpret because the input space is not spatially interpretable to us like an image is. 
 
 In the activation space of a hidden layer, each axis is a neuron. Each datapoint (observation) is a vector in the activation space. Thus, a transformation from input space to activation space is DESCRIBING each observation from the perspective of different features, just like using an analogy to make something new relate to something meaningful in our brain. 
 
@@ -116,11 +116,16 @@ Analogous features may have similar neuron firing patterns, and thus the same pa
 
 [figure proposing how relational graphs are made by circuits] 
 
-Note that circuits are a type of subgraph, and relational graphs are another type of subgraph. They should not be confused. Circuits cannot be relational graphs because each edge in a neural network is not a relation, but an indication of which outputs are used as inputs in which neurons. One cannot find "analogous subgraph patterns" in the graphical layout of circuits. Rather, circuits implicitly may be building up relation subgraphs; to reveal them, one may have to apply a transformation on the outputs of circuits that shows how the features they recognize are relatively composed into other features.
+Note that circuits are a type of subgraph, and relational graphs are another type of subgraph. They should not be confused. Circuits cannot be relational graphs because each edge in a neural network is not a relation, but an indication of which outputs are used as inputs in which neurons. One cannot find "analogous subgraph patterns" in the graphical layout of circuits. Rather, circuits implicitly may be building up relational subgraphs; to reveal them, one may have to apply a transformation on the outputs of circuits that shows how the features they recognize are relatively composed into other features.
+
+The circuits of neural networks may allow networks to capture analogies not capturable by a relational graph, which may be too restrictive of a model.
 
 One issue is the number of neurons may be less than number of features. It is likely that many neurons have multiple purposes; in other words, they are polysemantic. [cite specific Circuits thread section]
+</span>
 
 **Evolving AI Memes**
+
+<span style="color:silver">
 Once we identify what certain circuit motifs do in a neural network, we may not need for other neural networks to relearn them; we can piece them together via transfer learning from parts of other neural networks. It may also be that a neural network can piece these "inherited parts" together by itself- it may be more efficient to just insert a few pieces into it, then have it learn how to piece them together in a way that allows it to adapt to its environment, which may contain new but similar tasks that the network's "ancestors" did not encounter before.
 
 This procedure is similar to genes giving a prior set of skills to an organism, or memes giving a ways of making analogies between new cases and previously learned patterns. These analogies conjure up the idea that some inheritable parts may be more beneficial than others in certain environments, leading to an evolution of motifs. One way this can occur is to allow neural networks to figure out which motifs are the best and transfer them to others horizontally (like in viruses [cite horizontal gene transfer]) or vertically (like having children) to "learn from each other". The key to doing this effectively is to encode algorithms into the AI that both determine WHICH motifs to pass on, and learn how to stitch them together in another neural network.
@@ -128,6 +133,7 @@ This procedure is similar to genes giving a prior set of skills to an organism, 
 We already have discovered important architectural motifs (such as LSTMs) but other work proposes to learn them [cite "Evolving neural networks through augmenting topologies"]. GANs already contain neural networks interacting to improve each other; competition drives evolution.
 
 In a loose analogy, just like how each person makes a decision based on the opinions of others in a society, we can think of each person as a neuron that makes a decision, and an entire society as a neural network. Interestingly enough, each person has their own neural network that is similar to an artificial neural network, suggesting some sort of self-similarity.
+</span>
 
 <!--
 What determines what each neuron specializes in? Is it their ‘random’ initialization value in relation to other random initialization values?
@@ -136,4 +142,3 @@ complex systems "converge" towards learning analogies? (eg. same relational grap
 
 -->
 
-</span>

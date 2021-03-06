@@ -34,9 +34,12 @@ FOOTNOTE: Everything else will be introduced as the paper progresses; if a prere
 **[ch3](ch3.md)**
 
 
-[link to compendium of issue->solns and techniques]
+[link to compendium of issue->solns and techniques and concepts]
+The main goal of this compendium is to be used as inspiration to build new techniques, not as an 'if-else' step by step repair manual. The techniques are not to be blindly applied, as: 1) They may not generalize well to the current case, and modifications have to be made, and 2) Viewing 'only these techniques' are possible solutions may be too restrictive, so one may find it helpful to think outside-of-the-box by merely taking inspiration from them. When one is faced with an issue, one can search the compendium for similar issues, and then read about the old solutions to get inspired with a vague idea that can be adapted for the new case.
+
+The compendium consists of 3 types of pages: issue, techn, concept. An issue can have multiple solutions that are based on or are similar to different techniques, and each solution and technique can be composed of multiple concepts. It is recommended is to understand concepts so that new techniques can be built from the bottom-up or by modifying similar techniques to adapt to a new case.
 
 <!---
-<span style="color:lghtgray">
+<span style="color:lightgray">
 </span>
 -->
