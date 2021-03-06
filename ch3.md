@@ -51,7 +51,10 @@ Unlike an output neuron, a hidden layer neuron doesn't have a threshold function
 
 [o = w1\*a1 + b1 + (w2...) = <- substitute a1(x1,x2), show o(x1,x2) ]
 
-But we saw a picture where XOR was solved with 2 lines; doesn't each line correspond with a hidden layer neuron function? Those 2 lines do not make up a function; in that mapping, there exist x1 values with have 2 values of x2, which contradicts the definition of a function. Thus, the ACTUAL hypersurface associated with the output neuron is a curvy, nonlinear function as shown in the figure below:
+But we saw a picture where XOR was solved with 2 lines; doesn't each line correspond with a hidden layer neuron function? Those 2 lines do not make up a function; in that mapping, there exist x1 values with have 2 values of x2, which contradicts the definition of a function. Thus, the ACTUAL hypersurface associated with the output neuron is a curvy, nonlinear function as shown in the figure below: 
+[??? Eqn x^2+y^2=r for a circle isn't a valid function. only not by a fn in cartesian coords; can be a fn in polar coords
+https://math.stackexchange.com/questions/1113777/why-can-a-circle-be-described-by-an-equation-but-not-by-a-function
+]
 
 [figure comparing non-function hypersurface on X vs nonlinear function hypersurface x1(o,x2) on XOR input space]
 
@@ -77,18 +80,20 @@ We can extend this analogy about a neuron being analogous to a human to an entir
 
 **A neuron’s “meaning” can only be derived in relation to other neurons**
 
-<span style="color:silver">
 Let an observation be a data point in X. We will informally define a feature as some aspect of an observation. Since each neuron measures some aspect of an observation, each neuron gives its own opinion about some feature. But these features may not be human-interpretable (although neural networks have been designed such that the neurons in the last layer ARE human-interpretable, as each one gives its opinion about one of the classes). While Convolutional Neural Networks can be intuitive to interpret because they compose spatial features from smallest to largest (eg. edges to eyes), other neural network neurons are harder to interpret because the input space is not spatially interpretable to us like an image is. 
 
 In the activation space of a hidden layer, each axis is a neuron. Each datapoint (observation) is a vector in the activation space. Thus, a transformation from input space to activation space is DESCRIBING each observation from the perspective of different features, just like using an analogy to make something new relate to something meaningful in our brain. 
 
-When animal brains make analogies between two spaces, they are using analogical reasoning to build up mappings between objects in the two spaces. Analogical reasoning is similar finding mappings that preserve the property of a "commutative diagram in structure preserving map", which states that given relations m within a space and map H between spaces (a map is a set that contains mappings), hm = mh. This property means when finding whether two features are analogous, it only matters to find how they relate to other features. The Structure-Mapping Engine (SME) [citation] is a system that utilizes this property to find analogies between two relational graphs.
+When animal brains make analogies between two spaces, they are using analogical reasoning to build up mappings between objects in the two spaces [ https://plato.stanford.edu/entries/reasoning-analogy/ ]. Analogical reasoning is similar to finding mappings that preserve the property of a "commutative diagram in structure preserving map", which states that given relations m within a space and map H between spaces (a map is a set that contains mappings), hm = mh [ https://en.wikipedia.org/wiki/Commutative_diagram ]. This property means when finding whether two features are analogous, it only matters to find how they relate to other features. The Structure-Mapping Engine (SME) is a system that utilizes this property to find analogies between two relational graphs.
+[ https://www.qrg.northwestern.edu/papers/Files/smeff2(searchable).pdf : p14, "A collection of match hypotheses is structurally consistent if it satisfies two constraints:
+2. Support : If a match hypothesis MH is in the collection, then so are match hypotheses which
+pair up all of the arguments of MH's base and target items." -> these implicitly satisfy hm=mh]
 
 [figure: commutative diagram in structure preserving map, SME]
 
 How do we capture that two features are similar and thus "equivalent" under a map? Define an abstract class as a set in which all objects share some property. For example, the abstract class of "planets" includes Mercury and Venus. When describing a planet, Mercury and Venus are "equivalent", as their specific details that distinguish them from each other do not matter, only their generalized description of being a planet.
 
-A neural network does not take in two relational graphs and output a map. But neurons do activate in similar ways for similar features in observations. We may think of observations as containing raw data, while a relational graph is a description of raw data in terms of relations between features. Thus, just as analogies are made between features with similar relatons, neurons activate in similar ways for observations with similar features. These "similar features" can all be put under abstract classes, in which two features in the same abstract class are eligible for being mapped to one another. For example, if a neural network's neuron learns to judge its belief in an "eye" feature, it can judge its belief that an eye exists in a specific observation by "analogously" comparing it to previously seen observations. It is judging its belief of whether some region (similar to an entity in a relational graph) of the observation is in the abstract class of "eye" or not.
+A neural network does not take in two relational graphs and output a map. But neurons do activate in similar ways for similar features in observations. We may think of observations as containing raw data, while a relational graph is a description of raw data in terms of relations between features. Thus, just as analogies are made between features with similar relations, neurons activate in similar ways for observations with similar features. These "similar features" can all be put under abstract classes, in which two features in the same abstract class are eligible for being mapped to one another. For example, if a neural network's neuron learns to judge its belief in an "eye" feature, it can judge its belief that an eye exists in a specific observation by "analogously" comparing it to previously seen observations. Though the network does not store past cases as memory, it has learned how to modify its weights to optimize its objective function for those past cases. It is judging its belief of whether some region (similar to an entity in a relational graph) of the observation is in the abstract class of "eye" or not.
 
 Note that in order to judge its belief that an eye exists, the neuron relies on the judgments of other neurons which judge features such as "vertical edges" or "eyelids"; thus, judging whether a region (or candidate feature) is in an abstract class or not may rely on describing as a combination of other abstract classes. We describe an example that illustrates the similarities of a neural network to how analogies are made.
 
@@ -108,30 +113,39 @@ SME works starting from mappings which are locally consistent (that is, satisfyi
 
 [figure of SME's procedure]
 
-In a convolutional neural network, it has been found that early layers recognize local features such as edges, and later layers recognize features that piece together features recognized from previous layers [citation]. CNN is analogous to SME in that it must first make sure that its decisions are locally consistent, and once those are ensured, it can use them to decide on more globally consistent decisions. Though a neural network does not have the task of preserving Hm=mH built into its algorithm, the fact that a "composing" neuron takes in multiple features (weighing each one) may mean that all those features are related to one another through that neuron. Although there is no relational graph describing the raw data, each "composing" neuron may be describing the relations in an observation, and thus are analogous to the edges of a relational graph. If this analogy holds, then a neural network is judging the likelihood that certain edges exist in a relational graph, and may be building something analogous to a relational graph on top of an observation. It is then comparing that relational graph to previously learned relational graphs. 
+In a convolutional neural network, it has been found that early layers recognize local features such as edges, and later layers recognize features that piece together features recognized from previous layers [citation]. CNN is analogous to SME in that it must first make sure that its decisions are locally consistent, and once those are ensured, it can use them to decide on more globally consistent decisions. <span style="color:silver">Though a neural network does not have the task of preserving Hm=mH built into its algorithm, the fact that a "composing" neuron takes in multiple features (weighing each one) may mean that all those features are related to one another through that neuron. Although there is no relational graph describing the raw data, each "composing" neuron may be describing the relations in an observation, and thus are analogous to the edges of a relational graph. If this analogy holds, then a neural network is judging the likelihood that certain edges exist in a relational graph, and may be building something analogous to a relational graph on top of an observation. It is then comparing that relational graph to previously learned relational graphs. </span>
 
+<span style="color:silver">
 Under this assumption that this analogy holds, composing neurons are not just describing edges, since they take in the outputs of other composing neurons- they are describing subgraphs. Therefore, it may be that there are neurons (or groups of neurons) that have learned to find analogies to relational subgraphs, and these neurons pass on their belief in these analogies to more neurons that find relational subgraphs depending on analogies to other relational subgraphs. 
+</span>
 
+<span style="color:silver">
 Analogous features may have similar neuron firing patterns, and thus the same pattern of neurons within a network may fire for these analogous features. Patterns in a network have been called "motifs" [citation], and in the context of neural networks, have been called "circuits". Much work has been done in not only providing evidence for the existence of these circuits, but in characterizing them similar to how biologists characterize the functions of genetic patterns in DNA [Distill: Circuits Thread]. 
+</span>
 
 [figure proposing how relational graphs are made by circuits] 
 
-Note that circuits are a type of subgraph, and relational graphs are another type of subgraph. They should not be confused. Circuits cannot be relational graphs because each edge in a neural network is not a relation, but an indication of which outputs are used as inputs in which neurons. One cannot find "analogous subgraph patterns" in the graphical layout of circuits. Rather, circuits implicitly may be building up relational subgraphs; to reveal them, one may have to apply a transformation on the outputs of circuits that shows how the features they recognize are relatively composed into other features.
+<span style="color:silver">
+Note that circuits are a type of subgraph, and relational graphs are another type of subgraph. They should not be confused. Circuits cannot be relational graphs because each edge in a neural network is not a relation, but an indication of which outputs are used as inputs in which neurons. One cannot find "analogous subgraph patterns" in the graphical layout of circuits. Rather, circuits implicitly may be building up relational subgraphs; to reveal them, one may have to apply a transformation on the outputs of circuits that shows how the features they recognize are relatively composed into other features. It is possible that creating relational graphs from circuits is only for human-interpretability purposes; the circuits of neural networks may allow networks to capture analogies not capturable by a relational graph, which may be too restrictive of a model.
+</span>
 
-The circuits of neural networks may allow networks to capture analogies not capturable by a relational graph, which may be too restrictive of a model.
-
+<span style="color:silver">
 One issue is the number of neurons may be less than number of features. It is likely that many neurons have multiple purposes; in other words, they are polysemantic. [cite specific Circuits thread section]
 </span>
 
 **Evolving AI Memes**
 
-<span style="color:silver">
+<span style="color:lightgray">
 Once we identify what certain circuit motifs do in a neural network, we may not need for other neural networks to relearn them; we can piece them together via transfer learning from parts of other neural networks. It may also be that a neural network can piece these "inherited parts" together by itself- it may be more efficient to just insert a few pieces into it, then have it learn how to piece them together in a way that allows it to adapt to its environment, which may contain new but similar tasks that the network's "ancestors" did not encounter before.
+</span>
 
+<span style="color:lightgray">
 This procedure is similar to genes giving a prior set of skills to an organism, or memes giving a ways of making analogies between new cases and previously learned patterns. These analogies conjure up the idea that some inheritable parts may be more beneficial than others in certain environments, leading to an evolution of motifs. One way this can occur is to allow neural networks to figure out which motifs are the best and transfer them to others horizontally (like in viruses [cite horizontal gene transfer]) or vertically (like having children) to "learn from each other". The key to doing this effectively is to encode algorithms into the AI that both determine WHICH motifs to pass on, and learn how to stitch them together in another neural network.
+</span>
 
 We already have discovered important architectural motifs (such as LSTMs) but other work proposes to learn them [cite "Evolving neural networks through augmenting topologies"]. GANs already contain neural networks interacting to improve each other; competition drives evolution.
 
+<span style="color:lightgray">
 In a loose analogy, just like how each person makes a decision based on the opinions of others in a society, we can think of each person as a neuron that makes a decision, and an entire society as a neural network. Interestingly enough, each person has their own neural network that is similar to an artificial neural network, suggesting some sort of self-similarity.
 </span>
 
