@@ -33,7 +33,7 @@ FOOTNOTE: Hypersurfaces are manifolds embedded in ambient space
 
 [figure fitting hyperplane showing how classification works. label pts and planes with equations for a= and x1= and x2= in actv space and input space, resp. another plot showing hypersurfaces. use matlab
 
-[figure with z = XW + b, showing g(z) > 0.5 when z > 0, then showing how log regr discretizes the sigmoid output into 0 or 1] [Ng, 6.3, 2:20]
+[figure with z = XW + b, showing g(z) > 0.5 when z > 0, then showing how log regr discretizes the sigmoid or softmax output into 0 or 1] [Ng, 6.3, 2:20]
 [compared to another plot single neuron function]
 
 o = w11\*x1 + w12\*x2 + b 
@@ -66,7 +66,7 @@ FOOTNOTE: ?? Remember, the activation space axis always exists in the input spac
 
 With the logistic regression model or the single neuron perceptron, an analogy from the function to a human making a decision can be made: we think of the neuron as saying "If a data point is on one side of my decision boundary, then 0, else 1".
 
-With hidden layer neurons, we can still make an analogy from the output neuron to a human, but the human analogous to it has a more complicated thought process: "If neuron A says it's sure by a degree of '22' that the observation is in class 0, while neuron B says it's only sure by a degree of '4' that it's in class 1, and I trust neuron A only 0.2 but trust neuron B with 0.7, then by -0.02\*22 + 4\*0.7 = 2.36 (using bias=0 and the sigmoid as the activation function that squishes 2.36 into 0.91), I still think it's most likely in class 1 because A's belief that it's in class 0 is not strong enough compared to how much I trust A and B and to B's belief."
+With hidden layer neurons, we can still make an analogy from the output neuron to a human, but the human analogous to it has a more complicated thought process: "If neuron A says it's sure by a degree of '22' that the observation is in class 0, while neuron B says it's only sure by a degree of '4' that it's in class 1, and I trust neuron A only 0.2 but trust neuron B with 0.7, then by -0.02\*22 + 4\*0.7 = 2.36 (using bias=0 and the softmax as the activation function that squishes 2.36 into 0.91), I still think it's most likely in class 1 because A's belief that it's in class 0 is not strong enough compared to how much I trust A and B and to B's belief."
 
 [figure of XOR output neuron making decisions using continuous values]
 
