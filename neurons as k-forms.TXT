@@ -101,7 +101,7 @@ The base point of this latent space, for the first layer, consists of coordinate
 
 Thus, a1*n1 + a2*n2 is a vector within this latent space, where a_i are the output values of each neuron. So 5n1 + 6n2 + 2n3 is a vector within this latent space.
 
-A modeling mistake that can be made here is to say that 5w1 + 6w2 + 2w3 is a vector within this latent space. This is not so because we have defined the basis for this latent space using neurons, so the weight vectors are not basis vectors. These modeling mistakes occur due to how superficially similar 5w1 + 6w2 + 2w3 looks to a linear combination; we have scalars and variables. But once you follow the logic of the assumed statement, you realize it has contradictions- the weight variables are not vectors within the latent space, so this cannot be a vector within it.
+A modeling mistake that can be made here is to say that 5w1 + 6w2 + 2w3 is a vector within this latent space. This is not so because we have defined the basis for this latent space using neurons, so the weight vectors are not basis vectors. These modeling mistakes occur due to how superficially similar 5w1 + 6w2 + 2w3 looks to a linear combination; we have scalars and variables. But once you follow the logic of the assumed statement, you realize it has contradictions- the weight variables are not vectors within the latent space, so this cannot be a vector within it. It fails the analogical reasoning condition tests.
 
 When a neuron in the 2nd layer takes this vector V as input, it uses the function A(VW+b). Thus, this 2nd layer neuron is a 1-form because the linear combination of the 3 basis vectors forms one vector. 
 
@@ -113,5 +113,18 @@ The neurons in a filter of a CNN consequently mean there is a neuron in the next
 
 Now that we have defined a neuron as a 1-form, what is a directional derivative? It is an interpretation of what that neuron N recognizes in terms of either a basis vector (an input neuron of N) or a linear combination of basis vectors (a weighted combination of N’s input neurons). The basis vector can be viewed as a feature that’s a component of the linear combination of basis vectors, while the combination can be viewed a combo of features. In both cases, slightly nudging an input vector would slightly nudge the neuron’s output value in its output latent space. We have seen a sort of “continuum” or a spectrum of clustered values in latent spaces, such as in StyleGAN editing. There is input editing (choosing a similar vector within latent space while keeping the weights the same) and weight editing (changing the NN itself to have it give slightly different outputs for the same input).
 
-For instance, if an input vector (1,2,4) makes neuron N output “dark red”, a similar input vector (1,2,40) may have neuron N output “light red” instead. One can then hypothesize that the third basis vector captures brightness. Then, we can use directional derivatives to get more precise measurements on how the output would change given the amount we nudge (1,2,4) in the “higher” direction of the third neuron. This more precise measurement on how changing input will change output is useful for calculating which input will get us a desired output.
+For instance, if an input vector (1,2,4) makes neuron N output “dark red”, a similar input vector (1,2,40) may have neuron N output “light red” instead. One can then hypothesize that the third basis vector captures brightness. Then, we can use directional derivatives to get more precise measurements on how the output would change given the amount we nudge (1,2,4) in the “higher” direction of the third neuron. This more precise measurement on how changing input will change output is useful for calculating which input will get us a desired output. 
 
+Not only that, but we can calculate how changing inputs to a neuron changes a neuron’s output within the intermediate layers. How does changing the values of the third neuron change the output of a neuron we hypothesize has learned to recognize red cats? What about to another neuron that recognizes red pots? Is there a trade-off? This is useful for neuron circuit interpretability.
+
+Additionally, we can use an algorithm that takes these latent change measurements into account to update neuron weights. Weights are already updated through measuring partial derivatives (which make up the gradient vector field) via backpropagation, but the gradient descent update algorithm does not take into account interpreting the neurons to try to figure out how they relate to some manually set goal in Style Editing.
+
+<<<
+12:
+
+Neurons interpret other neurons. The linear functional is an interpretation. They send points from one latent space of manifold A to manifold B, and since each point on a manifold as its own tangent space, this “activation value tuple”, where each component is an activation value from a neuron of the previous layer, has its own tangent space. Each data point is mapped to only one other data point in the new latent manifold space; a manifold is a collection of data points (observations). 
+
+<<<
+13: 
+
+A dual space is a set of all linear functionals on a tangent space. That is, given a data point’s tangent space, the dual space is the set of all neurons interpreting that data point. It is a set of all interpretations. 
