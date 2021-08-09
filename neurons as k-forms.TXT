@@ -138,4 +138,13 @@ The neurons only exist in relation to other neurons. If we change the values of 
 <<<
 14:
 
+Tangent space and dual space are very general and thus can be used in many models about agent interaction. Manifolds are more specific, as they require an object that is locally Euclidean near every point. A k-form field (or a co-vector vector, which is dual to a vector field) takes a particular vector at each point- a particular linear combination of neurons at each point- and gives an interpretation at each point. This is similar to how each input data point to a neural network outputs a particular value. Thus, the neural network is a k-form field, as we are choosing which particular linear functional composite to use on the local neighborhoods of some data manifold. 
 
+A vector field chooses a vector at each point; so for each data point, you can choose what linear combination of neurons interprets it the highest. An activation maximization algorithm chooses an input which gives the highest activation value for a particular neuron; it is also similar to a vector field.
+
+<<<
+15:
+
+(p59) There’s 2 ways to visualize a k-form (a neuron): they can be objects themselves in the dual space set, or they can functions on the corresponding vector space. A neuron “starts off” as a function in a vector space but becomes its own object in the dual space. This is similar to how the interaction between cellular organisms “starts off” as just interactions but emergence makes the society becomes its own organism, which can interact with organisms on its own level to form even higher-level organisms (?)
+
+The components of the neuron function project each component of the collective vector onto an activation value on a basis vector of the dual space. “A function on a vector goes into a vector of functions, a function on a vector goes into a vector of functions, and so forth”.
