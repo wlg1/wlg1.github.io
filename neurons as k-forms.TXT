@@ -127,4 +127,15 @@ Neurons interpret other neurons. The linear functional is an interpretation. The
 <<<
 13: 
 
-A dual space is a set of all linear functionals on a tangent space. That is, given a data point’s tangent space, the dual space is the set of all neurons interpreting that data point. It is a set of all interpretations. 
+The tangent space of a data point is how neurons of layer L interpret the local space of a manifold. All neurons only work on local data; they cannot see the big, global picture. This vector space is a set of all interpretation vectors using layer L neurons as a basis. Thus, it includes more than just independent basis neurons; it includes linear combinations of them.
+
+A dual space is a set of all linear functionals on a tangent space. That is, given a data point’s tangent space, the dual space is the set of all layer L+1 neurons interpreting layer L’s interpretations of that data point. It is a set of all neurons acting on layer L interpretation vectors, but does not include combinations of layer L+1 vectors.
+
+Each vector space has its own dual space. A vector space is a set of all inputs to an element in a dual space. This is where duality comes in; on one hand, you have a set of objects (the vector space), and this always has a corresponding set of functions that output scalars which together make up a vector in a new tangent space. Thus, this forms a self propagating chain of tangent spaces. While a neuron is itself a function of a vector of functions, it is sent to a vector of functions too. It becomes part of a collective- the vector. They become part of the basis for another tangent space. This forms a recursive pattern.
+
+The neurons only exist in relation to other neurons. If we change the values of a single neuron, how does it change the emergent society around it? This can be used to construct an analogical model used to reveal insights about cooperation in organisms. The more analogical tests the model passes, the stronger it is; but if contradictions in analogical reasoning are found, and if those contradictions make heavily-relied-upon statements (meaning, they’re used in a lot of proofs) uncertain, then the model would seem more likely to be based on superficial analogies (confusing the map for the territory) instead of structural analogies.
+
+<<<
+14:
+
+
