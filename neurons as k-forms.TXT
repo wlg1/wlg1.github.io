@@ -1,3 +1,10 @@
+1:
+
+The reason we want study differential geometry for NN is because NN transform non-Eucldiean data (such as manifolds and graphs) into various intermediate objects in latent space, resulting in objects in a final space that can be used for classification, regression, etc. The results depend on what the NN does and doesn’t preserve. One of the things the NN should preserve for manifold data is local data. A manifold is a set (or a space, when viewed from a geometric perspective) of points such that locally each point has a neighborhood that maps to a Euclidean space. In geometric deep learning, we want to preserve the local structure. For example, if a manifold is a 3D body such as the Earth, we want to make sure a local neighborhood of it, such as distances in New York City, will preserve its properties in manifolds in latent space. If we want the NN to do analysis on NYC given map data of the Earth, we need to preserve accurate information about NYC.
+
+These local-preserving deformations on manifolds onto other manifolds in latent space are called isometries. We must make sure the functions (composites of neuron functions) learned by the NN algorithms are isometries, so we have to prove that the algorithms are learning isometries. If we do not prove this, the NN is at risk for not preserving local data. We need the learning algorithms to take into account the relation between local data and the global manifold itself.
+
+<<<
 2:
 
 Prove NN are learning isometries. Isometries work on local data between two manifolds. When you make a change in the domain, you must make sure it’s reflected in the range. And know how much- the derivative of a function. Before, it was delta_x shows a change in f(x). But instead of a linear axis, this time it can be on a vector that exists in multiple axes. This is a directional derivative. 
