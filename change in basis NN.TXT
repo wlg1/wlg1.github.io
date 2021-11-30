@@ -1,0 +1,150 @@
+GOAL: To explain why neural networks are able to transform manifolds using matrix multiplication
+
+CHAPTER 1 OUTLINE:
+1. German / English comparison to show what vars of a=Wx are in Sys 1 vs Sys 1
+    inverse
+2. Dot product, what rows and cols correspond to. break down distributive
+    rotation
+3. NN analogies
+    elephant concept space
+4. Ruminations
+
+CHAPTER 2:
+Dot product for direction
+Lengths
+Normal
+Orthogonal
+Orthogonal Projections
+
+CHAPTER 3:
+Eigenvectors, Diagonal, Decomposition
+
+<<<
+I will re-explain 3Blue1Brown's video in a way that allows it to tie together with the explanation about neural networks. Even if one has already seen that video, going through section 1 will make section 2 easier to understand.
+
+<<<<<<
+Change of basis | Essence of linear algebra, chapter 13
+https://www.youtube.com/watch?v=P2LTAUO1TdA&list=PL0-GT3co4r2y2YErbmuJw2L5tW4Ew2O5B&index=13&ab_channel=3Blue1Brown
+
+2:59m: 
+HER basis b1=[1 0] is OUR [2 1]
+HER basis b2=[0 1] is OUR [-1 1]
+
+4:30m: Jennifer asks what HER [-1 2] is in OUR coordinate system
+
+In Jennifer's coordinate system, the vector [-1 2] means 
+-1 * b1 = -1 * [1 0] = -1
+2 * b2 = 2 * [0 1] = 2
+
+Every vector is a linear combination of its basis vectors.
+The -1 is multiplied by ONLY b1, which consists of an x-coord and a y-coord. 
+
+In matrix multiplication, this translates into:
+[-1 2] (dot) (1st row) = [-1 2] (dot) (x coords of basis vectors)
+[-1 2] (dot) (2nd row) = [-1 2] (dot) (y coords of basis vectors)
+
+= [-1 2] (dot) [2 -1] = -2-2 = -4
+= [-1 2] (dot) [1 1] = -1+2 = 1
+
+Note that 'x and y coords' refer to the rows. This 'xcoord' refers to the first basis vector in OUR system, and the 'y coord' refers to the 2nd basis vector in OUR system. JENNIFER'S basis vectors are the columns.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ANALOGY TO HUMAN LANGUAGE:
+
+JENNIFER'S 2 basis vectors are [1 0] and [0 1]. However, OUR coordinate system sees those same exact vectors as [2 1] and [-1 1]. 
+
+https://inktank.fi/10-english-words-mean-something-else-languages/
+WHAT LOOKS LIKE [2 1] ('gift') in German != [2 1] ('gift') in English
+[2 1] ('gift') in German = [0 1] ('poison') in English 
+
+The numbers are merely letters, but they do not carry meaning unless put in relative context with other words of the same language.
+(overlay two coord sys on top in both ways, and also turn them all the way around in any rotation and shift)
+It's dependent on the relation to other words of the language due to structure preserving maps. These numbers and letters are merely part of a model.
+WHAT IT LOOKS LIKE: vectors defined by numbers / words defined by letters
+WHAT IT MEANS: relative to other vectors / relative to other words
+
+https://www.bbc.co.uk/languages/yoursay/false_friends/german/mist_common_false_friends_in_german_englishgerman.shtml
+Say Jennifer describes a vector [-1 2] (fast) that LOOKS LIKE [-1 2] (fast) in our language. But [-1 2] has two different meanings (relative to other words) language. It means [c d] (almost).
+
+We have to translate [-1 2] ("fast") into an English-interpretable word that reveals what [-1 2] actually means in terms of English. So the output will be in English.
+[-1 2] (German) --> Multiply by translator (English) --> [c d] (English)
+
+The translator must be in English because it has to explain to the English speaker what [-1 2] actually means in English.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INVERSE MATRIX: (optional)
+
+To illustrate TRUE MEANING, draw a picture. This is the 'reality'. The words are merely models.
+
+7:20-8:20m: What if WE say "gift"? The German foreigner must translate this to a German translation (not necessarily a word, but possibly a German sentence, or even a paragraph or textbook) that makes him understand that it's Figure X. 
+Just take the inverse of our previous transformation matrix, and apply it to "gift". This is because the columns of this inverse are what OUR columns [1 0] etc look like in German. Remember that [1 0] is not an absolute or universal item (show picture of the basis vectors used as 'anchoring points' to define meaning)
+
+[-1 2] (Gift, German) != [-1 2] (Gift, English)
+[-1 2] (Gift, German) = [-4 1] (Disgust, English)
+[ ] (Geschenk, German) = [-1 2] (Gift, English)
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ROTATION MATRIX: (optional)
+
+9:30m: Vectors in linear space describe a point relative to basis vectors being used as orthogonal axes. They can be made "orthogonal" by viewing them from different "perspective angles" (don't just view it from the same 2D wall; pivot in different dimensions to transform your coordinate system!)
+
+<
+9:44m: 90 degree rotation: the input vector is a vector in sys1, which is the rotated space. sys2, our space, is currently not rotated. Translate the basis vectors in the rotated space into sys 2 vectors to get the matrix. We see that what's the "y axis" in the rotated space (sys 1) is actually [-1 0] to us (sys2), as we see in the video still, and sys1's "x-axis" is our y-axis, so we see its [1 0] as our [0 1].
+
+When rotating, we're not actually rotating the vectors. We're just shifting the perspective. We're not moving the objects inside the room, we're rotating the room itself. Or the camera.
+Neither English nor German (two coordinate systems) capture the true vector; they are all merely representations modeling it.
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+NN WEIGHT MATRIX: 
+
+https://www.jeremyjordan.me/intro-to-neural-networks/
+So if the neurons are basis vectors, in the Weight matrix:
+Each row goes to one neuron OUTPUT in the next.
+Each col belongs to a neuron INPUT in the previous layer
+
+Thus, each col is a previous layer neuron. Given input vector [-1 2]:
+-1 * [1 0]
+2 * [0 1]
+
+Creates the input vector x = [x1 x2] = [-1 2]
+
+1st coordinate system: pixels, input space X
+2nd coordinate system: 1st layer of latent space
+
+Now we want to re-interpret [-1 2] in the 2nd coordinate system. 
+
+Note that the matrix column vectors are always the same coordinate system as the output vector; we'll call this coordinate system "sys 2". The input vector "seems to be" a vector in sys 2, but it's actually a vector in sys 1. Eg) 'Gift' (input vector) seems to be English (sys 2), but it's actually German (sys 1)
+
+The input vector APPEARS to be English, but that's a misunderstanding. It's actually German. So the input [1 0] IS NOT A BASIS VECTOR IN GERMAN! The English speaker merely THINKS it is!
+
+Thus, the input vector of pixels comes from sys 1 (input space), and the weight matrix and activation vector belong to sys 2 (1st layer latent space). The columns of the weight matrix is what the 1st layer sees as the basis vectors of the input space. This is why the 1st column of the weight matrix are all weights coming out of x1. This is because x1 is a basis vector in the input space, but the 1st latent layer sees it as only its outgoing weights. 
+
+Learning weights is the same as learning to choose the right basis vectors. PCA is a way to get basis vectors.
+
+[Elephant example]
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+RUMINATIONS:
+At first, the neurons are merely basis vectors. But then, they become weights in the new space. In a linear combination with weights from other basis vectors of sys 1 (this is the 1st row of the weight matrix, or the 'x coords of the basis vectors, where x is the new basis vector in sys 2'), these basis vectors together create a new basis vector (row 1), and another (row 2). [It is as if] These entities die and transcend into a new form, giving birth to new life in a new perspective.
+Matrix multiplication is just a way to re-interpret an instruction (input vector) of relative relations using the columns of the matrix. The first row of old basis vectors is what becomes the value of the first new basis vector in the new space, etc. This is the beauty of duality.
+
+Therefore, the outgoing connections of x1 can be thought of as w1. So x1 becomes w1. Each new basis vector gets an "opinion" from all the previous basis vectors. (In many cases, this weight is 0 (no opinion). ) An entity becomes a relation, and new entities are made up of relations from multiple other entities. An entity cannot be defined without the relations going into it. A neuron (which plays a role, such as identifying a feature) is defined by abstract relations relative to each other. When these basis vectors are CHOSEN (solved for) to get the right weights, new patterns can be identified.
+
+Analogies are merely pattern identification. Thus, choosing a certain combination of basis vectors (for multiple layers) allows analogies (identifiers) to be constructed. Build up analogies locally (more abstract) to search for the bigger analogy (more specific, because a bigger pattern has less matches than smaller ones). Knowing this insight about duality will not give the answer to how to get a NN to learn better analogies, but it will help get the answer.
+
+Now we understand the system that the original model was supposed to model. A fallacy is to believe that vectors are absolute- NO VECTOR IS ABSOLUTE AND UNIVERSAL. They are all RELATIVE TO BASIS VECTORS. [v w] IS NOT THE SAME AS [c d] in our coordinate system, but the [v w] in the foreign coordinate system is the same as [c d] in our coordinate system!  All vectors are models and there is no "actual vector".
+
+It is a misconception to say that vectors were shifted. No vector was actually shifted; it's all the same points. It is the coordinate system perspective that's changed. That can be said about our perception: the universe does not change, it's only perceived in a different way. Assuming that basis neurons transform outside data into a different form, perception is just a change in basis. The Origin is God.
+There are only relative patterns, and how they're perceived requires a basis.
+
+The only thing that never shifts is consciousness. It is the Origin- tabula rasa. Everything else can be shifted. This is the ONLY thing that all perceiving beings share. What do all perceiving systems share? That is what the origin is. It allows perspectives to be shifted. It is empathy. Without it, there is no communication.
+
+<<<
+Don't confuse the map for the territory (make sure it's structure preserving- show picture why if this doesn't hold, you are confusing the two. Use experiments.)
+Now, let's extend this analogy to neural networks.
+
+<<<<<<<<<<<
+https://textbooks.math.gatech.edu/ila/projections.html
+
+https://tutorial.math.lamar.edu/classes/calcii/dotproduct.aspx
