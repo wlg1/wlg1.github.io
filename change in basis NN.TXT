@@ -221,7 +221,7 @@ WHAT IT LOOKS LIKE: vectors defined by numbers / words defined by letters
 WHAT IT MEANS: relative to other vectors / relative to other words
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-INVERSE MATRIX: (optional)
+INVERSE MATRIX: (optional; move to end)
 
 (first explain conceptually, then after show why algebraic works, explain again?)
 
@@ -238,14 +238,31 @@ Just take the inverse of our previous transformation matrix, and apply it to "gi
 WHY ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS
 (this is a whole separate section, broken into smaller subsections as pages)
 
+[Show both bottom up and top down. First bottom up.]
+[Later map this breakdown onto NN]
+Once we understand why the dot product is done this way, and what it's purpose is, and how it fits into other procedures, we can relate it to NNs.
+
+Let's review 3Blue1Brown... (don't say this at start of prev section, say here)
+
+Let's describe what's happening during 2D matrix multiplication.
+[label statements with colored labels on pic of matrix]
+[put colored statements in an ordered list]
+
+<<<
+[ we began by explaining it intuitively with no math; now, we'll go into the details of why we perform each math operation, and how the algebra changes the geometry]
+
 First point out intriguing questions as Motivation
 
 (may use J K instead of v w b/c use W, later 'weight', as matrix)
 (from prev section, now re-paste in this section)
 . first show j-k Sys 1 and j-k on top of c-d Sys 2, with one vector b/c [-1 2]
+    make j-k basis bolder than c-d. same color for j, k in both Sys
 . show that Identity * [-1 2] in Sys 1 is 'analogous' to 'W matrix' * [-1 2]
 
+[NOT NEEDED FOR NOW- show this re-arrangment afterwards]
 . re-arrange -1j + 2k can be decomposed into (-1*j_c + 2*k_c) + (''' for d coordinate). These are the dot products for row 1 (c) and row 2 (d)
+
+[Let's first focus on the first operation: dot product]
 . Now explain dot product using 1D vector addition
 
 OUTLINE:
@@ -265,19 +282,17 @@ OUTLINE:
 . Show that this procedure in Sys 2 is the same as Sys 1 if you use Identity matrix column basis vectors. 
 (Start w/ showing Sys 1 or Sys 2 first? Sys 1 DOES NOT require 1D vector addition, while Sys 2 does. So if show sys 1, don't need to show 1D vector addition first. You should show sys 1 first b/c it's just -1*b1, 2*b2. THEN show how 1D vector addition allows the same to happen when basis vector coords are nonzero.)
 
-ADD-ONS:
-. 2D vector addition decomposition: how it is equivalent to procedure above
+OPTIONAL ADD-ONS- DERIVATION 2:
+. 2D vector addition decomposition into c-d basis vectors, then transform each indiv basis vector into j-k: how it is equivalent to procedure above
 
-[Show both bottom up and top down. First bottom up.]
-[Later map this breakdown onto NN]
-Once we understand why the dot product is done this way, and what it's purpose is, and how it fits into other procedures, we can relate it to NNs.
+(reverse sys 1 and Sys 2; let sys 1 have Sys 2 overlayed on top of it. This is because we are 'transforming' into sys 2. Sys 2 is on the right, b/c we read left to right in English.)
+(q, r; s, t)
+(c, d; j, k)
 
-Let's review 3Blue1Brown... (don't say at start, say here)
+Now map c-d onto N_c, N_d neurons in layer 1. What is [-1 2] in c-d is [-4 1] in j-k.
+Show these two animations side by side, or stills of 2cols where each step is equiv to the step in other col
+DO NOT overlap Sys 1 onto Sys 2 (only do that when discussing inverses)
 
-Let's describe what's happening during 2D matrix multiplication.
-[label statements with colored labels on pic of matrix]
-[put colored statements in an ordered list]
-Let's first focus on the first operation: dot product
 
 
 <<<<<<<<<<<<<<
