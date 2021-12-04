@@ -24,25 +24,6 @@ because a more intuitive understanding gives one..., one can have more avenues t
 [picture of intuitively understanding and thinking outside of the box Vs being locked into only using the given rules] ]
 
 <<<
-TO CITE: 
-https://www.youtube.com/watch?v=CfAL_cL3SGQ&t=1s&ab_channel=SamSartor
-Why neural networks aren't neural networks
-https://gitlab.com/samsartor/nn_vis
-
-Shows transformations on input space, but not latent space
-
-https://www.youtube.com/watch?v=-at7SLoVK_I&ab_channel=vcubingx
-What does a neural network *actually* do? Visualizing Deep Learning, Chapter 2
-
-https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/
-https://colah.github.io/posts/2014-07-NLP-RNNs-Representations/
-
-https://math.stackexchange.com/questions/774662/are-all-vectors-of-a-basis-orthogonal
-
-is weight matrix orthogonal
-https://discuss.pytorch.org/t/why-is-it-so-hard-to-enforce-a-weight-matrix-to-be-orthogonal/108888/2
-
-<<<
 CHAPTER 1 OUTLINE:
 1. German / English comparison to show what vars of a=Wx are in Sys 1 vs Sys 1
     inverse
@@ -135,43 +116,56 @@ We call a still picture of this Reality animation a Viewpoint. We observe that t
 In this thought experiment, the goal of a neural network is to label the concepts within Reality using a coordinate system. Each point, or vector, in the coordinate system is a label. This system of numbers is also how the neural network can measure how far away each concept is from one another. For example, [pic 1] can be labeled with [-1 0], while [pic 2] can be labeled with [-2 0]. Then the neural network knows [pic 2] is 1 unit to the left of [pic 1].
 [label this on figure]
 
-But a neural network cannot place a coordinate system on top of this moving animation of Reality; it must choose one of the viewpoints. If it tried to place it on top of all the viewpoints, the label [-1 2] would mean [picture 1] but also [picture 2].
+But a neural network cannot place a coordinate system on top of this moving animation of Reality; it must choose one of the viewpoints. If it tried to place it on top of all the viewpoints, the label [-1 0] would mean [picture 1] but also [picture 2].
 [try placing coordinate system on top of moving animation. label some numbers]
 [place the same coord sys on two views that contradict each other]
 
-[first show one coordinate system, then show other coordinate system on top of first one, then show second one. use animation]
-
-To lock into a viewpoint, the neural network needs at least one reference point, or a "reference vector". That is, it must fix a label onto one concept. Like an anchor, this reference point locks the animation onto this seemingly arbitrary label. Using the reference point, the neural network can describe all other concepts based on 1) how far away they are from the anchor point, and 2) whether the concept is behind, in front of, to the left of, and so forth, from the anchor point. Figure X shows that the only difference between each viewpoint is the choice of reference points.
+To lock into a viewpoint, the neural network needs at least one reference point, or a "reference vector". That is, it must fix a label onto one concept. Like an anchor, this reference point locks the animation onto this seemingly arbitrary label. Using the reference point, the neural network can describe all other concepts based on 1) how far away they are from the reference point, and 2) whether the concept is behind, in front of, to the left of, and so forth, from the reference point. Figure X shows that the only difference between each viewpoint is the choice of reference points.
 
 If only one reference point is used, the neural network stops Reality from moving up and down, and the same label can describe two different concepts. But Reality can still move left to right. However, if the neural network uses two reference points, it stops the animation from moving completely. 
 
 Another word for a reference point is a basis vector. Thus, to label the concepts within Reality, the neural network must choose a set of basis vectors. The set of basis vectors creates a coordinate system, which we'll call a Model.
-[create non orthogonal basis in manim to see what happens]
 
-Now each viewpoint has its own possible advantages and disadvantages relative to a goal. If we want to classify
+[Change of basis of WI = O, means 'changing into O'. Since O is in the system with W, and W is in System 2, we are 'changing into system 2'. System 1 is where I, the input, originally is. It's where [-1 2] uses [1 0] and [0 1] as the basis. System 2 is where O, the output, is. It interprets [-1 2] as [-4 1] using the basis [2 1] and [-1 1], which are what System 1's basis look like in System 2. Based on this, we are rotating the basis of System 1 to become non-basis in System 2; we are not going onto [2 1] and [-1 1] as the new basis.]
+[However, 3Blue1Brown @ 5:45m says the matrix 'moves our basis vectors' onto [2 1] and [-1 1]. This is just a matter of perspective. Anyways, don't discuss these semantics issues in the blog, as it gets confusing. Don't mention we're 'changing into basis using the matrix'.]
+
+(see 4:30-5m in video)
+Let's consider two coordinate systems.
+[Fig: Left is Sys 1, Right is sys 1 on Sys 2]
+. first show j-k Sys 1 and j-k on top of c-d Sys 2, with one vector b/c [-1 2]
+    make j-k basis bolder than c-d. same color for j, k in both Sys
+. show that Identity * [-1 2] in Sys 1 is 'analogous' to 'W matrix' * [-1 2]
+[-1 2] is the ONLY non-basis vector in both pics. [-1 2] never existed in Sys 2; it was always [-4 1]
+
+[first show one coordinate system, then show other coordinate system on top of first one, then show second one. use animation]
+
+Now each viewpoint has its own possible advantages and disadvantages relative to a goal. If we want to classify...
 [show squishing, hiding, etc]
 
 So to reveal hidden relationships in Reality, the neural network wants to consider multiple points of view. If it combines information from two viewpoints, such that there is information from one viewpoint that another viewpoint lacks, it gains greater insight into Reality than using one point of view. Since each viewpoint uses a different coordinate system, each view is a different Model of Reality. 
 
 Now let's take a step back from this thought experiment, and connect it back to our world. A data set looks at a limited perception of our world, and labels it by describing it with collection of features. These features can be individual pixels, the length of a petal, the number of windows in a house, and so forth. As many know from machine learning tutorials, these features act as axes in the coordinate system of an Input Space, where the vectors are data points [show picture]. 
 
-Using the terminology of the thought experiment, the Input Space's coordinate system is a Model of our world. In fact, it is the first Model that the neural network "perceives". Let's look at an example where the input space uses pixels as feature axes. At first the neural network just sees an image as a vector based on the value of its individual pixels. But this may not be enough for it to recognize objects that defined are as pixels arranged in a certain way. So using only this first Model, the neural network has to relate it to another Model that describes not just the pixels themselves, but the relationship between pixels, making sure to preserve the relationship between concepts captured in the first Model. 
+Using the terminology of the thought experiment, the Input Space's coordinate system is a Model of our world; the data set is not reality. In fact, it is the first Model that the neural network "perceives". Let's look at an example where the input space uses pixels as feature axes. At first the neural network just sees an image as a vector based on the value of its individual pixels. But this may not be enough for it to recognize objects that defined are as pixels arranged in a certain way. So using only this first Model, the neural network has to relate it to another Model that describes not just the pixels themselves, but the relationship between pixels, making sure to preserve the relationship between concepts captured in the first Model. 
 a = WX + b [show picture such that each latent space is a Model]
+
+WX is change in basis, + b is just shifting WX
 
 The neural network can use the information gained from a Model to construct another Model, successively constructing more and more Models to hone in on the information it needs to make a decision, like a detective following clues to new crime scenes to finally nab a suspect.
 
-[We are not actually 'moving' the vector [-1 2] onto [-4 1]. We are moving Reality, while the coordinate system, which describes Reality, stays the same.]
+[We are not actually 'moving' the vector [-1 2] onto [-4 1]. We are moving Reality, while the coordinate system, which describes Reality, stays the same.
+Actually one can argue if we're moving reality or the coord sys; this is for Ruminations]
 
 <<<<<<<<<<<
 ANALOGY TO HUMAN LANGUAGE:
 
-Let's look at a model where, instead of labeling the Concepts in Reality with numbers, it uses letters instead. We choose the Model using the following basis vectors in Figure X, as in Figure Q above, but replace the vector [1 0] with Ger1, and the vector [0 1] with Ger2. Now the letter sequence (G, I, F, T), instead of [-1 2], labels [skull pic].
+Here's another way to understand a change in basis: Let's look at a model where, instead of labeling the Concepts in Reality with numbers, it uses letters instead. We choose the Model using the following basis vectors in Figure X, as in Figure Q above, but replace the vector [1 0] with Ger1, and the vector [0 1] with Ger2. Now the letter sequence (G, I, F, T), instead of [-1 2], labels [skull pic].
 
 What we have actually done is label the [ Poison symbol ]
 
 In English, the same coordinate system of letters would place gift, or [-1 2], on the [present symbol]. 
 
-If you used this coordinate system to label the concepts, you'd see that [Poison symbol] is called 'gift'. Let's say that [poison symbol] can kill you if you eat it. If you were to tell an English speaker that you're giving him a "gift", he may be overjoyed, because he thinks you're giving him [present symbol]. But you're actually [poison symbol]! 
+If you used this coordinate system to label the concepts, you'd see that [Poison symbol] is called 'gift'. Let's say that [poison symbol] can kill you if you eat it. If you were to tell an English speaker that you're giving him a "gift", he may be overjoyed, because he thinks you're giving him [present symbol]. But you're actually giving him [poison symbol]! 
 
 The coordinate system that you're using is actually German- and in German, 'gift' means [poison symbol]. This letter sequence (G, I, F, T) is an example of a false friend, which is a letter sequence that has two different meanings (relative to other words) in two languages. A language system is just a Model.
 
@@ -285,12 +279,14 @@ OUTLINE:
 OPTIONAL ADD-ONS- DERIVATION 2:
 . 2D vector addition decomposition into c-d basis vectors, then transform each indiv basis vector into j-k: how it is equivalent to procedure above
 
+[ Note that the input vector STAYS in ]
+
 (reverse sys 1 and Sys 2; let sys 1 have Sys 2 overlayed on top of it. This is because we are 'transforming' into sys 2. Sys 2 is on the right, b/c we read left to right in English.)
 (q, r; s, t)
 (c, d; j, k)
 
 Now map c-d onto N_c, N_d neurons in layer 1. What is [-1 2] in c-d is [-4 1] in j-k.
-Show these two animations side by side, or stills of 2cols where each step is equiv to the step in other col
+Show these two animations side by side, or stills of 2cols where each step is equiv to the step in other col. include equations for each
 DO NOT overlap Sys 1 onto Sys 2 (only do that when discussing inverses)
 
 
@@ -389,3 +385,6 @@ Now, let's extend this analogy to neural networks.
 https://textbooks.math.gatech.edu/ila/projections.html
 
 https://tutorial.math.lamar.edu/classes/calcii/dotproduct.aspx
+
+To try: 
+[create non orthogonal basis in manim to see what happens]
