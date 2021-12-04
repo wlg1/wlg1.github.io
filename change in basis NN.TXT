@@ -24,6 +24,25 @@ because a more intuitive understanding gives one..., one can have more avenues t
 [picture of intuitively understanding and thinking outside of the box Vs being locked into only using the given rules] ]
 
 <<<
+TO CITE: 
+https://www.youtube.com/watch?v=CfAL_cL3SGQ&t=1s&ab_channel=SamSartor
+Why neural networks aren't neural networks
+https://gitlab.com/samsartor/nn_vis
+
+Shows transformations on input space, but not latent space
+
+https://www.youtube.com/watch?v=-at7SLoVK_I&ab_channel=vcubingx
+What does a neural network *actually* do? Visualizing Deep Learning, Chapter 2
+
+https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/
+https://colah.github.io/posts/2014-07-NLP-RNNs-Representations/
+
+https://math.stackexchange.com/questions/774662/are-all-vectors-of-a-basis-orthogonal
+
+is weight matrix orthogonal
+https://discuss.pytorch.org/t/why-is-it-so-hard-to-enforce-a-weight-matrix-to-be-orthogonal/108888/2
+
+<<<
 CHAPTER 1 OUTLINE:
 1. German / English comparison to show what vars of a=Wx are in Sys 1 vs Sys 1
     inverse
@@ -120,6 +139,8 @@ But a neural network cannot place a coordinate system on top of this moving anim
 [try placing coordinate system on top of moving animation. label some numbers]
 [place the same coord sys on two views that contradict each other]
 
+[first show one coordinate system, then show other coordinate system on top of first one, then show second one. use animation]
+
 To lock into a viewpoint, the neural network needs at least one reference point, or a "reference vector". That is, it must fix a label onto one concept. Like an anchor, this reference point locks the animation onto this seemingly arbitrary label. Using the reference point, the neural network can describe all other concepts based on 1) how far away they are from the anchor point, and 2) whether the concept is behind, in front of, to the left of, and so forth, from the anchor point. Figure X shows that the only difference between each viewpoint is the choice of reference points.
 
 If only one reference point is used, the neural network stops Reality from moving up and down, and the same label can describe two different concepts. But Reality can still move left to right. However, if the neural network uses two reference points, it stops the animation from moving completely. 
@@ -154,10 +175,9 @@ If you used this coordinate system to label the concepts, you'd see that [Poison
 
 The coordinate system that you're using is actually German- and in German, 'gift' means [poison symbol]. This letter sequence (G, I, F, T) is an example of a false friend, which is a letter sequence that has two different meanings (relative to other words) in two languages. A language system is just a Model.
 
-Just like 'gift', the vector [-1 2] means different things depending on the basis vectors you're using.
+Just like 'gift', the vector [-1 2] means different things depending on the basis vectors you're using. The German speaker  vector [-1 2] ('gift') that LOOKS LIKE [-1 2] ('gift') in our language.
 
-The German speaker  vector [-1 2] ('gift') that LOOKS LIKE [-1 2] ('gift') in our language.
-
+To recap:
 [German basis vectors] [-1 2] = gets you to [poison symbol]
 = [English basis vectors] [-4 1] = gets you to [poison symbol]
 = [German basis vectors in English] [-1 2] = gets you to [poison symbol]
@@ -200,26 +220,10 @@ It's dependent on the relation to other words of the language due to structure p
 WHAT IT LOOKS LIKE: vectors defined by numbers / words defined by letters
 WHAT IT MEANS: relative to other vectors / relative to other words
 
-<<<
-https://www.youtube.com/watch?v=CfAL_cL3SGQ&t=1s&ab_channel=SamSartor
-Why neural networks aren't neural networks
-https://gitlab.com/samsartor/nn_vis
-
-Shows transformations on input space, but not latent space
-
-https://www.youtube.com/watch?v=-at7SLoVK_I&ab_channel=vcubingx
-What does a neural network *actually* do? Visualizing Deep Learning, Chapter 2
-
-https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/
-https://colah.github.io/posts/2014-07-NLP-RNNs-Representations/
-
-https://math.stackexchange.com/questions/774662/are-all-vectors-of-a-basis-orthogonal
-
-is weight matrix orthogonal
-https://discuss.pytorch.org/t/why-is-it-so-hard-to-enforce-a-weight-matrix-to-be-orthogonal/108888/2
-
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INVERSE MATRIX: (optional)
+
+(first explain conceptually, then after show why algebraic works, explain again?)
 
 To illustrate TRUE MEANING, draw a picture. This is the 'reality'. The words are merely models.
 
@@ -232,7 +236,51 @@ Just take the inverse of our previous transformation matrix, and apply it to "gi
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 WHY ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS
+(this is a whole separate section, broken into smaller subsections as pages)
 
+First point out intriguing questions as Motivation
+
+(may use J K instead of v w b/c use W, later 'weight', as matrix)
+(from prev section, now re-paste in this section)
+. first show j-k Sys 1 and j-k on top of c-d Sys 2, with one vector b/c [-1 2]
+. show that Identity * [-1 2] in Sys 1 is 'analogous' to 'W matrix' * [-1 2]
+
+. re-arrange -1j + 2k can be decomposed into (-1*j_c + 2*k_c) + (''' for d coordinate). These are the dot products for row 1 (c) and row 2 (d)
+. Now explain dot product using 1D vector addition
+
+OUTLINE:
+[page 1]
+. 1D Vector Addition (the most fundamental). If we accept this as True, everything else follows. [It's all we need to derive the procedure]
+. Show the '1D' matrix multiplication is the same as '1D vector addition'
+    (OR don't call it matrix multiplication, just dot product)
+    . 1D 'matrix' has each col be a 'basis vec' in 1D (?)
+    . '1D' matrix multiplication is the dot product
+. Thus, the reason the dot product works the way it does is because it's scaling two vectors in the same dimension, then adding them! This produces the first coord using the basis vector
+    (Vector is linear combination of basis?)
+. This 1D dot product is the same as vx + wx, which is the first procedure dot product in matrix multiplication!
+[page 2]
+. Now in c-d Sys, scale vc and wc and add them together to get -4. This is row 1. Row 2 is the same; you can work it out yourself (but show animation / final result)
+. Thus, the procedure to do 2D matrix multiplication is a sequence of 1D vector additions!
+
+. Show that this procedure in Sys 2 is the same as Sys 1 if you use Identity matrix column basis vectors. 
+(Start w/ showing Sys 1 or Sys 2 first? Sys 1 DOES NOT require 1D vector addition, while Sys 2 does. So if show sys 1, don't need to show 1D vector addition first. You should show sys 1 first b/c it's just -1*b1, 2*b2. THEN show how 1D vector addition allows the same to happen when basis vector coords are nonzero.)
+
+ADD-ONS:
+. 2D vector addition decomposition: how it is equivalent to procedure above
+
+[Show both bottom up and top down. First bottom up.]
+[Later map this breakdown onto NN]
+Once we understand why the dot product is done this way, and what it's purpose is, and how it fits into other procedures, we can relate it to NNs.
+
+Let's review 3Blue1Brown... (don't say at start, say here)
+
+Let's describe what's happening during 2D matrix multiplication.
+[label statements with colored labels on pic of matrix]
+[put colored statements in an ordered list]
+Let's first focus on the first operation: dot product
+
+
+<<<<<<<<<<<<<<
 2:59m: 
 HER basis b1=[1 0] is OUR [2 1]
 HER basis b2=[0 1] is OUR [-1 1]
