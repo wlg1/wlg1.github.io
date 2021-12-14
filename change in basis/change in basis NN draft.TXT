@@ -127,21 +127,31 @@ If only one reference point is used, the neural network stops Reality from movin
 Another word for a reference point is a basis vector. Thus, to label the concepts within Reality, the neural network must choose a set of basis vectors. The set of basis vectors creates a coordinate system, which we'll call a Model.
 
 [Change of basis of WI = O, means 'changing into O'. Since O is in the system with W, and W is in System 2, we are 'changing into system 2'. System 1 is where I, the input, originally is. It's where [-1 2] uses [1 0] and [0 1] as the basis. System 2 is where O, the output, is. It interprets [-1 2] as [-4 1] using the basis [2 1] and [-1 1], which are what System 1's basis look like in System 2. Based on this, we are rotating the basis of System 1 to become non-basis in System 2; we are not going onto [2 1] and [-1 1] as the new basis.]
-[However, 3Blue1Brown @ 5:45m says the matrix 'moves our basis vectors' onto [2 1] and [-1 1]. This is just a matter of perspective. Anyways, don't discuss these semantics issues in the blog, as it gets confusing. Don't mention we're 'changing into basis using the matrix'.]
+[3Blue1Brown @ 5:45m says the matrix 'moves our basis vectors' onto [2 1] and [-1 1]. Yes; what was [1 0] in System 1 is now [2 1] in System 2. Anyways, don't discuss these semantics issues in the blog, as it gets confusing. Don't mention we're 'changing into basis using the matrix'.]
 
 (see 4:30-5m in video)
 Let's consider two coordinate systems.
+
+Recall in the video that JENNIFER'S 2 basis vectors are [1 0] and [0 1]. However, OUR coordinate system sees those same exact vectors as [2 1] and [-1 1]. 
+(show picture of them superimposed)
+
+2:59m: 
+HER basis b1=[1 0] is OUR [2 1]
+HER basis b2=[0 1] is OUR [-1 1]
+
 [Fig: Left is Sys 1, Right is sys 1 on Sys 2]
 . first show j-k Sys 1 and j-k on top of c-d Sys 2, with one vector b/c [-1 2]
     make j-k basis bolder than c-d. same color for j, k in both Sys
 . show that Identity * [-1 2] in Sys 1 is 'analogous' to 'W matrix' * [-1 2]
 [-1 2] is the ONLY non-basis vector in both pics. [-1 2] never existed in Sys 2; it was always [-4 1]
+[ No need to show matrix multp here b/c [-1 2] points to [poison], and so does [-4 1] in Sys 2]
 
 [first show one coordinate system, then show other coordinate system on top of first one, then show second one. use animation]
 
 Now each viewpoint has its own possible advantages and disadvantages relative to a goal. If we want to classify...
 [show squishing, hiding, etc]
 
+<<<
 So to reveal hidden relationships in Reality, the neural network wants to consider multiple points of view. If it combines information from two viewpoints, such that there is information from one viewpoint that another viewpoint lacks, it gains greater insight into Reality than using one point of view. Since each viewpoint uses a different coordinate system, each view is a different Model of Reality. 
 
 Now let's take a step back from this thought experiment, and connect it back to our world. A data set looks at a limited perception of our world, and labels it by describing it with collection of features. These features can be individual pixels, the length of a petal, the number of windows in a house, and so forth. As many know from machine learning tutorials, these features act as axes in the coordinate system of an Input Space, where the vectors are data points [show picture]. 
@@ -192,19 +202,6 @@ WHAT LOOKS LIKE [-1 2] ('gift') in German != [-1 2] ('gift') in English
 [At the end, say 'we can go further' than letters and numbers. Now using the same axis concepts, overlay 2 concept spaces onto each other, only difference is one is 'poison and gift' and the other is 'sad and happy'. This looks like an "analogy". Not only are transformations between models an analogy, but so is the model and Reality. Any mapping is an analogy; between models, or between model and Reality.]
 
 <<<
-Recall in the video that JENNIFER'S 2 basis vectors are [1 0] and [0 1]. However, OUR coordinate system sees those same exact vectors as [2 1] and [-1 1]. 
-(show picture of them superimposed)
-
-2:59m: 
-HER basis b1=[1 0] is OUR [2 1]
-HER basis b2=[0 1] is OUR [-1 1]
-
-4:30m: Jennifer asks what HER [-1 2] is in OUR coordinate system
-
-In Jennifer's coordinate system, the vector [-1 2] means 
--1 * b1 = -1 * [1 0] = -1
-2 * b2 = 2 * [0 1] = 2
-
 [ put this at end @ 7m in the video, it says it takes our misconception of what Jennifer means, and transforms it into what she really meant. ]
 There is no [-1 2] vector. There is only a concept relative to other concepts, and [-1 2] is merely a model labeling that concept. Any other vector can be used as a label, so long as it strives to preserve structure relative to the other labels. The labels must be consistent such that they form a structure-preserving map.
 
@@ -215,11 +212,8 @@ WHAT IT LOOKS LIKE: vectors defined by numbers / words defined by letters
 WHAT IT MEANS: relative to other vectors / relative to other words
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-INVERSE MATRIX: (optional; move to end)
-
-(first explain conceptually, then after show why algebraic works, explain again?)
-
-To illustrate TRUE MEANING, draw a picture. This is the 'reality'. The words are merely models.
+INVERSE:
+[To illustrate TRUE MEANING, draw a picture. This is the 'reality'. The words are merely models.]
 
 7:20-8:20m: What if WE say "gift"? The German foreigner must translate this to a German translation (not necessarily a word, but possibly a German sentence, or even a paragraph or textbook) that makes him understand that it's Figure X. 
 Just take the inverse of our previous transformation matrix, and apply it to "gift". This is because the columns of this inverse are what OUR columns [1 0] etc look like in German. Remember that [1 0] is not an absolute or universal item (show picture of the basis vectors used as 'anchoring points' to define meaning)
@@ -281,15 +275,13 @@ OPTIONAL ADD-ONS- DERIVATION 2:
 
 [ Note that the input vector STAYS in ]
 
-(reverse sys 1 and Sys 2; let sys 1 have Sys 2 overlayed on top of it. This is because we are 'transforming' into sys 2. Sys 2 is on the right, b/c we read left to right in English.)
 (q, r; s, t)
 (c, d; j, k)
-
 Now map c-d onto N_c, N_d neurons in layer 1. What is [-1 2] in c-d is [-4 1] in j-k.
 Show these two animations side by side, or stills of 2cols where each step is equiv to the step in other col. include equations for each
-DO NOT overlap Sys 1 onto Sys 2 (only do that when discussing inverses)
+DO NOT overlap Sys 2 onto Sys 1 (only do that when discussing inverses)
 
-
+[INVERSE MATRIX algebraic calc; optional section, put link to it]
 
 <<<<<<<<<<<<<<
 2:59m: 

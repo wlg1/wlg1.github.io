@@ -1,0 +1,20 @@
+List of Figures:
+NN on top, matrix multiplication on bottom
+Reality animation- choose transformations, get rid of Wait b/w
+Reality Stills (equivalence)
+No coord sys vs coord sys
+2 Coordinate systems on top of Reality, showing Concept labeled 2 diff ways
+Reality animation using only one basis vector
+2 translated coord systems, [-1 2] ~ [-4 1]
+Color/boxed matrix multiplication labeling corresponding to coord systems
+
+Splitting [poison] and [gift]: first 1D (animated), then 2D
+Splitting circles vs not circles
+Flower Reality, Dataset as numbers
+Latent spaces of NN, Model vs Reality
+
+German coordinate system
+English coordinate system
+Translate vectors b/w Ger and Eng
+
+Dot product breakdown b/w 2 coordinate systems (explain 1st step of matrix mult)
