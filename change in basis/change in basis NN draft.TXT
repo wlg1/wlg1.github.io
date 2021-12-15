@@ -166,10 +166,12 @@ The neural network can use the information gained from a Model to construct anot
 [We are not actually 'moving' the vector [-1 2] onto [-4 1]. We are moving Reality, while the coordinate system, which describes Reality, stays the same.
 Actually one can argue if we're moving reality or the coord sys; this is for Ruminations]
 
+Figure showing neurons as basis vectors
+
 <<<<<<<<<<<
 ANALOGY TO HUMAN LANGUAGE:
 
-Here's another way to understand a change in basis: Let's look at a model where, instead of labeling the Concepts in Reality with numbers, it uses letters instead. We choose the Model using the following basis vectors in Figure X, as in Figure Q above, but replace the vector [1 0] with Ger1, and the vector [0 1] with Ger2. Now the letter sequence (G, I, F, T), instead of [-1 2], labels [skull pic].
+To prepare us with better intuition for describing how change in basis works in NNs, let's look at a model where, instead of labeling the Concepts in Reality with numbers, it uses letters instead. We choose the Model using the following basis vectors in Figure X, as in Figure Q above, but replace the vector [1 0] with Ger1, and the vector [0 1] with Ger2. Now the letter sequence (G, I, F, T), instead of [-1 2], labels [skull pic].
 
 What we have actually done is label the [ Poison symbol ]
 
@@ -352,6 +354,8 @@ Thus, the input vector of pixels comes from sys 1 (input space), and the weight 
 Learning weights is the same as learning to choose the right basis vectors. PCA is a way to get basis vectors.
 
 [Elephant example]
+
+[We are done with this chapter. One go on to the next one, or read the optional section below for more philosophical ruminations.]
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 RUMINATIONS: (start off with snippet of it, then optional to click on)

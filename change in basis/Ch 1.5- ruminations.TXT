@@ -1,0 +1,24 @@
+RUMINATIONS: (start off with snippet of it, then optional to click on)
+A concept only has meaning relative to other concepts. Meaning is defined as how you can use the concept in relation to other concepts. Just like a Concept, a Label is dependent on the relation to other labels of the model.
+A model is verified by structure preserving maps
+
+At first, the neurons are merely basis vectors. But then, they become weights in the new space. In a linear combination with weights from other basis vectors of sys 1 (this is the 1st row of the weight matrix, or the 'x coords of the basis vectors, where x is the new basis vector in sys 2'), these basis vectors together create a new basis vector (row 1), and another (row 2). [It is as if] These entities die and transcend into a new form, giving birth to new life in a new perspective.
+Matrix multiplication is just a way to re-interpret an instruction (input vector) of relative relations using the columns of the matrix. The first row of old basis vectors is what becomes the value of the first new basis vector in the new space, etc. This is the beauty of duality.
+
+Therefore, the outgoing connections of x1 can be thought of as w1. So x1 becomes w1. Each new basis vector gets an "opinion" from all the previous basis vectors. (In many cases, this weight is 0 (no opinion). ) An entity becomes a relation, and new entities are made up of relations from multiple other entities. An entity cannot be defined without the relations going into it. A neuron (which plays a role, such as identifying a feature) is defined by abstract relations relative to each other. When these basis vectors are CHOSEN (solved for) to get the right weights, new patterns can be identified.
+
+Analogies are merely pattern identification. Thus, choosing a certain combination of basis vectors (for multiple layers) allows analogies (identifiers) to be constructed. Build up analogies locally (more abstract) to search for the bigger analogy (more specific, because a bigger pattern has less matches than smaller ones). Knowing this insight about duality will not give the answer to how to get a NN to learn better analogies, but it will help get the answer.
+
+Now we understand the system that the original model was supposed to model. A fallacy is to believe that vectors are absolute- NO VECTOR IS ABSOLUTE AND UNIVERSAL. They are all RELATIVE TO BASIS VECTORS. [v w] IS NOT THE SAME AS [c d] in our coordinate system, but the [v w] in the foreign coordinate system is the same as [c d] in our coordinate system!  All vectors are models and there is no "actual vector".
+
+It is a misconception to say that vectors were shifted. No vector was actually shifted; it's all the same points. It is the coordinate system perspective that's changed. That can be said about our perception: the universe does not change, it's only perceived in a different way. Assuming that basis neurons transform outside data into a different form, perception is just a change in basis. The Origin is God.
+There are only relative patterns, and how they're perceived requires a basis.
+
+The only thing that never shifts is consciousness. It is the Origin- tabula rasa. Everything else can be shifted. This is the ONLY thing that all perceiving beings share. What do all perceiving systems share? That is what the origin is. It allows perspectives to be shifted. It is empathy. Without it, there is no communication.
+
+<<<
+Don't confuse the map for the territory (make sure it's structure preserving- show picture why if this doesn't hold, you are confusing the two. Use experiments.)
+Now, let's extend this analogy to neural networks.
+
+<<<
+When rotating, we're not actually rotating the vectors. We're just shifting the perspective. We're not moving the objects inside the room, we're rotating the room itself. Or the camera. (?)

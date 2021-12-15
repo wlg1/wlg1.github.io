@@ -1,0 +1,64 @@
+ANALOGY TO HUMAN LANGUAGE:
+
+[ Another way to show that [-1 2] means two different things is to use a coordinate system of words instead of vectors. ]
+
+To get better intuition for describing how change in basis works in NNs, let's look at a model where, instead of labeling the Concepts in Reality with numbers, it uses letters instead. We choose the Model using the following basis vectors in Figure X, as in Figure Q above, but replace the vector [1 0] with Ger1, and the vector [0 1] with Ger2. Now the letter sequence (G, I, F, T), instead of [-1 2], labels [skull pic].
+
+What we have actually done is label the [ Poison symbol ]
+
+In English, the same coordinate system of letters would place gift, or [-1 2], on the [present symbol]. 
+
+If you used this coordinate system to label the concepts, you'd see that [Poison symbol] is called 'gift'. Let's say that [poison symbol] can kill you if you eat it. If you were to tell an English speaker that you're giving him a "gift", he may be overjoyed, because he thinks you're giving him [present symbol]. But you're actually giving him [poison symbol]! 
+
+The coordinate system that you're using actually resembles the German language- and in German, 'gift' means [poison symbol]. This letter sequence (G, I, F, T) is an example of a false friend, which is a letter sequence that has two different meanings (relative to other words) in two languages. A language system is just a Model.
+
+WHAT LOOKS LIKE [-1 2] ('gift') in German != [-1 2] ('gift') in English
+[-1 2] ('gift') in German = [-4 1] ('poison') in English 
+
+To recap:
+[German basis vectors] [-1 2] = gets you to [poison symbol]
+= [English basis vectors] [-4 1] = gets you to [poison symbol]
+= [German basis vectors in English] [-1 2] = gets you to [poison symbol]
+
+[show in figure]
+[-1 2] (German) --> Multiply by translator (English) --> [c d] (English)
+
+The translator must be in English because it has to explain to the English speaker what [-1 2] actually means in English.
+
+https://www.bbc.co.uk/languages/yoursay/false_friends/german/mist_common_false_friends_in_german_englishgerman.shtml
+
+<<<
+What does it mean to 'transform [-1 2] into [-4 1]'? Aren't they two separate vectors? The answer is that they are the same when they refer to the same Concept in Reality. 
+
+But if [-1 2] now uses [-4 1] to point to [poison], we must use [? ?] to point to [gift]. We cannot use [q q] to point to [gift] because it would be inconsistent with Reality. This is because relational distances between Concepts are preserved.
+
+Any other vector, such as [-4 1], can be used as a label, so long as it strives to preserve structure relative to the other labels. The labels must be consistent such that they form a structure-preserving map.
+
+Neither English nor German (two coordinate systems) capture the true vector; they are all merely representations modeling it.
+'gift' is not the Concept.
+
+Letters -> Numbers
+Letter sequences -> Vectors
+
+The letters do not carry meaning unless put in relative context with other words of the same language.
+
+The label 'gift' is meaningless unless the coordinate system of labels is overlayed on top of a Reality.
+The vector [-1 2] is meaningless unless the coordinate system of vectors is overlayed on top of a Reality.
+
+The vector is merely a label of a Concept.
+
+WHAT IT LOOKS LIKE: vectors defined by numbers / words defined by letters
+WHAT IT MEANS: relative to other vectors / relative to other words
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INVERSE:
+
+(video 7:20-8:20m)
+
+What if WE say "gift"? The German foreigner must translate this to a German translation (not necessarily a word, but possibly a German sentence, or even a paragraph or textbook) that makes him understand that it's Figure X. 
+
+Just take the inverse of our previous transformation matrix, and apply it to "gift". This is because the columns of this inverse are what OUR columns [1 0] etc look like in German.
+
+[-1 2] (Gift, German) != [-1 2] (Gift, English)
+[-1 2] (Gift, German) = [-4 1] (Disgust, English)
+[1/3 5/3] (Geschenk, German) = [-1 2] (Gift, English)
