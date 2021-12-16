@@ -6,15 +6,45 @@ at start: reveal deep, profound insights not just in the math of artificial inte
 Don't use the word 'philosophical'; use 'profound'. Profound insights imply broader, which draws in more audiences with different interests.
 
 The reader should not see the Reality example before the German example. The picture of poison/gift is only in the German example, but Reality uses different objects (not poison/gift).
-After first section (using simple German example), allow reader to take two routes: a canonical route into 'more profound +' about this section's concepts (this is the bigger arrow down into next section, deeper into the rabbithole) or a 'shortcut' arrow that "skips to the next section"
+After first section (using simple German example), allow reader to take two routes: a canonical route into 'more profound +' about this section's concepts (this is the bigger arrow down into next section, deeper into the rabbithole) or a 'shortcut' arrow that "skips to the next section". Profound is optional but will help with a better understanding of the math, which will offer even more creative insights on how to use the math to solve a problem.
 
-CHAPTER 0 SECTIONS:
-Ch0 Intro: How neural networks use matrix multiplication to solve problems
+have a separate section saying "Hypothesis"- make sure they're testable. Or "Speculation", which is not formed into hypotheses yet.
+
+<<<<<<<<<<<<
+CHAPTER 1 SECTIONS:
+Ch1 Intro: How Neural Networks Reveal Hidden Insights in Data (using Matrix Multiplication)
 1. What is matrix multiplication doing? Change of Basis.
     1+. WHY use basis vectors?
 2a. What is dot product doing?
 2b. How does matrix multiplication change basis?
     2+. The Duality of Neurons: As Objects, As Relations
+
+?+: Analogies, Structure Preserving Maps, Avoid confusing the map for the territory (mentioned before in + sections)
+
+1: Show German -> English using W matrix, then show how this relates to cols, etc. of weight matrix of neurons
+1+: discusses RELATIVE meaning
+2a: show how "projects" onto one vector
+2b: show how dot product is used for both basis vectors in 2D MM
+2+: neurons as functions, only having meaning relative to other neurons
+
+CHAPTER 2: Exploring the Concept Spaces of Neural Networks (esoteric, profound door, but not practical so different audience)
+[ALT DOOR INTO CH 2: practical question even layman gets, no math terms?]
+How Neural Networks Make Faces Look Younger (using Orthogonal Projection)
+1. Dot product for direction
+Lengths
+Normal
+2. Orthogonal Projections
+
+CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
+Eigenvectors, Diagonal, Decomposition, PCA
+
+https://www.kdnuggets.com/2020/12/data-compression-dimensionality-reduction.html
+
+https://towardsdatascience.com/the-essence-of-eigenvalues-and-eigenvectors-in-machine-learning-f28c4727f56f
+
+https://datascience.stackexchange.com/questions/26683/does-it-make-sense-to-combine-pca-with-an-artificial-neural-network
+
+(also have more generic searachble doors, such as "How does StyleGAN work?")
 
 <<<<<<<<<<<<<<<
 INTRO PAGE: 
@@ -41,30 +71,6 @@ This website also solves this problem:
 [ Footnote?: Chapter 0 (rename ch1 into ch0) does not begin with an analysis of practical solutions, but provides an intuitive foundation to understand all other chapters. Unlike other chapters, Chapter 0 does not cut to the point of finding solutions to a practical research issue, but understanding it allows one to both understand solutions and solve problems on a ...
 because a more intuitive understanding gives one..., one can have more avenues to solve a problem, rather than be stuck in a dead end. Allows one to think outside of the box one currently knows.
 [picture of intuitively understanding and thinking outside of the box Vs being locked into only using the given rules] ]
-
-<<<
-CHAPTER 1 OUTLINE:
-1. German / English comparison to show what vars of a=Wx are in Sys 1 vs Sys 1
-    inverse
-2. Dot product, what rows and cols correspond to. break down distributive
-    rotation
-3. NN analogies
-    elephant concept space. connect it to neuron circuits. have a separate section saying "Hypothesis"- make sure they're testable. Or "Speculation", which is not formed into hypotheses yet.
-4. Ruminations
-
-CHAPTER 2:
-Dot product for direction
-Lengths
-Normal
-Orthogonal Projections
-
-CHAPTER 3:
-Eigenvectors, Diagonal, Decomposition, PCA
-
-CHAPTER 2 title: How do we design an AI filter using Orthogonal Projection?
-CHAPTER 3 title: How do we design an AI filter using Eigenvector Decomposition?
-
-(also have more generic searachble doors, such as "How does StyleGAN work?")
 
 <<<
 GOAL: How does the ALGEBRAIC PROCEDURE (bold) of matrix multiplication allow neural networks to transform data?

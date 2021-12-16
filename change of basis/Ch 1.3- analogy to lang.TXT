@@ -2,6 +2,8 @@ ANALOGY TO HUMAN LANGUAGE:
 
 [ Another way to show that [-1 2] means two different things is to use a coordinate system of words instead of vectors. ]
 
+Show the coordinate system first, separate from Reality. Reality animation doesn't start w/ Eng or Ger perspective, but multiple moving.
+
 To get better intuition for describing how change in basis works in NNs, let's look at a model where, instead of labeling the Concepts in Reality with numbers, it uses letters instead. We choose the Model using the following basis vectors in Figure X, as in Figure Q above, but replace the vector [1 0] with Ger1, and the vector [0 1] with Ger2. Now the letter sequence (G, I, F, T), instead of [-1 2], labels [skull pic].
 
 What we have actually done is label the [ Poison symbol ]
