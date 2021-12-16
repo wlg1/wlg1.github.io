@@ -1,9 +1,14 @@
 To gain stronger intuition about how linear algebra is used to find hidden relationships in data, we'll begin with a thought experiment that will help reveal what matrix multiplication is actually doing. We will illustrate the difference between what we call "Reality", shown in Figure X, and a "Model", which provides a way to not only label parts of Reality, but to logically derive statements about relationships between these parts of Reality. One such Model is a coordinate system. As we'll soon see, matrix multiplication bestows a way to translate between Models of Reality.
 [show picture, with caption: The Coordinate System labels the rock with (1,1) and the bird with (2,2), indicating that the bird is one unit above and one unit to the right of the rock]
 
+[before this section, start w/ that German picture. It's actually much easier to talk about that before talking about basis vectors and anchoring. But this Reality example illustrates the 'no name'. So perhaps German example should come first, with 'no name', but leave the anchoring etc afterwards?]
+[Remember, brevity with clarity is the draw. Mysterious need to 'understand more' comes after when the free first hit sample is given and the readers want more and is willing to put up with more to find the next hit.]
+
 When we look at Reality, we notice that within it are these entities [pic 1, pic 2, etc], which we'll call Concepts. Our goal in this thought experiment is to find a way to describe the relationships between these Concepts, such as [NOT DISTANCE B/C THAT'S AN ABSOLUTE CONCEPT! EVEN ORDERING IS AN ABSOLUTE CONCEPT! ONLY RELATIVE TO A BASIS VECTOR!]
 [Later on, with NN, show in data that this is obvious in that on the 'red' vector they have a certain ordering, but on 'size' vector they have different ordering]
+[relationships only exist in the context of basis vectors]
 [State that the main purpose of the thought experiment is to illustrate that we are not transforming one vector into another, but the Concept that the vector points to. The Coordinate system does not change; Reality does.]
+[Note that viewpoints have different relationships]
 
 [from a certain snapshot- this is the objective fn]
 
