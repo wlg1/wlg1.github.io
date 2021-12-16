@@ -10,7 +10,13 @@ Before explaining, list out the main questions that motivate the sections. Allow
 [Vague promises this chapter offers as starting motivation:]
 * Linear algebra is required to understand why neural networks are so effective. Delve deeper into the intuitions of linear algebra to better design new solutions that improve neural networks.
 
-Neural Networks can do amazing things [revise this; show animation / sequence of how they perform classification on a data manifold, with NN layers on top and latent spaces below, and with a simple (not detailed) equation at each step to show where MM is used]. Yet underlying its amazing abilities is an algebraic procedure that seemingly has little to do with concepts and shapes: Matrix Multiplication.
+Neural Networks can do amazing things [revise this]
+[show animation / sequence of how they perform classification on a data manifold, with NN layers on top and latent spaces below, and with a simple (not detailed) equation at each step to show where MM is used]. [pic where one pt appears in multiple diff latent spaces]
+[define latent spaces]
+
+Yet underlying its amazing abilities is an algebraic procedure that, at first glance, has little to do with concepts and shapes: Matrix Multiplication.
+
+https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/
 
 (box) QUESTION: How does Matrix Multiplication allow neural networks to transform data?
 [for each box, to make sure not get lost, show how relevant 'sub-issues' in hierarchy used to answer previous issues]

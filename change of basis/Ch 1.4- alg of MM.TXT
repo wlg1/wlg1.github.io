@@ -42,6 +42,8 @@ OUTLINE:
 . Now in c-d Sys, scale vc and wc and add them together to get -4. This is row 1. Row 2 is the same; you can work it out yourself (but show animation / final result)
 . Thus, the procedure to do 2D matrix multiplication is a sequence of 1D vector additions!
 
+fig: show that Identity * [-1 2] in Sys 1 is 'analogous' to 'W matrix' * [-1 2]
+
 . Show that this procedure in Sys 2 is the same as Sys 1 if you use Identity matrix column basis vectors. 
 (Start w/ showing Sys 1 or Sys 2 first? Sys 1 DOES NOT require 1D vector addition, while Sys 2 does. So if show sys 1, don't need to show 1D vector addition first. You should show sys 1 first b/c it's just -1*b1, 2*b2. THEN show how 1D vector addition allows the same to happen when basis vector coords are nonzero.)
 
