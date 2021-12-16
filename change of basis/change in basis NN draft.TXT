@@ -3,6 +3,18 @@ NOTES:
 Don't begin by describing the animation of Reality using features; just use numbers. These distances and relative orderings are the purest form of relations, and shows just how general the models can be.
 
 at start: reveal deep, profound insights not just in the math of artificial intelligence, but in the data collected from reality itself
+Don't use the word 'philosophical'; use 'profound'. Profound insights imply broader, which draws in more audiences with different interests.
+
+The reader should not see the Reality example before the German example. The picture of poison/gift is only in the German example, but Reality uses different objects (not poison/gift).
+After first section (using simple German example), allow reader to take two routes: a canonical route into 'more profound +' about this section's concepts (this is the bigger arrow down into next section, deeper into the rabbithole) or a 'shortcut' arrow that "skips to the next section"
+
+CHAPTER 0 SECTIONS:
+Ch0 Intro: How neural networks use matrix multiplication to solve problems
+1. What is matrix multiplication doing? Change of Basis.
+    1+. WHY use basis vectors?
+2a. What is dot product doing?
+2b. How does matrix multiplication change basis?
+    2+. The Duality of Neurons: As Objects, As Relations
 
 <<<<<<<<<<<<<<<
 INTRO PAGE: 

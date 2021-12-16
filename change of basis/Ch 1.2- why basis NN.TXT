@@ -3,6 +3,7 @@ To gain stronger intuition about how linear algebra is used to find hidden relat
 
 [before this section, start w/ that German picture. It's actually much easier to talk about that before talking about basis vectors and anchoring. But this Reality example illustrates the 'no name'. So perhaps German example should come first, with 'no name', but leave the anchoring etc afterwards?]
 [Remember, brevity with clarity is the draw. Mysterious need to 'understand more' comes after when the free first hit sample is given and the readers want more and is willing to put up with more to find the next hit.]
+[brevity with clarity comes before mysterious long journeys, it is the draw]
 
 When we look at Reality, we notice that within it are these entities [pic 1, pic 2, etc], which we'll call Concepts. Our goal in this thought experiment is to find a way to describe the relationships between these Concepts, such as [NOT DISTANCE B/C THAT'S AN ABSOLUTE CONCEPT! EVEN ORDERING IS AN ABSOLUTE CONCEPT! ONLY RELATIVE TO A BASIS VECTOR!]
 [Later on, with NN, show in data that this is obvious in that on the 'red' vector they have a certain ordering, but on 'size' vector they have different ordering]
