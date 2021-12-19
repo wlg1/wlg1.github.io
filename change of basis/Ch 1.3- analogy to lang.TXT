@@ -1,8 +1,11 @@
 ANALOGY TO HUMAN LANGUAGE:
 
-[ Another way to show that [-1 2] means two different things is to use a coordinate system of words instead of vectors. ]
 
-Show the coordinate system first, separate from Reality. Reality animation doesn't start w/ Eng or Ger perspective, but multiple moving.
+Show Reality 
+
+Let's imagine we want to use the coordinate system to label Concepts in Reality.
+
+[ Another way to show that [-1 2] means two different things is to use a coordinate system of words instead of vectors. ]
 
 To get better intuition for describing how change in basis works in NNs, let's look at a model where, instead of labeling the Concepts in Reality with numbers, it uses letters instead. We choose the Model using the following basis vectors in Figure X, as in Figure Q above, but replace the vector [1 0] with Ger1, and the vector [0 1] with Ger2. Now the letter sequence (G, I, F, T), instead of [-1 2], labels [skull pic].
 
@@ -64,3 +67,41 @@ Just take the inverse of our previous transformation matrix, and apply it to "gi
 [-1 2] (Gift, German) != [-1 2] (Gift, English)
 [-1 2] (Gift, German) = [-4 1] (Disgust, English)
 [1/3 5/3] (Geschenk, German) = [-1 2] (Gift, English)
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Have both video, stills, and slide show that reader is told to click through
+Slide show: (all coords overlayed on top of Reality)
+1. Show basis vectors of System 1 on top of System 2 
+2. Add I in System 1 and I in System 2
+3. Add O in System 2
+4. German-English
+5. Relate to NNs weight matrix and weights
+
+[First only start w/ the animation of Reality in 4 perspectives]
+We want to label Reality with a coordinate system [explain it's to reference this, show bird-rock pic]. More about this will be explained in section X (why basis). Every vector is a label.
+
+This is just like labeling Concepts in Reality with a dataset.
+
+[First show animation of Reality going System 1 to System 2 WITHOUT coordinate systems, then show it with System 1's basis vectors.]
+
+The reason we overlay System 1 on top of System 2 like this is because the Concepts that c and d pointed to (yinyang, white circle) are now in a new location in System 2.
+
+[Animation: start w/ 2 Realities, side by side. Then in both, overlay vectors c and d to point to white circle and yinyang.]
+
+Two different basis.
+
+2. Show I in System 1 and I in System 2: [2 moving pics, side by side]
+The two [-1 2] no longer label the same Concept! 
+
+3. Now, it's the vector O that labels [poison pic]. How do we calculate what the new label for [poison] is?
+
+This is why we need what's called a 'change in basis', which is performed using Matrix-Vector Multiplication.
+
+Labeling Reality is like constructing a dataset, and transforming it is what the neural network does.
+
+4. The letter sequence {g, i, f, t} = {gift} 
+
+FOOTNOTE: Of course, the actual German and English coordinate systems would be modeled differently. A system w/ a vector for each letter in the sequence would not work as it does not accurately label Concept Space's relative distance of Concepts. Show proof by contradiction as to why this is true.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+But why are the basis vectors in System 1 put in the columns of the matrix? The next section will answer these questions.

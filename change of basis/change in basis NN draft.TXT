@@ -19,24 +19,24 @@ Ch1 Intro: How Neural Networks Reveal Hidden Insights in Data (using Matrix Mult
 2b. How does matrix multiplication change basis?
     2+. The Duality of Neurons: As Objects, As Relations
 
-?+: Analogies, Structure Preserving Maps, Avoid confusing the map for the territory (mentioned before in + sections)
-
 1: Show German -> English using W matrix, then show how this relates to cols, etc. of weight matrix of neurons
 1+: discusses RELATIVE meaning
 2a: show how "projects" onto one vector
 2b: show how dot product is used for both basis vectors in 2D MM
 2+: neurons as functions, only having meaning relative to other neurons
 
-CHAPTER 2: Exploring the Concept Spaces of Neural Networks (esoteric, profound door, but not practical so different audience)
-[ALT DOOR INTO CH 2: practical question even layman gets, no math terms?]
-How Neural Networks Make Faces Look Younger (using Orthogonal Projection)
+?+: Analogies, Structure Preserving Maps, Avoid confusing the map for the territory (mentioned before in + sections), Circuits
+
+CHAPTER 2:  How Neural Networks Make Faces Look Younger (using Orthogonal Projection)
+[practical question even layman gets]
+[ALT DOOR INTO CH 2: Exploring the Concept Spaces of Neural Networks (esoteric, profound door, but not practical so different audience) ]
 1. Dot product for direction
 Lengths
 Normal
 2. Orthogonal Projections
 
 CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
-Eigenvectors, Diagonal, Decomposition, PCA
+Eigenvectors, Diagonal, Decomposition, matrix factorization & PCA
 
 https://www.kdnuggets.com/2020/12/data-compression-dimensionality-reduction.html
 
@@ -45,6 +45,13 @@ https://towardsdatascience.com/the-essence-of-eigenvalues-and-eigenvectors-in-ma
 https://datascience.stackexchange.com/questions/26683/does-it-make-sense-to-combine-pca-with-an-artificial-neural-network
 
 (also have more generic searachble doors, such as "How does StyleGAN work?")
+
+<<<<<<<<<<<<<<<
+What is a 'vague understanding of linear algebra?'
+- What matrix-vector multiplication is (but not necessarily how to do it)
+OR: you don't need any prereqs, but seeing these videos would help
+- You've learned what neural networks are
+
 
 <<<<<<<<<<<<<<<
 INTRO PAGE: 
