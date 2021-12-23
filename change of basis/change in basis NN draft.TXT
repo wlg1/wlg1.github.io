@@ -6,7 +6,7 @@ at start: reveal deep, profound insights not just in the math of artificial inte
 Don't use the word 'philosophical'; use 'profound'. Profound insights imply broader, which draws in more audiences with different interests.
 
 The reader should not see the Reality example before the German example. The picture of poison/gift is only in the German example, but Reality uses different objects (not poison/gift).
-After first section (using simple German example), allow reader to take two routes: a canonical route into 'more profound +' about this section's concepts (this is the bigger arrow down into next section, deeper into the rabbithole) or a 'shortcut' arrow that "skips to the next section". Profound is optional but will help with a better understanding of the math, which will offer even more creative insights on how to use the math to solve a problem.
+After first section (using simple German example), allow reader to take two routes: a canonical route into 'more profound +' about this section's concepts (this is the bigger arrow down into next section, deeper into the rabbithole) or a 'shortcut' arrow that "skips to the next section". Profound is optional but will help with a better understanding of the math, which will offer even more creative insights on how to use the math to solve a problem. [don't use word 'profound' b/c too pretentious; use 'deeper insights'. Call these + sections Insights. Only use profound insight within the text, but not as advertising them]
 
 have a separate section saying "Hypothesis"- make sure they're testable. Or "Speculation", which is not formed into hypotheses yet.
 
@@ -35,6 +35,8 @@ Lengths
 Normal
 2. Orthogonal Projections
 
+Targeted modification: Tell it what you want; not every detail, but still specific enough. Not just a 'face', but an 'old face', and the NN handles the rest of the details.
+
 CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
 Eigenvectors, Diagonal, Decomposition, matrix factorization & PCA
 
@@ -43,6 +45,16 @@ https://www.kdnuggets.com/2020/12/data-compression-dimensionality-reduction.html
 https://towardsdatascience.com/the-essence-of-eigenvalues-and-eigenvectors-in-machine-learning-f28c4727f56f
 
 https://datascience.stackexchange.com/questions/26683/does-it-make-sense-to-combine-pca-with-an-artificial-neural-network
+
+CHAPTER 4: How Neural Networks ...[something practical] (using Low-Rank Factorization)
+[precise control... separate... Close Eyes but not Mouths]
+
+CHAPTER 5: How to Find the Roles of Neuron Communities in Neural Networks ... (using Non-Negative Matrix Factorization)
+[or 'how to explain what neural networks are doing']
+[or 'how to unravel the black boxes of neural networks']
+
+CHAPTER ??: How Neural Networks Piece Clues Together (using Fourier Transforms)
+[or 'How a Neural Network Guesses a Cat from Her Ears and Paws']
 
 (also have more generic searachble doors, such as "How does StyleGAN work?")
 
