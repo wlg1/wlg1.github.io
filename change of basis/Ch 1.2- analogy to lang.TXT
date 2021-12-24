@@ -1,1 +1,75 @@
 **CHAPTER 1**
+
+Say there's a population of cats and rats. However, the dataset is only able to measure two features: body size, and face (snout) length.
+
+c: body size
+d: face (snout) length
+
+[drawings of cat/rat abstracted into the circles: pic, shapes on top of pic, and shapes only]
+
+So this is the only information you get from the dataset: 
+[shapes only]
+
+[coordinate system of body size vs face length, showing cat and rat]
+
+[3 2] meaning: if you have a body size of 3 [3 size body pic], and a face length of 2, you get [cat pic].
+Each of these features is a basis vector. That is, every entity in the coordinate system is a combination of [body size] and [face length].
+
+Now there is another way to measure the entities in this population:
+j: more likely to be a cat
+k: more likely to be a rat
+
+Bigger body + shorter face = Cat
+Smaller body + longer face = Rat
+
+[coordinate system of body size vs face length, showing cat and rat, but onto it fades 'likely a cat' and 'likely a rat'. then it shifts.]
+
+Since these two measurement methods are measuring the same entities, the entities in System 1 are present in System 2, but are labeled differently:
+[coordinate system and labeled vectors don't change, and there's only 1. Only objs move.]
+[as it's changing, the old basis labels shift too. the word 'body size' shifts into a non-axes vector, but the word 'likely a cat' shifts onto the basis vector. all 4 axes concepts are present.]
+
+[System 1, and System 1 on top of System 2. Label Concepts.]
+
+The [body size 1] that c pointed to is now in a new location in System 2. So is the [face length 1] that d pointed to.
+
+<<<
+[prev only rotated 4 basis vectors concepts, but cat or rat. now add cat and rat to it.]
+
+Consider that [1 2] is a cat...
+
+[[-1 2] in System 1 and [-1 2] in System 1 on 2. I is animated]
+The two [-1 2] no longer label the same Concept! [labels cat pic on left, and rat pic on right]
+
+[-1 2] no longer has the same meaning as it did in System 1. Now it means "it's very unlikely to be a rat (-1), but likely to be a cat (2)"
+
+This shows the difference between the relationships in the real world, and the model that represents those relationships. [-1 2] is not [cat pic] itself, it is only a label for it, and whichever label is used for it depends on the basis vectors used to define every label.
+[1 2] is defined as "body size 1", body size is a basis vector
+
+So now, it's the vector O that labels [cat pic]. How do we calculate what the new label for [cat] is?
+
+As we'll soon see, the answer is by using Matrix-Vector Multiplication.
+
+<<<
+Let's look at another example to further illustrate the difference between the real world and our coordinate system model. Instead of using numbers, let's use letters to label our entities.
+
+[first show coordinate system labeling gift as poison]
+
+To an English speaker, this may look wrong. But in German, [poison pic] is in fact called 'gift'. If a German speaker tells the English speaker that they're giving the English speaker a gift, the English speaker may feel happy. But they shouldn't be, because what they're actually receiving is [poison pic], which would kill them.
+
+Instead, the English speaker needs to know what [poison pic] is actually referring to. So they need to translate these as follows:
+
+[animation transforming poison and gift pics to English coordinate system. The vector does not move]
+[Don't give names to basis vectors, ONLY show I -> gift, which is wrong.]
+
+WHAT LOOKS LIKE [-1 2] ('gift') in German != [-1 2] ('gift') in English
+[-1 2] ('gift') in German = [-4 1] ('poison') in English 
+
+Discuss inverses w/o discussing their algebra.
+
+Note that the relationships between the entities doesn't change. Since the basis vectors from System 1 still exist in System 2, you can still use the instructions from System 1, but you have to translate them using the change of basis matrix.
+... As we'll see in section X, this is why the dot product instructions work.
+
+section Y will delve deeper into the relationships between concepts, and how they can be preserved or destroyed via matrix multiplication. It retrieves insights that are crucial for...
+
+<<<
+[inverse: going down 2 rat, 1 cat gets you to body size 1]

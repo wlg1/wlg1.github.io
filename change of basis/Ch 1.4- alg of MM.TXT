@@ -135,5 +135,6 @@ Learning weights is the same as learning to choose the right basis vectors. PCA 
 [At the end, say 'we can go further' than letters and numbers. Now using the same axis concepts, overlay 2 concept spaces onto each other, only difference is one is 'poison and gift' and the other is 'sad and happy'. This looks like an "analogy". Not only are transformations between models an analogy, but so is the model and Reality. Any mapping is an analogy; between models, or between model and Reality.]
 
 <<<
+Diff from CNN b/c CNN can get patches out of an image. But all NN combine info from prev layers. CNN is not the only NN that can extract "features"
 
 [We are done with this chapter. One go on to the next one, or read the optional section below for more philosophical ruminations.]
