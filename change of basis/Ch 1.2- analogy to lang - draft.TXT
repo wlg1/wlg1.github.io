@@ -1,0 +1,136 @@
+Have both video, stills, and slide show that reader is told to click through
+Slide show: (all coords overlayed on top of Reality)
+1. Show basis vectors of System 1 on top of System 2 
+2. Add I in System 1 and I in System 2
+3. Add O in System 2
+4. German-English
+5. Relate to NNs weight matrix and weights
+6. Further extend German-English w/ inverses, etc.
+
+Two journeys/videos: one starts w/ Reality then connects it to NN (more esoteric, a mystery, a guessing game), another starts w/ NN dataset at the start (more practical). more practical when aimed at those who want to design better NN
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+MOVE TO NEXT SECTION:
+[Animation of Reality in 4 perspectives]
+We want to label Reality with a coordinate system. Every vector is a label.
+[animation of Reality going System 1 to System 2 WITHOUT coordinate systems]
+[same animation but showing System 1's basis vectors]
+Labeling Reality is like constructing a dataset, and transforming it is what the neural network does.
+
+<<<
+Objects in a room -> capture objects in a dataset
+
+Explain purpose of coordinate system using dataset space. We can explain it in 2 different ways.
+
+The [yinyang] that c pointed to is now in a new location in System 2. So is the [white circle] that d pointed to.
+
+[System 1, and System 1 on top of System 2. Label Concepts.]
+[only animate left side rotating]
+
+c,d are basis vectors of System 1, and j,k are basis vectors of System 2.
+
+2. Consider 
+[[-1 2] in System 1 and [-1 2] in System 1 on 2. I is animated]
+The two [-1 2] no longer label the same Concept! [labels poison pic on left, and gift pic on right]
+
+[Don't give names to basis vectors, ONLY show I -> gift, which is wrong. German speaker vs English speaker is confused. English speaker is happy at first, but then dies. Now reveal you need O=poison to work.]
+
+WHAT LOOKS LIKE [-1 2] ('gift') in German != [-1 2] ('gift') in English
+[-1 2] ('gift') in German = [-4 1] ('poison') in English 
+
+https://www.bbc.co.uk/languages/yoursay/false_friends/german/mist_common_false_friends_in_german_englishgerman.shtml
+
+3. Now, it's the vector O that labels [poison pic]. How do we calculate what the new label for [poison] is?
+
+As we'll soon see, the answer is by using Matrix-Vector Multiplication.
+(once the procedure is explained, state this is why it's also called a 'change in basis')
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INVERSE:
+
+(video 7:20-8:20m)
+
+What if WE say "gift"? The German foreigner must translate this to a German translation (not necessarily a word, but possibly a German sentence, or even a paragraph or textbook) that makes him understand that it's Figure X. 
+
+Just take the inverse of our previous transformation matrix, and apply it to "gift". This is because the columns of this inverse are what OUR columns [1 0] etc look like in German.
+
+[-1 2] (Gift, German) != [-1 2] (Gift, English)
+[-1 2] (Gift, German) = [-4 1] (Disgust, English)
+[1/3 5/3] (Geschenk, German) = [-1 2] (Gift, English)
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+But why are the basis vectors in System 1 put in the columns of the matrix? The next section will answer these questions.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Neurons are not binary, so NEVER use neurons with only 0 or 1 in your examples. They must always be continuous.
+
+Classification makes it binary. But we're only discussing the linear algebra part now.
+sigmoid squishing (activation function), etc. does make it more binary (either close to 0 or close to 1, turning it into a probability). Not all actv fns are sigmoid, and ReLU is usually used.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+1 left on c, 2 up on d
+
+For example, bread is good, and ice cream is even better. But getting a cut is bad, and getting burned is worse.
+let c be if how good it is, let d be the number of circles in the Object
+Let k be if a cross exists or not
+Let j be if a triangle is present or not
+
+<<<
+c: animal or not, d: number of feet
+when transformed, everything with 2 feet and an animal is considered a human, everything with 4 feet and an animal is considered a cat. Everything that had 4 feet and not an animal is now considered a car (along axes j). Everything with 2 feet and not an animal is considered a motorcycle.
+
+j: human or cat
+k: motorcycle or car
+
+<<<<
+Put this in the next section (dot products)
+
+c: # eyes
+d: # smiles
+
+j: likely to be a face
+k: likely to be 
+
+Let A be an object
+
+A face is 2 eyes and 1 smile. 
+2c ~= 2c + 1d
+
+2c+1d = 3 : ' yes it's VERY LIKELY to be a face'
+2c + 0d = 2: 'it's less LIKELY to be a face'
+
+They reach the same Object.
+
+The neurons state: how likely is it to be a face?
+The dataset states: descriptions
+
+Having 
+
+<<<
+OR it's a fallacy to think that this is a transformation b/w 2 datasets, so don't use a dataset as an example.
+
+DISCLAIMER: this is an idealized example, and the actual aritifical neurons may not so cleanly capture each concept; it is still difficult to discern the role of each neuron in relation to other neurons.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+SEGWAY INTO RUMINATIONS:
+What does it mean to 'transform [-1 2] into [-4 1]'? Aren't they two separate vectors? The answer is that they are the same when they refer to the same Concept in Reality. 
+
+But if [-1 2] now uses [-4 1] to point to [poison], we must use [? ?] to point to [gift]. We cannot use [q q] to point to [gift] because it would be inconsistent with Reality. This is because relational distances between Concepts are preserved.
+
+Any other vector, such as [-4 1], can be used as a label, so long as it strives to preserve structure relative to the other labels. The labels must be consistent such that they form a structure-preserving map.
+
+Neither English nor German (two coordinate systems) capture the true vector; they are all merely representations modeling it.
+'gift' is not the Concept.
+
+Letters -> Numbers
+Letter sequences -> Vectors
+
+The letters do not carry meaning unless put in relative context with other words of the same language.
+
+The label 'gift' is meaningless unless the coordinate system of labels is overlayed on top of a Reality.
+The vector [-1 2] is meaningless unless the coordinate system of vectors is overlayed on top of a Reality.
+
+The vector is merely a label of a Concept.
+
+WHAT IT LOOKS LIKE: vectors defined by numbers / words defined by letters
+WHAT IT MEANS: relative to other vectors / relative to other words

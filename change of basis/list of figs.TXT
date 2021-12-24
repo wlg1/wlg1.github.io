@@ -1,6 +1,14 @@
 List of Figures:
 NN on top, matrix multiplication on bottom
 
+animation of Reality going System 1 to System 2 WITHOUT coordinate systems
+same animation but showing System 1's basis vectors
+[System 1, and System 1 on top of System 2. Label Concepts.]
+
+German coordinate system
+English coordinate system
+Translate vectors b/w Ger and Eng
+
 Reality animation- choose transformations, get rid of Wait b/w
 Reality Stills (equivalence)
 Coordinate system on top of moving reality
@@ -16,8 +24,6 @@ Flower Reality, Dataset as numbers
 Latent spaces of NN, Model vs Reality
 Figure showing neurons as basis vectors
 
-German coordinate system
-English coordinate system
-Translate vectors b/w Ger and Eng
+
 
 Dot product breakdown b/w 2 coordinate systems (explain 1st step of matrix mult)
