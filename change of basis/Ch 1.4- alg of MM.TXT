@@ -1,140 +1,53 @@
-WHY ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS
-(this is a whole separate section, broken into smaller subsections as pages)
+WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS
 
-[Show both bottom up and top down. First bottom up.]
-[Later map this breakdown onto NN]
-Once we understand why the dot product is done this way, and what it's purpose is, and how it fits into other procedures, we can relate it to NNs.
+How do we translate vectors in System 1 to vectors in System 2?
+[coordinates again]
 
-Let's review 3Blue1Brown... (don't say this at start of prev section, say here)
+In other words, how do we find the new label of [cat pic] in System 2? We were told that this is done through matrix multiplication.
 
-Let's describe what's happening during 2D matrix multiplication.
-[label statements with colored labels on pic of matrix]
-[put colored statements in an ordered list]
-
-<<<
-[ we began by explaining it intuitively with no math; now, we'll go into the details of why we perform each math operation, and how the algebra changes the geometry]
-
+<<
 First point out intriguing questions as Motivation
+...
+Once we understand why the dot product is done this way, and what its purpose is, and how it fits into other procedures, we can relate it to NNs.
+<<
 
-(may use J K instead of v w b/c use W, later 'weight', as matrix)
-(from prev section, now re-paste in this section)
-. first show j-k Sys 1 and j-k on top of c-d Sys 2, with one vector b/c [-1 2]
-    make j-k basis bolder than c-d. same color for j, k in both Sys
-. show that Identity * [-1 2] in Sys 1 is 'analogous' to 'W matrix' * [-1 2]
+So let's describe what's happening during the first step of matrix multiplication. Since our coordinate systems use 2 basis vectors, let's look at 2D matrix multiplication.
+[label statements with colored labels on pic of matrix]
+[put colored statements in an ordered list. For now, only highlight first dot product]
 
-[NOT NEEDED FOR NOW- show this re-arrangment afterwards]
-. re-arrange -1j + 2k can be decomposed into (-1*j_c + 2*k_c) + (''' for d coordinate). These are the dot products for row 1 (c) and row 2 (d)
+The first procedure in matrix multiplication is a dot product. But why? What is a dot product, and why is it used here?
 
-[Let's first focus on the first operation: dot product]
-. Now explain dot product using 1D vector addition
+Recall in the previous section that we were able to calculate the values of j = "how likely to be cat" (color this acc to coordinate) using the values of c = "body size" and d = "face length":
 
-OUTLINE:
-[page 1]
-. 1D Vector Addition (the most fundamental). If we accept this as True, everything else follows. [It's all we need to derive the procedure]
-. Show the '1D' matrix multiplication is the same as '1D vector addition'
-    (OR don't call it matrix multiplication, just dot product)
-    . 1D 'matrix' has each col be a 'basis vec' in 1D (?)
-    . '1D' matrix multiplication is the dot product
-. Thus, the reason the dot product works the way it does is because it's scaling two vectors in the same dimension, then adding them! This produces the first coord using the basis vector
-    (Vector is linear combination of basis?)
-. This 1D dot product is the same as vx + wx, which is the first procedure dot product in matrix multiplication!
-[page 2]
-. Now in c-d Sys, scale vc and wc and add them together to get -4. This is row 1. Row 2 is the same; you can work it out yourself (but show animation / final result)
-. Thus, the procedure to do 2D matrix multiplication is a sequence of 1D vector additions!
+[figure showing the analogy: 
+Bigger body + Shorter face = Cat
+3 * [body pic] + 2*[face pic] = [cat pic] ]
+
+Notice how this resembles the following dot product: [] [] = ...
+So the value of the first coordinate in System 2 (color this) is produced using the dot product of the 2 basis vectors in System 1. Specifically, 
+
+[breakdown what each term in the dot product eq above is, matching them to their geometric vector in Sys 1 and Sys 2. inputs comes from Sys 1, weights from Sys 2]
+
+[highlight the first coord of each basis vector in System 2]
+
+One question you may ask is: why does finding the answer to the first row of O require using the first row of W? 
+
+The dot product adds two scaled vectors from the same dimension. To understand what the dot product is doing, all you need to know is why 1D vector addition works.
+
+[show vectors as just values. elementary school addition / subtraction]
+
+The reason we add vectors in 1D by placing the tail of B onto A, or vice versa, is because we can think of them simply as instructions: go left twice, then go right once.
+
+...which is also shown in the 3Blue1Brown video [].
+
+... thus, the reason why the first row of O uses the first row of W is because we project down the vectors c and d only by their first coordinate, which is the first row of W.
+
+Row 2 is the same; you can work it out yourself (but show animation / final result). Thus, the procedure to do 2D matrix multiplication is a sequence of 1D vector additions!
 
 fig: show that Identity * [-1 2] in Sys 1 is 'analogous' to 'W matrix' * [-1 2]
 
 . Show that this procedure in Sys 2 is the same as Sys 1 if you use Identity matrix column basis vectors. 
 (Start w/ showing Sys 1 or Sys 2 first? Sys 1 DOES NOT require 1D vector addition, while Sys 2 does. So if show sys 1, don't need to show 1D vector addition first. You should show sys 1 first b/c it's just -1*b1, 2*b2. THEN show how 1D vector addition allows the same to happen when basis vector coords are nonzero.)
 
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-OPTIONAL ADD-ONS- DERIVATION 2:
-. 2D vector addition decomposition into c-d basis vectors, then transform each indiv basis vector into j-k: how it is equivalent to procedure above
-
-[ Note that the input vector STAYS in ]
-
-(q, r; s, t)
-(c, d; j, k)
-Now map c-d onto N_c, N_d neurons in layer 1. What is [-1 2] in c-d is [-4 1] in j-k.
-Show these two animations side by side, or stills of 2cols where each step is equiv to the step in other col. include equations for each
-DO NOT overlap Sys 2 onto Sys 1 (only do that when discussing inverses)
-
-[INVERSE MATRIX algebraic calc; optional section, put link to it]
-
-<<<<<<<<<<<<<<
-2:59m: 
-HER basis b1=[1 0] is OUR [2 1]
-HER basis b2=[0 1] is OUR [-1 1]
-
-4:30m: Jennifer asks what HER [-1 2] is in OUR coordinate system
-
-In Jennifer's coordinate system, the vector [-1 2] means 
--1 * b1 = -1 * [1 0] = -1
-2 * b2 = 2 * [0 1] = 2
-
-Every vector is a linear combination of its basis vectors.
-The -1 is multiplied by ONLY b1, which consists of an x-coord and a y-coord. 
-
-In matrix multiplication, this translates into:
-[-1 2] (dot) (1st row) = [-1 2] (dot) (x coords of basis vectors)
-[-1 2] (dot) (2nd row) = [-1 2] (dot) (y coords of basis vectors)
-
-= [-1 2] (dot) [2 -1] = -2-2 = -4
-= [-1 2] (dot) [1 1] = -1+2 = 1
-
-Note that 'x and y coords' refer to the rows. This 'xcoord' refers to the first basis vector in OUR system, and the 'y coord' refers to the 2nd basis vector in OUR system. JENNIFER'S basis vectors are the columns.
-
 <<<
-It's strange that the new k-coord is calculated using both coords (c and d) of the prev system, instead of just c itself (?) But this example shows why: in the prev system, only one was used b/c the other was 0. In the new system, both coords may be used b/c now they both may be non-zero. [show dot product addition in the 2 models]
-
-Linear transformations and matrices | Chapter 3, Essence of linear algebra
-3Blue1Brown explains that a vector is a linear combination of the basis vectors. The reason we take this dot product of "x coordinates of v and w" is because we are scaling the x-coordinate that defines vector g. This is the same as in System when we are scaling 
-
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-ROTATION MATRIX:
-
-[just show 2 pictures of overlayed, matched to matrix multiplication]
-
-<<<<<<<<<<<<<<<<<<<<<<
-9:30m: Basis vectors can be made "orthogonal" by mapping them to vectors that are orthogonal
-
-(don't just view it from the same 2D wall; pivot in different dimensions to transform your coordinate system!)
-
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-NN WEIGHT MATRIX: 
-
-https://www.jeremyjordan.me/intro-to-neural-networks/
-So if the neurons are basis vectors, in the Weight matrix:
-Each row goes to one neuron OUTPUT in the next.
-Each col belongs to a neuron INPUT in the previous layer
-
-Thus, each col is a previous layer neuron. Given input vector [-1 2]:
--1 * [1 0]
-2 * [0 1]
-
-Creates the input vector x = [x1 x2] = [-1 2]
-
-1st coordinate system: pixels, input space X
-2nd coordinate system: 1st layer of latent space
-
-Now we want to re-interpret (concept at [-1 2]) in the 2nd coordinate system. It's not that we're re-interpreting the label [-1 2] itself, but the concept that [-1 2] labels.
-
-Note that the matrix column vectors are always the same coordinate system as the output vector; we'll call this coordinate system "sys 2". The input vector "seems to be" a vector in sys 2, but it's actually a vector in sys 1. Eg) 'Gift' (input vector) seems to be English (sys 2), but it's actually German (sys 1)
-
-The input vector APPEARS to be English, but that's a misunderstanding. It's actually German. So the input [1 0] IS NOT A BASIS VECTOR IN GERMAN! The English speaker merely THINKS it is!
-
-Thus, the input vector of pixels comes from sys 1 (input space), and the weight matrix and activation vector belong to sys 2 (1st layer latent space). The columns of the weight matrix is what the 1st layer sees as the basis vectors of the input space. This is why the 1st column of the weight matrix are all weights coming out of x1. This is because x1 is a basis vector in the input space, but the 1st latent layer sees it as only its outgoing weights. 
-
-Learning weights is the same as learning to choose the right basis vectors. PCA is a way to get basis vectors.
-
-[Elephant example]
-
-<<<
-(Now describe the mathematics of how basis vectors add up to get a vector, and how translating basis vectors then adding is the same as matrix multiplication)
-
-[At the end, say 'we can go further' than letters and numbers. Now using the same axis concepts, overlay 2 concept spaces onto each other, only difference is one is 'poison and gift' and the other is 'sad and happy'. This looks like an "analogy". Not only are transformations between models an analogy, but so is the model and Reality. Any mapping is an analogy; between models, or between model and Reality.]
-
-<<<
-Diff from CNN b/c CNN can get patches out of an image. But all NN combine info from prev layers. CNN is not the only NN that can extract "features"
-
-[We are done with this chapter. One go on to the next one, or read the optional section below for more philosophical ruminations.]
+[inverse: going down 2 rat, 1 cat gets you to body size 1]
