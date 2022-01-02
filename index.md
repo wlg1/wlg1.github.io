@@ -1,6 +1,6 @@
 **WORKING TITLE**
 
-<a href="cob/ch1.1.md">CHAPTER 1</a>
+<a href="ch1.1.md">CHAPTER 1</a>
 
 <!---
 **[ch3](ch3.md)**
