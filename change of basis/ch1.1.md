@@ -2,6 +2,8 @@
 
 Let's start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there's a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).
 
+![Figure 1.1: VAE](/images/figure1.1.png)
+
 [drawings of cat/rat abstracted into the circles: pic, shapes on top of pic, and shapes only. label that the left side is an entity.]
 
 So every entity in the population is represented in the dataset as a data point, which is an abstraction defined only by body size and face length:
@@ -11,10 +13,10 @@ We can represent the datapoints in this dataset as data points in a coordinate s
 
 [coordinate space of body size vs face length, with basis vectors on c = bodysize 1 and d = facelength 1]
 
-Every data point is a combination of [body size 1] and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5*[face length 1].
+Every data point is a combination of [body size 1] and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
 
-If we see each data point as a vector, then every vector is an addition of [body size 1] and [face length 1], such that [body size 1] and [face length 1] are basis vectors.* And so in this coordinate space, every entity like [cat pic] is labeled using an addition of [body size 1] and [face length 1]. Thus (2, 0.5) is can also be represented as [2 0.5] = [basis vector addition]
-*informally speaking, for the purposes of this example
+If we see each data point as a vector, then every vector is an addition of [body size 1] and [face length 1], such that [body size 1] and [face length 1] are basis vectors.* And so in this coordinate space, every entity like [cat pic] is labeled using an addition of [body size 1] and [face length 1]. Thus (2, 0.5) can also be represented as [2 0.5] = [basis vector addition]
+* informally speaking, for the purposes of this example
 
 [show picture of cat pic on coordinate space, right side showing vector addition]
 
@@ -30,7 +32,7 @@ Or in terms of basis vector addition:
 
 [figure showing the analogy: 
 Bigger body + Shorter face = Cat
-2 * [body pic X] + 0.5*[face pic Y] = value 2X+0.5Y on cat axes ]
+2 * [body pic X] + 0.5 * [face pic Y] = value 2X+0.5Y on cat axes ]
 
 What are X and Y? We will reveal them once we get into the algebra of matrix multiplication in section [].
 
@@ -46,7 +48,7 @@ Since each coordinate space is a different way to represent the data, let's call
 
 The [body size 1] that c (colored) pointed to is now in a new location in Model 2. So is the [face length 1] that d pointed to.*
 
-* note that [body size 1] is present in Model 2, even though it's missing [face length]. In other words, it's [body size 1] + 0*[face length 1]. This means that any data point which only contains a body of size 1 is seen as [meaning in terms of basis jk]
+* note that [body size 1] is present in Model 2, even though it's missing [face length]. In other words, it's [body size 1] + 0 * [face length 1]. This means that any data point which only contains a body of size 1 is seen as [meaning in terms of basis jk]
 
 <<<
 [prev only rotated 4 basis vectors concepts, but cat or rat. now add cat to it.]
@@ -81,7 +83,7 @@ While [cat pic] is merely how the dataset sees [actual cat pic], we are referrin
 
 [fading gif of changing abstractions back to actual pics; place images on coord sys]
 
-? *FOOTNOTE: In this example, [cat pic] contains information from the original dataset that does not change after the transformation- namely, body size and face length. However, in other cases, it is possible for a transformation to reduce the information previously contained, although this information may not be important.
+? * FOOTNOTE: In this example, [cat pic] contains information from the original dataset that does not change after the transformation- namely, body size and face length. However, in other cases, it is possible for a transformation to reduce the information previously contained, although this information may not be important.
 
 <<<
 Let's look at another example involving [poison pic and gift pic] to further illustrate the difference between the real world and our coordinate space model. Instead of using numbers, let's use letters to label our entities.
@@ -96,14 +98,14 @@ Instead, the English speaker needs to know what [poison pic] is actually referri
 [Don't give names to basis vectors, ONLY show I -> gift, which is wrong.]
 
 label ('gift') in German != label ('gift') in English
-label ('gift') in German ~= label ('poison') in English 
+label ('gift') in German ~ label ('poison') in English 
 
 Relating this back to using numbers as labels (write #s below):
 label [2 0.5] ('gift') in German != label [2 0.5] ('gift') in English
-label [2 0.5] ('gift') in German ~= label [? ?] ('poison') in English 
+label [2 0.5] ('gift') in German ~ label [? ?] ('poison') in English 
 
 Now if the English speaker tells the German speaker that they're giving them a 'gift', the German speaker must translate this to a German translation* that makes them understand that it's [gift pic]. 
-*not necessarily a word, but possibly a German sentence, or even a paragraph or textbook
+* not necessarily a word, but possibly a German sentence, or even a paragraph or textbook
 
 [show coordinate space w/ Geschenk]
 
@@ -120,7 +122,7 @@ But what does the label 'disgust' mean in German? As we see in the German coordi
 
 [show a place in Switzerland not on the map]
 
-*this is an example of a False Friend. link
+* this is an example of a False Friend. link
 
 <<<
 Now that we understand the difference between entities and labels, let's look back at our example with cats and rats. Remember that in Model 2, the vector I no longer labels the entity [cat pic]; in Model 2, it's the vector O that labels [cat pic]. 
