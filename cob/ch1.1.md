@@ -1,5 +1,7 @@
 **CHAPTER 1.1**
 
+<a href="index.md">back</a>
+
 Let's start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there's a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).
 
 ![Figure 1.1: VAE](/images/figure1.1.png)
