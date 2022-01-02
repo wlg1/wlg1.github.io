@@ -11,6 +11,14 @@ After first section (using simple German example), allow reader to take two rout
 have a separate section saying "Hypothesis"- make sure they're testable. Or "Speculation", which is not formed into hypotheses yet.
 
 <<<<<<<<<<<<
+WORKING BLOG TITLE: From Paws to Cats / From Neurons to Cats / From Paw Neurons to Cat Neurons 
+JOURNEY TITLE: How a Neural Network Guesses Cats from Their Ears and Paws
+(on youtube, call main intro video: How Neural Networks Guess a Cat from Her Ears and Paws)
+(Using a Neural Network to Guess a Cat from Her Ears)
+Use Artbreeder to make a wide mouthed anime cat girl (gets views). Use lofi hiphop. 
+This video pieces together Ch 1 + Ch 2 + Circuits + Analogies, mentioning more videos delving into them during, and at end advertises a series of videos about various topics such as Algebraic Topology (or don't if it's expo only)
+Prev top mathexpo vids ranged from 10-20mins, so aim for ~10mins
+
 CHAPTER 1 SECTIONS:
 Ch1 Intro: How Neural Networks Reveal Hidden Insights in Data (using Matrix Multiplication)
 1. What is matrix multiplication doing? Change of Basis.
@@ -25,9 +33,17 @@ Ch1 Intro: How Neural Networks Reveal Hidden Insights in Data (using Matrix Mult
 2b: show how dot product is used for both basis vectors in 2D MM
 2+: neurons as functions, only having meaning relative to other neurons
 
-?+: Analogies, Structure Preserving Maps, Avoid confusing the map for the territory (mentioned before in + sections), Circuits
+?+: In terms of matrices- Analogies, Structure Preserving Maps, Avoid confusing the map for the territory (mentioned before in + sections), Circuits. Later chapters discuss in terms of other structures.
+
+OR: 1.1, 1.2, 1.3, 1.4, 1.5. Sections 1.1 and 1.2 are PRACTICAL. Sections 1.3 to 1.5 are INSIGHTS+ (in italics).
+1.1: How does matrix multiplication guess a cat from its face and body?
+1.2: Why use dot product in matrix multiplication?
+1.3: WHY use basis vectors? The relativity of data
+1.4: The Duality of Neurons: As Objects, As Relations
+1.5: The Analogy of the Matrix
 
 CHAPTER 2:  How Neural Networks Make Faces Look Younger (using Orthogonal Projection)
+[youtube vid: how to get a neural network to make you into a cat]
 [practical question even layman gets]
 [ALT DOOR INTO CH 2: Exploring the Concept Spaces of Neural Networks (esoteric, profound door, but not practical so different audience) ]
 1. Dot product for direction
@@ -52,11 +68,21 @@ CHAPTER 4: How Neural Networks ...[something practical] (using Low-Rank Factoriz
 CHAPTER 5: How to Find the Roles of Neuron Communities in Neural Networks ... (using Non-Negative Matrix Factorization)
 [or 'how to explain what neural networks are doing']
 [or 'how to unravel the black boxes of neural networks']
+Same type of technique as Ch4
 
-CHAPTER ??: How Neural Networks Piece Clues Together (using Fourier Transforms)
-[or 'How a Neural Network Guesses a Cat from Her Ears and Paws']
+CHAPTER ??: How Neural Networks see [something about analogy] the same (using Fourier Transforms)
+Summation in convolutions removes differences, allowing features to be seen 'as the same' despite rotation, translation, etc. "Equivalent in a group"
+
+CHAPTER ??: Neurons as k-forms
+CHAPTER ??: Algebraic Topology for both relational data and NNs
+CHAPTER ??: Structure Preserving Maps, Duality, Higher Order Categories
 
 (also have more generic searachble doors, such as "How does StyleGAN work?")
+
+Each new page is just to make it short and not look intimidating (but must put how many pgs left of this sec; usually 3). Each new page is not necc a new sec.
+
+Youtube vid names: How to turn yourself into an anime character (Using Matrix Multiplication)
+
 
 <<<<<<<<<<<<<<<
 What is a 'vague understanding of linear algebra?'
