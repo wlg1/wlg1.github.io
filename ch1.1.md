@@ -19,16 +19,16 @@ We can represent the datapoints in this dataset as data points in a coordinate s
 <img src="/cob/fig3b.png" width="300" height="200">
 
 When labeling our coordinate space, if we keep only the images of unit 1, we get:
-<img src="/cob/fig2.png" width="600" height="400">
+<img src="/cob/fig4.png" width="600" height="400">
 
 Every data point is a combination of [body size 1] and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
 [body size 1] is smaller than [body size 2]
 
-![Figure 3: Linear Combination](/cob/fig3.PNG)
+![Figure 3: Linear Combination](/cob/fig5.PNG)
 
 If we see each data point as a vector, then every vector is an addition of [body size 1] and [face length 1], such that [body size 1] and [face length 1] are basis vectors. And so in this coordinate space, every entity like [cat pic] is labeled using an addition of [body size 1] and [face length 1]. Thus (2, 0.5) can also be represented as [2 0.5] = [basis vector addition]
 
-![Figure 4: Cat in Coordinate Space](/cob/fig4.PNG)
+![Figure 4: Cat in Coordinate Space](/cob/fig6.PNG)
 
 [under each body size pic, number it so reader knows if it's 1, 2, etc. The 2 glues two 1s together, showing the border, the 0.5 shows the other half grayed out, etc. This is to indicate they're scaling the unit vector. But [cat pic] does not do this, since it's not always measured using bodysize or face length, it's just pure data that can be represented using different features. you can show the addition with an 'intermediate step' that shows gluing them on, then removing the borders/faded. can also be gif]
 
@@ -42,7 +42,7 @@ Longer face + Smaller body = Rat
 
 Or in terms of basis vector addition:
 
-Fig 5
+Fig 7
 [figure showing the analogy: 
 Bigger body + Shorter face = Cat
 2 * [body pic X] + 0.5 * [face pic Y] = value 2X+0.5Y on cat axes ]
@@ -62,7 +62,7 @@ Or fade out still image using video editor
 
 Since each coordinate space is a different way to represent the data, let's call each coordinate space a Model. The first model we saw will be Model 1, and the second will be Model 2.
 
-Fig 6a, 6b
+Fig 8a, 8b
 
 <img src="/cob/fig6a.png" width="300" height="200">
 <img src="/cob/fig6b.png" width="300" height="200">
@@ -74,7 +74,7 @@ The [body size 1] that c (colored) pointed to is now in a new location in Model 
 
 * note that [body size 1] is present in Model 2, even though it's missing [face length]. In other words, it's [body size 1] + 0 * [face length 1]. This means that any data point which only contains a body of size 1 is seen as [meaning in terms of basis jk]
 
-Fig 7a,7b
+Fig 9a,9b
 [Model 1, and Model 1 on top of Model 2. Sys 2 'jk'. WITH vectors.]
 Disclaimer: now show with rotated vectors. Animation doesn't rotate vectors. This can get confusing because before, the vectors stayed in place. So we have to note that these are different vectors, just colored the same way because they point onto the same data point.
 To prev clutter here, ONLY use 2 vectors: c and d. Or perhaps don't show them as vectors, just as dots. This should be clean and summarized.
@@ -82,7 +82,7 @@ To prev clutter here, ONLY use 2 vectors: c and d. Or perhaps don't show them as
 
 We know in Model 1 that [2 0.5] is [cat pic].
 
-Fig 8a, 8b
+Fig 10a, 10b
 
 <img src="/cob/fig8a.png" width="300" height="200">
 <img src="/cob/fig8b.png" width="300" height="200">
@@ -93,14 +93,14 @@ The two [2 0.5] no longer label the same Concept! [labels cat pic on left, and n
 
 This is because [2 0.5] no longer has the same meaning as it did in Model 1. Now it means "it's very likely to be a rat (2), but not as likely to be a cat (0.5)". In fact, [2 0.5] should now point to [rat pic], instead of [cat pic].
 
-Fig 9
+Fig 11
 [now fill in what [2 0.5] is in Sys 2]
 
 This shows the difference between the entities in the real world, and the model that represents those entities using labels. [2 0.5] is not [cat pic] itself; it is merely a label of it, and whichever label is used for [cat pic] depends on the basis vectors used to define every label. 
 
 [2 0.5] != [cat pic]
 
-Fig 10
+Fig 12
 [animated reality of concepts vs fixed coord space model]
 
 Notice that Model 2 demonstrates an idealized, simplified example of what a neural network does- it is making a guess about the data point given to it as input. In fact, one can think of it as a single layer 'neural network' such that for its neuron function:
@@ -111,12 +111,12 @@ used to calculate the values it guesses for the 2 classes {cat, rat}, it sets Re
 
 o = WX
 
-Fig 11
+Fig 13
 [picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]]
 
 While [cat pic] is merely how the dataset sees [actual cat pic], we are referring to [cat pic] as an "entity in the real world". This is because the only information the neural network knows about [actual cat pic] comes from [cat pic]. For the purposes of this example, we can replace [cat pic] with [actual cat pic] to explain the same concept.*
 
-Fig 12
+Fig 14
 [fading gif of changing abstractions back to actual pics; place images on coord sys]
 
 ? * FOOTNOTE: In this example, [cat pic] contains information from the original dataset that does not change after the transformation- namely, body size and face length. However, in other cases, it is possible for a transformation to reduce the information previously contained, although this information may not be important.
