@@ -10,10 +10,15 @@ So every entity in the population is represented in the dataset as a data point,
 [arrow from text to pics of shapes only, labeling which is body size and which is face length]
 
 We can represent the datapoints in this dataset as data points in a coordinate space, using the two features as axes:
-[Make dataset image: first row is face, second row is body, third row is data pt (combo of both) using #s, then show in coord sys on right. Then in 2nd image, turn all numbers into imgs, and again show in coordsys on right.]
+
+<img src="/cob/fig2a.PNG" width="300" height="200">
+<img src="/cob/fig2b.png" width="300" height="200">
+<!---Make dataset image: first row is face, second row is body, third row is data pt (combo of both) using #s, then show in coord sys on right. Then in 2nd image, turn all numbers into imgs, and again show in coordsys on right.--->
+
+<img src="/cob/fig3a.PNG" width="300" height="200">
+<img src="/cob/fig3b.png" width="300" height="200">
 
 When labeling our coordinate space, if we keep only the images of unit 1, we get:
-<!---![Figure 2: Coordinate space](/cob/fig2.png) --->
 <img src="/cob/fig2.png" width="600" height="400">
 
 Every data point is a combination of [body size 1] and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
@@ -30,8 +35,10 @@ If we see each data point as a vector, then every vector is an addition of [body
 Now there is another way to measure the entities in this population. We can assign each entity the following two labels: 1) How likely it is to be a cat, and 2) How likely it is to be a rat.
 
 How do we find the values of these new measurements? We can calculate them using the measurements from the previous system. For example:
-Bigger body + Shorter face = Cat
-Smaller body + Longer face = Rat
+
+Shorter face + Bigger body = Cat
+
+Longer face + Smaller body = Rat
 
 Or in terms of basis vector addition:
 
@@ -47,6 +54,11 @@ What are X and Y? We will reveal them once we get into the algebra of matrix mul
 Since these two measurement methods are measuring the same entities, the entities in Model 1 are present in Model 2, but are labeled differently:
 [coordinate space and labeled vectors don't change, and there's only 1. Only objs prev on basis vectors move.]
 [as it's changing, the old basis labels shift too. the word 'body size' shifts into a non-axes vector, but the word 'likely a cat' shifts onto the basis vector. all 4 axes concepts are present.]
+[ Another way to fade is to first show images, then fade away into colored dots, then move dots, and fade images back in.]
+https://docs.manim.community/en/stable/reference/manim.animation.fading.FadeOut.html
+Or fade out still image using video editor
+
+(Likely a cat 1 (axis j) means "1 unit sure"?)
 
 Since each coordinate space is a different way to represent the data, let's call each coordinate space a Model. The first model we saw will be Model 1, and the second will be Model 2.
 
@@ -55,6 +67,7 @@ Fig 6a, 6b
 <img src="/cob/fig6a.png" width="300" height="200">
 <img src="/cob/fig6b.png" width="300" height="200">
 
+Label left as Model 1, etc
 [Model 1, and Model 1 on top of Model 2. Sys 2 'jk'. No vectors.]
 
 The [body size 1] that c (colored) pointed to is now in a new location in Model 2. So is the [face length 1] that d pointed to.*
@@ -64,6 +77,7 @@ The [body size 1] that c (colored) pointed to is now in a new location in Model 
 Fig 7a,7b
 [Model 1, and Model 1 on top of Model 2. Sys 2 'jk'. WITH vectors.]
 Disclaimer: now show with rotated vectors. Animation doesn't rotate vectors. This can get confusing because before, the vectors stayed in place. So we have to note that these are different vectors, just colored the same way because they point onto the same data point.
+To prev clutter here, ONLY use 2 vectors: c and d. Or perhaps don't show them as vectors, just as dots. This should be clean and summarized.
 
 
 We know in Model 1 that [2 0.5] is [cat pic].
@@ -75,7 +89,7 @@ Fig 8a, 8b
 
 [[2 0.5] catpic in Model 1 and [2 0.5] in Model 1 on 2. I vector is fixed. unlike prev anim, fade j,k only after change basis so not too cluttered]
 
-The two [2 0.5] no longer label the same Concept! [labels cat pic on left, and nothing on right]
+The two [2 0.5] no longer label the same Concept! [labels cat pic on left, and nothing on right] [color code or include pic of vector when referring to [2 0.5] in text paragraph]
 
 This is because [2 0.5] no longer has the same meaning as it did in Model 1. Now it means "it's very likely to be a rat (2), but not as likely to be a cat (0.5)". In fact, [2 0.5] should now point to [rat pic], instead of [cat pic].
 
