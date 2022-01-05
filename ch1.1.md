@@ -13,10 +13,12 @@ So every entity in the population is represented in the dataset as a data point,
 We can represent the datapoints in this dataset as data points in a coordinate space, using the two features as axes:
 
 <!---![Figure 2: Coordinate space](/cob/fig2.png) --->
-<img src="/cob/fig2.png" width="100" height="100">
+<img src="/cob/fig2.png" width="400" height="400">
 [coordinate space of body size vs face length, with basis vectors on c = bodysize 1 and d = facelength 1]
 
 Every data point is a combination of [body size 1] and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
+
+![Figure 3: Linear Combination](/cob/fig3.png)
 
 If we see each data point as a vector, then every vector is an addition of [body size 1] and [face length 1], such that [body size 1] and [face length 1] are basis vectors.* And so in this coordinate space, every entity like [cat pic] is labeled using an addition of [body size 1] and [face length 1]. Thus (2, 0.5) can also be represented as [2 0.5] = [basis vector addition]
 * informally speaking, for the purposes of this example
