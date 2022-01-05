@@ -4,7 +4,7 @@
 
 Let's start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there's a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).
 
-![Figure 1: Cat](/cob/fig1.png)
+![Figure 1: Cat](/cob/fig1.PNG)
 
 So every entity in the population is represented in the dataset as a data point, which is an abstraction defined only by body size and face length:
 [arrow from text to pics of shapes only, labeling which is body size and which is face length]
@@ -16,11 +16,11 @@ We can represent the datapoints in this dataset as data points in a coordinate s
 
 Every data point is a combination of [body size 1] and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
 
-![Figure 3: Linear Combination](/cob/fig3.png)
+![Figure 3: Linear Combination](/cob/fig3.PNG)
 
 If we see each data point as a vector, then every vector is an addition of [body size 1] and [face length 1], such that [body size 1] and [face length 1] are basis vectors. And so in this coordinate space, every entity like [cat pic] is labeled using an addition of [body size 1] and [face length 1]. Thus (2, 0.5) can also be represented as [2 0.5] = [basis vector addition]
 
-![Figure 4: Cat in Coordinate Space](/cob/fig4.png)
+![Figure 4: Cat in Coordinate Space](/cob/fig4.PNG)
 
 [under each body size pic, number it so reader knows if it's 1, 2, etc. The 2 glues two 1s together, showing the border, the 0.5 shows the other half grayed out, etc. This is to indicate they're scaling the unit vector. But [cat pic] does not do this, since it's not always measured using bodysize or face length, it's just pure data that can be represented using different features. you can show the addition with an 'intermediate step' that shows gluing them on, then removing the borders/faded. can also be gif]
 
