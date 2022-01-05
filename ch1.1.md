@@ -4,7 +4,7 @@
 
 Let's start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there's a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).
 
-![Figure 1: Cat](/cob/fig1.png)
+<img src="/cob/fig1.png" width="600" height="400">
 [drawings of cat/rat abstracted into the circles: pic, shapes on top of pic, and shapes only. label that the left side is an entity.]
 
 So every entity in the population is represented in the dataset as a data point, which is an abstraction defined only by body size and face length:
@@ -13,12 +13,13 @@ So every entity in the population is represented in the dataset as a data point,
 We can represent the datapoints in this dataset as data points in a coordinate space, using the two features as axes:
 
 <!---![Figure 2: Coordinate space](/cob/fig2.png) --->
-<img src="/cob/fig2.png" width="400" height="400">
+<img src="/cob/fig2.png" width="600" height="400">
+
 [coordinate space of body size vs face length, with basis vectors on c = bodysize 1 and d = facelength 1]
 
 Every data point is a combination of [body size 1] and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
 
-![Figure 3: Linear Combination](/cob/fig3.png)
+<img src="/cob/fig3.png" width="600" height="400">
 
 If we see each data point as a vector, then every vector is an addition of [body size 1] and [face length 1], such that [body size 1] and [face length 1] are basis vectors.* And so in this coordinate space, every entity like [cat pic] is labeled using an addition of [body size 1] and [face length 1]. Thus (2, 0.5) can also be represented as [2 0.5] = [basis vector addition]
 * informally speaking, for the purposes of this example
