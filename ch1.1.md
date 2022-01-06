@@ -18,18 +18,14 @@ So every entity in the population is represented in the dataset as a data point,
 When labeling our coordinate space, if we keep only the images of unit 1, we get:
 <img src="/cob/fig4.png" width="500" height="400">
 
-<!---
-Every data point is a combination of [body size 1] and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
-[body size 1] is smaller than [body size 2]
---->
-Every data point is a combination of <img src="/cob/face1.PNG" width="10" height="10"> and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
+Every data point is a combination of <img src="/cob/body1.PNG" width="10" height="10"> and <img src="/cob/face1.PNG" width="10" height="10">. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
 [body size 1] is smaller than [body size 2]
 
-![Figure 3: Linear Combination](/cob/fig5.PNG)
+![Figure 5: Linear Combination](/cob/fig5.PNG)
 
 If we see each data point as a vector, then every vector is an addition of [body size 1] and [face length 1], such that [body size 1] and [face length 1] are basis vectors. And so in this coordinate space, every entity like [cat pic] is labeled using an addition of [body size 1] and [face length 1]. Thus (2, 0.5) can also be represented as [2 0.5] = [basis vector addition]
 
-![Figure 4: Cat in Coordinate Space](/cob/fig6.PNG)
+![Figure 6: Cat in Coordinate Space](/cob/fig6.PNG)
 <!---
 [under each body size pic, number it so reader knows if it's 1, 2, etc. The 2 glues two 1s together, showing the border, the 0.5 shows the other half grayed out, etc. This is to indicate they're scaling the unit vector. But [cat pic] does not do this, since it's not always measured using bodysize or face length, it's just pure data that can be represented using different features. you can show the addition with an 'intermediate step' that shows gluing them on, then removing the borders/faded. can also be gif]--->
 
@@ -66,13 +62,7 @@ Or fade out still image using video editor--->
 
 Since each coordinate space is a different way to represent the data, let's call each coordinate space a Model. The first model we saw will be Model 1, and the second will be Model 2.
 
-Fig 8a, 8b
-
-<img src="/cob/fig8a.PNG" width="300" height="200">
-<img src="/cob/fig8b.PNG" width="300" height="200">
-
-Label left as Model 1, etc
-[Model 1, and Model 1 on top of Model 2. Sys 2 'jk'. No vectors.]
+![Figure 8](/cob/fig8.PNG)
 
 The [body size 1] that c (colored) pointed to is now in a new location in Model 2. So is the [face length 1] that d pointed to.*
 
