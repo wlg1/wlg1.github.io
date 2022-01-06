@@ -19,7 +19,7 @@ We can represent the datapoints in this dataset as data points in a coordinate s
 <img src="/cob/fig3b.png" width="300" height="200">
 
 When labeling our coordinate space, if we keep only the images of unit 1, we get:
-<img src="/cob/fig4.png" width="600" height="400">
+<img src="/cob/fig4.png" width="500" height="400">
 
 Every data point is a combination of [body size 1] and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
 [body size 1] is smaller than [body size 2]
@@ -29,10 +29,12 @@ Every data point is a combination of [body size 1] and [face length 1]. For inst
 If we see each data point as a vector, then every vector is an addition of [body size 1] and [face length 1], such that [body size 1] and [face length 1] are basis vectors. And so in this coordinate space, every entity like [cat pic] is labeled using an addition of [body size 1] and [face length 1]. Thus (2, 0.5) can also be represented as [2 0.5] = [basis vector addition]
 
 ![Figure 4: Cat in Coordinate Space](/cob/fig6.PNG)
+<!---
+[under each body size pic, number it so reader knows if it's 1, 2, etc. The 2 glues two 1s together, showing the border, the 0.5 shows the other half grayed out, etc. This is to indicate they're scaling the unit vector. But [cat pic] does not do this, since it's not always measured using bodysize or face length, it's just pure data that can be represented using different features. you can show the addition with an 'intermediate step' that shows gluing them on, then removing the borders/faded. can also be gif]--->
 
-[under each body size pic, number it so reader knows if it's 1, 2, etc. The 2 glues two 1s together, showing the border, the 0.5 shows the other half grayed out, etc. This is to indicate they're scaling the unit vector. But [cat pic] does not do this, since it's not always measured using bodysize or face length, it's just pure data that can be represented using different features. you can show the addition with an 'intermediate step' that shows gluing them on, then removing the borders/faded. can also be gif]
-
-Now there is another way to measure the entities in this population. We can assign each entity the following two labels: 1) How likely it is to be a cat, and 2) How likely it is to be a rat.
+Now there is another way to measure the entities in this population. We can assign each entity the following two labels: 
+1) How likely it is to be a cat
+2) How likely it is to be a rat
 
 How do we find the values of these new measurements? We can calculate them using the measurements from the previous system. For example:
 
@@ -52,20 +54,21 @@ What are X and Y? We will reveal them once we get into the algebra of matrix mul
 [coordinate space of body size vs face length, showing cat and rat, but onto it fades 'likely a cat' and 'likely a rat'. then it shifts.]
 
 Since these two measurement methods are measuring the same entities, the entities in Model 1 are present in Model 2, but are labeled differently:
+<!---
 [coordinate space and labeled vectors don't change, and there's only 1. Only objs prev on basis vectors move.]
 [as it's changing, the old basis labels shift too. the word 'body size' shifts into a non-axes vector, but the word 'likely a cat' shifts onto the basis vector. all 4 axes concepts are present.]
 [ Another way to fade is to first show images, then fade away into colored dots, then move dots, and fade images back in.]
 https://docs.manim.community/en/stable/reference/manim.animation.fading.FadeOut.html
-Or fade out still image using video editor
+Or fade out still image using video editor--->
 
-(Likely a cat 1 (axis j) means "1 unit sure"?)
+(Likely a cat 1 (axis j) means "1 unit sure"? Use pic of actual cat with 'likely' over it?)
 
 Since each coordinate space is a different way to represent the data, let's call each coordinate space a Model. The first model we saw will be Model 1, and the second will be Model 2.
 
 Fig 8a, 8b
 
-<img src="/cob/fig6a.png" width="300" height="200">
-<img src="/cob/fig6b.png" width="300" height="200">
+<img src="/cob/fig8a.png" width="300" height="200">
+<img src="/cob/fig8b.png" width="300" height="200">
 
 Label left as Model 1, etc
 [Model 1, and Model 1 on top of Model 2. Sys 2 'jk'. No vectors.]
@@ -84,8 +87,8 @@ We know in Model 1 that [2 0.5] is [cat pic].
 
 Fig 10a, 10b
 
-<img src="/cob/fig8a.png" width="300" height="200">
-<img src="/cob/fig8b.png" width="300" height="200">
+<img src="/cob/fig10a.png" width="300" height="200">
+<img src="/cob/fig10b.png" width="300" height="200">
 
 [[2 0.5] catpic in Model 1 and [2 0.5] in Model 1 on 2. I vector is fixed. unlike prev anim, fade j,k only after change basis so not too cluttered]
 
