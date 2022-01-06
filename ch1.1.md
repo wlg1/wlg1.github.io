@@ -6,10 +6,7 @@ Let's start with an example that will show us how matrix multiplication transfor
 
 ![Figure 1: Cat](/cob/fig1.PNG)
 
-So every entity in the population is represented in the dataset as a data point, which is an abstraction defined only by body size and face length:
-[arrow from text to pics of shapes only, labeling which is body size and which is face length]
-
-We can represent the datapoints in this dataset as data points in a coordinate space, using the two features as axes:
+So every entity in the population is represented in the dataset as a data point, which is an abstraction defined only by body size and face length. We can represent the datapoints in this dataset as data points in a coordinate space, using the two features as axes:
 
 <img src="/cob/fig2a.PNG" width="300" height="200">
 <img src="/cob/fig2b.png" width="300" height="200">
@@ -21,7 +18,11 @@ We can represent the datapoints in this dataset as data points in a coordinate s
 When labeling our coordinate space, if we keep only the images of unit 1, we get:
 <img src="/cob/fig4.png" width="500" height="400">
 
+<!---
 Every data point is a combination of [body size 1] and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
+[body size 1] is smaller than [body size 2]
+--->
+Every data point is a combination of <img src="/cob/face1.PNG" width="50" height="50"> and [face length 1]. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
 [body size 1] is smaller than [body size 2]
 
 ![Figure 3: Linear Combination](/cob/fig5.PNG)
@@ -67,8 +68,8 @@ Since each coordinate space is a different way to represent the data, let's call
 
 Fig 8a, 8b
 
-<img src="/cob/fig8a.png" width="300" height="200">
-<img src="/cob/fig8b.png" width="300" height="200">
+<img src="/cob/fig8a.PNG" width="300" height="200">
+<img src="/cob/fig8b.PNG" width="300" height="200">
 
 Label left as Model 1, etc
 [Model 1, and Model 1 on top of Model 2. Sys 2 'jk'. No vectors.]
