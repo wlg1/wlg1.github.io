@@ -1,0 +1,456 @@
+NOTES:
+
+Don't begin by describing the animation of Reality using features; just use numbers. These distances and relative orderings are the purest form of relations, and shows just how general the models can be.
+
+at start: reveal deep, profound insights not just in the math of artificial intelligence, but in the data collected from reality itself
+Don't use the word 'philosophical'; use 'profound'. Profound insights imply broader, which draws in more audiences with different interests.
+
+The reader should not see the Reality example before the German example. The picture of poison/gift is only in the German example, but Reality uses different objects (not poison/gift).
+After first section (using simple German example), allow reader to take two routes: a canonical route into 'more profound +' about this section's concepts (this is the bigger arrow down into next section, deeper into the rabbithole) or a 'shortcut' arrow that "skips to the next section". Profound is optional but will help with a better understanding of the math, which will offer even more creative insights on how to use the math to solve a problem. [don't use word 'profound' b/c too pretentious; use 'deeper insights'. Call these + sections Insights. Only use profound insight within the text, but not as advertising them]
+
+have a separate section saying "Hypothesis"- make sure they're testable. Or "Speculation", which is not formed into hypotheses yet.
+
+<<<<<<<<<<<<
+WORKING BLOG TITLE: From Paws to Cats / From Neurons to Cats / From Paw Neurons to Cat Neurons 
+JOURNEY TITLE: How a Neural Network Guesses Cats from Their Ears and Paws
+(on youtube, call main intro video: How Neural Networks Guess a Cat from Her Ears and Paws)
+(Using a Neural Network to Guess a Cat from Her Ears)
+Use Artbreeder to make a wide mouthed anime cat girl (gets views). Use lofi hiphop. 
+This video pieces together Ch 1 + Ch 2 + Circuits + Analogies, mentioning more videos delving into them during, and at end advertises a series of videos about various topics such as Algebraic Topology (or don't if it's expo only)
+Prev top mathexpo vids ranged from 10-20mins, so aim for ~10mins
+
+CHAPTER 1 SECTIONS:
+Ch1 Intro: How Neural Networks Reveal Hidden Insights in Data (using Matrix Multiplication)
+1. What is matrix multiplication doing? Change of Basis.
+    1+. WHY use basis vectors?
+2a. What is dot product doing?
+2b. How does matrix multiplication change basis?
+    2+. The Duality of Neurons: As Objects, As Relations
+
+1: Show German -> English using W matrix, then show how this relates to cols, etc. of weight matrix of neurons
+1+: discusses RELATIVE meaning
+2a: show how "projects" onto one vector
+2b: show how dot product is used for both basis vectors in 2D MM
+2+: neurons as functions, only having meaning relative to other neurons
+
+?+: In terms of matrices- Analogies, Structure Preserving Maps, Avoid confusing the map for the territory (mentioned before in + sections), Circuits. Later chapters discuss in terms of other structures.
+
+OR: 1.1, 1.2, 1.3, 1.4, 1.5. Sections 1.1 and 1.2 are PRACTICAL. Sections 1.3 to 1.5 are INSIGHTS+ (in italics).
+1.1: How does matrix multiplication guess a cat from its face and body?
+1.2: Why use dot product in matrix multiplication?
+1.3: WHY use basis vectors? The relativity of data
+1.4: The Duality of Neurons: As Objects, As Relations
+1.5: The Analogy of the Matrix
+
+CHAPTER 2:  How Neural Networks Make Faces Look Younger (using Orthogonal Projection)
+[youtube vid: how to get a neural network to make you into a cat]
+[practical question even layman gets]
+[ALT DOOR INTO CH 2: Exploring the Concept Spaces of Neural Networks (esoteric, profound door, but not practical so different audience) ]
+1. Dot product for direction
+Lengths
+Normal
+2. Orthogonal Projections
+
+Targeted modification: Tell it what you want; not every detail, but still specific enough. Not just a 'face', but an 'old face', and the NN handles the rest of the details.
+
+CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
+Eigenvectors, Diagonal, Decomposition, matrix factorization & PCA
+
+https://www.kdnuggets.com/2020/12/data-compression-dimensionality-reduction.html
+
+https://towardsdatascience.com/the-essence-of-eigenvalues-and-eigenvectors-in-machine-learning-f28c4727f56f
+
+https://datascience.stackexchange.com/questions/26683/does-it-make-sense-to-combine-pca-with-an-artificial-neural-network
+
+CHAPTER 4: How Neural Networks ...[something practical] (using Low-Rank Factorization)
+[precise control... separate... Close Eyes but not Mouths]
+
+CHAPTER 5: How to Find the Roles of Neuron Communities in Neural Networks ... (using Non-Negative Matrix Factorization)
+[or 'how to explain what neural networks are doing']
+[or 'how to unravel the black boxes of neural networks']
+Same type of technique as Ch4
+
+CHAPTER ??: How Neural Networks see [something about analogy] the same (using Fourier Transforms)
+Summation in convolutions removes differences, allowing features to be seen 'as the same' despite rotation, translation, etc. "Equivalent in a group"
+
+CHAPTER ??: Neurons as k-forms
+CHAPTER ??: Algebraic Topology for both relational data and NNs
+CHAPTER ??: Structure Preserving Maps, Duality, Higher Order Categories
+
+(also have more generic searachble doors, such as "How does StyleGAN work?")
+
+Each new page is just to make it short and not look intimidating (but must put how many pgs left of this sec; usually 3). Each new page is not necc a new sec.
+
+Youtube vid names: How to turn yourself into an anime character (Using Matrix Multiplication)
+
+
+<<<<<<<<<<<<<<<
+What is a 'vague understanding of linear algebra?'
+- What matrix-vector multiplication is (but not necessarily how to do it)
+OR: you don't need any prereqs, but seeing these videos would help
+- You've learned what neural networks are
+
+
+<<<<<<<<<<<<<<<
+INTRO PAGE: 
+(Aside from the home page, there are many entrances called 'doors' to this website, which you click on based on what interests you. Someone interested in clear cut explanations of unfamiliar terms that get to the point may find a link using one door; another person interested in "entertainment" may use another door)
+
+When studying new improvements to neural networks, many people run into this problem:
+1) The math terminology is unfamiliar. When one looks up the terms, the articles describing them use even more unfamiliar terms, and because they're not efficiently tailored towards the paper one is reading, there's so much extra stuff in them that it's very time consuming to learn.
+
+Eg) What's eigenvector decomposition? How can I learn this as fast as possible?
+Don't use example from actual paper
+
+This website solves this problem:
+1) It explains all the required prerequisites needed to understand the terminology from the bottom up*, so one does not have to go through a time consuming scavenger hunt to understand all of them; they're all neatly collected in one place. The website cuts out all the extra information that's not needed to understand how this term is used for this neural network paper. 
+*assuming only that a reader has a basic understanding of X, or has watched these videos []. Links are provided to them.
+
+There is a second problem that many people run into:
+2) Concepts are introduced such that one doesn't know why they're important. What's their purpose? How is it connected to improving a neural network?
+
+[image caption: All of a sudden we're spending an hour talking about X. ]
+
+This website also solves this problem:
+2) All explanations get to the point. They always start off by stating the issue that this concept will solve, and how that issue will improve a neural network. Then, they go further by saying how generalizing this solution can solve similar problems, thus showing the long term usefullness of the concept.
+
+[ Footnote?: Chapter 0 (rename ch1 into ch0) does not begin with an analysis of practical solutions, but provides an intuitive foundation to understand all other chapters. Unlike other chapters, Chapter 0 does not cut to the point of finding solutions to a practical research issue, but understanding it allows one to both understand solutions and solve problems on a ...
+because a more intuitive understanding gives one..., one can have more avenues to solve a problem, rather than be stuck in a dead end. Allows one to think outside of the box one currently knows.
+[picture of intuitively understanding and thinking outside of the box Vs being locked into only using the given rules] ]
+
+<<<
+GOAL: How does the ALGEBRAIC PROCEDURE (bold) of matrix multiplication allow neural networks to transform data?
+
+CHAPTER 1 "ABSTRACT":
+Before explaining, list out the main questions that motivate the sections. Allow clickable for reader to jump to them.
+
+1a. Intuition to relate linear algebra concepts to neural network concepts
+(first introduce that 'transformation is change in perspective')
+    Ie. Why Weight matrix
+1b. Algebra
+(AFTER EXPLAINING THAT, introduce 'why procedure works' for second part)
+
+DON'T put in one long page; psychologically intimidating and people will click off. Break it down into managable sections (each section est read time is 3-5min; do not reveal total read time for chapter)
+
+[Begin by simplfying the motivation with a vague promise: ie. Let's extend the insights from 3Blue1Brown's video series to gain greater insights into how neural networks work.]
+[Forget the complex, detailed motivations, just dive right into explaining it?]
+
+Vague promises this chapter offers as starting motivation:
+* Linear algebra is required to understand why neural networks are so effective. Delve deeper into the intuitions of linear algebra to better design new solutions that improve neural networks.
+
+Neural Networks can do amazing things [revise this; show animation / sequence of how they perform classification on a data manifold, with NN layers on top and latent spaces below, and with a simple (not detailed) equation at each step to show where MM is used]. Yet underlying its amazing abilities is an algebraic procedure that seemingly has little to do with concepts and shapes: Matrix Multiplication.
+
+(box) QUESTION: How does Matrix Multiplication allow neural networks to transform data?
+[for each box, to make sure not get lost, show how relevant 'sub-issues' in hierarchy used to answer previous issues]
+(question-explanation is different from issue-solution; latter is more practical)
+
+It's clear from these animations that matrix multiplication corresponds to "transforming" an input vector using a matrix, and thus translates, rotates, and stretches a data space to reveal hidden relationships in the data. 
+
+1. But how does the algebraic procedure of matrix multiplication allow this geometric change to happen? How does 
+[figure of getting the dot product of first row of the matrix with the input vector] 
+and so forth, get you to the desired output vector, say the vector "rotated" by 90 degrees? 
+[And how do you choose the combination of numbers in the matrix to get you there?]
+2. But why does formulating these weight connections into a Weight matrix? Why decide the first weight out of neuron 1 goes into this position, etc? 
+[picture labeling which system Matrix columns come from, output, input]
+
+[But we can gain a greater insight into how to manipulate linear algebra to do this by delving deeper into how it works. We can design our own matrices to solve new problems. If we don't understand this intuitively, we may design the matrices and algorithms wrong.]
+[Many solutions used to improve neural networks use matrix multiplication. Once we know why the algebraic procedure of matrix multiplication changes the geometry, we can understand many of the more elaborate solutions.]
+
+<
+[Don't start w/ this b/c requires reader to remember details of video or watch it again. Your explanation should be mostly self-contained.]
+@ 7m in the video, the video discusses this equation.
+[equation]
+It says the transformation matrix takes our misconception of what Jennifer means (the input vector [-1 2]), and transforms it into what she really meant (the output vector, [-4 1]). Why is [-1 2] our "misconception"? The 3Blue1Brown series of videos show that the vectors [-1 2] and [-4 1] are only symbols describing what we can intuitively feel as some "concept", which is actually defined based on its relation to other concepts. [bold]
+
+[First, we'll re-explain 3Blue1Brown's video in a new way that allows it to tie together with the explanation about neural networks. Even if one has already seen that video, going through section 1 will make section 2 easier to understand.]
+<
+Change of basis | Essence of linear algebra, chapter 13
+https://www.youtube.com/watch?v=P2LTAUO1TdA&list=PL0-GT3co4r2y2YErbmuJw2L5tW4Ew2O5B&index=13&ab_channel=3Blue1Brown
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+WHY USE BASIS VECTORS IN NEURAL NETWORKS?
+(to save space, click to play slides/animation. Later be interactive so the reader can input their own transformations, or drag and rotate it.)
+
+[First show the reader the concept space. Do not show them numbers. The reason is because when they see [-1 2] or 'gift', their brain auto-associates them with their pre-conceived notion of it. First show them a nonsense mapping onto Reality. At the end or footnotes, explain why you presented this this way and in this order.]
+
+[ First show Reality, then show numbers of 2 coordinate systems. Use numbers first to show that [-1 2] can be on different concepts, and also to relate this to Matrix Multiplication near the start, as we stated beforehand that's the main focus of this section. After showing numbers, use letters because this shows the [-1 2] of System 1 is not the same as the [-1 2] in System 2. G.I.F.T looks the same in German and English, but they map onto two different concepts.]
+
+[We will illustrate reality- the concept space. Use a psychaedelic animation.]
+[We will review this idea, and connect it to neural networks to gain stronger intuition about how linear algebra is used to find hidden relationships in data. To do so, let's begin] 
+
+To gain stronger intuition about how linear algebra is used to find hidden relationships in data, we'll begin with a thought experiment. We will illustrate the difference between what we call "Reality", the concept space in Figure X, and a Model, a coordinate system. 
+
+[pic 1, pic 2, etc] are all entities called Concepts within this Reality
+We call a still picture of this Reality animation a Viewpoint. We observe that there is no one true viewpoint of Reality. All these viewpoints of Reality are valid ways to see it from a certain perspective, and they all are equivalent to each other. [take stills of the animation]
+(Analogous because they preserve relations)
+
+In this thought experiment, the goal of a neural network is to label the concepts within Reality using a coordinate system. Each point, or vector, in the coordinate system is a label. This system of numbers is also how the neural network can measure how far away each concept is from one another. For example, [pic 1] can be labeled with [-1 0], while [pic 2] can be labeled with [-2 0]. Then the neural network knows [pic 2] is 1 unit to the left of [pic 1].
+[label this on figure]
+
+But a neural network cannot place a coordinate system on top of this moving animation of Reality; it must choose one of the viewpoints. If it tried to place it on top of all the viewpoints, the label [-1 0] would mean [picture 1] but also [picture 2].
+[try placing coordinate system on top of moving animation. label some numbers]
+[place the same coord sys on two views that contradict each other]
+
+To lock into a viewpoint, the neural network needs at least one reference point, or a "reference vector". That is, it must fix a label onto one concept. Like an anchor, this reference point locks the animation onto this seemingly arbitrary label. Using the reference point, the neural network can describe all other concepts based on 1) how far away they are from the reference point, and 2) whether the concept is behind, in front of, to the left of, and so forth, from the reference point. Figure X shows that the only difference between each viewpoint is the choice of reference points.
+
+If only one reference point is used, the neural network stops Reality from moving up and down, and the same label can describe two different concepts. But Reality can still move left to right. However, if the neural network uses two reference points, it stops the animation from moving completely. 
+
+Another word for a reference point is a basis vector. Thus, to label the concepts within Reality, the neural network must choose a set of basis vectors. The set of basis vectors creates a coordinate system, which we'll call a Model.
+
+[Change of basis of WI = O, means 'changing into O'. Since O is in the system with W, and W is in System 2, we are 'changing into system 2'. System 1 is where I, the input, originally is. It's where [-1 2] uses [1 0] and [0 1] as the basis. System 2 is where O, the output, is. It interprets [-1 2] as [-4 1] using the basis [2 1] and [-1 1], which are what System 1's basis look like in System 2. Based on this, we are rotating the basis of System 1 to become non-basis in System 2; we are not going onto [2 1] and [-1 1] as the new basis.]
+[3Blue1Brown @ 5:45m says the matrix 'moves our basis vectors' onto [2 1] and [-1 1]. Yes; what was [1 0] in System 1 is now [2 1] in System 2. Anyways, don't discuss these semantics issues in the blog, as it gets confusing. Don't mention we're 'changing into basis using the matrix'.]
+
+(see 4:30-5m in video)
+Let's consider two coordinate systems.
+
+Recall in the video that JENNIFER'S 2 basis vectors are [1 0] and [0 1]. However, OUR coordinate system sees those same exact vectors as [2 1] and [-1 1]. 
+(show picture of them superimposed)
+
+2:59m: 
+HER basis b1=[1 0] is OUR [2 1]
+HER basis b2=[0 1] is OUR [-1 1]
+
+[Fig: Left is Sys 1, Right is sys 1 on Sys 2]
+. first show j-k Sys 1 and j-k on top of c-d Sys 2, with one vector b/c [-1 2]
+    make j-k basis bolder than c-d. same color for j, k in both Sys
+. show that Identity * [-1 2] in Sys 1 is 'analogous' to 'W matrix' * [-1 2]
+[-1 2] is the ONLY non-basis vector in both pics. [-1 2] never existed in Sys 2; it was always [-4 1]
+[ No need to show matrix multp here b/c [-1 2] points to [poison], and so does [-4 1] in Sys 2]
+
+[first show one coordinate system, then show other coordinate system on top of first one, then show second one. use animation]
+
+Now each viewpoint has its own possible advantages and disadvantages relative to a goal. If we want to classify...
+[show squishing, hiding, etc]
+
+<<<
+So to reveal hidden relationships in Reality, the neural network wants to consider multiple points of view. If it combines information from two viewpoints, such that there is information from one viewpoint that another viewpoint lacks, it gains greater insight into Reality than using one point of view. Since each viewpoint uses a different coordinate system, each view is a different Model of Reality. 
+
+Now let's take a step back from this thought experiment, and connect it back to our world. A data set looks at a limited perception of our world, and labels it by describing it with collection of features. These features can be individual pixels, the length of a petal, the number of windows in a house, and so forth. As many know from machine learning tutorials, these features act as axes in the coordinate system of an Input Space, where the vectors are data points [show picture]. 
+
+Using the terminology of the thought experiment, the Input Space's coordinate system is a Model of our world; the data set is not reality. In fact, it is the first Model that the neural network "perceives". Let's look at an example where the input space uses pixels as feature axes. At first the neural network just sees an image as a vector based on the value of its individual pixels. But this may not be enough for it to recognize objects that defined are as pixels arranged in a certain way. So using only this first Model, the neural network has to relate it to another Model that describes not just the pixels themselves, but the relationship between pixels, making sure to preserve the relationship between concepts captured in the first Model. 
+a = WX + b [show picture such that each latent space is a Model]
+
+WX is change in basis, + b is just shifting WX
+
+The neural network can use the information gained from a Model to construct another Model, successively constructing more and more Models to hone in on the information it needs to make a decision, like a detective following clues to new crime scenes to finally nab a suspect.
+
+[We are not actually 'moving' the vector [-1 2] onto [-4 1]. We are moving Reality, while the coordinate system, which describes Reality, stays the same.
+Actually one can argue if we're moving reality or the coord sys; this is for Ruminations]
+
+Figure showing neurons as basis vectors
+
+<<<<<<<<<<<
+ANALOGY TO HUMAN LANGUAGE:
+
+To prepare us with better intuition for describing how change in basis works in NNs, let's look at a model where, instead of labeling the Concepts in Reality with numbers, it uses letters instead. We choose the Model using the following basis vectors in Figure X, as in Figure Q above, but replace the vector [1 0] with Ger1, and the vector [0 1] with Ger2. Now the letter sequence (G, I, F, T), instead of [-1 2], labels [skull pic].
+
+What we have actually done is label the [ Poison symbol ]
+
+In English, the same coordinate system of letters would place gift, or [-1 2], on the [present symbol]. 
+
+If you used this coordinate system to label the concepts, you'd see that [Poison symbol] is called 'gift'. Let's say that [poison symbol] can kill you if you eat it. If you were to tell an English speaker that you're giving him a "gift", he may be overjoyed, because he thinks you're giving him [present symbol]. But you're actually giving him [poison symbol]! 
+
+The coordinate system that you're using is actually German- and in German, 'gift' means [poison symbol]. This letter sequence (G, I, F, T) is an example of a false friend, which is a letter sequence that has two different meanings (relative to other words) in two languages. A language system is just a Model.
+
+Just like 'gift', the vector [-1 2] means different things depending on the basis vectors you're using. The German speaker  vector [-1 2] ('gift') that LOOKS LIKE [-1 2] ('gift') in our language.
+
+To recap:
+[German basis vectors] [-1 2] = gets you to [poison symbol]
+= [English basis vectors] [-4 1] = gets you to [poison symbol]
+= [German basis vectors in English] [-1 2] = gets you to [poison symbol]
+
+[show in figure]
+[-1 2] (German) --> Multiply by translator (English) --> [c d] (English)
+
+The translator must be in English because it has to explain to the English speaker what [-1 2] actually means in English.
+
+https://www.bbc.co.uk/languages/yoursay/false_friends/german/mist_common_false_friends_in_german_englishgerman.shtml
+WHAT LOOKS LIKE [-1 2] ('gift') in German != [-1 2] ('gift') in English
+[-1 2] ('gift') in German = [-4 1] ('poison') in English 
+
+[ Another way to show that [-1 2] means two different things is to use a coordinate system of words instead of vectors. ]
+
+(Now describe the mathematics of how basis vectors add up to get a vector, and how translating basis vectors then adding is the same as matrix multiplication)
+
+[At the end, say 'we can go further' than letters and numbers. Now using the same axis concepts, overlay 2 concept spaces onto each other, only difference is one is 'poison and gift' and the other is 'sad and happy'. This looks like an "analogy". Not only are transformations between models an analogy, but so is the model and Reality. Any mapping is an analogy; between models, or between model and Reality.]
+
+<<<
+[ put this at end @ 7m in the video, it says it takes our misconception of what Jennifer means, and transforms it into what she really meant. ]
+There is no [-1 2] vector. There is only a concept relative to other concepts, and [-1 2] is merely a model labeling that concept. Any other vector can be used as a label, so long as it strives to preserve structure relative to the other labels. The labels must be consistent such that they form a structure-preserving map.
+
+The numbers are merely letters, but they do not carry meaning unless put in relative context with other words of the same language.
+(overlay two coord sys on top in both ways, and also turn them all the way around in any rotation and shift)
+It's dependent on the relation to other words of the language due to structure preserving maps. These numbers and letters are merely part of a model.
+WHAT IT LOOKS LIKE: vectors defined by numbers / words defined by letters
+WHAT IT MEANS: relative to other vectors / relative to other words
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INVERSE:
+[To illustrate TRUE MEANING, draw a picture. This is the 'reality'. The words are merely models.]
+
+7:20-8:20m: What if WE say "gift"? The German foreigner must translate this to a German translation (not necessarily a word, but possibly a German sentence, or even a paragraph or textbook) that makes him understand that it's Figure X. 
+Just take the inverse of our previous transformation matrix, and apply it to "gift". This is because the columns of this inverse are what OUR columns [1 0] etc look like in German. Remember that [1 0] is not an absolute or universal item (show picture of the basis vectors used as 'anchoring points' to define meaning)
+
+[-1 2] (Gift, German) != [-1 2] (Gift, English)
+[-1 2] (Gift, German) = [-4 1] (Disgust, English)
+[1/3 5/3] (Geschenk, German) = [-1 2] (Gift, English)
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+WHY ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS
+(this is a whole separate section, broken into smaller subsections as pages)
+
+[Show both bottom up and top down. First bottom up.]
+[Later map this breakdown onto NN]
+Once we understand why the dot product is done this way, and what it's purpose is, and how it fits into other procedures, we can relate it to NNs.
+
+Let's review 3Blue1Brown... (don't say this at start of prev section, say here)
+
+Let's describe what's happening during 2D matrix multiplication.
+[label statements with colored labels on pic of matrix]
+[put colored statements in an ordered list]
+
+<<<
+[ we began by explaining it intuitively with no math; now, we'll go into the details of why we perform each math operation, and how the algebra changes the geometry]
+
+First point out intriguing questions as Motivation
+
+(may use J K instead of v w b/c use W, later 'weight', as matrix)
+(from prev section, now re-paste in this section)
+. first show j-k Sys 1 and j-k on top of c-d Sys 2, with one vector b/c [-1 2]
+    make j-k basis bolder than c-d. same color for j, k in both Sys
+. show that Identity * [-1 2] in Sys 1 is 'analogous' to 'W matrix' * [-1 2]
+
+[NOT NEEDED FOR NOW- show this re-arrangment afterwards]
+. re-arrange -1j + 2k can be decomposed into (-1*j_c + 2*k_c) + (''' for d coordinate). These are the dot products for row 1 (c) and row 2 (d)
+
+[Let's first focus on the first operation: dot product]
+. Now explain dot product using 1D vector addition
+
+OUTLINE:
+[page 1]
+. 1D Vector Addition (the most fundamental). If we accept this as True, everything else follows. [It's all we need to derive the procedure]
+. Show the '1D' matrix multiplication is the same as '1D vector addition'
+    (OR don't call it matrix multiplication, just dot product)
+    . 1D 'matrix' has each col be a 'basis vec' in 1D (?)
+    . '1D' matrix multiplication is the dot product
+. Thus, the reason the dot product works the way it does is because it's scaling two vectors in the same dimension, then adding them! This produces the first coord using the basis vector
+    (Vector is linear combination of basis?)
+. This 1D dot product is the same as vx + wx, which is the first procedure dot product in matrix multiplication!
+[page 2]
+. Now in c-d Sys, scale vc and wc and add them together to get -4. This is row 1. Row 2 is the same; you can work it out yourself (but show animation / final result)
+. Thus, the procedure to do 2D matrix multiplication is a sequence of 1D vector additions!
+
+. Show that this procedure in Sys 2 is the same as Sys 1 if you use Identity matrix column basis vectors. 
+(Start w/ showing Sys 1 or Sys 2 first? Sys 1 DOES NOT require 1D vector addition, while Sys 2 does. So if show sys 1, don't need to show 1D vector addition first. You should show sys 1 first b/c it's just -1*b1, 2*b2. THEN show how 1D vector addition allows the same to happen when basis vector coords are nonzero.)
+
+OPTIONAL ADD-ONS- DERIVATION 2:
+. 2D vector addition decomposition into c-d basis vectors, then transform each indiv basis vector into j-k: how it is equivalent to procedure above
+
+[ Note that the input vector STAYS in ]
+
+(q, r; s, t)
+(c, d; j, k)
+Now map c-d onto N_c, N_d neurons in layer 1. What is [-1 2] in c-d is [-4 1] in j-k.
+Show these two animations side by side, or stills of 2cols where each step is equiv to the step in other col. include equations for each
+DO NOT overlap Sys 2 onto Sys 1 (only do that when discussing inverses)
+
+[INVERSE MATRIX algebraic calc; optional section, put link to it]
+
+<<<<<<<<<<<<<<
+2:59m: 
+HER basis b1=[1 0] is OUR [2 1]
+HER basis b2=[0 1] is OUR [-1 1]
+
+4:30m: Jennifer asks what HER [-1 2] is in OUR coordinate system
+
+In Jennifer's coordinate system, the vector [-1 2] means 
+-1 * b1 = -1 * [1 0] = -1
+2 * b2 = 2 * [0 1] = 2
+
+Every vector is a linear combination of its basis vectors.
+The -1 is multiplied by ONLY b1, which consists of an x-coord and a y-coord. 
+
+In matrix multiplication, this translates into:
+[-1 2] (dot) (1st row) = [-1 2] (dot) (x coords of basis vectors)
+[-1 2] (dot) (2nd row) = [-1 2] (dot) (y coords of basis vectors)
+
+= [-1 2] (dot) [2 -1] = -2-2 = -4
+= [-1 2] (dot) [1 1] = -1+2 = 1
+
+Note that 'x and y coords' refer to the rows. This 'xcoord' refers to the first basis vector in OUR system, and the 'y coord' refers to the 2nd basis vector in OUR system. JENNIFER'S basis vectors are the columns.
+
+<<<
+It's strange that the ...
+
+Linear transformations and matrices | Chapter 3, Essence of linear algebra
+3Blue1Brown explains that a vector is a linear combination of the basis vectors. The reason we take this dot product of "x coordinates of v and w" is because we are scaling the x-coordinate that defines vector g. This is the same as in System when we are scaling 
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ROTATION MATRIX: (optional)
+
+9:30m: Vectors in linear space describe a point relative to basis vectors being used as orthogonal axes. They can be made "orthogonal" by viewing them from different "perspective angles" (don't just view it from the same 2D wall; pivot in different dimensions to transform your coordinate system!)
+
+<
+9:44m: 90 degree rotation: the input vector is a vector in sys1, which is the rotated space. sys2, our space, is currently not rotated. Translate the basis vectors in the rotated space into sys 2 vectors to get the matrix. We see that what's the "y axis" in the rotated space (sys 1) is actually [-1 0] to us (sys2), as we see in the video still, and sys1's "x-axis" is our y-axis, so we see its [1 0] as our [0 1].
+
+When rotating, we're not actually rotating the vectors. We're just shifting the perspective. We're not moving the objects inside the room, we're rotating the room itself. Or the camera.
+Neither English nor German (two coordinate systems) capture the true vector; they are all merely representations modeling it.
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+NN WEIGHT MATRIX: 
+
+https://www.jeremyjordan.me/intro-to-neural-networks/
+So if the neurons are basis vectors, in the Weight matrix:
+Each row goes to one neuron OUTPUT in the next.
+Each col belongs to a neuron INPUT in the previous layer
+
+Thus, each col is a previous layer neuron. Given input vector [-1 2]:
+-1 * [1 0]
+2 * [0 1]
+
+Creates the input vector x = [x1 x2] = [-1 2]
+
+1st coordinate system: pixels, input space X
+2nd coordinate system: 1st layer of latent space
+
+Now we want to re-interpret (concept at [-1 2]) in the 2nd coordinate system. It's not that we're re-interpreting the label [-1 2] itself, but the concept that [-1 2] labels.
+
+Note that the matrix column vectors are always the same coordinate system as the output vector; we'll call this coordinate system "sys 2". The input vector "seems to be" a vector in sys 2, but it's actually a vector in sys 1. Eg) 'Gift' (input vector) seems to be English (sys 2), but it's actually German (sys 1)
+
+The input vector APPEARS to be English, but that's a misunderstanding. It's actually German. So the input [1 0] IS NOT A BASIS VECTOR IN GERMAN! The English speaker merely THINKS it is!
+
+Thus, the input vector of pixels comes from sys 1 (input space), and the weight matrix and activation vector belong to sys 2 (1st layer latent space). The columns of the weight matrix is what the 1st layer sees as the basis vectors of the input space. This is why the 1st column of the weight matrix are all weights coming out of x1. This is because x1 is a basis vector in the input space, but the 1st latent layer sees it as only its outgoing weights. 
+
+Learning weights is the same as learning to choose the right basis vectors. PCA is a way to get basis vectors.
+
+[Elephant example]
+
+[We are done with this chapter. One go on to the next one, or read the optional section below for more philosophical ruminations.]
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+RUMINATIONS: (start off with snippet of it, then optional to click on)
+At first, the neurons are merely basis vectors. But then, they become weights in the new space. In a linear combination with weights from other basis vectors of sys 1 (this is the 1st row of the weight matrix, or the 'x coords of the basis vectors, where x is the new basis vector in sys 2'), these basis vectors together create a new basis vector (row 1), and another (row 2). [It is as if] These entities die and transcend into a new form, giving birth to new life in a new perspective.
+Matrix multiplication is just a way to re-interpret an instruction (input vector) of relative relations using the columns of the matrix. The first row of old basis vectors is what becomes the value of the first new basis vector in the new space, etc. This is the beauty of duality.
+
+Therefore, the outgoing connections of x1 can be thought of as w1. So x1 becomes w1. Each new basis vector gets an "opinion" from all the previous basis vectors. (In many cases, this weight is 0 (no opinion). ) An entity becomes a relation, and new entities are made up of relations from multiple other entities. An entity cannot be defined without the relations going into it. A neuron (which plays a role, such as identifying a feature) is defined by abstract relations relative to each other. When these basis vectors are CHOSEN (solved for) to get the right weights, new patterns can be identified.
+
+Analogies are merely pattern identification. Thus, choosing a certain combination of basis vectors (for multiple layers) allows analogies (identifiers) to be constructed. Build up analogies locally (more abstract) to search for the bigger analogy (more specific, because a bigger pattern has less matches than smaller ones). Knowing this insight about duality will not give the answer to how to get a NN to learn better analogies, but it will help get the answer.
+
+Now we understand the system that the original model was supposed to model. A fallacy is to believe that vectors are absolute- NO VECTOR IS ABSOLUTE AND UNIVERSAL. They are all RELATIVE TO BASIS VECTORS. [v w] IS NOT THE SAME AS [c d] in our coordinate system, but the [v w] in the foreign coordinate system is the same as [c d] in our coordinate system!  All vectors are models and there is no "actual vector".
+
+It is a misconception to say that vectors were shifted. No vector was actually shifted; it's all the same points. It is the coordinate system perspective that's changed. That can be said about our perception: the universe does not change, it's only perceived in a different way. Assuming that basis neurons transform outside data into a different form, perception is just a change in basis. The Origin is God.
+There are only relative patterns, and how they're perceived requires a basis.
+
+The only thing that never shifts is consciousness. It is the Origin- tabula rasa. Everything else can be shifted. This is the ONLY thing that all perceiving beings share. What do all perceiving systems share? That is what the origin is. It allows perspectives to be shifted. It is empathy. Without it, there is no communication.
+
+<<<
+Don't confuse the map for the territory (make sure it's structure preserving- show picture why if this doesn't hold, you are confusing the two. Use experiments.)
+Now, let's extend this analogy to neural networks.
+
+<<<<<<<<<<<
+https://textbooks.math.gatech.edu/ila/projections.html
+
+https://tutorial.math.lamar.edu/classes/calcii/dotproduct.aspx
+
+To try: 
+[create non orthogonal basis in manim to see what happens]

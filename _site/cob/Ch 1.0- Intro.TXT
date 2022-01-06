@@ -1,0 +1,35 @@
+GOAL: How does the ALGEBRAIC PROCEDURE (bold) of matrix multiplication allow neural networks to transform data?
+
+CHAPTER 1 "ABSTRACT":
+Before explaining, list out the main questions that motivate the sections. Allow clickable for reader to jump to them.
+
+1a. Intuition to relate linear algebra concepts to neural network concepts
+    Ie. Why Weight matrix
+1b. Algebra
+
+[Vague promises this chapter offers as starting motivation:]
+* Linear algebra is required to understand why neural networks are so effective. Delve deeper into the intuitions of linear algebra to better design new solutions that improve neural networks.
+
+Neural Networks can do amazing things [revise this]
+[show animation / sequence of how they perform classification on a data manifold, with NN layers on top and latent spaces below, and with a simple (not detailed) equation at each step to show where MM is used]. [pic where one pt appears in multiple diff latent spaces]
+[define latent spaces]
+
+Yet underlying its amazing abilities is an algebraic procedure that, at first glance, has little to do with concepts and shapes: Matrix Multiplication.
+
+https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/
+
+(box) QUESTION: How does Matrix Multiplication allow neural networks to transform data?
+[for each box, to make sure not get lost, show how relevant 'sub-issues' in hierarchy used to answer previous issues]
+(question-explanation is different from issue-solution; latter is more practical)
+
+It's clear from these animations that matrix multiplication corresponds to "transforming" an input vector using a matrix, and thus translates, rotates, and stretches a data space to reveal hidden relationships in the data. 
+
+1. But how does the algebraic procedure of matrix multiplication allow this geometric change to happen? How does 
+[figure of getting the dot product of first row of the matrix with the input vector] 
+and so forth, get you to the desired output vector, say the vector "rotated" by 90 degrees? 
+[And how do you choose the combination of numbers in the matrix to get you there?]
+2. But why does formulating these weight connections into a Weight matrix? Why decide the first weight out of neuron 1 goes into this position, etc? 
+[picture labeling which system Matrix columns come from, output, input]
+
+[But we can gain a greater insight into how to manipulate linear algebra to do this by delving deeper into how it works. We can design our own matrices to solve new problems. If we don't understand this intuitively, we may design the matrices and algorithms wrong.]
+[Many solutions used to improve neural networks use matrix multiplication. Once we know why the algebraic procedure of matrix multiplication changes the geometry, we can understand many of the more elaborate solutions.]

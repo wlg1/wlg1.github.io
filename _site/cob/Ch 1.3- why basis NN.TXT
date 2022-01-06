@@ -1,0 +1,163 @@
+To gain stronger intuition about how linear algebra is used to find hidden relationships in data, we'll begin with a thought experiment that will help reveal what matrix multiplication is actually doing. We will illustrate the difference between what we call "Reality", shown in Figure X, and a "Model", which provides a way to not only label parts of Reality, but to logically derive statements about relationships between these parts of Reality. One such Model is a coordinate system. As we'll soon see, matrix multiplication bestows a way to translate between Models of Reality.
+[show picture, with caption: The Coordinate System labels the rock with (1,1) and the bird with (2,2), indicating that the bird is one unit above and one unit to the right of the rock]
+
+[before this section, start w/ that German picture. It's actually much easier to talk about that before talking about basis vectors and anchoring. But this Reality example illustrates the 'no name'. So perhaps German example should come first, with 'no name', but leave the anchoring etc afterwards?]
+[Remember, brevity with clarity is the draw. Mysterious need to 'understand more' comes after when the free first hit sample is given and the readers want more and is willing to put up with more to find the next hit.]
+[brevity with clarity comes before mysterious long journeys, it is the draw]
+
+When we look at Reality, we notice that within it are these entities [pic 1, pic 2, etc], which we'll call Concepts. Our goal in this thought experiment is to find a way to describe the relationships between these Concepts, such as [NOT DISTANCE B/C THAT'S AN ABSOLUTE CONCEPT! EVEN ORDERING IS AN ABSOLUTE CONCEPT! ONLY RELATIVE TO A BASIS VECTOR!]
+[Later on, with NN, show in data that this is obvious in that on the 'red' vector they have a certain ordering, but on 'size' vector they have different ordering]
+[relationships only exist in the context of basis vectors]
+[State that the main purpose of the thought experiment is to illustrate that we are not transforming one vector into another, but the Concept that the vector points to. The Coordinate system does not change; Reality does.]
+[Note that viewpoints have different relationships]
+
+[from a certain snapshot- this is the objective fn]
+
+We also notice that there are no names for the Concepts in Reality. Without names, how can anyone refer to them, or describe them, or compare them to one another? 
+
+So in this thought experiment, our goal is to find a way to label the concepts within Reality. We see that our goal not so different from the goals often given to a neural network.
+
+A coordinate system provides a way to do so: Each point, or vector, in the coordinate system is a label. This system of numbers is also how we can measure how far away each concept is from one another. For example, [pic 1] can be labeled with [-1 0], while [pic 2] can be labeled with [-2 0]. Then we know that [pic 2] is 1 unit to the left of [pic 1].
+[label this on figure. in caption: go two steps back from the vector to reach [pic 1] ]
+
+But we cannot place a coordinate system on top of this moving animation of Reality. If we did, the label [-1 0] would mean [picture 1] but also [picture 2].
+[try placing coordinate system on top of moving animation. label some numbers]
+[place the same coord sys on two views that contradict each other]
+
+Thus, must choose an unmoving snapshot of Reality. We call a snapshot a Viewpoint. 
+[CHANGE THIS- the snapshot comes first. Actually, no. We want to analyze multiple relationships between the entities, to make sure we're capturing as much about Reality as possible. This is b/c the relationships actually still exist; it's our perspective about them that make them 'lost'; they're not actually lost in Reality. Note that there is no 'absolute distance', only 'distance relative to a basis vector', ]
+
+
+We notice that some Viewpoints contain the same distances and relative ordering between the Concepts.
+[show the distance and relative ordering b/w 3 concepts in 2 viewpoints is the same]
+
+
+
+We observe that there is no one true Viewpoint of Reality. 
+
+In this sense, just like how 2 drawings of the same house model the same house, these viewpoints all model the same Concept Space.*
+[take stills of the animation]
+RUMINATIONS FOOTNOTE: As we see in Ch 1.5...
+*(Analogous because they preserve relations)
+[compare mapping of house and mapping of viewpoints]
+
+But they are not all equivalent to each other; SOME of these Viewpoints are equivalent.
+
+Just like how the only way to represent a house on paper is through a drawing that does not fully capture every property of the house- in other words, by **abstracting away** properties of the house- a labeling system can only represent Reality by **abstracting away** its properties into a viewpoint.
+
+To lock into a viewpoint, the neural network needs at least one reference point, or a "reference vector". That is, it must fix a label onto one concept. Like an anchor, this reference point locks the animation onto this seemingly arbitrary label. Using the reference point, the neural network can describe all other concepts based on 1) how far away they are from the reference point, and 2) whether the concept is behind, in front of, to the left of, and so forth, from the reference point. Figure X shows that the only difference between each viewpoint is the choice of reference points.
+
+[to lock means one vector MUST always point to a Concept]
+
+If only one reference point is used (x-axis), the neural network stops Reality from moving left and right. But Reality can still move up and down, meaning that we know [poison] is 3 steps left of [gift] relative to the basis vector, but we don't know if it's above or below it, as whether it's above or below depends on the choice of basis vector. 
+[show animation where sometimes it's above, sometimes it's below]
+
+However, if the neural network uses two reference points, it stops the animation from moving completely. 
+
+Another word for a reference point is a basis vector. Thus, to label the concepts within Reality, the neural network must choose a set of basis vectors. The set of basis vectors defines a coordinate system, which we will also refer to as a Model. One basis vector is enough to have a coordinate system.
+
+To recap terms:
+basis vector: a **reference point**
+coordinate system: a **model**... a **viewpoint**, defined by a **set of basis vectors**
+
+But what are the basis vectors in a neural network? To answer this, let's look at how the neural network uses coordinate systems to see the world of data.
+
+We'll take a step back from this thought experiment, and connect it back to our world. A limited perception of our world is labeled by a dataset using Features. These Features can be individual pixels, the length of a petal, and so forth. 
+[show picture of world into data vectors in a coordinate space, both pixels and IRIS]
+
+As many know from machine learning tutorials [cite Ng], these features are the axes, or the basis vectors, in the coordinate system of an Input Space, where the vectors are data points.
+
+As we saw in Figure 1 (ch 1.1), the neural network uses matrix multiplication- in other words, a change of basis- to transform the data into a form that allows for the optimization of a given task, such as classification. The left side of [fig below] shows the Input Space, and the right side shows the transformation of the Input Space into the first layer's Latent Space.
+
+[Fig: Left is Sys 1, Right is sys 1 on Sys 2. Arrow with W matrix in b/w]
+
+The Input Space [white circle] is labeled as basis vector c = [1 0], and [yinyang] is labeled as basis vector d = [0 1]. But in the 1st Latent Space, [white circle] is labeled as [2 -1], and [yinyang] is labeled as [-1 1]. The vector [1 0] did not become the vector [2 -1]; rather, the Concept that [1 0] labeled is now labeled as [2 -1]. Each coordinate system uses different labels for the same Concept.
+
+The transformation matrix W says that Concept [pic], previously labeled as [1 0] in the Input Space, is now labeled as [2 -1] in the 1st Latent Space.
+
+[pic of Wc = [2 -1]; color of Sys 1 is red, Sys 2 is blue. W and O are blue, c is red]
+
+W attempts to preserve the relationships between the Concepts as much as possible. Note that in between [poison] and [gift] is [yinyang]; their relative ordering is not switched. However, their absolute ordering is "subjective", depending on the choice of basis vectors. In some coordinate systems, [poison] is below [gift], but in others, it is above. What is attempted to be preserved between coordinate systems is the relationship between Concepts.*
+* much later on, we will discuss attempts to measure this using Structure Preserving maps, or Analogies
+
+Let's show how another vector is transformed. 
+(an example taken from 4:30-5m in video. W*[-1 2] = [-4 1])
+
+Now what are the basis vectors in a Latent Space? As we shall soon see in section [alg procedure], they are the neurons themselves.
+
+<<<<<<<<<<
+Now each basis vector (not coordinate system) has its own possible advantages and disadvantages relative to a goal. For instance, if we wanted to separate [poison pic] and [gift pic], we could use a basis vector [yinyang] to separate them. 
+[show this in 1D, with threshold of neg vs pos excite, which is <0.5 or >0.5 after activ fn]
+
+If we wanted to separate both [poison and gift] from [triangle], a second basis vector [white circle] can then do this independently of the first basis vector. 
+[figure of splitting in 1D]
+
+[finally, a dot product is taken to take the decisions of both onto a single vector, which is the final decision]
+
+It appears that these two basis vectors are working together to classify our Reality, which is something that should be very familiar to those working with neural networks.
+
+[ derelict example:
+But what if we wanted to separate pure circles = {black circle, white circle} vs not pure circles? The two basis vectors chosen by the coordinate system above can't allow us to do that. You don't need another coordinate system; just add a third dimension:
+[3D example]
+
+[2 hidden layers, 2nd hidden layer uses prev. One possible reason why we don't put all into one hidden layer is because each new Model depends on the prev.]
+[ if you could put all basis vectors in 1 coordinate system right off the bat to get the right answers, that'd work too. 
+https://machinelearningmastery.com/how-to-configure-the-number-of-layers-and-nodes-in-a-neural-network/
+A further theoretical finding and proof has shown that MLPs are universal approximators. That with one hidden layer, an MLP can approximate any continuous function that we require.]
+[The issue is that we don't know right off the bat. Compositionality allows for decision making using previous steps, inching closer and closer to the right solution.]
+
+<<<
+https://dev.to/jbahire/demystifying-the-xor-problem-1blk
+only has 1 hidden layer
+
+https://www.youtube.com/watch?v=CfAL_cL3SGQ&t=298s&ab_channel=SamSartor
+6:40 -
+
+https://stackoverflow.com/questions/18944771/xor-situations-in-real-life/21850919
+
+<<<
+RUMINATIONS: Each being is a neuron (a basis vector). A collection of beings is a coordinate system.
+
+<<<
+[explain this by matching items in matrix multiplication]
+[The vector [-1 2] is in pixel space. The weight matrix can only be explained by the alg procedure- WHY do we put the basis vectors in columns? Because of the dot product procedure. This is one of several motivating questions proposed at the start that are answered]
+
+So to reveal hidden relationships in Reality, the neural network wants to consider multiple points of view. If it combines information from two viewpoints, such that there is information from one viewpoint that another viewpoint lacks, it gains greater insight into Reality than using one point of view. Since each viewpoint uses a different coordinate system, each view is a different Model of Reality. 
+[fig showing combined viewpoints going into a new viewpoint]
+[it's not about combining multiple viewpoints; it's about combining multiple basis vectors. Each basis vector should be a viewpoint?]
+
+<<<<<<<<<
+Using the terminology of the thought experiment, the Input Space's coordinate system is a Model of our world; the data set is not reality. In fact, it is the first Model that the neural network "perceives". 
+
+The neural network can use the information gained from a Model to construct another Model, successively constructing more and more Models to hone in on the information it needs to make a decision, like a detective following clues to new crime scenes to finally nab a suspect.
+
+<<<<<<<<
+[EXPLAIN THIS LATER ONCE ESTABLISH NEURONS CREATING LATENT SPACE:]
+Let's look at an example where the input space uses pixels as feature axes. At first the neural network just sees an image as a vector based on the value of its individual pixels. But this may not be enough for it to recognize objects that defined are as pixels arranged in a certain way. So using only this first Model, the neural network has to relate it to another Model that describes not just the pixels themselves, but the relationship between pixels, making sure to preserve the relationship between concepts captured in the first Model. 
+
+Each layer is a model.
+
+a = WX + b [show picture such that each latent space is a Model]
+WX is change in basis, + b is just shifting WX
+Nonlinear activation
+
+Next, in section X, we'll explain how multiplying by this weight matrix allows the neural network to relate two of its models to each other.
+
+<<<
+[Remember, our ultimate goal is to design the algorithms in the right way, based on the math. This is why we have to understand how a specific procedure within an algorithm gets us to our goal.]
+
+<<<
+Transfer Learning: just learn one layer change of basis to stitch two layers together? Stitch the output layer of 1 NN as an intermediate layer of another NN.
+
+<<<
+RUMINATIONS: Actually, the Reality animation ALREADY uses "basis vectors" to measure the relationships between entities. By itself, there should be nothing. Everything is scattered. Having a relationship between them already presupposes the reason they are different is due to these "features". What the NN is doing is not imposing basis vectors on there, but revealing the hidden ones.
+
+But this is not so different than the animation (which is limited in what it shows due to video length)- change of basis DOES change relative ordering? (confirm this)
+Thus, sometimes it DOES destroy relationships b/w objects. The aim is to find ones that don't- these are the good ones that preserve relationships, and are 'analogous'
+
+It is stating 'what are the relative orderings 'relative to this basis'
+
+<<<
+The reason why we did not impose a singular viewpoint of Reality is because we wanted to illustrate the difference between absolute labelings (vectors) and what they're pointing to.
+
+also, that a dataset can capture relationships in different ways.

@@ -1,0 +1,24 @@
+
+To get better intuition for describing how change in basis works in NNs, let's look at a model where, instead of labeling the Concepts in Reality with numbers, it uses letters instead. We choose the Model using the following basis vectors in Figure X, as in Figure Q above, but replace the vector [1 0] with Ger1, and the vector [0 1] with Ger2. Now the letter sequence (G, I, F, T), instead of [-1 2], labels [skull pic].
+
+What we have actually done is label the [ Poison symbol ]
+
+In English, the same coordinate system of letters would place gift, or [-1 2], on the [present symbol]. 
+
+If you used this coordinate system to label the concepts, you'd see that [Poison symbol] is called 'gift'. Let's say that [poison symbol] can kill you if you eat it. If you were to tell an English speaker that you're giving him a "gift", he may be overjoyed, because he thinks you're giving him [present symbol]. But you're actually giving him [poison symbol]! 
+
+The coordinate system that you're using actually resembles the German language- and in German, 'gift' means [poison symbol]. This letter sequence (G, I, F, T) is an example of a false friend, which is a letter sequence that has two different meanings (relative to other words) in two languages. A language system is just a Model.
+
+To recap:
+[German basis vectors] [-1 2] = gets you to [poison symbol]
+= [English basis vectors] [-4 1] = gets you to [poison symbol]
+= [German basis vectors in English] [-1 2] = gets you to [poison symbol]
+
+
+[show in figure]
+[-1 2] (German) --> Multiply by translator (English) --> [c d] (English)
+
+The translator must be in English because it has to explain to the English speaker what [-1 2] actually means in English.
+
+FOOTNOTE: Of course, the actual German and English coordinate systems would be modeled differently. A system w/ a vector for each letter in the sequence would not work as it does not accurately label Concept Space's relative distance of Concepts. Show proof by contradiction as to why this is true.
+The letter sequence {g, i, f, t} = {gift} 

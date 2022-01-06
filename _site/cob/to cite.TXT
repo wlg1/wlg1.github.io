@@ -1,0 +1,17 @@
+TO CITE: 
+https://www.youtube.com/watch?v=CfAL_cL3SGQ&t=1s&ab_channel=SamSartor
+Why neural networks aren't neural networks
+https://gitlab.com/samsartor/nn_vis
+
+Shows transformations on input space, but not latent space
+
+https://www.youtube.com/watch?v=-at7SLoVK_I&ab_channel=vcubingx
+What does a neural network *actually* do? Visualizing Deep Learning, Chapter 2
+
+https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/
+https://colah.github.io/posts/2014-07-NLP-RNNs-Representations/
+
+https://math.stackexchange.com/questions/774662/are-all-vectors-of-a-basis-orthogonal
+
+is weight matrix orthogonal
+https://discuss.pytorch.org/t/why-is-it-so-hard-to-enforce-a-weight-matrix-to-be-orthogonal/108888/2

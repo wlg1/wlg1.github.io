@@ -1,0 +1,93 @@
+(Blog has two purposes: 1. Immediately answering questions about past experiments, 2. Concisely explaining the math of why NNs work, assuming little prereq knowledge)
+(Cleanly explanining both: 1. Experiments, and 2. Theory)
+
+EXPERIMENTS:
+This type of section is to extract out answers to your questions about designing your new machine learning project.
+
+Eg) You are starting a new project. Based on the model you want, you see you have an input size of 1000 nodes. How many episodes do you train it on? Look at previous approaches to get an estimation.
+SEARCH INPUT: Input size of 1000 nodes
+[ Categorize papers using 100-1000 nodes (small), 1000-10000 nodes (medium), etc. in the NODE INPUT SIZE category]
+SEARCH OUTPUT: Papers that fall in the 'small' nodes category (because exact # of nodes yields too few results), highlighting the # of episodes they were trained on. Returns all summarized properties extracted from the papers
+
+This website provides better approximations and inspiration using previous cases.
+The results will show a list of papers to focus on to help you design your project, instead of needing to sift through more papers. Combine them with papers found through other means of searching. They can also act as a starting point. 
+
+[In another section, do a meta-analysis of this section. Note sometimes results show contradictory results; this will show that your project will first need to experimentally start on a smaller prototype and write tests for this area to evaluate which 'type' your project is closer to]
+
+FEATURES:
+- Shows both positive / negative results
+- Concisely summarizes criticisms
+- Comparing approaches
+    One result brings up 'use 3 layers'
+    Another brings up 'use 10 layers'
+    Every other property remains the same. What are the 'averages'? (NOTE: may be bad b/c we don't really fix every other property to be the same)
+- Use concise infographics and writings to answer questions immediately:
+    Bullets
+    Venn Diagrams
+
+<<<
+EXISTING SOFTWARE:
+https://ai.googleblog.com/2021/02/introducing-model-search-open-source.html
+
+https://github.com/google/model_search
+Model search (MS) is a framework that implements AutoML algorithms for model architecture search at scale
+
+Other tools to help w/ designing and analyzing NN experiments:
+https://opensource.google/projects/list/machine-learning
+https://opensource.google/projects/dopamine
+
+<
+HOW OUR APPROACH IS DIFFERENT:
+- From AutoML: We don't do this automatically; this is to give the researchers, not the NN, more insight, so the humans can understand what's going on. We also don't just focus on architecture/etc., but on considerations such as hardware used, costs, etc.
+
+<<<
+SOME EXISTING WAYS TO SEARCH FOR ARTICLES:
+Mendeley, Scholar, paperswithcode
+
+<<<
+USER FEATURES:
+You can filter based on similarity.
+https://www.w3schools.com/howto/howto_js_filter_lists.asp
+
+For now, only single category, then add filtering in later versions.
+Then build search engine based on keywords.
+Then can build a relational database and query using SQL.
+
+<<<
+Experiment Design Properties:
+- Data type
+- Application field
+- Hardware used
+- Episodes used
+- Time on hardware
+- Input Size
+- Hyperparameters used
+- Learning algorithm properties: regularization, etc.
+- Architecture: # layers, types of layers, etc.
+
+- New proposals of paper, issue-solns
+
+Result properties:
+- Experiments showed (summary)
+- Authors' proposed cause-effect of why method did this
+- Critics' proposed cause-effect of why method did this
+- Positive / Negative results (subjective, so be more specific in what you mean by 'positive' when searching. Eg) accuracy score above 70% )
+
+Meta data properties:
+- Times cited
+- Year
+- Authors
+- Libraries used (post link to their github)
+
+Properties to add using more advanced search engine:
+- Similar keywords
+- Similarity based on NN ranking
+
+For now, I manually annotate them, but I think it's possible to train a NN to automatically annotate them. I haven't had time to do this yet but I have looked into it (cite papers).
+
+<<<<<<
+STARTING POINT:
+For small demo purposes, look at 10 RL papers and summarize them into these categories (later say 'will expand'). Manually label them. Focus on recent ones and ones related to DBs. Find these through citations, search engines, and cold emailing students / professors / internet personalities (youtube, blog, linkedIn, etc), and asking on forums/discords
+Eg) Which papers had input size X and use Y layers? Want to compare how many episodes they used.
+
+While reading papers, also record some issue-solns. Categorize issue-solns. Should they be included in the searchable experiments section? Yes; these 2 parts of the website should crossover.

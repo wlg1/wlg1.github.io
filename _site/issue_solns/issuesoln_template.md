@@ -1,0 +1,1 @@
+From these techniques, extract abstract principles to generalize to similar cases. Abstract relation b/w solution and principal

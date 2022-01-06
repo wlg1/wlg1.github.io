@@ -1,0 +1,183 @@
+Have both video, stills, and slide show that reader is told to click through
+Slide show: (all coords overlayed on top of Reality)
+1. Show basis vectors of System 1 on top of System 2 
+2. Add I in System 1 and I in System 2
+3. Add O in System 2
+4. German-English
+5. Relate to NNs weight matrix and weights
+6. Further extend German-English w/ inverses, etc.
+
+Two journeys/videos: one starts w/ Reality then connects it to NN (more esoteric, a mystery, a guessing game), another starts w/ NN dataset at the start (more practical). more practical when aimed at those who want to design better NN
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+MOVE TO NEXT SECTION:
+[Animation of Reality in 4 perspectives]
+We want to label Reality with a coordinate system. Every vector is a label.
+[animation of Reality going System 1 to System 2 WITHOUT coordinate systems]
+[same animation but showing System 1's basis vectors]
+Labeling Reality is like constructing a dataset, and transforming it is what the neural network does.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Let's represent these Objects in a dataset. The dataset describes these objects in terms of...
+
+Explain purpose of coordinate system using dataset space. We can explain it in 2 different ways.
+
+<<
+Separate the gift vs poison example from the first example to not 'confuse map for territory' when discussing German vs English! 1st example is meant to be labeled as a dataset, whereas second should not have labeled axes.
+
+c and d should be visual. j and k do not have to be.
+
+First example: it should not need a third or more dim to differentiate. 
+for j:
+c: the more c is, the better
+d: the more d is, the worse
+
+for k:
+c: the more c is, the worse
+d: the more d is, the better
+
+numerical: size, color, number
+Bigger body + shorter face = Cat
+Smaller body + longer face = Rat
+
+c: body size
+d: face (snout) length
+j: more likely to be a cat
+k: more likely to be a rat
+
+j: right side is big cats with short faces
+middle is big cats with long faces, and small cats with short faces
+
+k: left side is big rats with small faces
+
+On average, X are bigger than Y. But some Y are just as big as X. (link text to 'monster rats' news article). So including information from feature B makes it more helpful to distinguish between them.
+
+The only information that could be collected
+
+Use anomalous drawings that are hard to tell. No legs. Only 2 shapes: oval for body, rectangle for face. Show drawings of cat/rat abstracted into the circles: pic, shapes on top of pic, and shapes only. Measure in visio grid.
+Use white background. Afterwards, reveal the real obj of each abstraction.
+
+c + d must work together; c alone cannot work, etc
+c has more weight than d
+
+There are outliers in c and d. But on average, having c and d in certain directions means it's more likely, since it's less likely to have outliers in both features.
+
+Show feature of 'snout size 1' and show bigger snouts of size 2, 3, etc. and smaller of size 0.5, etc.
+
+Only show 2 pics, which are 2 extremes.
+
+- body size can be 'smaller than 1 foot'
+
+<<<
+[coordinate system and vectors don't change, and there's only 1. Only objs move.]
+
+[System 1, and System 1 on top of System 2. Label Concepts.]
+
+The [body size 1] that c pointed to is now in a new location in System 2. So is the [face length 1] that d pointed to.
+
+? c,d are basis vectors of System 1, and j,k are basis vectors of System 2.
+
+2. Consider 
+[2 4] is a cat
+[[-1 2] in System 1 and [-1 2] in System 1 on 2. I is animated]
+The two [-1 2] no longer label the same Concept! [labels cat pic on left, and rat pic on right]
+
+[Don't give names to basis vectors, ONLY show I -> gift, which is wrong. German speaker vs English speaker is confused. English speaker is happy at first, but then dies. Now reveal you need O=poison to work.]
+
+WHAT LOOKS LIKE [-1 2] ('gift') in German != [-1 2] ('gift') in English
+[-1 2] ('gift') in German = [-4 1] ('poison') in English 
+
+https://www.bbc.co.uk/languages/yoursay/false_friends/german/mist_common_false_friends_in_german_englishgerman.shtml
+
+3. Now, it's the vector O that labels [poison pic]. How do we calculate what the new label for [poison] is?
+
+As we'll soon see, the answer is by using Matrix-Vector Multiplication.
+(once the procedure is explained, state this is why it's also called a 'change in basis')
+
+<<<
+For example, bread is good, and ice cream is even better. But getting a cut is bad, and getting burned is worse.
+
+XOR
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INVERSE:
+
+(video 7:20-8:20m)
+
+What if WE say "gift"? The German foreigner must translate this to a German translation (not necessarily a word, but possibly a German sentence, or even a paragraph or textbook) that makes him understand that it's Figure X. 
+
+Just take the inverse of our previous transformation matrix, and apply it to "gift". This is because the columns of this inverse are what OUR columns [1 0] etc look like in German.
+
+[-1 2] (Gift, German) != [-1 2] (Gift, English)
+[-1 2] (Gift, German) = [-4 1] (Disgust, English)
+[1/3 5/3] (Geschenk, German) = [-1 2] (Gift, English)
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+But why are the basis vectors in System 1 put in the columns of the matrix? The next section will answer these questions.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Neurons are not binary, so NEVER use neurons with only 0 or 1 in your examples. They must always be continuous.
+
+Classification makes it binary. But we're only discussing the linear algebra part now.
+sigmoid squishing (activation function), etc. does make it more binary (either close to 0 or close to 1, turning it into a probability). Not all actv fns are sigmoid, and ReLU is usually used.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+1 left on c, 2 up on d
+
+<<<
+c: animal or not, d: number of feet
+when transformed, everything with 2 feet and an animal is considered a human, everything with 4 feet and an animal is considered a cat. Everything that had 4 feet and not an animal is now considered a car (along axes j). Everything with 2 feet and not an animal is considered a motorcycle.
+
+j: human or cat
+k: motorcycle or car
+
+<<<<
+Put this in the next section (dot products)
+
+c: # eyes
+d: # smiles
+
+j: likely to be a face
+k: likely to be 
+
+Let A be an object
+
+A face is 2 eyes and 1 smile. 
+2c ~= 2c + 1d
+
+2c+1d = 3 : ' yes it's VERY LIKELY to be a face'
+2c + 0d = 2: 'it's less LIKELY to be a face'
+
+They reach the same Object.
+
+The neurons state: how likely is it to be a face?
+The dataset states: descriptions
+
+<<<
+OR it's a fallacy to think that this is a transformation b/w 2 datasets, so don't use a dataset as an example.
+
+DISCLAIMER: this is an idealized example, and the actual aritifical neurons may not so cleanly capture each concept; it is still difficult to discern the role of each neuron in relation to other neurons.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+SEGWAY INTO RUMINATIONS:
+What does it mean to 'transform [-1 2] into [-4 1]'? Aren't they two separate vectors? The answer is that they are the same when they refer to the same Concept in Reality. 
+
+But if [-1 2] now uses [-4 1] to point to [poison], we must use [? ?] to point to [gift]. We cannot use [q q] to point to [gift] because it would be inconsistent with Reality. This is because relational distances between Concepts are preserved.
+
+Any other vector, such as [-4 1], can be used as a label, so long as it strives to preserve structure relative to the other labels. The labels must be consistent such that they form a structure-preserving map.
+
+Neither English nor German (two coordinate systems) capture the true vector; they are all merely representations modeling it.
+'gift' is not the Concept.
+
+Letters -> Numbers
+Letter sequences -> Vectors
+
+The letters do not carry meaning unless put in relative context with other words of the same language.
+
+The label 'gift' is meaningless unless the coordinate system of labels is overlayed on top of a Reality.
+The vector [-1 2] is meaningless unless the coordinate system of vectors is overlayed on top of a Reality.
+
+The vector is merely a label of a Concept.
+
+WHAT IT LOOKS LIKE: vectors defined by numbers / words defined by letters
+WHAT IT MEANS: relative to other vectors / relative to other words

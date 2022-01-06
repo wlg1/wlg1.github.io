@@ -1,8 +1,14 @@
+---
+title: About This Website
+---
 **WORKING TITLE**
 
 **[ch1](ch1.1.md)**
 
+<a href="ch1.1.html">CHAPTER 1</a>
+
 <!---
-<a href="ch1.1.md">CHAPTER 1</a>
-**[ch3](ch3.md)**
+For localhost testing:
+
+<a href="ch1.1.html">CHAPTER 1</a>
 -->
