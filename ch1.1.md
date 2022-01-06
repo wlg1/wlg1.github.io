@@ -8,17 +8,14 @@ Let's start with an example that will show us how matrix multiplication transfor
 
 So every entity in the population is represented in the dataset as a data point, which is an abstraction defined only by body size and face length. We can represent the datapoints in this dataset as data points in a coordinate space, using the two features as axes:
 
-<img src="/cob/fig2a.PNG" width="300" height="200">
-<img src="/cob/fig2b.png" width="300" height="200">
+![Figure 2](/cob/fig2.PNG)
+![Figure 3](/cob/fig3.PNG)
 <!---Make dataset image: first row is face, second row is body, third row is data pt (combo of both) using #s, then show in coord sys on right. Then in 2nd image, turn all numbers into imgs, and again show in coordsys on right.--->
 
-<img src="/cob/fig3a.PNG" width="300" height="200">
-<img src="/cob/fig3b.png" width="300" height="200">
-
 When labeling our coordinate space, if we keep only the images of unit 1, we get:
-<img src="/cob/fig4.png" width="500" height="400">
+![Figure 4](/cob/fig4.PNG)
 
-Every data point is a combination of <img src="/cob/body1.PNG" width="10" height="10"> and <img src="/cob/face1.PNG" width="10" height="10">. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
+Every data point is a combination of <img src="/cob/body1.PNG" width="25" height="25"> and <img src="/cob/face1.PNG" width="25" height="25">. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
 [body size 1] is smaller than [body size 2]
 
 ![Figure 5: Linear Combination](/cob/fig5.PNG)
@@ -76,10 +73,11 @@ To prev clutter here, ONLY use 2 vectors: c and d. Or perhaps don't show them as
 
 We know in Model 1 that [2 0.5] is [cat pic].
 
-Fig 10a, 10b
-
+![Figure 10](/cob/fig10.PNG)
+<!---
 <img src="/cob/fig10a.png" width="300" height="200">
 <img src="/cob/fig10b.png" width="300" height="200">
+--->
 
 [[2 0.5] catpic in Model 1 and [2 0.5] in Model 1 on 2. I vector is fixed. unlike prev anim, fade j,k only after change basis so not too cluttered]
 
