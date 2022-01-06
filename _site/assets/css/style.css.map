@@ -3,9 +3,9 @@
 	"file": "style.css",
 	"sources": [
 		"style.scss",
-		"C:/Users/mikel/AppData/Local/Temp/jekyll-remote-theme-20220105-20888-oe89ms/_sass/jekyll-theme-minimal.scss",
-		"C:/Users/mikel/AppData/Local/Temp/jekyll-remote-theme-20220105-20888-oe89ms/_sass/fonts.scss",
-		"C:/Users/mikel/AppData/Local/Temp/jekyll-remote-theme-20220105-20888-oe89ms/_sass/rouge-github.scss"
+		"../../../../Program Files/Ruby30-x64/lib/ruby/gems/3.0.0/gems/jekyll-theme-minimal-0.2.0/_sass/jekyll-theme-minimal.scss",
+		"../../../../Program Files/Ruby30-x64/lib/ruby/gems/3.0.0/gems/jekyll-theme-minimal-0.2.0/_sass/fonts.scss",
+		"../../../../Program Files/Ruby30-x64/lib/ruby/gems/3.0.0/gems/jekyll-theme-minimal-0.2.0/_sass/rouge-github.scss"
 	],
 	"sourcesContent": [
 		"@import \"jekyll-theme-minimal\";\n",
