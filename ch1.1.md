@@ -15,12 +15,15 @@ So every entity in the population is represented in the dataset as a data point,
 When labeling our coordinate space, if we use only the images of unit 1, we get:
 ![Figure 4](/cob/fig4.PNG)
 
-Every data point is a combination of <img src="/cob/body1.PNG" width="50" height="40"> and <img src="/cob/face1.PNG" width="50" height="40">. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
-[body size 1] is smaller than [body size 2]
+Every data point is a combination of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of 0.5 * <img src="/cob/face1.PNG" width="50" height="40"> and 2* <img src="/cob/body1.PNG" width="50" height="40">
 
 ![Figure 5: Linear Combination](/cob/fig5.PNG)
 
-If we see each data point as a vector, then every vector is an addition of [body size 1] and [face length 1], such that [body size 1] and [face length 1] are basis vectors. And so in this coordinate space, every entity like [cat pic] is labeled using an addition of [body size 1] and [face length 1]. Thus (2, 0.5) can also be represented as [2 0.5] = [basis vector addition]
+If we see each data point as a vector, then every vector is an addition of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">, such that <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40"> are basis vectors. And so in this coordinate space, every entity like [cat pic] is labeled using an addition of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">. Thus (2, 0.5) can also be represented as [2 0.5] = [basis vector addition]
+
+ {% raw %}
+  $$a^2 + b^2 = c^2$$ --> note that all equations between these tags will not need escaping! 
+ {% endraw %}
 
 ![Figure 6: Cat in Coordinate Space](/cob/fig6.PNG)
 <!---
