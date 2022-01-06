@@ -12,10 +12,10 @@ So every entity in the population is represented in the dataset as a data point,
 ![Figure 3](/cob/fig3.PNG)
 <!---Make dataset image: first row is face, second row is body, third row is data pt (combo of both) using #s, then show in coord sys on right. Then in 2nd image, turn all numbers into imgs, and again show in coordsys on right.--->
 
-When labeling our coordinate space, if we keep only the images of unit 1, we get:
+When labeling our coordinate space, if we use only the images of unit 1, we get:
 ![Figure 4](/cob/fig4.PNG)
 
-Every data point is a combination of <img src="/cob/body1.PNG" width="25" height="25"> and <img src="/cob/face1.PNG" width="25" height="25">. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
+Every data point is a combination of <img src="/cob/body1.PNG" width="50" height="40"> and <img src="/cob/face1.PNG" width="50" height="40">. For instance, the data point (2, 0.5), which represents [cat pic], is a combination of [2 size body pic] and a [face length of 0.5]. Note that [2 size body pic] = 2 * [body size 1] and [face length of 0.5] = 0.5 * [face length 1].
 [body size 1] is smaller than [body size 2]
 
 ![Figure 5: Linear Combination](/cob/fig5.PNG)
@@ -33,7 +33,6 @@ Now there is another way to measure the entities in this population. We can assi
 How do we find the values of these new measurements? We can calculate them using the measurements from the previous system. For example:
 
 Shorter face + Bigger body = Cat
-
 Longer face + Smaller body = Rat
 
 Or in terms of basis vector addition:
@@ -43,7 +42,7 @@ Fig 7
 Bigger body + Shorter face = Cat
 2 * [body pic X] + 0.5 * [face pic Y] = value 2X+0.5Y on cat axes ]
 
-What are X and Y? We will reveal them once we get into the algebra of matrix multiplication in section [].
+What are X and Y? These are how much each feature is weighted by to calculate the score of "likely to be cat". We will reveal how these weights are related to the matrix once we get into the algebra of matrix multiplication in section [].
 
 [coordinate space of body size vs face length, showing cat and rat, but onto it fades 'likely a cat' and 'likely a rat'. then it shifts.]
 
