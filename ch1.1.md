@@ -23,8 +23,8 @@ So every entity (a cat or rat) in the population is represented in the dataset a
 
 Let's look at our coordinate space with only the images of unit 1:
 
-<!--- ![Figure 4](/cob/fig4.PNG) --->
-<img src="/cob/fig4.png" width="800" height="500">
+<!---  <img src="/cob/fig4.png" width="800" height="500">--->
+![Figure 4](/cob/fig4.PNG)
 
 Every data point is a combination of the "unit 1" points, which represent <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">. For instance, the data point (0.5, 2), which represents <img src="/cob/cat.PNG" width="50" height="40">, is a weighted combination of 0.5 * <img src="/cob/face1.PNG" width="50" height="40"> and 2* <img src="/cob/body1.PNG" width="50" height="40">
 
@@ -40,15 +40,15 @@ If we see each data point as a vector, then every vector such as <img src="/cob/
 
 Now, there are other ways we can measure the data samples in this population. Instead of labeling each data sample using the face & body measurements, let's label each data sample using the following two measurements: 
 
-1) How likely it is to be a cat
+1) How likely it is to be a <span style="color:orange">Cat</span> 
 
-2) How likely it is to be a rat
+2) How likely it is to be a <span style="color:green">Rat</span> 
 
 How do we find the values of these new, and currently unknown, measurements? We can calculate them our previous known measurements, face & body. For example:
 
-Shorter face + Bigger body = Cat
+Shorter <span style="color:#FA8072">face</span> + Bigger <span style="color:#ADD8E6">body</span>  = <span style="color:orange">Cat</span> 
 
-Longer face + Smaller body = Rat
+Longer <span style="color:#FA8072">face</span> + Smaller <span style="color:#ADD8E6">body</span>  = <span style="color:green">Rat</span> 
 
 Or in terms of basis vector addition:
 
@@ -61,11 +61,11 @@ Bigger body + Shorter face = Likely a Cat
 
 What are X and Y? These are how much each feature is weighted by to calculate the score of "likely to be cat". The higher the weight, the more that feature is taken into account for during calculation. We will reveal how these weights are related to the matrix once we get into the algebra of matrix multiplication in section [].
 
-Each measurement acts as a basis vector used to define each data sample. Because this second set of measurements uses different basis vectors than face & body size, it forms a different coordinate space. Since each coordinate space provides a different way to **represent** the data, let's call each coordinate space a **Model**. 
+Each measurement acts as a basis vector used to define each data sample. Because this second set of measurements uses different basis vectors than the set of face & body sizes, it forms a different coordinate space. Since each coordinate space provides a different way to **represent** the data, let's call each coordinate space a **Model**. 
 
-The face & body size coordinate space will be called Model 1, and the 'likely to be' cat or rat coordinate space be called Model 2. Since these two measurement methods are measuring the same data samples, the data samples in Model 1 are present in Model 2, but are now measured by different vectors.
+The face & body size coordinate space will be called Model 1, and the 'likely to be' cat or rat coordinate space be called Model 2. As these two measurement methods are measuring the same data samples, the data samples in Model 1 are present in Model 2, but are now measured by different vectors.
 
-In fact, since we are using Model 1 to calculate the values for Model 2, we will see in Section [] that we are applying the dot product on face & body to calculate 'likely to be cat'. Recall that the steps of matrix multiplication consists of dot products; thus, the calculation of Model 2 is none other than matrix multiplication, which was shown in this video[link] to be a rotation [footnote: see 3Bl1Br video timestamps]. Section [] will make it even more clear why matrix multiplication is called a "Change of Basis".
+In fact, since we are using Model 1 to calculate the values for Model 2, we will see in Section [] that we are applying the dot product on face & body to calculate 'likely to be cat'. Recall that the steps of matrix multiplication consists of dot products; thus, the calculation of Model 2 is none other than matrix multiplication, which was, for certain matrices, shown in this video[link] to be a rotation [footnote: see 3Bl1Br video timestamps]. In Figure X, we choose the matrix to cause a rotation. 
 
 <!---ANIMATION: rotation w/o coordinate space [Model 1 fades on 'likely a cat' and 'likely a rat'. then it shifts.]--->
 
@@ -83,24 +83,14 @@ Or fade out still image using video editor--->
 
 ![Figure 8](/cob/fig8.PNG)
 
-The two $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ in each Model do not label the same data point! Likewise, $$\color{#ADD8E6}{\begin{bmatrix} 0 \\ 1 \end{bmatrix}}$$ points to <img src="/cob/body1.PNG" width="50" height="40"> in Model 1, but does not point to it in Model 2. Phrasing this in a different way will help make this idea more intuitive: let's say that the **meaning** of a vector is the data sample it points to. $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ no longer has the same meaning in Model 2 as it did in Model 1. This is because the meaning of a vector depends on its basis vectors. In Model 1, $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ pointed to <img src="/cob/face1.PNG" width="50" height="40"> because it's supposed to mean "has a face with unit 1". In Model 2, $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ points to [Orange Dot] because it's supposed to mean "likely to be a cat with unit 1".[^1]
+The two $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ in each Model do not label the same data point! Likewise, $$\color{#ADD8E6}{\begin{bmatrix} 0 \\ 1 \end{bmatrix}}$$ points to <img src="/cob/body1.PNG" width="50" height="40"> in Model 1, but does not point to it in Model 2. Phrasing this a different way makes this idea more intuitive: let's say that the **meaning** of a vector is the data sample it points to. $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ no longer has the same meaning in Model 2 as it did in Model 1. This is because the meaning of a vector depends on its basis vectors. In Model 1, $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ pointed to <img src="/cob/face1.PNG" width="50" height="40"> because it's supposed to mean "has a face with unit 1". In Model 2, $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ points to <span style="color:orange">Orange Dot</span> because it's supposed to mean "likely to be a cat with unit 1".[^1]
 
 
-[^1] What does it mean to have 1 unit of "likely a cat?" For our example, we generalize to allow any 'probabilistic' measurement to be used, as long as having X+1 units means 'it is more likely to be" than having X units.
+[^1]: What does it mean to have 1 unit of "likely a cat?" For our example, we generalize these units to allow any 'probabilistic' measurement to be used, as long as having X+1 units means 'it is more likely to be" than having X units.
 
 <!---* note that [body size 1] is present in Model 2, even though it's missing [face length]. In other words, it's [body size 1] + 0 * [face length 1]. This means that any data point which only contains a body of size 1 is seen as [meaning in terms of basis jk]--->
 
-<!---
-Fig 9a,9b
-[Model 1, and Model 1 on top of Model 2. Sys 2 'jk'. WITH vectors.]
-
-in the vector on top of model pic, color them the same, but point out that they're not the same vector; they just label the same concept. [1 0] != [1.5 -1]. put numbered vector text next to each same color vector. OR make one darker than the other. Do not put basis vectors???
-
-Disclaimer: now show with rotated vectors. Animation doesn't rotate vectors. This can get confusing because before, the vectors stayed in place. So we have to note that these are different vectors, just colored the same way because they point onto the same data point.
-To prev clutter here, ONLY use 2 vectors: c and d. Or perhaps don't show them as vectors, just as dots. This should be clean and summarized.
---->
-
-If it's still not clear why meaning depends on the choice of basis vectors, let's look at a better example that will help drive home this idea. We know in Model 1 that $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}$$ labels <img src="/cob/cat.PNG" width="50" height="40">. But just like before, $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ in Model 2 does not.
+If it's still not clear why meaning depends on the choice of basis vectors, let's look at a better example that will help drive home this idea. We know in Model 1 that $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ labels <img src="/cob/cat.PNG" width="50" height="40">. But just like before, $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ in Model 2 does not.
 
 ![Figure 10](/cob/fig10.PNG)
 <!---
@@ -113,7 +103,7 @@ If it's still not clear why meaning depends on the choice of basis vectors, let'
 [labels cat pic on left, and nothing on right] [color code or include pic of vector when referring to [2 0.5] in text paragraph]
 --->
 
-Recall that in Model 1, which uses the face & body sizes as basis vectors, $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}$$ meant "an entity with a short face (0.5) and a long body (2)." But in Model 2, this vector means "it's not as likely to be a cat (0.5), but more likely to be a rat (2)". 
+Recall that in Model 1, which uses the face & body sizes as basis vectors, $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ meant "an entity with a short face (0.5) and a long body (2)." But in Model 2, this vector means "it's NOT as likely to be a cat (0.5), as it is more likely to be a rat (2)". The meaning in Model 2 does not point to <img src="/cob/cat.PNG" width="50" height="40">, because that data sample is likely a cat. Instead, it should point to a data sample that looks more like a rat.
 
 <!---
 In fact, $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}$$ should now point to [rat pic], instead of <img src="/cob/cat.PNG" width="50" height="40">.
@@ -136,34 +126,47 @@ Fig ??
 [now fill in what [2 0.5] is in Sys 2]
 --->
 
-This shows the difference between the data samples in the real world, and the model that represents those data samples using labels. $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}$$ is not <img src="/cob/cat.PNG" width="50" height="40"> itself; it is merely a label of it, and whichever label is used depends on the basis vectors used to define the parts of each label. 
+This shows the difference between the data samples coming from the real world, and the model that represents those data samples using labels. $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ is not <img src="/cob/cat.PNG" width="50" height="40"> itself; it is merely a label of it, and whichever label is used depends on the basis vectors used to define the parts of each label. 
 
-$$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} \neq $$ <img src="/cob/cat.PNG" width="50" height="40">
+<p align="center">
+<!---$$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} \neq $$ <img src="/cob/cat.PNG" width="50" height="40">--->
+<img src="/cob/vecNotCat.PNG" width="250" height="100">
+</p>
 
-Understanding the difference between a model representation and the actual entity it means (or points to) is crucial for gaining better intuition behind why matrix multiplication induces a Change of Basis.
+Understanding the difference between a model representation and the actual entity it means (or points to) is crucial for gaining better intuition behind why matrix multiplication induces a Change of Basis.[^entity_model]
 
 <!--- Fig 11 [animated reality of concepts vs fixed coord space model]--->
 
-[discuss labeling using different vectors here]
+We show below how the features on the two basis vectors in Model 1 are rotated on two new vectors in Model 2. This is done by matrix multiplication, causing the basis vectors in Model 2 to now point to the <span style="color:orange">Orange Dot</span> and <span style="color:green">Green Dot</span>; section [] will make it even more clear why matrix multiplication is called a "Change of Basis".
+
+![2mod_vecs](/cob/2mod_vecs.PNG)
+
+<!---[Model 1, and Model 1 on top of Model 2. WITH vectors.]
+in the vector on top of model pic, color them the same, only darker--->
 
 
 Notice that Model 2 demonstrates an idealized, simplified example of what a neural network does- it is making a guess about the data point given to it as input. In fact, one can think of it as a single layer 'neural network' such that for its neuron function:
 
-o = ReLU(WX + b)
+<p align="center">
+$$o = ReLU(WX + b)$$
+</p>
 
 used to calculate the values it guesses for the 2 classes {cat, rat}, it sets ReLU = identity and b = 0, thus using the equation:
 
-o = WX
+<p align="center">
+$$o = WX$$
+</p>
 
-Fig 12
-[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]]
+![2mod_out](/cob/2mod_out.PNG)
+
+<!---[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]. W in b/w, with cols of both darker blue and darker red]--->
 
 
 <!---
 Fig 13
 [fading gif of changing abstractions back to actual pics; place images on coord sys]--->
 
-? * FOOTNOTE: While [cat pic] is merely how the dataset sees [actual cat pic], we are referring to [cat pic] as an "entity in the real world". This is because the only information the neural network knows about [actual cat pic] comes from [cat pic]. For the purposes of this example, we can replace [cat pic] with [actual cat pic] to explain the same concept. In this example, [cat pic] contains information from the original dataset that does not change after the transformation- namely, body size and face length. However, in other cases, it is possible for a transformation to reduce the information previously contained, although this information may not be important.
+[^entity_model]: While the vectors are a representations of the data sample, the data sample is also a representation of the actual cat entity (by transitivity, both are representation of the entity). Note that the vector is a numerial representation of the data sample, while the data sample is a collection of values which are defined relative to other samples in the population. Information about these collections of relative values is preserved under different Models, and different transformations preserve different information. Because values are defined relative to other values, information about data samples (such as their distribution) are relations, and relations can be thought of as shapes; for instance, a line is a relation between two points, so this line shape describes their relation. This is better explained in Section []. Also note that the only information the neural network knows about the entity comes from the data sample; it can never truly know the entity.
 
 ---
 
@@ -223,3 +226,4 @@ While [cat pic entity] is a representation of a entity that exists in the real w
 Relationships are preserved. Analogy. Structure preserving map
 [Maps between 2 domains: the real world, and the coordinate space]
 
+---

@@ -70,6 +70,8 @@ CHAPTER 5: How to Find the Roles of Neuron Communities in Neural Networks ... (u
 [or 'how to unravel the black boxes of neural networks']
 Same type of technique as Ch4
 
+CHAPTER ??: CLIP, NLP, semantic search on images
+
 CHAPTER ??: How Neural Networks see [something about analogy] the same (using Fourier Transforms)
 Summation in convolutions removes differences, allowing features to be seen 'as the same' despite rotation, translation, etc. "Equivalent in a group"
 

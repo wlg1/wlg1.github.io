@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"L<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>CHAPTER 1.1</strong></p>
 
@@ -36,15 +36,15 @@
 
 <p>Now, there are other ways we can measure the data samples in this population. Instead of labeling each data sample using the face &amp; body measurements, let’s label each data sample using the following two measurements:</p>
 
-<p>1) How likely it is to be a <span style="color:orange">Cat</span></p>
+<p>1) How likely it is to be a <span style="color:orange">cat</span></p>
 
-<p>2) How likely it is to be a <span style="color:green">Rat</span></p>
+<p>2) How likely it is to be a <span style="color:green">rat</span></p>
 
 <p>How do we find the values of these new, and currently unknown, measurements? We can calculate them our previous known measurements, face &amp; body. For example:</p>
 
-<p>Shorter <span style="color:#FA8072">face</span> + Bigger <span style="color:#ADD8E6">body</span>  = <span style="color:orange">Cat</span></p>
+<p>Shorter face + Bigger body = <span style="color:orange">Cat</span></p>
 
-<p>Longer <span style="color:#FA8072">face</span> + Smaller <span style="color:#ADD8E6">body</span>  = <span style="color:green">Rat</span></p>
+<p>Longer face + Smaller body = <span style="color:green">Rat</span></p>
 
 <p>Or in terms of basis vector addition:</p>
 
@@ -61,7 +61,7 @@ Bigger body + Shorter face = Likely a Cat
 
 <p>The face &amp; body size coordinate space will be called Model 1, and the ‘likely to be’ cat or rat coordinate space be called Model 2. As these two measurement methods are measuring the same data samples, the data samples in Model 1 are present in Model 2, but are now measured by different vectors.</p>
 
-<p>In fact, since we are using Model 1 to calculate the values for Model 2, we will see in Section [] that we are applying the dot product on face &amp; body to calculate ‘likely to be cat’. Recall that the steps of matrix multiplication consists of dot products; thus, the calculation of Model 2 is none other than matrix multiplication, which was, for certain matrices, shown in this video[link] to be a rotation [footnote: see 3Bl1Br video timestamps]. In Figure X, we choose the matrix to cause a rotation.</p>
+<p>In fact, since we are using Model 1 to calculate the values for Model 2, we will see in Section [] that we are applying the dot product on face &amp; body to calculate ‘likely to be cat’. Recall that the steps of matrix multiplication consists of dot products; thus, the calculation of Model 2 is none other than matrix multiplication, which was, for certain matrices, shown in this video[link] to be a rotation [footnote: see 3Bl1Br video timestamps]. In this example, we choose the matrix to cause a rotation. Section [] will make it even more clear why matrix multiplication is called a “Change of Basis”.</p>
 
 <!---ANIMATION: rotation w/o coordinate space [Model 1 fades on 'likely a cat' and 'likely a rat'. then it shifts.]--->
 
@@ -96,7 +96,7 @@ Or fade out still image using video editor--->
 [labels cat pic on left, and nothing on right] [color code or include pic of vector when referring to [2 0.5] in text paragraph]
 --->
 
-<p>Recall that in Model 1, which uses the face &amp; body sizes as basis vectors, \(\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}\) meant “an entity with a short face (0.5) and a long body (2).” But in Model 2, this vector means “it’s NOT as likely to be a cat (0.5), as it is more likely to be a rat (2)”. The meaning in Model 2 does not point to <img src="/cob/cat.PNG" width="50" height="40" />, because that data sample is likely a cat. Instead, it should point to a data sample that looks more like a rat.</p>
+<p>Recall that in Model 1, which uses the face &amp; body sizes as basis vectors, \(\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}\) meant “an entity with a short face (0.5) and a long body (2).” But in Model 2, this vector means “it’s not as likely to be a cat (0.5), as it is more likely to be a rat (2)”.</p>
 
 <!---
 In fact, $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}$$ should now point to [rat pic], instead of <img src="/cob/cat.PNG" width="50" height="40">.
@@ -130,28 +130,28 @@ Fig ??
 
 <!--- Fig 11 [animated reality of concepts vs fixed coord space model]--->
 
-<p>We show below how the features on the two basis vectors in Model 1 are rotated on two new vectors in Model 2. This is done by matrix multiplication, causing the basis vectors in Model 2 to now point to the <span style="color:orange">Orange Dot</span> and <span style="color:green">Green Dot</span>; section [] will make it even more clear why matrix multiplication is called a “Change of Basis”.</p>
+<p>[discuss labeling using different vectors here]</p>
 
-<p><img src="/cob/2mod_vecs.PNG" alt="2mod_vecs" /></p>
+<!---
+Fig 9a,9b
+[Model 1, and Model 1 on top of Model 2. Sys 2 'jk'. WITH vectors.]
 
-<!---[Model 1, and Model 1 on top of Model 2. WITH vectors.]
-in the vector on top of model pic, color them the same, only darker--->
+in the vector on top of model pic, color them the same, but point out that they're not the same vector; they just label the same concept. [1 0] != [1.5 -1]. put numbered vector text next to each same color vector. OR make one darker than the other. Do not put basis vectors???
+
+Disclaimer: now show with rotated vectors. Animation doesn't rotate vectors. This can get confusing because before, the vectors stayed in place. So we have to note that these are different vectors, just colored the same way because they point onto the same data point.
+To prev clutter here, ONLY use 2 vectors: c and d. Or perhaps don't show them as vectors, just as dots. This should be clean and summarized.
+--->
 
 <p>Notice that Model 2 demonstrates an idealized, simplified example of what a neural network does- it is making a guess about the data point given to it as input. In fact, one can think of it as a single layer ‘neural network’ such that for its neuron function:</p>
 
-<p align="center">
-$$o = ReLU(WX + b)$$
-</p>
+<p>o = ReLU(WX + b)</p>
 
 <p>used to calculate the values it guesses for the 2 classes {cat, rat}, it sets ReLU = identity and b = 0, thus using the equation:</p>
 
-<p align="center">
-$$o = WX$$
-</p>
+<p>o = WX</p>
 
-<p><img src="/cob/2mod_out.PNG" alt="2mod_out" /></p>
-
-<!---[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]. W in b/w, with cols of both darker blue and darker red]--->
+<p>Fig 12
+[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]]</p>
 
 <!---
 Fig 13
@@ -230,3 +230,4 @@ Relationships are preserved. Analogy. Structure preserving map
     </li>
   </ol>
 </div>
+:ET

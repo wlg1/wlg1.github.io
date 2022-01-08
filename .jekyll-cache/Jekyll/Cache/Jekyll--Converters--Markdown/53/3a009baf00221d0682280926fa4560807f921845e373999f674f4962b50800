@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"�K<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>CHAPTER 1.1</strong></p>
 
@@ -130,7 +130,7 @@ Fig ??
 
 <!--- Fig 11 [animated reality of concepts vs fixed coord space model]--->
 
-<p>We show below how the features on the two basis vectors in Model 1 are rotated on two new vectors in Model 2. This is done by matrix multiplication, causing the basis vectors in Model 2 to now point to the <span style="color:orange">Orange Dot</span> and <span style="color:green">Green Dot</span>; section [] will make it even more clear why matrix multiplication is called a “Change of Basis”.</p>
+<p>We show below how the features on the two basis vectors in Model 1 are rotated on two new vectors in Model 2. This is done by matrix multiplication, where the basis vectors in Model 2 are now different; section [] will make it even more clear why matrix multiplication is called a “Change of Basis”.</p>
 
 <p><img src="/cob/2mod_vecs.PNG" alt="2mod_vecs" /></p>
 
@@ -139,19 +139,14 @@ in the vector on top of model pic, color them the same, only darker--->
 
 <p>Notice that Model 2 demonstrates an idealized, simplified example of what a neural network does- it is making a guess about the data point given to it as input. In fact, one can think of it as a single layer ‘neural network’ such that for its neuron function:</p>
 
-<p align="center">
-$$o = ReLU(WX + b)$$
-</p>
+<p>o = ReLU(WX + b)</p>
 
 <p>used to calculate the values it guesses for the 2 classes {cat, rat}, it sets ReLU = identity and b = 0, thus using the equation:</p>
 
-<p align="center">
-$$o = WX$$
-</p>
+<p>o = WX</p>
 
-<p><img src="/cob/2mod_out.PNG" alt="2mod_out" /></p>
-
-<!---[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]. W in b/w, with cols of both darker blue and darker red]--->
+<p>Fig 12
+[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]]</p>
 
 <!---
 Fig 13
@@ -230,3 +225,4 @@ Relationships are preserved. Analogy. Structure preserving map
     </li>
   </ol>
 </div>
+:ET

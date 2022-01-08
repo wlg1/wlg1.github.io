@@ -1,35 +1,41 @@
 List of Figures:
+1.0:
 NN on top, matrix multiplication on bottom
 
-1:
-[drawings of cat/rat abstracted into the circles: pic, shapes on top of pic, and shapes only. label that the left side is an entity.]
+1.1a:
+VISIO: [drawings of cat/rat abstracted into the circles: pic, shapes on top of pic, and shapes only. label that the left side is an entity.]
 
-[shapes only, labeling which is body size and which is face length]
+dataset_dots.py, dataset_imgs.py, VISIO: Make dataset image
 
+make_CoordImgs.py:
 [coordinate space of body size vs face length, with basis vectors on c = bodysize 1 and d = facelength 1]
 
+VISIO: addition
+
+make_CoordImgs.py, VISIO: 
 [show picture of cat pic on coordinate space, right side showing vector addition]
 
+VISIO TO DO:
 [figure showing the analogy: 
 Bigger body + Shorter face = Cat
 2 * [body pic X] + 0.5*[face pic Y] = value 2X+0.5Y on cat axes ]
 
-ALSO IMPT:
+ANIM TO DO:
 [coordinate space of body size vs face length, showing cat and rat, but onto it fades 'likely a cat' and 'likely a rat'. then it shifts.]
 
-MOST IMPT: PUT THIS IN SUMMARY AT END OF SECTION, AND AT RECAP AT START OF NEW SECTION
+cob space 1, cob space 2.py: Basis COB
+cob space 1 cat, cob space 2 cat.py: Basis COB w/ cat
+
+2mod vecs: cob space 1 vecs, cob space 2 vecs.py:
 [Model 1, and Model 1 on top of Model 2. Sys 2 'jk'. Label Concepts.]
+*MOST IMPT: PUT THIS IN SUMMARY AT END OF SECTION, AND AT RECAP AT START OF NEW SECTION
 
-ALSO IMPT:
-[[2 0.5] in Model 1 and [2 0.5] in Model 1 on 2. I is animated]
-
-[now fill in what [2 0.5] is in Sys 2]
-
+cob space 1 out, cob space 2 out.py:
 [picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]]
 
-[fading gif of changing abstractions back to actual pics; place images on coord sys]
 
 <<<
+1.1b:
 [first show coordinate space labeling gift as poison]
 
 ALSO IMPT:

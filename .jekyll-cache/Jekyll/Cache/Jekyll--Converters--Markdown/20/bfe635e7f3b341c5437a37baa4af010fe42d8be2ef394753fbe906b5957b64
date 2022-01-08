@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"®L<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>CHAPTER 1.1</strong></p>
 
@@ -149,7 +149,7 @@ $$o = ReLU(WX + b)$$
 $$o = WX$$
 </p>
 
-<p><img src="/cob/2mod_out.PNG" alt="2mod_out" /></p>
+<p><img src="/cob/2mod_vecs.PNG" alt="2mod_vecs" /></p>
 
 <!---[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]. W in b/w, with cols of both darker blue and darker red]--->
 
@@ -230,3 +230,4 @@ Relationships are preserved. Analogy. Structure preserving map
     </li>
   </ol>
 </div>
+:ET
