@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"�W<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>CHAPTER 1.1</strong></p>
 
@@ -24,7 +24,7 @@
 <p><img src="/cob/fig4.PNG" alt="Figure 4" /></p>
 
 <p>Every data point is a combination of the “unit 1” points, which represent <img src="/cob/face1.PNG" width="50" height="40" /> and <img src="/cob/body1.PNG" width="50" height="40" />. For instance, the data point (0.5, 2), which represents <img src="/cob/cat.PNG" width="50" height="40" />, is a weighted combination of 0.5 * <img src="/cob/face1.PNG" width="50" height="40" /> and 2* <img src="/cob/body1.PNG" width="50" height="40" />
-      
+ 
 <img src="/cob/fig5.PNG" alt="Figure 5: Linear Combination" />
  
 If we see each data point as a vector, then every vector such as <img src="/cob/cat.PNG" width="50" height="40" /> is an addition of <img src="/cob/face1.PNG" width="50" height="40" /> and <img src="/cob/body1.PNG" width="50" height="40" />, which are <strong>basis vectors</strong>. Thus (0.5, 2) can also be represented as \(\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} = 0.5 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</p>
@@ -41,7 +41,7 @@ If we see each data point as a vector, then every vector such as <img src="/cob/
 
 <p>2) How likely it is to be a <span style="color:green">Rat</span></p>
 
-<p>How do we find the values of these new, and currently unknown, measurements? We can calculate them using our previous known measurements, face &amp; body. For example:</p>
+<p>How do we find the values of these new, and currently unknown, measurements? We can calculate them our previous known measurements, face &amp; body. For example:</p>
 
 <p>Shorter <span style="color:#FA8072">face</span> + Bigger <span style="color:#ADD8E6">body</span>  = <span style="color:orange">Cat</span></p>
 
@@ -239,3 +239,4 @@ Relationships are preserved. Analogy. Structure preserving map
     </li>
   </ol>
 </div>
+:ET

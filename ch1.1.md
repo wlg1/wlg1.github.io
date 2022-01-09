@@ -22,15 +22,15 @@ So every entity (a cat or rat) in the population is represented in the dataset a
 ![Figure 3](/cob/fig3.PNG)
 <!---Make dataset image: first row is face, second row is body, third row is data pt (combo of both) using #s, then show in coord sys on right. Then in 2nd image, turn all numbers into imgs, and again show in coordsys on right.--->
 
-Let's look at our coordinate space with only the images of unit 1:
+Let's look at our coordinate space with only the data samples corresponding to unit 1:
 
 <!---  <img src="/cob/fig4.png" width="800" height="500">--->
 ![Figure 4](/cob/fig4.PNG)
 
 Every data point is a combination of the "unit 1" points, which represent <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">. For instance, the data point (0.5, 2), which represents <img src="/cob/cat.PNG" width="50" height="40">, is a weighted combination of 0.5 * <img src="/cob/face1.PNG" width="50" height="40"> and 2* <img src="/cob/body1.PNG" width="50" height="40">
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Figure 5: Linear Combination](/cob/fig5.PNG)
-
+&nbsp;
 If we see each data point as a vector, then every vector such as <img src="/cob/cat.PNG" width="50" height="40"> is an addition of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">, which are **basis vectors**. Thus (0.5, 2) can also be represented as $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} = 0.5 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
 ![Figure 6: Cat in Coordinate Space](/cob/fig6.PNG)
@@ -45,7 +45,7 @@ Now, there are other ways we can measure the data samples in this population. In
 
 2) How likely it is to be a <span style="color:green">Rat</span> 
 
-How do we find the values of these new, and currently unknown, measurements? We can calculate them our previous known measurements, face & body. For example:
+How do we find the values of these new, and currently unknown, measurements? We can calculate them using our previous known measurements, face & body. For example:
 
 Shorter <span style="color:#FA8072">face</span> + Bigger <span style="color:#ADD8E6">body</span>  = <span style="color:orange">Cat</span> 
 
@@ -162,6 +162,7 @@ $$O = WX$$
 
 <!---[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]. W in b/w, with cols of both darker blue and darker red]--->
 
+[also put color coded outgoing weights for NN, write about this relating to matrix]
 
 In Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/cob/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/cob/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:#9B59B6">matrix W</span>? We will reveal the answer in section [].
 

@@ -39,18 +39,16 @@ cob space 1 out, cob space 2 out.py:
 german gift.py, english gift.py:
 [first show coordinate space labeling gift as poison]
 
-ALSO IMPT:
 [animation transforming poison and gift pics to English coordinate space. The vector does not move. Label first Sys as German, second as English.]
 
+german all words, english all words.py:
 [show coordinate space w/ Geschenk]
 
 [show a place in Switzerland not on the map]
 
-<<<
-[put vector O on coord sys]
 
 <<<
-2:
+1.2:
 Dot product breakdown b/w 2 coordinate systems (explain 1st step of matrix mult)
 
 <<<

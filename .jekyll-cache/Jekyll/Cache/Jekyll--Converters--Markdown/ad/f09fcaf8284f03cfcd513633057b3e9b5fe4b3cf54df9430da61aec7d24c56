@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"«W<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>CHAPTER 1.1</strong></p>
 
@@ -41,7 +41,7 @@ If we see each data point as a vector, then every vector such as <img src="/cob/
 
 <p>2) How likely it is to be a <span style="color:green">Rat</span></p>
 
-<p>How do we find the values of these new, and currently unknown, measurements? We can calculate them using our previous known measurements, face &amp; body. For example:</p>
+<p>How do we find the values of these new, and currently unknown, measurements? We can calculate them our previous known measurements, face &amp; body. For example:</p>
 
 <p>Shorter <span style="color:#FA8072">face</span> + Bigger <span style="color:#ADD8E6">body</span>  = <span style="color:orange">Cat</span></p>
 
@@ -239,3 +239,4 @@ Relationships are preserved. Analogy. Structure preserving map
     </li>
   </ol>
 </div>
+:ET
