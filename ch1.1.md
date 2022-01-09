@@ -29,9 +29,9 @@ Let's look at our coordinate space with only the data samples corresponding to u
 
 Every data point is a combination of the "unit 1" points, which represent <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">. For instance, the data point (0.5, 2), which represents <img src="/cob/cat.PNG" width="50" height="40">, is a weighted combination of 0.5 * <img src="/cob/face1.PNG" width="50" height="40"> and 2* <img src="/cob/body1.PNG" width="50" height="40">
 
-<hr style="border:0.3px solid gray;width:90%"> 
+<hr style="border:0.3px solid gray;width:90%;margin-left:auto;margin-right:auto"> 
 ![Figure 5: Linear Combination](/cob/fig5.PNG)
-<hr style="border:0.3px solid gray;width:90%"> 
+<hr style="border:0.3px solid gray;width:90%;margin-left:auto;margin-right:auto"> 
 
 If we see each data point as a vector, then every vector such as <img src="/cob/cat.PNG" width="50" height="40"> is an addition of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">, which are **basis vectors**. Thus (0.5, 2) can also be represented as $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} = 0.5 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
