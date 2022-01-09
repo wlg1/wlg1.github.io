@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"3U<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>CHAPTER 1.1</strong></p>
 
@@ -175,25 +175,22 @@ Fig 13
 <!---[animation transforming poison and gift pics to English coordinate space. The vector does not move. Label first Sys as German, second as English.]
 [Don't give names to basis vectors, ONLY show I -> gift, which is wrong.]---></p>
 
-<!---<p align="center"> --->
-<p>Label (‘gift’) in German <img src="/cob/poison.jpg" width="30" height="30" /> != Label (‘gift’) in English <img src="/cob/gift.jpg" width="30" height="30" /></p>
+<p>label (‘gift’) in German <img src="/cob/poison.jpg" width="30" height="30" /> != label (‘gift’) in English <img src="/cob/gift.jpg" width="30" height="30" /></p>
 
-<p>Label (‘gift’) in German <img src="/cob/poison.jpg" width="30" height="30" /> ~ Label (‘poison’) in English  <img src="/cob/poison.jpg" width="30" height="30" /></p>
+<p>label (‘gift’) in German <img src="/cob/poison.jpg" width="30" height="30" /> ~ label (‘poison’) in English  <img src="/cob/poison.jpg" width="30" height="30" /></p>
 
 <p>Relating this back to using numbers as labels:</p>
 
-<p>Label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) in German <img src="/cob/poison.jpg" width="30" height="30" /> != Label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) in English <img src="/cob/gift.jpg" width="30" height="30" /></p>
+<p>label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (‘gift’) in German != label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (‘gift’) in English</p>
 
-<p>Label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) in German <img src="/cob/poison.jpg" width="30" height="30" /> ~ Label \(\begin{bmatrix} -4 \\ 1 \end{bmatrix}\) in English <img src="/cob/poison.jpg" width="30" height="30" /></p>
+<p>label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (‘gift’) in German ~ label \(\begin{bmatrix} -4 \\ 1 \end{bmatrix}\) (‘poison’) in English</p>
 
 <p>Now if the English speaker tells the German speaker that they’re giving them a ‘gift’, the German speaker must translate this to a German word or expression that makes them understand that it’s <img src="/cob/gift.jpg" width="30" height="30" />. The German word for <img src="/cob/gift.jpg" width="30" height="30" /> is ‘geschenk’. Going the other way around, the English word for  <img src="/cob/poison.jpg" width="30" height="30" /> is ‘poison’.</p>
 
 <p><img src="/cob/all_words_cob.PNG" alt="all_words_cob" />
 <!---[show coordinate space w/ geschenk and poison]---></p>
 
-<p>\(\begin{bmatrix} 1/3 \\ 5/3 \end{bmatrix}\) (geschenk, German) <img src="/cob/gift.jpg" width="30" height="30" /> ~ \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (gift, English) <img src="/cob/gift.jpg" width="30" height="30" /></p>
-
-<p>\(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (gift, German) <img src="/cob/poison.jpg" width="30" height="30" /> ~ \(\begin{bmatrix} -4 \\ 1 \end{bmatrix}\) (poison, English) <img src="/cob/poison.jpg" width="30" height="30" /></p>
+<p>\(\begin{bmatrix} 1/3 \\ 5/3 \end{bmatrix}\) (Geschenk, German) ~ \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (Gift, English)</p>
 
 <!---
 Note that there is a difference between "what gift translates to" and "what gift means". "What gift translates to in German" means what the label on <img src="/cob/gift.jpg" width="30" height="30"> is in English. "What gift means in German" is about what the LABEL 'gift' itself points to in German. The data ssample <img src="/cob/gift.jpg" width="30" height="30"> and the label 'gift' are not the same. They are only the same when using English, which is defined by the "English basis vectors". More about what this means will be discussed in section X, which views basis vectors in a similar way to the Rosetta Stone.
@@ -237,3 +234,4 @@ Relationships are preserved. Analogy. Structure preserving map
     </li>
   </ol>
 </div>
+:ET

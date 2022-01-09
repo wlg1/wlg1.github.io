@@ -9,6 +9,7 @@ title: CHAPTER 1.1
 <a href="index.md">back</a>
 
 **(Reading time: 5 minutes)**
+[may split into three 2 min sections, label page (1/3)]
 
 Let's start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there's a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).
 
@@ -148,10 +149,10 @@ in the vector on top of model pic, color them the same, only darker--->
 Notice that Model 2 demonstrates an idealized, simplified example of what a neural network does- it is making a guess about the data point given to it as input. In fact, one can think of it as a single layer 'neural network' such that for its neuron function:
 
 <p align="center">
-$$O = ReLU(WX + b)$$
+$$O = \sigma(WX + b)$$
 </p>
 
-Which is used to calculate the values it guesses for the 2 classes {cat, rat}, it sets ReLU = identity and b = 0:
+Which is used to calculate the values it guesses for the 2 classes {cat, rat}, it sets $$\sigma$$ = identity and b = 0:
 
 <p align="center">
 $$O = WX$$
@@ -162,6 +163,8 @@ $$O = WX$$
 <!---[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]. W in b/w, with cols of both darker blue and darker red]--->
 
 
+In Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/cob/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/cob/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:#9B59B6">matrix W</span>? We will reveal the answer in section [].
+
 <!---
 Fig 13
 [fading gif of changing abstractions back to actual pics; place images on coord sys]--->
@@ -170,14 +173,14 @@ Fig 13
 
 ---
 
-Let's look at another example to further illustrate the difference between the real world and our coordinate space model. Instead of cat and rat data samples, we'll look at the two data samples <img src="/cob/poison.jpg" width="30" height="30">, a dangerous substance, and <img src="/cob/gift.jpg" width="30" height="30">, which is charitably given to someone. And instead of using numbers, let's use letters to label our entities. Our first model is labeled as follows:
+Before delving into the intricacies of matrix multiplication, let's look at another example to gain even better intuition about the difference between the real world and our coordinate space model. Instead of cat and rat data samples, we'll look at the two data samples <img src="/cob/poison.jpg" width="30" height="30">, a dangerous substance, and <img src="/cob/gift.jpg" width="30" height="30">, which is charitably given to someone. And instead of using numbers, let's use letters to label our entities. This means our models will resemble languages, some of which also use letters to label entities. So our first model, or language, is labeled as follows:
 
 ![german_gift](/cob/german_gift.PNG)
 <!---[first show coordinate space labeling gift as poison]--->
 
 To an English speaker, this may look wrong, because <img src="/cob/poison.jpg" width="30" height="30"> should be called something like 'poison', not 'gift'. But in German, <img src="/cob/poison.jpg" width="30" height="30"> is in fact called 'gift'. If a German speaker tells the English speaker that they're giving the English speaker a gift, the English speaker may be delighted because they think they're getting <img src="/cob/gift.jpg" width="30" height="30">. But they shouldn't be, because what they're ACTUALLY receiving is <img src="/cob/poison.jpg" width="30" height="30">, which would kill them.[^false_friend]
 
-Since there is a misunderstanding, the English speaker needs to know what <img src="/cob/poison.jpg" width="30" height="30"> is actually referring to. So they need to translate from German to English as follows:
+Since there is a misunderstanding, the English speaker needs to know what <img src="/cob/poison.jpg" width="30" height="30"> is actually referring to. So they need to translate from the language above, which resembles German, to English as follows:
 
 [^false_friend]: This is an example of a False Friend, "which is a pair of words in two different languages that look similar, but have different meanings." Source: https://en.wikipedia.org/wiki/False_friend
 
@@ -185,43 +188,41 @@ Since there is a misunderstanding, the English speaker needs to know what <img s
 <!---[animation transforming poison and gift pics to English coordinate space. The vector does not move. Label first Sys as German, second as English.]
 [Don't give names to basis vectors, ONLY show I -> gift, which is wrong.]--->
 
-label ('gift') in German <img src="/cob/poison.jpg" width="30" height="30"> != label ('gift') in English <img src="/cob/gift.jpg" width="30" height="30">
+<!---<p align="center"> --->
+Label ('gift') in German <img src="/cob/poison.jpg" width="30" height="30"> != Label ('gift') in English <img src="/cob/gift.jpg" width="30" height="30">
 
-label ('gift') in German <img src="/cob/poison.jpg" width="30" height="30"> ~ label ('poison') in English  <img src="/cob/poison.jpg" width="30" height="30">
+Label ('gift') in German <img src="/cob/poison.jpg" width="30" height="30"> ~ Label ('poison') in English  <img src="/cob/poison.jpg" width="30" height="30">
 
 Relating this back to using numbers as labels:
 
-label $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ ('gift') in German != label $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ ('gift') in English
+Label $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/cob/poison.jpg" width="30" height="30"> != Label $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in English <img src="/cob/gift.jpg" width="30" height="30">
 
-label $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ ('gift') in German ~ label $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ ('poison') in English 
+Label $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/cob/poison.jpg" width="30" height="30"> ~ Label $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ in English <img src="/cob/poison.jpg" width="30" height="30">
 
-Now if the English speaker tells the German speaker that they're giving them a 'gift', the German speaker must translate this to a German word or expression that makes them understand that it's <img src="/cob/gift.jpg" width="30" height="30">. 
+Now if the English speaker tells the German speaker that they're giving them a 'gift', the German speaker must translate this to a German word or expression that makes them understand that it's <img src="/cob/gift.jpg" width="30" height="30">. The German word for <img src="/cob/gift.jpg" width="30" height="30"> is 'geschenk'. Going the other way around, the English word for  <img src="/cob/poison.jpg" width="30" height="30"> is 'poison'.
 
-[show coordinate space w/ Geschenk]
+![all_words_cob](/cob/all_words_cob.PNG)
+<!---[show coordinate space w/ geschenk and poison]--->
 
-$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ (Gift, German) != $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ (Gift, English)
+$$\begin{bmatrix} 1/3 \\ 5/3 \end{bmatrix}$$ (geschenk, German) <img src="/cob/gift.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ (gift, English) <img src="/cob/gift.jpg" width="30" height="30">
 
-$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ (Gift, German) ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ (Disgust, English)
+$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ (gift, German) <img src="/cob/poison.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ (poison, English) <img src="/cob/poison.jpg" width="30" height="30">
 
-$$\begin{bmatrix} 1/3 \\ 5/3 \end{bmatrix}$$ (Geschenk, German) ~ $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ (Gift, English)
-
-Note that there is a difference between "what gift translates to" and "what gift means". "What gift translates to in German" means what the label on <img src="/cob/gift.jpg" width="30" height="30"> is in English. "What gift means in German" is about what the LABEL 'gift' itself points to in German. The entity [gift pic] and the label 'gift' are not the same. They are only the same when using English, which is defined by the "English basis vectors". More about what this means will be discussed in section X, which views basis vectors in a similar way to the Rosetta Stone.
+<!---
+Note that there is a difference between "what gift translates to" and "what gift means". "What gift translates to in German" means what the label on <img src="/cob/gift.jpg" width="30" height="30"> is in English. "What gift means in German" is about what the LABEL 'gift' itself points to in German. The data ssample <img src="/cob/gift.jpg" width="30" height="30"> and the label 'gift' are not the same. They are only the same when using English, which is defined by the "English basis vectors". More about what this means will be discussed in section X, which views basis vectors in a similar way to the Rosetta Stone.
 
 "what gift translates to" : <img src="/cob/gift.jpg" width="30" height="30">
 
 "what gift means": the label 'gift' (each label should be highlighted w/ diff font)
+--->
 
-But what does the label 'disgust' mean in German? As we see in the German coordinate space, it does not point to any entity. In fact, the label 'disgust' does not mean anything in German. Not all labels have to point to an entity; so in some coordinate spaces, they just mean nonsense. This is an instance of 'not confusing the map for the territory'- the map of Switzerland is not 1-1 with Switzerland itself. The model may not capture everything about reality.
+But what does the label 'poison' mean in German? As we see in the German coordinate space, it does not point to any data sample. In fact, the label 'poison' does not mean anything in German. The same goes for the label 'gescheck' in English. Not all labels have to point to an data sample; so in some coordinate spaces, they just mean nonsense. 
+
+<!---
+This is an instance of 'not confusing the map for the territory'- the map of Switzerland is not 1-1 with Switzerland itself. The model may not capture everything about reality.
 
 [show a place in Switzerland not on the map]
-
----
-
-Now that we understand the difference between entities and labels, let's look back at our example with cats and rats. Remember that in Model 2, the vector I no longer labels the entity [cat pic]; in Model 2, it's the vector O that labels [cat pic]. 
-
-[put vector O on coord sys]
-
-How do we calculate what the new label for [cat] is? As we'll soon see in section X, the answer is found using Matrix-Vector Multiplication.
+--->
 
 <!---
 MOVE TO 1.1+:
