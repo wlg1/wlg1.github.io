@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"[S<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>CHAPTER 1.1</strong></p>
 
@@ -172,11 +172,11 @@ Fig 13
 <!---[animation transforming poison and gift pics to English coordinate space. The vector does not move. Label first Sys as German, second as English.]
 [Don't give names to basis vectors, ONLY show I -> gift, which is wrong.]---></p>
 
-<p>label (‘gift’) in German <img src="/cob/poison.jpg" width="30" height="30" /> != label (‘gift’) in English <img src="/cob/gift.jpg" width="30" height="30" /></p>
+<p>label (‘gift’) in German <img src="/cob/poison.jpg" width="30" height="30" /> != label (‘gift’) in English <img src="/cob/poison.jpg" width="30" height="30" /></p>
 
 <p>label (‘gift’) in German <img src="/cob/poison.jpg" width="30" height="30" /> ~ label (‘poison’) in English  <img src="/cob/poison.jpg" width="30" height="30" /></p>
 
-<p>Relating this back to using numbers as labels:</p>
+<p>Relating this back to using numbers as labels (write #s below):</p>
 
 <p>label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (‘gift’) in German != label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (‘gift’) in English</p>
 
@@ -236,3 +236,4 @@ Relationships are preserved. Analogy. Structure preserving map
     </li>
   </ol>
 </div>
+:ET

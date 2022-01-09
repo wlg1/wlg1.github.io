@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"�L<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>CHAPTER 1.1</strong></p>
 
@@ -159,68 +159,65 @@ Fig 13
 
 <hr />
 
-<p>Let’s look at another example to further illustrate the difference between the real world and our coordinate space model. Instead of cat and rat data samples, we’ll look at the two data samples <img src="/cob/poison.jpg" width="30" height="30" />, a dangerous substance, and <img src="/cob/gift.jpg" width="30" height="30" />, which is charitably given to someone. And instead of using numbers, let’s use letters to label our entities. Our first model is labeled as follows:</p>
+<p>Let’s look at another example to further illustrate the difference between the real world and our coordinate space model. Instead of cat and rat data samples, we’ll look at the data samples Instead of using numbers, let’s use letters to label our entities.</p>
 
-<p><img src="/cob/german_gift.PNG" alt="german_gift" />
-<!---[first show coordinate space labeling gift as poison]---></p>
+<p>[first show coordinate space labeling gift as poison]</p>
 
-<p>To an English speaker, this may look wrong, because <img src="/cob/poison.jpg" width="30" height="30" /> should be called something like ‘poison’, not ‘gift’. But in German, <img src="/cob/poison.jpg" width="30" height="30" /> is in fact called ‘gift’. If a German speaker tells the English speaker that they’re giving the English speaker a gift, the English speaker may be delighted because they think they’re getting <img src="/cob/gift.jpg" width="30" height="30" />. But they shouldn’t be, because what they’re ACTUALLY receiving is <img src="/cob/poison.jpg" width="30" height="30" />, which would kill them.<sup id="fnref:false_friend" role="doc-noteref"><a href="#fn:false_friend" class="footnote" rel="footnote">3</a></sup></p>
+<p>To an English speaker, this may look wrong. But in German, [poison pic] is in fact called ‘gift’. If a German speaker tells the English speaker that they’re giving the English speaker a gift, the English speaker may be delighted. But they shouldn’t be, because what they’re actually receiving is [poison pic], which would kill them.</p>
 
-<p>Since there is a misunderstanding, the English speaker needs to know what <img src="/cob/poison.jpg" width="30" height="30" /> is actually referring to. So they need to translate from German to English as follows:</p>
+<p>Instead, the English speaker needs to know what [poison pic] is actually referring to. So they need to translate from German to English as follows:</p>
 
-<p><img src="/cob/gift_cob.PNG" alt="gift_cob" />
-<!---[animation transforming poison and gift pics to English coordinate space. The vector does not move. Label first Sys as German, second as English.]
-[Don't give names to basis vectors, ONLY show I -> gift, which is wrong.]---></p>
+<p>[animation transforming poison and gift pics to English coordinate space. The vector does not move. Label first Sys as German, second as English.]
+[Don’t give names to basis vectors, ONLY show I -&gt; gift, which is wrong.]</p>
 
-<p>label (‘gift’) in German <img src="/cob/poison.jpg" width="30" height="30" /> != label (‘gift’) in English <img src="/cob/gift.jpg" width="30" height="30" /></p>
+<p>label (‘gift’) in German != label (‘gift’) in English
+label (‘gift’) in German ~ label (‘poison’) in English</p>
 
-<p>label (‘gift’) in German <img src="/cob/poison.jpg" width="30" height="30" /> ~ label (‘poison’) in English  <img src="/cob/poison.jpg" width="30" height="30" /></p>
+<p>Relating this back to using numbers as labels (write #s below):
+label [2 0.5] (‘gift’) in German != label [2 0.5] (‘gift’) in English
+label [2 0.5] (‘gift’) in German ~ label [? ?] (‘poison’) in English</p>
 
-<p>Relating this back to using numbers as labels:</p>
-
-<p>label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (‘gift’) in German != label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (‘gift’) in English</p>
-
-<p>label \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (‘gift’) in German ~ label \(\begin{bmatrix} -4 \\ 1 \end{bmatrix}\) (‘poison’) in English</p>
-
-<p>Now if the English speaker tells the German speaker that they’re giving them a ‘gift’, the German speaker must translate this to a German word or expression that makes them understand that it’s <img src="/cob/gift.jpg" width="30" height="30" />.</p>
+<p>Now if the English speaker tells the German speaker that they’re giving them a ‘gift’, the German speaker must translate this to a German translation* that makes them understand that it’s [gift pic].</p>
+<ul>
+  <li>not necessarily a word, but possibly a German sentence, or even a paragraph or textbook</li>
+</ul>
 
 <p>[show coordinate space w/ Geschenk]</p>
 
-<p>\(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (Gift, German) != \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (Gift, English)</p>
+<p>[2 0.5] (Gift, German) != [2 0.5] (Gift, English)
+[2 0.5] (Gift, German) ~= [-4 1] (Disgust, English)
+[1/3 5/3] (Geschenk, German) ~= [2 0.5] (Gift, English)</p>
 
-<p>\(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (Gift, German) ~ \(\begin{bmatrix} -4 \\ 1 \end{bmatrix}\) (Disgust, English)</p>
+<p>Note that there is a difference between “what gift translates to” and “what gift means”. “What gift translates to in German” means what the label on [gift pic] is in English. “What gift means in German” is about what the LABEL ‘gift’ itself points to in German. The entity [gift pic] and the label ‘gift’ are not the same. They are only the same when using English, which is defined by the “English basis vectors”. More about what this means will be discussed in section X, which views basis vectors in a similar way to the Rosetta Stone.</p>
 
-<p>\(\begin{bmatrix} 1/3 \\ 5/3 \end{bmatrix}\) (Geschenk, German) ~ \(\begin{bmatrix} -1 \\ 2 \end{bmatrix}\) (Gift, English)</p>
-
-<p>Note that there is a difference between “what gift translates to” and “what gift means”. “What gift translates to in German” means what the label on <img src="/cob/gift.jpg" width="30" height="30" /> is in English. “What gift means in German” is about what the LABEL ‘gift’ itself points to in German. The entity [gift pic] and the label ‘gift’ are not the same. They are only the same when using English, which is defined by the “English basis vectors”. More about what this means will be discussed in section X, which views basis vectors in a similar way to the Rosetta Stone.</p>
-
-<p>“what gift translates to” : <img src="/cob/gift.jpg" width="30" height="30" /></p>
-
-<p>“what gift means”: the label ‘gift’ (each label should be highlighted w/ diff font)</p>
+<p>“what gift translates to” : [gift pic]
+“what gift means”: the label ‘gift’ (each label should be highlighted w/ diff font)</p>
 
 <p>But what does the label ‘disgust’ mean in German? As we see in the German coordinate space, it does not point to any entity. In fact, the label ‘disgust’ does not mean anything in German. Not all labels have to point to an entity; so in some coordinate spaces, they just mean nonsense. This is an instance of ‘not confusing the map for the territory’- the map of Switzerland is not 1-1 with Switzerland itself. The model may not capture everything about reality.</p>
 
 <p>[show a place in Switzerland not on the map]</p>
 
-<hr />
+<ul>
+  <li>this is an example of a False Friend. link</li>
+</ul>
 
-<p>Now that we understand the difference between entities and labels, let’s look back at our example with cats and rats. Remember that in Model 2, the vector I no longer labels the entity [cat pic]; in Model 2, it’s the vector O that labels [cat pic].</p>
+<p>«&lt;
+Now that we understand the difference between entities and labels, let’s look back at our example with cats and rats. Remember that in Model 2, the vector I no longer labels the entity [cat pic]; in Model 2, it’s the vector O that labels [cat pic].</p>
 
 <p>[put vector O on coord sys]</p>
 
 <p>How do we calculate what the new label for [cat] is? As we’ll soon see in section X, the answer is found using Matrix-Vector Multiplication.</p>
 
-<!---
+<p>«&lt;
 MOVE TO 1.1+:
-Note that the relationships between the entities doesn't change. Since the basis vectors from Model 1 still exist in Model 2, you can still use the instructions from Model 1, but you have to translate them using the change of basis matrix.
-... As we'll see in section X, this is why the dot product instructions work.
+Note that the relationships between the entities doesn’t change. Since the basis vectors from Model 1 still exist in Model 2, you can still use the instructions from Model 1, but you have to translate them using the change of basis matrix.
+… As we’ll see in section X, this is why the dot product instructions work.</p>
 
-section Y will delve deeper into the relationships between concepts, and how they can be preserved or destroyed via matrix multiplication. It retrieves insights that are crucial for...
+<p>section Y will delve deeper into the relationships between concepts, and how they can be preserved or destroyed via matrix multiplication. It retrieves insights that are crucial for…</p>
 
-While [cat pic entity] is a representation of a entity that exists in the real world, 
+<p>While [cat pic entity] is a representation of a entity that exists in the real world, 
 Relationships are preserved. Analogy. Structure preserving map
-[Maps between 2 domains: the real world, and the coordinate space]
---->
+[Maps between 2 domains: the real world, and the coordinate space]</p>
 
 <hr />
 <div class="footnotes" role="doc-endnotes">
@@ -231,8 +228,6 @@ Relationships are preserved. Analogy. Structure preserving map
     <li id="fn:entity_model" role="doc-endnote">
       <p>While the vectors are a representations of the data sample, the data sample is also a representation of the actual cat entity (by transitivity, both are representation of the entity). Note that the vector is a numerial representation of the data sample, while the data sample is a collection of values which are defined relative to other samples in the population. Information about these collections of relative values is preserved under different Models, and different transformations preserve different information. Because values are defined relative to other values, information about data samples (such as their distribution) are relations, and relations can be thought of as shapes; for instance, a line is a relation between two points, so this line shape describes their relation. This is better explained in Section []. Also note that the only information the neural network knows about the entity comes from the data sample; it can never truly know the entity. <a href="#fnref:entity_model" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:false_friend" role="doc-endnote">
-      <p>This is an example of a False Friend, “which is a pair of words in two different languages that look similar, but have different meanings.” Source: https://en.wikipedia.org/wiki/False_friend <a href="#fnref:false_friend" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
   </ol>
 </div>
+:ET

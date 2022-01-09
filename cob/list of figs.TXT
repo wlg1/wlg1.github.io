@@ -33,9 +33,10 @@ cob space 1 cat, cob space 2 cat.py: Basis COB w/ cat
 cob space 1 out, cob space 2 out.py:
 [picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]]
 
-
 <<<
 1.1b:
+
+german gift.py, english gift.py:
 [first show coordinate space labeling gift as poison]
 
 ALSO IMPT:
