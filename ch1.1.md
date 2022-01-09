@@ -28,9 +28,13 @@ Let's look at our coordinate space with only the data samples corresponding to u
 ![Figure 4](/cob/fig4.PNG)
 
 Every data point is a combination of the "unit 1" points, which represent <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">. For instance, the data point (0.5, 2), which represents <img src="/cob/cat.PNG" width="50" height="40">, is a weighted combination of 0.5 * <img src="/cob/face1.PNG" width="50" height="40"> and 2* <img src="/cob/body1.PNG" width="50" height="40">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<br />
+
 ![Figure 5: Linear Combination](/cob/fig5.PNG)
-&nbsp;
+
+<br />
+
 If we see each data point as a vector, then every vector such as <img src="/cob/cat.PNG" width="50" height="40"> is an addition of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">, which are **basis vectors**. Thus (0.5, 2) can also be represented as $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} = 0.5 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
 ![Figure 6: Cat in Coordinate Space](/cob/fig6.PNG)
@@ -66,7 +70,7 @@ Each measurement acts as a basis vector used to define each data sample. Because
 
 The face & body size coordinate space will be called Model 1, and the 'likely to be' cat or rat coordinate space be called Model 2. As these two measurement methods are measuring the same data samples, the data samples in Model 1 are present in Model 2, but are now measured by different vectors.
 
-In fact, since we are using Model 1 to calculate the values for Model 2, we will see in Section [] that we are applying the dot product on face & body to calculate 'likely to be cat'. Recall that the steps of matrix multiplication consists of dot products; thus, the calculation of Model 2 is none other than matrix multiplication, which was, for certain matrices, shown in this video[link] to be a rotation [footnote: see 3Bl1Br video timestamps]. In Figure X, we choose the matrix to cause a rotation. 
+In fact, since we are using Model 1 to calculate the values for Model 2, we will see in Section [] that we are applying the dot product on face & body to calculate 'likely to be cat'. Recall that the steps of matrix multiplication consists of dot products; thus, the calculation of Model 2 is none other than matrix multiplication, which was, for certain matrices, shown in this video[link] to be a rotation [footnote: see 3Bl1Br video timestamps]. In Figure X, we choose a matrix that, upon multiplication, corresponds to a rotation. 
 
 <!---ANIMATION: rotation w/o coordinate space [Model 1 fades on 'likely a cat' and 'likely a rat'. then it shifts.]--->
 
@@ -134,7 +138,7 @@ This shows the difference between the data samples coming from the real world, a
 <img src="/cob/vecNotCat.PNG" width="250" height="100">
 </p>
 
-Understanding the difference between a model representation and the actual entity it means (or points to) is crucial for gaining better intuition behind why matrix multiplication induces a Change of Basis.[^entity_model]
+Understanding the difference between a model representation and the actual entity it means (or points to) is crucial for gaining better intuition behind why matrix multiplication reveals hidden information in data sets.[^entity_model]
 
 <!--- Fig 11 [animated reality of concepts vs fixed coord space model]--->
 
