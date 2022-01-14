@@ -59,15 +59,15 @@ page 2: steps
 
 STEP 1
 
-![step1](/cob/1.2/step1.PNG)
+![step1](/cob/1.2/step1.png)
 
 STEP 2
 
-![step2](/cob/1.2/step2.PNG)
+![step2](/cob/1.2/step2.png)
 
 STEP 3
 
-![step3](/cob/1.2/step3.PNG)
+![step3](/cob/1.2/step3.png)
 
 [Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different.
 I red, W and O blue; both in eqns and coordsys ]
