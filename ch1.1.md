@@ -62,7 +62,7 @@ Bigger body + Shorter face = Likely a Cat
 
 [X and Y are on the row of the matrix corresponding to 'likely a cat'. They are the x values of body1 and face1's new coords in Model 2 ]
 
-What are X and Y? These are how much each feature is weighted by to calculate the score of "likely to be cat". The higher the weight, the more that feature is taken into account for during calculation. We will reveal how these weights are related to the matrix once we get into the algebra of matrix multiplication in section [].
+What are X and Y? These are how much each feature is weighted by to calculate the score of "likely to be cat". The higher the weight, the more that feature is taken into account during calculation. For example, it might be more important to know the body size, than the face length, when determining if something is a cat or a rat, since cats are usually much bigger than rats, but their faces aren't always much shorter. We will reveal how these weights are related to the matrix once we get into the algebra of matrix multiplication in section [].
 
 Each measurement acts as a basis vector used to define each data sample. Because this second set of measurements uses different basis vectors than the set of face & body sizes, it forms a different coordinate space. Since each coordinate space provides a different way to **represent** the data, let's call each coordinate space a **Model**. 
 
@@ -140,7 +140,7 @@ Understanding the difference between a model representation and the actual entit
 
 <!--- Fig 11 [animated reality of concepts vs fixed coord space model]--->
 
-We show below how the features on the two basis vectors in Model 1 are rotated on two new vectors in Model 2. This is done by matrix multiplication, causing the basis vectors in Model 2 to now point to the <span style="color:orange">Orange Dot</span> and <span style="color:green">Green Dot</span>; section [] will make it even more clear why matrix multiplication is called a "Change of Basis".
+We show below how the features on the two basis vectors in Model 1 are rotated onto two new vectors in Model 2. This is done by matrix multiplication, causing the basis vectors in Model 2 to now point to the <span style="color:orange">Orange Dot</span> and <span style="color:green">Green Dot</span>; section [] will make it even more clear why matrix multiplication is called a "Change of Basis".
 
 ![2mod_vecs](/cob/2mod_vecs.PNG)
 
@@ -148,17 +148,19 @@ We show below how the features on the two basis vectors in Model 1 are rotated o
 in the vector on top of model pic, color them the same, only darker--->
 
 
-Notice that Model 2 demonstrates an idealized, simplified example of what a neural network does- it is making a guess about the data point given to it as input. In fact, one can think of it as a single layer 'neural network' such that for its neuron function:
+Notice that Model 2 demonstrates an idealized, simplified example of what a neural network does- it is making a guess about the data point given to it as input. In fact, one can think of it as a single layer 'neural network'[^1-layer-NN] such that for the function that calculates the neuron activations:
 
 <p align="center">
 $$O = \sigma(WX + b)$$
 </p>
 
-Which is used to calculate the values it guesses for the 2 classes {cat, rat}, it sets $$\sigma$$ = identity and b = 0:
+Which, for a data sample, outputs the values it guesses for the 2 classes {cat, rat}, it sets $$\sigma$$ = identity and b = 0:
 
 <p align="center">
 $$O = WX$$
 </p>
+
+[^1-layer-NN]: https://ml4a.github.io/ml4a/how_neural_networks_are_trained/
 
 ![2mod_out](/cob/2mod_out.PNG)
 
@@ -166,13 +168,13 @@ $$O = WX$$
 
 [also put color coded outgoing weights for NN, write about this relating to matrix]
 
-In Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/cob/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/cob/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:#9B59B6">matrix W</span>? We will reveal the answer in section [].
+In Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/cob/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/cob/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:purple">matrix W</span>? We will reveal the answer in section [].
 
 <!---
 Fig 13
 [fading gif of changing abstractions back to actual pics; place images on coord sys]--->
 
-[^entity_model]: While the vectors are a representations of the data sample, the data sample is also a representation of the actual cat entity (by transitivity, both are representation of the entity). Note that the vector is a numerial representation of the data sample, while the data sample is a collection of values which are defined relative to other samples in the population. Information about these collections of relative values is preserved under different Models, and different transformations preserve different information. Because values are defined relative to other values, information about data samples (such as their distribution) are relations, and relations can be thought of as shapes; for instance, a line is a relation between two points, so this line shape describes their relation. This is better explained in Section []. Also note that the only information the neural network knows about the entity comes from the data sample; it can never truly know the entity.
+[^entity_model]: While the vectors are representations of the data sample, the data sample is also a representation of the actual cat entity (by transitivity, both are representation of the entity). Note that the vector is a numerial representation of the data sample, while the data sample is a collection of values which are defined relative to other samples in the population. Information about these collections of relative values is preserved under different Models, and different transformations preserve different information. Because values are defined relative to other values, information about data samples (such as their distribution) are relations, and relations can be thought of as shapes; for instance, a line is a relation between two points, so this line shape describes their relation. This is better explained in Section []. Also note that the only information the neural network knows about the entity comes from the data sample; it can never truly know the entity.
 
 ---
 
@@ -183,7 +185,7 @@ Before delving into the intricacies of matrix multiplication, let's look at anot
 
 To an English speaker, this may look wrong, because <img src="/cob/poison.jpg" width="30" height="30"> should be called something like 'poison', not 'gift'. But in German, <img src="/cob/poison.jpg" width="30" height="30"> is in fact called 'gift'. If a German speaker tells the English speaker that they're giving the English speaker a gift, the English speaker may be delighted because they think they're getting <img src="/cob/gift.jpg" width="30" height="30">. But they shouldn't be, because what they're ACTUALLY receiving is <img src="/cob/poison.jpg" width="30" height="30">, which would kill them.[^false_friend]
 
-Since there is a misunderstanding, the English speaker needs to know what <img src="/cob/poison.jpg" width="30" height="30"> is actually referring to. So they need to translate from the language above, which resembles German, to English as follows:
+Since there is a misunderstanding, the English speaker needs to know what 'gift' is actually referring to; or in other words, to know the right English word to use for <img src="/cob/poison.jpg" width="30" height="30">. So they need to translate from the language above, which resembles German, to English as follows:
 
 [^false_friend]: This is an example of a False Friend, "which is a pair of words in two different languages that look similar, but have different meanings." Source: https://en.wikipedia.org/wiki/False_friend
 
@@ -192,24 +194,24 @@ Since there is a misunderstanding, the English speaker needs to know what <img s
 [Don't give names to basis vectors, ONLY show I -> gift, which is wrong.]--->
 
 <!---<p align="center"> --->
-Label ('gift') in German <img src="/cob/poison.jpg" width="30" height="30"> != Label ('gift') in English <img src="/cob/gift.jpg" width="30" height="30">
+'gift' in German <img src="/cob/poison.jpg" width="30" height="30"> != 'gift' in English <img src="/cob/gift.jpg" width="30" height="30">
 
-Label ('gift') in German <img src="/cob/poison.jpg" width="30" height="30"> ~ Label ('poison') in English  <img src="/cob/poison.jpg" width="30" height="30">
+'gift' in German <img src="/cob/poison.jpg" width="30" height="30"> ~ 'poison' in English  <img src="/cob/poison.jpg" width="30" height="30">
 
 Relating this back to using numbers as labels:
 
-Label $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/cob/poison.jpg" width="30" height="30"> != Label $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in English <img src="/cob/gift.jpg" width="30" height="30">
+$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/cob/poison.jpg" width="30" height="30"> != $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in English <img src="/cob/gift.jpg" width="30" height="30">
 
-Label $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/cob/poison.jpg" width="30" height="30"> ~ Label $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ in English <img src="/cob/poison.jpg" width="30" height="30">
+$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/cob/poison.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ in English <img src="/cob/poison.jpg" width="30" height="30">
 
 Now if the English speaker tells the German speaker that they're giving them a 'gift', the German speaker must translate this to a German word or expression that makes them understand that it's <img src="/cob/gift.jpg" width="30" height="30">. The German word for <img src="/cob/gift.jpg" width="30" height="30"> is 'geschenk'. Going the other way around, the English word for  <img src="/cob/poison.jpg" width="30" height="30"> is 'poison'.
 
 ![all_words_cob](/cob/all_words_cob.PNG)
 <!---[show coordinate space w/ geschenk and poison]--->
 
-$$\begin{bmatrix} 1/3 \\ 5/3 \end{bmatrix}$$ (geschenk, German) <img src="/cob/gift.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ (gift, English) <img src="/cob/gift.jpg" width="30" height="30">
+$$\begin{bmatrix} 1/3 \\ 5/3 \end{bmatrix}$$ 'geschenk' in German <img src="/cob/gift.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ 'gift' in English <img src="/cob/gift.jpg" width="30" height="30">
 
-$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ (gift, German) <img src="/cob/poison.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ (poison, English) <img src="/cob/poison.jpg" width="30" height="30">
+$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ 'gift' in German <img src="/cob/poison.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ 'poison' in English <img src="/cob/poison.jpg" width="30" height="30">
 
 <!---
 Note that there is a difference between "what gift translates to" and "what gift means". "What gift translates to in German" means what the label on <img src="/cob/gift.jpg" width="30" height="30"> is in English. "What gift means in German" is about what the LABEL 'gift' itself points to in German. The data ssample <img src="/cob/gift.jpg" width="30" height="30"> and the label 'gift' are not the same. They are only the same when using English, which is defined by the "English basis vectors". More about what this means will be discussed in section X, which views basis vectors in a similar way to the Rosetta Stone.
@@ -220,6 +222,10 @@ Note that there is a difference between "what gift translates to" and "what gift
 --->
 
 But what does the label 'poison' mean in German? As we see in the German coordinate space, it does not point to any data sample. In fact, the label 'poison' does not mean anything in German. The same goes for the label 'gescheck' in English. Not all labels have to point to an data sample; so in some coordinate spaces, they just mean nonsense. 
+
+**[ch1.2](ch1.2.md)**
+
+<a href="ch1.2.html">CHAPTER 1.2</a>
 
 <!---
 This is an instance of 'not confusing the map for the territory'- the map of Switzerland is not 1-1 with Switzerland itself. The model may not capture everything about reality.
