@@ -1,4 +1,4 @@
-<p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
+I"ç<p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
 
 <p>How do we translate vectors in Model 1 to vectors in Model 2?</p>
@@ -125,3 +125,4 @@ X = [X_face, X_body]</p>
 
 <p>¬´&lt;
 [inverse: going down 2 rat, 1 cat gets you to body size 1]</p>
+:ET

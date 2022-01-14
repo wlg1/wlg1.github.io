@@ -1,4 +1,4 @@
-<p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
+I"<p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
 
 <p>How do we translate vectors in Model 1 to vectors in Model 2?</p>
@@ -76,8 +76,7 @@ face length -&gt; ‘likely cat’
 <p>If there are 2 meters, we multiply 2 meters.
 [picture of 2 meters, or 2 * 3.28 feet]</p>
 
-<p>If the face length is 0.5, that means it’s 2 units not likely to be a cat.
-[top is face length, bottom is -+ line denoting cat chance]</p>
+<p>If the face length is 0.5,</p>
 
 <hr />
 <p>[First multiply by identity matrix, which leaves expression unchanged.]
@@ -125,3 +124,4 @@ X = [X_face, X_body]</p>
 
 <p>«&lt;
 [inverse: going down 2 rat, 1 cat gets you to body size 1]</p>
+:ET

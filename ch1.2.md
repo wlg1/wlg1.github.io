@@ -62,8 +62,29 @@ Explain more, with pics
 --->
 
 ---
-page 2: steps
 
+We are not trying to find the LABEL /vector, but the actual data sample. In analogy, we can describe ...
+There are 3.28 feet in 1 meter. So if an entity is 2 meters long (input):
+2 meters vs 6.56 feet
+1 * 2 = 3.28 * 2
+
+The entity is neither 2 nor 6.56; they are just measurements labeling it from two different perspectives. This is an example of 1D matrix multiplication; now, we are using 2 dimensions to calculate the location, since it's defined using 2 measurements.
+A 1D change of dimension is simple enough; "How many feet are in 1 meter?" A change of multiple dimensions follows the same logic. Remember, the dimensions are merely labels measuring the entity, but are not part of the entity itself. They are a way for an outside observer to describe the entity.
+
+meter -> feet
+face length -> 'likely cat'
+"1 meter has 3.28 feet"
+"A face length of unit 1 denotes that it's -2 units 'likely to be cat"
+
+Or in other words, "A face length of unit 1 denotes that it's 2 units NOT 'likely to be cat"
+
+If there are 2 meters, we multiply 2 meters.
+[picture of 2 meters, or 2 * 3.28 feet]
+
+If the face length is 0.5, that means it's 2 units not likely to be a cat.
+[top is face length, bottom is -+ line denoting cat chance]
+
+---
 [First multiply by identity matrix, which leaves expression unchanged.]
 The basis vectors in Model 1 form I, the identity matrix.
 
@@ -71,7 +92,7 @@ fig: show that Identity * X in Sys 1 is 'analogous' to W * X
 
 Think of multiplying by the input vector X as instructions on how to get the coordinates for what data sample X points to.
 
-[0.5,] in X finds the first coordinate; it means to multiply the face length  first coordiante by 0.5, and the body size first coordinate by 2. In Model 1, that means multiplying face=1 by 0.5, and bodysize=0 by 2.
+[0.5,] in X finds the first coordinate; it means to multiply the face length  first coordinate by 0.5, and the body size first coordinate by 2. In Model 1, that means multiplying face=1 by 0.5, and bodysize=0 by 2.
 
 But [0.5] does not act on the basis vector; it acts on the data sample [data sample face length 1 pic].
 X does not act on the basis vector. It just so happens to be that in Model 1, [data sample face 1] is on the basis vector [1, 0], and [data sample body size 1] is on the basis vector [0, 1].
@@ -85,15 +106,8 @@ X = [X_face, X_body]
 
 The instructions that are applied to I are also applied to W.
 
-We are not trying to find the LABEL /vector, but the actual data sample. In analogy, we can describe ...
-There are 3.28 feet in 1 meter. So if an entity is 2 meters long (input):
-2 meters vs 6.56 feet
-1 * 2 = 3.28 * 2
-
-The entity is neither 2 nor 6.56; they are just measurements labeling it from two different perspectives. This is an example of 1D matrix multiplication; now, we are using 2 dimensions to calculate the location, since it's defined using 2 measurements.
-A 1D change of dimension is simple enough; "How many feet are in 1 meter?" A change of multiple dimensions follows the same logic. Remember, the dimensions are merely labels measuring the entity, but are not part of the entity itself. They are a way for an outside observer to describe the entity.
-
 ---
+page 2: steps
 
 STEP 1: bodyFace, faceFace corresponds to first row of identity DoubleStrike1
         faceX, body X, corresponds to first row of W matrix

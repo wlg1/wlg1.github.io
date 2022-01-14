@@ -1,4 +1,4 @@
-<p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
+I"�<p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
 
 <p>How do we translate vectors in Model 1 to vectors in Model 2?</p>
@@ -66,18 +66,7 @@ There are 3.28 feet in 1 meter. So if an entity is 2 meters long (input):
 <p>The entity is neither 2 nor 6.56; they are just measurements labeling it from two different perspectives. This is an example of 1D matrix multiplication; now, we are using 2 dimensions to calculate the location, since it’s defined using 2 measurements.
 A 1D change of dimension is simple enough; “How many feet are in 1 meter?” A change of multiple dimensions follows the same logic. Remember, the dimensions are merely labels measuring the entity, but are not part of the entity itself. They are a way for an outside observer to describe the entity.</p>
 
-<p>meter -&gt; feet
-face length -&gt; ‘likely cat’
-“1 meter has 3.28 feet”
-“A face length of unit 1 denotes that it’s -2 units ‘likely to be cat”</p>
-
-<p>Or in other words, “A face length of unit 1 denotes that it’s 2 units NOT ‘likely to be cat”</p>
-
-<p>If there are 2 meters, we multiply 2 meters.
-[picture of 2 meters, or 2 * 3.28 feet]</p>
-
-<p>If the face length is 0.5, that means it’s 2 units not likely to be a cat.
-[top is face length, bottom is -+ line denoting cat chance]</p>
+<p>“There are 2.5 body sizes in a [likely to be cat]”</p>
 
 <hr />
 <p>[First multiply by identity matrix, which leaves expression unchanged.]
@@ -125,3 +114,4 @@ X = [X_face, X_body]</p>
 
 <p>«&lt;
 [inverse: going down 2 rat, 1 cat gets you to body size 1]</p>
+:ET
