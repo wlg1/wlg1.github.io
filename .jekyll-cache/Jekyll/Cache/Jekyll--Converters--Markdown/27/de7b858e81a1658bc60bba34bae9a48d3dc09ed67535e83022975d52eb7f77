@@ -1,0 +1,145 @@
+I"Ã<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Home - colah's blog</title>
+
+    <link rel="stylesheet" href="./fonts/Serif/cmun-serif.css" />
+    <link rel="stylesheet" href="./fonts/Serif-Slanted/cmun-serif-slanted.css" />
+
+    <!--BOOTSTRAP-->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!--mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--removed html from url but still is html-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!--font awesome-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+
+    <!--fonts: allan & cardo-->
+    <link href="http://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css" />
+
+    <link href="./css/sticky-footer-navbar.css" rel="stylesheet" />
+
+    <link href="./css/default.css" rel="stylesheet" />
+    <link href="./css/index.css" rel="stylesheet" />
+
+    <link href="./css/inlineDisqussions.css" rel="stylesheet" />
+
+    <!--Highlight-->
+    <link href="./highlight/styles/github.css" rel="stylesheet" />
+
+    <link href="./favicon.ico" rel="shortcut icon" />
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-49811703-1', 'colah.github.io');
+        ga('require', 'linkid', 'linkid.js');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+<body>
+    <div id="wrap">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+                <!--Toggle header for mobile-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand active" href="./" id="home">Blog</a>
+                </div>
+                <!--normal header-->
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="./"><span class="glyphicon glyphicon-pencil"></span> Blog</a></li>
+                        <li><a href="./about.html"><span class="glyphicon glyphicon-user"></span> About</a></li>
+                        <li><a href="./contact.html"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+    </div>
+
+**WORKING TITLE**
+
+<!---
+    -->
+For localhost testing:
+
+<a href="ch1.1.html">CHAPTER 1.1</a>
+
+<a href="ch1.2.html">CHAPTER 1.2</a>
+
+<a href="ch2.0.html">CHAPTER 2.0</a>
+
+<a href="ch2.1.html">CHAPTER 2.1</a>
+
+---
+
+When studying new improvements to neural networks, many people run into the following problem:
+
+<p align="center">
+<b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
+
+fig Eg) What's orthogonal projection?
+
+This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.[^1]. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. 
+
+[^1]: assuming only that a reader has a basic understanding of X, or has watched these videos []. Links are provided to them.
+
+But this blog takes an even further step: by generalizing this solution to solve similar problems.
+
+fig Eg) [give an example of issue- reasoning- soln - generalization, that concisely explains all after prereqs]
+
+Not sure where to start?
+
+**[Start Here](ch1.1.md)**
+
+---
+CHAPTER 1: How Neural Networks Reveal Hidden Insights in Data (using Matrix Multiplication)
+
+**[1.1: How does matrix multiplication guess a cat from its face and body?](ch1.1.md)**
+
+**[1.2: Why use dot product in matrix multiplication?](ch1.2.md)**
+
+1.3: WHY use basis vectors? The relativity of data
+
+1.4: The Duality of Neurons: As Objects, As Relations
+
+1.5: The Analogy of the Matrix
+
+
+CHAPTER 2:  How Neural Networks Make Faces Look Younger (using Orthogonal Projection)
+
+2.1: Dot product for direction, Lengths, Normal
+
+2.2: Orthogonal Projections
+
+
+CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
+
+Eigenvectors, Diagonal, Decomposition, matrix factorization &amp; PCA
+
+---
+
+
+</body>
+:ET

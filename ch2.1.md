@@ -1,3 +1,6 @@
+---
+title: CHAPTER 2.1
+---
 **2.1 Analyzing features and attributes in Latent Space**
 
 In StyleGAN, we want to change one or more attributes of the image while keeping the other attributes the same- that is, we want to disentangle the attributes so that we can pick out which ones we want to change.

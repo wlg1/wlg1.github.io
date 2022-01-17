@@ -1,28 +1,42 @@
 ---
 title: About This Website
 ---
-**WORKING TITLE**
 
-**[ch1.1](ch1.1.md)**
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+<p align="center"><b>WORKING TITLE</b></p>
+
+<!---
+
+For localhost testing:
 
 <a href="ch1.1.html">CHAPTER 1.1</a>
 
-**[ch1.2](ch1.2.md)**
-
 <a href="ch1.2.html">CHAPTER 1.2</a>
 
-<!---
-For localhost testing:
+<a href="ch2.0.html">CHAPTER 2.0</a>
 
-<a href="ch1.1.html">CHAPTER 1</a>
--->
+<a href="ch2.1.html">CHAPTER 2.1</a>
 
-When studying new improvements to neural networks, many people run into the following problem:
+---
+
+--->
+<span><b>W</b></span>hen studying new improvements to neural networks, many people run into the following problem:
 
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
+<!---
 fig Eg) What's orthogonal projection?
+--->
 
 This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.[^1]. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. 
 
@@ -30,33 +44,20 @@ This blog solves these problems by explaining all the required prerequisites nee
 
 But this blog takes an even further step: by generalizing this solution to solve similar problems.
 
-fig Eg) [give an example of issue- reasoning- soln - generalization, that concisely explains all after prereqs]
-
 <!---
-When studying new improvements to neural networks, many people run into the following problem:
-
-The terminology, such as the mathematical concepts, is unfamiliar. When one looks up the terms, the articles describing them use even more unfamiliar terms, and because they're not efficiently tailored towards the paper one is reading, there's so much extra stuff in them that it's very time consuming to learn. Concepts are introduced such that one doesn't know why they're important. What's their purpose? How is it connected to improving a neural network?
-
-Eg) What's eigenvector decomposition? How can I learn this as fast as possible?
-Don't use example from actual paper
-
-[image caption: All of a sudden we're spending an hour talking about X. ]
-
-This website solves this problem:
-It explains all the required prerequisites needed to understand the terminology from the bottom up, so one does not have to go through a time consuming scavenger hunt to understand all of them; they're all neatly collected in one place. The website cuts out all the extra information that's not needed to understand how this term is used for this neural network paper. 
-assuming only that a reader has a basic understanding of X, or has watched these videos []. Links are provided to them.
-
-[give an example of issue- reasoning- soln - generalization, that concisely explains all after prereqs]
-
-All explanations get to the point. They always start off by stating the issue that this concept will solve, and how that issue will improve a neural network. Then, they go further by saying how generalizing this solution can solve similar problems, thus showing the long term usefullness of the concept.
+fig Eg) [give an example of issue- reasoning- soln - generalization, that concisely explains all after prereqs]
 --->
+
+Not sure where to start?
+
+**[Start Here](ch1.1.md)**
 
 ---
 CHAPTER 1: How Neural Networks Reveal Hidden Insights in Data (using Matrix Multiplication)
 
-1.1: How does matrix multiplication guess a cat from its face and body?
+**[1.1: How does matrix multiplication guess a cat from its face and body?](ch1.1.md)**
 
-1.2: Why use dot product in matrix multiplication?
+**[1.2: Why use dot product in matrix multiplication?](ch1.2.md)**
 
 1.3: WHY use basis vectors? The relativity of data
 
@@ -73,6 +74,9 @@ CHAPTER 2:  How Neural Networks Make Faces Look Younger (using Orthogonal Projec
 
 
 CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
+
 Eigenvectors, Diagonal, Decomposition, matrix factorization & PCA
 
 ---
+
+

@@ -1,46 +1,25 @@
-<head>
-    <link rel="stylesheet" href="index.css" />
-</head>
-
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-</div>
-
-<p align="center"><b>WORKING TITLE</b></p>
+I"÷<p><strong>WORKING TITLE</strong></p>
 
 <!---
+    -->
+<p>For localhost testing:</p>
 
-For localhost testing:
+<p><a href="ch1.1.html">CHAPTER 1.1</a></p>
 
-<a href="ch1.1.html">CHAPTER 1.1</a>
+<h2 id="chapter-12"><a href="ch1.2.html">CHAPTER 1.2</a></h2>
 
-<a href="ch1.2.html">CHAPTER 1.2</a>
-
-<a href="ch2.0.html">CHAPTER 2.0</a>
-
-<a href="ch2.1.html">CHAPTER 2.1</a>
-
----
-
---->
-<p><span><b>W</b></span>hen studying new improvements to neural networks, many people run into the following problem:</p>
+<p>When studying new improvements to neural networks, many people run into the following problem:</p>
 
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
-<!---
-fig Eg) What's orthogonal projection?
---->
+<p>fig Eg) Whatâ€™s orthogonal projection?</p>
 
 <p>This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more.</p>
 
 <p>But this blog takes an even further step: by generalizing this solution to solve similar problems.</p>
 
-<!---
-fig Eg) [give an example of issue- reasoning- soln - generalization, that concisely explains all after prereqs]
---->
+<p>fig Eg) [give an example of issue- reasoning- soln - generalization, that concisely explains all after prereqs]</p>
 
 <p>Not sure where to start?</p>
 
@@ -65,12 +44,10 @@ fig Eg) [give an example of issue- reasoning- soln - generalization, that concis
 
 <p>2.2: Orthogonal Projections</p>
 
-<p>CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)</p>
-
-<p>Eigenvectors, Diagonal, Decomposition, matrix factorization &amp; PCA</p>
+<p>CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
+Eigenvectors, Diagonal, Decomposition, matrix factorization &amp; PCA</p>
 
 <hr />
-
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1" role="doc-endnote">
@@ -78,3 +55,4 @@ fig Eg) [give an example of issue- reasoning- soln - generalization, that concis
     </li>
   </ol>
 </div>
+:ET

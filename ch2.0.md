@@ -1,3 +1,6 @@
+---
+title: CHAPTER 2.0
+---
 This section summarizes sections of [3 sections of links: VAE, GAN, topology] that are relevant to our discussion, for those unfamiliar with those topics. It is recommended to read those links to get a more detailed understanding. If one is already familiar with these topics, one can skip to ch2.1. 
 
 **1.1: VAEs**
