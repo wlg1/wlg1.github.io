@@ -62,7 +62,7 @@ Bigger body + Shorter face = Likely a Cat
 
 [X and Y are on the row of the matrix corresponding to 'likely a cat'. They are the x values of body1 and face1's new coords in Model 2 ]
 
-What are X and Y? These are how much each feature is weighted by to calculate the score of "likely to be cat". The higher the weight, the more that feature is taken into account during calculation. For example, it might be more important to know the body size, than the face length, when determining if something is a cat or a rat, since cats are usually much bigger than rats, but their faces aren't always much shorter. We will reveal how these weights are related to the matrix once we get into the algebra of matrix multiplication in section [].
+What are $$face_{cat}$$ and $$body_{cat}$$? These are how much each feature is weighted by to calculate the score of "likely to be cat". The higher the weight, the more that feature is taken into account during calculation. For example, it might be more important to know the body size than the face length when determining if something is a cat or a rat, since cats are usually much bigger than rats, but their faces aren't always much shorter. Since body size is more important, we'd set $$body_{cat} = 1.5 > face_{cat} = 1$$. We will reveal how these weights are related to the matrix once we get into the algebra of matrix multiplication in section [].
 
 Each measurement acts as a basis vector used to define each data sample. Because this second set of measurements uses different basis vectors than the set of face & body sizes, it forms a different coordinate space. Since each coordinate space provides a different way to **represent** the data, let's call each coordinate space a **Model**. 
 
@@ -154,7 +154,7 @@ Notice that Model 2 demonstrates an idealized, simplified example of what a neur
 $$O = \sigma(WX + b)$$
 </p>
 
-Which, for a data sample, outputs the values it guesses for the 2 classes {cat, rat}, it sets $$\sigma$$ = identity and b = 0:
+Which, for a data sample, outputs the values it guesses for the 2 classes {cat, rat}, it sets $$\sigma = I$$, the identity function, and b = 0:
 
 <p align="center">
 $$O = WX$$
@@ -192,6 +192,8 @@ Since there is a misunderstanding, the English speaker needs to know what 'gift'
 ![gift_cob](/cob/gift_cob.PNG)
 <!---[animation transforming poison and gift pics to English coordinate space. The vector does not move. Label first Sys as German, second as English.]
 [Don't give names to basis vectors, ONLY show I -> gift, which is wrong.]--->
+
+In summary:
 
 <!---<p align="center"> --->
 'gift' in German <img src="/cob/poison.jpg" width="30" height="30"> != 'gift' in English <img src="/cob/gift.jpg" width="30" height="30">
