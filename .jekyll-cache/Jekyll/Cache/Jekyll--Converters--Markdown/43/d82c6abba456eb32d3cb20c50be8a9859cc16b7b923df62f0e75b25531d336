@@ -1,4 +1,4 @@
-<p><strong>WORKING TITLE</strong></p>
+I"~<p><strong>WORKING TITLE</strong></p>
 
 <p><strong><a href="ch1.1.md">ch1.1</a></strong></p>
 
@@ -16,16 +16,21 @@ For localhost testing:
 
 <p>When studying new improvements to neural networks, many people run into the following problem:</p>
 
-<p align="center">
-<b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
+<p>1) Unfamiliar mathematical concepts and even more unfamiliar explanations</p>
 
-<p>fig Eg) What’s orthogonal projection?</p>
+<p>2) How do these mathematical concepts relate to neural networks?</p>
 
-<p>This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more.</p>
+<p>Eg) What’s eigenvector decomposition? How can I learn this as fast as possible?
+Don’t use example from actual paper</p>
 
-<p>But this blog takes an even further step: by generalizing this solution to solve similar problems.</p>
+<p>It explains all the required prerequisites needed to understand the terminology from the bottom up.</p>
 
-<p>fig Eg) [give an example of issue- reasoning- soln - generalization, that concisely explains all after prereqs]</p>
+<p>The website gets to the point: it cuts out all the extra information that’s not needed to understand how this term is used for this neural network paper. 
+assuming only that a reader has a basic understanding of X, or has watched these videos []. Links are provided to them.</p>
+
+<p>[give an example of issue- reasoning- soln - generalization, that concisely explains all after prereqs]</p>
+
+<p>All explanations get to the point. They always start off by stating the issue that this concept will solve, and how that issue will improve a neural network. Then, they go further by saying how generalizing this solution can solve similar problems, thus showing the long term usefullness of the concept.</p>
 
 <!---
 When studying new improvements to neural networks, many people run into the following problem:
@@ -67,12 +72,4 @@ All explanations get to the point. They always start off by stating the issue th
 
 <p>CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
 Eigenvectors, Diagonal, Decomposition, matrix factorization &amp; PCA</p>
-
-<hr />
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>assuming only that a reader has a basic understanding of X, or has watched these videos []. Links are provided to them. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+:ET

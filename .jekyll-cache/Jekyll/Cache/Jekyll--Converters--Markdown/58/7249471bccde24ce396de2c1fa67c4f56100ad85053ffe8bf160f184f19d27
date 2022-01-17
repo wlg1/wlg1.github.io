@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"1<<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
@@ -61,9 +61,38 @@ $$
 \def\b{\color{blue}{body_{cat}}}
 \begin{bmatrix} \a &amp; \b \\ ? &amp; ? \end{bmatrix}\]
 
-<p>We mentioned that \(face_{cat}\) and \(body_{cat}\) are weights that denote how important each feature is in the calculation. For example, if body size is more important, we’d set \(body_{cat} = 1.5 &gt; face_{cat} = 1\).</p>
+<p>We mentioned that \(face_{cat}\) and \(body_{cat}\) are weights that denote how important each feature is in the calculation. For example, if body size is more important, we’d set \(body_{cat} = 1.5 &gt; face_{cat} = 1\). Given the fact that the vertical axis of Model 2 denotes “likely to be rat”, it’s pretty clear now what the second row should be:</p>
 
-<p>[before, just discussed ‘weights’ but did not relate geometrically what it is]</p>
+\[\def\a{\color{red}{face_{cat}}}
+\def\b{\color{blue}{body_{cat}}}
+\def\c{\color{red}{face_{Rat}}}
+\def\d{\color{blue}{body_{Rat}}}
+\begin{bmatrix} \a &amp; \b \\ \c &amp; \d \end{bmatrix}\]
+
+<p>So we arrived at several conclusions:</p>
+
+<p>1) Because Model 2 uses the old measurements of Model 1 to calculate its new measurements, the matrix \(W\) contains the weights needed to determine how important each old measurement is for each new measurement</p>
+
+<p>2) Each row of the matrix contains weights to calculate one <strong>new</strong> measurement</p>
+
+<p>3) Each column of the matrix contains weights for how one <strong>OLD</strong> measurement is used</p>
+
+<p>4) The dot product is applied between every row of the matrix and the input vector because the same input vector uses different weights of the old measurements for every different new measurement</p>
+
+<p>But what is the input vector</p>
+
+<p>Why do we place each new basis vector in a column?</p>
+
+<p>Multiply W by [1 0]</p>
+
+<p>The location of the data sample in Model 2 is found using its location in Model 1</p>
+
+<hr />
+
+<!---
+There is something else that's peculiar about $$\def\a{\color{red}{1}}
+\def\b{\color{blue}{1.5}}
+\begin{bmatrix} \a & \b \end{bmatrix}$$, the first row of W: --->
 
 <p>Let’s match each term in these equations to their geometric representation:</p>
 
@@ -88,39 +117,6 @@ $$
 \begin{bmatrix} \a \\ \c \end{bmatrix}\) is where the data sample previously labeled by the basis vector \(\def\a{\color{#FA8072}{1}}
 \def\c{\color{#FA8072}{0}}
 \begin{bmatrix} \a \\ \c \end{bmatrix}\) is sent.</p>
-
-<p>The location of the data sample in Model 2 is found using its location in Model 1</p>
-
-<p>Given the fact that the vertical axis of Model 2 denotes “likely to be rat”, it’s pretty clear now what the second row should be:</p>
-
-\[\def\a{\color{red}{face_{cat}}}
-\def\b{\color{blue}{body_{cat}}}
-\def\c{\color{red}{face_{Rat}}}
-\def\d{\color{blue}{body_{Rat}}}
-\begin{bmatrix} \a &amp; \b \\ \c &amp; \d \end{bmatrix}\]
-
-<p>So we arrived at several conclusions:</p>
-
-<p>1) Because Model 2 uses the old measurements of Model 1 to calculate its new measurements, the matrix \(W\) contains the weights needed to determine how important each old measurement is for each new measurement</p>
-
-<p>2) Each row of the matrix contains weights to calculate one <strong>new</strong> measurement</p>
-
-<p>3) Each column of the matrix contains weights for how one <strong>OLD</strong> measurement is used</p>
-
-<p>4) The dot product is applied between every row of the matrix and the input vector because the same input vector uses different weights of the old measurements for every different new measurement</p>
-
-<p>But what is the input vector</p>
-
-<p>Why do we place each new basis vector in a column?</p>
-
-<p>Multiply W by [1 0]</p>
-
-<hr />
-
-<!---
-There is something else that's peculiar about $$\def\a{\color{red}{1}}
-\def\b{\color{blue}{1.5}}
-\begin{bmatrix} \a & \b \end{bmatrix}$$, the first row of W: --->
 
 <p>Remember how the values of \(X\) were calculated using the basis vectors. The first value, the face length of \(X\), was calculated using:</p>
 
@@ -312,3 +308,4 @@ X = [X_face, X_body]</p>
     </li>
   </ol>
 </div>
+:ET

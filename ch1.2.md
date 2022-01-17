@@ -67,33 +67,12 @@ $$
 \begin{bmatrix} \a & \b \\ ? & ? \end{bmatrix}  
 $$
 
-We mentioned that $$face_{cat}$$ and $$body_{cat}$$ are weights that denote how important each feature is in the calculation. For example, if body size is more important, we'd set $$body_{cat} = 1.5 > face_{cat} = 1$$. Given the fact that the vertical axis of Model 2 denotes "likely to be rat", it's pretty clear now what the second row should be:
+We mentioned that $$face_{cat}$$ and $$body_{cat}$$ are weights that denote how important each feature is in the calculation. For example, if body size is more important, we'd set $$body_{cat} = 1.5 > face_{cat} = 1$$. 
 
-$$
-\def\a{\color{red}{face_{cat}}}
-\def\b{\color{blue}{body_{cat}}}
-\def\c{\color{red}{face_{Rat}}}
-\def\d{\color{blue}{body_{Rat}}}
-\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix}  
-$$
 
-So we arrived at several conclusions: 
+[before, just discussed 'weights' but did not relate geometrically what it is]
 
-1) Because Model 2 uses the old measurements of Model 1 to calculate its new measurements, the matrix $$W$$ contains the weights needed to determine how important each old measurement is for each new measurement
-
-2) Each row of the matrix contains weights to calculate one **new** measurement
-
-3) Each column of the matrix contains weights for how one **OLD** measurement is used
-
-3) The dot product is applied between every row of the matrix and the input vector because the same input vector uses different weights of the old measurements for every different new measurement
-
-But what is the input vector
-
----
-
-There is something else that's peculiar about $$\def\a{\color{red}{1}}
-\def\b{\color{blue}{1.5}}
-\begin{bmatrix} \a & \b \end{bmatrix}$$, the first row of W: 
+Let's match each term in these equations to their geometric representation:
 
 The <span style="color:red">1</span> is the <span style="color:orange">Cat</span> coordinate of the vector $$\def\a{\color{red}{1}}
 \def\c{\color{red}{-1.5}}
@@ -116,6 +95,45 @@ Thus, $$\def\a{\color{red}{1}}
 \begin{bmatrix} \a \\ \c \end{bmatrix}$$ is where the data sample previously labeled by the basis vector $$\def\a{\color{#FA8072}{1}}
 \def\c{\color{#FA8072}{0}}
 \begin{bmatrix} \a \\ \c \end{bmatrix}$$ is sent.
+
+The location of the data sample in Model 2 is found using its location in Model 1
+
+
+Given the fact that the vertical axis of Model 2 denotes "likely to be rat", it's pretty clear now what the second row should be:
+
+$$
+\def\a{\color{red}{face_{cat}}}
+\def\b{\color{blue}{body_{cat}}}
+\def\c{\color{red}{face_{Rat}}}
+\def\d{\color{blue}{body_{Rat}}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix}  
+$$
+
+So we arrived at several conclusions: 
+
+1) Because Model 2 uses the old measurements of Model 1 to calculate its new measurements, the matrix $$W$$ contains the weights needed to determine how important each old measurement is for each new measurement
+
+2) Each row of the matrix contains weights to calculate one **new** measurement
+
+3) Each column of the matrix contains weights for how one **OLD** measurement is used
+
+4) The dot product is applied between every row of the matrix and the input vector because the same input vector uses different weights of the old measurements for every different new measurement
+
+But what is the input vector
+
+Why do we place each new basis vector in a column?
+
+Multiply W by [1 0]
+
+
+---
+
+<!---
+There is something else that's peculiar about $$\def\a{\color{red}{1}}
+\def\b{\color{blue}{1.5}}
+\begin{bmatrix} \a & \b \end{bmatrix}$$, the first row of W: --->
+
+
 
 Remember how the values of $$X$$ were calculated using the basis vectors. The first value, the face length of $$X$$, was calculated using:
 
@@ -185,9 +203,7 @@ face length -> 'likely cat'
 
 This is an example of 1D matrix multiplication; now, we are using 2 dimensions to calculate the location, since it's defined using 2 measurements.[^1]
 
-[^1]: We are not trying to find the LABEL / vector, but the actual data sample. In analogy, we can describe ...
-The entity is neither 2 nor 6.56; they are just measurements labeling it from two different perspectives. 
-Remember, the dimensions are merely labels measuring the entity, but are not part of the entity itself. They are a way for an outside observer to describe the entity.
+[^1]: We are not trying to find the LABEL / vector, but the actual data sample. The entity is neither 2 nor 6.56; they are just measurements labeling it from two different perspectives. Remember, the dimensions are merely labels measuring the entity, but are not part of the entity itself. They are a way for an outside observer to describe the entity.
 
 A 1D change of dimension is simple enough; "How many feet are in 1 meter?" A change of multiple dimensions follows the same logic. 
 
@@ -307,5 +323,7 @@ This is why we use 2 dot products: each component is calculated separately...
 
 We also see this is how dot product projects onto...
 
-<<<
+---
 [inverse: going down 2 rat, 1 cat gets you to body size 1]
+
+---

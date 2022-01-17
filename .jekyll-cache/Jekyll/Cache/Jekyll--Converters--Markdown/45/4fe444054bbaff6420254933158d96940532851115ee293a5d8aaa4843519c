@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"�<<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
@@ -63,33 +63,8 @@ $$
 
 <p>We mentioned that \(face_{cat}\) and \(body_{cat}\) are weights that denote how important each feature is in the calculation. For example, if body size is more important, we’d set \(body_{cat} = 1.5 &gt; face_{cat} = 1\).</p>
 
-<p>[before, just discussed ‘weights’ but did not relate geometrically what it is]</p>
-
-<p>Let’s match each term in these equations to their geometric representation:</p>
-
-<p>The <span style="color:red">1</span> is the <span style="color:orange">Cat</span> coordinate of the vector \(\def\a{\color{red}{1}}
-\def\c{\color{red}{-1.5}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}\) in Model 2 from the figure above.</p>
-
-<p>The <span style="color:blue">1.5</span> is the <span style="color:orange">Cat</span> coordinate of the vector \(\def\a{\color{blue}{1.5}}
-\def\c{\color{blue}{1}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}\).</p>
-
-<p>In Model 2, \(\def\a{\color{red}{1}}
-\def\c{\color{red}{-1.5}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}\) labels <img src="/cob/face1.PNG" width="50" height="40" />.</p>
-
-<p>In Model 1, \(\def\a{\color{#FA8072}{1}}
-\def\c{\color{#FA8072}{0}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}\) labels <img src="/cob/face1.PNG" width="50" height="40" />.</p>
-
-<p>Thus, \(\def\a{\color{red}{1}}
-\def\c{\color{red}{-1.5}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}\) is where the data sample previously labeled by the basis vector \(\def\a{\color{#FA8072}{1}}
-\def\c{\color{#FA8072}{0}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}\) is sent.</p>
-
-<p>The location of the data sample in Model 2 is found using its location in Model 1</p>
+<p>[before, just discussed ‘weights’ but did not relate geometrically what it is]
+The location of the data sample in Model 2 is found using its location in Model 1</p>
 
 <p>Given the fact that the vertical axis of Model 2 denotes “likely to be rat”, it’s pretty clear now what the second row should be:</p>
 
@@ -121,6 +96,30 @@ $$
 There is something else that's peculiar about $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{1.5}}
 \begin{bmatrix} \a & \b \end{bmatrix}$$, the first row of W: --->
+
+<p>Let’s match each term in these equations to their geometric representation:</p>
+
+<p>The <span style="color:red">1</span> is the <span style="color:orange">Cat</span> coordinate of the vector \(\def\a{\color{red}{1}}
+\def\c{\color{red}{-1.5}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}\) in Model 2 from the figure above.</p>
+
+<p>The <span style="color:blue">1.5</span> is the <span style="color:orange">Cat</span> coordinate of the vector \(\def\a{\color{blue}{1.5}}
+\def\c{\color{blue}{1}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}\).</p>
+
+<p>In Model 2, \(\def\a{\color{red}{1}}
+\def\c{\color{red}{-1.5}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}\) labels <img src="/cob/face1.PNG" width="50" height="40" />.</p>
+
+<p>In Model 1, \(\def\a{\color{#FA8072}{1}}
+\def\c{\color{#FA8072}{0}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}\) labels <img src="/cob/face1.PNG" width="50" height="40" />.</p>
+
+<p>Thus, \(\def\a{\color{red}{1}}
+\def\c{\color{red}{-1.5}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}\) is where the data sample previously labeled by the basis vector \(\def\a{\color{#FA8072}{1}}
+\def\c{\color{#FA8072}{0}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}\) is sent.</p>
 
 <p>Remember how the values of \(X\) were calculated using the basis vectors. The first value, the face length of \(X\), was calculated using:</p>
 
@@ -312,3 +311,4 @@ X = [X_face, X_body]</p>
     </li>
   </ol>
 </div>
+:ET
