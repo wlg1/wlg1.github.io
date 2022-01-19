@@ -90,8 +90,6 @@ $$
 
 In other words, <span style="color:red">"for every face length of unit 1, there are 4 units of cat"</span>. Thus, for <span style="color:#CBC3E3"><b>half a unit</b></span> of face length, we have half of the proportionate amount of cat, which is <span style="color:orange">2</span>. Doesn't this sound familiar, like unit conversion?
 
-[picture of meter to feet conversion]
-
 For every 1 meter, there are 3.28 feet. So if an entity is 2 meters long:
 
 <p align="center">
@@ -108,6 +106,9 @@ $$
 <p align="center">
 <b><span style="color:#CBC3E3">2 units of meter</span></b> <span style="font-size:20px">&#8594;</span> <span style="color:orange">6.56 units of feet</span>
 </p>
+
+[picture of 2 meters, or 2 * 3.28 feet]
+[top is face length, bottom is -+ line denoting cat chance]
 
 Indeed, one dot product step is analogous to 1D matrix multiplication; so two dot product steps would be analogous to 2D matrix multiplication. At last, we realize that matrix multiplication, or "Change of Basis", is none other than  unit conversion multiplication, or "Change of Units". That is, $$O$$ refers to the same quantity that $$X$$ refers to, except the two vectors measure it using different units.[^1]
 
@@ -190,19 +191,31 @@ So we arrived at several conclusions:
 
 ---
 
-[Discuss how prev right rotation is bad, and how new matrix is better]
--2, 2.5
-2.5, 2
+It is important to know that not all matrices are good at their job. The matrix $$W$$ we have been using is not a good way to calculate "cat" and "Rat", though it does convey a right rotation, which makes it intuitively easy to see how the basis vectors change between Models:
+
+$$
+\def\a{\color{red}{1}}
+\def\b{\color{blue}{1.5}}
+\def\c{\color{red}{-1.5}}
+\def\d{\color{blue}{1}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix}  
+$$
+
+Note that it uses $$\color{red}{face_{cat}=1}$$ and $$\color{blue}{body_{cat}=1.5}$$. Although $$ \vert body_{cat} \vert > \vert face_{cat} \vert $$, with $$\vert \vert$$ meaning the value of the weights regardless of sign meets this condition, we would still like longer faces to mean the data sample is less likely a cat. This means we have to penalize bigger values of $$face_{cat}$$ by choosing a negative value for $$face_{cat}$$. Likewise, a data sample with a bigger body is less likely to be a rat, so we should also choose a negative value for $$body_{Rat}$$. The following matrix meets our desired criteria, so we will use it in our examples from now on:
+
+$$
+\def\a{\color{red}{-2}}
+\def\b{\color{blue}{2.5}}
+\def\c{\color{red}{2.5}}
+\def\d{\color{blue}{-2}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix}  
+$$
+
+What does a negative conversion factor mean?
 
 "A face length of unit 1 denotes that it's -2 units 'likely to be cat"
 
 Or in other words, "A face length of unit 1 denotes that it's 2 units NOT 'likely to be cat"
-
-If there are 2 meters, we multiply 2 meters.
-[picture of 2 meters, or 2 * 3.28 feet]
-
-If the face length is 0.5, that means it's 2 units not likely to be a cat.
-[top is face length, bottom is -+ line denoting cat chance]
 
 ---
 
@@ -243,9 +256,7 @@ $$
 \def\d{\color{blue}{1}}
 \begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix} $$
 
-The basis vectors in Model 1 form $$I$$, the identity matrix, whose multiplication on any vector leaves that vector unchanged!
-
-$$ X = IX $$
+The basis vectors in Model 1 form $$I$$, the identity matrix! Multiplying $$I$$ with any vector leaves that vector unchanged: $$ X = IX $$
 
 We see that $$IX$$ in Model 1 is analogous to $$WX$$ in Model 2:
 
@@ -280,6 +291,10 @@ WX =
 Note that the basis vectors of Model 1 in $$I$$ are NOT the rows of I, but the columns. This can be easy to mix up because I is a symmetric matrix, so the $$i^{th}$$ row equals the $$i^{th}$$ column.
 
 The first column in each of the matrices labels <img src="/cob/face1.PNG" width="50" height="40">, and the second column labels <img src="/cob/body1.PNG" width="50" height="40">. Each value in X is a quantity specifying the values of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">; each value can also be thought of as an instruction on how many units of that basis vector to use. Let's go through the multiplications of $$IX$$ and $$WX$$ side by side to see how different they are when they use different basis vectors.
+
+---
+
+[discuss vector addition]
 
 ---
 

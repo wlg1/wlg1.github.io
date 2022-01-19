@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"I<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
@@ -84,6 +84,8 @@ $$
 
 <p>In other words, <span style="color:red">“for every face length of unit 1, there are 4 units of cat”</span>. Thus, for <span style="color:#CBC3E3"><b>half a unit</b></span> of face length, we have half of the proportionate amount of cat, which is <span style="color:orange">2</span>. Doesn’t this sound familiar, like unit conversion?</p>
 
+<p>[picture of meter to feet conversion]</p>
+
 <p>For every 1 meter, there are 3.28 feet. So if an entity is 2 meters long:</p>
 
 <p align="center">
@@ -100,9 +102,6 @@ $$
 <p align="center">
 <b><span style="color:#CBC3E3">2 units of meter</span></b> <span style="font-size:20px">&#8594;</span> <span style="color:orange">6.56 units of feet</span>
 </p>
-
-<p>[picture of 2 meters, or 2 * 3.28 feet]
-[top is face length, bottom is -+ line denoting cat chance]</p>
 
 <p>Indeed, one dot product step is analogous to 1D matrix multiplication; so two dot product steps would be analogous to 2D matrix multiplication. At last, we realize that matrix multiplication, or “Change of Basis”, is none other than  unit conversion multiplication, or “Change of Units”. That is, \(O\) refers to the same quantity that \(X\) refers to, except the two vectors measure it using different units.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
 
@@ -184,19 +183,23 @@ $$
 \def\d{\color{blue}{1}}
 \begin{bmatrix} \a &amp; \b \\ \c &amp; \d \end{bmatrix}\]
 
-<p>Note that it uses \(\color{red}{face_{cat}=1}\) and \(\color{blue}{body_{cat}=1.5}\). Although \(\vert body_{cat} \vert &gt; \vert face_{cat} \vert\), with \(\vert \vert\) meaning the value of the weights regardless of sign meets this condition, we would still like longer faces to mean the data sample is less likely a cat. This means we have to penalize bigger values of \(face_{cat}\) by choosing a negative value for \(face_{cat}\). Likewise, a data sample with a bigger body is less likely to be a rat, so we should also choose a negative value for \(body_{Rat}\). The following matrix meets our desired criteria, so we will use it in our examples from now on:</p>
+<p>Note that it uses \(\color{red}{face_{cat}=1}\) and \(\color{blue}{body_{cat}=1.5}\). Although \(body_{cat} &gt; face_{cat}\),</p>
 
 \[\def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
-\def\c{\color{red}{2.5}}
+\def\c{\color{red}{-2.5}}
 \def\d{\color{blue}{-2}}
 \begin{bmatrix} \a &amp; \b \\ \c &amp; \d \end{bmatrix}\]
-
-<p>What does a negative conversion factor mean?</p>
 
 <p>“A face length of unit 1 denotes that it’s -2 units ‘likely to be cat”</p>
 
 <p>Or in other words, “A face length of unit 1 denotes that it’s 2 units NOT ‘likely to be cat”</p>
+
+<p>If there are 2 meters, we multiply 2 meters.
+[picture of 2 meters, or 2 * 3.28 feet]</p>
+
+<p>If the face length is 0.5, that means it’s 2 units not likely to be a cat.
+[top is face length, bottom is -+ line denoting cat chance]</p>
 
 <hr />
 
@@ -363,3 +366,4 @@ $$W$$: $$\def\a{\color{red}{-2}}
     </li>
   </ol>
 </div>
+:ET

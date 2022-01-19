@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"ŠJ<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
@@ -184,7 +184,7 @@ $$
 \def\d{\color{blue}{1}}
 \begin{bmatrix} \a &amp; \b \\ \c &amp; \d \end{bmatrix}\]
 
-<p>Note that it uses \(\color{red}{face_{cat}=1}\) and \(\color{blue}{body_{cat}=1.5}\). Although \(\vert body_{cat} \vert &gt; \vert face_{cat} \vert\), with \(\vert \vert\) meaning the value of the weights regardless of sign meets this condition, we would still like longer faces to mean the data sample is less likely a cat. This means we have to penalize bigger values of \(face_{cat}\) by choosing a negative value for \(face_{cat}\). Likewise, a data sample with a bigger body is less likely to be a rat, so we should also choose a negative value for \(body_{Rat}\). The following matrix meets our desired criteria, so we will use it in our examples from now on:</p>
+<p>Note that it uses \(\color{red}{face_{cat}=1}\) and \(\color{blue}{body_{cat}=1.5}\). Although \(\vert body_{cat} \vert &gt; \vert face_{cat} \vert\), with \(\vert \vert\) meaning the value of the weights regardless of sign meets this condition, we would still like longer faces to mean the data sample is less likely a cat. This means we have to penalize bigger values of \(face_{cat}\) by choosing a negative value for \(face_{cat}\). Likewise, a data sample with a bigger body is less likely to be a rat, so we should also choose a negative value for \(body_{Rat}\). The following matrix meets our desired criteria:</p>
 
 \[\def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
@@ -363,3 +363,4 @@ $$W$$: $$\def\a{\color{red}{-2}}
     </li>
   </ol>
 </div>
+:ET
