@@ -69,25 +69,70 @@ $$
 
 We mentioned that $$face_{cat}$$ and $$body_{cat}$$ are weights that denote how important each feature is in the calculation. For example, if body size is more important, we'd set $$body_{cat} = 1.5 > face_{cat} = 1$$. 
 
+But what does this dot product **mean** in terms of our dataset? To make its meaning easier to understand, let $$face_{cat}=4$$, and let's ignore the second term by setting $$body_{cat} = ?$$
 
-[before, just discussed 'weights' but did not relate geometrically what it is]
+$$\color{red}{W}\color{#CBC3E3}{X} = \color{orange}{O}$$
 
-Let's match each term in these equations to their geometric representation:
+<p align="center">
+$$
+\def\a{\color{red}{(face_{cat}=4)}}
+\def\b{\color{#CBC3E3}{0.5}}
+\def\c{\color{red}{4}}
+\def\d{\color{orange}{2}}
+\begin{bmatrix} \a & ? \\ ? & ? \end{bmatrix}  
+\begin{bmatrix} \b \\ ? \end{bmatrix} 
+= \begin{bmatrix} \c * \b = \d  \\ ?\end{bmatrix} $$
+</p>
 
-The <span style="color:red">1</span> is the <span style="color:orange">Cat</span> coordinate of the vector $$\def\a{\color{red}{1}}
-\def\c{\color{red}{-1.5}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}$$ in Model 2 from the figure above.
+<p align="center">
+<b><span style="color:#CBC3E3">0.5 units of face length</span></b> <span style="font-size:20px">&#8594;</span> <span style="color:orange">2 units of 'likely to be cat'</span>
+</p>
 
-The <span style="color:blue">1.5</span> is the <span style="color:orange">Cat</span> coordinate of the vector $$\def\a{\color{blue}{1.5}}
-\def\c{\color{blue}{1}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}$$.
+In other words, "for every face length of unit 1, there are 4 units of cat". Thus, for half a unit of face length, we have half of the proportionate amount of cat, which is 2. Doesn't this sound familiar, like unit conversion?
 
-In Model 2, $$\def\a{\color{red}{1}}
-\def\c{\color{red}{-1.5}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}$$ labels <img src="/cob/face1.PNG" width="50" height="40">.
+[picture of meter to feet conversion]
+
+For every 1 meter, there are 3.28 feet. So if an entity is 2 meters long:
+
+<p align="center">
+$$
+\def\a{\color{red}{(meter_{feet}=3.28)}}
+\def\b{\color{#CBC3E3}{2}}
+\def\c{\color{red}{3.28}}
+\def\d{\color{orange}{6.56}}
+\begin{bmatrix} \a \end{bmatrix}  
+\begin{bmatrix} \b \end{bmatrix} 
+= \begin{bmatrix} \c * \b = \d \end{bmatrix} $$
+</p>
+
+<p align="center">
+<b><span style="color:#CBC3E3">2 units of meter</span></b> <span style="font-size:20px">&#8594;</span> <span style="color:orange">6.56 units of feet</span>
+</p>
+
+Indeed, one dot product step is analogous to 1D matrix multiplication; so two dot product steps would be analogous to 2D matrix multiplication. At last, we realize that matrix multiplication, or "Change of Basis", is none other than  unit conversion multiplication, or "Change of Units". That is, $$O$$ refers to the same quantity that $$X$$ refers to, except the two measure it using different units.[^1]
+
+[^1]: The entity is neither 2 (meters) nor 6.56 (feet); those are just measurements labeling the data sample from two different perspectives. Remember, the dimensions are merely labels measuring the entity, but are not part of the entity itself. They are a way for an outside observer to describe the entity. So the vectors $$X$$ and $$O$$ are just different ways to measure the same data sample, but they are not the data sample itself.
+
+But in contrast to the 1D "meter to feet" example, the "face and body to cat" example uses **two** measurements to find the value of cat. Matrix multiplication allows for a change of **multiple** units, or multiple dimensions. The weight matrix $$W$$ is analogous to the conversion factor.
+
+In summary:
+
+1) A **Dot Product** is used to convert multiple units into a new unit
+
+2) Multiple dot products are used in **Matrix Multiplication** to find multiple new units
+
+Just like how each row of $$X$$ measures the same entity but using a different unit (a basis vector of Model 1), each row of $$O$$ uses a different unit (a basis vector of Model 2) to measure the same entity, and each is calculated using the known measurements from $$X$$.
+
+Since each new measurement is calculating using the **same input**, but with <span><i>different conversion factors</i></span>, each new value of $$O$$ is calculating using the **same input vector** $$X$$, but with <span><i>different rows of</i></span> $$W$$.
+
+---
+
+We now explained what the rows of $$W$$ are. But what are its columns? And how does this tie into the geometric representation of matrix multiplication, as we see in the figure above? Let's match terms in these equations to their geometric representation:
 
 In Model 1, $$\def\a{\color{#FA8072}{1}}
 \def\c{\color{#FA8072}{0}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}$$ labels <img src="/cob/face1.PNG" width="50" height="40">. In Model 2, $$\def\a{\color{red}{1}}
+\def\c{\color{red}{-1.5}}
 \begin{bmatrix} \a \\ \c \end{bmatrix}$$ labels <img src="/cob/face1.PNG" width="50" height="40">.
 
 Thus, $$\def\a{\color{red}{1}}
@@ -96,44 +141,57 @@ Thus, $$\def\a{\color{red}{1}}
 \def\c{\color{#FA8072}{0}}
 \begin{bmatrix} \a \\ \c \end{bmatrix}$$ is sent.
 
-The location of the data sample in Model 2 is found using its location in Model 1
+Notice that $$\def\a{\color{red}{1}}
+\def\c{\color{red}{-1.5}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}$$ is the first column of $$W$$. And $$\color{red}{face_{cat}}$$ = <span style="color:red">1</span> is the <span style="color:orange">Cat</span> coordinate of the vector $$\def\a{\color{red}{face_{cat}=1}}
+\def\c{\color{red}{-1.5}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}$$ in Model 2. Given the fact that the vertical axis of Model 2 denotes "likely to be rat", it's pretty clear that the second row of this vector is $$face_{Rat}$$, which is how much the face length is weighed by to calculate the value of the <span style="color:green">Rat</span> coordinate.
 
+Therefore, $$\def\a{\color{red}{face_{cat}=1}}
+\def\c{\color{red}{face_{Rat}=-1.5}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}$$, the first column of $$W$$, and the Model 2 vector labeling <img src="/cob/face1.PNG" width="50" height="40">, contains the conversion factors for each of the basis vectors $$\{ \color{orange}{cat}, \color{green}{Rat} \}$$ of Model 2, in terms of only $$\color{red}{face}$$.[^no_longer_basis] 
 
-Given the fact that the vertical axis of Model 2 denotes "likely to be rat", it's pretty clear now what the second row should be:
+[^no_longer_basis]: Remember that <span style="color:red">[1, 1.5]</span> is NOT a basis vector, so <img src="/cob/face1.PNG" width="50" height="40"> is no longer labeled by a basis vector. 
+
+Likewise, $$\def\a{\color{blue}{body_{cat}=1.5}}
+\def\c{\color{blue}{body_{Rat}=-1}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}$$, the second column of $$W$$, and the Model 2 vector labeling <img src="/cob/body1.PNG" width="50" height="40">, contains the conversion factors for each of the basis vectors $$\{ \color{orange}{cat}, \color{green}{Rat} \}$$ of Model 2, in terms of only $$\color{blue}{body}$$. 
 
 $$
 \def\a{\color{red}{face_{cat}}}
 \def\b{\color{blue}{body_{cat}}}
 \def\c{\color{red}{face_{Rat}}}
 \def\d{\color{blue}{body_{Rat}}}
-\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix}  
+\color{purple}{W} = \begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix}  
 $$
 
 So we arrived at several conclusions: 
 
 1) Because Model 2 uses the old measurements of Model 1 to calculate its new measurements, the matrix $$W$$ contains the weights needed to determine how important each old measurement is for each new measurement
 
-2) Each row of the matrix contains weights to calculate one **new** measurement
+2) Each row of the matrix contains weights to calculate one **new** measurement in $$O$$
 
-3) Each column of the matrix contains weights for how one **OLD** measurement is used
+3) Each column of the matrix contains weights for how one **OLD** measurement in $$X$$ is used
 
-4) The dot product is applied between every row of the matrix and the input vector because the same input vector uses different weights of the old measurements for every different new measurement
-
-But what is the input vector
-
-Why do we place each new basis vector in a column?
-
-Multiply W by [1 0]
-
+4) The dot product is applied between every row of the matrix and the input vector because the same input vector uses different weights of the old measurements in $$X$$ for every new measurement in $$O$$
 
 ---
 
-<!---
-There is something else that's peculiar about $$\def\a{\color{red}{1}}
-\def\b{\color{blue}{1.5}}
-\begin{bmatrix} \a & \b \end{bmatrix}$$, the first row of W: --->
+[Discuss how prev right rotation is bad, and how new matrix is better]
+-2, 2.5
+2.5, 2
 
+"A face length of unit 1 denotes that it's -2 units 'likely to be cat"
 
+Or in other words, "A face length of unit 1 denotes that it's 2 units NOT 'likely to be cat"
+
+If there are 2 meters, we multiply 2 meters.
+[picture of 2 meters, or 2 * 3.28 feet]
+
+If the face length is 0.5, that means it's 2 units not likely to be a cat.
+[top is face length, bottom is -+ line denoting cat chance]
+
+---
 
 Remember how the values of $$X$$ were calculated using the basis vectors. The first value, the face length of $$X$$, was calculated using:
 
@@ -159,124 +217,6 @@ $$
 
 We were focused on calculating the values of $$O$$, but now we see that it's very similar to calculating the values of $$X$$! 
 
-In this example, <img src="/cob/face1.PNG" width="50" height="40"> stays from <span style="color:#FA8072">1</span> to <span style="color:red">1</span>. If we look at the figure again, note that it doesn't move horizontally:
-
-![2mod_vecs](/cob/2mod_out.PNG)
-
-But if we look at another example where it moves from <span style="color:#FA8072">1</span> to <span style="color:red">4</span>, as we see in the figure below:
-
-[fig]
-
-What does this change **MEAN**? The answer is the following:
-
-<p align="center">
-<b><span style="color:#CBC3E3">A face length of unit 1</span> = <span style="color:#FA8072">1</span>*<span style="color:#CBC3E3">1</span> implies that there are <span style="color:red">4</span>*<span style="color:#CBC3E3">1</span> = <span style="color:orange">4 units 'likely to be cat'</span></b>
-</p>
-
-<p align="center">
-<b>A face length of unit 1 implies that there are 4 units 'likely to be cat'</b>
-</p>
-
-In Model 1, when we multiply $$\color{#FA8072}{1} * \color{#CBC3E3
-}{0.5}$$, it means "a face length of 0.5". Thus, in Model 2, $$\color{red}{4} * 0.5 = \color{orange}{2}$$ means:
-
-<p align="center">
-<b><span style="color:#CBC3E3">A face length of unit 0.5</span> = <span style="color:#FA8072">1</span>*<span style="color:#CBC3E3">0.5</span> implies that there are <span style="color:red">4</span>*<span style="color:#CBC3E3">0.5</span> = <span style="color:orange">2 units 'likely to be cat'</span></b>
-</p>
-
-<p align="center">
-<b>A face length of unit 0.5 implies that there are 2 units 'likely to be cat'</b>
-</p>
-
-In other words, there is 1 unit of face length for 4 units of "cat", so there are only 0.5 units of face length for 2 units of "cat". We can use an analogy to understand this better: There is 1 meter for 3.28 feet. So if an entity is 2 meters long:
-
-<p align="center">
-There are 2 meters for 6.28 feet:
-</p>
-$$1 * 2 = 3.28 * 2$$
-
-meter -> feet
-
-face length -> 'likely cat'
-
-"1 meter has 3.28 feet"
-
-This is an example of 1D matrix multiplication; now, we are using 2 dimensions to calculate the location, since it's defined using 2 measurements.[^1]
-
-[^1]: We are not trying to find the LABEL / vector, but the actual data sample. The entity is neither 2 nor 6.56; they are just measurements labeling it from two different perspectives. Remember, the dimensions are merely labels measuring the entity, but are not part of the entity itself. They are a way for an outside observer to describe the entity.
-
-A 1D change of dimension is simple enough; "How many feet are in 1 meter?" A change of multiple dimensions follows the same logic. 
-
-
-
-
-It's important to note that we are not always scaling <span style="color:#FA8072">1</span> by a factor of <span style="color:red">4</span>; if we tried to apply this to <span style="color:#FA8072">0</span>, we would never be able to change it. Instead, we are substituting 1 with 4; or in other words, "mapping" 1 to 4.
-
-In summary: Every input <span style="color:#CBC3E3">(such as 0.5)</span> applied to the <span style="color:#FA8072">first measurement, face</span>, is also applied to the <span style="color:orange">second measurement, cat</span>, found by substituting <span style="color:#FA8072">1</span> with <span style="color:red">4</span>.
-
-Of course, the value of "cat" here depends on two factors: face length, and body size. That's why in the dot product, we don't simply calculate the first term $$\color{#FA8072}{1} * \color{#CBC3E3
-}{0.5}$$, but we must add the second term $$\color{#ADD8E6}{0} * \color{#CBC3E3
-}{0.5}$$
-
-$$\color{#FA8072}{1} * 0.5  + \color{#ADD8E6}{0} * 2 = \color{#CBC3E3}{0.5}$$
-
-And do the same thing for Model 2, except we subsitute the values:
-
-$$\color{red}{4} * 0.5  + \color{blue}{1.5} * 2$$
-
-Thus, we finally described the meaning of the first term of the dot product used to calculate the value of "cat".
-
-Let's merge the idea of ? being weights and the idea of ? being changes in measurements, as they are the same concept: 
-
-
-
-[color code this to NN too]
-
-<!---
-$$\def\a{\color{#ADD8E6}{0}}
-\def\c{\color{#ADD8E6}{1}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}$$ to $$\def\a{\color{blue}{1.5}}
-\def\c{\color{blue}{1}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}$$
-
- Recall that the difference between Model 1 and Model 2 is the choice of basis vectors, and each vector in a coordinate space is defined using basis vectors. Thus, our translation will involve rewriting Model 1's basis vectors in terms of Model 2's basis vectors. Then the rewritten Model 1 basis vectors will be used to rewrite vector I in terms of Model 2's basis vectors. This is called a "Change of Basis", and can be done using matrix multiplication. --->
-
-<!---
-FOOTNOTE: WHY STRANGE PROCEDURE?
-
-One question you may ask is: why does finding the answer to the first row of O require using the first row of W? 
-
-The dot product adds two scaled vectors from the same dimension. To understand what the dot product is doing, all you need to know is why 1D vector addition works.
-
-VECTOR ADDITION:
-[First explain vector addition; everything follows from assuming it's true]
-[show vectors as just values. elementary school addition / subtraction]
-
-The reason we add vectors in 1D by placing the tail of B onto A, or vice versa, is because we can think of them simply as instructions: go left twice, then go right once.
-
-...which is also shown in the 3Blue1Brown video [].
-
-... thus, the reason why the first row of O (colored) uses the first row of W (colored diff) is because we project down the vectors c and d only by their first coordinate, which is the first row of W.
---->
-
----
-
-
-[Discuss how prev right rotation is bad, and how new matrix is better]
--2, 2.5
-2.5, 2
-
-"A face length of unit 1 denotes that it's -2 units 'likely to be cat"
-
-Or in other words, "A face length of unit 1 denotes that it's 2 units NOT 'likely to be cat"
-
-If there are 2 meters, we multiply 2 meters.
-[picture of 2 meters, or 2 * 3.28 feet]
-
-If the face length is 0.5, that means it's 2 units not likely to be a cat.
-[top is face length, bottom is -+ line denoting cat chance]
-
----
 [First multiply by identity matrix, which leaves expression unchanged.]
 The basis vectors in Model 1 form I, the identity matrix.
 
@@ -297,6 +237,9 @@ I = [[face_f, body_f] [[face_b, body_b]]]
 X = [X_face, X_body]
 
 The instructions that are applied to I are also applied to W.
+
+---
+[^]: The dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector's elements. Since the dot product is commutative, it is interchangable which vector is the "first" or "second".
 
 ---
 page 2: steps

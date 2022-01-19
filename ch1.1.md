@@ -11,6 +11,10 @@ title: CHAPTER 1.1
 **(Reading time: 5 minutes)**
 [may split into three 2 min sections, label page (1/3)]
 
+**Prerequisites**: A vague understanding of matrix multiplication and neural networks. [^prereqs]
+
+[^prereqs]: This section is heavily built on 3Blue1Brown's Essence of Linear Algebra. There are 16 videos, but you only have to focus on five videos: 1 to 3, then 9 and 13. <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=1&ab_channel=3Blue1Brown"> Source</a>
+
 Let's start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there's a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).
 
 ![Figure 1: Cat](/cob/fig1.PNG)

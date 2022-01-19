@@ -7,6 +7,8 @@
 <p><strong>(Reading time: 5 minutes)</strong>
 [may split into three 2 min sections, label page (1/3)]</p>
 
+<p><strong>Prerequisites</strong>: A vague understanding of matrix multiplication and neural networks. <sup id="fnref:prereqs" role="doc-noteref"><a href="#fn:prereqs" class="footnote" rel="footnote">1</a></sup></p>
+
 <p>Let’s start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there’s a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).</p>
 
 <p><img src="/cob/fig1.PNG" alt="Figure 1: Cat" />
@@ -71,7 +73,7 @@ Bigger body + Shorter face = Likely a Cat
 
 <p>For our examples, say that a vector <strong>labels</strong> a data sample if it points to it. We know in Model 1 that \(\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}\) points to <img src="/cob/face1.PNG" width="50" height="40" />. But does this vector point to the same data sample in Model 2?</p>
 
-<p>Let’s look at the two Models. We’ll use the Orange Dot to denote <span style="color:orange">“likely to be a cat with unit 1”</span><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, and use the Green Dot to denote <span style="color:green">“likely to be a rat with unit 1”</span>.</p>
+<p>Let’s look at the two Models. We’ll use the Orange Dot to denote <span style="color:orange">“likely to be a cat with unit 1”</span><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">2</a></sup>, and use the Green Dot to denote <span style="color:green">“likely to be a rat with unit 1”</span>.</p>
 
 <!--- Animation then before/after stills:
 (Use pic of actual cat with 'likely' over it?)
@@ -83,7 +85,7 @@ Or fade out still image using video editor--->
 
 <p><img src="/cob/fig8.PNG" alt="Figure 8" /></p>
 
-<p>The two \(\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}\) in each Model do not label the same data point! Likewise, \(\color{#ADD8E6}{\begin{bmatrix} 0 \\ 1 \end{bmatrix}}\) points to <img src="/cob/body1.PNG" width="50" height="40" /> in Model 1, but does not point to it in Model 2. Phrasing this a different way makes this idea more intuitive: let’s say that the <strong>meaning</strong> of a vector is the data sample it points to. \(\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}\) no longer has the same meaning in Model 2 as it did in Model 1. This is because the meaning of a vector depends on its basis vectors. In Model 1, \(\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}\) pointed to <img src="/cob/face1.PNG" width="50" height="40" /> because it’s supposed to mean “has a face with unit 1”. In Model 2, \(\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}\) points to <span style="color:orange">Orange Dot</span> because it’s supposed to mean “likely to be a cat with unit 1”.<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+<p>The two \(\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}\) in each Model do not label the same data point! Likewise, \(\color{#ADD8E6}{\begin{bmatrix} 0 \\ 1 \end{bmatrix}}\) points to <img src="/cob/body1.PNG" width="50" height="40" /> in Model 1, but does not point to it in Model 2. Phrasing this a different way makes this idea more intuitive: let’s say that the <strong>meaning</strong> of a vector is the data sample it points to. \(\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}\) no longer has the same meaning in Model 2 as it did in Model 1. This is because the meaning of a vector depends on its basis vectors. In Model 1, \(\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}\) pointed to <img src="/cob/face1.PNG" width="50" height="40" /> because it’s supposed to mean “has a face with unit 1”. In Model 2, \(\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}\) points to <span style="color:orange">Orange Dot</span> because it’s supposed to mean “likely to be a cat with unit 1”.<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">2</a></sup></p>
 
 <!---* note that [body size 1] is present in Model 2, even though it's missing [face length]. In other words, it's [body size 1] + 0 * [face length 1]. This means that any data point which only contains a body of size 1 is seen as [meaning in terms of basis jk]--->
 
@@ -130,7 +132,7 @@ Fig ??
 <img src="/cob/vecNotCat.PNG" width="250" height="100" />
 </p>
 
-<p>Understanding the difference between a model representation and the actual entity it means (or points to) is crucial for gaining better intuition behind why matrix multiplication reveals hidden information in data sets.<sup id="fnref:entity_model" role="doc-noteref"><a href="#fn:entity_model" class="footnote" rel="footnote">2</a></sup></p>
+<p>Understanding the difference between a model representation and the actual entity it means (or points to) is crucial for gaining better intuition behind why matrix multiplication reveals hidden information in data sets.<sup id="fnref:entity_model" role="doc-noteref"><a href="#fn:entity_model" class="footnote" rel="footnote">3</a></sup></p>
 
 <!--- Fig 11 [animated reality of concepts vs fixed coord space model]--->
 
@@ -141,7 +143,7 @@ Fig ??
 <!---[Model 1, and Model 1 on top of Model 2. WITH vectors.]
 in the vector on top of model pic, color them the same, only darker--->
 
-<p>Notice that Model 2 demonstrates an idealized, simplified example of what a neural network does- it is making a guess about the data point given to it as input. In fact, one can think of it as a single layer ‘neural network’<sup id="fnref:1-layer-NN" role="doc-noteref"><a href="#fn:1-layer-NN" class="footnote" rel="footnote">3</a></sup> such that for the function that calculates the neuron activations:</p>
+<p>Notice that Model 2 demonstrates an idealized, simplified example of what a neural network does- it is making a guess about the data point given to it as input. In fact, one can think of it as a single layer ‘neural network’<sup id="fnref:1-layer-NN" role="doc-noteref"><a href="#fn:1-layer-NN" class="footnote" rel="footnote">4</a></sup> such that for the function that calculates the neuron activations:</p>
 
 <p align="center">
 $$O = \sigma(WX + b)$$
@@ -172,7 +174,7 @@ Fig 13
 <p><img src="/cob/german_gift.PNG" alt="german_gift" />
 <!---[first show coordinate space labeling gift as poison]---></p>
 
-<p>To an English speaker, this may look wrong, because <img src="/cob/poison.jpg" width="30" height="30" /> should be called something like ‘poison’, not ‘gift’. But in German, <img src="/cob/poison.jpg" width="30" height="30" /> is in fact called ‘gift’. If a German speaker tells the English speaker that they’re giving the English speaker a gift, the English speaker may be delighted because they think they’re getting <img src="/cob/gift.jpg" width="30" height="30" />. But they shouldn’t be, because what they’re ACTUALLY receiving is <img src="/cob/poison.jpg" width="30" height="30" />, which would kill them.<sup id="fnref:false_friend" role="doc-noteref"><a href="#fn:false_friend" class="footnote" rel="footnote">4</a></sup></p>
+<p>To an English speaker, this may look wrong, because <img src="/cob/poison.jpg" width="30" height="30" /> should be called something like ‘poison’, not ‘gift’. But in German, <img src="/cob/poison.jpg" width="30" height="30" /> is in fact called ‘gift’. If a German speaker tells the English speaker that they’re giving the English speaker a gift, the English speaker may be delighted because they think they’re getting <img src="/cob/gift.jpg" width="30" height="30" />. But they shouldn’t be, because what they’re ACTUALLY receiving is <img src="/cob/poison.jpg" width="30" height="30" />, which would kill them.<sup id="fnref:false_friend" role="doc-noteref"><a href="#fn:false_friend" class="footnote" rel="footnote">5</a></sup></p>
 
 <p>Since there is a misunderstanding, the English speaker needs to know what ‘gift’ is actually referring to; or in other words, to know the right English word to use for <img src="/cob/poison.jpg" width="30" height="30" />. So they need to translate from the language above, which resembles German, to English as follows:</p>
 
@@ -237,6 +239,9 @@ Relationships are preserved. Analogy. Structure preserving map
 <hr />
 <div class="footnotes" role="doc-endnotes">
   <ol>
+    <li id="fn:prereqs" role="doc-endnote">
+      <p>This section is heavily built on 3Blue1Brown’s Essence of Linear Algebra. There are 16 videos, but you only have to focus on five videos: 1 to 3, then 9 and 13. <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs&amp;list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&amp;index=1&amp;ab_channel=3Blue1Brown"> Source</a> <a href="#fnref:prereqs" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
     <li id="fn:1" role="doc-endnote">
       <p>What does it mean to have 1 unit of “likely a cat?” For our example, we generalize these units to allow any ‘probabilistic’ measurement to be used, as long as having X+1 units means ‘it is more likely to be” than having X units. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
     </li>
