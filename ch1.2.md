@@ -285,8 +285,11 @@ The first column in each of the matrices labels <img src="/cob/face1.PNG" width=
 
 First, we break down the steps of the first dot product, corresponding to the <span style="color:orange">Cat</span> coordinate, involving the first row of the matrices.
 
-STEP 1: Get the first row of each matrix
+STEP 1: First row of matrix: $$\def\a{\color{red}{a}}
+\def\b{\color{blue}{b}}
+\begin{bmatrix} \a & \b \end{bmatrix}$$
 
+<!---
 $$I$$: $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
 \begin{bmatrix} \a & \b \end{bmatrix}$$
@@ -294,38 +297,52 @@ $$I$$: $$\def\a{\color{red}{1}}
 $$W$$: $$\def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
 \begin{bmatrix} \a & \b \end{bmatrix}$$
+--->
 
 ![step1](/cob/1.2/step1.png)
 
-STEP 2: Scale by $$X$$
+STEP 2: Scale by $$X$$: $$\def\a{\color{red}{a}}
+\def\b{\color{blue}{b}}
+\begin{bmatrix} \a & \b \end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+--> \color{red}{a} * x_{1}\qquad \color{blue}{b} * x_2 $$
 
+
+<!---
 $$I$$: $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
---> \color{red}{1} * 0.5\qquad \color{blue}{0} * 2$$
+-> \color{red}{1} * 0.5\qquad \color{blue}{0} * 2$$
 
 $$W$$: $$\def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
---> \color{red}{-2} * 0.5\qquad \color{blue}{2.5} * 2$$
+-> \color{red}{-2} * 0.5\qquad \color{blue}{2.5} * 2$$
+--->
 
 ![step2](/cob/1.2/step2.png)
 
-STEP 3: Add
+STEP 3: Add: $$\def\a{\color{red}{a}}
+\def\b{\color{blue}{b}}
+\begin{bmatrix} \a & \b \end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+--> \color{red}{a} * x_{1} + \color{blue}{b} * x_2 $$
 
+<!---
 $$I$$: $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
---> \color{red}{1} * 0.5 + \color{blue}{0} * 2 = \color{purple}{0.5}$$
+-> \color{red}{1} * 0.5 + \color{blue}{0} * 2 = \color{purple}{0.5}$$
 
 $$W$$: $$\def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
---> \color{red}{-2} * 0.5 + \color{blue}{2.5} * 2 = \color{purple}{4}$$
+-> \color{red}{-2} * 0.5 + \color{blue}{2.5} * 2 = \color{purple}{4}$$
+--->
 
 ![step3](/cob/1.2/step3.png)
 

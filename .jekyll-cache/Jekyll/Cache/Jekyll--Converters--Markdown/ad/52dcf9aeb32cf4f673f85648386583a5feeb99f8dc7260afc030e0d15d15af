@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"^F<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
@@ -269,7 +269,7 @@ represented in these equations? Let’s try to put them in columns to see what w
 
 <p>STEP 1: First row of matrix: \(\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
-\begin{bmatrix} \a &amp; \b \end{bmatrix}\)</p>
+\begin{bmatrix} a &amp; b \end{bmatrix}\)</p>
 
 <!---
 $$I$$: $$\def\a{\color{red}{1}}
@@ -352,3 +352,4 @@ $$W$$: $$\def\a{\color{red}{-2}}
     </li>
   </ol>
 </div>
+:ET

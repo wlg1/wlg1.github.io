@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"´E<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
@@ -269,7 +269,7 @@ represented in these equations? Letâ€™s try to put them in columns to see what w
 
 <p>STEP 1: First row of matrix: \(\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
-\begin{bmatrix} \a &amp; \b \end{bmatrix}\)</p>
+\begin{bmatrix} a &amp; b \end{bmatrix}\)</p>
 
 <!---
 $$I$$: $$\def\a{\color{red}{1}}
@@ -287,7 +287,7 @@ $$W$$: $$\def\a{\color{red}{-2}}
 \def\b{\color{blue}{b}}
 \begin{bmatrix} \a &amp; \b \end{bmatrix}
 \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
---&gt; \color{red}{a} * x_{1}\qquad \color{blue}{b} * x_2\)</p>
+--&gt; \color{red}{1} * x_{1}\qquad \color{blue}{0} * x_2\)</p>
 
 <!---
 $$I$$: $$\def\a{\color{red}{1}}
@@ -305,25 +305,19 @@ $$W$$: $$\def\a{\color{red}{-2}}
 
 <p><img src="/cob/1.2/step2.png" alt="step2" /></p>
 
-<p>STEP 3: Add: \(\def\a{\color{red}{a}}
-\def\b{\color{blue}{b}}
-\begin{bmatrix} \a &amp; \b \end{bmatrix}
-\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
---&gt; \color{red}{a} * x_{1} + \color{blue}{b} * x_2\)</p>
+<p>STEP 3: Add</p>
 
-<!---
-$$I$$: $$\def\a{\color{red}{1}}
+<p>\(I\): \(\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
-\begin{bmatrix} \a & \b \end{bmatrix}
+\begin{bmatrix} \a &amp; \b \end{bmatrix}
 \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
--> \color{red}{1} * 0.5 + \color{blue}{0} * 2 = \color{purple}{0.5}$$
+--&gt; \color{red}{1} * 0.5 + \color{blue}{0} * 2 = \color{purple}{0.5}\)</p>
 
-$$W$$: $$\def\a{\color{red}{-2}}
+<p>\(W\): \(\def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
-\begin{bmatrix} \a & \b \end{bmatrix}
+\begin{bmatrix} \a &amp; \b \end{bmatrix}
 \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
--> \color{red}{-2} * 0.5 + \color{blue}{2.5} * 2 = \color{purple}{4}$$
---->
+--&gt; \color{red}{-2} * 0.5 + \color{blue}{2.5} * 2 = \color{purple}{4}\)</p>
 
 <p><img src="/cob/1.2/step3.png" alt="step3" /></p>
 
@@ -352,3 +346,4 @@ $$W$$: $$\def\a{\color{red}{-2}}
     </li>
   </ol>
 </div>
+:ET
