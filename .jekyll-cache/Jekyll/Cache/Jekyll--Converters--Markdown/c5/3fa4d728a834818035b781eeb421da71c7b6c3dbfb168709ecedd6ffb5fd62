@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"F<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
@@ -313,7 +313,11 @@ represented in these equations? Let’s try to put them in columns to see what w
 
 <!---[Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different]--->
 
-<p>Row 2 is the same; you can work it out yourself.</p>
+<p>Row 2 is the same; you can work it out yourself (but show animation / final result). Thus, the procedure to do 2D matrix multiplication is a sequence of 1D vector additions! (repeat the steps to calculate each member of the matrix)</p>
+
+<p>This is why we use 2 dot products: each component is calculated separately…</p>
+
+<p>We also see this is how dot product projects onto…</p>
 
 <hr />
 <p>[inverse: going down 2 rat, 1 cat gets you to body size 1]</p>
@@ -336,3 +340,4 @@ represented in these equations? Let’s try to put them in columns to see what w
     </li>
   </ol>
 </div>
+:ET

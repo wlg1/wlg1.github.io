@@ -88,7 +88,7 @@ $$
 <b><span style="color:#CBC3E3">0.5 units of face length</span></b> <span style="font-size:20px">&#8594;</span> <span style="color:orange">2 units of 'likely to be cat'</span>
 </p>
 
-In other words, "for every face length of unit 1, there are 4 units of cat". Thus, for half a unit of face length, we have half of the proportionate amount of cat, which is 2. Doesn't this sound familiar, like unit conversion?
+In other words, <span style="color:red">"for every face length of unit 1, there are 4 units of cat"</span>. Thus, for <span style="color:#CBC3E3"><b>half a unit</b></span> of face length, we have half of the proportionate amount of cat, which is <span style="color:orange">2</span>. Doesn't this sound familiar, like unit conversion?
 
 [picture of meter to feet conversion]
 
@@ -109,7 +109,7 @@ $$
 <b><span style="color:#CBC3E3">2 units of meter</span></b> <span style="font-size:20px">&#8594;</span> <span style="color:orange">6.56 units of feet</span>
 </p>
 
-Indeed, one dot product step is analogous to 1D matrix multiplication; so two dot product steps would be analogous to 2D matrix multiplication. At last, we realize that matrix multiplication, or "Change of Basis", is none other than  unit conversion multiplication, or "Change of Units". That is, $$O$$ refers to the same quantity that $$X$$ refers to, except the two measure it using different units.[^1]
+Indeed, one dot product step is analogous to 1D matrix multiplication; so two dot product steps would be analogous to 2D matrix multiplication. At last, we realize that matrix multiplication, or "Change of Basis", is none other than  unit conversion multiplication, or "Change of Units". That is, $$O$$ refers to the same quantity that $$X$$ refers to, except the two vectors measure it using different units.[^1]
 
 [^1]: The entity is neither 2 (meters) nor 6.56 (feet); those are just measurements labeling the data sample from two different perspectives. Remember, the dimensions are merely labels measuring the entity, but are not part of the entity itself. They are a way for an outside observer to describe the entity. So the vectors $$X$$ and $$O$$ are just different ways to measure the same data sample, but they are not the data sample itself.
 
@@ -123,7 +123,9 @@ In summary:
 
 Just like how each row of $$X$$ measures the same entity but using a different unit (a basis vector of Model 1), each row of $$O$$ uses a different unit (a basis vector of Model 2) to measure the same entity, and each is calculated using the known measurements from $$X$$.
 
-Since each new measurement is calculating using the **same input**, but with <span><i>different conversion factors</i></span>, each new value of $$O$$ is calculating using the **same input vector** $$X$$, but with <span><i>different rows of</i></span> $$W$$.
+Since each new measurement is calculated using the **same input**, but with <span><i>different conversion factors</i></span>, each new value of $$O$$ is calculated using the **same input vector** $$X$$, but with <span><i>different rows of</i></span> $$W$$. [^multdim_X]
+
+[^multdim_X]: It is not hard to imagine that if we wanted to find the new values measuring MULTIPLE inputs, then instead of vector X, we use a matrix X, such that each column is a single input vector labeling a data sample.
 
 ---
 
@@ -165,6 +167,17 @@ $$
 \color{purple}{W} = \begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix}  
 $$
 
+If we multiply this by the basis vector in Model 1 that labels <img src="/cob/face1.PNG" width="50" height="40">, we see it uses ONLY the conversion units for $$face$$, and none of the conversion units for $$body$$. This is because this data sample has no body, so it would not use $$body$$ in its calculation for $$cat$$ and $$rat$$ at all. The same goes for the other basis vector in Model 1.
+
+$$
+\def\a{\color{red}{face_{cat}}}
+\def\b{\color{blue}{body_{cat}}}
+\def\c{\color{red}{face_{Rat}}}
+\def\d{\color{blue}{body_{Rat}}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix} 
+\begin{bmatrix} 1 \\ 0 \end{bmatrix} 
+= \begin{bmatrix} 1 * \a + 0* \b  \\ 1 * \c + 0* \d \end{bmatrix} = \begin{bmatrix} \a \\ \c \end{bmatrix}$$
+
 So we arrived at several conclusions: 
 
 1) Because Model 2 uses the old measurements of Model 1 to calculate its new measurements, the matrix $$W$$ contains the weights needed to determine how important each old measurement is for each new measurement
@@ -193,6 +206,7 @@ If the face length is 0.5, that means it's 2 units not likely to be a cat.
 
 ---
 
+<!---
 Remember how the values of $$X$$ were calculated using the basis vectors. The first value, the face length of $$X$$, was calculated using:
 
 <p align="center">
@@ -216,57 +230,115 @@ $$
 </p>
 
 We were focused on calculating the values of $$O$$, but now we see that it's very similar to calculating the values of $$X$$! 
+--->
 
-[First multiply by identity matrix, which leaves expression unchanged.]
-The basis vectors in Model 1 form I, the identity matrix.
+We have been thinking of $$W$$ as a conversion matrix, such that its columns
+are the basis vectors of Model 2. But how are the basis vectors in Model 1
+represented in these equations? Let's try to put them in columns to see what we get.
 
-fig: show that Identity * X in Sys 1 is 'analogous' to W * X
+$$ 
+\def\a{\color{red}{1}}
+\def\b{\color{blue}{0}}
+\def\c{\color{red}{0}}
+\def\d{\color{blue}{1}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix} $$
 
-Think of multiplying by the input vector X as instructions on how to get the coordinates for what data sample X points to.
+The basis vectors in Model 1 form $$I$$, the identity matrix, whose multiplication on any vector leaves that vector unchanged!
 
-[0.5,] in X finds the first coordinate; it means to multiply the face length  first coordinate by 0.5, and the body size first coordinate by 2. In Model 1, that means multiplying face=1 by 0.5, and bodysize=0 by 2.
+$$ X = IX $$
 
-But [0.5] does not act on the basis vector; it acts on the data sample [data sample face length 1 pic].
-X does not act on the basis vector. It just so happens to be that in Model 1, [data sample face 1] is on the basis vector [1, 0], and [data sample body size 1] is on the basis vector [0, 1].
+We see that $$IX$$ in Model 1 is analogous to $$WX$$ in Model 2:
 
-X = [instruction to face, instruction to body]
+$$
+IX = 
+\def\a{\color{red}{1}}
+\def\b{\color{blue}{0}}
+\def\c{\color{red}{0}}
+\def\d{\color{blue}{1}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix} 
+\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} 
+= X $$
 
-In Model 2, [data sample face 1] is NO LONGER labeled by the basis vector [1, 0], but is now on the vector [-2, 2.5]. Thus, the first instruction has to multiply [data sample face 1] by -2...
+<!---
+= \begin{bmatrix} 1 * 0.5  + 0 * 2 \\ 0 * 0.5 + 1 * 2\end{bmatrix} $$
+--->
 
-I = [[face_f, body_f] [[face_b, body_b]]]
-X = [X_face, X_body]
+$$
+WX = 
+\def\a{\color{red}{-2}}
+\def\b{\color{blue}{2.5}}
+\def\c{\color{red}{2.5}}
+\def\d{\color{blue}{-2}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix} 
+\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} 
+= O $$
 
-The instructions that are applied to I are also applied to W.
+<!---
+= \begin{bmatrix} -2 * 0.5  + 2.5 * 2 \\ 2.5 * 0.5 + -2 * 2\end{bmatrix} $$
+--->
+
+Note that the basis vectors of Model 1 in $$I$$ are NOT the rows of I, but the columns. This can be easy to mix up because I is a symmetric matrix, so the $$i^{th}$$ row equals the $$i^{th}$$ column.
+
+The first column in each of the matrices labels <img src="/cob/face1.PNG" width="50" height="40">, and the second column labels <img src="/cob/body1.PNG" width="50" height="40">. Each value in X is a quantity specifying the values of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">; each value can also be thought of as an instruction on how many units of that basis vector to use. Let's go through the multiplications of $$IX$$ and $$WX$$ side by side to see how different they are when they use different basis vectors.
 
 ---
-[^]: The dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector's elements. Since the dot product is commutative, it is interchangable which vector is the "first" or "second".
 
----
-page 2: steps
+First, we break down the steps of the first dot product, corresponding to the <span style="color:orange">Cat</span> coordinate, involving the first row of the matrices.
 
-STEP 1: bodyFace, faceFace corresponds to first row of identity DoubleStrike1
-        faceX, body X, corresponds to first row of W matrix
+STEP 1: Get the first row of each matrix
+
+$$I$$: $$\def\a{\color{red}{1}}
+\def\b{\color{blue}{0}}
+\begin{bmatrix} \a & \b \end{bmatrix}$$
+
+$$W$$: $$\def\a{\color{red}{-2}}
+\def\b{\color{blue}{2.5}}
+\begin{bmatrix} \a & \b \end{bmatrix}$$
 
 ![step1](/cob/1.2/step1.png)
 
-STEP 2: Scale
+STEP 2: Scale by $$X$$
+
+$$I$$: $$\def\a{\color{red}{1}}
+\def\b{\color{blue}{0}}
+\begin{bmatrix} \a & \b \end{bmatrix}
+\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
+--> \color{red}{1} * 0.5\qquad \color{blue}{0} * 2$$
+
+$$W$$: $$\def\a{\color{red}{-2}}
+\def\b{\color{blue}{2.5}}
+\begin{bmatrix} \a & \b \end{bmatrix}
+\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
+--> \color{red}{-2} * 0.5\qquad \color{blue}{2.5} * 2$$
 
 ![step2](/cob/1.2/step2.png)
 
 STEP 3: Add
+
+$$I$$: $$\def\a{\color{red}{1}}
+\def\b{\color{blue}{0}}
+\begin{bmatrix} \a & \b \end{bmatrix}
+\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
+--> \color{red}{1} * 0.5 + \color{blue}{0} * 2 = \color{purple}{0.5}$$
+
+$$W$$: $$\def\a{\color{red}{-2}}
+\def\b{\color{blue}{2.5}}
+\begin{bmatrix} \a & \b \end{bmatrix}
+\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
+--> \color{red}{-2} * 0.5 + \color{blue}{2.5} * 2 = \color{purple}{4}$$
 
 ![step3](/cob/1.2/step3.png)
 
 <!---[Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different]--->
 
 
-Row 2 is the same; you can work it out yourself (but show animation / final result). Thus, the procedure to do 2D matrix multiplication is a sequence of 1D vector additions! (repeat the steps to calculate each member of the matrix)
-
-This is why we use 2 dot products: each component is calculated separately...
-
-We also see this is how dot product projects onto...
+Row 2 is the same; you can work it out yourself.
 
 ---
 [inverse: going down 2 rat, 1 cat gets you to body size 1]
+
+---
+
+[^]: The dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector's elements. Since the dot product is commutative, it is interchangable which vector is the "first" or "second".
 
 ---

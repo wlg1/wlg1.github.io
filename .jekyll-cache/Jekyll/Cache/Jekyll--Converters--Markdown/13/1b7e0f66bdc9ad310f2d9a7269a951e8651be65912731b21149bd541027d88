@@ -1,4 +1,4 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+I"A<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><strong>Ch1.2: Why use dot product in matrix multiplication?</strong>
 <!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS---></p>
@@ -261,66 +261,37 @@ represented in these equations? Let’s try to put them in columns to see what w
 
 <p>Note that the basis vectors of Model 1 in \(I\) are NOT the rows of I, but the columns. This can be easy to mix up because I is a symmetric matrix, so the \(i^{th}\) row equals the \(i^{th}\) column.</p>
 
-<p>The first column in each of the matrices labels <img src="/cob/face1.PNG" width="50" height="40" />, and the second column labels <img src="/cob/body1.PNG" width="50" height="40" />. Each value in X is a quantity specifying the values of <img src="/cob/face1.PNG" width="50" height="40" /> and <img src="/cob/body1.PNG" width="50" height="40" />; each value can also be thought of as an instruction on how many units of that basis vector to use. Let’s go through the multiplications of \(IX\) and \(WX\) side by side to see how different they are when they use different basis vectors.</p>
+<p>The first column in each of the matrices labels <img src="/cob/face1.PNG" width="50" height="40" />, and the second column labels <img src="/cob/body1.PNG" width="50" height="40" />. Each value in X is a quantity specifying the values of <img src="/cob/face1.PNG" width="50" height="40" /> and <img src="/cob/body1.PNG" width="50" height="40" />; each value can also be thought of as an instruction on how many units of that basis vector to use.</p>
 
 <hr />
+<p>[^]: The dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector’s elements. Since the dot product is commutative, it is interchangable which vector is the “first” or “second”.</p>
 
-<p>First, we break down the steps of the first dot product, corresponding to the <span style="color:orange">Cat</span> coordinate, involving the first row of the matrices.</p>
+<hr />
+<p>page 2: steps</p>
 
-<p>STEP 1: Get the first row of each matrix</p>
-
-<p>\(I\): \(\def\a{\color{red}{1}}
-\def\b{\color{blue}{0}}
-\begin{bmatrix} \a &amp; \b \end{bmatrix}\)</p>
-
-<p>\(W\): \(\def\a{\color{red}{-2}}
-\def\b{\color{blue}{2.5}}
-\begin{bmatrix} \a &amp; \b \end{bmatrix}\)</p>
+<p>STEP 1: bodyFace, faceFace corresponds to first row of identity DoubleStrike1
+        faceX, body X, corresponds to first row of W matrix</p>
 
 <p><img src="/cob/1.2/step1.png" alt="step1" /></p>
 
-<p>STEP 2: Scale by \(X\)</p>
-
-<p>\(I\): \(\def\a{\color{red}{1}}
-\def\b{\color{blue}{0}}
-\begin{bmatrix} \a &amp; \b \end{bmatrix}
-\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
---&gt; \color{red}{1} * 0.5\qquad \color{blue}{0} * 2\)</p>
-
-<p>\(W\): \(\def\a{\color{red}{-2}}
-\def\b{\color{blue}{2.5}}
-\begin{bmatrix} \a &amp; \b \end{bmatrix}
-\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
---&gt; \color{red}{-2} * 0.5\qquad \color{blue}{2.5} * 2\)</p>
+<p>STEP 2: Scale</p>
 
 <p><img src="/cob/1.2/step2.png" alt="step2" /></p>
 
 <p>STEP 3: Add</p>
 
-<p>\(I\): \(\def\a{\color{red}{1}}
-\def\b{\color{blue}{0}}
-\begin{bmatrix} \a &amp; \b \end{bmatrix}
-\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
---&gt; \color{red}{1} * 0.5 + \color{blue}{0} * 2 = \color{purple}{0.5}\)</p>
-
-<p>\(W\): \(\def\a{\color{red}{-2}}
-\def\b{\color{blue}{2.5}}
-\begin{bmatrix} \a &amp; \b \end{bmatrix}
-\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
---&gt; \color{red}{-2} * 0.5 + \color{blue}{2.5} * 2 = \color{purple}{4}\)</p>
-
 <p><img src="/cob/1.2/step3.png" alt="step3" /></p>
 
 <!---[Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different]--->
 
-<p>Row 2 is the same; you can work it out yourself.</p>
+<p>Row 2 is the same; you can work it out yourself (but show animation / final result). Thus, the procedure to do 2D matrix multiplication is a sequence of 1D vector additions! (repeat the steps to calculate each member of the matrix)</p>
+
+<p>This is why we use 2 dot products: each component is calculated separately…</p>
+
+<p>We also see this is how dot product projects onto…</p>
 
 <hr />
 <p>[inverse: going down 2 rat, 1 cat gets you to body size 1]</p>
-
-<hr />
-
-<p>[^]: The dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector’s elements. Since the dot product is commutative, it is interchangable which vector is the “first” or “second”.</p>
 
 <hr />
 <div class="footnotes" role="doc-endnotes">
@@ -336,3 +307,4 @@ represented in these equations? Let’s try to put them in columns to see what w
     </li>
   </ol>
 </div>
+:ET
