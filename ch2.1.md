@@ -1,6 +1,8 @@
 ---
 title: CHAPTER 2.1
 ---
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 **2.1 Analyzing features and attributes in Latent Space**
 
 In StyleGAN, we want to change one or more attributes of the image while keeping the other attributes the same- that is, we want to disentangle the attributes so that we can pick out which ones we want to change.
@@ -19,9 +21,11 @@ The paper assumes that for any binary semantic attribute (e.g., old v.s. young),
 
 FOOTNOTE: This distance can be negative and is not the same as the shortest distance from a latent code z to the hyperplane seen here:
 
+<!---
 Recall in (ch9, 3b1br) that vector multiplication is a projection onto the 1D number line, which is why it’s a scalar. Duality between dot product with a vector and getting a scalar
 https://www.youtube.com/watch?v=KDHuWxy53uM&feature=youtu.be&ab_channel=KhanAcademy
 Dot product is the amount of one vector goes in the direction of another. 
+--->
 
 [In figure 2.1, bold the relationship and comment on it in bold in writing too.]
 [Figure 2.1] Magnitude of vector can be negative because it’s not absolute length, but is where the vector is from the origin in a relative coordinate system. So if the vector is negative to the origin, the magnitude is negative. If 2 vectors have different signs, they’re pulling in 2 different directions. If they were in the same direction, they enhance each other, and thus multiply. Work = Force \* dist pulled

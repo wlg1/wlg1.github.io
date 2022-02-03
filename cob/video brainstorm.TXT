@@ -1,0 +1,6 @@
+Begin with the application: turning someone into an anime character / catgirl (or furry). Separate videos: one is anime, other is cat, other is furry. Don't use the word 'catgirl' but you can have a pic of one in the thumbnail.
+(using Matrix multiplication)
+
+Start with discussing latent space axes using cat. Explains matrix mult and dot product. Immediately, see the neurons as vectors in latent space.
+
+Next

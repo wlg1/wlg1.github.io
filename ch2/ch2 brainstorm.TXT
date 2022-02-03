@@ -1,0 +1,125 @@
+Finding interpretable neurons and how to change them
+1. get potential candidate papers to discuss in Ch. 
+2. extract their issue-solns
+3. intuition of their concepts in depth (connect back to paper soln)
+4. stitch all explanations into an outline to explain paper intuitively
+
+Sources (PUT IN ISSUE-SOLNS COMP): 
+1. Interpreting the latent space (InterFaceGAN)
+    orthogonal projection, cosine sim
+2. Closed form...
+    eigendecomposition, Lagrange
+3. GANspace
+    pca
+4. StyleSpace
+    saliency maps
+5. StyleCLIP
+    loss constraints, gradient descent
+6. A FRAMEWORK FOR THE QUANTITATIVE EVALUATION OF DISENTANGLED REPRESENTATIONS
+    entropy
+7. Eigenfaces
+8. The Hessian Penalty
+
+Create cartoons:
+1. StyleCariGAN
+    cycle consistency loss, attribute matching loss
+2. WarpGAN
+3. AutoToon
+
+GANs:
+1. StyleGAN
+
+Techniques:
+PCA
+    variance, covariance
+    Lagrange (find eigenvectors)
+    SVD eigendecomposition calculates PCA
+
+Products:
+https://www.theverge.com/2020/10/20/21517616/adobe-photoshop-ai-neural-filters-beta-launch-machine-learning
+WebToon
+Snapchat Filter ?
+
+Terms:
+disentanglement
+
+<<<<<<<<<<<
+OUTLINE:
+
+Show cool applications
+1. Face generate mod
+2. Scene/object generate mod
+3. Filters: age, anime
+
+QUESTION: How to generate / filter in a certain style?
+StyleGAN (VERY briefly talk about GANs)
+
+There are already many resources about GANs.[link, incl to your own] We will not need to know the details about how they work to understand the material in this chapter.
+
+QUESTION: How to mod age?
+InterFaceGAN
+Closed Form
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+https://medium.com/codex/an-overview-into-interfacegan-edit-facial-attributes-of-people-using-gans-34f2273d5941
+
+https://www.youtube.com/watch?v=dCKbRCUyop8
+
+InterFaceGAN outline:
+
+INTRO
+In StyleGAN, we want to change one or more features of the image while keeping the other features the same [show after pics]
+
+Remember that features are can be measured as vectors in latent space. The axes in latent space are neuron activations, so every feature is a combination of neurons.
+
+[pic showing latent space, neuron vectors]
+[every time neurons fire, they see Reality in a different way]
+
+To change a feature, we scale along that vector.
+A sample with values (x, y)... 
+...we can do this with matrix multiplication. 
+
+[pic where directions are attributes such as glasses, but two sample z1 and z2 separated by hyperplane Age]
+
+What this means is that if we only want to change one feature, we should only change one vector, while keeping all other vectors the same. But how do we find this vector? 
+
+We train a linear SVM to predict a binary feature (ie. old vs young). The linear SVM is the hyperplane.
+
+The issue is that we can't just move along this hyperplane, because there's multiple vectors we can take to go through it [pic]
+
+We want to choose the vector through it such that changing its value would change only ONE feature, not other features.
+
+Why can't we just change the value of one coordinate? The reason is because the features do not always lie on the basis! [pic]
+
+So we have a pic of what we want to achieve: [fig 2 in paper, w/ the answer vector being ? ]
+try to make the hyperplane colors and their normals be more diffferent from each other, bolder
+
+Given this figure, we need to find 2 things:
+1) 
+
+<<<
+HYPERPLANE
+
+http://cfsv.synechism.org/c1/sec14.pdf
+
+A line is every vector y satisfying y=mx+b, such that mx is a scaled vector and b is a vector (alt, every pair (x,y)?) 
+
+y=mx1+ tx2 + b traces out a place (animation showing scaling of x1, x2). 
+
+(the following is inconsistent w/ above b/c it says x1, x2 are not 2 vectors, but the coords of one vector)
+The vector with coords x1,x2 defines a surface. To make this surface flat, choose y-b=0 and thus the vector (m,t) will be orthogonal because [why does N*P = d = N*Q ????]
+[ N*(Q-P) = d - d = 0 ]
+
+http://sites.math.washington.edu/~king/coursedir/m445w04/notes/vector/normals-planes.html
+
+
+<<<
+DOT PRODUCT
+
+[how to relate prev 'it converts measurements' into projection onto a vector?]
+
+To do this, we first want to measure how far away our sample is from the feature we want to change. 
+
+We want a sample’s semantic score, which gives its value for a specific attribute such as age. How do we measure this?
+
+Remember the dot product converts the measurements of a sample into a new measurement [head, body to cat pic]. Here, we want to measure the semantic score using 

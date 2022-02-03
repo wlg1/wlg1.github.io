@@ -16,7 +16,9 @@ JOURNEY TITLE: How a Neural Network Guesses Cats from Their Ears and Paws
 (on youtube, call main intro video: How Neural Networks Guess a Cat from Her Ears and Paws )
 (Using a Neural Network to Guess a Cat from Her Ears)
 (How to turn yourself into an Anime character (using the Matrix of Neural Networks) )
-Use Artbreeder to make a wide mouthed anime cat girl (gets views). Use lofi hiphop. 
+Use Artbreeder to make a wide mouthed anime cat girl (gets views). 
+Thumbnail must look similar to 3B1Br (same colors, etc). 
+Use lofi hiphop?
 This video pieces together Ch 1 + Ch 2 + Circuits + Analogies, mentioning more videos delving into them during, and at end advertises a series of videos about various topics such as Algebraic Topology (or don't if it's expo only)
 Prev top mathexpo vids ranged from 10-20mins, so aim for ~10mins
 

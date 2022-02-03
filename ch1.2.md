@@ -302,7 +302,7 @@ First, we break down the steps of the first dot product, corresponding to the <s
 
 STEP 1: First row of matrix: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
-\begin{bmatrix} \a & \b \end{bmatrix}$$
+\begin{bmatrix} \a & \b \end{bmatrix}$$  (see dotted lines)
 
 <!---
 $$I$$: $$\def\a{\color{red}{1}}
