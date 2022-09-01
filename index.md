@@ -18,14 +18,20 @@ title: Front Page
 <span><b>H</b></span>ello. My projects can be found below:
 
 ---
-<p style="font-size:30px"><b>
+<p style="font-size:20px"><b>
 <a href="">Neural Circuit Experiments</a>
 </b></p>
 
-Neural Circuit Experiments aim to find analogous patterns in neural network activations based on inputs with varying similarities. These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted.
+Neural Circuit Experiments aim to find analogous patterns in neural network activations based on inputs with varying similarities. Why study Neural Circuit Experiments?
+<ul>
+<li>By uncovering the black box that obscures how neural networks make decisions, practitioners will have more control over debugging neural networks to do what they want. </li>
+<li>By understanding which parts of a neural network perform what function, practitioners will be able to dissect neural networks to retrieve the part they need, and apply transfer learning to fine tune that part to suit their own, specific goals.</li>
+</ul>
+
+These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted.
 
 ---
-<p style="font-size:30px"><b>
+<p style="font-size:20px"><b>
 <a href="eduBlogHome.html">Making the Math of Neural Networks Intuitive</a>
 </b></p>
 
@@ -39,15 +45,27 @@ This blog solves these problems by explaining all the required prerequisites nee
 ![gift_cob](/cob/gift_cob.PNG)
 
 ---
-<p style="font-size:30px"><b>
+<p style="font-size:20px"><b>
 <a href="">Latent Space Experiments</a>
 </b></p>
 
+Another way to study how neural networks make decisions is to study the geometry of their latent space. This leads to powerful methods such as Style Editing, in which one can turn the face of a generated person from old to young.
+
 ---
-<p style="font-size:30px"><b>
+<p style="font-size:20px"><b>
 <a href="">Data Science Projects</a>
 </b></p>
 
+Regression Analysis on Video Game Sales using Unstructured Data from Reddit 
+<ul>
+<li>Employed web APIs to scrap Reddit posts and semi-structured Wikipedia infoboxes. Cleaned and
+explored data, then ﬁt models applicable for business decisions in marketing and ﬁnance. </li>
+</ul>
+Facebook and YouTube Social Network Friend Prediction via SVMs 
+<ul>
+<li>Trained Support Vector Machines that achieved high accuracy and AUC scores on testing data.
+Utilized graph analytics to compare the network statistics of diﬀerent communities.</li>
+</ul>
 ---
 
 

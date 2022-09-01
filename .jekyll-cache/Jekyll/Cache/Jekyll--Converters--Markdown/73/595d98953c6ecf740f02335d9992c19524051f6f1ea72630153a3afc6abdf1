@@ -1,4 +1,4 @@
-<head>
+I"=<head>
     <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -45,22 +45,13 @@
 <a href="">Latent Space Experiments</a>
 </b></p>
 
-<p>Another way to study how neural networks make decisions is to study the geometry of their latent space. This leads to powerful methods such as Style Editing, in which one can turn the face of a generated person from old to young.</p>
+<p>Another way to study how neural networks make decisions is to study the geometry of their latent space. For example, Style Editing</p>
 
 <hr />
 <p style="font-size:20px"><b>
 <a href="">Data Science Projects</a>
 </b></p>
 
-<p>Regression Analysis on Video Game Sales using Unstructured Data from Reddit</p>
-<ul>
-<li>Employed web APIs to scrap Reddit posts and semi-structured Wikipedia infoboxes. Cleaned and
-explored data, then ﬁt models applicable for business decisions in marketing and ﬁnance. </li>
-</ul>
-<p>Facebook and YouTube Social Network Friend Prediction via SVMs</p>
-<ul>
-<li>Trained Support Vector Machines that achieved high accuracy and AUC scores on testing data.
-Utilized graph analytics to compare the network statistics of diﬀerent communities.</li>
-</ul>
 <hr />
 
+:ET

@@ -1,4 +1,4 @@
-<head>
+I"�<head>
     <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -52,15 +52,6 @@
 <a href="">Data Science Projects</a>
 </b></p>
 
-<p>Regression Analysis on Video Game Sales using Unstructured Data from Reddit</p>
-<ul>
-<li>Employed web APIs to scrap Reddit posts and semi-structured Wikipedia infoboxes. Cleaned and
-explored data, then ﬁt models applicable for business decisions in marketing and ﬁnance. </li>
-</ul>
-<p>Facebook and YouTube Social Network Friend Prediction via SVMs</p>
-<ul>
-<li>Trained Support Vector Machines that achieved high accuracy and AUC scores on testing data.
-Utilized graph analytics to compare the network statistics of diﬀerent communities.</li>
-</ul>
 <hr />
 
+:ET
