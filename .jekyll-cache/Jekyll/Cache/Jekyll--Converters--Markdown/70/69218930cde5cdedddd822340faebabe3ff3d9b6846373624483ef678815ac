@@ -1,0 +1,36 @@
+I"…<head>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<p align="center"><h1><b>Michael Lan</b></h1></p>
+
+<!---
+--->
+<p>My projects can be found below:</p>
+
+<p style="font-size:30px"><b>
+<a href="">Neural Circuit Experiments</a>
+</b></p>
+
+<p>Neural Circuit Experiments aim to find analogous patterns in neural network activations based on inputs with varying similarities. These experiments are housed in a Github repo with Colab notebooks that walks a reader through how experiments were conducted.</p>
+
+<p style="font-size:30px"><b>
+<a href="eduBlogHome.html">Educational Blog</a>
+</b></p>
+<p style="font-size:30px"><b>
+<a href="">Latent Spce Experiments</a>
+</b></p>
+<p style="font-size:30px"><b>
+<a href="">Data Science Projects</a>
+</b></p>
+
+<hr />
+
+<p><span><b>H</b></span>ello</p>
+
+:ET

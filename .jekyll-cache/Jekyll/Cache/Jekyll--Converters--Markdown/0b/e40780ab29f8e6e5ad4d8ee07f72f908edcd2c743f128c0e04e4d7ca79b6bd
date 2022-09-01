@@ -1,0 +1,37 @@
+I"]<head>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<p align="center"><h1><b>Michael Lan</b></h1></p>
+
+<!---
+--->
+<p>My projects can be found below:</p>
+
+<p style="font-size:30px"><b>
+<p align="center">
+<a href="">Neural Circuit Experiments</a>
+</p>
+<p align="center">
+<a href="eduBlogHome.html">Educational Blog</a>
+</p>
+<p align="center">
+<a href="">Latent Spce Experiments</a>
+</p>
+<p align="center">
+<a href="">Data Science Projects</a>
+</p>
+</b>
+
+---
+
+
+<span><b>H</b></span>ello
+
+</p>
+:ET

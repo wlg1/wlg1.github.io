@@ -1,4 +1,4 @@
-<head>
+I"w<head>
     <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -22,7 +22,7 @@
 
 <hr />
 <p style="font-size:30px"><b>
-<a href="eduBlogHome.html">Making the Math of Neural Networks Intuitive</a>
+<a href="eduBlogHome.html">Educational Blog</a>
 </b></p>
 
 <p>When studying new improvements to neural networks, many people run into the following problem:</p>
@@ -31,8 +31,6 @@
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
 <p>This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.[^1]. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more.</p>
-
-<p><img src="/cob/gift_cob.PNG" alt="gift_cob" /></p>
 
 <hr />
 <p style="font-size:30px"><b>
@@ -46,3 +44,4 @@
 
 <hr />
 
+:ET

@@ -28,3 +28,19 @@
   background-color: #04AA6D;
   color: white;
 }
+
+a:link {
+  color: blue;
+}
+
+a:visited { 
+  background-color: cyan; 
+}
+
+a:hover {
+  color: maroon;
+}
+
+a:active {
+  color: blue;
+}
