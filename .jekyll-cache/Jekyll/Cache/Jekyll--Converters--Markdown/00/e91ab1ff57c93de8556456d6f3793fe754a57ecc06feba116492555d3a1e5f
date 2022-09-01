@@ -1,9 +1,5 @@
----
-title: Front Page
----
-
-<head>
-    <link rel="stylesheet" href="index.css">
+I"<head>
+    <link rel="stylesheet" href="index.css" />
 </head>
 
 <div class="topnav">
@@ -15,65 +11,62 @@ title: Front Page
 
 <!---
 --->
-<span><b>H</b></span>ello. My projects can be found below:
+<p><span><b>H</b></span>ello. My projects can be found below:</p>
 
----
+<hr />
 <p style="font-size:20px"><b>
 <a href="">Neural Circuit Experiments</a>
 </b></p>
 
-Neural Circuit Experiments aim to find analogous patterns in neural network activations based on inputs with varying similarities. Why study Neural Circuit Experiments?
+<p>Neural Circuit Experiments aim to find analogous patterns in neural network activations based on inputs with varying similarities. Why study Neural Circuit Experiments?</p>
 <ul>
 <li><b>Improve Debugging:</b> By uncovering the black box that obscures how neural networks make decisions, practitioners will have more control over debugging neural networks to do what they want. </li>
 <li><b>Improve Transfer Learning:</b> By understanding which parts of a neural network perform what function, practitioners will be able to dissect neural networks to retrieve the part they need, and apply transfer learning to fine tune that part to suit their own, specific goals.</li>
 </ul>
 
-These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted.
+<p>These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted.</p>
 
----
+<hr />
 <p style="font-size:20px"><b>
 <a href="eduBlogHome.html">Making the Math of Neural Networks Intuitive</a>
 </b></p>
 
-Techniques such as eigendecomposition, orthogonal projection, and more are often applied to neural networks to further new improvements. These require understanding not just linear algebra, but the intuition of <b>why</b> linear algebra is used. Why use an eigenvector?
+<p>Techniques such as eigendecomposition, orthogonal projection, and more are often applied to neural networks to further new improvements. These require understanding not just linear algebra, but the intuition of <b>why</b> linear algebra is used. Why use an eigenvector?</p>
 
-Thus, when studying new improvements to neural networks, many people run into the following problem:
+<p>Thus, when studying new improvements to neural networks, many people run into the following problem:</p>
 
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
-This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.
+<p>This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.</p>
 
-![2mod_vecs](/cob/2mod_out.PNG)
+<p><img src="/cob/2mod_out.PNG" alt="2mod_vecs" /></p>
 
----
+<hr />
 <p style="font-size:20px"><b>
 <a href="">Latent Space Experiments</a>
 </b></p>
 
-Another way to study how neural networks make decisions is to study the geometry of their latent space. This leads to powerful methods such as Style Editing, in which one can turn the face of a generated person from old to young.
+<p>Another way to study how neural networks make decisions is to study the geometry of their latent space. This leads to powerful methods such as Style Editing, in which one can turn the face of a generated person from old to young.</p>
 
----
+<hr />
 <p style="font-size:20px"><b>
 <a href="https://mikelan300.wixsite.com/portfolio">Data Science Projects</a>
 </b></p>
 
-Regression Analysis on Video Game Sales using Unstructured Data from Reddit 
+<p>Regression Analysis on Video Game Sales using Unstructured Data from Reddit</p>
 <ul>
 <li>Employed web APIs to scrap Reddit posts and semi-structured Wikipedia infoboxes. Cleaned and
 explored data, then ﬁt models applicable for business decisions in marketing and ﬁnance. </li>
 </ul>
-Facebook and YouTube Social Network Friend Prediction via SVMs 
+<p>Facebook and YouTube Social Network Friend Prediction via SVMs</p>
 <ul>
 <li>Trained Support Vector Machines that achieved high accuracy and AUC scores on testing data.
 Utilized graph analytics to compare the network statistics of diﬀerent communities.</li>
 </ul>
 
-![final_model](/datasci/final_model.PNG)
-![datasci_networks](/datasci/datasci_networks.PNG)
+<p><img src="/datasci/datasci_networks.PNG" alt="2mod_vecs" /></p>
 
----
+<hr />
 
-
-
-
+:ET
