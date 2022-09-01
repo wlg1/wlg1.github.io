@@ -1,4 +1,4 @@
-<head>
+I"‰<head>
     <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -11,7 +11,7 @@
 
 <!---
 --->
-<p><span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:</p>
+<p><span><b>H</b></span>ello. My projects can be found below:</p>
 
 <hr />
 <p style="font-size:20px"><b>
@@ -26,23 +26,19 @@
 
 <p>These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted.</p>
 
-<p>[image of face and face w/o mouth, showing toy circuits of each and what differs]</p>
-
-<p>[in repo- state underlying assumptions and hypotheses to test]</p>
-
 <hr />
 <p style="font-size:20px"><b>
 <a href="eduBlogHome.html">Making the Math of Neural Networks Intuitive</a>
 </b></p>
 
-<p>Techniques such as eigendecomposition, orthogonal projection, and more are often applied to neural networks to further new improvements. Knowing why they work requires understanding not just linear algebra, but the intuition of <b>why</b> linear algebra is used. Why use an eigenvector to change the style of a generated image?</p>
+<p>Techniques such as eigendecomposition, orthogonal projection, and more are often applied to neural networks to further new improvements. Knowing why they work requires understanding not just linear algebra, but the intuition of <b>why</b> linear algebra is used. Why use an eigenvector?</p>
 
 <p>Thus, when studying new improvements to neural networks, many people run into the following problem:</p>
 
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
-<p>This blog solves this problem by explaining many required prerequisites from scratch, and relating them to neural network applications.</p>
+<p>This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.</p>
 
 <p><img src="/cob/2mod_out.PNG" alt="2mod_vecs" /></p>
 
@@ -74,3 +70,4 @@ Utilized graph analytics to compare the network statistics of diï¬€erent communi
 
 <hr />
 
+:ET

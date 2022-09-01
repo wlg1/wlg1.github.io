@@ -15,14 +15,14 @@ title: Front Page
 
 <!---
 --->
-<span><b>H</b></span>ello. My projects can be found below:
+<span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
 
 ---
 <p style="font-size:20px"><b>
-<a href="">Neural Circuit Experiments</a>
+<a href="">Analogous Neural Circuit Experiments</a>
 </b></p>
 
-Neural Circuit Experiments aim to find analogous patterns in neural network activations based on inputs with varying similarities. Why study Neural Circuit Experiments?
+Analogous Neural Circuit Experiments aim to find analogous patterns in neural network activations based on inputs with varying similarities. Why study Analogous Neural Circuit Experiments?
 <ul>
 <li><b>Improve Debugging:</b> By uncovering the black box that obscures how neural networks make decisions, practitioners will have more control over debugging neural networks to do what they want. </li>
 <li><b>Improve Transfer Learning:</b> By understanding which parts of a neural network perform what function, practitioners will be able to dissect neural networks to retrieve the part they need, and apply transfer learning to fine tune that part to suit their own, specific goals.</li>
@@ -30,19 +30,23 @@ Neural Circuit Experiments aim to find analogous patterns in neural network acti
 
 These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted.
 
+[image of face and face w/o mouth, showing toy circuits of each and what differs]
+
+[in repo- state underlying assumptions and hypotheses to test]
+
 ---
 <p style="font-size:20px"><b>
 <a href="eduBlogHome.html">Making the Math of Neural Networks Intuitive</a>
 </b></p>
 
-Techniques such as eigendecomposition, orthogonal projection, and more are often applied to neural networks to further new improvements. These require understanding not just linear algebra, but the intuition of <b>why</b> linear algebra is used. Why use an eigenvector?
+Techniques such as eigendecomposition, orthogonal projection, and more are often applied to neural networks to further new improvements. Knowing why they work requires understanding not just linear algebra, but the intuition of <b>why</b> linear algebra is used. Why use an eigenvector to change the style of a generated image?
 
 Thus, when studying new improvements to neural networks, many people run into the following problem:
 
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
-This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.
+This blog solves this problem by explaining many required prerequisites from scratch, and relating them to neural network applications.
 
 ![2mod_vecs](/cob/2mod_out.PNG)
 

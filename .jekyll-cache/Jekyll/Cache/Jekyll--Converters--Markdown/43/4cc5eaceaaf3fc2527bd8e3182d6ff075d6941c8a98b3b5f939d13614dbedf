@@ -1,4 +1,4 @@
-<head>
+I"H<head>
     <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -11,7 +11,7 @@
 
 <!---
 --->
-<p><span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:</p>
+<p><span><b>H</b></span>ello. My projects can be found below:</p>
 
 <hr />
 <p style="font-size:20px"><b>
@@ -28,7 +28,7 @@
 
 <p>[image of face and face w/o mouth, showing toy circuits of each and what differs]</p>
 
-<p>[in repo- state underlying assumptions and hypotheses to test]</p>
+<p>[underlying assumptions and hypotheses to test]</p>
 
 <hr />
 <p style="font-size:20px"><b>
@@ -42,7 +42,7 @@
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
-<p>This blog solves this problem by explaining many required prerequisites from scratch, and relating them to neural network applications.</p>
+<p>This blog solves these problems by explaining many required prerequisites from scratch, and relating them to neural network applications.</p>
 
 <p><img src="/cob/2mod_out.PNG" alt="2mod_vecs" /></p>
 
@@ -74,3 +74,4 @@ Utilized graph analytics to compare the network statistics of diﬀerent communi
 
 <hr />
 
+:ET

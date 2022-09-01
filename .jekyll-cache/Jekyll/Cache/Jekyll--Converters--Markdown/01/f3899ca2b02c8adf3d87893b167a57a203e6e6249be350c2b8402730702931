@@ -1,4 +1,4 @@
-<head>
+I"U<head>
     <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -11,7 +11,7 @@
 
 <!---
 --->
-<p><span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:</p>
+<p><span><b>H</b></span>ello. My projects can be found below:</p>
 
 <hr />
 <p style="font-size:20px"><b>
@@ -74,3 +74,4 @@ Utilized graph analytics to compare the network statistics of diﬀerent communi
 
 <hr />
 
+:ET
