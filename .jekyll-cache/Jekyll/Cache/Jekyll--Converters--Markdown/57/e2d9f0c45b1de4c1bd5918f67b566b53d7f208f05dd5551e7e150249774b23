@@ -1,3 +1,4 @@
+I"ö
 <head>
     <link rel="stylesheet" href="index.css" />
 </head>
@@ -38,7 +39,7 @@
 
 <p>This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.[^1]. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more.</p>
 
-<p><img src="/cob/2mod_out.PNG" alt="2mod_vecs" /></p>
+<p><img src="/cob/gift_cob.PNG" alt="gift_cob" /></p>
 
 <hr />
 <p style="font-size:20px"><b>
@@ -64,3 +65,4 @@ Utilized graph analytics to compare the network statistics of diï¬€erent communi
 </ul>
 <hr />
 
+:ET

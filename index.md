@@ -42,7 +42,7 @@ When studying new improvements to neural networks, many people run into the foll
 
 This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.[^1]. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. 
 
-![gift_cob](/cob/gift_cob.PNG)
+![2mod_vecs](/cob/2mod_out.PNG)
 
 ---
 <p style="font-size:20px"><b>
@@ -53,7 +53,7 @@ Another way to study how neural networks make decisions is to study the geometry
 
 ---
 <p style="font-size:20px"><b>
-<a href="">Data Science Projects</a>
+<a href="https://mikelan300.wixsite.com/portfolio">Data Science Projects</a>
 </b></p>
 
 Regression Analysis on Video Game Sales using Unstructured Data from Reddit 
