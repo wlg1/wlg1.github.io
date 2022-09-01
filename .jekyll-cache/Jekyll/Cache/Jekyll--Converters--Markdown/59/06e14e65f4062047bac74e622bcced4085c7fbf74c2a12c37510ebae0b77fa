@@ -1,4 +1,4 @@
-<head>
+I"û<head>
     <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -31,14 +31,14 @@
 <a href="eduBlogHome.html">Making the Math of Neural Networks Intuitive</a>
 </b></p>
 
-<p>Techniques such as eigendecomposition, orthogonal projection, and more are often applied to neural networks to further new improvements. These require understanding not just linear algebra, but the intuition of <b>why</b> linear algebra is used. Why use an eigenvector?</p>
+<p>Techniques such as eigendecomposition, orthogonal projection, and more are often applied to neural networks to further new improvements. These require understanding not just linear algebra, but the intuition of <b>why</b> linear algebra is used.</p>
 
 <p>Thus, when studying new improvements to neural networks, many people run into the following problem:</p>
 
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
-<p>This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.</p>
+<p>This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.[^1]. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more.</p>
 
 <p><img src="/cob/2mod_out.PNG" alt="2mod_vecs" /></p>
 
@@ -66,3 +66,4 @@ Utilized graph analytics to compare the network statistics of diï¬€erent communi
 </ul>
 <hr />
 
+:ET

@@ -35,12 +35,14 @@ These experiments are housed in a Github repo with Colab notebooks that walk a r
 <a href="eduBlogHome.html">Making the Math of Neural Networks Intuitive</a>
 </b></p>
 
-When studying new improvements to neural networks, many people run into the following problem:
+Techniques such as eigendecomposition, orthogonal projection, and more are often applied to neural networks to further new improvements. These require understanding not just linear algebra, but the intuition of <b>why</b> linear algebra is used. Why use an eigenvector?
+
+Thus, when studying new improvements to neural networks, many people run into the following problem:
 
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
-This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.[^1]. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. 
+This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.
 
 ![2mod_vecs](/cob/2mod_out.PNG)
 
