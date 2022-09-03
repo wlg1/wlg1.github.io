@@ -19,7 +19,7 @@ title: Front Page
 
 ---
 <p style="font-size:20px"><b>
-<a href="">Analogous Neural Circuit Experiments</a>
+<a href="https://github.com/wlg1/analogous_neuron_circuit_expms">Analogous Neural Circuit Experiments</a>
 </b></p>
 
 Analogous Neural Circuit Experiments aim to find analogous patterns in neural network activations based on inputs with varying similarities. Why study Analogous Neural Circuit Experiments?
