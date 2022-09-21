@@ -76,7 +76,7 @@ Utilized graph analytics to compare the network statistics of diﬀerent communi
 </ul>
 
 <img src="/datasci/final_model.PNG" width="400" height="300" alt="">
-<img src="/datasci/datasci_networks" width="400" height="300" alt="">
+<img src="/datasci/datasci_networks.png" width="400" height="300" alt="">
 
 <!---
 ![final_model](/datasci/final_model.PNG)
