@@ -28,7 +28,9 @@ Analogous Neural Circuit Experiments aim to find analogous patterns in neural ne
 <li><b>Improve Transfer Learning:</b> By understanding which parts of a neural network perform what function, practitioners will be able to dissect neural networks to retrieve the part they need, and apply transfer learning to fine tune that part to suit their own, specific goals.</li>
 </ul>
 
-These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted.
+These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted. An example of a notebook demonstrating simple experiments is given below:
+
+<a href="https://colab.research.google.com/drive/12hQolN9TLXsakkG96nYUgU30_6YL74bf#scrollTo=IAJjuRTDBnOr">Tutorial 0: Compare Neuron Activations</a>
 
 [image of face and face w/o mouth, showing toy circuits of each and what differs]
 
