@@ -75,8 +75,12 @@ Facebook and YouTube Social Network Friend Prediction via SVMs
 Utilized graph analytics to compare the network statistics of diﬀerent communities.</li>
 </ul>
 
-<img src="/datasci/final_model.PNG" width="400" height="300" alt="">
-<img src="/datasci/datasci_networks.png" width="400" height="300" alt="">
+<div id="datasci_images">
+  <div class="inline-block">
+  <img src="/datasci/final_model.PNG" width="300" height="200" alt="">
+  <img src="/datasci/datasci_networks.png" width="300" height="200" alt="">
+  </div>
+</div>
 
 <!---
 ![final_model](/datasci/final_model.PNG)
