@@ -17,6 +17,11 @@ title: Front Page
 --->
 <span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
 
+[ Website in process of being built. To be completed by: Dec 2022 ][^footnote]
+
+[^footnote]: To be uploaded: tutorials that walk through experiments, starting with simple ones. Much of the work done so far are still drafts to be cleaned up
+
+
 ---
 <p style="font-size:20px"><b>
 <a href="https://github.com/wlg1/analogous_neuron_circuit_expms">Analogous Neural Circuit Experiments</a>
@@ -30,7 +35,7 @@ Analogous Neural Circuit Experiments aim to find analogous patterns in neural ne
 
 These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted. An example of a notebook demonstrating simple experiments is given below:
 
-<a href="https://colab.research.google.com/drive/12hQolN9TLXsakkG96nYUgU30_6YL74bf#scrollTo=IAJjuRTDBnOr">Tutorial 0: Compare Neuron Activations</a>
+<a href="https://colab.research.google.com/drive/12hQolN9TLXsakkG96nYUgU30_6YL74bf#scrollTo=IAJjuRTDBnOr">TUTORIAL 0: Compare Neuron Activations Between Pairs of Images.ipynb</a>
 
 [image of face and face w/o mouth, showing toy circuits of each and what differs]
 
