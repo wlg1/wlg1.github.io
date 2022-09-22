@@ -7,8 +7,10 @@ title: Front Page
 </head>
 
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#contact">Contact</a>
+  <a class="active" href="#Home">Home</a>
+  <a href="#Experiments">Experiments Index</a>
+  <a href="#Techniques">Techniques Compendium</a>
+  <a href="#Contact">Contact</a>
 </div>
 
 <p align="center"><h1><b>Michael Lan</b></h1></p>
@@ -26,7 +28,7 @@ title: Front Page
 <a href="https://github.com/wlg1/analogous_neuron_circuit_expms">Analogous Neural Circuit Experiments</a>
 </b></p>
 
-Analogous Neural Circuit Experiments aim to find analogous patterns in neural network activations based on inputs with varying similarities. Why study Analogous Neural Circuit Experiments? These studies enhance Neural Network Interpretability by connecting model predictions to patterns the model uses to make its predictions. This has significant applications, which include:
+Analogous Neural Circuit Experiments aim to find common patterns in neural network activations based on inputs with varying similarities. Why study Analogous Neural Circuit Experiments? These studies enhance Neural Network Interpretability by connecting model predictions to patterns the model uses to make its predictions. This has significant applications, which include:
 <ul>
 <li><b>Improving Trust in AI:</b> When AI makes important decisions, such as in medical treatment or financial investments, knowing why the AI made those predictions is crucial to ensuring that it is not using faulty reasoning to make its predictions. </li>
 <li><b>Improving Model Debugging:</b> By uncovering the black box that obscures how neural networks make decisions, practitioners will have more control over debugging neural networks to do what they want. </li>

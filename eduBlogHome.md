@@ -1,5 +1,5 @@
 ---
-title: About This Website
+title: Making the Math of Neural Networks Intuitive - HOME
 ---
 
 <head>
@@ -12,10 +12,9 @@ title: About This Website
   <a href="#about">About</a>
 </div>
 
-<p align="center"><h1><b>WORKING TITLE</b></h1></p>
+<p align="center"><h1><b>Making the Math of Neural Networks Intuitive</b></h1></p>
 
 <!---
---->
 For localhost testing:
 
 <a href="ch1.1.html">CHAPTER 1.1</a>
@@ -28,6 +27,7 @@ For localhost testing:
 
 ---
 
+--->
 
 <span><b>W</b></span>hen studying new improvements to neural networks, many people run into the following problem:
 
