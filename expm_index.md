@@ -15,7 +15,12 @@ title: Experiments Index
 
 <p align="center"><h1><b>Experiments Index</b></h1></p>
 
-This is an index housing conducted experiments. Click on the link below to learn the details of the experiment.
+This is an index housing conducted experiments. Other ways to search for experiments include the following:
+
+<a href="experiments/list_tutorials.html">List of Tutorials</a>
+
+
+Click on the link below to learn the details of the experiment.
 
 ---
-<a href="experiments/expm_1.html">What would happen if we compared the Jaccard similarity of an image and one of its occlusions?</a>
+<a href="experiments/expm_1.html">EXPM 1: What would happen if we compared the Jaccard similarity of an image and one of its occlusions?</a>
