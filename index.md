@@ -37,7 +37,7 @@ Analogous Neural Circuit Experiments aim to find common patterns in neural netwo
 
 These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted. An example of a notebook demonstrating simple experiments is given below:
 
-<a href="https://colab.research.google.com/drive/12hQolN9TLXsakkG96nYUgU30_6YL74bf#scrollTo=IAJjuRTDBnOr">TUTORIAL 1: Compare Neuron Activations Between Pairs of Images</a>
+<a href="https://colab.research.google.com/drive/12hQolN9TLXsakkG96nYUgU30_6YL74bf">TUTORIAL 1: Compare Neuron Activations Between Pairs of Images</a>
 
 [image of face and face w/o mouth, showing toy circuits of each and what differs]
 
