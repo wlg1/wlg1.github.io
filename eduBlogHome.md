@@ -66,12 +66,28 @@ CHAPTER 1: How Neural Networks Reveal Hidden Insights in Data (using Matrix Mult
 1.5: The Analogy of the Matrix
 
 
-CHAPTER 2:  
+CHAPTER 2: How to Find the Important Features and Change Them (using Matrix Decomposition)?
+
+2.0: Cool Applications (Face filters, etc.)
 
 **[2.1: How Do Neural Networks Make Faces Look Younger (using Orthogonal Projection)?](ch2.1.md)**
 
-2.2: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
+**[2.2: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)](ch2.2.md)**
+
+&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.1: Paper Explanation: GANspace](ch2.2.1.md)**
+
+&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.2: Covariance Matrix](ch2.2.2.md)**
+
+&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.3: Paper Explanation: Eigenfaces](ch2.2.3.md)**
+
+&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.4: Paper Explanation: SeFA]()**
+
+&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.5: SVD]()**
+
+[applying to latest generative models: DALLE, stable diffusion, grokking]
 
 ---
 
+Appendices:
 
+**[Review: Generative Models ](generative_models_review.md)**
