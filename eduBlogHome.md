@@ -53,7 +53,7 @@ Not sure where to start?
 **[Start Here](ch1.1.md)**
 
 ---
-CHAPTER 1: How Neural Networks Reveal Hidden Insights in Data (using Matrix Multiplication)
+**CHAPTER 1: How Neural Networks Reveal Hidden Insights in Data (using Matrix Multiplication)**
 
 **[1.1: How does matrix multiplication guess a cat from its face and body?](ch1.1.md)**
 
@@ -66,7 +66,7 @@ CHAPTER 1: How Neural Networks Reveal Hidden Insights in Data (using Matrix Mult
 1.5: The Analogy of the Matrix
 
 
-CHAPTER 2: How to Find the Important Features and Change Them (using Matrix Decomposition)?
+**CHAPTER 2: How to Find the Important Features and Change Them (using Matrix Decomposition)?**
 
 2.0: Cool Applications (Face filters, etc.)
 
@@ -82,7 +82,7 @@ CHAPTER 2: How to Find the Important Features and Change Them (using Matrix Deco
 
 &nbsp;&nbsp;&nbsp;&nbsp;**[2.2.4: Paper Explanation: SeFA]()**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.5: SVD]()**
+&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.5: SVD](ch2.2.5.md)**
 
 [applying to latest generative models: DALLE, stable diffusion, grokking]
 
