@@ -1,5 +1,5 @@
 ---
-title: CHAPTER 2.0
+title: Generative Models Review
 ---
 This section summarizes sections of [3 sections of links: VAE, GAN, topology] that are relevant to our discussion, for those unfamiliar with those topics. It is recommended to read those links to get a more detailed understanding. If one is already familiar with these topics, one can skip to ch2.1. 
 
@@ -43,7 +43,8 @@ https://subscription.packtpub.com/book/big_data_and_business_intelligence/978178
 ch01lvl1sec12/the-detailed-architecture-of-a-gan
 
 [arithmetic in GANspace]
-<<<<
+
+---
 Switches around during training
 [side-by-side figure comparing GANs and VAEs, w/ spaces in b/w layers]
 
@@ -63,18 +64,19 @@ FOOTNOTES: Define “affine”.
 FOOTNOTE: An activation space may also be called a “latent space” because each hidden layer’s activation values on the data points reveal hidden (latent) relationships in the data that may not be seen in the input space. 
 It makes a judgment for each observation (color labeled class in each point in output on figure) 
 
-<<<
+---
 Define manifold. [Papers] treat the latent space as a Riemannian Manifold
 The data set itself is a manifold embedded within the manifold that is the input space, and the data set manifold is transformed into another manifold in the activation space by warping the input space into the space of how the neurons interpret the data. 
 The layers of a neural network transform high dimensional representations into representations that are “easier to interpret”- in other words, they allow the neural network to partition the data in a way that better optimizes an objective function. In (3B1Br video X timestamp), each transformation “rotates” the data onto new basis vectors; this is the same thing as projection. When a dimension is removed, it projects it onto lower dimensional space. A neural network can be thought of as a function that is a composition of transformations.
 [papers discussing visualizing transformations of manifold,
 
-<<<
+---
 Manifold gaps, Separability, discretization in latent space. 
 latent space contains gaps, and we do not know what characters in these spaces may look like 
 However, in this new perspective, if dimensions are reduced, may lose interpretability information (cite 3b1br)
 [cite papers about manifolds]
-<<<<<<<<<<<<<<<<<<<<<<<
+
+---
 Conclusion
 https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d
 https://hackernoon.com/latent-space-visualization-deep-learning-bits-2-bd09a46920df

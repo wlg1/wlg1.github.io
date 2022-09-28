@@ -66,16 +66,11 @@ CHAPTER 1: How Neural Networks Reveal Hidden Insights in Data (using Matrix Mult
 1.5: The Analogy of the Matrix
 
 
-CHAPTER 2:  How Neural Networks Make Faces Look Younger (using Orthogonal Projection)
+CHAPTER 2:  
 
-2.1: Dot product for direction, Lengths, Normal
+**[2.1: How Do Neural Networks Make Faces Look Younger (using Orthogonal Projection)?](ch2.1.md)**
 
-2.2: Orthogonal Projections
-
-
-CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
-
-Eigenvectors, Diagonal, Decomposition, matrix factorization & PCA
+2.2: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)
 
 ---
 
