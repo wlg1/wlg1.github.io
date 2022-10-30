@@ -19,7 +19,7 @@ title: Front Page
 --->
 <span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
 
-[ Website in process of being built. To be completed by: Dec 2022 ][^footnote]
+[ Website in process of being built. To be completed by: Jan 2023 ][^footnote]
 
 [^footnote]: Future uploads include tutorials that walk through experiments, starting with simple ones. Most of the experiments done so far are still in draft form, rather than in tutorial format
 

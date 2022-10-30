@@ -13,12 +13,14 @@ What this means is that if we only want to change one feature, we should only ch
 **Changing what's on basis vector**
 
 First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Age vector is on the y-axis. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$V=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
-[fig 2.1]; change_feat_on_basis, orthProj.py
+
+![Figure ](/ch2/VtoW.PNG)
 
 In Figure 1, all we have to do is to find W is to "walk" down line $$C$$ from vector $$V$$. In fact, you can move to any point along $C$$ without changing the value of x=3. 
 
 Why does vector C not change the value of x=3? Because vector $$C$$ is **orthogonal** to the $$x$$ basis vector, where they intersect at x=3. If it was not orthogonal, it would veer away from x=3, such as shown in the example below, where a non-orthogonal vector leads to x=4.
-[figure 2.2]; change_feat_on_basis, veerProj.py
+
+![Figure ](/ch2/VtoW_veer.PNG)
 
 It is only when the green vector intersects the x vector at 90 degree angle that the value of the $$x$$ vector doesn't change.
 
@@ -37,14 +39,14 @@ So if $$\vec{v} = \color{#CBC3E3}{\begin{bmatrix} 3 \\ 2 \end{bmatrix}}$$, then 
 
 Then, we scale the $$x$$ basis vector by x(dot)v by doing: x(dot)v * x
 
-[figure 2.3]; change_feat_on_basis, orthProj.py
+![Figure ](/ch2/VtoW_orth.PNG)
 
 In Figure 2.3 above, we have found the vector, shown in pink, that represents "how much of x is used to get vector V". Now to "preserve" this value of x(dot)v while changing the value of y, we have to find a vector that's "orthogonal" to x(dot)v * x. As we saw in Figure 2.2 (link, then have way to link back to this paragraph from that fig), the orthogonal vector C is just the vector obtained by going from x(dot)v * x to v. In vector addition, that translates to: 
 
-v = x(dot)v * x + C
+$$\vec{v} = (\vec{v} \cdot \vec{x}) * \vec{x} + \vec{C}$$
 
 Solving for C, we obtain:
 
-C = v - x(dot)v * x
+$$\vec{C} = \vec{v} - (\vec{v} \cdot \vec{x}) * \vec{x}$$
 
-[figure 2.4 showing C= ]
+![Figure ](/ch2/equation_C.PNG)
