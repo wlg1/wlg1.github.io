@@ -9,12 +9,13 @@ In StyleGAN, we want to change one or more features of the image while keeping t
 
 <img src="/ch2/youngtoOld.PNG">
 
-<figcaption align = "center"><b>Image Source: "Interpreting the Latent Space of GANs for Semantic Face Editing"</b></figcaption>
+<figcaption align = "center"><b>Image Source:  Yujun Shen, Jinjin Gu, Xiaoou Tang, and Bolei Zhou. Interpreting the latent space of GANs for semantic face editing.
+CoRR, abs/1907.10786, 2019. </b></figcaption>
 </figure>
 
 Recall from Chapter 1 that features can be approximated as vectors in the latent space of neuron activations.
 
-![Figure : Cat in Coordinate Space](/cob/fig6.PNG)
+<img src="/cob/fig6.PNG" width="400" height="300">
 
 What this means is that if we only want to change one feature, we should only change one vector, while keeping all other vectors the same. But how do we find this vector? 
 
@@ -29,7 +30,7 @@ In Figure 1, all we have to do is to find W is to "walk" down line $$C$$ from ve
 
 Why does vector C not change the value of x=3? Because vector $$C$$ is **orthogonal** to the $$x$$ basis vector, where they intersect at x=3. If it was not orthogonal, it would veer away from x=3, such as shown in the example below, where a non-orthogonal vector leads to x=4.
 
-![Figure ](/ch2/VtoW_veer.PNG)
+<img src="/ch2/VtoW_veer.PNG" width="400" height="300">
 
 It is only when the green vector intersects the x vector at 90 degree angle that the value of the $$x$$ vector doesn't change.
 
@@ -48,7 +49,7 @@ So if $$\vec{v} = \color{#CBC3E3}{\begin{bmatrix} 3 \\ 2 \end{bmatrix}}$$, then 
 
 Then, we scale the $$x$$ basis vector by x(dot)v by doing: x(dot)v * x
 
-![Figure ](/ch2/VtoW_orth.PNG)
+<img src="/ch2/VtoW_orth.PNG" width="400" height="300">
 
 In Figure 2.3 above, we have found the vector, shown in pink, that represents "how much of x is used to get vector V". Now to "preserve" this value of x(dot)v while changing the value of y, we have to find a vector that's "orthogonal" to x(dot)v * x. As we saw in Figure 2.2 (link, then have way to link back to this paragraph from that fig), the orthogonal vector C is just the vector obtained by going from x(dot)v * x to v. In vector addition, that translates to: 
 
@@ -58,4 +59,4 @@ Solving for C, we obtain:
 
 $$\vec{C} = \vec{v} - (\vec{v} \cdot \vec{x}) * \vec{x}$$
 
-![Figure ](/ch2/equation_C.PNG)
+<img src="/ch2/equation_C.PNG" width="400" height="300">
