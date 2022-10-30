@@ -3,9 +3,12 @@ title: CHAPTER 2.1
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-In StyleGAN, we want to change one or more features of the image while keeping the other features the same [show before + after outputs]
+In StyleGAN, we want to change one or more features of the image while keeping the other features the same. For example, in the picture below, most of the features such as hair color and eye color are kept the same, while the age is changed.
 
-Recall from Chatper 1 that features can be approximated as vectors in the latent space of neuron activations.
+![Figure . Source: "Interpreting the Latent Space of GANs for Semantic Face Editing"](/ch2/youngtoOld.PNG)
+
+Recall from Chapter 1 that features can be approximated as vectors in the latent space of neuron activations.
+
 [fig]
 
 What this means is that if we only want to change one feature, we should only change one vector, while keeping all other vectors the same. But how do we find this vector? 
@@ -14,7 +17,9 @@ What this means is that if we only want to change one feature, we should only ch
 
 First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Age vector is on the y-axis. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$V=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
 
-![Figure ](/ch2/VtoW.PNG)
+<!--- ![Figure ](/ch2/VtoW.PNG) --->
+<img src="/ch2/VtoW.PNG" width="100" height="100">
+
 
 In Figure 1, all we have to do is to find W is to "walk" down line $$C$$ from vector $$V$$. In fact, you can move to any point along $C$$ without changing the value of x=3. 
 
