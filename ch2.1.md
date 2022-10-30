@@ -3,6 +3,16 @@ title: CHAPTER 2.1
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
+**CHAPTER 2.1**
+
+<a href="eduBlogHome.md">Home</a>
+
+**(Reading time: 15 minutes)**
+
+**Prerequisites**: Chapter 1 and GANs [^prereqs]
+
+[^prereqs]: <a href="generative_models_review.md">A review of GANs can be found here (this is still an unfinished draft)</a>
+
 In StyleGAN, we want to change one or more features of the image while keeping the other features the same. For example, in the picture below, most of the features such as hair color and eye color are kept the same, while the age is changed.
 
 <figure>
@@ -15,11 +25,13 @@ CoRR, abs/1907.10786, 2019. </b></figcaption>
 
 Recall from Chapter 1 that features can be approximated as vectors in the latent space of neuron activations.
 
-<img src="/cob/fig6.PNG" width="400" height="300">
+<img src="/cob/fig6.PNG" width="450" height="300">
 
-What this means is that if we only want to change one feature, we should only change one vector, while keeping all other vectors the same. But how do we find this vector? 
+In the image above, the animal (a cat) is interpreted in terms of the features of Face Length and Body Size. For instance, by increasing the value of the "Body Size vector" on the y-axis from y=2 to y=3, we obtain a vector that is similar to the one mapped to the sample at 
 
-**Changing what's on basis vector**
+What this means is that if we only want to change one feature, we should "" one vector, while keeping all other vectors the same. But how do we find this vector? 
+
+**Changing a feature on the basis vector**
 
 First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Age vector is on the y-axis. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$V=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
 
@@ -36,7 +48,9 @@ It is only when the green vector intersects the x vector at 90 degree angle that
 
 How do we calculate the value of this orthogonal vector $$C$$ we want to move on?
 
-In this case, because we want to keep the value of x and change the value of y, and y is a basis vector, we can move parallel to the y-direction by simply changing the y-coordinate value. But let's actually calculate vector C in terms of $$V$$ and $$x$$, because this calculation can be generalized to the case where the feature we want to change is not on a basis vector.
+In this case, because we want to keep the value of x and change the value of y, and y is a basis vector, we can move in the y-direction by simply changing the y-coordinate value. Notice that vector $$C$$ is parallel to the y-direction, and thus moving along $$C$$ means moving along $$y$$.
+
+Even so, let's actually calculate vector C in terms of $$V$$ and $$x$$, because this calculation can be generalized to the case where the feature we want to change is not on a basis vector.
 
 First, let's describe what we want, and then translate that description into mathematics. Overall, we want:
 
@@ -47,7 +61,9 @@ Let's break this down into parts. To preserve the values of "how much of x is us
 <!--- v = [3 2] --->
 So if $$\vec{v} = \color{#CBC3E3}{\begin{bmatrix} 3 \\ 2 \end{bmatrix}}$$, then $$\vec{x} \cdot \vec{v} = 3$$
 
-Then, we scale the $$x$$ basis vector by x(dot)v by doing: x(dot)v * x
+Then, we scale the $$x$$ basis vector by $$\vec{x} \cdot \vec{v}$$ by doing: 
+
+$$(\vec{v} \cdot \vec{x}) * \vec{x}$$
 
 <img src="/ch2/VtoW_orth.PNG" width="400" height="300">
 
@@ -60,3 +76,6 @@ Solving for C, we obtain:
 $$\vec{C} = \vec{v} - (\vec{v} \cdot \vec{x}) * \vec{x}$$
 
 <img src="/ch2/equation_C.PNG" width="400" height="300">
+
+
+**Changing a feature that's not on a basis vector**
