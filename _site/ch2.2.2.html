@@ -1,0 +1,47 @@
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<ol>
+  <li>why multiply by cov matrix: cov face_cat face_rat :</li>
+</ol>
+
+<p>2a. correlation of neurons
+2b. how variance around mean changes; variance affect variance
+2c. face_cat * face_rat correlation
+2d. covariance matrix</p>
+
+<p>&lt;
+2a. correlation of neurons
+What is covariance matrix of neurons? If we see neuron A go up, does neuron B also goes up/down, or is it unaffected? If so, describing neurons in terms of their correlation groups them together into communities which vary w/ one another vs communities which are largely separate. Decomposition.</p>
+
+<p>&lt;
+2b. how variance affects variance
+The X units of rat -&gt; Y units of cat is represented by (x-xmean)(y-ymean), and checking it for multiple units is doing it over a dataset and adding them up. (x - xmean) checks how far that data pt varies from the mean. If the VARIATION is both low, then both are not as correlated. That is, they’re expected to be around the mean, b/c they’re unspectacular. But if the two have high variation, then one spectacular means the other would also be not normal- the y val is nudged too when the x val is nudged away from the mean. This solves the issue of “if face_cat low and face_rat low, then it’s low- how does this show correlation?” Instead of the value itself, it’s its dist from the mean.</p>
+
+<p>&lt;
+2c. face_cat * face_rat correlation
+AA: in the first row by second col, you get 
+face_cat * face_rat + body_cat * body_rat
+= first row [cat] DOT second row [rat]
+Essentially, how does cat neuron vary with rat neuron?</p>
+
+<p>face_cat * face_rat :
+if face_cat high and face_rat high, then it’s high
+if face_cat low and face_rat low, then it’s low
+How does this show correlation?</p>
+
+<p>face_cat is conversion factor
+face_rat is in old units
+face_cat * face_rat converts face_rat to face_cat?
+Yes- that is, if we have 2 units of rat, can we predict how many units of cat we have? If 2 units of rat means 3 units of cat, and 3 units of rat means 4 units of cat, etc, then yes. But if 2 units of rat means 2 units of cat, and so does 3 units of rat, then we cannot predict. There is no correlation.</p>
+
+<p>coefficient “face_cat” can be viewed as “face_cat / face_rat”</p>
+
+<p>Decompose into ‘why’ face_rat gives those face_cats. Perhaps a long nose means not likely a cat, so a likely rat means not likely cat.</p>
+
+<p>remember the units are ‘distance away from mean’. it is the SD.</p>
+
+<p>[put this in ‘musings’ as it’s vague and not rigorously defined; too many wordings that yield different valid interpretations, yet not all may be correct]
+    (face_cat * face_rat) * [input vector element] : this means how is this data point represented in terms of its how its face_rat measurement is related to its face_cat measurement (??) That is, how much is its face_rat measurement AFFECTED BY its face_cat measurement? This is a relation describing how the features of the data pt are affected by one another. You can describe a distribution of data pts this way b/c one can derive axes of the distribution from other axes; the distribution is measured by the RELATIVITY of the axes next to one another</p>
+
+<p>&lt;
+2d. covariance matrix</p>

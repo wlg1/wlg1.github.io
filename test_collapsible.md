@@ -1,0 +1,31 @@
+---
+title: test
+---
+
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<div class="topnav">
+  <a class="active" href="#Home">Home</a>
+  <a href="expm_index.html">Experiments Index</a>
+  <a href="#Techniques">Techniques Compendium</a>
+  <a href="#Contact">Contact</a>
+</div>
+
+<details>
+  <summary>Click me</summary>
+  
+  ### Heading
+  1. Foo
+  2. Bar
+     * Baz
+     * Qux
+
+  ### Some Code
+  ```js
+  function logSomething(something) {
+    console.log('Something', something);
+  }
+  ```
+</details>

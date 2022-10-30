@@ -70,6 +70,8 @@ Not sure where to start?
 
 2.0: Cool Applications (Face filters, etc.)
 
+**[2.1 test](ch2.1_old.md)**
+
 **[2.1: How Do Neural Networks Make Faces Look Younger (using Orthogonal Projection)?](ch2.1.md)**
 
 **[2.2: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)](ch2.2.md)**
