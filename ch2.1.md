@@ -5,9 +5,12 @@ title: CHAPTER 2.1
 
 In StyleGAN, we want to change one or more features of the image while keeping the other features the same. For example, in the picture below, most of the features such as hair color and eye color are kept the same, while the age is changed.
 
-![Figure .](/ch2/youngtoOld.PNG)
+<figure>
 
-Image Source: "Interpreting the Latent Space of GANs for Semantic Face Editing"
+<img src="/ch2/youngtoOld.PNG" width="300" height="400">
+
+<figcaption align = "center"><b>Image Source: "Interpreting the Latent Space of GANs for Semantic Face Editing"</b></figcaption>
+</figure>
 
 Recall from Chapter 1 that features can be approximated as vectors in the latent space of neuron activations.
 
