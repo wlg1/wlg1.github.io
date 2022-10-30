@@ -7,7 +7,7 @@ In StyleGAN, we want to change one or more features of the image while keeping t
 
 <figure>
 
-<img src="/ch2/youngtoOld.PNG" width="300" height="400">
+<img src="/ch2/youngtoOld.PNG">
 
 <figcaption align = "center"><b>Image Source: "Interpreting the Latent Space of GANs for Semantic Face Editing"</b></figcaption>
 </figure>
@@ -23,7 +23,7 @@ What this means is that if we only want to change one feature, we should only ch
 First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Age vector is on the y-axis. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$V=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
 
 <!--- ![Figure ](/ch2/VtoW.PNG) --->
-<img src="/ch2/VtoW.PNG" width="300" height="400">
+<img src="/ch2/VtoW.PNG" width="400" height="300">
 
 In Figure 1, all we have to do is to find W is to "walk" down line $$C$$ from vector $$V$$. In fact, you can move to any point along $C$$ without changing the value of x=3. 
 
