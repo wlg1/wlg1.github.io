@@ -69,25 +69,25 @@ First, let's start with a simpler case, where the feature we want to change is o
 <!--- ![Figure ](/ch2/VtoW.PNG) --->
 <img src="/ch2/VtoW.PNG" width="400" height="300">
 
-In Figure 1, all we have to do is to find W is to "walk" down line $$C$$ from vector $$V$$. In fact, you can move to any point along $$C$$ without changing the value of x=3. 
+In Figure 1, all we have to do is to find W is to "walk" down line $$c$$ from vector $$v$$. In fact, you can move to any point along $$c$$ without changing the value of x=3. 
 
-Why does vector C not change the value of x=3? Because vector $$C$$ is **orthogonal** to the $$x$$ basis vector, where they intersect at x=3. If it was not orthogonal, it would veer away from x=3, such as shown in the example below, where a non-orthogonal vector leads to x=4.
+Why does vector C not change the value of x=3? Because vector $$c$$ is **orthogonal** to the $$x$$ basis vector, where they intersect at x=3. If it was not orthogonal, it would veer away from x=3, such as shown in the example below, where a non-orthogonal vector leads to x=4.
 
 <img src="/ch2/VtoW_veer.PNG" width="400" height="300">
 
 It is only when the green vector intersects the x vector at 90 degree angle that the value of the $$x$$ vector doesn't change.
 
-How do we calculate the value of this orthogonal vector $$C$$ we want to move on?
+How do we calculate the value of this orthogonal vector $$c$$ we want to move on?
 
-In this case, because we want to keep the value of x and change the value of y, and y is a basis vector, we can move in the y-direction by simply changing the y-coordinate value. Notice that vector $$C$$ is parallel to the y-direction, and thus moving along $$C$$ means moving along $$y$$.
+In this case, because we want to keep the value of x and change the value of y, and y is a basis vector, we can move in the y-direction by simply changing the y-coordinate value. Notice that vector $$c$$ is parallel to the y-direction, and thus moving along $$c$$ means moving along $$y$$.
 
-Even so, let's actually calculate vector C in terms of $$V$$ and $$x$$, because this calculation can be generalized to the case where the feature we want to change is not on a basis vector.
+Even so, let's actually calculate vector $$c$$ in terms of $$v$$ and $$x$$, because this calculation can be generalized to the case where the feature we want to change is not on a basis vector.
 
 First, let's describe what we want, and then translate that description into mathematics. Overall, we want:
 
-"A vector which preserves the values of how much of x is used to get vector $$V$$".
+"A vector which preserves the values of how much of x is used to get vector $$v$$".
 
-Let's break this down into parts. To preserve the values of "how much of x is used to get vector $$V$$", we need to represent this phrase in terms of vectors. Recall from Chapter 1 that this can be done using the dot product, which projects one vector onto another, outputting a scalar that says "how much of x is used to get v".
+Let's break this down into parts. To preserve the values of "how much of x is used to get vector $$v$$", we need to represent this phrase in terms of vectors. Recall from Chapter 1 that this can be done using the dot product, which projects one vector onto another, outputting a scalar that says "how much of x is used to get v".
 
 <!--- v = [3 2] --->
 So if $$\vec{v} = \color{#CBC3E3}{\begin{bmatrix} 3 \\ 2 \end{bmatrix}}$$, then $$\vec{x} \cdot \vec{v} = 3$$
@@ -98,17 +98,21 @@ $$(\vec{v} \cdot \vec{x}) * \vec{x}$$
 
 <img src="/ch2/VtoW_orth.PNG" width="400" height="300">
 
-In Figure 2.3 above, we have found the vector, shown in pink, that represents "how much of x is used to get vector V". Now to "preserve" this value of x(dot)v while changing the value of y, we have to find a vector that's "orthogonal" to $$(\vec{v} \cdot \vec{x}) * \vec{x}$$. As we saw in Figure 2.2 (link, then have way to link back to this paragraph from that fig), the orthogonal vector C is just the vector obtained by going from x(dot)v * x to v. In vector addition, that translates to: 
+In Figure 2.3 above, we have found the vector, shown in pink, that represents "how much of x is used to get vector V". Now to "preserve" this value of x(dot)v while changing the value of y, we have to find a vector that's "orthogonal" to $$(\vec{v} \cdot \vec{x}) * \vec{x}$$. As we saw in Figure 2.2 (link, then have way to link back to this paragraph from that fig), the orthogonal vector $$c$$ is just the vector obtained by going from x(dot)v * x to v. In vector addition, that translates to: 
 
-$$\vec{v} = (\vec{v} \cdot \vec{x}) * \vec{x} + \vec{C}$$
+$$\vec{v} = (\vec{v} \cdot \vec{x}) * \vec{x} + \vec{c}$$
 
 Solving for C, we obtain:
 
-$$\vec{C} = \vec{v} - (\vec{v} \cdot \vec{x}) * \vec{x}$$
+$$\vec{c} = \vec{v} - (\vec{v} \cdot \vec{x}) * \vec{x}$$
 
 <img src="/ch2/equation_C.PNG" width="400" height="300">
 
-And so any sample along $$(\vec{v} \cdot \vec{x}) * \vec{x} + \alpha * \vec{C}$$, where $$\alpha$$ is a scalar of any real number, would be a sample that fits our criteria of keeping x = 3. In the figure below, all the blue vectors are samples in which x = 3:
+And so any sample along:
+
+$$\vec{v} + \alpha * \vec{c}$$
+
+In which $$\alpha$$ is a scalar of any real number, would be a sample that fits our criteria of keeping x = 3. In the figure below, all the blue vectors are samples in which x = 3:
 
 <img src="/ch2/anyVecC.PNG" width="400" height="300">
 <!--- change_feat_on_basis, anyVecC.py --->
@@ -117,23 +121,27 @@ We have gone over a simpler case where we already know the direction vector we s
 
 **Changing a feature that's not on a basis vector**
 
-Now let's say we have two vectors $$AGE = (1,2)$$ and $$n_2 = (2,1) $$. The vector $$AGE$$ represents the age feature. We want to find samples which vary the age, while having mostly the same features as $$n_2$$. In other words, based on the previous section, we want to find samples along the green line in the figure below:
+Now let's say we have a sample vector $$V = (1,2)$$ and feature vector $$HEIGHT = (2,1) $$. We want to find samples which have the same height as $$v$$, but which vary other features. In other words, based on the previous section, we want to find samples along the green line in the figure below:
 
-<img src="/ch2/age_n2.PNG" width="400" height="300">
+<img src="/ch2/nonBasisFeat.PNG" width="400" height="300">
 
 Recall from the previous section that if we wanted to vary the features of a vector $$v$$, but wanted to keep the value of x=3 at vector $$x$$, we used the equation:
 
 <img src="/ch2/varies_same_1.PNG" width="300" height="100">
 
-Here, let's use a similar version of the equation, but use orthogonal projection instead. This will find the vector scaled on $$n_2$$ that's closest to $$AGE$$. The equation for orthogonal projection is:
+Here, let's use a similar version of the equation, but use orthogonal projection instead. This will find the vector scaled on $$HEIGHT$$ that's closest to $$v$$. The equation for orthogonal projection is:
 
-$$ \frac{(\vec{AGE} \cdot \vec{n_2}) }{(\vec{n_2} \cdot \vec{n_2}) } * \vec{n_2} $$
+$$ \frac{(\vec{v} \cdot \vec{HEIGHT}) }{(\vec{HEIGHT} \cdot \vec{HEIGHT}) } * \vec{HEIGHT} $$
 
 Then our equation for finding the green vector becomes:
 
-$$\vec{C} = \vec{AGE} - \frac{(\vec{AGE} \cdot \vec{n_2}) }{(\vec{n_2} \cdot \vec{n_2}) } * \vec{n_2} $$
+$$\vec{c} = \vec{v} - \frac{(\vec{v} \cdot \vec{HEIGHT}) }{(\vec{HEIGHT} \cdot \vec{HEIGHT}) } * \vec{HEIGHT} $$
 
-Any sample along $$\frac{(\vec{AGE} \cdot \vec{n_2}) }{(\vec{n_2} \cdot \vec{n_2}) } * \vec{n_2} + \alpha * \vec{n_2}$$ would vary $$AGE$$ while keeping the other features of $$n_2$$ roughly the same.
+Any sample along:
+
+$$\vec{v} + \alpha * \vec{c}$$
+
+... would vary features of $$AGE$$ while keeping the other features of $$n_2$$ roughly the same.
 
 But why is this the case? When don't immediately see how this "preserves" the other features of $$n_2$$, like we saw how x=3 was preserved by going orthogonal to it in the previous section. Intuitively, it becomes more obvious when we perform a change of basis to measure our data in terms of $$n_2$$:
 
