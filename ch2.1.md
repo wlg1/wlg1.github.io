@@ -50,7 +50,7 @@ If we perform a Change of Basis to measure our image on the left in terms of "Ca
 
 [^notRat]: This is similar to the example in the previous Chapter, but instead of changing to a basis where "like a Rat" is mapped to the y-axis, the feature "Hair Style" is mapped to the y-axis. 
 
-<img src="/ch2/likeCat_cob.PNG" width="600" height="300">
+<img src="/ch2/likeCat_cob.PNG" width="700" height="300">
 
 Note that when we move along the "Cat" vector but not along the "Hair Style" vector, we may still move along the "Ears" vector, demonstrating the difficulty of preserving as many features as possible while still deviating from one feature.
 
@@ -69,7 +69,7 @@ First, let's start with a simpler case, where the feature we want to change is o
 <!--- ![Figure ](/ch2/VtoW.PNG) --->
 <img src="/ch2/VtoW.PNG" width="400" height="300">
 
-In Figure 1, all we have to do is to find W is to "walk" down line $$C$$ from vector $$V$$. In fact, you can move to any point along $C$$ without changing the value of x=3. 
+In Figure 1, all we have to do is to find W is to "walk" down line $$C$$ from vector $$V$$. In fact, you can move to any point along $$C$$ without changing the value of x=3. 
 
 Why does vector C not change the value of x=3? Because vector $$C$$ is **orthogonal** to the $$x$$ basis vector, where they intersect at x=3. If it was not orthogonal, it would veer away from x=3, such as shown in the example below, where a non-orthogonal vector leads to x=4.
 
@@ -108,10 +108,43 @@ $$\vec{C} = \vec{v} - (\vec{v} \cdot \vec{x}) * \vec{x}$$
 
 <img src="/ch2/equation_C.PNG" width="400" height="300">
 
+And so any sample along $$(\vec{v} \cdot \vec{x}) * \vec{x} + \alpha * \vec{C}$$, where $$\alpha$$ is a scalar of any real number, would be a sample that fits our criteria of keeping x = 3:
+
+<img src="/ch2/anyVecC.PNG" width="400" height="300">
+<!--- change_feat_on_basis, anyVecC.py --->
+
 We have gone over a simpler case where we already know the direction vector we should move in, because it's just a basis vector that's orthogonal to x. But what if the direction vector is **not** a known basis vector? How can we calculate it? We'll see soon that the calculation follows the same logic as the one for C that we did just now. 
 
 **Changing a feature that's not on a basis vector**
 
+Now let's say we have two vectors $$AGE = (1,2)$$ and $$n_2 = (2,1) $$. The vector $$AGE$$ represents the age feature. We want to find samples which vary the age, while having mostly the same features as $$n_2$$. Recall from the previous section that if we wanted to vary the features of a vector $$v$$, but wanted to keep the value of x=3 at vector $$x$$, we used the equation:
+
+<img src="/ch2/varies_same_1.PNG">
+
+
+
+
+OUTLINE:
+1. introduce n1, n2
+2. apply technique above but now need orth proj
+    We had dot product onto a vector...
+    Now, we need orthogonal projection to find the closest
+    add c to v, not cv, b/c only use cv to get DIRECTION. v is the actual sample. get variations in increments
+3. equation breakdown: varies, doesn't vary
+    question why this won't vary n2
+4. rotate v onto basis using inverse of rotation
+    to find rotation, find orthogonal. we have C
+5. plot v, v+c, and v+2c, etc onto new coord space
+    observe that they're all orthogonal to v, just like in previous section
+
+
+
+
+
 (project x onto v now, instead of v onto x. this is b/c 'preserve as much of v' while just changing x)
 
 (map v to the basis!)
+(the 2nd basis vector is just a feature that is orthogonal to v, allowing for a rotation, as rotations are orthogonal matrices)
+
+---
+---
