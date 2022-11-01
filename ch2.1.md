@@ -123,9 +123,11 @@ Now let's say we have two vectors $$AGE = (1,2)$$ and $$n_2 = (2,1) $$. The vect
 
 Recall from the previous section that if we wanted to vary the features of a vector $$v$$, but wanted to keep the value of x=3 at vector $$x$$, we used the equation:
 
-<img src="/ch2/varies_same_1.PNG" width="200" height="100">
+<img src="/ch2/varies_same_1.PNG" width="300" height="100">
 
+Here, let's use a similar version of the equation, but use orthogonal projection instead. This will find the vector scaled on $$n_2$$ that's closest to $$AGE$$. The equation for orthogonal projection is:
 
+$$ \frac{(\vec{AGE} \cdot \vec{n_2}) }{(\vec{n_2} \cdot \vec{n_2}) } * \vec{n_2} $$
 
 
 OUTLINE:
