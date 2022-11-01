@@ -129,6 +129,14 @@ Here, let's use a similar version of the equation, but use orthogonal projection
 
 $$ \frac{(\vec{AGE} \cdot \vec{n_2}) }{(\vec{n_2} \cdot \vec{n_2}) } * \vec{n_2} $$
 
+Then our equation for finding the green vector becomes:
+
+$$\vec{C} = \vec{AGE} - \frac{(\vec{AGE} \cdot \vec{n_2}) }{(\vec{n_2} \cdot \vec{n_2}) } * \vec{n_2} $$
+
+Any sample along $$\frac{(\vec{AGE} \cdot \vec{n_2}) }{(\vec{n_2} \cdot \vec{n_2}) } * \vec{n_2} + \alpha * \vec{n_2}$$ would vary $$AGE$$ while keeping the other features of $$n_2$$ roughly the same.
+
+But why is this the case? When don't immediately see how this "preserves" the other features of $$n_2$$, like we saw how x=3 was preserved by going orthogonal to it in the previous section. Intuitively, it becomes more obvious when we perform a change of basis to measure our data in terms of $$n_2$$:
+
 
 OUTLINE:
 1. introduce n1, n2
