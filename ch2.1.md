@@ -108,7 +108,7 @@ $$\vec{C} = \vec{v} - (\vec{v} \cdot \vec{x}) * \vec{x}$$
 
 <img src="/ch2/equation_C.PNG" width="400" height="300">
 
-And so any sample along $$(\vec{v} \cdot \vec{x}) * \vec{x} + \alpha * \vec{C}$$, where $$\alpha$$ is a scalar of any real number, would be a sample that fits our criteria of keeping x = 3:
+And so any sample along $$(\vec{v} \cdot \vec{x}) * \vec{x} + \alpha * \vec{C}$$, where $$\alpha$$ is a scalar of any real number, would be a sample that fits our criteria of keeping x = 3. In the figure below, all the blue vectors are samples in which x = 3:
 
 <img src="/ch2/anyVecC.PNG" width="400" height="300">
 <!--- change_feat_on_basis, anyVecC.py --->
@@ -117,9 +117,13 @@ We have gone over a simpler case where we already know the direction vector we s
 
 **Changing a feature that's not on a basis vector**
 
-Now let's say we have two vectors $$AGE = (1,2)$$ and $$n_2 = (2,1) $$. The vector $$AGE$$ represents the age feature. We want to find samples which vary the age, while having mostly the same features as $$n_2$$. Recall from the previous section that if we wanted to vary the features of a vector $$v$$, but wanted to keep the value of x=3 at vector $$x$$, we used the equation:
+Now let's say we have two vectors $$AGE = (1,2)$$ and $$n_2 = (2,1) $$. The vector $$AGE$$ represents the age feature. We want to find samples which vary the age, while having mostly the same features as $$n_2$$. In other words, based on the previous section, we want to find samples along the green line in the figure below:
 
-<img src="/ch2/varies_same_1.PNG">
+<img src="/ch2/age_n2.PNG" width="400" height="300">
+
+Recall from the previous section that if we wanted to vary the features of a vector $$v$$, but wanted to keep the value of x=3 at vector $$x$$, we used the equation:
+
+<img src="/ch2/varies_same_1.PNG" width="200" height="100">
 
 
 
