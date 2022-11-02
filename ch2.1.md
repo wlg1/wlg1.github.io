@@ -64,7 +64,58 @@ These calculations were found using a method presented in the paper "Interpretin
 
 **Changing a feature on the basis vector**
 
-First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Age vector is on the y-axis. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$V=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
+First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Body Size vector is on the y-axis. We have a vector $$z=[3,2]$$, and we want to find a similar vectors, such as $$W=[3,1]$$. Then all we need to do is to add  
+
+$$\vec{v} + \alpha * \vec{y}$$
+
+Where alpha...
+
+**Changing a feature NOT on the basis vector**
+
+Next, let's change a feature that's not on the basis vector. Recall that a feature vector $$n$$ in a coordinate space is a measurement by the space's basis vectors. In other words, each feature can be expressed entirely by a linear combination of basis vectors. So if feature $$n$$ represents "cat-like", then how much a sample is like a cat is represented by its ratio of Face Length to Body Size. 
+
+[show n in coordinate space]
+
+In our case, the neural network has learned that a "typical" cat would have a Face Length of 0.5 and a Body Size of 2 (it learned to use this ratio to distinguish a cat from other animals in its dataset), so the ratio of Body Length to Face Length is 2:0.5, or 4. If a sample it sees has this ratio of around 4, it is "likely to be a cat". Ratios are relative, so even if we have absolute units of Body Length = 8 and Face Length = 2, the ratio 8:2 = 4 indicates to the neural network that this sample is more likely a cat than any other animal.
+
+As taught in algebra, this is the slope of a line, where "rise/run" in this case means "Body Length / Face Length". Essentially, each feature is mapped to a vector's **direction**, or its angle from the origin of basis vectors. It doesn't matter how big or small your stretch a vector- it is the direction, or the ratio, that is important. Note that in higher dimensional spaces, it is not accurate to describe this ratio as "rise/run", so it is better to use "direction" instead.
+
+Similar to the example we showed where the feature is on the basis vector, we want to "add" feature n to z. What does this actually mean? 
+
+In the previous example, all we had to do to change $$z$$ by $$y$$ was $$\vec{z} + \alpha * \vec{y}$$, because the feature on $$y$$ did not require any units of $$x$$ to be represented. But now, the feature cat is represented by vector $$n$$ using BOTH units of $$x$$ and $$y$$. So instead of just adding $$y$$, we have to add both $$x$$ and $$y$$:
+
+$$\vec{z} + \alpha * (0.5 * \vec{x} + 2 * \vec{y})$$
+
+Since feature cat is $$\vec{n} = 0.5 * \vec{x} + 2 * \vec{y}$$, this linear combination can be rewritten as:
+
+$$\vec{z} + \alpha * \vec{n}$$
+
+Visually, this would look like:
+
+[show z + n]
+
+We can add or subtract as many units of "cat" to z as we like.
+
+[show z + n and z + 2n and z-n]
+
+At first, it's not obvious how we "change z by n cat units". So let's perform a change of basis where the cat feature is mapped to a basis vector, to truly show how each sample is measured in cats:
+
+[figure]
+
+What was the matrix used to perform this change of basis? Recall that each column of a matrix is a coordinate where basis vectors are sent **to**. 
+
+[before after w/ matrix of [1,0] to [2,1]]
+
+However, we don't want to send a basis vector to a certain coordinate; we want to do the opposite, where we send a feature **from** a coordinate to a basis vector. So we have to take the inverse of the matrix in order to send the cat feature from [2,1] to [1,0]. Let's also map the samples z, z+n, and z+2n to the new coordinate space.
+
+[figure mapping z]
+
+Notice 
+
+
+**Changing a feature while keeping another feature on the basis vector**
+
+Let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Age vector is on the y-axis. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$z=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
 
 <!--- ![Figure ](/ch2/VtoW.PNG) --->
 <img src="/ch2/VtoW.PNG" width="400" height="300">
@@ -112,12 +163,14 @@ And so any sample along:
 
 $$\vec{v} + \alpha * \vec{c}$$
 
-In which $$\alpha$$ is a scalar of any real number, would be a sample that fits our criteria of keeping x = 3. In the figure below, all the blue vectors are samples in which x = 3:
+In which $$\alpha$$ is a scalar of any real number [^real], would be a sample that fits our criteria of keeping x = 3. In the figure below, all the blue vectors are samples in which x = 3:
+
+[^real]: In a simplified definition, a real number is allowed to be a fraction, negative, irrational, but not imaginary. See: https://en.wikipedia.org/wiki/Real_number
 
 <img src="/ch2/anyVecC.PNG" width="400" height="300">
 <!--- change_feat_on_basis, anyVecC.py --->
 
-We have gone over a simpler case where we already know the direction vector we should move in, because it's just a basis vector that's orthogonal to x. But what if the direction vector is **not** a known basis vector? How can we calculate it? We'll see soon that the calculation follows the same logic as the one for C that we did just now. 
+We have just gone over a simpler case where the direction vector we should move in is just a basis vector that's orthogonal to x. But what if the direction vector is **not** a known basis vector? How can we calculate it? We'll see soon that the calculation follows the same logic as the one for C that we did just now. 
 
 **Changing a feature that's not on a basis vector**
 
@@ -159,7 +212,13 @@ OUTLINE:
 5. plot v, v+c, and v+2c, etc onto new coord space
     observe that they're all orthogonal to v, just like in previous section
 
+If we have multiple features we want to change, but 
 
+We have to be aware of which features 
+
+Essentially, this manipulation cannot make ALL features stay the same. We must know beforehand which features we want to stay the same, and which features we want to vary. Then, we will condition on the features we want to stay the same
+
+Note that this conditioning cannot force
 
 
 
