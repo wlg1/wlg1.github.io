@@ -74,7 +74,7 @@ Where alpha...
 
 Next, let's change a feature that's not on the basis vector. Recall that a feature vector $$n$$ in a coordinate space is a measurement by the space's basis vectors. In other words, each feature can be expressed entirely by a linear combination of basis vectors. So if feature $$n$$ represents "cat-like", then how much a sample is like a cat is represented by its ratio of Face Length to Body Size. 
 
-<img src="/ch2/show_n.PNG" width="400" height="300">
+[show n in coordinate space]
 
 In our case, the neural network has learned that a "typical" cat would have a Face Length of 0.5 and a Body Size of 2 (it learned to use this ratio to distinguish a cat from other animals in its dataset), so the ratio of Body Length to Face Length is 2:0.5, or 4. If a sample it sees has this ratio of around 4, it is "likely to be a cat". Ratios are relative, so even if we have absolute units of Body Length = 8 and Face Length = 2, the ratio 8:2 = 4 indicates to the neural network that this sample is more likely a cat than any other animal.
 
@@ -116,7 +116,9 @@ Notice that each sample z now has different values of n, but have the same value
 
 **Changing a feature while keeping another feature on the basis vector**
 
-Now we want to change a feature while keeping **another** feature the same. Let's start with the case where the feature we want to change is on a basis vector. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$z=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
+Now we want to change a feature while keeping **another** feature the same. 
+
+Let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Age vector is on the y-axis. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$z=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
 
 <!--- ![Figure ](/ch2/VtoW.PNG) --->
 <img src="/ch2/VtoW.PNG" width="400" height="300">
