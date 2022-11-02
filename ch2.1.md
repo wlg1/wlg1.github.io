@@ -9,11 +9,11 @@ title: CHAPTER 2.1
 
 **(Reading time: 15 minutes)**
 
-**Prerequisites**: Chapter 1, GANs [^prereqs1], and StyleGAN [^prereqs2]
+**Prerequisites**: Chapter 1, what is a GAN [^prereqs1], and what is StyleGAN [^prereqs2]
 
-[^prereqs1]: <a href="generative_models_review.html">A review of GANs can be found here (this is still an unfinished draft)</a>
+[^prereqs1]: In this section, all you have to know is that a GAN takes a latent vector z from a latent space- that is, a space that represents features much like the latent space of activations we discussed in Chapter 1- and outputs an image. Other concepts of GANs are not required. <a href="generative_models_review.html">A review of GANs can be found here (this is still an unfinished draft)</a>
 
-[^prereqs2]: <a href="https://www.analyticsvidhya.com/blog/2021/05/stylegan-explained-in-less-than-five-minutes/"> A quick explanation of StyleGAN can be found here</a>
+[^prereqs2]: In this section, all you have to know is that StyleGAN is a type of generative model (a neural network that outputs an image). <a href="https://www.analyticsvidhya.com/blog/2021/05/stylegan-explained-in-less-than-five-minutes/"> A quick explanation of StyleGAN can be found here</a>
 
 StyleGAN is a generative model that was designed for more control over which features are outputted in an image. It was found that its latent space was very "disentangled", meaning that one could have more control over one feature without affecting others [^styleSpace].
 
@@ -92,7 +92,7 @@ $$\vec{z} + \alpha * \vec{n}$$
 
 Visually, this would look like:
 
-[show z + n]
+[show z + n, along dotted lines for n's x and y w/ numbers. ratio]
 
 We can add or subtract as many units of "cat" to z as we like.
 
@@ -108,12 +108,15 @@ What was the matrix used to perform this change of basis? Recall that each colum
 
 However, we don't want to send a basis vector to a certain coordinate; we want to do the opposite, where we send a feature **from** a coordinate to a basis vector. So we have to take the inverse of the matrix in order to send the cat feature from [2,1] to [1,0]. Let's also map the samples z, z+n, and z+2n to the new coordinate space.
 
+Note that we have stated what will be sent to one basis vector; but in 2D coordinate space, there are two. To avoid too many changes in the coordinate space, let's use a rotation matrix. A rotation matrix requires that the two column vector are at 90 degree angles. We will show the rotation matrix, and leave the calculation for the 2nd column vector, which we'll call c, for later:
+
 [figure mapping z]
 
-Notice 
-
+Notice that each sample z now has different values of n, but have the same value along the 2nd basis vector, which is mapped to c, a feature that was at a 90 degree angle to the cat feature. What is c? We'll find out in the next section.
 
 **Changing a feature while keeping another feature on the basis vector**
+
+Now we want to change a feature while keeping **another** feature the same. 
 
 Let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Age vector is on the y-axis. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$z=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
 
