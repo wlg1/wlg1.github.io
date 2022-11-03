@@ -64,17 +64,19 @@ These calculations were found using a method presented in the paper "Interpretin
 
 **Changing a feature on the basis vector**
 
-First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Body Size vector is on the y-axis. We have a vector $$z=[3,2]$$ where Body Size = 2, and we want to find a similar vector, such as one where Body Size = 1. Then all we need to do is to add  
+First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Body Size vector is on the y-axis. We have a vector $$z=[3,2]$$ where Body Size = 2, and we want to find a similar vector, such as one where Body Size = 1. Since $$y = [0,1]$$, all we need to do is to add $$y$$ to $$z$$: 
 
-$$\vec{v} + \alpha * \vec{y} = \begin{bmatrix} 3 \\ 2 \end{bmatrix} + \alpha * \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
+$$\vec{z} + \alpha * \vec{y} = \begin{bmatrix} 3 \\ 2 \end{bmatrix} + \alpha * \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
 In which $$\alpha$$ is a scalar of any real number [^real].
 
 [^real]: In a simplified definition, a real number is allowed to be a fraction, negative, irrational, but not imaginary. See: https://en.wikipedia.org/wiki/Real_number
 
-So visually, this would look like:
+Since vector addition adds the head of a vector with the tail of another vector, visually, this would look like:
 
 <img src="/ch2/anyVecY.PNG" width="300" height="200">
+
+Such that the yellow and blue vectors represent $$\alpha * \vec{y}$$.
 
 **Changing a feature NOT on the basis vector**
 
