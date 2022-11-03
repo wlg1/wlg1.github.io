@@ -64,9 +64,11 @@ These calculations were found using a method presented in the paper "Interpretin
 
 **Changing a feature on the basis vector**
 
-First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Body Size vector is on the y-axis. We have a vector $$z=[3,2]$$ where Body Size = 2, and we want to find a similar vector, such as one where Body Size = 1. Since $$y = [0,1]$$, all we need to do is to add $$y$$ to $$z$$: 
+First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Body Size vector is on the y-axis. We have a vector $$z=[3,2]$$ where Body Size = 2, and we want to find a similar vector, such as one where Body Size = 1. Since $$y = [0,1]$$, our feature vector Body Size is represented by $$y$$, so all we need to do is to add $$y$$ to $$z$$: 
 
-$$\vec{z} + \alpha * \vec{y} = \begin{bmatrix} 3 \\ 2 \end{bmatrix} + \alpha * \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
+$$\vec{z} + \alpha * \vec{y} 
+\\
+= \begin{bmatrix} 3 \\ 2 \end{bmatrix} + \alpha * \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
 In which $$\alpha$$ is a scalar of any real number [^real].
 
