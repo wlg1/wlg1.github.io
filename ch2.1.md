@@ -64,17 +64,20 @@ These calculations were found using a method presented in the paper "Interpretin
 
 **Changing a feature on the basis vector**
 
-First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Body Size vector is on the y-axis. We have a vector $$z=[3,2]$$, and we want to find a similar vectors, such as $$W=[3,1]$$. Then all we need to do is to add  
+First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Body Size vector is on the y-axis. We have a vector $$z=[3,2]$$ where Body Size = 2, and we want to find a similar vector, such as one where Body Size = 1. Then all we need to do is to add  
 
 $$\vec{v} + \alpha * \vec{y}$$
 
-Where alpha...
+In which $$\alpha$$ is a scalar of any real number [^real]
+
+[^real]: In a simplified definition, a real number is allowed to be a fraction, negative, irrational, but not imaginary. See: https://en.wikipedia.org/wiki/Real_number
+
 
 **Changing a feature NOT on the basis vector**
 
 Next, let's change a feature that's not on the basis vector. Recall that a feature vector $$n$$ in a coordinate space is a measurement by the space's basis vectors. In other words, each feature can be expressed entirely by a linear combination of basis vectors. So if feature $$n$$ represents "cat-like", then how much a sample is like a cat is represented by its ratio of Face Length to Body Size. 
 
-<img src="/ch2/show_n.PNG" width="400" height="300">
+<img src="/ch2/show_n.PNG" width="300" height="200">
 
 In our case, the neural network has learned that a "typical" cat would have a Face Length of 0.5 and a Body Size of 2 (it learned to use this ratio to distinguish a cat from other animals in its dataset), so the ratio of Body Length to Face Length is 2:0.5, or 4. If a sample it sees has this ratio of around 4, it is "likely to be a cat". Ratios are relative, so even if we have absolute units of Body Length = 8 and Face Length = 2, the ratio 8:2 = 4 indicates to the neural network that this sample is more likely a cat than any other animal.
 
@@ -92,7 +95,7 @@ $$\vec{z} + \alpha * \vec{n}$$
 
 Visually, this would look like:
 
-[show z + n, along dotted lines for n's x and y w/ numbers. ratio]
+<img src="/ch2/z_plus_n.PNG" width="300" height="200">
 
 We can add or subtract as many units of "cat" to z as we like.
 
@@ -164,9 +167,7 @@ And so any sample along:
 
 $$\vec{v} + \alpha * \vec{c}$$
 
-In which $$\alpha$$ is a scalar of any real number [^real], would be a sample that fits our criteria of keeping x = 3. In the figure below, all the blue vectors are samples in which x = 3:
-
-[^real]: In a simplified definition, a real number is allowed to be a fraction, negative, irrational, but not imaginary. See: https://en.wikipedia.org/wiki/Real_number
+Would be a sample that fits our criteria of keeping x = 3. In the figure below, all the blue vectors are samples in which x = 3:
 
 <img src="/ch2/anyVecC.PNG" width="400" height="300">
 <!--- change_feat_on_basis, anyVecC.py --->
