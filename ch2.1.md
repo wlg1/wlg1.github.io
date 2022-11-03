@@ -66,15 +66,11 @@ These calculations were found using a method presented in the paper "Interpretin
 
 First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Body Size vector is on the y-axis. We have a vector $$z=[3,2]$$ where Body Size = 2, and we want to find a similar vector, such as one where Body Size = 1. Then all we need to do is to add  
 
-$$\vec{v} + \alpha * \vec{y}$$
+$$\vec{v} + \alpha * \vec{y} = \begin{bmatrix} 3 \\ 2 \end{bmatrix} + \alpha * \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
-In which $$\alpha$$ is a scalar of any real number [^real]
+In which $$\alpha$$ is a scalar of any real number [^real].
 
 [^real]: In a simplified definition, a real number is allowed to be a fraction, negative, irrational, but not imaginary. See: https://en.wikipedia.org/wiki/Real_number
-
-In terms of matrices, this is:
-
-$$\begin{bmatrix} 3 \\ 2 \end{bmatrix} + \alpha * \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
 So visually, this would look like:
 
