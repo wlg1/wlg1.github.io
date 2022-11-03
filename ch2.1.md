@@ -72,7 +72,11 @@ In which $$\alpha$$ is a scalar of any real number [^real]
 
 [^real]: In a simplified definition, a real number is allowed to be a fraction, negative, irrational, but not imaginary. See: https://en.wikipedia.org/wiki/Real_number
 
-Visually, this would look like:
+In terms of matrices, this is:
+
+$$\begin{bmatrix} 3 \\ 2 \end{bmatrix} + \alpha * \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
+
+So visually, this would look like:
 
 <img src="/ch2/anyVecY.PNG" width="300" height="200">
 
