@@ -50,7 +50,7 @@ In Figure 1, all we have to do is to find W is to "walk" down line $$c$$ from ve
 
 Why does vector C not change the value of x=3? Because vector $$c$$ is **orthogonal** to the $$x$$ basis vector, where they intersect at x=3. If it was not orthogonal, it would veer away from x=3, such as shown in the example below, where a non-orthogonal vector leads to x=4.
 
-<img src="/ch2/VtoW_veer.PNG" width="400" height="300">
+<img src="/ch2/VtoW_veer.PNG" width= 50% height=auto>
 
 It is only when the green vector intersects the x vector at 90 degree angle that the value of the $$x$$ vector doesn't change.
 
