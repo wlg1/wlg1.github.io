@@ -127,14 +127,20 @@ Using $$\alpha$$, we can add or subtract as many units of "cat" to z as we like.
 
 <img src="/ch2/z_plus_alphan.PNG" width="350" height="300">
 
-At first, it's not obvious how we "change z by n cat units". So let's perform a change of basis where the cat feature is mapped to a basis vector, to truly show how each sample is measured in cats:
+At first, it's not obvious how we "change z by n cat units". So let's perform a change of basis where the cat feature is mapped to a basis vector, to truly show how each sample is measured in cats:[^cob]
+
+[^cob]: Here, we do not change the silver and blue vectors, but change the orange vectors, because the orange vectors represent "cat units". This goes against the idea in Chapter 1 that "vectors stay, but data points change", in which the vectors are mapped to data points. However, here we do change the vectors only for intuitive purposes, as it shows how the cat vector now acts as a measurement along the basis vector. This is just an informal way to explain intuition; the idea that "vectors stay, but data points change" remains.
 
 <img src="/ch2/z_plus_alphan_COB.PNG">
 
 We can get better intuition of this when it's animated:
 
+<iframe src="https://player.vimeo.com/video/767400638?h=d6c8dd5bd6" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<!---
 <video src="https://user-images.githubusercontent.com/169707/126715420-991ad821-9ac8-4b66-b79e-e0966e0f3a89.mp4" controls="controls" style="max-width: 730px;">
 </video>
+--->
 
 Now each sample, shown as dots in the figure, can be interpreted as having "units of cat", represented in orange. The red dot, originally on vector $$\vec{z} + \vec{n}$$, is close to having "1" cat unit. The blue dot, originally on $$\vec{z} + (0)\vec{n}$$, is close to having "0" cat units. The same goes for the green and white dots, having -1 and -1.5 cat units, respectively. We see that the number of cat units corresponds to $$\alpha$$ in the equation $$\vec{z} + \alpha * \vec{n}$$.[^approx]
 
