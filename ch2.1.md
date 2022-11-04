@@ -133,7 +133,7 @@ At first, it's not obvious how we "change z by n cat units". So let's perform a 
 
 <img src="/ch2/z_plus_alphan_COB.PNG">
 
-Now each sample, shown as dots in the figure, can be interpreted as having "units of cat", represented in orange. The red dot, originally on $$\vec{z} + (1)\vec{n}$$, is close to having "1" cat unit. The blue dot, originally on $$\vec{z} + (0)\vec{n}$$, is close to having "0" cat units. The same goes for the green and white dots, having -1 and -1.5 cat units, respectively. We see that the number of cat units corresponds to $$\alpha$$ in the equation $$\vec{z} + \alpha * \vec{n}$$.[^approx]
+Now each sample, shown as dots in the figure, can be interpreted as having "units of cat", represented in orange. The red dot, originally on $$\vec{z} + (1)\vec{n}$$, is close to having "1" cat unit. The blue dot, originally on $$\vec{z} + (0)\vec{n}$$, is close to having "0" cat units. The same goes for the green and white dots, having -1 and -1.5 cat units, respectively. We see that the number of cat units corresponds to $$\alpha$$ in the equation $$\vec{z} + \alpha * \vec{n}$$.[^approx] Also note how $$\vec{n}$$ and $$\vec{z} + \alpha * \vec{n}$$ are parallel. 
 
 [^approx]: Each one may only be "close" to the number of cat units due to the decimal point approximations used in the matrix to represent the actual values.
 

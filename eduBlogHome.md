@@ -60,8 +60,8 @@ Not sure where to start?
 &nbsp;&nbsp;&nbsp;&nbsp;**[1.2: Why use dot product in matrix multiplication?](ch1.2.md)**
 
 <details>
-<summary><b>CHAPTER 1- APPENDIX: Duality</b> </summary>
-<br><br>
+<summary><b>CHAPTER 1 APPENDIX: DUALITY</b> (click to expand) </summary>
+<br>
 &nbsp;&nbsp;&nbsp;&nbsp;A1.1: WHY use Basis vectors? The Relativity of Data
 <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;A1.2: The Duality of Neurons: As Objects, As Relations
@@ -69,7 +69,8 @@ Not sure where to start?
 &nbsp;&nbsp;&nbsp;&nbsp;A1.3: The Analogy of the Matrix
 <br><br>
 </details>
-<br><br>
+<br>
+
 **CHAPTER 2: How Neural Networks Make Faces Look Younger (using Vector Projection)**
 
 &nbsp;&nbsp;&nbsp;&nbsp;2.0: Face Filters, Anime Filters, and Fake People

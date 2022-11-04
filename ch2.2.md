@@ -9,9 +9,27 @@ title: CHAPTER 2.2
 
 **(Reading time: 7 minutes)**
 
+Now we want to change a feature $$n_1$$ while keeping the value of **another** feature $$n_2$$ the same. The difficulty in doing this is that each feature vector is made up of the same basis vectors (neurons), so by changing feature $$n_1$$, you are changing the basis vectors that add up to $$n_1$$, and since you are those basis vectors are also used to add up to $$n_2$$, you are also changing $$n_2$$. 
+
+In other words, a sample lies on a point in a high dimensional latent space of potentially billions of neurons. A feature vector lies along a subspace- a plane- within this latent space. Projecting the sample down to this feature subspace (that is, finding its "shadow" or its "distorted reflection" on the plane) measures how much of the feature that sample has. 
+
+So when you move a sample from one point to another, the shadow won't just change on one feature subspace, but another feature subspace. For example, if you are ever stuck in a hall of mirrors, you may find yourself next to two mirrors- one that makes you larger, and one that makes you small. When you move one way, you are not just changing how you look in the "Larger" mirror, but also how you look in the "smaller" mirror.[^projectionAbstraction]
+
+[^projectionAbstraction]: By pure speculation, this may be related to how the brains of organisms organize concepts, and why concepts are related to one another by analogy. An analogy relates an "abstraction" of concepts- such as abstracting the Hero's Journey in The Hunger Games and in Harry Potter. There is some sort of semantic (but possibly superficial, and thus meaningless) similarity between Projection and Abstraction. Abstractions also occur in dreams, where a memory of an angry neighbor yelling at his lawn may be substituted with the dream of an angry teacher yelling at his lawn, which has never occurred in real life. Now projecting down to different abstractions would mean if the way a sample is mapped to one abstraction framework is changed, then the way it's mapped to another abstraction framework is also changed. So say you're trying to think of a way to create a novel concept by slightly tweaking an existing concept. The difficulty is that <b>some abstraction frameworks cannot be changed in order to preserve the concept itself.</b> For example, you want to write a story that has the same "beats" as Star Wars. Now your story contains an abstraction of "Star Wars", and also an abstraction on "The Hero's Journey". If you want to get rid of "The Call to Adventure", you would also shake your story away from "The Hero's Journey". (NOTE: This is not a good example, so further thought will be put into it).
+
+When changing one feature vector affects another, the feature vectors are **entangled**. However, it is possible to find a **new** feature vector that will <p style="color:red;"><u>cast the new desired shadow on $$n_1$$ </u></p> but also <p style="color:blue;"><u>tries not to change the existing shadow projected onto $$n_2$$</u></p>.
+
+To do this, we will have to find a new vector to add to our sample $$z$$.
+
 **Changing a feature while keeping another feature on the basis vector**
 
-Now we want to change a feature while keeping **another** feature the same. Let's start with the case where the feature we want to change is on a basis vector. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$z=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
+In the previous section, we saw that when two vectors are 
+
+<img src="/ch2/anyVecY.PNG" width="300" height="200">
+
+---
+
+Let's start with the case where the feature we want to change is on a basis vector. In this example, we want to keep x=3, and move along the y-axis. We have a vector $$z=[3,2]$$, and we want to find a similar vector, $$W=[3,1]$$:
 
 <!--- ![Figure ](/ch2/VtoW.PNG) --->
 <img src="/ch2/VtoW.PNG" width="400" height="300">
