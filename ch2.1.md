@@ -98,11 +98,11 @@ In this case, the neural network has learned that a "typical" cat would have a F
 <br><br>
 As taught in algebra, this is the slope of a line, where "rise/run" in this case means "Body Length / Face Length". But vectors do not have slopes; only functions have slopes, and lines are functions. It seems that the vectors that lie on the line with this slope all correspond to some feature.
 <br><br>
-Essentially, each feature is mapped to a line's **steepness and direction**, or its angle from the origin of basis vectors. It doesn't matter how big or small your stretch a vector- it is the steepness and direction, or the ratio, that is important.
+Essentially, each feature is mapped to a line's <b>steepness and direction</b>, or its angle from the origin of basis vectors. It doesn't matter how big or small your stretch a vector- it is the steepness and direction, or the ratio, that is important.
 <br><br>
-Note that in higher dimensional spaces, instead of describing this ratio as "rise/run", it is better to use "steepness and direction" instead. You can say this is the **gradient** in gradient descent, in which how each neuron measures the data is changed according to the gradient. The vector is both an "object" measuring a feature, and a "relation" determining how a feature is used to change another feature.
+Note that in higher dimensional spaces, instead of describing this ratio as "rise/run", it is better to use "steepness and direction" instead. You can say this is the <b>gradient</b> in gradient descent, in which how each neuron measures the data is changed according to the gradient. The vector is both an "object" measuring a feature, and a "relation" determining how a feature is used to change another feature.
 <br><br>
-How features relate to functions and their gradients is still unclear, and a subject of further investigation.
+How features relate to functions and their gradients is still unclear, and remains a subject of further investigation.
 
 </details>
 <br>
@@ -131,9 +131,11 @@ At first, it's not obvious how we "change z by n cat units". So let's perform a 
 
 <img src="/ch2/z_plus_alphan_COB.PNG">
 
-<!--- Let's also map the samples z, z-n, and z-1.5n to the new coordinate space. --->
+Now each sample, shown as dots in the figure, can be interpreted as having "units of cat", represented in orange. The red dot, originally on vector $$\vec{z} + \vec{n}$$, is close to having "1" cat unit. The blue dot, originally on $$\vec{z} + (0)\vec{n}$$, is close to having "0" cat units. The same goes for the green and white dots, having -1 and -1.5 cat units, respectively. We see that the number of cat units corresponds to $$\alpha$$ in the equation $$\vec{z} + \alpha * \vec{n}$$.[^approx]
 
-What was the matrix used to perform this change of basis? Recall that each column of a matrix is a coordinate where features on basis vectors are sent **to**. So to send a feature on $$[1,0]$$ to $$[0.5, 2]$$, we would use the matrix:
+[^approx]: Each one may only be "close" to the number of cat units due to the decimal point approximations used in the matrix to represent the actual values.
+
+What was the matrix $$M$$ used to perform this change of basis? Recall that each column of a matrix is a coordinate where features on basis vectors are sent **to**. So to send a feature on $$[1,0]$$ to $$[0.5, 2]$$, we would use the matrix:
 
 <p align="center">
 $$ W = \begin{bmatrix} 0.5 & ? \\ 2 & ? \end{bmatrix} $$
@@ -146,15 +148,15 @@ Note that we have stated what will be sent to one basis vector; but in 2D coordi
 $$ W = \begin{bmatrix} 0.5 & -1 \\ 2 & -0.25 \end{bmatrix} $$
 </p>
 
-However, this is NOT the matrix M we use to perform the change of basis above. We don't want to send a basis vector to a certain coordinate; we want to do the opposite, where we send a feature **from** a coordinate to a basis vector. So we have to take the inverse of the matrix in order to send the cat feature from $$[0.5, 2]$$ to $$[1, 0]$$. The inverse of the matrix above, rounded to 4 decimal places, is:
+However, this is NOT the matrix $$M$$ we use to perform the change of basis above. We don't want to send a basis vector to a certain coordinate; we want to do the opposite, where we send a feature **from** a coordinate to a basis vector. So we have to take the inverse of the matrix in order to send the cat feature from $$[0.5, 2]$$ to $$[1, 0]$$. The inverse of the matrix above, rounded to 4 decimal places, is:
 
 <p align="center">
-$$ M = W^{-1} = \begin{bmatrix} -0.1333 & 0.533 \\ -1.0667 & 0.2667 \end{bmatrix} $$
+$$ M = W^{-1} = \begin{bmatrix} -0.1333 & 0.5333 \\ -1.0667 & 0.2667 \end{bmatrix} $$
 </p>
 
-This is the matrix M we use to perform the change of basis in the example above.
+This is the matrix $$M$$ we use to perform the change of basis in the example above.
 
-Notice that each sample, shown as dots in the figure, has different values of n, but all have the same value (close to -3) along the 2nd basis vector. Why are the values along this 2nd basis vector, which is mapped to a feature that is 90 degrees to the cat feature vector, preserved? We'll find out why in the next section.
+In the example above, note how each sample has different values of n, but all have the same value (close to -3) along the 2nd basis vector. Why are the values along this 2nd basis vector, which is mapped to a feature that is 90 degrees to the cat feature vector, preserved after $$\vec{z} + \alpha * \vec{n}$$? We'll find out why in the next section.
 
 **Changing a feature while keeping another feature on the basis vector**
 
