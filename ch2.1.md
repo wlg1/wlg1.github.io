@@ -70,7 +70,7 @@ $$\vec{z} + \alpha * \vec{y} $$
 
 $$ = \begin{bmatrix} 3 \\ 2 \end{bmatrix} + \alpha * \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
-In which $$\alpha$$ is a scalar of any real number [^real].
+In which $$\alpha$$ is a scalar of any real number [^real] that controls "how much" of Body Size $$y$$ is added.
 
 [^real]: In a simplified definition, a real number is allowed to be a fraction, negative, irrational, but not imaginary. See: https://en.wikipedia.org/wiki/Real_number
 
@@ -82,13 +82,26 @@ Such that the yellow and blue vectors represent $$\alpha * \vec{y}$$ being added
 
 **Changing a feature NOT on the basis vector**
 
-Next, let's change a feature that's not on the basis vector. Recall that a feature vector $$n$$ in a coordinate space is a measurement by the space's basis vectors. In other words, each feature can be expressed entirely by a linear combination of basis vectors. So if feature $$n$$ represents "cat-like", then how much a sample is like a cat is represented by its ratio of Face Length to Body Size. 
+Next, let's change a feature that's not on the basis vector. Recall that a feature vector $$n$$ in a coordinate space is a measurement by the space's basis vectors. In other words, each feature can be expressed entirely by a linear combination of basis vectors. So if feature $$n$$ represents "cat-like", then how much a sample is like a cat is represented by its combination of Face Length to Body Size. 
 
-<img src="/ch2/show_n.PNG" width="300" height="200">
+<img src="/ch2/show_n.PNG" width="250" height="150">
 
-In our case, the neural network has learned that a "typical" cat would have a Face Length of 0.5 and a Body Size of 2 (it learned to use this ratio to distinguish a cat from other animals in its dataset), so the ratio of Body Length to Face Length is 2:0.5, or 4. If a sample it sees has this ratio of around 4, it is "likely to be a cat". Ratios are relative, so even if we have absolute units of Body Length = 8 and Face Length = 2, the ratio 8:2 = 4 indicates to the neural network that this sample is more likely a cat than any other animal.
+<details>
+<summary>Features and Gradients: The validity of this interpretation is still up for questioning.</summary>
 
-As taught in algebra, this is the slope of a line, where "rise/run" in this case means "Body Length / Face Length". Essentially, each feature is mapped to a vector's **direction**, or its angle from the origin of basis vectors. It doesn't matter how big or small your stretch a vector- it is the direction, or the ratio, that is important. Note that in higher dimensional spaces, it is not accurate to describe this ratio as "rise/run", so it is better to use "direction" instead.
+In the case of using basis vectors as measurements, the entire line represented "how much" of a quantity there was.
+
+In this case, the neural network has learned that a "typical" cat would have a Face Length of 0.5 and a Body Size of 2 (it learned to use this ratio to distinguish a cat from other animals in its dataset), so the ratio of Body Length to Face Length is 2:0.5, or 4. If a sample it sees has this ratio of around 4, it is "likely to be a cat". Ratios are relative, so even if we have absolute units of Body Length = 8 and Face Length = 2, the ratio 8:2 = 4 indicates to the neural network that this sample is more likely a cat than any other animal.
+
+As taught in algebra, this is the slope of a line, where "rise/run" in this case means "Body Length / Face Length". But vectors do not have slopes; only functions have slopes, and lines are functions. It seems that the vectors that lie on the line with this slope all correspond to some feature.
+
+Essentially, each feature is mapped to a line's **steepness and direction**, or its angle from the origin of basis vectors. It doesn't matter how big or small your stretch a vector- it is the steepness and direction, or the ratio, that is important.
+
+Note that in higher dimensional spaces, instead of describing this ratio as "rise/run", it is better to use "steepness and direction" instead. You can say this is the **gradient** in gradient descent, in which how each neuron measures the data is changed according to the gradient. The vector is both an "object" measuring a feature, and a "relation" determining how a feature is used to change another feature.
+
+How features relate to functions and their gradients is still unclear, and a subject of further investigation.
+
+</details>
 
 Similar to the example we showed where the feature is on the basis vector, we want to "add" feature n to z. What does this actually mean? 
 
@@ -104,9 +117,9 @@ Visually, this would look like:
 
 <img src="/ch2/z_plus_n.PNG" width="300" height="200">
 
-We can add or subtract as many units of "cat" to z as we like.
+Using $$\alpha$$, we can add or subtract as many units of "cat" to z as we like.
 
-<img src="/ch2/z_plus_alphan.PNG" width="400" height="300">
+<img src="/ch2/z_plus_alphan.PNG" width="350" height="250">
 
 At first, it's not obvious how we "change z by n cat units". So let's perform a change of basis where the cat feature is mapped to a basis vector, to truly show how each sample is measured in cats:
 
