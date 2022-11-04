@@ -230,7 +230,7 @@ Note that there is a difference between "what gift translates to" and "what gift
 
 But what does the label 'poison' mean in German? As we see in the German coordinate space, it does not point to any data sample. In fact, the label 'poison' does not mean anything in German. The same goes for the label 'gescheck' in English. Not all labels have to point to an data sample; so in some coordinate spaces, they just mean nonsense. 
 
-<center><a href="ch1.2.html"><b>NEXT: CHAPTER 1.2</b></a><center>
+<center><a href="ch1.2.html"><b>NEXT: CHAPTER 1.2</b></a></center>
 
 <!---
 This is an instance of 'not confusing the map for the territory'- the map of Switzerland is not 1-1 with Switzerland itself. The model may not capture everything about reality.
