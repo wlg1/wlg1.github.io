@@ -250,4 +250,7 @@ Relationships are preserved. Analogy. Structure preserving map
 [Maps between 2 domains: the real world, and the coordinate space]
 --->
 
+<br><br>
+
+---
 ---

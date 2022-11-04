@@ -40,7 +40,7 @@ fig Eg) What's orthogonal projection?
 
 This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.[^1]. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. 
 
-[^1]: assuming only that a reader has a basic understanding of X, or has watched these videos []. Links are provided to them.
+[^1]: Assuming only that a reader has a basic understanding of X, or has watched these videos []. Links are provided to them.
 
 But this blog takes an even further step: by generalizing this solution to solve similar problems.
 
@@ -59,12 +59,16 @@ Not sure where to start?
 
 &nbsp;&nbsp;&nbsp;&nbsp;**[1.2: Why use dot product in matrix multiplication?](ch1.2.md)**
 
-**CHAPTER 1- APPENDIX: Duality**
+<details>
+<summary><b>CHAPTER 1- APPENDIX: Duality</b> </summary>
+
 &nbsp;&nbsp;&nbsp;&nbsp;A1.1: WHY use Basis vectors? The Relativity of Data
 
 &nbsp;&nbsp;&nbsp;&nbsp;A1.2: The Duality of Neurons: As Objects, As Relations
 
 &nbsp;&nbsp;&nbsp;&nbsp;A1.3: The Analogy of the Matrix
+
+</details>
 
 **CHAPTER 2: How Neural Networks Make Faces Look Younger (using Vector Projection)**
 
@@ -90,8 +94,9 @@ Not sure where to start?
 
 <!--- **CHAPTER 2: How to Find the Important Features and Change Them (using Matrix Decomposition)?** --->
 
-<ul>
 Future topics: 
+<ul>
+  <li>Matrix Decomposition to find neuron combinations</li>
   <li>Fourier transforms and convolution</li>
   <li>Graph neural networks and geometric deep learning equivariance</li>
   <li>Diffusion models</li>
@@ -100,6 +105,9 @@ Future topics:
 
 ---
 
-Appendices:
+**Appendices:**
 
 **[Review: Generative Models ](generative_models_review.md)**
+
+---
+---

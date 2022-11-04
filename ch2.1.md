@@ -170,7 +170,9 @@ This is the matrix $$M$$ we use to perform the change of basis in the example ab
 
 In the example above, note how each sample has different values of n, but all have the same value (close to -3) along the 2nd basis vector. Why are the values along this 2nd basis vector, which is mapped to a feature that is 90 degrees to the cat feature vector, preserved after $$\vec{z} + \alpha * \vec{n}$$? We'll find out why in the next section.
 
-<center><a href="ch2.2.html"><b>NEXT: CHAPTER 2.2</b></a><center>
+<center><a href="ch2.2.html"><b>NEXT: CHAPTER 2.2</b></a></center>
+
+<br><br>
 
 ---
 ---

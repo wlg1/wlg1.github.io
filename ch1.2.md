@@ -373,4 +373,9 @@ Row 2 is the same; you can work it out yourself.
 
 [^]: The dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector's elements. Since the dot product is commutative, it is interchangable which vector is the "first" or "second".
 
+<center><a href="ch2.1.html"><b>NEXT: CHAPTER 2.1</b></a></center>
+
+<br><br>
+
+---
 ---
