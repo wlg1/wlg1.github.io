@@ -136,16 +136,25 @@ At first, it's not obvious how we "change z by n cat units". So let's perform a 
 What was the matrix used to perform this change of basis? Recall that each column of a matrix is a coordinate where features on basis vectors are sent **to**. So to send a feature on $$[1,0]$$ to $$[0.5, 2]$$, we would use the matrix:
 
 <p align="center">
-$$ \begin{bmatrix} 0.5 & 2 \\ ? & ? \end{bmatrix} $$
+$$ W = \begin{bmatrix} 0.5 & ? \\ 2 & ? \end{bmatrix} $$
 </p>
 
-However, we don't want to send a basis vector to a certain coordinate; we want to do the opposite, where we send a feature **from** a coordinate to a basis vector. So we have to take the inverse of the matrix in order to send the cat feature from $$[0.5, 2]$$ to $$[1, 0]$$. 
+Note that we have stated what will be sent to one basis vector; but in 2D coordinate space, there are two, so let's find where to send the second one. To avoid too many changes in the coordinate space, let's use a rotation matrix. A rotation matrix requires that the two column vector are at 90 degree angles, <a href="https://sciencing.com/vector-perpendicular-8419773.html
+"> so we'll use a technique to find a vector that's 90 degrees to [0.5, 2].</a> Then this rotation matrix is:
 
-Note that we have stated what will be sent to one basis vector; but in 2D coordinate space, there are two. To avoid too many changes in the coordinate space, let's use a rotation matrix. A rotation matrix requires that the two column vector are at 90 degree angles. We will show the rotation matrix, and leave the calculation for the 2nd column vector, which we'll call $$n_2$$, for later:
+<p align="center">
+$$ W = \begin{bmatrix} 0.5 & -1 \\ 2 & -0.25 \end{bmatrix} $$
+</p>
 
-[figure mapping z]
+However, this is NOT the matrix M we use to perform the change of basis above. We don't want to send a basis vector to a certain coordinate; we want to do the opposite, where we send a feature **from** a coordinate to a basis vector. So we have to take the inverse of the matrix in order to send the cat feature from $$[0.5, 2]$$ to $$[1, 0]$$. The inverse of the matrix above, rounded to 4 decimal places, is:
 
-Notice that each sample z now has different values of n, but have the same value along the 2nd basis vector, which is mapped to $$n_2$$, a feature that was at a 90 degree angle to the cat feature. How is $$n_2$$ related to cat feature? We'll find out in the next section.
+<p align="center">
+$$ M = W^{-1} = \begin{bmatrix} -0.1333 & 0.533 \\ -1.0667 & 0.2667 \end{bmatrix} $$
+</p>
+
+This is the matrix M we use to perform the change of basis in the example above.
+
+Notice that each sample, shown as dots in the figure, has different values of n, but all have the same value (close to -3) along the 2nd basis vector. Why are the values along this 2nd basis vector, which is mapped to a feature that is 90 degrees to the cat feature vector, preserved? We'll find out why in the next section.
 
 **Changing a feature while keeping another feature on the basis vector**
 
