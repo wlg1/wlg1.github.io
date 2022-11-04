@@ -78,7 +78,7 @@ Since vector addition adds the head of a vector with the tail of another vector,
 
 <img src="/ch2/anyVecY.PNG" width="300" height="200">
 
-Such that the yellow and blue vectors represent $$\alpha * \vec{y}$$.
+Such that the yellow and blue vectors represent $$\alpha * \vec{y}$$ being added to vector $$z$$.
 
 **Changing a feature NOT on the basis vector**
 
