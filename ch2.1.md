@@ -87,21 +87,21 @@ Next, let's change a feature that's not on the basis vector. Recall that a featu
 <img src="/ch2/show_n.PNG" width="250" height="200">
 
 ---
-Click on the following optional section to expand it. It is optional reading as the validity of its interpretation is still up for questioning.
+(Click on the following optional section to expand it. It is optional reading as the validity of its interpretation is still up for questioning.)
 
 <details>
 <summary><b>Features and Gradients:</b> </summary>
 
 In the case of using basis vectors as measurements, the entire line represented "how much" of a quantity there was.
-
+<br>
 In this case, the neural network has learned that a "typical" cat would have a Face Length of 0.5 and a Body Size of 2 (it learned to use this ratio to distinguish a cat from other animals in its dataset), so the ratio of Body Length to Face Length is 2:0.5, or 4. If a sample it sees has this ratio of around 4, it is "likely to be a cat". Ratios are relative, so even if we have absolute units of Body Length = 8 and Face Length = 2, the ratio 8:2 = 4 indicates to the neural network that this sample is more likely a cat than any other animal.
-
+<br>
 As taught in algebra, this is the slope of a line, where "rise/run" in this case means "Body Length / Face Length". But vectors do not have slopes; only functions have slopes, and lines are functions. It seems that the vectors that lie on the line with this slope all correspond to some feature.
-
+<br>
 Essentially, each feature is mapped to a line's **steepness and direction**, or its angle from the origin of basis vectors. It doesn't matter how big or small your stretch a vector- it is the steepness and direction, or the ratio, that is important.
-
+<br>
 Note that in higher dimensional spaces, instead of describing this ratio as "rise/run", it is better to use "steepness and direction" instead. You can say this is the **gradient** in gradient descent, in which how each neuron measures the data is changed according to the gradient. The vector is both an "object" measuring a feature, and a "relation" determining how a feature is used to change another feature.
-
+<br>
 How features relate to functions and their gradients is still unclear, and a subject of further investigation.
 
 </details>
