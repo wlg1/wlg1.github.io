@@ -119,7 +119,7 @@ Since feature cat is $$\vec{n} = 0.5 * \vec{x} + 2 * \vec{y}$$, this linear comb
 
 $$\vec{z} + \alpha * \vec{n}$$
 
-Visually, this would look like the figure below, in which will get to the same point whether you follow the red then yellow vectors ($$(0.5 * \vec{x} + 2 * \vec{y})$$), or just the orange vector ($$\vec{n}$$):
+Visually, this would look like the figure below, in which will get to the same point whether you follow the red then yellow vectors $$(0.5 * \vec{x} + 2 * \vec{y})$$, or just the orange vector $$(\vec{n})$$:
 
 <img src="/ch2/z_plus_n.PNG" width="300" height="200">
 
@@ -133,7 +133,7 @@ At first, it's not obvious how we "change z by n cat units". So let's perform a 
 
 <img src="/ch2/z_plus_alphan_COB.PNG">
 
-Now each sample, shown as dots in the figure, can be interpreted as having "units of cat", represented in orange. The red dot, originally on $$\vec{z} + (1)\vec{n}$$, is close to having "1" cat unit. The blue dot, originally on $$\vec{z} + (0)\vec{n}$$, is close to having "0" cat units. The same goes for the green and white dots, having -1 and -1.5 cat units, respectively. We see that the number of cat units corresponds to $$\alpha$$ in the equation $$\vec{z} + \alpha * \vec{n}$$.[^approx] Also note how $$\vec{n}$$ and $$\vec{z} + \alpha * \vec{n}$$ are parallel. 
+Each sample, shown as dots in the figure, can be interpreted as having "units of cat", shown in orange. The red dot, originally on $$\vec{z} + (1)\vec{n}$$, is close to having "1" cat unit. The blue dot, originally on $$\vec{z} + (0)\vec{n}$$, is close to having "0" cat units. The same goes for the green and white dots, having -1 and -1.5 cat units, respectively. We see that the number of cat units corresponds to $$\alpha$$ in the equation $$\vec{z} + \alpha * \vec{n}$$.[^approx] Also note how $$\vec{n}$$ and the line containing $$\vec{z} + \alpha * \vec{n}$$ are parallel. 
 
 [^approx]: Each one may only be "close" to the number of cat units due to the decimal point approximations used in the matrix to represent the actual values.
 
