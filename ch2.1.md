@@ -84,10 +84,13 @@ Such that the yellow and blue vectors represent $$\alpha * \vec{y}$$ being added
 
 Next, let's change a feature that's not on the basis vector. Recall that a feature vector $$n$$ in a coordinate space is a measurement by the space's basis vectors. In other words, each feature can be expressed entirely by a linear combination of basis vectors. So if feature $$n$$ represents "cat-like", then how much a sample is like a cat is represented by its combination of Face Length to Body Size. 
 
-<img src="/ch2/show_n.PNG" width="250" height="150">
+<img src="/ch2/show_n.PNG" width="250" height="200">
+
+---
+Click on the following optional section to expand it. It is optional reading as the validity of its interpretation is still up for questioning.
 
 <details>
-<summary>Features and Gradients: The validity of this interpretation is still up for questioning.</summary>
+<summary><b>Features and Gradients:</b> </summary>
 
 In the case of using basis vectors as measurements, the entire line represented "how much" of a quantity there was.
 
@@ -102,6 +105,9 @@ Note that in higher dimensional spaces, instead of describing this ratio as "ris
 How features relate to functions and their gradients is still unclear, and a subject of further investigation.
 
 </details>
+<br>
+
+---
 
 Similar to the example we showed where the feature is on the basis vector, we want to "add" feature n to z. What does this actually mean? 
 
@@ -119,7 +125,7 @@ Visually, this would look like:
 
 Using $$\alpha$$, we can add or subtract as many units of "cat" to z as we like.
 
-<img src="/ch2/z_plus_alphan.PNG" width="350" height="250">
+<img src="/ch2/z_plus_alphan.PNG" width="350" height="300">
 
 At first, it's not obvious how we "change z by n cat units". So let's perform a change of basis where the cat feature is mapped to a basis vector, to truly show how each sample is measured in cats:
 
