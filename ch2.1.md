@@ -146,19 +146,13 @@ We can get better intuition of this when it's animated:
 </video>
 --->
 
-<details open="" class="details-reset border rounded-2">
-  <summary class="px-3 py-2 border-bottom">
-    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="octicon octicon-device-camera-video">
-    <path fill-rule="evenodd" d="..."></path>
-</svg>
-    <span aria-label="Video description dotnet-evergreen.mp4" class="m-1">dotnet-evergreen.mp4</span>
-    <span class="dropdown-caret"></span>
-  </summary>
+<details>
+  <summary>Click here to see the video</summary>
 
-  <video src="https://vimeo.com/767400638">
+  <iframe src="https://player.vimeo.com/video/767400638?h=d6c8dd5bd6" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-  </video>
 </details>
+<br>
 
 What was the matrix $$M$$ used to perform this change of basis? Recall that each column of a matrix is a coordinate where features on basis vectors are sent **to**. So to send a feature on $$[1,0]$$ to $$[0.5, 2]$$, we would use the matrix:
 
@@ -166,7 +160,7 @@ What was the matrix $$M$$ used to perform this change of basis? Recall that each
 $$ W = \begin{bmatrix} 0.5 & ? \\ 2 & ? \end{bmatrix} $$
 </p>
 
-Note that we have stated what will be sent to one basis vector; but in 2D coordinate space, there are two, so let's find where to send the second one. To avoid too many changes in the coordinate space, let's use a rotation matrix. A rotation matrix requires that the two column vector are at 90 degree angles, <a href="https://sciencing.com/vector-perpendicular-8419773.html
+Note that we have stated what will be sent to one basis vector; but in 2D coordinate space, there are two, so let's find where to send the second one. To avoid too many changes in the coordinate space, let's use a rotation matrix. A rotation matrix requires that both column vectors are at 90 degree angles, <a href="https://sciencing.com/vector-perpendicular-8419773.html
 "> so we'll use a technique to find a vector that's 90 degrees to [0.5, 2].</a> Then this rotation matrix is:
 
 <p align="center">
