@@ -16,14 +16,14 @@ In other words, a sample lies on a point in a high dimensional latent space of p
 So when you move a sample from one point to another, the shadow won't just change on one feature subspace, but another feature subspace. For example, if you are ever stuck in a hall of mirrors, you may find yourself next to two mirrors- one that makes you larger, and one that makes you small. When you move one way, you are not just changing how you look in the "Larger" mirror, but also how you look in the "smaller" mirror.[^projectionAbstraction]
 
 <figure>
-<img src="/ch2/mirrors.jpeg">
+<img src="/ch2/mirrors.jpeg" width= 200>
 
 <figcaption align = "center"><b> Source: https://www.thisiswhyimbroke.com/uk/warping-mirrors/ </b></figcaption>
 </figure>
 
 [^projectionAbstraction]: By pure speculation, this may be related to how the brains of organisms organize concepts, and why concepts are related to one another by analogy. An analogy relates an "abstraction" of concepts- such as abstracting the Hero's Journey in The Hunger Games and in Harry Potter. There is some sort of semantic (but possibly superficial, and thus meaningless) similarity between Projection and Abstraction. Abstractions also occur in dreams, where a memory of an angry neighbor yelling at his lawn may be substituted with the dream of an angry teacher yelling at his lawn, which has never occurred in real life. Now projecting down to different abstractions would mean if the way a sample is mapped to one abstraction framework is changed, then the way it's mapped to another abstraction framework is also changed. So say you're trying to think of a way to create a novel concept by slightly tweaking an existing concept. The difficulty is that <b>some abstraction frameworks cannot be changed in order to preserve the concept itself.</b> For example, you want to write a story that has the same "beats" as Star Wars. Now your story contains an abstraction of "Star Wars", and also an abstraction on "The Hero's Journey". If you want to get rid of "The Call to Adventure", you would also shake your story away from "The Hero's Journey". (NOTE: This is not a good example, so further thought will be put into it).
 
-When changing one feature vector affects another, the feature vectors are **entangled**. However, it is possible to find a **new** feature vector that will <span style="color:red"><u>cast the new desired shadow on</u></span> $$n_1$$ but also <span style="color:blue;"><u>tries not to change the existing shadow projected onto</u></span> $$n_2$$.
+When changing one feature vector affects another, the feature vectors are **entangled**. However, it is possible to find a **new** feature vector that will <span style="color:red"><i>cast the new desired shadow on</i></span> $$n_1$$ but also <span style="color:blue;"><i>tries not to change the existing shadow projected onto</i></span> $$n_2$$.
 
 To do this, we will have to find a new vector to add to our sample $$z$$.
 
@@ -50,7 +50,7 @@ In Figure 1, all we have to do is to find W is to "walk" down line $$c$$ from ve
 
 Why does vector C not change the value of x=3? Because vector $$c$$ is **orthogonal** to the $$x$$ basis vector, where they intersect at x=3. If it was not orthogonal, it would veer away from x=3, such as shown in the example below, where a non-orthogonal vector leads to x=4.
 
-<img src="/ch2/VtoW_veer.PNG" width= 50% height=auto>
+<img src="/ch2/VtoW_veer.PNG">
 
 It is only when the green vector intersects the x vector at 90 degree angle that the value of the $$x$$ vector doesn't change.
 
