@@ -172,9 +172,9 @@ $$O = WX$$
 
 [also put color coded outgoing weights for NN, write about this relating to matrix]
 
-With all this in mind, we can say that the goal of the neural network is to find how to accurately measure the data using neuron weights, so they can be taken together into an equation which measures a "goal measurement" such as "how body size and face length determine a cat or a rat".  
-
 In Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/cob/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/cob/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:purple">matrix W</span>? We will reveal the answer in section [].
+
+With all this in mind, we can say that the goal of the neural network is to find how to accurately measure the data using neuron weights, so they can be taken together into an equation which measures a "goal measurement" such as "how body size and face length determine a cat or a rat".  
 
 <!---
 Fig 13
