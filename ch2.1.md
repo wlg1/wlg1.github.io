@@ -119,11 +119,11 @@ Since feature cat is $$\vec{n} = 0.5 * \vec{x} + 2 * \vec{y}$$, this linear comb
 
 $$\vec{z} + \alpha * \vec{n}$$
 
-Visually, this would look like:
+Visually, this would look like the figure below, in which will get to the same point whether you follow the red then yellow vectors ($$(0.5 * \vec{x} + 2 * \vec{y})$$), or just the orange vector ($$\vec{n}$$):
 
 <img src="/ch2/z_plus_n.PNG" width="300" height="200">
 
-Using $$\alpha$$, we can add or subtract as many units of "cat" to z as we like.
+Using $$\alpha$$, we can add or subtract as many units of "cat" to z as we like. 
 
 <img src="/ch2/z_plus_alphan.PNG" width="350" height="300">
 
