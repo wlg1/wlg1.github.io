@@ -133,18 +133,32 @@ At first, it's not obvious how we "change z by n cat units". So let's perform a 
 
 <img src="/ch2/z_plus_alphan_COB.PNG">
 
+Now each sample, shown as dots in the figure, can be interpreted as having "units of cat", represented in orange. The red dot, originally on vector $$\vec{z} + \vec{n}$$, is close to having "1" cat unit. The blue dot, originally on $$\vec{z} + (0)\vec{n}$$, is close to having "0" cat units. The same goes for the green and white dots, having -1 and -1.5 cat units, respectively. We see that the number of cat units corresponds to $$\alpha$$ in the equation $$\vec{z} + \alpha * \vec{n}$$.[^approx]
+
+[^approx]: Each one may only be "close" to the number of cat units due to the decimal point approximations used in the matrix to represent the actual values.
+
 We can get better intuition of this when it's animated:
 
+<!---
 <iframe src="https://player.vimeo.com/video/767400638?h=d6c8dd5bd6" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-<!---
 <video src="https://user-images.githubusercontent.com/169707/126715420-991ad821-9ac8-4b66-b79e-e0966e0f3a89.mp4" controls="controls" style="max-width: 730px;">
 </video>
 --->
 
-Now each sample, shown as dots in the figure, can be interpreted as having "units of cat", represented in orange. The red dot, originally on vector $$\vec{z} + \vec{n}$$, is close to having "1" cat unit. The blue dot, originally on $$\vec{z} + (0)\vec{n}$$, is close to having "0" cat units. The same goes for the green and white dots, having -1 and -1.5 cat units, respectively. We see that the number of cat units corresponds to $$\alpha$$ in the equation $$\vec{z} + \alpha * \vec{n}$$.[^approx]
+<details open="" class="details-reset border rounded-2">
+  <summary class="px-3 py-2 border-bottom">
+    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="octicon octicon-device-camera-video">
+    <path fill-rule="evenodd" d="..."></path>
+</svg>
+    <span aria-label="Video description dotnet-evergreen.mp4" class="m-1">dotnet-evergreen.mp4</span>
+    <span class="dropdown-caret"></span>
+  </summary>
 
-[^approx]: Each one may only be "close" to the number of cat units due to the decimal point approximations used in the matrix to represent the actual values.
+  <video src="https://vimeo.com/767400638">
+
+  </video>
+</details>
 
 What was the matrix $$M$$ used to perform this change of basis? Recall that each column of a matrix is a coordinate where features on basis vectors are sent **to**. So to send a feature on $$[1,0]$$ to $$[0.5, 2]$$, we would use the matrix:
 
