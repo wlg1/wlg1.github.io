@@ -61,15 +61,15 @@ Not sure where to start?
 
 <details>
 <summary><b>CHAPTER 1- APPENDIX: Duality</b> </summary>
-
+<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;A1.1: WHY use Basis vectors? The Relativity of Data
-
+<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;A1.2: The Duality of Neurons: As Objects, As Relations
-
+<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;A1.3: The Analogy of the Matrix
-
+<br><br>
 </details>
-
+<br><br>
 **CHAPTER 2: How Neural Networks Make Faces Look Younger (using Vector Projection)**
 
 &nbsp;&nbsp;&nbsp;&nbsp;2.0: Face Filters, Anime Filters, and Fake People

@@ -7,7 +7,7 @@ title: CHAPTER 2.1
 
 <a href="eduBlogHome.html">Home</a>
 
-**(Reading time: 10 minutes)**
+**(Reading time: 7 minutes)**
 
 **Prerequisites**: Chapter 1, what is a GAN [^prereqs1], and what is StyleGAN [^prereqs2]
 

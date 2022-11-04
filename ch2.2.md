@@ -7,7 +7,7 @@ title: CHAPTER 2.2
 
 <a href="eduBlogHome.html">Home</a>
 
-**(Reading time: 10 minutes)**
+**(Reading time: 7 minutes)**
 
 **Changing a feature while keeping another feature on the basis vector**
 
