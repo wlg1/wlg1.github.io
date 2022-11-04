@@ -106,7 +106,7 @@ Visually, this would look like:
 
 We can add or subtract as many units of "cat" to z as we like.
 
-<img src="/ch2/z_plus_alphan.PNG" width="300" height="200">
+<img src="/ch2/z_plus_alphan.PNG" width="400" height="300">
 
 At first, it's not obvious how we "change z by n cat units". So let's perform a change of basis where the cat feature is mapped to a basis vector, to truly show how each sample is measured in cats:
 
