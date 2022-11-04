@@ -186,8 +186,7 @@ Fig 13
 
 Before delving into the intricacies of matrix multiplication, let's look at another example to gain even better intuition about the difference between the real world and our coordinate space model. Instead of cat and rat data samples, we'll look at the two data samples <img src="/cob/poison.jpg" width="30" height="30">, a dangerous substance, and <img src="/cob/gift.jpg" width="30" height="30">, which is charitably given to someone. And instead of using numbers, let's use letters to label our entities. This means our models will resemble languages, some of which also use letters to label entities. So our first model, or language, is labeled as follows:
 
-![german_gift](/cob/german_gift.PNG)
-<!---[first show coordinate space labeling gift as poison]--->
+<img src="/cob/german_gift.PNG" width="400" height="300">
 
 To an English speaker, this may look wrong, because <img src="/cob/poison.jpg" width="30" height="30"> should be called something like 'poison', not 'gift'. But in German, <img src="/cob/poison.jpg" width="30" height="30"> is in fact called 'gift'. If a German speaker tells the English speaker that they're giving the English speaker a gift, the English speaker may be delighted because they think they're getting <img src="/cob/gift.jpg" width="30" height="30">. But they shouldn't be, because what they're ACTUALLY receiving is <img src="/cob/poison.jpg" width="30" height="30">, which would kill them.[^false_friend]
 
@@ -231,9 +230,7 @@ Note that there is a difference between "what gift translates to" and "what gift
 
 But what does the label 'poison' mean in German? As we see in the German coordinate space, it does not point to any data sample. In fact, the label 'poison' does not mean anything in German. The same goes for the label 'gescheck' in English. Not all labels have to point to an data sample; so in some coordinate spaces, they just mean nonsense. 
 
-**[ch1.2](ch1.2.md)**
-
-<a href="ch1.2.html">CHAPTER 1.2</a>
+<center><a href="ch1.2.html"><b>NEXT: CHAPTER 1.2</b></a><center>
 
 <!---
 This is an instance of 'not confusing the map for the territory'- the map of Switzerland is not 1-1 with Switzerland itself. The model may not capture everything about reality.

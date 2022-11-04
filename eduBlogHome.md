@@ -55,38 +55,48 @@ Not sure where to start?
 ---
 **CHAPTER 1: How Neural Networks Reveal Hidden Insights in Data (using Matrix Multiplication)**
 
-**[1.1: How does matrix multiplication guess a cat from its face and body?](ch1.1.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[1.1: How does matrix multiplication guess a cat from its face and body?](ch1.1.md)**
 
-**[1.2: Why use dot product in matrix multiplication?](ch1.2.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[1.2: Why use dot product in matrix multiplication?](ch1.2.md)**
 
-1.3: WHY use basis vectors? The relativity of data
+**CHAPTER 1- APPENDIX: Duality**
+&nbsp;&nbsp;&nbsp;&nbsp;A1.1: WHY use Basis vectors? The Relativity of Data
 
-1.4: The Duality of Neurons: As Objects, As Relations
+&nbsp;&nbsp;&nbsp;&nbsp;A1.2: The Duality of Neurons: As Objects, As Relations
 
-1.5: The Analogy of the Matrix
+&nbsp;&nbsp;&nbsp;&nbsp;A1.3: The Analogy of the Matrix
 
+**CHAPTER 2: How Neural Networks Make Faces Look Younger (using Vector Projection)**
 
-**CHAPTER 2: How to Find the Important Features and Change Them (using Matrix Decomposition)?**
+&nbsp;&nbsp;&nbsp;&nbsp;2.0: Face Filters, Anime Filters, and Fake People
 
-2.0: Cool Applications (Face filters, etc.)
+&nbsp;&nbsp;&nbsp;&nbsp;**[2.1: Changing Features using Vector Addition](ch2.1.md)**
 
-**[2.1 test](ch2.1_old.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[2.2: Conditioning on Features using Orthogonal Projection](ch2.2.md)**
 
-**[2.1: How Do Neural Networks Make Faces Look Younger (using Orthogonal Projection)?](ch2.1.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[2.3: Scoring Semantics using Hyperplanes](ch2.1_old.md)**
 
-**[2.2: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)](ch2.2.md)**
+**CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.1: Paper Explanation: GANspace](ch2.2.1.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[3.1: Paper Explanation: GANspace](ch3.1.md)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.2: Covariance Matrix](ch2.2.2.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[3.2: Covariance Matrix](ch3.2.md)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.3: Paper Explanation: Eigenfaces](ch2.2.3.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[3.3: Paper Explanation: Eigenfaces](ch3.3.md)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.4: Paper Explanation: SeFA]()**
+&nbsp;&nbsp;&nbsp;&nbsp;**[3.4: Paper Explanation: SeFA]()**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[2.2.5: SVD](ch2.2.5.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[3.5: SVD](ch3.5.md)**
 
-[applying to latest generative models: DALLE, stable diffusion, grokking]
+<!--- **CHAPTER 2: How to Find the Important Features and Change Them (using Matrix Decomposition)?** --->
+
+<ul>
+Future topics: 
+  <li>Fourier transforms and convolution</li>
+  <li>Graph neural networks and geometric deep learning equivariance</li>
+  <li>Diffusion models</li>
+  <li>The Shape of Data and Topological Data Analysis applied to latent space</li>
+</ul>
 
 ---
 
