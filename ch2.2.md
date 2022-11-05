@@ -191,5 +191,9 @@ Finally, the "plane constructed by all conditioned directions" is the subspace s
 
 We are done with explaining how orthogonal projection is used in InterFaceGAN. Next, we will describe how hyperplanes are used to obtain "semantic scores" for how close a sample is to a feature boundary.
 
+<center><a href=""><b>NEXT: CHAPTER 2.3</b></a></center>
+
+<br><br>
+
 ---
 ---

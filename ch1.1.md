@@ -24,7 +24,6 @@ title: CHAPTER 1.1
 <center><h2>CHAPTER 1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?</h2></center>
 
 **(Reading time: 5 minutes)**
-[split this into 2 sections]
 
 **Prerequisites**: A vague understanding of matrix multiplication and neural networks. [^prereqs]
 
@@ -200,6 +199,8 @@ Fig 13
 [^entity_model]: While the vectors are representations of the data sample, the data sample is also a representation of the actual cat entity (by transitivity, both are representation of the entity). Note that the vector is a numerial representation of the data sample, while the data sample is a collection of values which are defined relative to other samples in the population. Information about these collections of relative values is preserved under different Models, and different transformations preserve different information. Because values are defined relative to other values, information about data samples (such as their distribution) are relations, and relations can be thought of as shapes; for instance, a line is a relation between two points, so this line shape describes their relation. This is better explained in Appendix Chapter []. Also note that the only information the neural network knows about the entity comes from the data sample; it can never truly know the entity.
 
 <center><a href="ch1.2.html"><b>NEXT: CHAPTER 1.2</b></a></center>
+
+<br><br>
 
 ---
 ---
