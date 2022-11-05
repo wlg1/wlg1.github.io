@@ -14,7 +14,7 @@ title: CHAPTER 1.2
 </div>
 <br> -->
 
-<center><h2>CHAPTER 1.2: Beware of False Friends when Changing Basis?</h2></center>
+<center><h2>CHAPTER 1.2: Beware of False Friends in the Matrix?</h2></center>
 
 **(Reading time: 2 minutes)**
 

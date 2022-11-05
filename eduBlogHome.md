@@ -38,7 +38,7 @@ Not sure where to start?
 
 &nbsp;&nbsp;&nbsp;&nbsp;**[1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?](ch1.1.md)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[1.2: Beware of False Friends when Changing Basis?](ch1.2.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[1.2: Beware of False Friends in the Matrix?](ch1.2.md)**
 
 &nbsp;&nbsp;&nbsp;&nbsp;**[1.3: Why is Dot Product used in Matrix Multiplication?](ch1.3.md)**
 
@@ -63,6 +63,14 @@ Not sure where to start?
 &nbsp;&nbsp;&nbsp;&nbsp;**[2.2: Conditioning on Features using Orthogonal Projection](ch2.2.md)**
 
 &nbsp;&nbsp;&nbsp;&nbsp;**[2.3: Scoring Semantics using Hyperplanes]()**
+
+<details>
+<summary><b>CHAPTER 2 CODE TUTORIAL</b> (click to expand) </summary>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="active" href="https://colab.research.google.com/drive/1KNs_QgosAn3GmkUpaQAyRDo1pEjputNJ?usp=share_link">CODE 2.1: InterFaceGAN </a>
+<br><br>
+</details>
+<br>
 
 **CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)**
 
