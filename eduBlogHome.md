@@ -21,7 +21,7 @@ title: Making the Math of Neural Networks Intuitive - HOME
 
 This blog overcomes this problem by explaining many required prerequisites from scratch[^1], and relating them to neural network applications. 
 
-[^1]: Assuming only that a reader has a basic understanding of X, or has watched these videos []. Links are provided to them.
+[^1]: Assuming only that a reader has a basic understanding of a foundational topic, or has watched these certain videos. Links will be provided to them.
 
 ![2mod_vecs](/cob/2mod_out.PNG)
 

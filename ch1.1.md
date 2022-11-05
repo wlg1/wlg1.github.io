@@ -27,7 +27,7 @@ title: CHAPTER 1.1
 
 **Prerequisites**: A vague understanding of matrix multiplication and neural networks. [^prereqs]
 
-[^prereqs]: This section is heavily built on 3Blue1Brown's Essence of Linear Algebra. There are 16 videos, but you only have to focus on five videos: 1 to 3, then 9 and 13. <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=1&ab_channel=3Blue1Brown"> Source</a>
+[^prereqs]: <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=1&ab_channel=3Blue1Brown"> This Chapter is heavily built on 3Blue1Brown's Essence of Linear Algebra. </a> There are 16 videos, but you only have to focus on five videos: 1 to 3, then 9 and 13. 
 
 ---
 
@@ -73,6 +73,7 @@ Shorter <span style="color:#FA8072">face</span> + Bigger <span style="color:#ADD
 
 Longer <span style="color:#FA8072">face</span> + Smaller <span style="color:#ADD8E6">body</span>  = <span style="color:green">Rat</span> 
 
+<!---
 Or in terms of basis vector addition:
 
 Fig 7
@@ -81,14 +82,15 @@ Bigger body + Shorter face = Likely a Cat
 2 * [body pic X] + 0.5 * [face pic Y] = value 2X+0.5Y on cat axes ]
 
 [X and Y are on the row of the matrix corresponding to 'likely a cat'. They are the x values of body1 and face1's new coords in Model 2 ]
+--->
 
-What are $$face_{cat}$$ and $$body_{cat}$$? These are how much each feature is weighted by to calculate the score of "likely to be cat". The higher the weight, the more that feature is taken into account during calculation. For example, it might be more important to know the body size than the face length when determining if something is a cat or a rat, since cats are usually much bigger than rats, but their faces aren't always much shorter. Since body size is more important, we'd set $$body_{cat} = 1.5 > face_{cat} = 1$$. We will reveal how these weights are related to the matrix once we get into the algebra of matrix multiplication in section 1.3.
+What are $$face_{cat}$$ and $$body_{cat}$$? These are how much each feature is weighted by to calculate the score of "likely to be cat". The higher the weight, the more that feature is taken into account during calculation. For example, it might be more important to know the body size than the face length when determining if something is a cat or a rat, since cats are usually much bigger than rats, but their faces aren't always much shorter. Since body size is more important, we'd set $$body_{cat} = 1.5 > face_{cat} = 1$$. We will reveal how these weights are related to the matrix once we get into the algebra of matrix multiplication in Chapter 1.3.
 
 Each measurement acts as a basis vector used to define each data sample. Because this second set of measurements uses different basis vectors than the set of face & body sizes, it forms a different coordinate space. Since each coordinate space provides a different way to **represent** the data, let's call each coordinate space a **Model**. 
 
 The face & body size coordinate space will be called Model 1, and the 'likely to be' cat or rat coordinate space be called Model 2. As these two measurement methods are measuring the same data samples, the data samples in Model 1 are present in Model 2, but are now measured by different vectors.
 
-In fact, since we are using Model 1 to calculate the values for Model 2, we will see in Section [] that we are applying the dot product on face & body to calculate 'likely to be cat'. Recall that the steps of matrix multiplication consists of dot products; thus, the calculation of Model 2 is none other than matrix multiplication, which was, for certain matrices, shown in this video[link] to be a rotation [footnote: see 3Bl1Br video timestamps]. In Figure X, we choose a matrix that, upon multiplication, corresponds to a rotation. 
+In fact, since we are using Model 1 to calculate the values for Model 2, we will see in Chapter 1.3 that we are applying the dot product on face & body to calculate 'likely to be cat'. Recall that the steps of matrix multiplication consists of dot products; thus, the calculation of Model 2 is none other than matrix multiplication, which was, for certain matrices, <a href="https://www.3blue1brown.com/lessons/linear-transformations">shown here</a> to be a rotation. In these examples, we choose a matrix that, upon multiplication, corresponds to a rotation. 
 
 <!---ANIMATION: rotation w/o coordinate space [Model 1 fades on 'likely a cat' and 'likely a rat'. then it shifts.]--->
 
@@ -160,7 +162,7 @@ Understanding the difference between a model representation and the actual entit
 
 <!--- Fig 11 [animated reality of concepts vs fixed coord space model]--->
 
-We show below how the features on the two basis vectors in Model 1 are rotated onto two new vectors in Model 2. This is done by matrix multiplication, causing the basis vectors in Model 2 to now point to the <span style="color:orange">Orange Dot</span> and <span style="color:green">Green Dot</span>; section [] will make it even more clear why matrix multiplication is called a "Change of Basis".
+We show below how the features on the two basis vectors in Model 1 are rotated onto two new vectors in Model 2. This is done by matrix multiplication, causing the basis vectors in Model 2 to now point to the <span style="color:orange">Orange Dot</span> and <span style="color:green">Green Dot</span>; Chapter 1.3 will make it even more clear why matrix multiplication is called a "Change of Basis".
 
 ![2mod_vecs](/cob/2mod_vecs.PNG)
 
@@ -186,9 +188,17 @@ $$O = WX$$
 
 <!---[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]. W in b/w, with cols of both darker blue and darker red]--->
 
-[also put color coded outgoing weights for NN, write about this relating to matrix]
+<!---[also put color coded outgoing weights for NN, write about this relating to matrix]--->
 
-In Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/cob/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/cob/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:purple">matrix W</span>? We will reveal the answer in section [].
+We can see how this matrix relates to weights in a neural network; each column corresponds to outgoing weights of a previous layer neuron, and each row corresponds to incoming weights of a next layer neuron:
+
+<figure>
+<img src="/cob/NN_weights.PNG">
+
+<figcaption align = "center"><b>Image Source:  https://www.jeremyjordan.me/intro-to-neural-networks/ </b></figcaption>
+</figure>
+
+In Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/cob/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/cob/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:purple">matrix W</span>? We will reveal the answer in Chapter 1.3.
 
 With all this in mind, we can say that the goal of the neural network is to find how to accurately measure the data using neuron weights, so they can be taken together into an equation which measures a "goal measurement" such as "how body size and face length determine a cat or a rat".  
 
@@ -196,7 +206,7 @@ With all this in mind, we can say that the goal of the neural network is to find
 Fig 13
 [fading gif of changing abstractions back to actual pics; place images on coord sys]--->
 
-[^entity_model]: While the vectors are representations of the data sample, the data sample is also a representation of the actual cat entity (by transitivity, both are representation of the entity). Note that the vector is a numerial representation of the data sample, while the data sample is a collection of values which are defined relative to other samples in the population. Information about these collections of relative values is preserved under different Models, and different transformations preserve different information. Because values are defined relative to other values, information about data samples (such as their distribution) are relations, and relations can be thought of as shapes; for instance, a line is a relation between two points, so this line shape describes their relation. This is better explained in Appendix Chapter []. Also note that the only information the neural network knows about the entity comes from the data sample; it can never truly know the entity.
+[^entity_model]: While the vectors are representations of the data sample, the data sample is also a representation of the actual cat entity (by transitivity, both are representation of the entity). Note that the vector is a numerial representation of the data sample, while the data sample is a collection of values which are defined relative to other samples in the population. Information about these collections of relative values is preserved under different Models, and different transformations preserve different information. Because values are defined relative to other values, information about data samples (such as their distribution) are relations, and relations can be thought of as shapes; for instance, a line is a relation between two points, so this line shape describes their relation. This is better explained in Appendix Chapter 1.1. Also note that the only information the neural network knows about the entity comes from the data sample; it can never truly know the entity.
 
 <center><a href="ch1.2.html"><b>NEXT: CHAPTER 1.2</b></a></center>
 
