@@ -14,29 +14,10 @@ title: Making the Math of Neural Networks Intuitive - HOME
 
 <p align="center"><h1><b>Making the Math of Neural Networks Intuitive</b></h1></p>
 
-<!---
-For localhost testing:
-
-<a href="ch1.1.html">CHAPTER 1.1</a>
-
-<a href="ch1.2.html">CHAPTER 1.2</a>
-
-<a href="ch2.0.html">CHAPTER 2.0</a>
-
-<a href="ch2.1.html">CHAPTER 2.1</a>
-
----
-
---->
-
 <span><b>W</b></span>hen studying new improvements to neural networks, many people run into the following problem:
 
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
-
-<!---
-fig Eg) What's orthogonal projection?
---->
 
 This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.[^1]. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. 
 
@@ -81,21 +62,20 @@ Not sure where to start?
 
 &nbsp;&nbsp;&nbsp;&nbsp;**[2.2: Conditioning on Features using Orthogonal Projection](ch2.2.md)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[2.3: Scoring Semantics using Hyperplanes](ch2.1_old.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[2.3: Scoring Semantics using Hyperplanes]()**
 
 **CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[3.1: Paper Explanation: GANspace](ch3.1.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[3.1: Paper Explanation: GANspace]()**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[3.2: Covariance Matrix](ch3.2.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[3.2: Covariance Matrix]()**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[3.3: Paper Explanation: Eigenfaces](ch3.3.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[3.3: Paper Explanation: Eigenfaces]()**
 
 &nbsp;&nbsp;&nbsp;&nbsp;**[3.4: Paper Explanation: SeFA]()**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[3.5: SVD](ch3.5.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[3.5: SVD]()**
 
-<!--- **CHAPTER 2: How to Find the Important Features and Change Them (using Matrix Decomposition)?** --->
 
 Future topics: 
 <ul>
@@ -112,7 +92,7 @@ Future topics:
 
 **Appendices:**
 
-**[Review: Generative Models ](generative_models_review.md)**
+**[Review: VAEs ](generative_models_review.md)**
 
 ---
 ---

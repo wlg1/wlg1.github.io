@@ -1,7 +1,6 @@
 ---
 title: Review: Generative Models 
 ---
-This section summarizes sections of [3 sections of links: VAE, GAN, topology] that are relevant to our discussion, for those unfamiliar with those topics. It is recommended to read those links to get a more detailed understanding. If one is already familiar with these topics, one can skip to ch2.1. 
 
 **1.1: VAEs**
 
@@ -15,6 +14,8 @@ Instead of mapping each image to a single point in Z, the Variational AutoEncode
 ![Figure 1.1: VAE](/images/figure1.1.png)
 
 <span style="color:purple">Q(z\|X)</span> is represented by learning two vectors: a <span style="color:orange">mean vector</span> and a <span style="color:green">standard deviation vector</span>. To generate an <span style="color:red">image</span> with <span style="color:blue">similar features to ima</span><span style="color:teal">ges</span> that the VAE was trained on, <span style="color:red">a sample</span> that is close to the distributions of <span style="color:blue">similar ima</span><span style="color:teal">ges</span> is passed through the decoder.
+
+<!---
 
 **Continuous space and interpolation, vector arithmetic**
 
@@ -83,6 +84,8 @@ https://hackernoon.com/latent-space-visualization-deep-learning-bits-2-bd09a4692
 Disentangle. 
 neuron approx learned fn by piecewise. Local to global
 Now that we understand NN as a type of transformation algorithm meant to preserve relationships, we will analyze the latent space and also how it is transformed into hidden space.
+
+-->
 
 <!---
 <span style="color:silver">

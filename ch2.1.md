@@ -19,7 +19,7 @@ title: CHAPTER 2.1
 
 **Prerequisites**: Chapter 1, what is a GAN [^prereqs1], and what is StyleGAN [^prereqs2]
 
-[^prereqs1]: In this section, all that's needed to know is that a GAN takes a latent vector z from a latent space- that is, a space that represents features much like the latent space of activations we discussed in Chapter 1- and outputs an image. Other concepts from GANs can enhance the connections made as this chapter is studied, but are not required. <a href="generative_models_review.html">A review of GANs can be found here (this is still an unfinished draft)</a>
+[^prereqs1]: In this section, all that's needed to know is that a GAN takes a latent vector z from a latent space- that is, a space that represents features much like the latent space of activations we discussed in Chapter 1- and outputs an image. Other concepts from GANs can enhance the connections made as this chapter is studied, but are not required. <a href="https://wiki.pathmind.com/generative-adversarial-network-gan">A review of GANs can be found here. </a>
 
 [^prereqs2]: In this section, all you have to know is that StyleGAN is a type of generative model (a neural network that outputs an image). A deeper understanding of StyleGAN can enhance the connections made as this chapter is studied, but are not required. <a href="https://www.analyticsvidhya.com/blog/2021/05/stylegan-explained-in-less-than-five-minutes/"> A quick explanation of StyleGAN can be found here</a>
 
