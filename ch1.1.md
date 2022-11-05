@@ -16,8 +16,6 @@ title: CHAPTER 1.1
 
 <div>
   <a href="eduBlogHome.html">Home</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
 </div>
 <br>
 
