@@ -433,7 +433,7 @@ $$\def\x{\color{purple}{4}}
 \def\y{\color{purple}{-2.75}}
 O = \begin{bmatrix} \x \\ \y \end{bmatrix}$$
 
-<p align="center"><img src="/ch1/1.2/finalanswer.PNG" height=200></p>
+<p align="center"><img src="/ch1/1.2/finalanswer.PNG" height=250></p>
 
 ---
 
@@ -442,6 +442,8 @@ O = \begin{bmatrix} \x \\ \y \end{bmatrix}$$
 [^commu]: Note that the dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector's elements. Since the dot product is commutative, it is interchangable which vector is the "first" or "second".
 
 ---
+
+**Neurons do NOT always Cleanly Correspond to a Human-Defined Concept**
 
 In our examples, for the purpose of gaining intuition, we defined our neurons, represented as basis vectors here, in terms of "human-understandable measurements". For example, we can clearly understand what it means to measure body size, and have a vague understanding of what it means for an animal to be "more like a cat" than another animal. But neurons are not always "human-understandable". In fact, most of the millions of neurons in many neural networks may not be. What may be is that each neuron does have a **role** in affecting the calculations of other neurons. For example, one neuron's role may be to act as a "signal" for another neuron- if neuron A is low, neuron B will disregard information from neuron C because C must pass through A to get to B, and vice versa. This relationship between neurons has led to research such as finding neuron circuits [^circuits]. The true "roles" of neurons in spreading information to other neurons remains mysterious, and is still a subject of research.
 
