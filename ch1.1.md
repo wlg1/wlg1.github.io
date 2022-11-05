@@ -7,6 +7,8 @@ title: CHAPTER 1.1
     <link rel="stylesheet" href="index.css">
 </head>
 
+<body>
+
 <div class="topnav">
   <a class="active" href="eduBlogHome.html">Home</a>
   <a href="#contact">Contact</a>
@@ -265,5 +267,6 @@ Relationships are preserved. Analogy. Structure preserving map
 ---
 ---
 
+</body>
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" async></script>
