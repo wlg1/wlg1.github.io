@@ -153,7 +153,7 @@ This shows the difference between the data samples coming from the real world, a
 
 <p align="center">
 <!---$$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} \neq $$ <img src="/cob/cat.PNG" width="50" height="40">--->
-<img src="/cob/vecNotCat.PNG" width="250" height="100">
+<img src="/cob/vecNotCat.PNG" height="75">
 </p>
 
 Understanding the difference between a model representation and the actual entity it means (or points to) is crucial for gaining better intuition behind why matrix multiplication reveals hidden information in data sets.[^entity_model]
