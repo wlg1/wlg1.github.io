@@ -316,9 +316,9 @@ The first column in each of the matrices labels <img src="/ch1/face1.PNG" width=
 To understand matrix multiplication when it comes to adding the projections onto a basis vector, let's review 1D vector addition. Given vectors $$a + b$$, the reason why we add the tail of $$b$$ to the head of $$a$$ is because we can think of the tail to head of a vector as being a quantity on a 1D number line. Now for $$c + (-1)d$$, we are subtracting this quantity:
 
 <figure>
-<img src="/ch1/vector_addition.PNG">
+<img src="/ch1/vector_addition.PNG" height=300 class="center">
 
-<figcaption align = "center"><b>Image Source:  https://www.slideserve.com/arden/vector-addition-and-subtraction </b></figcaption>
+<figcaption align = "center"><b><font size="-1">Image Source:  https://www.slideserve.com/arden/vector-addition-and-subtraction </font></b></figcaption>
 </figure>
 
 Now we're ready to go through each step of matrix multiplication in an intuitive manner.
@@ -391,7 +391,7 @@ $$W$$: $$\def\a{\color{red}{-2}}
 <!---[Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different]--->
 
 
-Row 2 is the same; you can work it out yourself.
+Row 2 of the matrix follows the same logic.
 
 We can also gain intuition about this by thinking about each step of multiplying by the inverse of this matrix; for instance, going down 2 rat units, and 1 cat, gets you to body size 1.
 

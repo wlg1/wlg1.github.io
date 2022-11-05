@@ -195,7 +195,7 @@ We can see how this matrix relates to weights in a neural network; each column c
 <figure>
 <img src="/ch1/NN_weights.png">
 
-<figcaption align = "center"><b>Image Source:  https://www.jeremyjordan.me/intro-to-neural-networks/ </b></figcaption>
+<figcaption align = "center"><b><font size="-1">Image Source:  https://www.jeremyjordan.me/intro-to-neural-networks/ </font></b></figcaption>
 </figure>
 
 In Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/ch1/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/ch1/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:purple">matrix W</span>? We will reveal the answer in Chapter 1.3.
