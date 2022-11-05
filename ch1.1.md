@@ -12,8 +12,7 @@ title: CHAPTER 1.1
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
 </div>
-
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" async></script>
+<br>
 
 <center><h2>CHAPTER 1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?</h2></center>
 
@@ -265,3 +264,6 @@ Relationships are preserved. Analogy. Structure preserving map
 
 ---
 ---
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" async></script>
