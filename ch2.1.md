@@ -46,7 +46,7 @@ CoRR, abs/1907.10786, 2019. </b></figcaption>
 
 Recall from Chapter 1 that features can be approximated as vectors in the latent space of neuron activations.
 
-<img src="/cob/fig6.PNG" width="500" height="300">
+<img src="/ch1/fig6.PNG" width="500" height="300">
 
 In the image above, the animal (a cat) is interpreted in terms of the features of Face Length and Body Size. For instance, by increasing the value of the "Body Size vector" on the y-axis from y=2 to y=3, we obtain a vector that is similar to the one mapped to the sample at (0.5, 2), but with a longer body. Given that the sample at (0.5, 2) represents an average cat, a sample at (0.5, 3) would represent a long cat.
 
