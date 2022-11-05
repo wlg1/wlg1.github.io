@@ -22,7 +22,7 @@ title: CHAPTER 1.3
 
 <center><h2>CHAPTER 1.3: Why is Dot Product used in Matrix Multiplication?</h2></center>
 
-**(Reading time: 7 minutes)**
+**(Reading time: 12 minutes)**
 
 ---
 
@@ -373,7 +373,10 @@ STEP 1: First row of matrix: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
 \begin{bmatrix} \a & \b \end{bmatrix}$$  (see dotted lines)
 
-<!---
+![step1](/ch1/1.2/step1.png)
+
+As we see above, the dotted lines are what <span style="color:red">a</span> and <span style="color:blue">b</span> correspond to in each Model. They are the first row of the matrix. On the right side, this appears as:
+
 $$I$$: $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
 \begin{bmatrix} \a & \b \end{bmatrix}$$
@@ -381,18 +384,15 @@ $$I$$: $$\def\a{\color{red}{1}}
 $$W$$: $$\def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
 \begin{bmatrix} \a & \b \end{bmatrix}$$
---->
 
-![step1](/ch1/1.2/step1.png)
-
-As we see above, the dotted lines are what <span style="color:red">a</span> and <span style="color:blue">b</span> correspond to in each Model. They are the first row of the matrix. On the right side, this appears as:
-
+<!---
 $$
 \def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
 \def\c{\color{red}{2.5}}
 \def\d{\color{blue}{-2}}
 \begin{bmatrix} \a & \b \\ ? & ? \end{bmatrix} $$
+--->
 
 ---
 
@@ -434,7 +434,9 @@ STEP 3: Add: $$\def\a{\color{red}{a}}
 \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
 --> \color{red}{a} * x_{1} + \color{blue}{b} * x_2 $$
 
-<!---
+![step3](/ch1/1.2/step3.png)
+
+
 $$I$$: $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
 \begin{bmatrix} \a & \b \end{bmatrix}
@@ -446,12 +448,10 @@ $$W$$: $$\def\a{\color{red}{-2}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
 -> \color{red}{-2} * 0.5 + \color{blue}{2.5} * 2 = \color{purple}{4}$$
---->
-
-![step3](/ch1/1.2/step3.png)
 
 <!---[Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different]--->
 
+---
 
 Row 2 of the matrix follows the same logic.
 
