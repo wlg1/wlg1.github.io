@@ -55,7 +55,7 @@ Thus, when studying new improvements to neural networks, many people run into th
 
 This blog overcomes this problem by explaining many required prerequisites from scratch, and relating them to neural network applications.
 
-![2mod_vecs](/cob/2mod_out.PNG)
+![2mod_vecs](/ch1/2mod_out.PNG)
 
 ---
 <p style="font-size:20px"><b>

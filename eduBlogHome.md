@@ -23,7 +23,7 @@ This blog overcomes this problem by explaining many required prerequisites from 
 
 [^1]: Assuming only that a reader has a basic understanding of a foundational topic, or has watched these certain videos. Links will be provided to them.
 
-![2mod_vecs](/cob/2mod_out.PNG)
+![2mod_vecs](/ch1/2mod_out.PNG)
 
 <!---
 It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. 
