@@ -3,15 +3,12 @@ title: CHAPTER 2.2
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<head>
-    <link rel="stylesheet" href="index.css">
-</head>
-
 <div class="topnav">
   <a class="active" href="eduBlogHome.html">Home</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
 </div>
+<br>
 
 <center><h2>CHAPTER 2.2: Conditioning on Features using Orthogonal Projection</h2></center>
 

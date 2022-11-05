@@ -4,16 +4,12 @@ title: CHAPTER 1.1
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<head>
-    <link rel="stylesheet" href="index.css">
-</head>
-
-<div class="topnav">
+<!-- <div class="topnav">
   <a class="active" href="eduBlogHome.html">Home</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
 </div>
-<br>
+<br> -->
 
 <center><h2>CHAPTER 1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?</h2></center>
 
@@ -22,9 +18,9 @@ title: CHAPTER 1.1
 
 **Prerequisites**: A vague understanding of matrix multiplication and neural networks. [^prereqs]
 
----
-
 [^prereqs]: This section is heavily built on 3Blue1Brown's Essence of Linear Algebra. There are 16 videos, but you only have to focus on five videos: 1 to 3, then 9 and 13. <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=1&ab_channel=3Blue1Brown"> Source</a>
+
+---
 
 Let's start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there's a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).
 
