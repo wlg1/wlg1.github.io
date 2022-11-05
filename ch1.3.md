@@ -433,7 +433,7 @@ $$\def\x{\color{purple}{4}}
 \def\y{\color{purple}{-2.75}}
 O = \begin{bmatrix} \x \\ \y \end{bmatrix}$$
 
-<p align="center"><img src="/ch1/1.2/finalanswer.PNG" height=300></p>
+<p align="center"><img src="/ch1/1.2/finalanswer.PNG" height=200></p>
 
 ---
 
