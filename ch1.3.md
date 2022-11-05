@@ -216,7 +216,7 @@ So we arrived at several conclusions:
 
 ---
 
-**Changing the Matrix from the Example at the Top**
+**Using a Different Matrix from the Example at the Top**
 
 It is important to know that not all matrices are good at their job. The matrix $$W$$ we have been using is not a good way to calculate "cat" and "Rat", though it does convey a right rotation, which makes it intuitively easy to see how the basis vectors change between Models:
 
@@ -356,7 +356,7 @@ First, we break down the steps of the first dot product, corresponding to the <s
 
 **[ STEP 1 ]** First row of matrix: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
-\begin{bmatrix} \a & \b \end{bmatrix}$$  (see dotted lines)
+\begin{bmatrix} \a & \b \end{bmatrix}$$
 
 ![step1](/ch1/1.2/step1.png)
 
@@ -427,7 +427,7 @@ $$W$$: $$\def\a{\color{red}{-2}}
 
 <!---[Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different]--->
 
-If we apply the same logic of these three steps to row 2, we obtain the values of $$O$$, completing the main goal of this Chapter[^inverse]:
+If we apply the same logic of these three steps to row 2, we obtain the values of $$O$$, completing the main goal of this Chapter: [^inverse]
 
 $$\def\x{\color{purple}{4}}
 \def\y{\color{purple}{-2.75}}
