@@ -44,7 +44,7 @@ Not sure where to start?
 
 &nbsp;&nbsp;&nbsp;&nbsp;**[1.2: Beware of False Friends in the Matrix?](ch1.2.md)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[1.3: Why is Dot Product used in Matrix Multiplication?](ch1.3.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[1.3: Why is the Dot Product used in Matrix Multiplication?](ch1.3.md)**
 
 <details>
 <summary><b>CHAPTER 1 APPENDIX: DUALITY</b> (click to expand) </summary>

@@ -20,7 +20,7 @@ title: CHAPTER 1.3
 </div>
 <br>
 
-<center><h2>CHAPTER 1.3: Why is Dot Product used in Matrix Multiplication?</h2></center>
+<center><h2>CHAPTER 1.3: Why is the Dot Product used in Matrix Multiplication?</h2></center>
 
 **(Reading time: 12 minutes)**
 
