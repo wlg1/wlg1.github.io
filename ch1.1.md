@@ -1,4 +1,5 @@
 ---
+theme: jekyll-theme-minimal
 title: CHAPTER 1.1
 ---
 
@@ -12,7 +13,7 @@ title: CHAPTER 1.1
   <a href="#about">About</a>
 </div>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" async></script>
 
 <center><h2>CHAPTER 1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?</h2></center>
 
