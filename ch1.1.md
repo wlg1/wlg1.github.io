@@ -83,7 +83,7 @@ Bigger body + Shorter face = Likely a Cat
 
 [X and Y are on the row of the matrix corresponding to 'likely a cat'. They are the x values of body1 and face1's new coords in Model 2 ]
 
-What are $$face_{cat}$$ and $$body_{cat}$$? These are how much each feature is weighted by to calculate the score of "likely to be cat". The higher the weight, the more that feature is taken into account during calculation. For example, it might be more important to know the body size than the face length when determining if something is a cat or a rat, since cats are usually much bigger than rats, but their faces aren't always much shorter. Since body size is more important, we'd set $$body_{cat} = 1.5 > face_{cat} = 1$$. We will reveal how these weights are related to the matrix once we get into the algebra of matrix multiplication in section [].
+What are $$face_{cat}$$ and $$body_{cat}$$? These are how much each feature is weighted by to calculate the score of "likely to be cat". The higher the weight, the more that feature is taken into account during calculation. For example, it might be more important to know the body size than the face length when determining if something is a cat or a rat, since cats are usually much bigger than rats, but their faces aren't always much shorter. Since body size is more important, we'd set $$body_{cat} = 1.5 > face_{cat} = 1$$. We will reveal how these weights are related to the matrix once we get into the algebra of matrix multiplication in section 1.3.
 
 Each measurement acts as a basis vector used to define each data sample. Because this second set of measurements uses different basis vectors than the set of face & body sizes, it forms a different coordinate space. Since each coordinate space provides a different way to **represent** the data, let's call each coordinate space a **Model**. 
 
@@ -197,77 +197,9 @@ With all this in mind, we can say that the goal of the neural network is to find
 Fig 13
 [fading gif of changing abstractions back to actual pics; place images on coord sys]--->
 
-[^entity_model]: While the vectors are representations of the data sample, the data sample is also a representation of the actual cat entity (by transitivity, both are representation of the entity). Note that the vector is a numerial representation of the data sample, while the data sample is a collection of values which are defined relative to other samples in the population. Information about these collections of relative values is preserved under different Models, and different transformations preserve different information. Because values are defined relative to other values, information about data samples (such as their distribution) are relations, and relations can be thought of as shapes; for instance, a line is a relation between two points, so this line shape describes their relation. This is better explained in Section []. Also note that the only information the neural network knows about the entity comes from the data sample; it can never truly know the entity.
-
----
-
-Before delving into the intricacies of matrix multiplication, let's look at another example to gain even better intuition about the difference between the real world and our coordinate space model. Instead of cat and rat data samples, we'll look at the two data samples <img src="/cob/poison.jpg" width="30" height="30">, a dangerous substance, and <img src="/cob/gift.jpg" width="30" height="30">, which is charitably given to someone. And instead of using numbers, let's use letters to label our entities. This means our models will resemble languages, some of which also use letters to label entities. So our first model, or language, is labeled as follows:
-
-<img src="/cob/german_gift.PNG" width="400" height="300">
-
-To an English speaker, this may look wrong, because <img src="/cob/poison.jpg" width="30" height="30"> should be called something like 'poison', not 'gift'. But in German, <img src="/cob/poison.jpg" width="30" height="30"> is in fact called 'gift'. If a German speaker tells the English speaker that they're giving the English speaker a gift, the English speaker may be delighted because they think they're getting <img src="/cob/gift.jpg" width="30" height="30">. But they shouldn't be, because what they're ACTUALLY receiving is <img src="/cob/poison.jpg" width="30" height="30">, which would kill them.[^false_friend]
-
-Since there is a misunderstanding, the English speaker needs to know what 'gift' is actually referring to; or in other words, to know the right English word to use for <img src="/cob/poison.jpg" width="30" height="30">. So they need to translate from the language above, which resembles German, to English as follows:
-
-[^false_friend]: This is an example of a False Friend, "which is a pair of words in two different languages that look similar, but have different meanings." Source: https://en.wikipedia.org/wiki/False_friend
-
-![gift_cob](/cob/gift_cob.PNG)
-<!---[animation transforming poison and gift pics to English coordinate space. The vector does not move. Label first Sys as German, second as English.]
-[Don't give names to basis vectors, ONLY show I -> gift, which is wrong.]--->
-
-In summary:
-
-<!---<p align="center"> --->
-'gift' in German <img src="/cob/poison.jpg" width="30" height="30"> != 'gift' in English <img src="/cob/gift.jpg" width="30" height="30">
-
-'gift' in German <img src="/cob/poison.jpg" width="30" height="30"> ~ 'poison' in English  <img src="/cob/poison.jpg" width="30" height="30">
-
-Relating this back to using numbers as labels:
-
-$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/cob/poison.jpg" width="30" height="30"> != $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in English <img src="/cob/gift.jpg" width="30" height="30">
-
-$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/cob/poison.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ in English <img src="/cob/poison.jpg" width="30" height="30">
-
-Now if the English speaker tells the German speaker that they're giving them a 'gift', the German speaker must translate this to a German word or expression that makes them understand that it's <img src="/cob/gift.jpg" width="30" height="30">. The German word for <img src="/cob/gift.jpg" width="30" height="30"> is 'geschenk'. Going the other way around, the English word for  <img src="/cob/poison.jpg" width="30" height="30"> is 'poison'.
-
-![all_words_cob](/cob/all_words_cob.PNG)
-<!---[show coordinate space w/ geschenk and poison]--->
-
-$$\begin{bmatrix} 1/3 \\ 5/3 \end{bmatrix}$$ 'geschenk' in German <img src="/cob/gift.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ 'gift' in English <img src="/cob/gift.jpg" width="30" height="30">
-
-$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ 'gift' in German <img src="/cob/poison.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ 'poison' in English <img src="/cob/poison.jpg" width="30" height="30">
-
-<!---
-Note that there is a difference between "what gift translates to" and "what gift means". "What gift translates to in German" means what the label on <img src="/cob/gift.jpg" width="30" height="30"> is in English. "What gift means in German" is about what the LABEL 'gift' itself points to in German. The data ssample <img src="/cob/gift.jpg" width="30" height="30"> and the label 'gift' are not the same. They are only the same when using English, which is defined by the "English basis vectors". More about what this means will be discussed in section X, which views basis vectors in a similar way to the Rosetta Stone.
-
-"what gift translates to" : <img src="/cob/gift.jpg" width="30" height="30">
-
-"what gift means": the label 'gift' (each label should be highlighted w/ diff font)
---->
-
-But what does the label 'poison' mean in German? As we see in the German coordinate space, it does not point to any data sample. In fact, the label 'poison' does not mean anything in German. The same goes for the label 'gescheck' in English. Not all labels have to point to an data sample; so in some coordinate spaces, they just mean nonsense. 
+[^entity_model]: While the vectors are representations of the data sample, the data sample is also a representation of the actual cat entity (by transitivity, both are representation of the entity). Note that the vector is a numerial representation of the data sample, while the data sample is a collection of values which are defined relative to other samples in the population. Information about these collections of relative values is preserved under different Models, and different transformations preserve different information. Because values are defined relative to other values, information about data samples (such as their distribution) are relations, and relations can be thought of as shapes; for instance, a line is a relation between two points, so this line shape describes their relation. This is better explained in Appendix Chapter []. Also note that the only information the neural network knows about the entity comes from the data sample; it can never truly know the entity.
 
 <center><a href="ch1.2.html"><b>NEXT: CHAPTER 1.2</b></a></center>
-
-<!---
-This is an instance of 'not confusing the map for the territory'- the map of Switzerland is not 1-1 with Switzerland itself. The model may not capture everything about reality.
-
-[show a place in Switzerland not on the map]
---->
-
-<!---
-MOVE TO 1.1+:
-Note that the relationships between the entities doesn't change. Since the basis vectors from Model 1 still exist in Model 2, you can still use the instructions from Model 1, but you have to translate them using the change of basis matrix.
-... As we'll see in section X, this is why the dot product instructions work.
-
-section Y will delve deeper into the relationships between concepts, and how they can be preserved or destroyed via matrix multiplication. It retrieves insights that are crucial for...
-
-While [cat pic entity] is a representation of a entity that exists in the real world, 
-Relationships are preserved. Analogy. Structure preserving map
-[Maps between 2 domains: the real world, and the coordinate space]
---->
-
-<br><br>
 
 ---
 ---

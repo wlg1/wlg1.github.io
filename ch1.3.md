@@ -1,6 +1,6 @@
 ---
 theme: jekyll-theme-minimal
-title: CHAPTER 1.2
+title: CHAPTER 1.3
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" async></script>
 
@@ -15,7 +15,7 @@ title: CHAPTER 1.2
 </div>
 <br> -->
 
-<center><h2>CHAPTER 1.2: Why is Dot Product used in Matrix Multiplication?</h2></center>
+<center><h2>CHAPTER 1.3: Why is Dot Product used in Matrix Multiplication?</h2></center>
 
 **(Reading time: 7 minutes)**
 
