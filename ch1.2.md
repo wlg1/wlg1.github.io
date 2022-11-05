@@ -27,46 +27,46 @@ title: CHAPTER 1.2
 
 ---
 
-Before delving into the intricacies of matrix multiplication, let's look at another example to gain even better intuition about the difference between the real world and our coordinate space model. Instead of cat and rat data samples, we'll look at the two data samples <img src="/cob/poison.jpg" width="30" height="30">, a dangerous substance, and <img src="/cob/gift.jpg" width="30" height="30">, which is charitably given to someone. And instead of using numbers, let's use letters to label our entities. This means our models will resemble languages, some of which also use letters to label entities. So our first model, or language, is labeled as follows:
+Before delving into the intricacies of matrix multiplication, let's look at another example to gain even better intuition about the difference between the real world and our coordinate space model. Instead of cat and rat data samples, we'll look at the two data samples <img src="/ch1/poison.jpg" width="30" height="30">, a dangerous substance, and <img src="/ch1/gift.jpg" width="30" height="30">, which is charitably given to someone. And instead of using numbers, let's use letters to label our entities. This means our models will resemble languages, some of which also use letters to label entities. So our first model, or language, is labeled as follows:
 
-<img src="/cob/german_gift.PNG" width="400" height="300">
+<img src="/ch1/german_gift.PNG" width="400" height="300">
 
-To an English speaker, this may look wrong, because <img src="/cob/poison.jpg" width="30" height="30"> should be called something like 'poison', not 'gift'. But in German, <img src="/cob/poison.jpg" width="30" height="30"> is in fact called 'gift'. If a German speaker tells the English speaker that they're giving the English speaker a gift, the English speaker may be delighted because they think they're getting <img src="/cob/gift.jpg" width="30" height="30">. But they shouldn't be, because what they're ACTUALLY receiving is <img src="/cob/poison.jpg" width="30" height="30">, which would kill them.[^false_friend]
+To an English speaker, this may look wrong, because <img src="/ch1/poison.jpg" width="30" height="30"> should be called something like 'poison', not 'gift'. But in German, <img src="/ch1/poison.jpg" width="30" height="30"> is in fact called 'gift'. If a German speaker tells the English speaker that they're giving the English speaker a gift, the English speaker may be delighted because they think they're getting <img src="/ch1/gift.jpg" width="30" height="30">. But they shouldn't be, because what they're ACTUALLY receiving is <img src="/ch1/poison.jpg" width="30" height="30">, which would kill them.[^false_friend]
 
-Since there is a misunderstanding, the English speaker needs to know what 'gift' is actually referring to; or in other words, to know the right English word to use for <img src="/cob/poison.jpg" width="30" height="30">. So they need to translate from the language above, which resembles German, to English as follows:
+Since there is a misunderstanding, the English speaker needs to know what 'gift' is actually referring to; or in other words, to know the right English word to use for <img src="/ch1/poison.jpg" width="30" height="30">. So they need to translate from the language above, which resembles German, to English as follows:
 
 [^false_friend]: This is an example of a False Friend, "which is a pair of words in two different languages that look similar, but have different meanings." Source: https://en.wikipedia.org/wiki/False_friend
 
-![gift_cob](/cob/gift_cob.PNG)
+![gift_cob](/ch1/gift_cob.PNG)
 <!---[animation transforming poison and gift pics to English coordinate space. The vector does not move. Label first Sys as German, second as English.]
 [Don't give names to basis vectors, ONLY show I -> gift, which is wrong.]--->
 
 In summary:
 
 <!---<p align="center"> --->
-'gift' in German <img src="/cob/poison.jpg" width="30" height="30"> != 'gift' in English <img src="/cob/gift.jpg" width="30" height="30">
+'gift' in German <img src="/ch1/poison.jpg" width="30" height="30"> != 'gift' in English <img src="/ch1/gift.jpg" width="30" height="30">
 
-'gift' in German <img src="/cob/poison.jpg" width="30" height="30"> ~ 'poison' in English  <img src="/cob/poison.jpg" width="30" height="30">
+'gift' in German <img src="/ch1/poison.jpg" width="30" height="30"> ~ 'poison' in English  <img src="/ch1/poison.jpg" width="30" height="30">
 
 Relating this back to using numbers as labels:
 
-$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/cob/poison.jpg" width="30" height="30"> != $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in English <img src="/cob/gift.jpg" width="30" height="30">
+$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/ch1/poison.jpg" width="30" height="30"> != $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in English <img src="/ch1/gift.jpg" width="30" height="30">
 
-$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/cob/poison.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ in English <img src="/cob/poison.jpg" width="30" height="30">
+$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ in German <img src="/ch1/poison.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ in English <img src="/ch1/poison.jpg" width="30" height="30">
 
-Now if the English speaker tells the German speaker that they're giving them a 'gift', the German speaker must translate this to a German word or expression that makes them understand that it's <img src="/cob/gift.jpg" width="30" height="30">. The German word for <img src="/cob/gift.jpg" width="30" height="30"> is 'geschenk'. Going the other way around, the English word for  <img src="/cob/poison.jpg" width="30" height="30"> is 'poison'.
+Now if the English speaker tells the German speaker that they're giving them a 'gift', the German speaker must translate this to a German word or expression that makes them understand that it's <img src="/ch1/gift.jpg" width="30" height="30">. The German word for <img src="/ch1/gift.jpg" width="30" height="30"> is 'geschenk'. Going the other way around, the English word for  <img src="/ch1/poison.jpg" width="30" height="30"> is 'poison'.
 
-![all_words_cob](/cob/all_words_cob.PNG)
+![all_words_cob](/ch1/all_words_cob.PNG)
 <!---[show coordinate space w/ geschenk and poison]--->
 
-$$\begin{bmatrix} 1/3 \\ 5/3 \end{bmatrix}$$ 'geschenk' in German <img src="/cob/gift.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ 'gift' in English <img src="/cob/gift.jpg" width="30" height="30">
+$$\begin{bmatrix} 1/3 \\ 5/3 \end{bmatrix}$$ 'geschenk' in German <img src="/ch1/gift.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ 'gift' in English <img src="/ch1/gift.jpg" width="30" height="30">
 
-$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ 'gift' in German <img src="/cob/poison.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ 'poison' in English <img src="/cob/poison.jpg" width="30" height="30">
+$$\begin{bmatrix} -1 \\ 2 \end{bmatrix}$$ 'gift' in German <img src="/ch1/poison.jpg" width="30" height="30"> ~ $$\begin{bmatrix} -4 \\ 1 \end{bmatrix}$$ 'poison' in English <img src="/ch1/poison.jpg" width="30" height="30">
 
 <!---
-Note that there is a difference between "what gift translates to" and "what gift means". "What gift translates to in German" means what the label on <img src="/cob/gift.jpg" width="30" height="30"> is in English. "What gift means in German" is about what the LABEL 'gift' itself points to in German. The data ssample <img src="/cob/gift.jpg" width="30" height="30"> and the label 'gift' are not the same. They are only the same when using English, which is defined by the "English basis vectors". More about what this means will be discussed in section X, which views basis vectors in a similar way to the Rosetta Stone.
+Note that there is a difference between "what gift translates to" and "what gift means". "What gift translates to in German" means what the label on <img src="/ch1/gift.jpg" width="30" height="30"> is in English. "What gift means in German" is about what the LABEL 'gift' itself points to in German. The data ssample <img src="/ch1/gift.jpg" width="30" height="30"> and the label 'gift' are not the same. They are only the same when using English, which is defined by the "English basis vectors". More about what this means will be discussed in section X, which views basis vectors in a similar way to the Rosetta Stone.
 
-"what gift translates to" : <img src="/cob/gift.jpg" width="30" height="30">
+"what gift translates to" : <img src="/ch1/gift.jpg" width="30" height="30">
 
 "what gift means": the label 'gift' (each label should be highlighted w/ diff font)
 --->

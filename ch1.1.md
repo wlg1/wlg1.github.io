@@ -33,30 +33,30 @@ title: CHAPTER 1.1
 
 Let's start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there's a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).
 
-![Figure 1: Cat](/cob/fig1.PNG)
+![Figure 1: Cat](/ch1/fig1.PNG)
 <!--- middle overlays shapes on top of actual cat. label bottom right as 'data sample'--->
 
 So every entity (a cat or rat) in the population is represented in the dataset as an data sample, which is an abstraction defined only by body size and face length, such that their values are measured in "units". We can represent the data samples in this dataset as points in a coordinate space, using the two features as axes. The figure below shows the dataset on the left, and its coordinate space representation on the right. The top part shows the data points using numbers, and the bottom part shows how each data point corresponds to a data sample:
 
-![Figure 2](/cob/fig2.PNG)
-![Figure 3](/cob/fig3.PNG)
+![Figure 2](/ch1/fig2.PNG)
+![Figure 3](/ch1/fig3.PNG)
 <!---Make dataset image: first row is face, second row is body, third row is data pt (combo of both) using #s, then show in coord sys on right. Then in 2nd image, turn all numbers into imgs, and again show in coordsys on right.--->
 
 Let's look at our coordinate space with only the data samples corresponding to unit 1:
 
-<img src="/cob/fig4.PNG" height="300">
+<img src="/ch1/fig4.PNG" height="300">
 
-Every data point is a combination of the "unit 1" points, which represent <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">. For instance, the data point (0.5, 2), which represents <img src="/cob/cat.PNG" width="50" height="40">, is a weighted combination of 0.5 * <img src="/cob/face1.PNG" width="50" height="40"> and 2* <img src="/cob/body1.PNG" width="50" height="40">
+Every data point is a combination of the "unit 1" points, which represent <img src="/ch1/face1.PNG" width="50" height="40"> and <img src="/ch1/body1.PNG" width="50" height="40">. For instance, the data point (0.5, 2), which represents <img src="/ch1/cat.PNG" width="50" height="40">, is a weighted combination of 0.5 * <img src="/ch1/face1.PNG" width="50" height="40"> and 2* <img src="/ch1/body1.PNG" width="50" height="40">
 
 <hr style="border:0.3px solid gray;width:90%;margin-left:auto;margin-right:auto"> 
-![Figure 5: Linear Combination](/cob/fig5.PNG)
+![Figure 5: Linear Combination](/ch1/fig5.PNG)
 <hr style="border:0.3px solid gray;width:90%;margin-left:auto;margin-right:auto"> 
 
-If we see each data point as a vector, then every vector such as <img src="/cob/cat.PNG" width="50" height="40"> is an addition of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">, which are **basis vectors**. Thus (0.5, 2) can also be represented as $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} = 0.5 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
+If we see each data point as a vector, then every vector such as <img src="/ch1/cat.PNG" width="50" height="40"> is an addition of <img src="/ch1/face1.PNG" width="50" height="40"> and <img src="/ch1/body1.PNG" width="50" height="40">, which are **basis vectors**. Thus (0.5, 2) can also be represented as $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} = 0.5 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
-<img src="/cob/fig6.PNG" height="350">
+<img src="/ch1/fig6.PNG" height="350">
 <!---
-![Figure 6: Cat in Coordinate Space](/cob/fig6.PNG)
+![Figure 6: Cat in Coordinate Space](/ch1/fig6.PNG)
 [under each body size pic, number it so reader knows if it's 1, 2, etc. The 2 glues two 1s together, showing the border, the 0.5 shows the other half grayed out, etc. This is to indicate they're scaling the unit vector. But [cat pic] does not do this, since it's not always measured using bodysize or face length, it's just pure data that can be represented using different features. you can show the addition with an 'intermediate step' that shows gluing them on, then removing the borders/faded. can also be gif]--->
 
 ---
@@ -94,7 +94,7 @@ In fact, since we are using Model 1 to calculate the values for Model 2, we will
 
 <!---ANIMATION: rotation w/o coordinate space [Model 1 fades on 'likely a cat' and 'likely a rat'. then it shifts.]--->
 
-For our examples, say that a vector **labels** a data sample if it points to it. We know in Model 1 that $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ points to <img src="/cob/face1.PNG" width="50" height="40">. But does this vector point to the same data sample in Model 2? 
+For our examples, say that a vector **labels** a data sample if it points to it. We know in Model 1 that $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ points to <img src="/ch1/face1.PNG" width="50" height="40">. But does this vector point to the same data sample in Model 2? 
 
 Let's look at the two Models. We'll use the Orange Dot to denote <span style="color:orange">"likely to be a cat with unit 1"</span>[^1], and use the Green Dot to denote <span style="color:green">"likely to be a rat with unit 1"</span>.
 
@@ -106,21 +106,21 @@ Let's look at the two Models. We'll use the Orange Dot to denote <span style="co
 https://docs.manim.community/en/stable/reference/manim.animation.fading.FadeOut.html
 Or fade out still image using video editor--->
 
-![Figure 8](/cob/fig8.PNG)
+![Figure 8](/ch1/fig8.PNG)
 
-The two $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ in each Model do not label the same data point! Likewise, $$\color{#ADD8E6}{\begin{bmatrix} 0 \\ 1 \end{bmatrix}}$$ points to <img src="/cob/body1.PNG" width="50" height="40"> in Model 1, but does not point to it in Model 2. Phrasing this a different way makes this idea more intuitive: let's say that the **meaning** of a vector is the data sample it points to. $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ no longer has the same meaning in Model 2 as it did in Model 1. This is because the meaning of a vector depends on its basis vectors. In Model 1, $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ pointed to <img src="/cob/face1.PNG" width="50" height="40"> because it's supposed to mean "has a face with unit 1". In Model 2, $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ points to <span style="color:orange">Orange Dot</span> because it's supposed to mean "likely to be a cat with unit 1".[^1]
+The two $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ in each Model do not label the same data point! Likewise, $$\color{#ADD8E6}{\begin{bmatrix} 0 \\ 1 \end{bmatrix}}$$ points to <img src="/ch1/body1.PNG" width="50" height="40"> in Model 1, but does not point to it in Model 2. Phrasing this a different way makes this idea more intuitive: let's say that the **meaning** of a vector is the data sample it points to. $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ no longer has the same meaning in Model 2 as it did in Model 1. This is because the meaning of a vector depends on its basis vectors. In Model 1, $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ pointed to <img src="/ch1/face1.PNG" width="50" height="40"> because it's supposed to mean "has a face with unit 1". In Model 2, $$\color{#FA8072}{\begin{bmatrix} 1 \\ 0 \end{bmatrix}}$$ points to <span style="color:orange">Orange Dot</span> because it's supposed to mean "likely to be a cat with unit 1".[^1]
 
 
 [^1]: What does it mean to have 1 unit of "likely a cat?" For our example, we generalize these units to allow any 'probabilistic' measurement to be used, as long as having X+1 units means 'it is more likely to be" than having X units.
 
 <!---* note that [body size 1] is present in Model 2, even though it's missing [face length]. In other words, it's [body size 1] + 0 * [face length 1]. This means that any data point which only contains a body of size 1 is seen as [meaning in terms of basis jk]--->
 
-If it's still not clear why meaning depends on the choice of basis vectors, let's look at a better example that will help drive home this idea. We know in Model 1 that $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ labels <img src="/cob/cat.PNG" width="50" height="40">. But just like before, $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ in Model 2 does not.
+If it's still not clear why meaning depends on the choice of basis vectors, let's look at a better example that will help drive home this idea. We know in Model 1 that $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ labels <img src="/ch1/cat.PNG" width="50" height="40">. But just like before, $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ in Model 2 does not.
 
-![Figure 10](/cob/fig10.PNG)
+![Figure 10](/ch1/fig10.PNG)
 <!---
-<img src="/cob/fig10a.png" width="300" height="200">
-<img src="/cob/fig10b.png" width="300" height="200">
+<img src="/ch1/fig10a.png" width="300" height="200">
+<img src="/ch1/fig10b.png" width="300" height="200">
 --->
 
 <!---
@@ -128,10 +128,10 @@ If it's still not clear why meaning depends on the choice of basis vectors, let'
 [labels cat pic on left, and nothing on right] [color code or include pic of vector when referring to [2 0.5] in text paragraph]
 --->
 
-Recall that in Model 1, which uses the face & body sizes as basis vectors, $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ meant "an entity with a short face (0.5) and a long body (2)." But in Model 2, this vector means "it's NOT as likely to be a cat (0.5), as it is more likely to be a rat (2)". The meaning in Model 2 does not point to <img src="/cob/cat.PNG" width="50" height="40">, because that data sample is likely a cat. Instead, it should point to a data sample that looks more like a rat.
+Recall that in Model 1, which uses the face & body sizes as basis vectors, $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ meant "an entity with a short face (0.5) and a long body (2)." But in Model 2, this vector means "it's NOT as likely to be a cat (0.5), as it is more likely to be a rat (2)". The meaning in Model 2 does not point to <img src="/ch1/cat.PNG" width="50" height="40">, because that data sample is likely a cat. Instead, it should point to a data sample that looks more like a rat.
 
 <!---
-In fact, $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}$$ should now point to [rat pic], instead of <img src="/cob/cat.PNG" width="50" height="40">.
+In fact, $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}$$ should now point to [rat pic], instead of <img src="/ch1/cat.PNG" width="50" height="40">.
 
 Apply inv of matrix onto [0.5, 2] to get rat pic in Model 1, which you use to construct body and face sizes
 
@@ -151,11 +151,11 @@ Fig ??
 [now fill in what [2 0.5] is in Sys 2]
 --->
 
-This shows the difference between the data samples coming from the real world, and the model that represents those data samples using labels. $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ is not <img src="/cob/cat.PNG" width="50" height="40"> itself; it is merely a label of it, and whichever label is used depends on the basis vectors used to define the parts of each label. 
+This shows the difference between the data samples coming from the real world, and the model that represents those data samples using labels. $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ is not <img src="/ch1/cat.PNG" width="50" height="40"> itself; it is merely a label of it, and whichever label is used depends on the basis vectors used to define the parts of each label. 
 
 <p align="center">
-<!---$$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} \neq $$ <img src="/cob/cat.PNG" width="50" height="40">--->
-<img src="/cob/vecNotCat.PNG" height="75">
+<!---$$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} \neq $$ <img src="/ch1/cat.PNG" width="50" height="40">--->
+<img src="/ch1/vecNotCat.PNG" height="75">
 </p>
 
 Understanding the difference between a model representation and the actual entity it means (or points to) is crucial for gaining better intuition behind why matrix multiplication reveals hidden information in data sets.[^entity_model]
@@ -164,7 +164,7 @@ Understanding the difference between a model representation and the actual entit
 
 We show below how the features on the two basis vectors in Model 1 are rotated onto two new vectors in Model 2. This is done by matrix multiplication, causing the basis vectors in Model 2 to now point to the <span style="color:orange">Orange Dot</span> and <span style="color:green">Green Dot</span>; Chapter 1.3 will make it even more clear why matrix multiplication is called a "Change of Basis".
 
-![2mod_vecs](/cob/2mod_vecs.PNG)
+![2mod_vecs](/ch1/2mod_vecs.PNG)
 
 <!---[Model 1, and Model 1 on top of Model 2. WITH vectors.]
 in the vector on top of model pic, color them the same, only darker--->
@@ -184,7 +184,7 @@ $$O = WX$$
 
 [^1-layer-NN]: https://ml4a.github.io/ml4a/how_neural_networks_are_trained/
 
-![2mod_out](/cob/2mod_out.PNG)
+![2mod_out](/ch1/2mod_out.PNG)
 
 <!---[picture of X as input vector, W as arrow, O=WX as Model 2 vector on [cat pic]. W in b/w, with cols of both darker blue and darker red]--->
 
@@ -193,12 +193,12 @@ $$O = WX$$
 We can see how this matrix relates to weights in a neural network; each column corresponds to outgoing weights of a previous layer neuron, and each row corresponds to incoming weights of a next layer neuron:
 
 <figure>
-<img src="/cob/NN_weights.PNG">
+<img src="/ch1/NN_weights.png">
 
 <figcaption align = "center"><b>Image Source:  https://www.jeremyjordan.me/intro-to-neural-networks/ </b></figcaption>
 </figure>
 
-In Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/cob/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/cob/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:purple">matrix W</span>? We will reveal the answer in Chapter 1.3.
+In Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/ch1/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/ch1/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:purple">matrix W</span>? We will reveal the answer in Chapter 1.3.
 
 With all this in mind, we can say that the goal of the neural network is to find how to accurately measure the data using neuron weights, so they can be taken together into an equation which measures a "goal measurement" such as "how body size and face length determine a cat or a rat".  
 
