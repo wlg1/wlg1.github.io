@@ -403,6 +403,10 @@ Note that the dot product between two vectors scales the numbers in the first ve
 
 ---
 
+In our examples, for the purpose of gaining intuition, we defined our neurons, represented as basis vectors here, in terms of "human-understandable measurements". For example, we can clearly understand what it means to measure body size, and have a vague understanding of what it means for an animal to be "more like a cat" than another animal. But neurons are not always "human-understandable". In fact, most of the millions of neurons in many neural networks may not be. What may be is that each neuron does have a **role** in affecting the calculations of other neurons. For example, one neuron's role may be to act as a "signal" for another neuron- if neuron A is low, neuron B will disregard information from neuron C because C must pass through A to get to B, and vice versa. This relationship between neurons has led to research such as finding neuron circuits [^circuits]. The true "roles" of neurons in spreading information to other neurons remains mysterious, and is still a subject of research.
+
+[^circuits]: <a href="https://distill.pub/2020/circuits/"> See this link on Distill</a>
+
 We have finished going over the intuition behind matrix multiplication, which serves as the main operation behind not just neural networks, but in many methods of statistics and machine learning. In future Chapters, we will use this intuition to gain deep understandings of methods that use matrix multiplication to find new insights in data. The next Chapter will apply our new intuitive perceptions to controlling features in generative model outputs.
 
 <center><a href="ch2.1.html"><b>NEXT: CHAPTER 2.1</b></a></center>
