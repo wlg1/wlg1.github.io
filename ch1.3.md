@@ -393,12 +393,13 @@ $$W$$: $$\def\a{\color{red}{-2}}
 
 Row 2 is the same; you can work it out yourself.
 
----
-[inverse: going down 2 rat, 1 cat gets you to body size 1]
+We can also gain intuition about this by thinking about each step of multiplying by the inverse of this matrix; for instance, going down 2 rat units, and 1 cat, gets you to body size 1.
+
+Note that the dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector's elements. Since the dot product is commutative, it is interchangable which vector is the "first" or "second".
 
 ---
 
-[^]: The dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector's elements. Since the dot product is commutative, it is interchangable which vector is the "first" or "second".
+We have finished going over the intuition behind matrix multiplication, which serves as the main operation behind not just neural networks, but in many methods of statistics and machine learning. In future Chapters, we will use this intuition to gain deep understandings of methods that use matrix multiplication to find new insights in data. The next Chapter will apply our new intuitive perceptions to controlling features in generative model outputs.
 
 <center><a href="ch2.1.html"><b>NEXT: CHAPTER 2.1</b></a></center>
 
