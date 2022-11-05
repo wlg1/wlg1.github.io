@@ -51,7 +51,7 @@ Shorter face + Bigger body = Likely a Cat
 
 $$\color{red}{face_{cat}} * 0.5  + \color{blue}{body_{cat}} * 2$$ = the value 0.5(face_cat)+2(body_cat) on the cat axes 
 
-Notice how this resembles the following dot product[^commu]: 
+Notice how this resembles the following dot product: [^commu]
 
 <p align="center">
 $$
