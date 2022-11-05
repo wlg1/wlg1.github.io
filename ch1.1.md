@@ -33,7 +33,7 @@ title: CHAPTER 1.1
 
 Let's start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there's a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).
 
-![Figure 1: Cat](/ch1/fig1.PNG)
+![Figure 1: Cat](/ch1/fig1.png)
 <!--- middle overlays shapes on top of actual cat. label bottom right as 'data sample'--->
 
 So every entity (a cat or rat) in the population is represented in the dataset as an data sample, which is an abstraction defined only by body size and face length, such that their values are measured in "units". We can represent the data samples in this dataset as points in a coordinate space, using the two features as axes. The figure below shows the dataset on the left, and its coordinate space representation on the right. The top part shows the data points using numbers, and the bottom part shows how each data point corresponds to a data sample:
