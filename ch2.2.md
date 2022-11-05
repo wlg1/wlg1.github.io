@@ -39,7 +39,7 @@ Notice that all the new samples have the same value: x = 3. So changing y doesn'
 
 Let's start with the case where samples $$z = [3, 1]$$, and the feature $$n_1 = [1.5, 1]$$ we want to change is **not** on a basis vector, but the feature $$n_2$$ whose value of a sample we want to keep is on a basis vector. To find a new feature vector $$c$$ to add to $$z$$, we want $$c$$ keep $$n_2 = 3$$, but have the other parts of $$c$$ be as close to $$n_1$$ as possible.
 
-<img src="/ch2/z_plus_c.PNG" width="400" height="300">
+<img src="/ch2/z_plus_c.PNG" height="300">
 
 In the figure above, we see that vector $$z + c$$ keeps as much of $$n_1 = [1.5, 1]$$ as possible- that is, it still lies at $$y = 1$$ just like $$z + n_1$$, but also keeps $$n_2 = 3$$, in contrast to $$z + n_1$$, which moves $$n_2$$ to 4.5.
 
@@ -67,30 +67,29 @@ So if $$\vec{n_1} = \color{#CBC3E3}{\begin{bmatrix} 1.5 \\ 1 \end{bmatrix}}$$, t
 
 Then, we scale the $$n_2$$ basis vector by $$\vec{n_1} \cdot \vec{n_2}$$ by doing: 
 
-$$\vec{n_1} \cdot \vec{n_2} * \vec{n_2}$$
+$$(\vec{n_1} \cdot \vec{n_2}) * \vec{n_2}$$
 
-<img src="/ch2/VtoW_orth.PNG" width="400" height="300">
+<img src="/ch2/n1_n2_orth.PNG" width="400" height="300">
 
-In Figure 2.3 above, we have found the vector, shown in pink, that represents "how much of x is used to get vector V". Now to "preserve" this value of x(dot)v while changing the value of y, we have to find a vector that's "orthogonal" to $$(\vec{v} \cdot \vec{x}) * \vec{x}$$. As we saw in Figure 2.2 (link, then have way to link back to this paragraph from that fig), the orthogonal vector $$c$$ is just the vector obtained by going from x(dot)v * x to v. In vector addition, that translates to: 
+In Figure 2.3 above, we have found the vector, shown in light blue, that represents "how much of $$n_2$$ is used to get vector $$n_1$$". Now to "preserve" this value of $$(\vec{n_1} \cdot \vec{n_2})$$ while changing as much of $$n_1$$ as we can, we have to calculate the vector $$c$$ that's "orthogonal" to $$(\vec{n_1} \cdot \vec{n_2}) * \vec{n_2}$$. Since $$c$$ starts at the head of $$(\vec{n_1} \cdot \vec{n_2})$$ and ends at the head of $$\vec{n_1}$$, in vector addition, that translates to: 
 
-$$\vec{v} = (\vec{v} \cdot \vec{x}) * \vec{x} + \vec{c}$$
+$$\vec{n_1} = (\vec{n_1} \cdot \vec{n_2}) * \vec{n_2} + \vec{c}$$
 
-Solving for C, we obtain:
+Solving for $$\vec{c}$$, we obtain:
 
-$$\vec{c} = \vec{v} - (\vec{v} \cdot \vec{x}) * \vec{x}$$
+$$\vec{c} = \vec{n_1} - (\vec{n_1} \cdot \vec{n_2}) * \vec{n_2}$$
 
-<img src="/ch2/equation_C.PNG" width="400" height="300">
+<img src="/ch2/n1_n2_orth_eqn.PNG" width="400" height="300">
 
 And so any sample along:
 
-$$\vec{v} + \alpha * \vec{c}$$
+$$\vec{z} + \alpha * \vec{c}$$
 
-Would be a sample that fits our criteria of keeping x = 3. In the figure below, all the blue vectors are samples in which x = 3:
+Would be a sample that fits our criteria.
 
-<img src="/ch2/anyVecC.PNG" width="400" height="300">
-<!--- change_feat_on_basis, anyVecC.py --->
 
-We have just gone over a simpler case where the direction vector we should move in is just a basis vector that's orthogonal to x. But what if the direction vector is **not** a known basis vector? How can we calculate it? We'll see soon that the calculation follows the same logic as the one for C that we did just now. 
+
+We have just gone over a simpler case where the vector we to keep is just a basis vector. But what if the direction vector is **not** a known basis vector? How can we calculate it? We'll see soon that the calculation follows the same logic as the one for C that we did just now. 
 
 **Changing a feature that's not on a basis vector**
 
