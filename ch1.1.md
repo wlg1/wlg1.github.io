@@ -4,9 +4,17 @@ title: CHAPTER 1.1
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<center><h2>CHAPTER 1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?</h2></center>
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
 
-<a href="eduBlogHome.html">Home</a>
+<div class="topnav">
+  <a class="active" href="eduBlogHome.html">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+<center><h2>CHAPTER 1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?</h2></center>
 
 **(Reading time: 5 minutes)**
 [split this into 2 sections]

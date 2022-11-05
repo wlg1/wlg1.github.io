@@ -3,9 +3,17 @@ title: CHAPTER 2.1
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<center><h2>CHAPTER 2.1: Changing Features using Vector Addition</h2></center>
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
 
-<a href="eduBlogHome.html">Home</a>
+<div class="topnav">
+  <a class="active" href="eduBlogHome.html">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+<center><h2>CHAPTER 2.1: Changing Features using Vector Addition</h2></center>
 
 **(Reading time: 7 minutes)**
 
@@ -14,6 +22,8 @@ title: CHAPTER 2.1
 [^prereqs1]: In this section, all that's needed to know is that a GAN takes a latent vector z from a latent space- that is, a space that represents features much like the latent space of activations we discussed in Chapter 1- and outputs an image. Other concepts from GANs can enhance the connections made as this chapter is studied, but are not required. <a href="generative_models_review.html">A review of GANs can be found here (this is still an unfinished draft)</a>
 
 [^prereqs2]: In this section, all you have to know is that StyleGAN is a type of generative model (a neural network that outputs an image). A deeper understanding of StyleGAN can enhance the connections made as this chapter is studied, but are not required. <a href="https://www.analyticsvidhya.com/blog/2021/05/stylegan-explained-in-less-than-five-minutes/"> A quick explanation of StyleGAN can be found here</a>
+
+---
 
 StyleGAN is a generative model that was designed for more control over which features are outputted in an image. It was found that its latent space was very "disentangled", meaning that one could have more control over one feature without affecting others [^styleSpace].
 
