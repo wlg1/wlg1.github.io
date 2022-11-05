@@ -437,7 +437,7 @@ O = \begin{bmatrix} \x \\ \y \end{bmatrix}$$
 
 ---
 
-[^inverse]: We can gain further intuition about this by thinking about each step of multiplying by the inverse of this matrix; for instance, going down 2 rat units, and 1 cat, gets you to body size 1.
+[^inverse]: We can gain further intuition about this by multiplying by the inverse of this matrix step-by-step; for instance, going down 2 rat units, and 1 cat, gets you to body size 1.
 
 [^commu]: Note that the dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector's elements. Since the dot product is commutative, it is interchangable which vector is the "first" or "second".
 
