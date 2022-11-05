@@ -123,7 +123,31 @@ This is the equation for **orthogonal projection**, which will find the vector s
 
 But why is this the case? We don't immediately see how this "preserves" the other features of $$n_2$$, like we saw how $$n_2 = 3$$ was preserved by going orthogonal to it in the previous example. Intuitively, it becomes more obvious when we perform a change of basis to measure our data in terms of $$n_2$$:
 
+<img src="/ch2/lastEx_cob.PNG">
 
+<details>
+  <summary>Click here to see the animation</summary>
+
+  <iframe src="https://player.vimeo.com/video/767530702?h=eb5c81148a?amp;loop=1" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+</details>
+<br>
+
+As in the previous example, $$c$$ tries to be as "close to" $$n_1$$ as possible, while still preserving the value at $$n_2$$. This is even more evident when there are multiple samples of $$\alpha = -1$$ and $$\alpha = -1.5$$:
+
+<img src="/ch2/lastEx_multiple_cob.PNG">
+
+<details>
+  <summary>Click here to see the animation</summary>
+
+  <iframe src="https://streamable.com/e/22fe9l" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+</details>
+<br>
+
+When the change of basis is performed, the values at $$z + n_1$$ are $$z + c$$ share similar values.
+
+---
 
 When there are more than two dimensions, this removal will leave more than just the basis vector
 
