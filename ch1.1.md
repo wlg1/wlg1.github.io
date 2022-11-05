@@ -14,12 +14,12 @@ title: CHAPTER 1.1
 </div>
 <br> -->
 
-<div>
+<!-- <div>
   <a href="eduBlogHome.html">Home</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
 </div>
-<br>
+<br> -->
 
 <center><h2>CHAPTER 1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?</h2></center>
 
@@ -45,8 +45,7 @@ So every entity (a cat or rat) in the population is represented in the dataset a
 
 Let's look at our coordinate space with only the data samples corresponding to unit 1:
 
-<!---  <img src="/cob/fig4.png" width="800" height="500">--->
-![Figure 4](/cob/fig4.PNG)
+<img src="/cob/fig4.png" height="300">
 
 Every data point is a combination of the "unit 1" points, which represent <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">. For instance, the data point (0.5, 2), which represents <img src="/cob/cat.PNG" width="50" height="40">, is a weighted combination of 0.5 * <img src="/cob/face1.PNG" width="50" height="40"> and 2* <img src="/cob/body1.PNG" width="50" height="40">
 
@@ -56,8 +55,9 @@ Every data point is a combination of the "unit 1" points, which represent <img s
 
 If we see each data point as a vector, then every vector such as <img src="/cob/cat.PNG" width="50" height="40"> is an addition of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">, which are **basis vectors**. Thus (0.5, 2) can also be represented as $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} = 0.5 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
-![Figure 6: Cat in Coordinate Space](/cob/fig6.PNG)
+<img src="/cob/fig6.png" height="350">
 <!---
+![Figure 6: Cat in Coordinate Space](/cob/fig6.PNG)
 [under each body size pic, number it so reader knows if it's 1, 2, etc. The 2 glues two 1s together, showing the border, the 0.5 shows the other half grayed out, etc. This is to indicate they're scaling the unit vector. But [cat pic] does not do this, since it's not always measured using bodysize or face length, it's just pure data that can be represented using different features. you can show the addition with an 'intermediate step' that shows gluing them on, then removing the borders/faded. can also be gif]--->
 
 ---

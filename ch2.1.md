@@ -3,13 +3,16 @@ title: CHAPTER 2.1
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" async></script>
 
-<div class="topnav">
+<!-- <head>
+    <link rel="stylesheet" href="index.css">
+</head> -->
+
+<!-- <div class="topnav">
   <a class="active" href="eduBlogHome.html">Home</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
 </div>
-<br>
-
+<br> -->
 <center><h2>CHAPTER 2.1: Changing Features using Vector Addition</h2></center>
 
 **(Reading time: 7 minutes)**
