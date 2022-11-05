@@ -32,6 +32,8 @@ Let's re-visit the problem of finding the value of $$O$$. In other words, how do
 
 In a linear algebra class, one learns that this can be done using matrix multiplication. But why does the algebraic procedure of matrix multiplication work? Why does the first step specifically use the dot product of the first row and the input vector? What even is a dot product?
 
+**What Do Dot Products have to do with Measurement?**
+
 Let's figure this out by first understanding what we need to know to calculate the values of $$O$$ that represents data sample <img src="/ch1/cat.PNG" width="50" height="40">. All data samples in Model 2 are represented by two measurements: 
 <p align="center">
 1) How likely it is to be a <span style="color:orange">Cat</span>
@@ -45,9 +47,9 @@ $$O = \def\a{\color{orange}{Cat}}
 </p>
 So if we want to find the value of $$O$$, we need to calculate these two values. Recall in the previous section that we were able to calculate the value of "how likely to be cat" using the values of "face length" and "body size":
 
-[Shorter face + Bigger body = Likely a Cat
+Shorter face + Bigger body = Likely a Cat
 
-$$\color{red}{face_{cat}} * 0.5  + \color{blue}{body_{cat}} * 2$$ = 0.5(face_cat)+2(body_cat) on cat axes ]
+$$\color{red}{face_{cat}} * 0.5  + \color{blue}{body_{cat}} * 2$$ = the value 0.5(face_cat)+2(body_cat) on the cat axes 
 
 Notice how this resembles the following dot product[^commu]: 
 
@@ -151,6 +153,8 @@ Since each new measurement is calculated using the **same input**, but with <spa
 
 ---
 
+**What are the Columns of a Matrix?**
+
 We now explained what the rows of $$W$$ are. But what are its columns? And how does this tie into the geometric representation of matrix multiplication, as we see in the figure above? Let's match terms in these equations to their geometric representation:
 
 In Model 1, $$\def\a{\color{#FA8072}{1}}
@@ -212,6 +216,8 @@ So we arrived at several conclusions:
 
 ---
 
+**Changing the Matrix from the Example at the Top**
+
 It is important to know that not all matrices are good at their job. The matrix $$W$$ we have been using is not a good way to calculate "cat" and "Rat", though it does convey a right rotation, which makes it intuitively easy to see how the basis vectors change between Models:
 
 $$
@@ -240,31 +246,7 @@ Or in other words, "A face length of unit 1 denotes that it's 2 units NOT 'likel
 
 ---
 
-<!---
-Remember how the values of $$X$$ were calculated using the basis vectors. The first value, the face length of $$X$$, was calculated using:
-
-<p align="center">
-$$
-\def\a{\color{#FA8072}{1}}
-\def\b{\color{#ADD8E6}{0}}
-\begin{bmatrix} \a & \b \end{bmatrix}  
-\cdot  \begin{bmatrix} 0.5 \\ 2 \end{bmatrix} 
-= \color{#FA8072}{1} * 0.5  + \color{#ADD8E6}{0} * 2 = \color{#CBC3E3}{0.5}$$
-</p>
-
-This is just like the dot product we saw to find the <span style="color:orange">Cat</span> value in Model 2.
-
-<p align="center">
-$$
-\def\a{\color{red}{face_{cat}}}
-\def\b{\color{blue}{body_{cat}}}
-\begin{bmatrix} \a & \b \end{bmatrix}  
-\cdot  \begin{bmatrix} 0.5 \\ 2 \end{bmatrix} 
-= \color{red}{1} * 0.5  + \color{blue}{1.5} * 2$$
-</p>
-
-We were focused on calculating the values of $$O$$, but now we see that it's very similar to calculating the values of $$X$$! 
---->
+**Analogies between X=IX and O=WX**
 
 We have been thinking of $$W$$ as a conversion matrix, such that its columns
 are the basis vectors of Model 2. But how are the basis vectors in Model 1
@@ -314,6 +296,8 @@ Note that the basis vectors of Model 1 in $$I$$ are NOT the rows of I, but the c
 The first column in each of the matrices labels <img src="/ch1/face1.PNG" width="50" height="40">, and the second column labels <img src="/ch1/body1.PNG" width="50" height="40">. Each value in X is a quantity specifying the values of <img src="/ch1/face1.PNG" width="50" height="40"> and <img src="/ch1/body1.PNG" width="50" height="40">; each value can also be thought of as an instruction on how many units of that basis vector to use. Let's go through the multiplications of $$IX$$ and $$WX$$ side by side to see how different they are when they use different basis vectors.
 
 ---
+
+**Matrix Multiplication Visually Explained: Step-By-Step**
 
 To understand matrix multiplication when it comes to adding the projections onto a basis vector, let's review 1D vector addition. Given vectors $$A + B$$, the reason why we add the tail of $$B$$ to the head of $$A$$ is because we can think of the tail to head of a vector as being a quantity on a 1D number line. Now for $$C + (-1)D$$, we are subtracting this quantity:
 
