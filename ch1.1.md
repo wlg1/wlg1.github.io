@@ -3,9 +3,9 @@ theme: jekyll-theme-minimal
 title: CHAPTER 1.1
 ---
 
-<head>
+<!-- <head>
     <link rel="stylesheet" href="index.css">
-</head>
+</head> -->
 
 <!-- <div class="topnav">
   <a class="active" href="eduBlogHome.html">Home</a>
