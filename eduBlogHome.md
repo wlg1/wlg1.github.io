@@ -26,7 +26,7 @@ This blog overcomes this problem by explaining many required prerequisites from 
 ![2mod_vecs](/ch1/2mod_out.PNG)
 
 <!---
-It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. 
+It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. It would not delve in related mathematical concepts if they were not useful for understanding the application we're currently discussing. 
 
 But this blog takes an even further step: by generalizing this solution to solve similar problems.
 

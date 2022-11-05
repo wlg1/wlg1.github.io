@@ -329,7 +329,45 @@ Now we're ready to go through each step of matrix multiplication in an intuitive
 
 (To enlarge each image, right-click and 'Open image in new tab'. Future updates will allow the image to be enlarged by clicking on it.)
 
-First, we break down the steps of the first dot product, corresponding to the <span style="color:orange">Cat</span> coordinate, involving the first row of the matrices. 
+Recall above that we want to find the value of $$O$$:
+
+$$
+IX = 
+\def\a{\color{red}{1}}
+\def\b{\color{blue}{0}}
+\def\c{\color{red}{0}}
+\def\d{\color{blue}{1}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix} 
+\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} 
+= X $$
+
+$$
+WX = 
+\def\a{\color{red}{-2}}
+\def\b{\color{blue}{2.5}}
+\def\c{\color{red}{2.5}}
+\def\d{\color{blue}{-2}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix} 
+\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} 
+= O $$
+
+In the figures below, on the left side, we'll be showing matrix multiplication in Model 1, which uses $$
+\def\a{\color{red}{1}}
+\def\b{\color{blue}{0}}
+\def\c{\color{red}{0}}
+\def\d{\color{blue}{1}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix} $$ to define its basis vectors. 
+
+On the right side, we'll be showing matrix multiplication in Model 1, which uses $$
+\def\a{\color{red}{-2}}
+\def\b{\color{blue}{2.5}}
+\def\c{\color{red}{2.5}}
+\def\d{\color{blue}{-2}}
+\begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix} $$ to define its basis vectors. We'll see how the steps in each Model are analogous to each other.
+
+---
+
+First, we break down the steps of the first dot product, corresponding to the <span style="color:orange">Cat</span> coordinate, involving the first row of the matrices. Let's find what <span style="color:red">a</span> and <span style="color:blue">b</span> correspond to in each Model.
 
 STEP 1: First row of matrix: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
@@ -347,12 +385,22 @@ $$W$$: $$\def\a{\color{red}{-2}}
 
 ![step1](/ch1/1.2/step1.png)
 
+As we see above, the dotted lines are what <span style="color:red">a</span> and <span style="color:blue">b</span> correspond to in each Model. They are the first row of the matrix. On the right side, this appears as:
+
+$$
+\def\a{\color{red}{-2}}
+\def\b{\color{blue}{2.5}}
+\def\c{\color{red}{2.5}}
+\def\d{\color{blue}{-2}}
+\begin{bmatrix} \a & \b \\ ? & ? \end{bmatrix} $$
+
+---
+
 STEP 2: Scale by $$X$$: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
 --> \color{red}{a} * x_{1}\qquad \color{blue}{b} * x_2 $$
-
 
 <!---
 $$I$$: $$\def\a{\color{red}{1}}
@@ -369,6 +417,16 @@ $$W$$: $$\def\a{\color{red}{-2}}
 --->
 
 ![step2](/ch1/1.2/step2.png)
+
+Next, we're multiplying the first row of our matrix by the input vector. On the right side, this corresponds to the equation:
+
+$$W$$: $$\def\a{\color{red}{-2}}
+\def\b{\color{blue}{2.5}}
+\begin{bmatrix} \a & \b \end{bmatrix}
+\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
+-> \color{red}{-2} * 0.5\qquad \color{blue}{2.5} * 2$$
+
+---
 
 STEP 3: Add: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
