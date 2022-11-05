@@ -14,12 +14,12 @@ title: CHAPTER 1.1
 </div>
 <br> -->
 
-<!-- <div>
+<div>
   <a href="eduBlogHome.html">Home</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
 </div>
-<br> -->
+<br>
 
 <center><h2>CHAPTER 1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?</h2></center>
 

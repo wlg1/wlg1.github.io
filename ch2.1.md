@@ -13,6 +13,14 @@ title: CHAPTER 2.1
   <a href="#about">About</a>
 </div>
 <br> -->
+
+<div>
+  <a href="eduBlogHome.html">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+<br>
+
 <center><h2>CHAPTER 2.1: Changing Features using Vector Addition</h2></center>
 
 **(Reading time: 7 minutes)**

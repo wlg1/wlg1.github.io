@@ -14,6 +14,13 @@ title: CHAPTER 2.2
 </div>
 <br> -->
 
+<div>
+  <a href="eduBlogHome.html">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+<br>
+
 <center><h2>CHAPTER 2.2: Conditioning on Features using Orthogonal Projection</h2></center>
 
 <a href="eduBlogHome.html">Home</a>

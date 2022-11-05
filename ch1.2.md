@@ -14,6 +14,13 @@ title: CHAPTER 1.2
 </div>
 <br> -->
 
+<div>
+  <a href="eduBlogHome.html">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+<br>
+
 <center><h2>CHAPTER 1.2: Beware of False Friends in the Matrix?</h2></center>
 
 **(Reading time: 2 minutes)**
