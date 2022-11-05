@@ -316,7 +316,7 @@ The first column in each of the matrices labels <img src="/ch1/face1.PNG" width=
 To understand matrix multiplication when it comes to adding the projections onto a basis vector, let's review 1D vector addition. Given vectors $$A + B$$, the reason why we add the tail of $$B$$ to the head of $$A$$ is because we can think of the tail to head of a vector as being a quantity on a 1D number line. Now for $$C + (-1)D$$, we are subtracting this quantity:
 
 <figure>
-<p style="text-align:center;"><img src="/ch1/vector_addition.PNG" height=300 class="center"></p>
+<p style="text-align:center;"><img src="/ch1/vector_addition.PNG" height=200></p>
 
 <figcaption align = "center"><b><font size="-1">Image Source:  https://www.slideserve.com/arden/vector-addition-and-subtraction </font></b></figcaption>
 </figure>
