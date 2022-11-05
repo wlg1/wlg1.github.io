@@ -4,7 +4,7 @@ title: CHAPTER 1.2
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<center><h2>CHAPTER 1.2: Why use dot product in matrix multiplication?</h2></center>
+<center><h2>CHAPTER 1.2: Why is Dot Product used in Matrix Multiplication?</h2></center>
 
 <a href="eduBlogHome.html">Home</a>
 

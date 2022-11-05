@@ -55,9 +55,9 @@ Not sure where to start?
 ---
 **CHAPTER 1: How Neural Networks Reveal Hidden Insights in Data (using Matrix Multiplication)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[1.1: How does matrix multiplication guess a cat from its face and body?](ch1.1.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?](ch1.1.md)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**[1.2: Why use dot product in matrix multiplication?](ch1.2.md)**
+&nbsp;&nbsp;&nbsp;&nbsp;**[1.2: Why is Dot Product used in Matrix Multiplication?](ch1.2.md)**
 
 <details>
 <summary><b>CHAPTER 1 APPENDIX: DUALITY</b> (click to expand) </summary>
