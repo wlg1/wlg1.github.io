@@ -71,7 +71,7 @@ Then, we scale the $$n_2$$ basis vector by $$\vec{n_1} \cdot \vec{n_2}$$ by doin
 
 $$(\vec{n_1} \cdot \vec{n_2}) * \vec{n_2}$$
 
-<img src="/ch2/n1_n2_orth.PNG" width="400" height="300">
+<img src="/ch2/n1_n2_orth.PNG" height="300">
 
 In Figure 2.3 above, we have found the vector, shown in light blue, that represents "how much of $$n_2$$ is used to get vector $$n_1$$". Now to "preserve" this value of $$(\vec{n_1} \cdot \vec{n_2})$$ while changing as much of $$n_1$$ as we can, we have to calculate the vector $$c$$ that's "orthogonal" to $$(\vec{n_1} \cdot \vec{n_2}) * \vec{n_2}$$. Since $$c$$ starts at the head of $$(\vec{n_1} \cdot \vec{n_2})$$ and ends at the head of $$\vec{n_1}$$, in vector addition, that translates to: 
 
@@ -81,13 +81,15 @@ Solving for $$\vec{c}$$, we obtain:
 
 $$\vec{c} = \vec{n_1} - (\vec{n_1} \cdot \vec{n_2}) * \vec{n_2}$$
 
-<img src="/ch2/n1_n2_orth_eqn.PNG" width="400" height="300">
+<img src="/ch2/n1_n2_orth_eqn.PNG" height="300">
 
 And so any sample along:
 
 $$\vec{z} + \alpha * \vec{c}$$
 
-Would be a sample that fits our criteria.
+Would be a sample that fits our criteria. No matter what value of $$\alpha$$ we use, we see that $$\alpha * \vec{c}$$ is as close to $$\alpha * \vec{n_1}$$ as possible while keeping $$n_2 = 3$$:
+
+<img src="/ch2/z_plus_alphaC.PNG" height="300">
 
 Let's further analyze this by plugging in specific values. 
 
