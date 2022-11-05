@@ -313,7 +313,15 @@ The first column in each of the matrices labels <img src="/ch1/face1.PNG" width=
 
 ---
 
-[discuss vector addition]
+To understand matrix multiplication when it comes to adding the projections onto a basis vector, let's review 1D vector addition. Given vectors $$a + b$$, the reason why we add the tail of $$b$$ to the head of $$a$$ is because we can think of the tail to head of a vector as being a quantity on a 1D number line. Now for $$c + (-1)d$$, we are subtracting this quantity:
+
+<figure>
+<img src="/ch1/vector_addition.PNG">
+
+<figcaption align = "center"><b>Image Source:  https://www.slideserve.com/arden/vector-addition-and-subtraction </b></figcaption>
+</figure>
+
+Now we're ready to go through each step of matrix multiplication in an intuitive manner.
 
 ---
 
