@@ -36,12 +36,11 @@ So when you move a sample from one point to another, the shadow won't just chang
 
 <figure>
 <!-- <img src="/ch2/mirrors.jpeg" width= 300> -->
-<img src="/ch2/shadows.PNG" width= 300>
+<p style="text-align:center;"><img src="/ch2/shadows.PNG"></p>
 
-
-<figcaption align = "center"><b> Sources: https://www.thisiswhyimbroke.com/uk/warping-mirrors/ 
+<figcaption align = "center"><b><font size="-1"> Sources: https://www.thisiswhyimbroke.com/uk/warping-mirrors/ 
 <br>
-https://www.flickr.com/photos/51339555@N02/5252365635</b>
+https://www.flickr.com/photos/51339555@N02/5252365635</font></b>
 </figcaption>
 </figure>
 
