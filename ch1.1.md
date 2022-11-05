@@ -149,7 +149,7 @@ Fig ??
 [now fill in what [2 0.5] is in Sys 2]
 --->
 
-This shows the difference between the data samples coming from the real world, and the model that represents those data samples using labels. $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ is not <img src="/ch1/cat.PNG" width="50" height="40"> itself; it is merely a label of it, and whichever label is used depends on the basis vectors used to define the parts of each label. [^vector]
+This shows the difference between the data samples coming from the real world, and the model that represents those data samples using labels. $$\color{#CBC3E3}{\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ is not <img src="/ch1/cat.PNG" width="50" height="40"> itself; it is merely a label of it, and whichever label is used depends on the basis vectors used to define the parts of each label. Note that there is a difference between points, vectors and features. [^vector]
 
 [^vector]: However, there is a difference between points on a coordinate space and a vector. A vector is mapped onto points in a coordinate space, but it is NOT the point in a coordinate space it is mapped on. Given that it just has length and direction, it can be moved freely anywhere on a coordinate space. The vector's components are NOT points on a coordinate space, but a way to capture the vector's length and magnitude in terms of the coordinate space's basis vectors. This also means that the data point, or feature, that the vector is mapped to can be moved freely anywhere on a coordinate space! What's important is how features and vectors are relative to other features and vectors in the current coordinate space.
 
