@@ -118,7 +118,7 @@ In this case, the neural network has learned that a "typical" cat would have a F
 <br><br>
 As taught in algebra, this is the slope of a line, where "rise/run" in this case means "Body Length / Face Length". But vectors do not have slopes; only functions have slopes, and lines are functions. It seems that the vectors that lie on the line with this slope all correspond to some feature.
 <br><br>
-Essentially, each feature is mapped to a line's <b>steepness and direction</b>, or its angle from the origin of basis vectors. It doesn't matter how big or small your stretch a vector- it is the steepness and direction, or the ratio, that is important.
+Essentially, each feature is mapped to a line's <b>steepness and direction</b>, or its angle from the origin of basis vectors, and stretching or shrinking a vector would alter its magnitude, and thus "how much" of that feature there is.
 <br><br>
 Note that in higher dimensional spaces, instead of describing this ratio as "rise/run", it is better to use "steepness and direction" instead. You can say this is the <b>gradient</b> in gradient descent, in which how each neuron measures the data is changed according to the gradient. The vector is both an "object" measuring a feature, and a "relation" determining how a feature is used to change another feature.
 <br><br>
