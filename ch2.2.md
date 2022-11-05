@@ -3,7 +3,7 @@ title: CHAPTER 2.2
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-**CHAPTER 2.2**
+<h1>CHAPTER 2.2: Conditioning on Features using Orthogonal Projection</h1>
 
 <a href="eduBlogHome.html">Home</a>
 
@@ -122,6 +122,8 @@ $$\vec{v} + \alpha * \vec{c}$$
 ... would vary features of $$AGE$$ while keeping the other features of $$n_2$$ roughly the same.
 
 But why is this the case? When don't immediately see how this "preserves" the other features of $$n_2$$, like we saw how x=3 was preserved by going orthogonal to it in the previous section. Intuitively, it becomes more obvious when we perform a change of basis to measure our data in terms of $$n_2$$:
+
+When there are more than two dimensions, this removal will leave more than just the basis vector
 
 
 OUTLINE:
