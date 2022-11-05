@@ -19,7 +19,7 @@ title: Making the Math of Neural Networks Intuitive - HOME
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
-This blog overcomes this problem by explaining many required prerequisites from scratch[^1], and relating them to neural network applications. 
+This blog overcomes this problem by explaining many required prerequisites from scratch[^1], and relating them to neural network applications. It focuses on providing intuition via visuals and animation, much like in resources such as <a href="https://www.3blue1brown.com/lessons/">3Blue1Brown</a>.
 
 [^1]: Assuming only that a reader has a basic understanding of a foundational topic, or has watched certain videos. Links will be provided to these videos.
 
