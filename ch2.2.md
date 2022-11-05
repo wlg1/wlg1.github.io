@@ -145,14 +145,38 @@ As in the previous example, $$c$$ tries to be as "close to" $$n_1$$ as possible,
 </details>
 <br>
 
-When the change of basis is performed, the values at $$z + n_1$$ are $$z + c$$ share similar values.
+The matrix used here is calculated in the same way that that matrix for the change of basis in the previous section was calculated. Note that for the vector orthogonal to $$n_2$$, we are using $$c = [-0.6, 1.2]$$:
+
+<p align="center">
+$$ M = (\begin{bmatrix} 2 & -0.6 \\ 1 & 1.2 \end{bmatrix} $$)^{-1} = \begin{bmatrix} 0.4 & 0.2 \\ -0.3333 & 0.6667 \end{bmatrix} $$
+</p>
+
+When the change of basis is performed, we see that all the values at $$z + \alpha * c$$ are orthogonal to $$n_2$$. The values at $$z + \alpha * n_1$$ are $$z + \alpha * c$$ share similar values on the new y-axis, $$c$$.
+
+Now, we see that the removal of the projection onto $$n_2 = [2, 1]$$ from $$n_1 = [1, 2]$$ will leave more than just the basis vector, as in the original coordinate space, $$c = [-0.6, 1.2]$$ is not a basis vector. 
+
+When there are more than two dimensions, this removal of the projection will be even more non-trivial. One can say that since $$(\vec{n_1} \cdot \vec{n_2}) * \vec{n_2}$$ says "how much of $$n_2$$ is used to calculate $$n_1$$", that it's the "effect of $$n_2$$ on $$n_1$$". So by removing it, we are removing the effect of $$n_2$$ on $$n_1$$.
+
+Another way to say $$n_2$$ is "preserved" is to say that we are **conditioning on** $$n_2$$.
 
 ---
 
-When there are more than two dimensions, this removal will leave more than just the basis vector
+**Changing a feature while keeping MULTIPLE features the same**
 
-Essentially, this manipulation cannot make ALL features stay the same. We must know beforehand which features we want to stay the same, and which features we want to vary. Then, we will condition on the features we want to stay the same
+The paper does not go into detail about this; what it says is that: <i>"If there are multiple attributes to be conditioned on, we subtract the projection from the primal direction onto the plane constructed by all conditioned directions."</i> [^cite1]
 
+[^cite1]: Yujun Shen, Jinjin Gu, Xiaoou Tang, and Bolei Zhou. Interpreting the latent space of GANs for semantic face editing. CoRR, abs/1907.10786, 2019.
+
+"Attributes" is synonomous with "feature", and "direction" is synonomous with "feature vector". The "primal direction" is the feature we want to change, while all other features are kept the same. But how do we know which features these are? We can't keep ALL the features the same.
+
+Essentially, this manipulation **cannot** make ALL features stay the same. We must know beforehand which features we want to stay the same, and which features we want to vary. Then, we will condition on the features we want to stay the same. For example, we can change age while conditioning on hair style, eye color, and ear size. We will only aim to keep those 3 features the same; all other features may vary.
+
+Finally, the "plane constructed by all conditioned directions" is the subspace spanned by all the feature vectors we want to condition on. [^span]
+
+[^span]: <a href="https://mikebeneschan.medium.com/how-to-understand-span-linear-algebra-cf3baa12edda"> A spanning set is just "the collection of all linear combinations of vectors."</a>; these vectors 'span' the space that contains all their linear combinations. However, a basis set requires a <a href="https://en.wikipedia.org/wiki/Basis_(linear_algebra)"> linearly independent spanning set</a>. Finally, <a href="https://math.stackexchange.com/questions/1402112/does-linearly-independent-imply-all-elements-are-orthogonal"> not all linearly independent sets are orthogonal</a>, unless <a href="https://math.stackexchange.com/questions/409810/orthogonality-and-linear-independence"> all the vectors in the set are nonzero or orthonormal.
+</a>
+
+We are done with explaining how orthogonal projection is used in InterFaceGAN. Next, we will describe how hyperplanes are used to obtain "semantic scores" for how close a sample is to a feature boundary.
 
 ---
 ---
