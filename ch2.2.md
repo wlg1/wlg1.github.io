@@ -7,7 +7,7 @@ title: CHAPTER 2.2
 
 <a href="eduBlogHome.html">Home</a>
 
-**(Reading time: 7 minutes)**
+**(Reading time: 12 minutes)**
 
 Now we want to change a feature $$n_1$$ while keeping the value of **another** feature $$n_2$$ the same. The difficulty in doing this is that each feature vector is made up of the same basis vectors (neurons), so by changing feature $$n_1$$, you are changing the basis vectors that add up to $$n_1$$, and since you are those basis vectors are also used to add up to $$n_2$$, you are also changing $$n_2$$. 
 
@@ -101,7 +101,7 @@ We see that this subtraction is actually "removing" parts of $$n_2$$ from $$n_1$
 
 Now let's say we have a feature vector $$n_1 = (1,2)$$ and feature vector $$n_2 = (2,1) $$. Based on the previous section, we want to find samples along the purple line in the figure below:
 
-<img src="/ch2/nonBasisFeat.PNG" width="400" height="300">
+<img src="/ch2/nonBasisFeat.PNG" height="200">
 
 Recall from the previous section that if we wanted to vary the features of a vector $$n_1$$, but wanted to keep the value at vector $$n_2$$, we used the equation:
 
@@ -148,7 +148,7 @@ As in the previous example, $$c$$ tries to be as "close to" $$n_1$$ as possible,
 The matrix used here is calculated in the same way that that matrix for the change of basis in the previous section was calculated. Note that for the vector orthogonal to $$n_2$$, we are using $$c = [-0.6, 1.2]$$:
 
 <p align="center">
-$$ M = (\begin{bmatrix} 2 & -0.6 \\ 1 & 1.2 \end{bmatrix} $$)^{-1} = \begin{bmatrix} 0.4 & 0.2 \\ -0.3333 & 0.6667 \end{bmatrix} $$
+$$ M = \begin{bmatrix} 2 & -0.6 \\ 1 & 1.2 \end{bmatrix}^{-1} = \begin{bmatrix} 0.4 & 0.2 \\ -0.3333 & 0.6667 \end{bmatrix} $$
 </p>
 
 When the change of basis is performed, we see that all the values at $$z + \alpha * c$$ are orthogonal to $$n_2$$. The values at $$z + \alpha * n_1$$ are $$z + \alpha * c$$ share similar values on the new y-axis, $$c$$.
@@ -163,7 +163,7 @@ Another way to say $$n_2$$ is "preserved" is to say that we are **conditioning o
 
 **Changing a feature while keeping MULTIPLE features the same**
 
-The paper does not go into detail about this; what it says is that: <i>"If there are multiple attributes to be conditioned on, we subtract the projection from the primal direction onto the plane constructed by all conditioned directions."</i> [^cite1]
+To do so, the paper says: <i>"If there are multiple attributes to be conditioned on, we subtract the projection from the primal direction onto the plane constructed by all conditioned directions."</i> [^cite1]
 
 [^cite1]: Yujun Shen, Jinjin Gu, Xiaoou Tang, and Bolei Zhou. Interpreting the latent space of GANs for semantic face editing. CoRR, abs/1907.10786, 2019.
 
@@ -173,8 +173,7 @@ Essentially, this manipulation **cannot** make ALL features stay the same. We mu
 
 Finally, the "plane constructed by all conditioned directions" is the subspace spanned by all the feature vectors we want to condition on. [^span]
 
-[^span]: <a href="https://mikebeneschan.medium.com/how-to-understand-span-linear-algebra-cf3baa12edda"> A spanning set is just "the collection of all linear combinations of vectors."</a>; these vectors 'span' the space that contains all their linear combinations. However, a basis set requires a <a href="https://en.wikipedia.org/wiki/Basis_(linear_algebra)"> linearly independent spanning set</a>. Finally, <a href="https://math.stackexchange.com/questions/1402112/does-linearly-independent-imply-all-elements-are-orthogonal"> not all linearly independent sets are orthogonal</a>, unless <a href="https://math.stackexchange.com/questions/409810/orthogonality-and-linear-independence"> all the vectors in the set are nonzero or orthonormal.
-</a>
+[^span]: <a href="https://mikebeneschan.medium.com/how-to-understand-span-linear-algebra-cf3baa12edda"> A spanning set is just "the collection of all linear combinations of vectors."</a>; these vectors 'span' the space that contains all their linear combinations. However, a basis set requires a <a href="https://en.wikipedia.org/wiki/Basis_(linear_algebra)"> linearly independent spanning set</a>. Finally, <a href="https://math.stackexchange.com/questions/1402112/does-linearly-independent-imply-all-elements-are-orthogonal"> not all linearly independent sets are orthogonal</a>, unless <a href="https://math.stackexchange.com/questions/409810/orthogonality-and-linear-independence"> all the vectors in the set are nonzero or orthonormal.</a>
 
 We are done with explaining how orthogonal projection is used in InterFaceGAN. Next, we will describe how hyperplanes are used to obtain "semantic scores" for how close a sample is to a feature boundary.
 
