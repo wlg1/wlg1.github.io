@@ -49,7 +49,7 @@ So if we want to find the value of $$O$$, we need to calculate these two values.
 
 $$\color{red}{face_{cat}} * 0.5  + \color{blue}{body_{cat}} * 2$$ = 0.5(face_cat)+2(body_cat) on cat axes ]
 
-Notice how this resembles the following dot product: 
+Notice how this resembles the following dot product[^commu]: 
 
 <p align="center">
 $$
@@ -443,19 +443,19 @@ $$W$$: $$\def\a{\color{red}{-2}}
 
 <!---[Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different]--->
 
-If we apply the same logic of these three steps to row 2, we obtain the values of $$O$$, completing the main goal of this Chapter:
+If we apply the same logic of these three steps to row 2, we obtain the values of $$O$$, completing the main goal of this Chapter[^inverse]:
 
 $$\def\x{\color{purple}{4}}
 \def\y{\color{purple}{-2.75}}
 O = \begin{bmatrix} \x \\ \y \end{bmatrix}$$
 
-<img src="/ch1/1.2/finalanswer.PNG" >
+<p align="center"><img src="/ch1/1.2/finalanswer.PNG" height=300></p>
 
 ---
 
-We can also gain intuition about this by thinking about each step of multiplying by the inverse of this matrix; for instance, going down 2 rat units, and 1 cat, gets you to body size 1.
+[^inverse]: We can gain further intuition about this by thinking about each step of multiplying by the inverse of this matrix; for instance, going down 2 rat units, and 1 cat, gets you to body size 1.
 
-Note that the dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector's elements. Since the dot product is commutative, it is interchangable which vector is the "first" or "second".
+[^commu]: Note that the dot product between two vectors scales the numbers in the first vector, then adds them all together. The second vector contains the weights used to scale the first vector's elements. Since the dot product is commutative, it is interchangable which vector is the "first" or "second".
 
 ---
 
