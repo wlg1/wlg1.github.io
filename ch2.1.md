@@ -58,7 +58,7 @@ So if we only want to change one feature such as "cat-like", we should "move alo
 
 But how do we change the "Cat-like" feature while preserving (in other words, **conditioning on**) other features such as "Hair Style" or "Ear Style"? 
 
-One method to do this was presented in the paper "Interpreting the Latent Space of GANs for Semantic Face Editing" [^cite1], which introduced a now widely used approach for editing the features of StyleGAN generated images. In this Chapter, we'll be explaining the intuition behind the mathematical calcuations used in this approach.
+One method to do this, called **InterFaceGAN**, was presented in the paper "Interpreting the Latent Space of GANs for Semantic Face Editing" [^cite1]. InterFaceGAN is now widely used approach for editing the features of StyleGAN generated images. In this Chapter, we'll be explaining the intuition behind the mathematical calcuations used in InterFaceGAN.
 
 [^cite1]: Yujun Shen, Jinjin Gu, Xiaoou Tang, and Bolei Zhou. Interpreting the latent space of GANs for semantic face editing. CoRR, abs/1907.10786, 2019.
 

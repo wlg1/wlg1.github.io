@@ -9,6 +9,8 @@ title: CHAPTER 2.2
 
 **(Reading time: 12 minutes)**
 
+---
+
 Now we want to change a feature $$n_1$$ while keeping the value of **another** feature $$n_2$$ the same. 
 Another way to say the value of $$n_2$$ is "preserved" is to say that we are **conditioning on** $$n_2$$. The difficulty in doing this is that each feature vector is made up of the same basis vectors (neurons), so by changing feature $$n_1$$, you are changing the basis vectors that add up to $$n_1$$, and since you are those basis vectors are also used to add up to $$n_2$$, you are also changing $$n_2$$. 
 
@@ -168,7 +170,7 @@ To do so, the paper says: <i>"If there are multiple attributes to be conditioned
 
 [^cite1]: Yujun Shen, Jinjin Gu, Xiaoou Tang, and Bolei Zhou. Interpreting the latent space of GANs for semantic face editing. CoRR, abs/1907.10786, 2019.
 
-"Attributes" is synonomous with "feature", and "direction" is synonomous with "feature vector". The "primal direction" is the feature we want to change, while all other features are kept the same. But how do we know which features these are? We can't keep ALL the features the same.
+"Attribute" is synonomous with "feature", and "direction" is synonomous with "feature vector". The "primal direction" is the feature we want to change, while all other features are kept the same. But how do we know which features these are? We can't keep ALL the features the same.
 
 Essentially, this manipulation **cannot** make ALL features stay the same. We must know beforehand which features we want to stay the same, and which features we want to vary. Then, we will condition on the features we want to stay the same. For example, we can change age while conditioning on hair style, eye color, and ear size. We will only aim to keep those 3 features the same; all other features may vary.
 

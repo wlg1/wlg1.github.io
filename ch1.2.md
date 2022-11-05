@@ -6,6 +6,12 @@ title: CHAPTER 1.2
 
 <center><h2>CHAPTER 1.2: Why use dot product in matrix multiplication?</h2></center>
 
+<a href="eduBlogHome.html">Home</a>
+
+**(Reading time: 7 minutes)**
+
+---
+
 Let's re-visit the problem of finding the value of $$O$$. In other words, how do we find the new label of <img src="/cob/cat.PNG" width="50" height="40"> in Model 2? 
 
 ![2mod_vecs](/cob/2mod_out.PNG)

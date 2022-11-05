@@ -100,7 +100,9 @@ Future topics:
   <li>Matrix Decomposition to find neuron combinations</li>
   <li>Fourier transforms and convolution</li>
   <li>Graph neural networks and geometric deep learning equivariance</li>
+  <li>Transformers</li>
   <li>Diffusion models</li>
+  <li>CLIP and prompt generation</li>
   <li>The Shape of Data and Topological Data Analysis applied to latent space</li>
 </ul>
 

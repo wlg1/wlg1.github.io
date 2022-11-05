@@ -6,12 +6,14 @@ title: CHAPTER 1.1
 
 <center><h2>CHAPTER 1.1: How does matrix multiplication guess a cat from its face and body?</h2></center>
 
-<a href="index.md">back</a>
+<a href="eduBlogHome.html">Home</a>
 
 **(Reading time: 5 minutes)**
-[may split into three 2 min sections, label page (1/3)]
+[split this into 2 sections]
 
 **Prerequisites**: A vague understanding of matrix multiplication and neural networks. [^prereqs]
+
+---
 
 [^prereqs]: This section is heavily built on 3Blue1Brown's Essence of Linear Algebra. There are 16 videos, but you only have to focus on five videos: 1 to 3, then 9 and 13. <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=1&ab_channel=3Blue1Brown"> Source</a>
 
