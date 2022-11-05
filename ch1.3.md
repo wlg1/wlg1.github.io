@@ -326,6 +326,7 @@ To understand matrix multiplication when it comes to adding the projections onto
 Now we're ready to go through each step of matrix multiplication in an intuitive manner.
 
 ---
+---
 
 (To enlarge each image, right-click and 'Open image in new tab'. Future updates will allow the image to be enlarged by clicking on it.)
 
@@ -375,24 +376,18 @@ STEP 1: First row of matrix: $$\def\a{\color{red}{a}}
 
 ![step1](/ch1/1.2/step1.png)
 
-As we see above, the dotted lines are what <span style="color:red">a</span> and <span style="color:blue">b</span> correspond to in each Model. They are the first row of the matrix. On the right side, this appears as:
+As we see above, the dotted lines are what <span style="color:red">a</span> and <span style="color:blue">b</span> correspond to in each Model. They are the first row of the matrix:
 
 $$I$$: $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
-\begin{bmatrix} \a & \b \end{bmatrix}$$
+\begin{bmatrix} \a & \b \\ ? & ? \end{bmatrix}$$
 
-$$W$$: $$\def\a{\color{red}{-2}}
-\def\b{\color{blue}{2.5}}
-\begin{bmatrix} \a & \b \end{bmatrix}$$
-
-<!---
-$$
+$$W$$: $$
 \def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
 \def\c{\color{red}{2.5}}
 \def\d{\color{blue}{-2}}
 \begin{bmatrix} \a & \b \\ ? & ? \end{bmatrix} $$
---->
 
 ---
 
@@ -402,23 +397,15 @@ STEP 2: Scale by $$X$$: $$\def\a{\color{red}{a}}
 \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
 --> \color{red}{a} * x_{1}\qquad \color{blue}{b} * x_2 $$
 
-<!---
+![step2](/ch1/1.2/step2.png)
+
+Next, we're multiplying the first row of our matrix by the input vector. This corresponds to the equation:
+
 $$I$$: $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
 -> \color{red}{1} * 0.5\qquad \color{blue}{0} * 2$$
-
-$$W$$: $$\def\a{\color{red}{-2}}
-\def\b{\color{blue}{2.5}}
-\begin{bmatrix} \a & \b \end{bmatrix}
-\begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
--> \color{red}{-2} * 0.5\qquad \color{blue}{2.5} * 2$$
---->
-
-![step2](/ch1/1.2/step2.png)
-
-Next, we're multiplying the first row of our matrix by the input vector. On the right side, this corresponds to the equation:
 
 $$W$$: $$\def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
@@ -436,24 +423,33 @@ STEP 3: Add: $$\def\a{\color{red}{a}}
 
 ![step3](/ch1/1.2/step3.png)
 
+Finally, we'll finish the dot product by adding these terms together, obtaining the first element of our output vector:
 
 $$I$$: $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
+\def\x{\color{purple}{0.5}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
--> \color{red}{1} * 0.5 + \color{blue}{0} * 2 = \color{purple}{0.5}$$
+-> \color{red}{1} * 0.5 + \color{blue}{0} * 2 = \color{purple}{0.5}
+-> \begin{bmatrix} \x \\ ? \end{bmatrix} = X $$
 
 $$W$$: $$\def\a{\color{red}{-2}}
 \def\b{\color{blue}{2.5}}
+\def\x{\color{purple}{4}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}
--> \color{red}{-2} * 0.5 + \color{blue}{2.5} * 2 = \color{purple}{4}$$
+-> \color{red}{-2} * 0.5 + \color{blue}{2.5} * 2 = \color{purple}{4}
+-> \begin{bmatrix} \x \\ ? \end{bmatrix} = O $$
 
 <!---[Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different]--->
 
----
+If we apply the same logic of these 3 steps to row 2, we obtain the values of $$O$$, which were what we wanted to find in this Chapter:
 
-Row 2 of the matrix follows the same logic.
+$$\def\x{\color{purple}{4}}
+\def\y{\color{purple}{-2.75}}
+O = \begin{bmatrix} \x \\ \y \end{bmatrix}$$
+
+---
 
 We can also gain intuition about this by thinking about each step of multiplying by the inverse of this matrix; for instance, going down 2 rat units, and 1 cat, gets you to body size 1.
 
