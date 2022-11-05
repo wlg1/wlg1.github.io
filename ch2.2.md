@@ -32,7 +32,7 @@ Another way to say the value of $$n_2$$ is "preserved" is to say that we are **c
 
 In other words, a sample lies on a point in a high dimensional latent space of potentially billions of neurons. A feature vector lies along a subspace- a plane[^nonlinear]- within this latent space. Projecting the sample down to this feature subspace (that is, finding its "shadow" or its "distorted reflection" on the plane) measures how much of the feature that sample has. 
 
-[^nonlinear]: If the activation function $$\sigma$$ is the Identity, the neuron function $$O = \sigma(WX + b)$$ is linear. But $$\sigma$$ is usually nonlinear, giving rise to nonlinear functions in latent spaces. Thus, instead of projecting down to planes, projections would be done down to surfaces.
+[^nonlinear]: If the activation function $$\sigma$$ is linear, the neuron function $$O = \sigma(WX + b)$$ is linear. But $$\sigma$$ is usually nonlinear, giving rise to nonlinear functions in latent spaces. Thus, instead of projecting down to planes, projections would be done down to surfaces.
 
 So when you move a sample from one point to another, the shadow won't just change on one feature subspace, but another feature subspace. For example, if you are ever stuck in a hall of mirrors, you may find yourself next to two mirrors- one that makes you larger, and one that makes you small. When you move one way, you are not just changing how you look in the "Larger" mirror, but also how you look in the "smaller" mirror.[^projectionAbstraction]
 
