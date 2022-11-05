@@ -42,7 +42,7 @@ So every entity (a cat or rat) in the population is represented in the dataset a
 
 Let's look at our coordinate space with only the data samples corresponding to unit 1:
 
-<img src="/ch1/fig4.PNG" height="300">
+<img src="/ch1/fig4.PNG" height="250">
 
 Every data point is a combination of the "unit 1" points, which represent <img src="/ch1/face1.PNG" width="50" height="40"> and <img src="/ch1/body1.PNG" width="50" height="40">. For instance, the data point (0.5, 2), which represents <img src="/ch1/cat.PNG" width="50" height="40">, is a weighted combination of 0.5 * <img src="/ch1/face1.PNG" width="50" height="40"> and 2* <img src="/ch1/body1.PNG" width="50" height="40">
 
@@ -52,12 +52,14 @@ Every data point is a combination of the "unit 1" points, which represent <img s
 
 If we see each data point as a vector, then every vector such as <img src="/ch1/cat.PNG" width="50" height="40"> is an addition of <img src="/ch1/face1.PNG" width="50" height="40"> and <img src="/ch1/body1.PNG" width="50" height="40">, which are **basis vectors**. Thus (0.5, 2) can also be represented as $$\begin{bmatrix} 0.5 \\ 2 \end{bmatrix} = 0.5 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
-<img src="/ch1/fig6.PNG" height="350">
+<img src="/ch1/fig6.PNG" height="300">
 <!---
 ![Figure 6: Cat in Coordinate Space](/ch1/fig6.PNG)
 [under each body size pic, number it so reader knows if it's 1, 2, etc. The 2 glues two 1s together, showing the border, the 0.5 shows the other half grayed out, etc. This is to indicate they're scaling the unit vector. But [cat pic] does not do this, since it's not always measured using bodysize or face length, it's just pure data that can be represented using different features. you can show the addition with an 'intermediate step' that shows gluing them on, then removing the borders/faded. can also be gif]--->
 
 ---
+
+**What is a Change of Basis?**
 
 Now, there are other ways we can measure the data samples in this population. Instead of labeling each data sample using the face & body measurements, let's label each data sample using the following two measurements: 
 
@@ -169,6 +171,9 @@ We show below how the features on the two basis vectors in Model 1 are rotated o
 <!---[Model 1, and Model 1 on top of Model 2. WITH vectors.]
 in the vector on top of model pic, color them the same, only darker--->
 
+---
+
+**What does Change of Basis have to do with Neural Networks?**
 
 Notice that Model 2 demonstrates an idealized, simplified example of what a neural network does- it is making a guess about the data point given to it as input. In fact, one can think of it as a single layer 'neural network'[^1-layer-NN] such that for the function that calculates the neuron activations:
 

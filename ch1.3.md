@@ -32,7 +32,7 @@ Let's re-visit the problem of finding the value of $$O$$. In other words, how do
 
 In a linear algebra class, one learns that this can be done using matrix multiplication. But why does the algebraic procedure of matrix multiplication work? Why does the first step specifically use the dot product of the first row and the input vector? What even is a dot product?
 
-**What Do Dot Products have to do with Measurement?**
+**And What Do Dot Products have to do with Measurement?**
 
 Let's figure this out by first understanding what we need to know to calculate the values of $$O$$ that represents data sample <img src="/ch1/cat.PNG" width="50" height="40">. All data samples in Model 2 are represented by two measurements: 
 <p align="center">
