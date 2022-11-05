@@ -37,17 +37,19 @@ Notice that all the new samples have the same value: x = 3. So changing y doesn'
 
 ---
 
-Let's start with the case where samples $$z = [3, 1]$$, and the feature $$n_1 = [1.5, 1]$$ we want to change is **not** on a basis vector, but the feature $$n_2$$ whose value of a sample we want to keep is on a basis vector. To find a new feature vector $$c$$ to add to $$z$$, we want $$c$$ keep $$n_2 = 3$$, but have the other parts of $$c$$ be as close to $$n_1$$ as possible.
+Let's start with the case where sample $$z = [3, 1]$$, and the feature $$n_1 = [1.5, 1]$$ we want to change is **not** on a basis vector, but the feature $$n_2$$ whose value of a sample we want to keep is on a basis vector. To find a new feature vector $$c$$ to add to $$z$$, we want $$c$$ to keep $$n_2 = 3$$, but want the other parts of $$c$$ be as close to $$n_1$$ as possible.
 
 <img src="/ch2/z_plus_c.PNG" height="300">
 
-In the figure above, we see that vector $$z + c$$ keeps as much of $$n_1 = [1.5, 1]$$ as possible- that is, it still lies at $$y = 1$$ just like $$z + n_1$$, but also keeps $$n_2 = 3$$, in contrast to $$z + n_1$$, which moves $$n_2$$ to 4.5.
+In the figure above, we see that vector $$z + c$$ keeps as much of $$n_1 = [1.5, 1]$$ as possible- that is, it still lies at $$y = 1 + 1 = 2$$ just like $$z + n_1$$, but also keeps $$n_2 = 3$$, in contrast to $$z + n_1$$, which moves $$n_2$$ to 4.5.
 
-Let's reframe these vectors $$n_1$$, $$n_2$$ and $$c$$ by moving them to the origin, and independent of $$z$$. Given that $$c$$ is a vector, we can move it to the right.
+Let's reframe these vectors $$n_1$$, $$n_2$$ and $$c$$ by moving them to the origin, and independent of $$z$$. Given that $$c$$ is a vector and thus is actually just has no true coordinates, just an object with length and direction [^vector], we can move it to the right.
+
+[^vector]: There is a difference between points on a coordinate space and a vector. A vector is mapped onto points in a coordinate space, but it is NOT the point in a coordinate space it is mapped on. Given that it just has length and direction, it can be moved freely anywhere on a coordinate space. The vector's components are NOT points on a coordinate space, but a way to capture the vector's length and magnitude in terms of the coordinate space's basis vectors. This also means that the data point, or feature, that the vector is mapped to can be moved freely anywhere on a coordinate space! What's important is how features and vectors are relative to other features and vectors in the current coordinate space.
 
 <img src="/ch2/n1_n2_c.PNG" width="400" height="300">
 
-Why does vector $$c$$ not change the value of $$y=1$$? Because vector $$c$$ is **orthogonal** to $$n_2$$, meaning they are at a 90 degree angle, where they intersect at $$n_2 = 1$$. If it was not orthogonal, it would veer away from $$n_2 = 1$$, such as shown in the example below, where a non-orthogonal vector leads to $$n_2 = 3$$.
+Why does vector $$c$$ not change the value of $$y=1$$? Because vector $$c$$ is **orthogonal** to $$n_2$$, meaning they are at a 90 degree angle, where they intersect at $$n_2 = 1$$. If it was not orthogonal, it would veer away from $$n_2 = 1$$, such as shown in the example below, where a non-orthogonal vector leads to $$n_2 = 2.1$$.
 
 <img src="/ch2/n1_n2_veer.PNG" width="400" height="300">
 
@@ -63,7 +65,7 @@ First, let's describe what we want, and then translate that description into mat
 
 Let's break this down into parts. To preserve the values of "how much of $$n_2$$ is used to get vector $$n_1$$", we need to represent this phrase in terms of vectors. Recall from Chapter 1 that this can be done using the dot product, which projects one vector onto another, outputting a scalar that says "how much of $$n_2$$ is used to get vector $$n_1$$".
 
-So if $$\vec{n_1} = \color{#CBC3E3}{\begin{bmatrix} 1.5 \\ 1 \end{bmatrix}}$$, then $$\vec{n_1} \cdot \vec{n_2} = 1.5$$
+So if $$\vec{n_1} = \color{red}{\begin{bmatrix} 1.5 \\ 1 \end{bmatrix}}$$, then $$\vec{n_1} \cdot \vec{n_2} = 1.5$$
 
 Then, we scale the $$n_2$$ basis vector by $$\vec{n_1} \cdot \vec{n_2}$$ by doing: 
 
@@ -87,13 +89,15 @@ $$\vec{z} + \alpha * \vec{c}$$
 
 Would be a sample that fits our criteria.
 
+Let's further analyze this by plugging in specific values. 
 
+$$\vec{c} = \vec{n_1} - (\vec{n_1} \cdot \vec{n_2}) * \vec{n_2} = [1.5, 1] - (1.5) * [1, 0] = [1.5 - 1.5, 1] = [0,1]$$
 
-We have just gone over a simpler case where the vector we to keep is just a basis vector. But what if the direction vector is **not** a known basis vector? How can we calculate it? We'll see soon that the calculation follows the same logic as the one for C that we did just now. 
+We see that this subtraction is actually "removing" parts of $$n_2$$ from $$n_1$$ to obtain $$c$$, which is just $$y$$ in this case. But what if $$n_2$$ was **not** on the basis, and thus was not orthogonal to $$y$$ or any other basis vector? We'll see soon that the calculation follows the same logic as the one for C that we did just now. 
 
-**Changing a feature that's not on a basis vector**
+**Changing a feature while keeping another feature IN GENERAL**
 
-Now let's say we have a sample vector $$V = (1,2)$$ and feature vector $$HEIGHT = (2,1) $$. We want to find samples which have the same height as $$v$$, but which vary other features. In other words, based on the previous section, we want to find samples along the green line in the figure below:
+Now let's say we have a feature vector $$n_1 = (1,2)$$ and feature vector $$n_2 = (2,1) $$. Based on the previous section, we want to find samples along the purple line in the figure below:
 
 <img src="/ch2/nonBasisFeat.PNG" width="400" height="300">
 
