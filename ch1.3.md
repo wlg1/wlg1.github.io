@@ -330,7 +330,7 @@ Now we're ready to go through each step of matrix multiplication in an intuitive
 
 (To enlarge each image, right-click and 'Open image in new tab'. Future updates will allow the image to be enlarged by clicking on it.)
 
-Recall above that we want to find the value of $$O$$:
+Recall above that we want to find the value of $$O$$ in Model 2, which is analogous to finding $$X$$ in Model 1:
 
 $$
 IX = 
@@ -370,13 +370,13 @@ On the right side, we'll be showing matrix multiplication in Model 1, which uses
 
 First, we break down the steps of the first dot product, corresponding to the <span style="color:orange">Cat</span> coordinate, involving the first row of the matrices. Let's find what <span style="color:red">a</span> and <span style="color:blue">b</span> correspond to in each Model.
 
-STEP 1: First row of matrix: $$\def\a{\color{red}{a}}
+**[ STEP 1 ]** First row of matrix: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
 \begin{bmatrix} \a & \b \end{bmatrix}$$  (see dotted lines)
 
 ![step1](/ch1/1.2/step1.png)
 
-As we see above, the dotted lines are what <span style="color:red">a</span> and <span style="color:blue">b</span> correspond to in each Model. They are the first row of the matrix:
+As we see above, the dotted lines are what <span style="color:red">a</span> and <span style="color:blue">b</span> correspond to in each Model:
 
 $$I$$: $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
@@ -391,7 +391,7 @@ $$W$$: $$
 
 ---
 
-STEP 2: Scale by $$X$$: $$\def\a{\color{red}{a}}
+**[ STEP 2 ]** Scale by $$X$$: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
@@ -399,7 +399,7 @@ STEP 2: Scale by $$X$$: $$\def\a{\color{red}{a}}
 
 ![step2](/ch1/1.2/step2.png)
 
-Next, we're multiplying the first row of our matrix by the input vector. This corresponds to the equation:
+Next, we're multiplying the first row of our matrix by the input vector:
 
 $$I$$: $$\def\a{\color{red}{1}}
 \def\b{\color{blue}{0}}
@@ -415,7 +415,7 @@ $$W$$: $$\def\a{\color{red}{-2}}
 
 ---
 
-STEP 3: Add: $$\def\a{\color{red}{a}}
+**[ STEP 3 ]** Add: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
 \begin{bmatrix} \a & \b \end{bmatrix}
 \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
@@ -443,11 +443,13 @@ $$W$$: $$\def\a{\color{red}{-2}}
 
 <!---[Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different]--->
 
-If we apply the same logic of these 3 steps to row 2, we obtain the values of $$O$$, which were what we wanted to find in this Chapter:
+If we apply the same logic of these three steps to row 2, we obtain the values of $$O$$, completing the main goal of this Chapter:
 
 $$\def\x{\color{purple}{4}}
 \def\y{\color{purple}{-2.75}}
 O = \begin{bmatrix} \x \\ \y \end{bmatrix}$$
+
+<img src="/ch1/1.2/finalanswer.PNG" >
 
 ---
 
