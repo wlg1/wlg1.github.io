@@ -126,8 +126,10 @@ $$
 <b><span style="color:#CBC3E3">2 units of meter</span></b> <span style="font-size:20px">&#8594;</span> <span style="color:orange">6.56 units of feet</span>
 </p>
 
+<!---
 [picture of 2 meters, or 2 * 3.28 feet]
 [top is face length, bottom is -+ line denoting cat chance]
+--->
 
 Indeed, one dot product step is analogous to 1D matrix multiplication; so two dot product steps would be analogous to 2D matrix multiplication. At last, we realize that matrix multiplication, or "Change of Basis", is none other than  unit conversion multiplication, or "Change of Units". That is, $$O$$ refers to the same quantity that $$X$$ refers to, except the two vectors measure it using different units.[^1]
 
@@ -325,7 +327,9 @@ Now we're ready to go through each step of matrix multiplication in an intuitive
 
 ---
 
-First, we break down the steps of the first dot product, corresponding to the <span style="color:orange">Cat</span> coordinate, involving the first row of the matrices.
+(To enlarge each image, right-click and 'Open image in new tab'. Future updates will allow the image to be enlarged by clicking on it.)
+
+First, we break down the steps of the first dot product, corresponding to the <span style="color:orange">Cat</span> coordinate, involving the first row of the matrices. 
 
 STEP 1: First row of matrix: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
