@@ -14,6 +14,13 @@ title: CHAPTER 1.1
 </div>
 <br> -->
 
+<div>
+  <a href="eduBlogHome.html">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+<br>
+
 <center><h2>CHAPTER 1.1: How does Matrix Multiplication Guess it's a Cat from its Face and Body?</h2></center>
 
 **(Reading time: 5 minutes)**
