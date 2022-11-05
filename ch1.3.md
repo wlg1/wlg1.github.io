@@ -21,13 +21,13 @@ title: CHAPTER 1.3
 
 ---
 
-Let's re-visit the problem of finding the value of $$O$$. In other words, how do we find the new label of <img src="/cob/cat.PNG" width="50" height="40"> in Model 2? 
+Let's re-visit the problem of finding the value of $$O$$. In other words, how do we find the new label of <img src="/ch1/cat.PNG" width="50" height="40"> in Model 2? 
 
-![2mod_vecs](/cob/2mod_out.PNG)
+![2mod_vecs](/ch1/2mod_out.PNG)
 
 In a linear algebra class, one learns that this can be done using matrix multiplication. But why does the algebraic procedure of matrix multiplication work? Why does the first step specifically use the dot product of the first row and the input vector? What even is a dot product?
 
-Let's figure this out by first understanding what we need to know to calculate the values of $$O$$ that represents data sample <img src="/cob/cat.PNG" width="50" height="40">. All data samples in Model 2 are represented by two measurements: 
+Let's figure this out by first understanding what we need to know to calculate the values of $$O$$ that represents data sample <img src="/ch1/cat.PNG" width="50" height="40">. All data samples in Model 2 are represented by two measurements: 
 <p align="center">
 1) How likely it is to be a <span style="color:orange">Cat</span>
 </p>
@@ -148,9 +148,9 @@ We now explained what the rows of $$W$$ are. But what are its columns? And how d
 
 In Model 1, $$\def\a{\color{#FA8072}{1}}
 \def\c{\color{#FA8072}{0}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}$$ labels <img src="/cob/face1.PNG" width="50" height="40">. In Model 2, $$\def\a{\color{red}{1}}
+\begin{bmatrix} \a \\ \c \end{bmatrix}$$ labels <img src="/ch1/face1.PNG" width="50" height="40">. In Model 2, $$\def\a{\color{red}{1}}
 \def\c{\color{red}{-1.5}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}$$ labels <img src="/cob/face1.PNG" width="50" height="40">.
+\begin{bmatrix} \a \\ \c \end{bmatrix}$$ labels <img src="/ch1/face1.PNG" width="50" height="40">.
 
 Thus, $$\def\a{\color{red}{1}}
 \def\c{\color{red}{-1.5}}
@@ -166,13 +166,13 @@ Notice that $$\def\a{\color{red}{1}}
 
 Therefore, $$\def\a{\color{red}{face_{cat}=1}}
 \def\c{\color{red}{face_{Rat}=-1.5}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}$$, the first column of $$W$$, and the Model 2 vector labeling <img src="/cob/face1.PNG" width="50" height="40">, contains the conversion factors for each of the basis vectors $$\{ \color{orange}{cat}, \color{green}{Rat} \}$$ of Model 2, in terms of only $$\color{red}{face}$$.[^no_longer_basis] 
+\begin{bmatrix} \a \\ \c \end{bmatrix}$$, the first column of $$W$$, and the Model 2 vector labeling <img src="/ch1/face1.PNG" width="50" height="40">, contains the conversion factors for each of the basis vectors $$\{ \color{orange}{cat}, \color{green}{Rat} \}$$ of Model 2, in terms of only $$\color{red}{face}$$.[^no_longer_basis] 
 
-[^no_longer_basis]: Remember that <span style="color:red">[1, 1.5]</span> is NOT a basis vector, so <img src="/cob/face1.PNG" width="50" height="40"> is no longer labeled by a basis vector. 
+[^no_longer_basis]: Remember that <span style="color:red">[1, 1.5]</span> is NOT a basis vector, so <img src="/ch1/face1.PNG" width="50" height="40"> is no longer labeled by a basis vector. 
 
 Likewise, $$\def\a{\color{blue}{body_{cat}=1.5}}
 \def\c{\color{blue}{body_{Rat}=-1}}
-\begin{bmatrix} \a \\ \c \end{bmatrix}$$, the second column of $$W$$, and the Model 2 vector labeling <img src="/cob/body1.PNG" width="50" height="40">, contains the conversion factors for each of the basis vectors $$\{ \color{orange}{cat}, \color{green}{Rat} \}$$ of Model 2, in terms of only $$\color{blue}{body}$$. 
+\begin{bmatrix} \a \\ \c \end{bmatrix}$$, the second column of $$W$$, and the Model 2 vector labeling <img src="/ch1/body1.PNG" width="50" height="40">, contains the conversion factors for each of the basis vectors $$\{ \color{orange}{cat}, \color{green}{Rat} \}$$ of Model 2, in terms of only $$\color{blue}{body}$$. 
 
 $$
 \def\a{\color{red}{face_{cat}}}
@@ -182,7 +182,7 @@ $$
 \color{purple}{W} = \begin{bmatrix} \a & \b \\ \c & \d \end{bmatrix}  
 $$
 
-If we multiply this by the basis vector in Model 1 that labels <img src="/cob/face1.PNG" width="50" height="40">, we see it uses ONLY the conversion units for $$face$$, and none of the conversion units for $$body$$. This is because this data sample has no body, so it would not use $$body$$ in its calculation for $$cat$$ and $$rat$$ at all. The same goes for the other basis vector in Model 1.
+If we multiply this by the basis vector in Model 1 that labels <img src="/ch1/face1.PNG" width="50" height="40">, we see it uses ONLY the conversion units for $$face$$, and none of the conversion units for $$body$$. This is because this data sample has no body, so it would not use $$body$$ in its calculation for $$cat$$ and $$rat$$ at all. The same goes for the other basis vector in Model 1.
 
 $$
 \def\a{\color{red}{face_{cat}}}
@@ -304,7 +304,7 @@ WX =
 
 Note that the basis vectors of Model 1 in $$I$$ are NOT the rows of I, but the columns. This can be easy to mix up because I is a symmetric matrix, so the $$i^{th}$$ row equals the $$i^{th}$$ column.
 
-The first column in each of the matrices labels <img src="/cob/face1.PNG" width="50" height="40">, and the second column labels <img src="/cob/body1.PNG" width="50" height="40">. Each value in X is a quantity specifying the values of <img src="/cob/face1.PNG" width="50" height="40"> and <img src="/cob/body1.PNG" width="50" height="40">; each value can also be thought of as an instruction on how many units of that basis vector to use. Let's go through the multiplications of $$IX$$ and $$WX$$ side by side to see how different they are when they use different basis vectors.
+The first column in each of the matrices labels <img src="/ch1/face1.PNG" width="50" height="40">, and the second column labels <img src="/ch1/body1.PNG" width="50" height="40">. Each value in X is a quantity specifying the values of <img src="/ch1/face1.PNG" width="50" height="40"> and <img src="/ch1/body1.PNG" width="50" height="40">; each value can also be thought of as an instruction on how many units of that basis vector to use. Let's go through the multiplications of $$IX$$ and $$WX$$ side by side to see how different they are when they use different basis vectors.
 
 ---
 
@@ -328,7 +328,7 @@ $$W$$: $$\def\a{\color{red}{-2}}
 \begin{bmatrix} \a & \b \end{bmatrix}$$
 --->
 
-![step1](/cob/1.2/step1.png)
+![step1](/ch1/1.2/step1.png)
 
 STEP 2: Scale by $$X$$: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
@@ -351,7 +351,7 @@ $$W$$: $$\def\a{\color{red}{-2}}
 -> \color{red}{-2} * 0.5\qquad \color{blue}{2.5} * 2$$
 --->
 
-![step2](/cob/1.2/step2.png)
+![step2](/ch1/1.2/step2.png)
 
 STEP 3: Add: $$\def\a{\color{red}{a}}
 \def\b{\color{blue}{b}}
@@ -373,7 +373,7 @@ $$W$$: $$\def\a{\color{red}{-2}}
 -> \color{red}{-2} * 0.5 + \color{blue}{2.5} * 2 = \color{purple}{4}$$
 --->
 
-![step3](/cob/1.2/step3.png)
+![step3](/ch1/1.2/step3.png)
 
 <!---[Explain side-by-side of dot product on Sys 1 on left, and on Sys 2 on right. Show same instructions from I are done on Sys 2, but require W since now the basis vectors that I targeted look different]--->
 
