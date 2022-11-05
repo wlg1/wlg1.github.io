@@ -19,13 +19,17 @@ title: Making the Math of Neural Networks Intuitive - HOME
 <p align="center">
 <b>How do these unfamiliar mathematical concepts relate to neural networks?</b></p>
 
-This blog solves these problems by explaining all the required prerequisites needed to understand the terminology from the bottom up.[^1]. It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. 
+This blog overcomes this problem by explaining many required prerequisites from scratch[^1], and relating them to neural network applications. 
 
 [^1]: Assuming only that a reader has a basic understanding of X, or has watched these videos []. Links are provided to them.
 
-But this blog takes an even further step: by generalizing this solution to solve similar problems.
+![2mod_vecs](/cob/2mod_out.PNG)
 
 <!---
+It also gets to the point: it only says what issues this concept solves for this neural network paper, nothing more. 
+
+But this blog takes an even further step: by generalizing this solution to solve similar problems.
+
 fig Eg) [give an example of issue- reasoning- soln - generalization, that concisely explains all after prereqs]
 --->
 
@@ -65,7 +69,7 @@ Not sure where to start?
 &nbsp;&nbsp;&nbsp;&nbsp;**[2.3: Scoring Semantics using Hyperplanes]()**
 
 <details>
-<summary><b>CHAPTER 2 CODE TUTORIAL</b> (click to expand) </summary>
+<summary><b>CHAPTER 2 CODE TUTORIALS</b> (click to expand) </summary>
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="active" href="https://colab.research.google.com/drive/1KNs_QgosAn3GmkUpaQAyRDo1pEjputNJ?usp=share_link">CODE 2.1: InterFaceGAN </a>
 <br><br>
