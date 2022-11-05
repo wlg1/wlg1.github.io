@@ -3,7 +3,7 @@ title: CHAPTER 2.2
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<h1>CHAPTER 2.2: Conditioning on Features using Orthogonal Projection</h1>
+<center><h2>CHAPTER 2.2: Conditioning on Features using Orthogonal Projection</h2></center>
 
 <a href="eduBlogHome.html">Home</a>
 
@@ -103,56 +103,32 @@ Now let's say we have a feature vector $$n_1 = (1,2)$$ and feature vector $$n_2 
 
 <img src="/ch2/nonBasisFeat.PNG" width="400" height="300">
 
-Recall from the previous section that if we wanted to vary the features of a vector $$v$$, but wanted to keep the value of x=3 at vector $$x$$, we used the equation:
+Recall from the previous section that if we wanted to vary the features of a vector $$n_1$$, but wanted to keep the value at vector $$n_2$$, we used the equation:
 
-<img src="/ch2/varies_same_1.PNG" width="300" height="100">
+<center><img src="/ch2/varies_same_1.PNG" width="300" height="100"></center>
 
-Here, let's use a similar version of the equation, but use orthogonal projection instead. This will find the vector scaled on $$HEIGHT$$ that's closest to $$v$$. The equation for orthogonal projection is:
+Here, let's use a similar version of the equation, but we will slightly modify the dot product projection to include a denominator term, as shown below:
 
-$$ \frac{(\vec{v} \cdot \vec{HEIGHT}) }{(\vec{HEIGHT} \cdot \vec{HEIGHT}) } * \vec{HEIGHT} $$
+$$ \frac{(\vec{n_1} \cdot \vec{n_2}) }{(\vec{n_2} \cdot \vec{n_2}) } * \vec{n_2} $$
 
-Then our equation for finding the green vector becomes:
+The reason this denominator was not needed in the previous example was because it measures the length of the vector being projected onto; in that case, vector $$\vec{n_2}$$ was a basis vector with a length of 1, so this term simplified to just the numerator.
 
-$$\vec{c} = \vec{v} - \frac{(\vec{v} \cdot \vec{HEIGHT}) }{(\vec{HEIGHT} \cdot \vec{HEIGHT}) } * \vec{HEIGHT} $$
+Then our equation for finding $$c$$ becomes:
 
-Any sample along:
+$$\vec{c} = \vec{n_1} - \frac{(\vec{n_1} \cdot \vec{n_2}) }{(\vec{n_2} \cdot \vec{n_2}) } * \vec{n_2} * \vec{n_2} $$
 
-$$\vec{v} + \alpha * \vec{c}$$
+This is the equation for **orthogonal projection**, which will find the vector scaled on $$n_2$$ that's closest to $$n_1$$. The proof for the equation is linked in the footnotes.[^orthProofs]
 
-... would vary features of $$AGE$$ while keeping the other features of $$n_2$$ roughly the same.
+[^orthProofs]: <a href="https://textbooks.math.gatech.edu/ila/projections.html"> Proof for the orthogonal projection equation</a>. Find it using ctrl+f "Recipe: Orthogonal projection onto a line". <a href="https://www.robertosmathnotes.com/uploads/8/2/3/9/8239617/la1-9_orthogonal_projections.pdf"> Another resource is here.</a>
 
-But why is this the case? When don't immediately see how this "preserves" the other features of $$n_2$$, like we saw how x=3 was preserved by going orthogonal to it in the previous section. Intuitively, it becomes more obvious when we perform a change of basis to measure our data in terms of $$n_2$$:
+But why is this the case? We don't immediately see how this "preserves" the other features of $$n_2$$, like we saw how $$n_2 = 3$$ was preserved by going orthogonal to it in the previous example. Intuitively, it becomes more obvious when we perform a change of basis to measure our data in terms of $$n_2$$:
+
+
 
 When there are more than two dimensions, this removal will leave more than just the basis vector
 
-
-OUTLINE:
-1. introduce n1, n2
-2. apply technique above but now need orth proj
-    We had dot product onto a vector...
-    Now, we need orthogonal projection to find the closest
-    add c to v, not cv, b/c only use cv to get DIRECTION. v is the actual sample. get variations in increments
-3. equation breakdown: varies, doesn't vary
-    question why this won't vary n2
-4. rotate v onto basis using inverse of rotation
-    to find rotation, find orthogonal. we have C
-5. plot v, v+c, and v+2c, etc onto new coord space
-    observe that they're all orthogonal to v, just like in previous section
-
-If we have multiple features we want to change, but 
-
-We have to be aware of which features 
-
 Essentially, this manipulation cannot make ALL features stay the same. We must know beforehand which features we want to stay the same, and which features we want to vary. Then, we will condition on the features we want to stay the same
 
-Note that this conditioning cannot force
-
-
-
-(project x onto v now, instead of v onto x. this is b/c 'preserve as much of v' while just changing x)
-
-(map v to the basis!)
-(the 2nd basis vector is just a feature that is orthogonal to v, allowing for a rotation, as rotations are orthogonal matrices)
 
 ---
 ---
