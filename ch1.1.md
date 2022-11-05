@@ -203,7 +203,9 @@ As we see that each of the four neurons on the left act as basis vectors in the 
 <center><b>Neurons are Basis Vectors in an Activation Space.</b></center>
 <br>
 
-Thus, every neuron in a neural network is a measurement on the data. It is possible for a neuron to learn to measure cats, as in the examples shown above, and thus act as a "cat neuron". This Activation Space is commonly referred to as a **Latent Space**, and will be a very important concept for describing how a neural networks finds new relationships between data in a dataset. 
+Thus, every neuron in a neural network is a measurement on the data. It is possible for a neuron to learn to measure cats, as in the examples shown above, and thus act as a "cat neuron". This Activation Space is commonly referred to as a **Latent Space**, and will be a very important concept for describing how a neural networks finds new relationships between data in a dataset.[^nonlinear] 
+
+[^nonlinear]: In this example, the activation function $$\sigma$$ is the Identity, so the neuron function $$O = \sigma(WX + b)$$ is linear. But $$\sigma$$ is usually nonlinear, giving rise to nonlinear functions in latent spaces. 
 
 ---
 

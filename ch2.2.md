@@ -30,7 +30,9 @@ title: CHAPTER 2.2
 Now we want to change a feature $$n_1$$ while keeping the value of **another** feature $$n_2$$ the same. 
 Another way to say the value of $$n_2$$ is "preserved" is to say that we are **conditioning on** $$n_2$$. The difficulty in doing this is that each feature vector is made up of the same basis vectors (neurons), so by changing feature $$n_1$$, you are changing the basis vectors that add up to $$n_1$$, and since you are those basis vectors are also used to add up to $$n_2$$, you are also changing $$n_2$$. 
 
-In other words, a sample lies on a point in a high dimensional latent space of potentially billions of neurons. A feature vector lies along a subspace- a plane- within this latent space. Projecting the sample down to this feature subspace (that is, finding its "shadow" or its "distorted reflection" on the plane) measures how much of the feature that sample has. 
+In other words, a sample lies on a point in a high dimensional latent space of potentially billions of neurons. A feature vector lies along a subspace- a plane[^nonlinear]- within this latent space. Projecting the sample down to this feature subspace (that is, finding its "shadow" or its "distorted reflection" on the plane) measures how much of the feature that sample has. 
+
+[^nonlinear]: If the activation function $$\sigma$$ is the Identity, the neuron function $$O = \sigma(WX + b)$$ is linear. But $$\sigma$$ is usually nonlinear, giving rise to nonlinear functions in latent spaces. Thus, instead of projecting down to planes, projections would be done down to surfaces.
 
 So when you move a sample from one point to another, the shadow won't just change on one feature subspace, but another feature subspace. For example, if you are ever stuck in a hall of mirrors, you may find yourself next to two mirrors- one that makes you larger, and one that makes you small. When you move one way, you are not just changing how you look in the "Larger" mirror, but also how you look in the "smaller" mirror.[^projectionAbstraction]
 
