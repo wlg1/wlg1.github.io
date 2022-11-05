@@ -4,8 +4,7 @@ title: CHAPTER 1.2
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-**Ch1.2: Why use dot product in matrix multiplication?**
-<!---WHY THE ALGEBRAIC PROCEDURE OF MATRIX MULTIPLICATION WORKS--->
+<center><h2>CHAPTER 1.2: Why use dot product in matrix multiplication?</h2></center>
 
 Let's re-visit the problem of finding the value of $$O$$. In other words, how do we find the new label of <img src="/cob/cat.PNG" width="50" height="40"> in Model 2? 
 

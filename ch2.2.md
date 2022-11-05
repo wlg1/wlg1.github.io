@@ -9,7 +9,8 @@ title: CHAPTER 2.2
 
 **(Reading time: 12 minutes)**
 
-Now we want to change a feature $$n_1$$ while keeping the value of **another** feature $$n_2$$ the same. The difficulty in doing this is that each feature vector is made up of the same basis vectors (neurons), so by changing feature $$n_1$$, you are changing the basis vectors that add up to $$n_1$$, and since you are those basis vectors are also used to add up to $$n_2$$, you are also changing $$n_2$$. 
+Now we want to change a feature $$n_1$$ while keeping the value of **another** feature $$n_2$$ the same. 
+Another way to say the value of $$n_2$$ is "preserved" is to say that we are **conditioning on** $$n_2$$. The difficulty in doing this is that each feature vector is made up of the same basis vectors (neurons), so by changing feature $$n_1$$, you are changing the basis vectors that add up to $$n_1$$, and since you are those basis vectors are also used to add up to $$n_2$$, you are also changing $$n_2$$. 
 
 In other words, a sample lies on a point in a high dimensional latent space of potentially billions of neurons. A feature vector lies along a subspace- a plane- within this latent space. Projecting the sample down to this feature subspace (that is, finding its "shadow" or its "distorted reflection" on the plane) measures how much of the feature that sample has. 
 
@@ -27,7 +28,7 @@ When changing one feature vector affects another, the feature vectors are **enta
 
 Thus, we will have to find a new vector to add to our sample $$z$$.
 
-**Changing a feature while keeping another feature on the basis vector**
+**Changing a Feature while Conditioning on Another Feature that's on a Basis Vector**
 
 In the previous section, we already saw a case where the feature we want to change, $$y$$, is on the basis vector.
 
@@ -97,7 +98,9 @@ $$\vec{c} = \vec{n_1} - (\vec{n_1} \cdot \vec{n_2}) * \vec{n_2} = [1.5, 1] - (1.
 
 We see that this subtraction is actually "removing" parts of $$n_2$$ from $$n_1$$ to obtain $$c$$, which is just $$y$$ in this case. But what if $$n_2$$ was **not** on the basis, and thus was not orthogonal to $$y$$ or any other basis vector? We'll see soon that the calculation follows the same logic as the one for C that we did just now. 
 
-**Changing a feature while keeping another feature IN GENERAL**
+---
+
+**Changing a Feature while Conditioning on Another Feature IN GENERAL**
 
 Now let's say we have a feature vector $$n_1 = (1,2)$$ and feature vector $$n_2 = (2,1) $$. Based on the previous section, we want to find samples along the purple line in the figure below:
 
@@ -156,8 +159,6 @@ When the change of basis is performed, we see that all the values at $$z + \alph
 Now, we see that the removal of the projection onto $$n_2 = [2, 1]$$ from $$n_1 = [1, 2]$$ will leave more than just the basis vector, as in the original coordinate space, $$c = [-0.6, 1.2]$$ is not a basis vector. 
 
 When there are more than two dimensions, this removal of the projection will be even more non-trivial. One can say that since $$(\vec{n_1} \cdot \vec{n_2}) * \vec{n_2}$$ says "how much of $$n_2$$ is used to calculate $$n_1$$", that it's the "effect of $$n_2$$ on $$n_1$$". So by removing it, we are removing the effect of $$n_2$$ on $$n_1$$.
-
-Another way to say $$n_2$$ is "preserved" is to say that we are **conditioning on** $$n_2$$.
 
 ---
 

@@ -3,7 +3,7 @@ title: CHAPTER 2.1
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-**CHAPTER 2.1**
+<center><h2>CHAPTER 2.1: Changing Features using Vector Addition</h2></center>
 
 <a href="eduBlogHome.html">Home</a>
 
@@ -50,19 +50,21 @@ If we perform a Change of Basis to measure our image on the left in terms of "Ca
 
 [^notRat]: This is similar to the example in the previous Chapter, but instead of changing to a basis where "like a Rat" is mapped to the y-axis, the feature "Hair Style" is mapped to the y-axis. 
 
-<img src="/ch2/likeCat_cob.PNG" width="700" height="300">
+<img src="/ch2/likeCat_cob.PNG" height="300">
 
 Note that when we move along the "Cat" vector but not along the "Hair Style" vector, we may still move along the "Ears" vector, demonstrating the difficulty of preserving as many features as possible while still deviating from one feature.
 
 So if we only want to change one feature such as "cat-like", we should "move along" that "cat-like" feature vector. 
 
-But how do we calculate [the vector we want to preserve..]? 
+But how do we change the "Cat-like" feature while preserving (in other words, **conditioning on**) other features such as "Hair Style" or "Ear Style"? 
 
-These calculations were found using a method presented in the paper "Interpreting the latent space of GANs for semantic face editing" [^cite1], which introduced a now widely used method for editing the features of StyleGAN generated images. We'll be explaining the intuition behind the mathematical calcuations in the paper.
+One method to do this was presented in the paper "Interpreting the Latent Space of GANs for Semantic Face Editing" [^cite1], which introduced a now widely used approach for editing the features of StyleGAN generated images. In this Chapter, we'll be explaining the intuition behind the mathematical calcuations used in this approach.
 
 [^cite1]: Yujun Shen, Jinjin Gu, Xiaoou Tang, and Bolei Zhou. Interpreting the latent space of GANs for semantic face editing. CoRR, abs/1907.10786, 2019.
 
-**Changing a feature on the basis vector**
+---
+
+**Changing a Feature on the Basis Vector**
 
 First, let's start with a simpler case, where the feature we want to change is on a basis vector. Say the Body Size vector is on the y-axis. We have a vector $$z=[3,2]$$ where Body Size = 2, and we want to find a similar vector, such as one where Body Size = 1. Since $$y = [0,1]$$, our feature vector Body Size is represented by $$y$$, so all we need to do is to add $$y$$ to $$z$$: 
 
@@ -80,7 +82,9 @@ Since vector addition adds the head of a vector with the tail of another vector,
 
 Such that the yellow and blue vectors represent $$\alpha * \vec{y}$$ being added to vector $$z$$.
 
-**Changing a feature NOT on the basis vector**
+---
+
+**Changing a Feature NOT on the Basis Vector**
 
 Next, let's change a feature that's not on the basis vector. Recall that a feature vector $$n$$ in a coordinate space is a measurement by the space's basis vectors. In other words, each feature can be expressed entirely by a linear combination of basis vectors. So if feature $$n$$ represents "cat-like", then how much a sample is like a cat is represented by its combination of Face Length to Body Size. 
 

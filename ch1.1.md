@@ -4,7 +4,7 @@ title: CHAPTER 1.1
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-**CHAPTER 1.1**
+<center><h2>CHAPTER 1.1: How does matrix multiplication guess a cat from its face and body?</h2></center>
 
 <a href="index.md">back</a>
 
