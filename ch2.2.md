@@ -35,9 +35,14 @@ In other words, a sample lies on a point in a high dimensional latent space of p
 So when you move a sample from one point to another, the shadow won't just change on one feature subspace, but another feature subspace. For example, if you are ever stuck in a hall of mirrors, you may find yourself next to two mirrors- one that makes you larger, and one that makes you small. When you move one way, you are not just changing how you look in the "Larger" mirror, but also how you look in the "smaller" mirror.[^projectionAbstraction]
 
 <figure>
-<img src="/ch2/mirrors.jpeg" width= 300>
+<!-- <img src="/ch2/mirrors.jpeg" width= 300> -->
+<img src="/ch2/shadows.PNG" width= 300>
 
-<figcaption align = "center"><b> Source: https://www.thisiswhyimbroke.com/uk/warping-mirrors/ </b></figcaption>
+
+<figcaption align = "center"><b> Sources: https://www.thisiswhyimbroke.com/uk/warping-mirrors/ 
+<br>
+https://www.flickr.com/photos/51339555@N02/5252365635</b>
+</figcaption>
 </figure>
 
 [^projectionAbstraction]: By pure speculation, this may be related to how the brains of organisms organize concepts, and why concepts are related to one another by analogy. An analogy relates an "abstraction" of concepts- such as abstracting the Hero's Journey in The Hunger Games and in Harry Potter. There is some sort of semantic (but possibly superficial, and thus meaningless) similarity between Projection and Abstraction. Abstractions also occur in dreams, where a memory of an angry neighbor yelling at his lawn may be substituted with the dream of an angry teacher yelling at his lawn, which has never occurred in real life. Now projecting down to different abstractions would mean if the way a sample is mapped to one abstraction framework is changed, then the way it's mapped to another abstraction framework is also changed. So say you're trying to think of a way to create a novel concept by slightly tweaking an existing concept. The difficulty is that <b>some abstraction frameworks cannot be changed in order to preserve the concept itself.</b> For example, you want to write a story that has the same "beats" as Star Wars. Now your story contains an abstraction of "Star Wars", and also an abstraction on "The Hero's Journey". If you want to get rid of "The Call to Adventure", you would also shake your story away from "The Hero's Journey". (NOTE: This is not a good example, so further thought will be put into it).
