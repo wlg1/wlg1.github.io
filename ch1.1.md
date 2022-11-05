@@ -201,8 +201,11 @@ We can see how this matrix relates to weights in a neural network; each column c
 As we see that each of the four neurons on the left act as basis vectors in the previous layer (Model 1), and the three neurons on the right act as basis vectors in the next layer (Model 2), such that the three neurons on the right are a linear combinations of the previous layer neurons and their weights, we come to a very important concept: 
 
 <center><b>Neurons are Basis Vectors in an Activation Space.</b></center>
+<br>
 
 Thus, every neuron in a neural network is a measurement on the data. It is possible for a neuron to learn to measure cats, as in the examples shown above, and thus act as a "cat neuron". This Activation Space is commonly referred to as a **Latent Space**, and will be a very important concept for describing how a neural networks finds new relationships between data in a dataset. 
+
+---
 
 Going back to the change of basis example above, in Model 2, $$\color{#CBC3E3}{X = \begin{bmatrix} 0.5 \\ 2 \end{bmatrix}}$$ no longer labels <img src="/ch1/cat.PNG" width="50" height="40">; it's labeled by <span style="color:#9B59B6">the vector O</span>. How do we calculate what the new label for <img src="/ch1/cat.PNG" width="50" height="40"> is? In other words, how do we calculate the <span style="color:#9B59B6">values of the vector O = WX</span> by multiplying <span style="color:#CBC3E3">vector X</span> with <span style="color:purple">matrix W</span>? We will reveal the answer in Chapter 1.3.
 
