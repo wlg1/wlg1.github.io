@@ -21,9 +21,7 @@ title: Front Page
 
 [ Website in process of being built. To be completed by: Jan 2023 ][^footnote]
 
-[^footnote]: Future uploads include tutorials that walk through experiments, starting with simple ones. Most of the experiments done so far are still in draft form, rather than in tutorial format
-
-<a href="test_collapsible.html">test</a>
+[^footnote]: Future uploads include tutorials that walk through experiments, starting with simple ones. Most of the experiments done so far are still in draft form, rather than in tutorial format.
 
 ---
 <p style="font-size:20px"><b>
