@@ -23,7 +23,7 @@ So when you move a sample from one point to another, the shadow won't just chang
 
 [^projectionAbstraction]: By pure speculation, this may be related to how the brains of organisms organize concepts, and why concepts are related to one another by analogy. An analogy relates an "abstraction" of concepts- such as abstracting the Hero's Journey in The Hunger Games and in Harry Potter. There is some sort of semantic (but possibly superficial, and thus meaningless) similarity between Projection and Abstraction. Abstractions also occur in dreams, where a memory of an angry neighbor yelling at his lawn may be substituted with the dream of an angry teacher yelling at his lawn, which has never occurred in real life. Now projecting down to different abstractions would mean if the way a sample is mapped to one abstraction framework is changed, then the way it's mapped to another abstraction framework is also changed. So say you're trying to think of a way to create a novel concept by slightly tweaking an existing concept. The difficulty is that <b>some abstraction frameworks cannot be changed in order to preserve the concept itself.</b> For example, you want to write a story that has the same "beats" as Star Wars. Now your story contains an abstraction of "Star Wars", and also an abstraction on "The Hero's Journey". If you want to get rid of "The Call to Adventure", you would also shake your story away from "The Hero's Journey". (NOTE: This is not a good example, so further thought will be put into it).
 
-When changing one feature vector affects another, the feature vectors are **entangled**. However, it is possible to find a <span style="color:purple;">new</span> feature vector that will <span style="color:red"><i>cast the new desired shadow on</i></span> $$n_1$$ but also <span style="color:blue;"><i>tries not to change the existing shadow projected onto</i></span> $$n_2$$. This procedure is called finding **disentangled** vectors.
+When changing one feature vector affects another, the feature vectors are **entangled**. However, it is possible to find a <b><span style="color:purple;">new</span></b> feature vector that will <span style="color:red"><i>cast the new desired shadow on</i></span> $$n_1$$ but also <span style="color:blue;"><i>tries not to change the existing shadow projected onto</i></span> $$n_2$$. This procedure will find a vector **disentangled** to $$n_2$$.
 
 Thus, we will have to find a new vector to add to our sample $$z$$.
 
@@ -37,37 +37,37 @@ Notice that all the new samples have the same value: x = 3. So changing y doesn'
 
 ---
 
-Let's start with the case where the feature $$n_1 = [1, 2]$$ we want to change is **not** on a basis vector, but the feature $$n_2$$ whose value of a sample we want to keep is on a basis vector. To find a new feature vector, we want samples which are added to it to always keep $$n_2 = 1$$, but have the other parts of $$n_1$$ be as close to $$n_1$$ as possible.
+Let's start with the case where samples $$z = [3, 1]$$, and the feature $$n_1 = [1.5, 1]$$ we want to change is **not** on a basis vector, but the feature $$n_2$$ whose value of a sample we want to keep is on a basis vector. To find a new feature vector $$c$$ to add to $$z$$, we want $$c$$ keep $$n_2 = 3$$, but have the other parts of $$c$$ be as close to $$n_1$$ as possible.
 
-<!--- ![Figure ](/ch2/VtoW.PNG) --->
-<img src="/ch2/VtoW.PNG" width="400" height="300">
+<img src="/ch2/z_plus_c.PNG" width="400" height="300">
 
-In the figure above, 
+In the figure above, we see that vector $$z + c$$ keeps as much of $$n_1 = [1.5, 1]$$ as possible- that is, it still lies at $$y = 1$$ just like $$z + n_1$$, but also keeps $$n_2 = 3$$, in contrast to $$z + n_1$$, which moves $$n_2$$ to 4.5.
 
-Why does vector C not change the value of x=3? Because vector $$c$$ is **orthogonal** to $$n_2$$, where they intersect at $$n_2 = 3$$. If it was not orthogonal, it would veer away from $$n_2 = 3$$, such as shown in the example below, where a non-orthogonal vector leads to $$n_2 = 4$$.
+Let's reframe these vectors $$n_1$$, $$n_2$$ and $$c$$ by moving them to the origin, and independent of $$z$$. Given that $$c$$ is a vector, we can move it to the right.
 
-<img src="/ch2/VtoW_veer.PNG" width="300" height="200">
+<img src="/ch2/n1_n2_c.PNG" width="400" height="300">
 
-It is only when the green vector intersects the x vector at 90 degree angle that the value of the $$x$$ vector doesn't change.
+Why does vector $$c$$ not change the value of $$y=1$$? Because vector $$c$$ is **orthogonal** to $$n_2$$, meaning they are at a 90 degree angle, where they intersect at $$n_2 = 1$$. If it was not orthogonal, it would veer away from $$n_2 = 1$$, such as shown in the example below, where a non-orthogonal vector leads to $$n_2 = 3$$.
 
-How do we calculate the value of this orthogonal vector $$c$$ we want to move on?
+<img src="/ch2/n1_n2_veer.PNG" width="400" height="300">
 
-In this case, because we want to keep the value of x and change the value of y, and y is a basis vector, we can move in the y-direction by simply changing the y-coordinate value. Notice that vector $$c$$ is parallel to the y-direction, and thus moving along $$c$$ means moving along $$y$$.
+How do we calculate the value of this orthogonal vector $$c$$?
+
+In this case, because $$n_1$$ is a sum of $$n_2$$ and $$y$$, and $$n_2$$ is a basis vector, when we "remove" $$n_2$$ from $$n_1$$, we are just left with $$y$$, so we can move in the y-direction by simply changing the y-coordinate value. Notice that vector $$c$$ is parallel to the y-direction, and thus moving along $$c$$ means moving along $$y$$.
 
 Even so, let's actually calculate vector $$c$$ in terms of $$v$$ and $$x$$, because this calculation can be generalized to the case where the feature we want to change is not on a basis vector.
 
 First, let's describe what we want, and then translate that description into mathematics. Overall, we want:
 
-"A vector which preserves the values of how much of x is used to get vector $$v$$".
+"A vector which preserves the values of how much of $$n_2$$ is used to get vector $$n_1$$".
 
-Let's break this down into parts. To preserve the values of "how much of x is used to get vector $$v$$", we need to represent this phrase in terms of vectors. Recall from Chapter 1 that this can be done using the dot product, which projects one vector onto another, outputting a scalar that says "how much of x is used to get v".
+Let's break this down into parts. To preserve the values of "how much of $$n_2$$ is used to get vector $$n_1$$", we need to represent this phrase in terms of vectors. Recall from Chapter 1 that this can be done using the dot product, which projects one vector onto another, outputting a scalar that says "how much of $$n_2$$ is used to get vector $$n_1$$".
 
-<!--- v = [3 2] --->
-So if $$\vec{v} = \color{#CBC3E3}{\begin{bmatrix} 3 \\ 2 \end{bmatrix}}$$, then $$\vec{x} \cdot \vec{v} = 3$$
+So if $$\vec{n_1} = \color{#CBC3E3}{\begin{bmatrix} 1.5 \\ 1 \end{bmatrix}}$$, then $$\vec{n_1} \cdot \vec{n_2} = 1.5$$
 
-Then, we scale the $$x$$ basis vector by $$\vec{x} \cdot \vec{v}$$ by doing: 
+Then, we scale the $$n_2$$ basis vector by $$\vec{n_1} \cdot \vec{n_2}$$ by doing: 
 
-$$(\vec{v} \cdot \vec{x}) * \vec{x}$$
+$$\vec{n_1} \cdot \vec{n_2} * \vec{n_2}$$
 
 <img src="/ch2/VtoW_orth.PNG" width="400" height="300">
 
