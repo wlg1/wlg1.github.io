@@ -1,0 +1,13 @@
+
+<<<<<<<<<<<<<<<<<<
+We can also use negative weights. These mean that the higher a feature's value is, the less likely the cat is to be real. Having a longer nose is a penalty against being a real cat.
+    higher x, lower cat
+
+    NOTE: this weight negative and input negative are not the same!
+    shorter nose tip (down) + longer ear = cap
+    -> 1 * (nose tip) (down) + (2) ear = nap
+    -> -1 nose tip + 2 * ear = cap
+
+
+<<<<<<<<<<<
+At the top right, the higher the nose tip points, the higher the value. It can also point down to get a negative measurement. The lower the tip points, the lower the value.

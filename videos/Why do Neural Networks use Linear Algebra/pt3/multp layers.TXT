@@ -1,0 +1,3 @@
+(put in vid 3?)
+use both outputs to calculate another output in another layer, measureing magical or something like that
+whatever

@@ -1,0 +1,57 @@
+2.1: magnifying glass in cat population to get cat picture
+
+<<<<<<<<<<<<
+(FIND ALT b/c too much work to align box w/ cat):
+2.2: cat pic in center. fade in box around cat, then take copies of original cat and data sample and move them to left and right. fade in words at bottom
+<
+
+2.2: 
+"Now the dataset is only able to measure every cat or rat as a data sample using two features: face length, and body size."
+
+when say data sample, fade in the bounding box
+when say face length, fade in the 'face length' square
+when say body length, fade in the 'body size' oval
+
+Start w/ cat entity on left, then make copy of it w/ box around it in middle (shift from left), then shift box to right
+    "However, the dataset is only able to..."
+
+    prog_cust\manim\video 1 \ movecat.py
+
+https://azarzadavila-manim.readthedocs.io/en/latest/animation.html
+AnimationMoveToTarget
+
+to make copies, just add image in again, putting it behind the prev image, then shift it
+move is to move an img to a location. do this before putting an image in to have it appear somewhere.
+shift is the actual animation
+
+square.target.move_to(2*UP)
+
+<<<
+ISSUE: how to get the exact size of cat and cat-w-box?
+
+if use snip tool, then may get diff sizes boundaries. but they need to overlap before going out.
+
+B/c need to place an object in some place by sight, rather than by coord, it may be easier NOT to use manim.
+
+SOLN: put transparent objs over diff layers in Open Shot.
+
+<<<
+ISSUE: the overlapping data pt and cat still do not overlap precisely
+
+WHY: This is b/c the snip tool does not get their boundaries precisely
+
+SOLN ATTEMPT: Don't use snip tool. Copy image from visio to Docs, save to keep, then download img. 
+    ISSUE: this keeps white bg
+
+In Visio, create a bounding box around both cat and its copy w/ data pt?
+
+SOLN: In Visio, save image by export to png w/ black transparent bg. DON'T USE SNIP.
+
+<<<<<
+ISSUE: cat takes up too big of a size
+
+SOLN: in visio, make cat be smaller with extra bg space
+
+<<<<<<<<<<<<
+
+(ERRATA: now the NN does not have names for these; it identifies them only by their shape. but over time, it will learn to associate these shapes with "classes", along with patterns that are often occur with certain classes, but not in others.)

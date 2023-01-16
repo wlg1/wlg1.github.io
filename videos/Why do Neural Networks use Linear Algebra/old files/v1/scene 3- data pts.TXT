@@ -1,0 +1,2 @@
+
+ISSUE: if animate part of vector space, need to zoom in on it. but can't zoom in on manim, and zoom in to position static image directly under video is too much work

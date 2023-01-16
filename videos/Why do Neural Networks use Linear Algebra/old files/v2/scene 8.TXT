@@ -1,0 +1,56 @@
+SCENE 8:
+
+One more thing to note is that we showed that we can go from Nap back to Nose.
+    replay anim and eqn
+
+We can't go back from Nap Space to Input Space. This is because there are multiple points in Input Space that can go to the same point in Nap Space. 
+
+Let's take all the points that go into Nap Space and place them back in Input Space. Because Nap Space is just a 1 dimensional line of points, the analogous Nap Space in Input Space is just a line. 
+    2D to 1D collapse animation
+
+This means that (1,0) is sent to the point (take orth proj), which is a point in Input Space that's also sent to Nap Space. (0,1) is also crammed in with another point, (orth2). 
+
+(put in vid 3)?
+When we add the analogous versions of these basis vectors in Input Space, and also the analogous versions of (orth pts), both of these additions get to the same point in Nap Space.
+
+All these points in 2D Space are crammed into a 1D Nap Space. When this occurs, the weight matrix is called non-invertible.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<
+Now the row in our weight matrix calculates Nap Smile. If we want to use nose and ear to calculate another value, such as Age, we just add another row in our matrix, which has its own conversion factors, giving us a system of equations.
+    second row fades in: (first as #s, tehn as vars)
+    W=[nosecat earcat  
+       noseRat earRat]
+
+Visually, this just means our 2D Input Space is sent to a point in Nap Space, and a point in Age Space. Then we just rotate Age Space vertically to get a 2D coordinate plane, and add nap and age values into a 2D coordinate value.
+    anims sending to each, horiz
+
+    rotate, then add nap and age
+
+(put in vid 3?)
+use both outputs to calculate another output in another layer, measureing magical or something like that
+whatever
+
+In our later videos, we'll generalize our explanation to more rows and columns.
+
+<<<<<<<<<<<<
+SCENE 8: conclusion
+
+[repeat wind in the rushes a second time to end this]
+
+There's still some questions we're going to answer. For example, what does it mean for a vector to 'become' another vector if both are just models of magnitude and direction? We'll see that what we're actually doing is moving data and the relative relations within it, not the vectors or coordinate points themselves. 
+
+In our second video in this chapter, we'll use the Change of Basis to talk about how the data is different than the model coordinates used to label it, and to beware of False Friends in the Matrix.
+    vector transform to another?
+    fade in images of geschenk
+    map != territory (put only in 2nd)
+
+In our third video, we'll go over the visual, geometric interpretation of matrix multiplication step-by-step.
+
+<<
+[
+cat person naps while comm dia is created, fading out until only square is left
+
+use the commutative diagram logo as an 'end proof' square, which begins moving as everything else fades, and is the last thing staying.
+
+bottomright, fade in then out: "As above, so below" like in cowboy bebop?
+]

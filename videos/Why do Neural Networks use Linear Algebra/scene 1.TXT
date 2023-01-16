@@ -1,0 +1,51 @@
+Scene 1: (1m, 30sec)
+
+[ Cat + Person = cat person thru NN]
+[use cat person mascot when talking w/o anims]
+    [music plays first 3 secs]
+    starts w/ addition of concepts through neural newtork to form cat at 3 secs, just when Wind in Rushes music 'opens up' with a synth chime and down drops 'Cat Person Mathematics'
+
+When studying new improvements to neural networks, concepts such as eigendecomposition, manifold, and more are often encountered, and many people run into the following problem:
+    start w/ scrolling through a paper, blurring it and making concepts from paper appear bigger like news report
+    NN anim runs in subset of screen?
+
+    eigendecomposition appears on and 'more' (?)
+
+What do these mathematical concepts mean, and why do they use them?
+    fade in appear on screen in italics
+
+In this series, we'll be answering these questions in an intuitive, visual way.
+    1.2.py: bold each word while fading rest of sentence. two sentences fade in. question mark appears in center.
+
+    transparent bg: manim file.py -t
+
+    'in this series': you should have a placeholder.
+
+    key insights- show some visual you have, place it over paper
+
+Let's start with a basic one: using matrix multiplication to recognize features. Neural networks multiply weight matrices with inputs. 
+    fade in WX = A
+
+But why does that specific algebraic procedure work? Why does its first step use the dot product of the weight matrix's first row and the input vector to get the first output? And what do dot products have to do with how a neural network recognizes features?
+    1.3.py: matrix multp rectangles fade in
+
+    fade in NN
+
+(40 sec so far; ~25 secs)
+Knowing why this procedure is done is key to a visual intuition behind how neural networks compose together patterns into more complex, higher level patterns. For example, they can add concepts together to make analogies, composing together "King minus Man plus Woman to equal Queen" in a high dimensional world called Latent Space, or perform abstractions such as Style Editing. Throughout this series, we'll be explaining how all those work.
+    King – Man + Woman = Queen (not geometrically?)
+
+    https://www.technologyreview.com/2015/09/17/166211/king-man-woman-queen-the-marvelous-mathematics-of-computational-linguistics/
+
+    style editing example
+
+(talk fast, ~20s):
+Aside from knowing how equations work, there's no prereqs to watching this. We'll explain a lot of concepts from scratch. If you're unfamiliar with some terms, it's recommended to watch these 6 3Blue1Brown videos. But just like two classes that teach the same material from different perspectives, we'll be reviewing many of those videos' concepts to explain new ones in our series.
+    3Blue1Brown’s Linear Algebra playlist, namely videos 1, 2, 3, 9 and 13, and also the first video in his Neural Network playlist
+    link to 3b1br, etc. show videos playing at once  and link to them in description.
+
+    https://www.youtube.com/watch?v=aircAruvnKk&ab_channel=3Blue1Brown
+
+[wind in rushes plays to silence, or fades out to silence for a moment]
+
+Ok, let's begin.

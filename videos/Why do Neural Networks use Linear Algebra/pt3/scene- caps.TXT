@@ -1,0 +1,6 @@
+We can also predict how much each cat person enjoys wearing baseball caps by measuring their ear lengths and nose tips, using different weighings of these features than before. But again, we also don't know this formula.
+    ?? * nose_tip + ?? * ear_length = cap happy
+
+    next to image of cat person smiling while thinking of a cat with a cap
+
+, we'll generalize our explanation to more rows and columns.

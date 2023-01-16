@@ -1,0 +1,47 @@
+SCENE 7:
+
+And again, this has an analogy to a neural network, where w2 is another connection from the ear neuron to the nap neuron.
+    transform it to NN with 2 inputs, 1 output
+
+Recall how our equation with only nose to nap could also be represented as a matrix with 1 row and 1 column. Now, we go from a matrix of 1 row and 1 column, to a matrix with 1 row and 2 columns
+    w1*nose + (w2) * ear = nap
+
+    one by one, map each to its matrix rep
+
+    replay this alongside the visual, transforming the steps at same time.
+
+This explains why we use that strange algebraic procedure of matrix multiplication where we multiply the first row by the first column. This procedure is none other than the dot product. And our dot product is just performing a Change of Units, or in other words, a Change of Basis.
+    write out dot product
+
+<<<<<<<<<<<<
+So our Input Space and our Nap Space are measuring neuron activations. We call these spaces Activation Space.
+
+As we see that each of the nose and ear neurons in the first layer act as basis vectors in Input Space, and the Nap neuron in the second layer act as basis vectors Nap Space, we come to a very important concept:
+
+Neurons are Basis Vectors in an Activation Space.
+    write out on screen
+
+Thus, every neuron in a neural network is a measurement on the data, coming up with an interpretation for it from its own perspective. (Think of this as taking a slice, or a shadow, of the collective network)
+    neuron shadow slice of each output neuron w/ its weights to input only
+    2D shadow from 3D NN, 3D neuron spheres? the slice on ground is an output neuron slice.
+
+    wait here for a while to let viewer process
+
+This Activation Space is commonly referred to as a Hidden Space, or a Latent Space, is where analogies such as King - Man + Woman = Queen can be made by adding its vectors. 
+
+This is a high dimensional space, where each neuron acts as its dimension, and combinations of neurons can also act as their own dimension.
+    latent space animation of adding two vectors to get another
+    same as before, but now show 'neuron 1, 2' on axis
+
+    show point on 1D w/ neuron eqn
+    the 2D planes show subnetwork on its surnose?
+
+<<<<<
+In our examples, for the purpose of gaining intuition, we defined our neurons, represented as basis vectors here, in terms of “human-understandable measurements”.
+
+Given that studies suggest neurons may learn to act as "dog neurons" that measures how much of a dog something is like, it could be possible for a neuron to learn to measure cats, as in the examples shown above, and thus act as a “cat neuron”. 
+
+[and though studies show there are dog neurons that detect dogs...]
+But neurons do NOT always cleanly correspond to a Human-Defined Concept. A network might not even have a 'cat' neuron, even though the pattern of 'cat' is somehow recognized within the neural network. In fact, most of the millions of neurons in many neural networks may not correspond to a human-defined concept. One alternative possibility is that, instead, each neuron has a role in affecting the calculations of other neurons, similar to if-else branches in a decision tree.
+
+(For example, one neuron’s role may be to act as a “signal” for another neuron- if neuron A is low, neuron B will disregard information from neuron C because C must pass through A to get to B, and vice versa. This relationship between neurons has led to research such as finding neuron circuits. The true “roles” of neurons in spreading information to other neurons remains mysterious, and is still a subject of research.)

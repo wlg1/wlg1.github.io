@@ -1,0 +1,6 @@
+for long paragraphs:
+Have a 'cursor' that moves and rotates
+and a mascot? 
+or also have text fade onto screen
+
+figure out how to zoom into video clips outputted from manim

@@ -1,0 +1,23 @@
+SCENE 3.2, v1:
+
+The data samples in this dataset can be represented as points in a coordinate space, using face length and body size as axes. 
+    body size on y-axis, face length on x-axis
+    D:\Documents\_prog\prog_cust\manim\video 1 
+        \ 3.2.py
+
+For the data point at the top, we can break it down into face length and body size.
+    each col fades in. color coded
+
+We'll do the same for the data points at the middle and bottom.
+    each row fades in and then use blue arrow to make it a pt on right
+
+Notice that each data point corresponds to a data sample.
+    then on top of each box cell fade in the images all at the same time, and also on the right, overlapping the prev pt
+    D:\Documents\_prog\prog_cust\manim\video 1 
+        \ 3.2.6.py
+
+And that each data point's Face Length and Body Size is simply just scaling up or down a basic measuring unit.
+
+Notice that the basic measuring units correspond to the data points [1, 0] and [0, 1]. 
+
+[NOTE: for zoomed in snippets, it's hard to get exact same zoomed in grid every time. to prevent grid lines from 'growing', make sure the first grid is the largest, and that it lasts through entire sequence. that way, all grids on top of it will be subsets of it]

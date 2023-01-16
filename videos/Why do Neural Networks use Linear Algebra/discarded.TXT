@@ -1,0 +1,70 @@
+NOSE TO NAP SCENE: 
+
+We'll measure our nap units along a number line, and start with one input of nose. Now we need to weigh this nose vector by a factor of 2 to convert it into nap.
+    the vector (oval reverts to circle) goes up a thick line next to a w, which transforms into 2*
+
+So we end up with 2 nap units.
+    finally, a thick vertical line connects this to the top, which is the nap number line. the output node shows '2'.
+
+If we use an input of 2, we end up with 4 nap units.
+    same visual as before. pause longer to let this sink in.
+
+[In Summary]:
+    a number line of nap. at bottom is a node called nose, where a number 1 is animted to be inputted (move in) to it. this expands the circle into an oval containing a vector of size 1 (use dots or thin vert lines). 
+    the vector (oval reverts to circle) goes up a thick line next to a 3*, where like a roller coaster pinball machine, the 3* fades into the line (like a conveyer belt) and pushes it into a line of size 2.
+    finally, a thick vertical line connects this to the top, which is the nap number line. the output node shows '2'.
+
+<<<<<<<
+  (nose->nap)
+    another way to show this is nap/nose (first show w's subscript like this, then transform to nose->nap)
+
+<<<<<<<<<
+VECTOR != PTS SCENE: 
+
+The numbers on the coordinate line are called coordinate points, and each nose tip of a different quantity is on a different coordinate point along the coordinate line.
+    show nose tip 1, 2, 3 all at once
+
+<<<<
+And when we move that vector along the coordinate line, the nose tip quantity it's associated with moves with it. Thus, we can stack together two vectors and add their nose tip quantities together.
+
+<<<
+Because the vectors can be moved, you might not think there's some correspondence between a vector and a nose tip quantity. But there is. 
+
+Think of a vector as a path you can follow from one point to another. If we place a vector's tail at coordinate point 0, the origin point, we go from the origin to whichever nose tip quantity the vector's head ends up on, such as on 2 for a vector of length 2.
+    visually, goes from 0 to 2
+
+Now if you start from the origin point, but instead follow one vector of length 1, then another vector of length 1, we end up at the same point.
+    0 to 1 to 2
+
+This means following the first path is the same as following the second, which adds two vectors together. You can say going from the first path and the second path gets you to the same quantity.
+
+Thus, we can stack together multiple vectors and add them together to get to some nose tip quantity.
+    numberline on top shows fixed quantities, at bottom shows vector pointing to its quantity that's moved along with it
+
+[fractions?]
+We can stack together the vectors associated, with their tail on the origin, with nose tips of unit 1 to get to ANY quantity. Because it acts like a building block to get to any quantity, we'll call it a Basis Vector.
+
+On a coordinate line, we don't really need vectors because it's obvious how much of a difference there is between two points, but in higher dimensions, such as on a coordinate plane, the vectors are essential.
+
+<<<<<<
+to add in 2D coordinate space, move vector. vectors are just arrows with length and magnitude; you can place them anywhere. the coordinate is just a description (1,1) - (1,0) = (0,1). It's really described by 2 points.
+
+The vector is not a point; it is 2 points (head and tail), which are equivalent to magntiude and angle.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+NNs HIDDEN WHOEL TIME SCENE:
+
+But what does this have to do with neural networks?
+
+The answer will be revealed soon.
+
+To answer this, we'll have to continue in our mathematical exploration of neural networks.
+
+<<<<<<<<<<<<<<<<<
+
+Another thing to note here is that the concepts sent to the new basis vectors have an interpretation in the first Model. That is, the cat with [values] was found to be so often fake in our dataset, that it's sent to (0,1), which means samples with those values are almost always not ever a real cat, and almost always a fake cat.
+    see vector values for cats.TXT
+
+But although we can show the real cat and fake cat 'basis vectors' in Model 1 in this example, keep in mind that matrices are not always invertible. We'll discuss this more in a later video.
+
+(also interpretation is not always req. a neg value may just mean 'so close to 0', and is just mean to throw samples a certain distance, not meant to be interpreted)

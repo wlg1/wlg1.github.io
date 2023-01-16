@@ -1,0 +1,67 @@
+Scene 1:
+
+Latent space addition
+
+Change of Basis
+
+Why matrix multiplication steps work?
+
+
+<<<
+SCENE 2.1:
+Let’s start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there’s a population of cats and rats, and we represent them in a dataset. 
+
+SCENE 2.2:
+Now the dataset is only able to measure every cat or rat as a data sample using two features: face length, and body size.
+
+<<<
+SCENE 3.1:
+Each of these features can be measured using a basic measuring unit, such as a unit 1 face length, or a unit 1 body size. Think of these basic measuring units as just like using 1 meter to measure distance, or 1 second to measure time.
+    fade in unit 1 face and unit 1 body 
+
+We can grow or shrink basic measuring units to get different measurements. For example, we can make the unit 1 body twice as big to get the unit 2 body, or cut the unit 1 face in half to get the unit 0.5 face.
+    left side is unit 1
+    fade in unit 2 body, and unit 1 face
+
+    growing animation in manim?
+
+<<<
+SCENE 3.2, v2:
+
+[Do not take zoomed in snippet. Post LHS table on top of grid.]
+
+[ create the shapes in manim to grow/shrink. the issue is that the original shape needed to fit around your cat image. just trace them with gradual adjustments over the original. i don't think viewers would notice, though. ]
+
+3.2.1:
+The data samples in this dataset can be represented as points in a coordinate space, using face length and body size as axes. Note that each data point here corresponds to a data sample of a basic measuring unit.
+    body size on y-axis, face length on x-axis
+    D:\Documents\_prog\prog_cust\manim\video 1 
+        \ 3.2.py
+
+    Face length and body size vectors, then points, then fade in data samples w/ 1's in them
+
+3.2.2:
+We can add together the unit 1 face length and the unit 1 body size to form a data sample with a unit 1 face length and a unit 1 body size.
+Notice that this is the same as adding the data points (1,0), and (0,1) to form (1,1). We can represent these data points as vectors, and show that adding these data sample images together is the same as vector addition.
+    Quickly move copies (or the original, so it doesn't take up too much space) of (1,0) and (0,1) into (1,1)
+    Also move copies to top right so they're used as addition.??
+
+    Addition at top right: add them, then after move them to overlap, fade in equals sign aligned w/ expression.
+    Then put in data pts, move to (1,1), and eqns using vectors move out from img eqns to above.
+
+    fade out prev eqns
+
+3.2.3:
+It's easy to see how we can add together face lengths and body sizes of different units. Let's take a face length of 0.5 units, and a body size of 2 units, and add them together. To model this using vectors, we multiply 0.5 by [1, 0], and 2 by [0, 1], and then add them together to get [0.5, 2].
+    Scale face length down, then body size up, by moving data pt to become new pt, and move those two into (0.5, 2) such that they overlap. Same eqns. For vectors, start with 0.5 * [1,0], then move scalar inside and at same time, move 0.5 into img (layer behind) to shrink it.
+
+[to prevent eqns from being seen as 'on grid', have a box around them w/ no grids and may have diff color inside]
+
+[compare using openshot to make static grid and move imgs, vs using manim to move imgs on coord you can't zoom into]
+
+write out basis vectors on screen
+
+<<<
+SCENE 4:
+
+"Now, there are other ways we can measure the data samples in this population..."

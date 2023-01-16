@@ -1,0 +1,67 @@
+For example, what does it mean for a vector to 'become' another vector if both are just models of magnitude and direction? We'll see that what we're actually doing is moving data and the relative relations within it, not the vectors or coordinate points themselves. 
+
+we'll use the Change of Basis to talk about how the data is different than the model coordinates used to label it
+
+<<<<<<<<
+Since each coordinate space provides a different way to represent the data, let’s call each coordinate space a Model, namely Model 1 and Model 2. These two measurement methods are actually measuring the same data samples; the data samples in Model 1 are present in Model 2, but are now measured by different vectors.
+    compare 2 coordinate spaces side by side, fading in each new image.
+
+<<<<<<<<<<<
+Instead of cat and rat data samples, we’ll look at the two data samples , a dangerous substance, and , which is charitably given to someone. And instead of using numbers, let’s use letters to label our entities. This means our models will resemble languages, some of which also use letters to label entities. So our first model, or language, is labeled as follows:
+
+
+
+To an English speaker, this may look wrong, because  should be called something like ‘poison’, not ‘gift’. But in German,  is in fact called ‘gift’. If a German speaker tells the English speaker that they’re giving the English speaker a gift, the English speaker may be delighted because they think they’re getting . But they shouldn’t be, because what they’re ACTUALLY receiving is , which would kill them.1
+
+Since there is a misunderstanding, the English speaker needs to know what ‘gift’ is actually referring to; or in other words, to know the right English word to use for . So they need to translate from the language above, which resembles German, to English as follows:
+
+gift_cob
+In summary:
+
+‘gift’ in German  != ‘gift’ in English 
+
+‘gift’ in German  ~ ‘poison’ in English 
+
+Relating this back to using numbers as labels:
+
+[−12] in German  != [−12] in English 
+
+[−12] in German  ~ [−41] in English 
+
+Now if the English speaker tells the German speaker that they’re giving them a ‘gift’, the German speaker must translate this to a German word or expression that makes them understand that it’s . The German word for  is ‘geschenk’. Going the other way around, the English word for  is ‘poison’.
+
+all_words_cob
+[1/35/3] ‘geschenk’ in German  ~ [−12] ‘gift’ in English 
+
+[−12] ‘gift’ in German  ~ [−41] ‘poison’ in English 
+
+But what does the label ‘poison’ mean in German? As we see in the German coordinate space, it does not point to any data sample. In fact, the label ‘poison’ does not mean anything in German. The same goes for the label ‘gescheck’ in English. Not all labels have to point to an data sample; so in some coordinate spaces, they just mean nonsense.
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+
+For our examples, say that a vector labels a data sample if it points to it. We know in Model 1 that [10] points to . But does this vector point to the same data sample in Model 2?
+
+Let’s look at the two Models. We’ll use the Orange Dot to denote “likely to be a cat with unit 1”2, and use the Green Dot to denote “likely to be a rat with unit 1”.
+
+Figure 8
+
+The two [10] in each Model do not label the same data point! Likewise, [01] points to  in Model 1, but does not point to it in Model 2. Phrasing this a different way makes this idea more intuitive: let’s say that the meaning of a vector is the data sample it points to. [10] no longer has the same meaning in Model 2 as it did in Model 1. This is because the meaning of a vector depends on its basis vectors. In Model 1, [10] pointed to  because it’s supposed to mean “has a face with unit 1”. In Model 2, [10] points to Orange Dot because it’s supposed to mean “likely to be a cat with unit 1”.2
+
+If it’s still not clear why meaning depends on the choice of basis vectors, let’s look at a better example that will help drive home this idea. We know in Model 1 that [0.52] labels . But just like before, [0.52] in Model 2 does not.
+
+Figure 10
+Recall that in Model 1, which uses the face & body sizes as basis vectors, [0.52] meant “an entity with a short face (0.5) and a long body (2).” But in Model 2, this vector means “it’s NOT as likely to be a cat (0.5), as it is more likely to be a rat (2)”. The meaning in Model 2 does not point to , because that data sample is likely a cat. Instead, it should point to a data sample that looks more like a rat.
+
+This shows the difference between the data samples coming from the real world, and the model that represents those data samples using labels. [0.52] is not  itself; it is merely a label of it, and whichever label is used depends on the basis vectors used to define the parts of each label. Note that there is a difference between points, vectors and features. 3
+
+
+
+Understanding the difference between a model representation and the actual entity it means (or points to) is crucial for gaining better intuition behind why matrix multiplication reveals hidden information in data sets.4
+
+We show below how the features on the two basis vectors in Model 1 are rotated onto two new vectors in Model 2. This is done by matrix multiplication, causing the basis vectors in Model 2 to now point to the Orange Dot and Green Dot; Chapter 1.3 will make it even more clear why matrix multiplication is called a “Change of Basis”.
+
+<<<<<<<<<<<<
+Just like how each row of X measures the same entity but using a different unit (a basis vector of Model 1), each row of O uses a different unit (a basis vector of Model 2) to measure the same entity, and each is calculated using the known measurements from X.
+
+Since each new measurement is calculated using the same input, but with different conversion factors, each new value of O is calculated using the same input vector X, but with different rows of W. 
+That is, O refers to the same quantity that X refers to, except the two vectors measure it using different units.
