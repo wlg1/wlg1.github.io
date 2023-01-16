@@ -1,0 +1,5 @@
+once done in script (w/ anim instructions), copy part of them here. only put what's done at a time, not entire script.
+
+upload to drive and read off phone b/c github chops up words into lines. read along while video anim is playing into audacity
+
+play audacity first, set up video near end (as it loops), play vid, then read when it starts. this is b/c you can easily drag and cut out start and end audio in audacity
