@@ -25,7 +25,7 @@ title: Front Page
 
 ---
 <p style="font-size:20px"><b>
-<a href="https://github.com/wlg1/analogous_neuron_circuit_expms">Educational Videos on Neural Network Math</a>
+<a href="https://www.youtube.com/@neoknowstic">Educational Videos on Neural Network Math</a>
 </b></p>
 
 Why do Neural Networks use Linear Algebra? || Pt 1: The Visual Intuition of Cat Mathematics
@@ -50,8 +50,9 @@ These experiments are housed in a Github repo with Colab notebooks that walk a r
 
 <a href="https://colab.research.google.com/drive/12hQolN9TLXsakkG96nYUgU30_6YL74bf">TUTORIAL 1: Compare Neuron Activations Between Pairs of Images</a>
 
+<!---
 [image of face and face w/o mouth, showing toy circuits of each and what differs]
-
+--->
 ---
 <p style="font-size:20px"><b>
 <a href="eduBlogHome.html">Making the Math of Neural Networks Intuitive</a>
