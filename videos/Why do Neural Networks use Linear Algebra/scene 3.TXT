@@ -21,15 +21,15 @@ So let's convert nose units into nap units. Turning this into an equation, we ha
     the rest fade away down
     while 2 * (nose) = 2 nap appears on screen, fading from down
 
-And visually speaking, this means that for every one unit of nose tip, there are two units of Nap Smile. For every two units of nose tip, there are four units of Nap Smile.
+And visually speaking, this means that for every one unit of nose tip, there are two units of Nap Smile. 
     nose axis on top, nap axis below. 
 
-    dot on nose axis, along with highlighted red line going to 1, is transformed along a path labeled as 2 (MoveAlongPath) while red line becomes bigger to dot on nap axis.
-        ISSUE: the angle of w line will not always be same for diff inputs. so make input line TRANSFORM AND MERGE WITH THE 2 BELOW IT INTO A LINE OF SIZE 2, then move this line down into nap space.
+    dot w/ img on nose axis, along with highlighted red line going to 1, is transformed along a path labeled as 2 (MoveAlongPath) while red line becomes bigger to dot on nap axis.
+        ISSUE: the angle of w line will not always be same for diff inputs. 
+        SOLN: so make input line TRANSFORM AND MERGE WITH THE 2 BELOW IT INTO A LINE OF SIZE 2, then move this line down into nap space.
 
         when it moves to '2', it creates a white line from the white head. this white line head is transformed too, and a new white line goes down into nap. 
-        orig nose line is dark red, then becomes pink when merging with '2'. when pink line goes down into nap space, a white line is left behind
-        then finally, 3 white lines are transformed into 1 white line, which connects nose to nap white heads (dots).
+        orig nose line is dark red, then becomes pink when merging with '2'. then 2 white lines are transformed into 1 white line, which connects nose to nap white heads (dots).
 
     for an input of two, the data sample of 2 units goes into the circle at one, which then moves to 2.
 
@@ -37,16 +37,13 @@ And visually speaking, this means that for every one unit of nose tip, there are
 
     when line grows, the data measurement moves WITH IT to nap. nose tip is there, then a smile appears while zzz fades in
 
-Notice the point 1 in the Nose number line and the point 2 in the Nose number line are labeling the same Nose Tip Measurement. This is because we're saying that every nose tip of 1 ALWAYS has a nap smile of 2. 
+Notice the point 1 in the Nose number line and the point 2 in the Nap number line are labeling the same Nose Tip Measurement. This is because we're saying that every nose tip of 1 ALWAYS has a nap smile of 2. 
     say point 1 and have cursor/circle point to in openshot (too hard to do in manim to position it) OR enlarge, delarge in manim or highlight w/ color.
 
 Our equation isn't mapping a number, such as 1, to another number, such as 2, but it is mapping a Data Measurement from 1 in the nose space to 2 in the nap space. This is a Change of Units.
     transform eqn into 'change of units'
 
-For this equation, we can also always go from nap smile to nose tip by multiplying nap smile by one half. But this always doesn't work for every equation.
-    equation divides by 2, giving nose = 0.5 nap
-    
-    line moves backwards from nap to nose?    
+Likewise, for every two units of nose tip, there are four units of Nap Smile.
 
 Our unit conversation factor of 2 can be represented, in general, as a variable W, which means how much we should weigh our nose value by to get our nap value. 
 
@@ -55,5 +52,8 @@ We can change this weight, such as making it bigger to w=3, which means for ever
 
     on '3', transf the line thicker and change eqn too. replay same animations but to diff pts
 
-
+For this equation, we can also always go from nap smile to nose tip by multiplying nap smile by one half. But this always doesn't work for every equation.
+    equation divides by 2, giving nose = 0.5 nap
+    
+    line moves backwards from nap to nose?    
 

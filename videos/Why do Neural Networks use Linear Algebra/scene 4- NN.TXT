@@ -1,7 +1,9 @@
 SCENE 4:
 
 So, what does this visual we've just seen have to do with a neural network? The answer actually has been hidden in front of our eyes this entire time. 
-    keep visual and its unit conversion equation on screen, and the top. draw line to bottom, and show neuron eqn there, showing it gradually transform to be nearly the same as above.
+    keep visual and its unit conversion equation on screen, and the top. draw line dividing bottom, and show neuron eqn there, showing it gradually transform to be nearly the same as above. 
+
+    the visual first appears, its number lines fade out, then the cat features fade out, and it transforms into a line. then a copy of it appears again at top.
 
 You might have seen this function that calculates a neuron activations:
 σ(WX+b) = A
@@ -22,7 +24,7 @@ The number of columns in W are the number of inputs, and the number of rows are 
     bottom shoudl have: neuron, [w][x] = [a]
         this goes from 2x2 to 1x1
 
-Now, we see that our unit conversion visual has been hiding a neural network neuron this entire time.
+Now, we see that our unit conversion visual has been hiding a neural network neuron.
     piecewise weights snap to straight line, showing nose to nap neuron. the w moves next to line. most importantly, shrink it down so conns all the same size to show length isn't impt (just topology).
 
 The weight in our unit conversion equation is a connection in a neural network, and our neuron is the nap neuron.

@@ -30,7 +30,7 @@ If we rotate our ear length number line by 90 degrees and put it next to our nos
 Now, how can we add together the Nose Tip and Ear Length Data Measurements to describe a Cat Person? 
 
 (~30s):
-Let's say a cat person named Tom comes in, and we have no idea what his measurements are. To describe him, we start at the origin point (0,0) in our coordinate plane. After taking the first measurement of his nose tip, we find that it's 1 unit, so we can move right the origin to (1,0). But we need to describe Tom using Ear Length, too. So after we measure his ears, we find they are 1 unit long, and so we move up from (1,0) to (1,1).
+Let's say a cat person named Tom comes in, and we have no idea what his measurements are. To describe him, we start at the origin point (0,0) in our coordinate plane. After taking the first measurement of his nose tip, we find that it's 1 unit, so we can move from the origin to (1,0). But we need to describe Tom using Ear Length, too. So after we measure his ears, we find they are 1 unit long, and so we move up from (1,0) to (1,1).
     show it growing from tail to head
 
     no equations
@@ -46,7 +46,7 @@ We'll use vectors to tell us where we go from one coordinate point to another, a
 
 Unlike the coordinate points, which are permanently fixed where they are, the vectors can be moved anywhere in coordinate space. 
 
-This right-facing vector of length 1 is the SAME one that's been moved here. But it is not the same as this this vector, or this one, or this one.
+This right-facing vector of length 1 is the SAME one that's been moved here. But it is not the same as this vector, or this one, or this one.
     right-facing vector of length 1
 
     right-facing vector of length 2, or this left-facing vector of length 1, or this length one vector going from (0,0) to (1,1).

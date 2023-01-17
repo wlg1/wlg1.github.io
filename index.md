@@ -19,9 +19,18 @@ title: Front Page
 --->
 <span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
 
-[ Website in process of being built. To be completed by: Jan 2023 ][^footnote]
+[ Website in process of being built. To be completed by: April 2023 ][^footnote]
 
 [^footnote]: Future uploads include tutorials that walk through experiments, starting with simple ones. Most of the experiments done so far are still in draft form, rather than in tutorial format.
+
+---
+<p style="font-size:20px"><b>
+<a href="https://github.com/wlg1/analogous_neuron_circuit_expms">Educational Youtube Videos</a>
+</b></p>
+
+Placeholder
+
+<iframe src="https://player.vimeo.com/video/767530702?h=eb5c81148a?amp;loop=1" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ---
 <p style="font-size:20px"><b>
