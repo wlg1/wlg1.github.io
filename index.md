@@ -28,11 +28,11 @@ title: Front Page
 <a href="https://github.com/wlg1/analogous_neuron_circuit_expms">Educational Videos on Neural Network Math</a>
 </b></p>
 
-Why do Neural Networks use Linear Algebra? | Pt 1: The Visual Intuition of Cat Mathematics
+Why do Neural Networks use Linear Algebra? || Pt 1: The Visual Intuition of Cat Mathematics
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oGykfwyoqX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video starts at very basic concepts. The one below is currently a draft of half the video, with placeholder audio and missing animation; the actual video will be uploaded by 1/26.
+This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video starts at very basic concepts. This one is currently a draft of half the video, with placeholder audio and missing animation; the actual video will be uploaded by 1/26.
 
 ---
 <p style="font-size:20px"><b>
