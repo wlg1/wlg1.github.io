@@ -15,6 +15,8 @@ title: Front Page
 
 <p align="center"><h1><b>Michael Lan</b></h1></p>
 
+<a href="test_post.html">test</a>
+
 <!---
 --->
 <span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
@@ -32,7 +34,7 @@ Why do Neural Networks use Linear Algebra? || Pt 1: The Visual Intuition of Cat 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oGykfwyoqX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video starts at very basic concepts. This one is currently a draft of half the video, with placeholder audio and missing animation; the actual video will be uploaded by 1/26.
+This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video starts at very basic concepts. This one is currently a draft of half the video, with placeholder audio and missing animation; the actual video will be uploaded by 2/2.
 
 ---
 <p style="font-size:20px"><b>
