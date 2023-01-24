@@ -4,6 +4,7 @@ title: test
 
 <head>
     <link rel="stylesheet" href="index.css">
+    <script src='./script.js'> </script>
 </head>
 
 <div class="topnav">
@@ -13,6 +14,12 @@ title: test
   <a href="#Contact">Contact</a>
 </div>
 
+<body onload="load_init_posts();">
+<div id="slideContainer"></div>
+<button onclick="submit_post()">Try it</button>
+</body>
+
+<!---
 <body>
 
 <h1>The form method="get" attribute</h1>
@@ -28,3 +35,4 @@ title: test
 <p>Click on the submit button, and the input will be sent to a page on the server called "action_page.php".</p>
 
 </body>
+--->
