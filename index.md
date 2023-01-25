@@ -14,11 +14,10 @@ title: Front Page
 </div>
 
 <p align="center"><h1><b>Michael Lan</b></h1></p>
-
-<a href="test_post.html">test</a>
-
 <!---
+<a href="test_post.html">test</a>
 --->
+
 <span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
 
 [ Website in process of being built. To be completed by: April 2023 ][^footnote]
