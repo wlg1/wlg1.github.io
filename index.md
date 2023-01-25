@@ -32,9 +32,9 @@ title: Front Page
 
 Why do Neural Networks use Linear Algebra? || Pt 1: The Visual Intuition of Cat Mathematics
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oGykfwyoqX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kE6YjptjKyk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video starts at very basic concepts. This one is currently a draft of half the video, with placeholder audio and missing animation; the actual video will be uploaded by 2/2.
+This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video starts at very basic concepts. This one is currently a draft of half the video, with placeholder audio and missing animation; the actual video will be uploaded by 2/5.
 
 ---
 <p style="font-size:20px"><b>
