@@ -35,6 +35,10 @@ Why do Neural Networks use Linear Algebra? || Pt 1: The Visual Intuition of Cat 
 
 This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video starts at very basic concepts. This one is currently a draft of half the video, with work-in-progress audio and placeholder animation; the actual video will be uploaded by 2/15.
 
+Here is an updated version of the video with new animation but no narration after the first scene:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UC2Lxf4Wvzc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ---
 <p style="font-size:20px"><b>
 <a href="https://github.com/wlg1/analogous_neuron_circuit_expms">Analogous Neural Circuit Experiments</a>
