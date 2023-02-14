@@ -30,7 +30,7 @@ Let's start with the input. We're only going to measure nose tip, capturing it i
 These are measured using 1 unit of nose tip, which is a basic measuring unit, just like using 1 meter for distance, or using 1 second for time.
     on right: first fade in meter, then fade out and fadein time.
 
-Let's measure along a number line which we'll call the Nose Space. We can make a nose tip of 1 unit twice as big to get a nose tip of 2 units, or make it three times as big to get 3 units.
+Let's measure along a number line which we'll call the Nose Space, or the Nose Dimension. We can make a nose tip of 1 unit twice as big to get a nose tip of 2 units, or make it three times as big to get 3 units.
     fade in the number line, then shift
 
     nose space words also appear

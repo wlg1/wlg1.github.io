@@ -1,0 +1,15 @@
+https://medium.com/@kristinjesse/manifold-learning-in-neural-networks-964d682df90d
+
+https://arxiv.org/pdf/1611.08097.pdf
+p5-6: manifold, Isometries
+Klein bottle
+https://www.youtube.com/watch?v=QHj9uVmwA_0&ab_channel=ArtemKirsanov
+https://www.reddit.com/r/manim/comments/p0042w/klein_bottle/
+
+mobius strip into klein bottle manim
+https://twitter.com/3blue1brown/status/1408190238124507144
+https://github.com/3b1b/videos/blob/master/outside_videos/tweets/sudanese_band.py
+
+https://www.quora.com/What-is-a-klein-bottle
+
+https://www.youtube.com/watch?v=JmvHNatZgVI&ab_channel=Andrew%27sCampfire

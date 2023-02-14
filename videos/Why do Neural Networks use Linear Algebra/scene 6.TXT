@@ -1,45 +1,27 @@
 SCENE 6:
 
-Now, we can add together the unit 1 nose tip and the unit 1 ear length to form a data sample with a unit 1 nose tip and a unit 1 ear length.
-    ear length on y-axis, nose tip on x-axis
-    D:\Documents\_prog\prog_cust\manim\video 1 
-        \ 3.2.py
-
-Notice that this is the same as adding the vectors pointing to data points (1,0), and (0,1) to form a vector pointing to (1,1). 
-    Quickly move copies (or the original, so it doesn't take up too much space) of (1,0) and (0,1) into (1,1)
-    Also move copies to top right so they're used as addition.??
-
-    Addition at top right: add them, then after move them to overlap, fade in equals sign aligned w/ expression.
-    Then put in data pts, move to (1,1), and eqns using vectors move out from img eqns to above.
-
-    fade out prev eqns
-
-    don't move the data pts; move the vectors, tail matching head. when moving vectors, do not move the images on the coordinate pts. only once the vectors are added to say they're equivalent to the (1,1) vector do they come together to form the (1,1) image.
-
-Because this combination of nose tip and ear length describes our cat people input, we call this 2D coordinate space our Input Space.
-
-<<<<<
 So now we know how to describe a cat person using both nose tip and ear length. How do we use both of these features to calculate Nap Smile?
 
-First, let's see how to predict Nap Smile using Ear Length. We notice that the longer a cat person's ears are, the more they enjoy naps. But relatively speaking, ear length doesn't have as much impact on nap enjoyment as nose tip does. For example, a cat person with an ear length of 2 would only enjoy naps by 1.5 units more than a cat person with an length of 1.
-    1 -> 1.5 nap
-    2 -> 3 nap
+First, let's see how to predict Nap Smile using Ear Length. We notice that the longer a cat person's ears are, the more they enjoy naps. But relatively speaking, ear length doesn't have as much impact on nap enjoyment as nose tip does. For example, a cat person with an ear length of 2 would only enjoy naps by 0.75 units more than a cat person with an length of 1.
+    1 ear -> 0.75 nap
+    2 ear -> 1.5 nap
 
-So we get the equation: (1.5) * ear = nap
-Which we can represent using variables.
-    w2
+So we get the equation: (0.75) * 1 ear = (0.75) nap
 
-And since studies on cat people suggest that nose tip and ear length can independently build on top of each other to predict nap enjoyment, we can add them together:
-    w1*nose + (w2) * ear = nap
-
-How do we add these two features to get nap smile? By using the exact same vector addition that we used in our Input Space.
-
-Recall that the Data Measurement at point 1 in nose is sent to point 2 in Nap. Similarly, the Data Measurement at point 1 in ear is sent to point 1.5 in Nap.
+The Data Measurement at point 1 in ear is sent to point 0.75 in Nap, just like how the Data Measurement at point 1 in nose was sent to point 2 in Nap.
     show nose to nap animation again, and move the dm
 
     show ear copy rotating from vertical to horizontal, then place it below nap, 
 
     "Similarly,"- also moving its dm to nap
+
+And since studies on cat people suggest that nose tip and ear length can independently build on top of each other to predict nap enjoyment, we can add them together:
+    (2)*nose + (0.75)*ear = nap
+
+How do we add these two features to get nap smile? By using the exact same vector addition that we used in our Input Space.
+
+<<<
+[first show each full screen, then both at same time in half screen, pausing for a while at the end. finally, show them both at same time in full seq]
 
 Now when we add together the vectors in our 2D coordinate plane,
     move 2D tail to head, ready to add
@@ -49,32 +31,43 @@ we are also adding together their analogous vectors found in our 1D Nap Space.
 
     eqn at top: transform  w1*nose = nap to  w1*nose + (w2) * ear = nap
 
-When we add them together, we get the same data point, which is our cat person Tom. 
+We move the tail of the blue vector to the head of the red vector, and after adding, we get a purple vector pointing to the same data point in both Input and Nap Space, which is where our cat person Tom is at. 
     transf to Tom
 
-Our Nap Space says Tom has a nap enjoyment level of 2 + 1.5 = 3.5.
+Our Nap Space says Tom has a nap enjoyment level of 2.75.
     transf Tom to zleeping cat with smile
 
 <<<<<<<<<<
-In our Input Space, it's easy to see how we can add together nose tips and ear lengths of different units. Let's say a nose tip that faces down has a value of -1 units.
-    anim 
+Let's say a nose tip that faces down has a value of -1 units. The lower the tip points, the lower the value. 
 
-Let's take a nose tip of -1 units, and a ear length of 2 units, and add them together. To model this using vectors, we multiply -1 by [1, 0], and 2 by [0, 1], and then add them together to get [-1, 2]. 
-    Scale nose tip down, then ear length up, by moving data pt to become new pt, and move those two into (0.5, 2) such that they overlap. Same eqns. For vectors, start with 0.5 * [1,0], then move scalar inside and at same time, move 0.5 into img (layer behind) to shrink it.
+In our Input Space, it's easy to see how we can add together nose tips and ear lengths of different units. First, convert from Input Space to Nap Space using weight multiplication.
 
-Now let's do the same for these vector's analogous versions in Nap Space. To add a negative vector, we just go left, instead of right.
-    show anim: -1*(2) + 2(1.5) = -2 + 3 = 1
+Next, let's take a nose tip of -1 units, and a ear length of 2 units, and add them together. 
 
+When we scale the Input Space nose vector on the left by -1, we're also scaling the Nap Space nose vector on the right by the same amount. Now both vectors point in the negative direction. 
+
+After we scale the ear vectors in both spaces, we add them together. In Nap Space, this is done by first following the nose vector left, and then following the ear vector right.
+    Scale nose tip down, then ear length up, by moving data pt to become new pt, and move those two into (0.5, 2) such that they overlap. Same eqns. For vectors, start with 2 * [1,0], then move scalar inside and at same time, move 2 into img (layer behind) to shrink it.
+
+    -1*(2) + 2(0.75) = -2 + 1.5 = -0.5
+    w (2, 0.75) in white and outside the entire time. -1, 2 are in light red and blue. for vectors, red adn blue.
+
+Finally, we get a Nap Smile of -0.5, which means that cat person doesn't like naps that much.
+    frown anim
+
+<<<<<<<<<<
 Notice that we're just adding together scaled versions of [1,0] and [0,1]. We call these vectors that are mapped to basic measuring units of 1 'basis vectors', because they're basic buildings blocks we can scale and add together to get any other vector in our input space. They're like an alphabet used to form words in a language.
-    re-play the basis vector animations w/ labels
-    write out words 'basis vectors' on screen
+    basis_vectors.py
 
-The basic measuring units labeled by the basis vectors in our Input Space are mapped to the vectors of length 2 and 3 in Nap Space. But these are no longer the basis vectors in Nap Space. The basis vector in Nap Space is a Nap Smile of Unit 1.
-    map them
+The basic measuring units labeled by the basis vectors in our Input Space are mapped to the vectors of length 2 and 0.75 in Nap Space. But these are no longer the basis vectors in Nap Space. The basis vector in Nap Space is a Nap Smile of Unit 1.
+    unit_1_nap.py- copies first parts of 6.2 scaled
+    ear mapped to 3 this time instead of 0.75
 
-    Nap space's true basis vector appears
+    fade in nap unit 1, fade out mappings
 
 So even though these two spaces are both calculating Tom, they are describing Tom using different basis vectors, where the Input Space talks about Tom in terms of Nose units and Ear units, while the Nap Space expresses Tom in terms of Nap units. 
+    cat face 2D projection. project Tom first to nose and ear, then directly to nap.
 
 He simultaneously exists in both sets of dimensions at once, but he looks different in each one because they're just looking at him from different perspectives, like seeing his shadow at different angles.
-
+    cat_face_3Dshadows anim:
+        first project onto red and blue (no conns), then make conns, fading in purple, and proj onto purple

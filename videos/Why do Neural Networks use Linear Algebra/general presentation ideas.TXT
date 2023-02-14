@@ -4,3 +4,6 @@ and a mascot?
 or also have text fade onto screen
 
 figure out how to zoom into video clips outputted from manim
+
+<<<
+describe anims in script? no need b/c manim repo is proof 

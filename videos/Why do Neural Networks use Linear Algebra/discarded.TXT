@@ -1,3 +1,14 @@
+
+length of face
+
+height of person
+
+length of tail, and whether it faces left or right
+
+(not as good b/c 'faces' are like nodes)
+
+<<<
+
 NOSE TO NAP SCENE: 
 
 We'll measure our nap units along a number line, and start with one input of nose. Now we need to weigh this nose vector by a factor of 2 to convert it into nap.
@@ -68,3 +79,11 @@ Another thing to note here is that the concepts sent to the new basis vectors ha
 But although we can show the real cat and fake cat 'basis vectors' in Model 1 in this example, keep in mind that matrices are not always invertible. We'll discuss this more in a later video.
 
 (also interpretation is not always req. a neg value may just mean 'so close to 0', and is just mean to throw samples a certain distance, not meant to be interpreted)
+
+<<<<<<<<<<<<<<<<<
+end of scene 4: so far, our review has been very basic, but as we progress further, it'd start to get more interesting
+
+<<<
+
+instead of scrolling thru paper, do 'page flip' animation
+    or no need- just need higher resolution of 'still' frame, or skip right into manifold words

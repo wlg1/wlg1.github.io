@@ -47,13 +47,10 @@ Likewise, for every two units of nose tip, there are four units of Nap Smile.
 
 Our unit conversation factor of 2 can be represented, in general, as a variable W, which means how much we should weigh our nose value by to get our nap value. 
 
-We can change this weight, such as making it bigger to w=3, which means for every one unit of nose tip, there are 3 units of Nap Smile, and for every two unit of nose tip, there are 6 units of Nap Smile.
+We can change this weight, such as making it bigger to w=3.
     transform above eqn to vars. weight numbers should be in italics, to not get them confused?
 
     on '3', transf the line thicker and change eqn too. replay same animations but to diff pts
 
-For this equation, we can also always go from nap smile to nose tip by multiplying nap smile by one half. But this always doesn't work for every equation.
-    equation divides by 2, giving nose = 0.5 nap
-    
-    line moves backwards from nap to nose?    
+    (, which means for every one unit of nose tip, there are 3 units of Nap Smile, and for every two unit of nose tip, there are 6 units of Nap Smile.)
 

@@ -1,0 +1,50 @@
+
+<<<<<<<<<<<<<<<<<<<<
+For our nose to nap equation, we can go from nap smile to nose tip by multiplying nap smile by one half. The Data Measurement on 2 in Nap Space is always on 1 in Nose Space, and on 1 is always on 0.5.
+    1 nose = (0.5) * 2 nap 
+    0.5 nose = (0.5) * 1 nap
+    
+But in some cases, there are multiple points in Input Space that can go to the same point in output space. Let's take our equation from Input Space to Nap Space.
+    2*nose + (0.75)*ear = nap
+
+First, we'll take points that go into Nap Space and place them back in Input Space. 
+    [first go from 2 to other pts:
+    2*(1) + 0 = 2
+    2*(2) + (0.75)y = 2 
+
+    color code all sent to same colored pt. 
+    ]
+
+We know that [1, 0] in Input Space maps to 2 in Nap Space. But if we plug in any value of nose, we can also find a value of ear that allows the combination of nose and ear values to be sent to 2 in Nap Space.
+
+    
+    2* (0.5 nose) + 0.75 (y ear) = 2 ; y = 1.3333
+    2*(0.5 + 1.3333 nose) + 0.75 (0) = 3.666
+
+    2* (2 nose) + 0.75 (y ear) = 2
+    2* (3 nose) + 0.75 (y ear) = 2
+    
+Solving for ear, we get
+    y = -8/3 
+
+Note that the nose,ear mapping of our data measurement at point 2 in Nap Space is not on point 2 in Input Space. This is just like how, for our nose to nap equation, a data measurement on point 2 in Nap Space was now on point 1 in Nose Space.
+
+Because Nap Space is just a 1 dimensional line of points, the analogous Nap Space in Input Space is just a line. 
+    2D to 1D collapse animation
+
+But what are the coordinate values for this point? We'll find them using orthogonal projection, which we'll go into detail in a later video.
+    (4/4.5625, 1.5/4.5625)
+    2*(4/4.5625) + (0.75)*(1.5/4.5625) = 2
+
+    2*(2/4.5625) + (0.75)*(0.75/4.5625) = 1
+
+    [call (4/4.5625, 1.5/4.5625) the 'image']
+
+All the points found along the Nap Space line embedded into Input Space can be found by just scaling [2, 0.75], which is sent to 4.(9/16). 
+
+In summary, this means that (1,0) is sent to the point (4/4.5625, 1.5/4.5625), which is a point in Input Space that's also sent to Nap Space. (0,1) is also crammed in here with another point, (2, -8/3). 
+
+All these points in 2D Space are crammed into a 1D Nap Space. When this occurs, the conversion mapping, or the weight matrix, is described as being non-invertible.
+
+<<<
+(when mapping to embedded nap, MOVE the DMs, don't just link them!)

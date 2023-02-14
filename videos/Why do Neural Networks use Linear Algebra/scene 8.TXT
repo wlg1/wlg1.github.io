@@ -1,37 +1,55 @@
 SCENE 8:
 
-8.1:
-One more thing to note is that we showed that while we can go from Nap back to Nose,
-    replay anim and eqn
-
-... we can't go from Nap Space back to a 2D Input Space. This is because there are multiple points in Input Space that can go to the same point in Nap Space. 
-
-Let's take all the points that go into Nap Space and place them back in Input Space. Because Nap Space is just a 1 dimensional line of points, the analogous Nap Space in Input Space is just a line. 
-    2D to 1D collapse animation
-
-This means that (1,0) is sent to the point (take orth proj), which is a point in Input Space that's also sent to Nap Space. (0,1) is also crammed in with another point, (orth2). 
-
-All these points in 2D Space are crammed into a 1D Nap Space. When this occurs, the weight matrix is called non-invertible.
-
-<<<<<<<<<<<<
-8.2:
-
-Now the row in our weight matrix calculates Nap Smile. If we want to use nose and ear to calculate another value, such as Age, we just add another row in our matrix, which has its own conversion factors, giving us a system of equations.
+Now the row in our weight matrix calculates Nap Smile. If we want to use nose and ear to calculate another value, such as their Luckiness, we just add another row in our matrix, which has its own conversion factors, giving us a system of equations.
     second row fades in: (first as #s, tehn as vars)
     W=[nosecat earcat  
        noseRat earRat]
 
-Visually, this just means each Data Measurement in 2D Input Space is sent to a point in Nap Space, and also to a point in Age Space. Then we just rotate Age Space vertically to get a 2D coordinate plane, and add nap and age values into a 2D coordinate value.
+    2, 0.75
+    -0.75, 2
+
+Visually, this just means each Data Measurement in 2D Input Space is sent to a point in Nap Space, and also to a point in Luck Space. Then we just rotate Luck Space vertically to get a 2D coordinate plane, and add nap and luck values into a 2D coordinate value.
     anims sending to each, horiz
 
-    rotate, then add nap and age
+    rotate, then add nap and Luck
+
+Every distance is transformed by the same amount, given by the weight matrix. No two distances use different weight matrices. Thus, all relationships are preserved under the matrix analogy.
 
 We'll go over this in more detail in our later videos, along with more complicated neural networks that don't use the Identity as their activation function.
+
+[Finally, use 4 inputs to get 4D space.]
+
+<<<<<<<<<<<<
+reality anims?
+
+There are many ways to measure each cat person. You can measure them by whisker size, color, and more. Each different type of measurement will put them in a different arrangement
+    move_to
+
+Now what the matrix does in each row is calculate one type of measurement from other types of measurements. This is only possible if there is some sort of linear correlation between the input and output measurements. 
+
+The matrix is a model from which information is extracted and abstracted. It captures only
+
+what does it mean to map one vector to another? what are we actually mapping? instead of saying a vector, say a data measurement.
+
+the entire point of this is that the data itself, which models reality, doesn't change. it is our model of the data itself that changes, by simply looking at it from a different persepctive.
+    projecting reality onto the neural network
+
+plato's cave
+
+<<
+Now that we've connected the geometry of linear algebra to neural networks, we can finally begin to study its world of concepts. What lies in this mysterious realm of AI imagination?
+
+<<<<<<<<<<<<
+show poison example in BOTH start of new vid and end of vid 1. end on cliffhanger question. but w/ all imgs
 
 <<<<<<<<<<<<
 Conclusion
 
 [play end of wind in the rushes based on how long it takes to say this (ie if 30 secs, play last 30secs)]
+
+wind in rushes starts playing again from where it left off, but gets more 'everywhere at end of time' as it goes on. cat person wakes up, thinks is out of dream. but within bubble, sees matrix models. then bigger cloud encapsulates them all. fades out, and end proof
+https://www.youtube.com/watch?v=nOI0RHcl-2I&ab_channel=Mastering%E2%80%A4com%28formerlyMusicianonaMission%29
+crackling, vintage
 
 We talked about using different sets of dimensions in Latent Space to represent our data. But there's still many questions about Latent Space to answer. In the next video of this series, we'll talk how models are analogies to relative relations between data samples, but that they're not the data samples themselves. To not confuse the map with the territory, we must beware of False Friends in the Matrix.
     vector transform to another?
