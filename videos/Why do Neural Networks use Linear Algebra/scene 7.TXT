@@ -82,7 +82,8 @@ This is like the parable of the blind men and an elephant, where one man only to
 One alternative possibility is that, instead, each neuron has multiple roles in affecting the calculations of other neurons, similar to if-else branches in a decision tree, though not in the exact same way, as they are two different models.
     decision trees NN.TXT
 
-But a lot of research still has to be done to find out what circuits of neurons are actually doing.
+But a lot of research still has to be done to dissect what circuits of neurons are actually doing.
+(, which may allow us to stitch pretrained neural network patterns together, similar to genes)
     https://vgg.fiit.stuba.sk/people/martak/distill-nn-tree
 
 

@@ -1,6 +1,0 @@
-(Think of this as taking a slice, or a shadow, of the collective network)
-
-(For example, one neuron’s role may be to act as a “signal” for another neuron- if neuron A is low, neuron B will disregard information from neuron C because C must pass through A to get to B, and vice versa. This relationship between neurons has led to research such as finding neuron circuits. The true “roles” of neurons in spreading information to other neurons remains mysterious, and is still a subject of research.)
-
-(?)
-This equation is one of the first things you learn in math. This means we have seen neural networks throughout our entire lives.

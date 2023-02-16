@@ -4,7 +4,7 @@ Let's take an example where the longer a cat person's nose tip was, the more the
 
 We notice a pattern here that's somewhat like unit conversion. For instance, for every 1 meter, there are 3.28 feet. So if an person is 2 meters tall, they're also 6.56 feet tall.
 
-So let's convert nose units into nap units. Turning this into an equation, we have 2 * (nose) = 2 nap.
+So let's convert nose units into nap units. Turning this into an equation, we have 2 (nap over nose) * (1 nose) = 2 nap.
 
 And visually speaking, this means that for every one unit of nose tip, there are two units of Nap Smile. 
 
@@ -15,3 +15,5 @@ Our equation isn't mapping a number, such as 1, to another number, such as 2, bu
 Likewise, for every two units of nose tip, there are four units of Nap Smile.
 
 Our unit conversation factor of 2 can be represented, in general, as a variable W, which means how much we should weigh our nose value by to get our nap value. 
+
+We can also represent out input with a variable x.

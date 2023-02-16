@@ -6,20 +6,18 @@ So we get the equation: (0.75) * 1 ear = (0.75) nap
 
 The Data Measurement at point 1 in ear is sent to point 0.75 in Nap, just like how the Data Measurement at point 1 in nose was sent to point 2 in Nap.
 
-And since studies on cat people suggest that nose tip and ear length can independently build on top of each other to predict nap enjoyment, we can add them together
-
-How do we add these two features to get nap smile? By using the exact same vector addition that we used in our Input Space.
+And since studies on cat people suggest that nose tip and ear length can independently build on top of each other to predict nap enjoyment, we can add them together:
 
 <<<
-Now when we add together the vectors in our 2D coordinate plane,
+How do we add these two features to get nap smile? By using the exact same vector addition that we used in our Input Space.
 
-we are also adding together their analogous vectors found in our 1D Nap Space.
+Now when we add together the vectors in our 2D coordinate plane, we are also adding together their analogous vectors found in our 1D Nap Space.
 
 We move the tail of the blue vector to the head of the red vector, and after adding, we get a purple vector pointing to the same data point in both Input and Nap Space, which is where our cat person Tom is at. 
 
 Our Nap Space says Tom has a nap enjoyment level of 2.75.
 
-<<<<<<<<<<
+<<<
 Let's say a nose tip that faces down has a value of -1 units. The lower the tip points, the lower the value. 
 
 In our Input Space, it's easy to see how we can add together nose tips and ear lengths of different units. First, convert from Input Space to Nap Space using weight multiplication.
@@ -32,7 +30,7 @@ After we scale the ear vectors in both spaces, we add them together. In Nap Spac
 
 Finally, we get a Nap Smile of -0.5, which means that cat person doesn't like naps that much.
 
-<<<<<<<<<<
+<<<
 Notice that we're just adding together scaled versions of [1,0] and [0,1]. We call these vectors that are mapped to basic measuring units of 1 'basis vectors', because they're basic buildings blocks we can scale and add together to get any other vector in our input space. They're like an alphabet used to form words in a language.
 
 The basic measuring units labeled by the basis vectors in our Input Space are mapped to the vectors of length 2 and 0.75 in Nap Space. But these are no longer the basis vectors in Nap Space. The basis vector in Nap Space is a Nap Smile of Unit 1.

@@ -1,2 +1,0 @@
-(put in vid 3)?
-When we add the analogous versions of these basis vectors in Input Space, and also the analogous versions of (orth pts), both of these additions get to the same point in Nap Space.

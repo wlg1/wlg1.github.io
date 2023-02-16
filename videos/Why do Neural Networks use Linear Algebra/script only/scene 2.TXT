@@ -1,6 +1,4 @@
-To show why neural networks use matrix multiplication, let’s start with an example where in the future, cat people roam the world. Some evidence suggests that how much a cat person enjoys naps...
-
-... can be predicted by measuring how far away their nose tips are from the center of their face. We call this measurement, 'Nose tip'.
+To show why neural networks use matrix multiplication, let’s start with an example where in the future, cat people roam the world. Some evidence suggests that how much a cat person enjoys naps can be predicted by measuring how far away their nose tips are from the center of their face. We call this measurement, 'Nose tip'.
 
 For instance, many cat people with long nose tips are said to enjoy naps. It's always the case that the more a cat person smiles when napping, the more they enjoy it. We measure how much they enjoy naps using a metric called 'Nap Smile', or just shortened to 'Naps'. 
 

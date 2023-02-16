@@ -20,7 +20,7 @@ We'll use vectors to tell us where we go from one coordinate point to another, a
 
 Because unlike the coordinate points, which are permanently fixed where they are, the vectors can be moved anywhere in coordinate space. 
 
-This vector is the SAME one that's been moved here, or here. But it is not the same as this vector, or this one.
+This vector is the SAME one that's been moved here. But it is not the same as this vector, or this one.
 
 Since the vectors can be moved, it seems like there's no fixed association between a vector and a Data Measurement. But for the ease of demonstration, we'll informally say there is to help us get a high-level understanding of how vectors add features together.
 

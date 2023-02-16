@@ -7,7 +7,6 @@ First, we'll represent the output value as one variable, and not look at units.
 Second, note that all the variables in the equation below are matrices. So we'll analogously map multiplication into matrix multiplication by putting our terms in brackets. 
 
 The b is the bias, which we don't need to discuss now. We can show it in our equation above by adding 0 to the left side, noting that adding 0 doesn't change our equation.
-    color highlight b in equation
 
 The sigma is called an activation function, which we also don't need to discuss now. For our unit conversion equation, we'll use the Identity function I. We see that when x goes through the identify function I, we get x again. It's like multiplying an expression by 1. So again, this doesn't change our equation. 
 

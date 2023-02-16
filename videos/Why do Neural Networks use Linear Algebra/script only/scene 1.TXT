@@ -2,7 +2,7 @@ When studying new improvements to neural networks, people often encounter concep
 
 So what do these mathematical concepts mean, and why do they use them?
 
-In this series, we'll be providing answers to these questions in an visual and intuitive way.
+In this series, we'll be providing answers to these questions in a visual and intuitive way.
 
 Let's start with a basic concept: using matrix multiplication to recognize features. Neural networks multiply weight matrices with inputs. 
 

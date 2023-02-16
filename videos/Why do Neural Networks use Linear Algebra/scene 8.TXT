@@ -34,8 +34,6 @@ what does it mean to map one vector to another? what are we actually mapping? in
 the entire point of this is that the data itself, which models reality, doesn't change. it is our model of the data itself that changes, by simply looking at it from a different persepctive.
     projecting reality onto the neural network
 
-plato's cave
-
 <<
 Now that we've connected the geometry of linear algebra to neural networks, we can finally begin to study its world of concepts. What lies in this mysterious realm of AI imagination?
 
