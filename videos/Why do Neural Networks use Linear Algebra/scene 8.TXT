@@ -1,64 +1,80 @@
 SCENE 8:
 
-Now the row in our weight matrix calculates Nap Smile. If we want to use nose and ear to calculate another value, such as their Luckiness, we just add another row in our matrix, which has its own conversion factors, giving us a system of equations.
-    second row fades in: (first as #s, tehn as vars)
-    W=[nosecat earcat  
-       noseRat earRat]
+[
+first add in weights of new row, then transform that NN into new space. ? becomes Luckiness. rotate and fade out.
 
-    2, 0.75
-    -0.75, 2
+left: crop offset x 0.4; y -0.4
+right: crop offset x 0.4
 
-Visually, this just means each Data Measurement in 2D Input Space is sent to a point in Nap Space, and also to a point in Luck Space. Then we just rotate Luck Space vertically to get a 2D coordinate plane, and add nap and luck values into a 2D coordinate value.
-    anims sending to each, horiz
+scalars start as x1, x2 then transform to values
 
-    rotate, then add nap and Luck
+8.1. show w11 + w12, then w21 and w22. matrix in b/w
+    1. vid 1 transform x vec into right out of bounds, moving in from left out of bounds on vid 2 (w11)
+    2. transform y vec into a horizontal (w12)
+    3. w11 + w12
+    4-6. repeat for w21 and w22
+    
+ii. then AT SAME TIME (w11, w21; then w12 and w22)
+    [w11+w12, 0] + [0, w21+w22]
+    when w11 and w21, moves to 2D, and that scales
 
-Every distance is transformed by the same amount, given by the weight matrix. No two distances use different weight matrices. Thus, all relationships are preserved under the matrix analogy.
+    notice it was faded before. faded means it's not actually there
 
-We'll go over this in more detail in our later videos, along with more complicated neural networks that don't use the Identity as their activation function.
+    on left side, just show red basis first, and move to right. then show blue
+in all 3 cases, add left side at end
 
-[Finally, use 4 inputs to get 4D space.]
+arrange: top left is Input, bottom left is matrix. left goes down, then goes to top right. right is transformed. have thin black slice separated input vs right
 
-<<<<<<<<<<<<
-reality anims?
+]
 
-There are many ways to measure each cat person. You can measure them by whisker size, color, and more. Each different type of measurement will put them in a different arrangement
-    move_to
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+The first row in our weight matrix calculates one output value. Adding a second row calculate another output value. This neural network can be mapped to a unit conversion visual. Before, our first output was Nap Smile. Let's calculate a second output called Luck, which measures how lucky a cat person is.
 
-Now what the matrix does in each row is calculate one type of measurement from other types of measurements. This is only possible if there is some sort of linear correlation between the input and output measurements. 
+If we rotate ear and luck to be vertical, we are mapping from one 2D coordinate space to another 2D coordinate space. The values in Input Space on the left will go through the matrix at the bottom left to be converted into our Output Space on the right.
 
-The matrix is a model from which information is extracted and abstracted. It captures only
+<<<
+Now before we get into the visual matrix multiplication, we're going to explain how we compute it using equations. Previously, we took the dot product of our first weight matrix row and the input vector. Now, we're going to take the dot product of our second weight matrix row and the input vector.
 
-what does it mean to map one vector to another? what are we actually mapping? instead of saying a vector, say a data measurement.
+<<<
+In our visual, we'll start by calculating the first row dot product, then the second row dot product, and finally, we'll add them up.
 
-the entire point of this is that the data itself, which models reality, doesn't change. it is our model of the data itself that changes, by simply looking at it from a different persepctive.
-    projecting reality onto the neural network
+So we'll plug in values for each weight. We'll use different weights from before, using 3 instead of 0.75 for ear to nose. As we convert from input to output, notice which weights on bottom left matrix light up. 
 
-<<
-Now that we've connected the geometry of linear algebra to neural networks, we can finally begin to study its world of concepts. What lies in this mysterious realm of AI imagination?
+First, we'll convert our nose vector into nap space using the weight 2 nap over nose. What this weight does it map the nose basis vector to nap space. This is because x1, our input value, scales our nose vector the same amount in both spaces.
 
-<<<<<<<<<<<<
-show poison example in BOTH start of new vid and end of vid 1. end on cliffhanger question. but w/ all imgs
+Now we'll do the same for converting our ear vector into nap space.
 
-<<<<<<<<<<<<
-Conclusion
+For out input values, we'll use one for both x1 and x2, and scale the basis vectors by them in both spaces.
 
-[play end of wind in the rushes based on how long it takes to say this (ie if 30 secs, play last 30secs)]
+Finally, we'll add our nose and ear vectors together in both spaces.
 
-wind in rushes starts playing again from where it left off, but gets more 'everywhere at end of time' as it goes on. cat person wakes up, thinks is out of dream. but within bubble, sees matrix models. then bigger cloud encapsulates them all. fades out, and end proof
-https://www.youtube.com/watch?v=nOI0RHcl-2I&ab_channel=Mastering%E2%80%A4com%28formerlyMusicianonaMission%29
-crackling, vintage
+<<<
+Next, let's do the same thing, but for luck space. We'll convert our nose vector into luck space, 
 
-We talked about using different sets of dimensions in Latent Space to represent our data. But there's still many questions about Latent Space to answer. In the next video of this series, we'll talk how models are analogies to relative relations between data samples, but that they're not the data samples themselves. To not confuse the map with the territory, we must beware of False Friends in the Matrix.
-    vector transform to another?
-    fade in images of geschenk
-    map != territory (put only in 2nd)
+and then our ear vector into luck space.
 
-For now, we've figured out how to predict which cat people enjoy naps, so we can just put that to rest.
+At last, we have our nap and luck values, so we'll just combine them.
 
-<<
-[cat person naps while comm dia is created, fading out until only square is left. music fades out
+<<<
+Now, there's another way you can obtain the same output. We're going to re-arrange our equations so that instead of doing the dot product row by row, we're going to first convert the nose basis vector into nap and luck space, then convert the ear basis vector into nap and luck space.
 
-use the commutative diagram logo as an 'end proof' square, which begins moving as everything else fades, and is the last thing staying.
+As we re-arrange this equation, you can pause at each step if you want to take a better look at it.
 
-bottomright, fade in then out: "As above, so below" like in cowboy bebop? ]
+First, let's use the distributive property to break our input into the nose basis vector and ear basis vector. Next, we'll factor out the input values.
+
+Now we'll take the dot product for each term, by applying the same formula at the top.
+
+Simplifying, we get this expression at the bottom, which is actually just adding the nose vector transformed into nap and luck space, and the ear vector transformed into nap and luck space.
+    at end, transform colors into light red and light blue, and pause for 3 seconds.
+
+Note that this is actually what we've were doing before on the left side, the Input Space. For our input space, we use these weight values, which make up the identity matrix, as after it multiplies with a vector, it just returns the same vector, just like multiplying by 1.
+
+<<<
+This is clear when we look at it visually. First, we transform our nose vector into nap and luck space, which we've also been calling the output space.
+
+Notice that the nose vector is seen from two different perspectives: the nap dimension sees it from its frame of reference, and the luck dimension interprets it from its point of view. We add these two interpretations of nose vector together to get the nose vector within the output space.
+
+Then we transform the ear vector into nap and luck space using the same procedure.
+
+Finally, we add together the nose and ear vectors in both input space, and output space. We see that we get to the same point as before. Not only did we transform the nose and ear vectors into output space, but because Tom, at [1,1] in Input Space, was calculated using nose and ear vectors, Tom is also transformed into output space. This says that Tom has a nap smile of 5, and a luck value of -1, which means he's a bit unlucky.
+    pause for at least 3 seconds after finishing

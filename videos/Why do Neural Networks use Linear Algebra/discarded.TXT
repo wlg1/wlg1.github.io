@@ -1,3 +1,6 @@
+concl summary frames?
+
+<<<
 plato's cave
 
 <<<
@@ -89,3 +92,44 @@ end of scene 4: so far, our review has been very basic, but as we progress furth
 
 instead of scrolling thru paper, do 'page flip' animation
     or no need- just need higher resolution of 'still' frame, or skip right into manifold words
+
+<<<
+in input, [1,1] goes to same spot in both rows
+
+0. show matrix in between, highlighting each 
+1. w11 and w12: show left x vector and right x vector (w*x)
+    1 * 1 VS w11 * 1
+2. w12: show left y vec and right y vec
+    0 * 1 VS w12 * 1
+3. w11 + w12: add y to x
+    [1, 0] * [1, 1] VS [w11, w12] * [1,1]
+4. w12: same, but on y-axis
+5. w22
+6. w12 + w22
+7. bring A and B result to center
+
+<<<
+1. w11 and w21: show left x vector going to both A and B, then adding down
+    the right A and B happen at same time
+    first w11, then w21
+2. w12 and w22: show left y vec go to both A and B
+3. w11 + w12 AND w21 and w22: add y to x
+    [1, 0] * [1, 1] VS [w11, w12] * [1,1]
+
+<<<
+s8:
+(just an image)
+iii.identity matrix in middle, both sides are input space
+
+iv. repeat for scaled input (dropped)
+
+<<<
+s7
+
+This is a high dimensional space, where each neuron acts as its dimension. It exists in 3D space, and even in more than 3 dimensions. Keep in mind that large neural networks such as GPT have billions of neurons.
+    chatgpt 3d space or obj into 4d (s7). 2Dto4D.py
+    https://slama.dev/manim/3d-and-the-other-graphs/
+
+    https://www.youtube.com/watch?v=IAC0DoGk2pU&ab_channel=Visualization101
+    activate manimlib
+    manimgl 4D.py

@@ -42,38 +42,30 @@ This Activation Space, commonly referred to as a Hidden or Latent Space, is wher
 
 This is called Latent Space because it's a world that's hidden from first impressions; you have to calculate it to reveal its structure.
 
-This is a high dimensional space, where each neuron acts as its dimension, and combinations of neurons can also act as their own dimension.
-    latent space animation of adding two vectors to get another
-    same as before, but now show 'neuron 1, 2' on axis
-
-    show point on 1D w/ neuron eqn
-    the 2D planes show subnetwork on its surnose?
-
-    vector is combo of neurons- show CoB
-
 <<<<<
-In our examples, for the purpose of gaining intuition, we defined our neurons in terms of “human-understandable measurements”. And though studies show these may exist, such as car neurons that detect car parts, neurons may not always cleanly correspond to a Human-Defined Concept. 
+In our examples, for the purpose of gaining intuition, we defined our neurons in terms of “human-understandable measurements”. And though studies show these may exist, such as car neurons that detect car parts, neurons within network layers may not always cleanly correspond to a Human-Defined Concept. 
     https://distill.pub/2020/circuits/zoom-in/
 
-A network might not even have a 'cat' neuron, even though the pattern of 'cat' is somehow recognized within the neural network. In fact, most of the millions of neurons in many neural networks may not correspond to a human-defined concept. 
+If you put images of a cat and person through a neural network, in order to create a cat person, it has to recognize the patterns of 'cat' and 'face', yet the network might not have a 'cat' neuron or a 'face' neuron. In fact, most of the millions of neurons in many neural networks may not correspond to a human-defined concept. 
     unk_NN.py
     fade in big NN and change cat to question marks
 
-Still, evidence supports hypothesis that some representations of neural network components are interpretable. Otherwise, how else would a neural network be able to derive novel analogies that are completely different from even pieces of training data? 
+Still, evidence supports hypothesis that some representations of neural network components are interpretable. Otherwise, how else would a neural network be able to derive novel analogies that don't even come from pieces of training data? 
     OR lerp cat
     https://bair.berkeley.edu/blog/2020/04/23/decisions/
 
 For instance, research has shown how to not only find where certain factual associations are in language models, but also how to edit them.
     MEMIT
 
-So just how are these abstract patterns recognized? Instead of being recognized by one neuron, they may be processed by a group of neurons, such as in the sparse coding hypothesis. These group of neurons may process information in a circuit.
+So just how are these abstract patterns recognized? Instead of being calculated by one neuron, they may be processed by a group of neurons, such as in the sparse coding hypothesis. These group of neurons may process information in a circuit.
     https://distill.pub/2018/building-blocks/
+    http://www.scholarpedia.org/article/Sparse_coding
 
-We can think of every neuron in a neural network is a measurement on the data, coming up with an interpretation for it from its own perspective through a projection. 
+We can think of every neuron in a neural network as a measurement on the data, coming up with an interpretation for it from its own perspective through a projection. 
     cat_face_pplShadows.py
     end of s6 but with people stick figure's heads as nodes
 
-This is like the parable of the blind men and an elephant, where one man only touches part of the elephant's trunk and thinks it's a snake, and another touches only its feet and think it's a tree trunk. Each man is like a neuron, and using a matrix, they each pass the information they gather to a judge, who calculates that it should actually be an elephant.
+This is like the parable of the blind men and an elephant, where one man only touches part of the elephant's trunk and thinks it's a snake, and another touches only its feet and think it's a tree trunk, and so forth. Each man is like a neuron, and using a matrix, they each pass the information they gather to a judge neuron, who calculates that it should actually be an elephant.
     blind men on elephant with arrow to a judge that says, "it's an elephant"
     https://www.interaction-design.org/literature/article/6-blind-men-walk-into-a-bar-the-ux-punchline
 

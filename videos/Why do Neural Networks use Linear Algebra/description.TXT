@@ -1,5 +1,9 @@
-The only thing you need to know before watching this is multiplication
 
 Recommended viewing:
 
 More recs:
+nonlinear:
+https://www.youtube.com/watch?v=CfAL_cL3SGQ&t=345s&ab_channel=SamSartor
+
+matrix factorization:
+https://www.youtube.com/watch?v=vSczTbgc8Rc&t=120s&ab_channel=VisualKernel

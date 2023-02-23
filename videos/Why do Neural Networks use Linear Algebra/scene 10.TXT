@@ -1,0 +1,72 @@
+[Start w/ coordinate space and vectors]
+
+Here's an analogy that helps drive home the difference between model and reality. We’ll look at two data samples: a dangerous substance, 
+    fade in poison
+
+and an object which is given to someone out of gratitude.
+    fade in gift
+
+And instead of using numbers, let’s use letters to label our entities. This means our models will resemble languages, some of which also use letters to label entities. So our first model, or language, is labeled as follows
+    fade in gift text
+
+To an English speaker, this may look wrong, because the object on the pink vector should be called something like ‘poison’, not ‘gift’. But in German, this dangerous substance is in fact called ‘gift’. 
+    Fade in german on axis
+
+If a German speaker tells the English speaker that they’re giving the English speaker a gift, the English speaker may be delighted because they think they’re getting something good. But they shouldn’t be, because what they’re ACTUALLY receiving would kill them.
+    bottom of coordpsace; stick figures w/ speech bubbles and thought bubbles and flags exchanging gifts
+
+Since there is a misunderstanding, the English speaker needs to know what ‘gift’ is actually referring to; or in other words, to know the right English word to use for what the German speaker is thinking about. So they need to translate from the language above, which resembles German, to English as follows
+    show CoB, transform german to english, then show both
+    fade in poison arrow and text
+
+In summary:
+    show below 2img comparison
+    ‘gift’ in German  != ‘gift’ in English 
+    ‘gift’ in German  ~ ‘poison’ in English
+        10.2.py: see 9.2.7.py 
+
+Relating this back to using numbers as labels:
+    transform into vectors
+
+Now let's label the good object with the German word 'geschenk'. Notice that when we translate it into English, this 'geschenk' vector doesn't point to any data sample. In fact, the label ‘geschenk’ does not mean anything in English. The same goes for the label poison in German. Not all labels have to point to an data sample; so in some coordinate spaces, they just mean nonsense. This follows from the advice to not confuse the map with the territory in an analogy.
+    inverse transform, then show the 2img comparison
+
+...we must beware of False Friends in the Matrix.
+    write it out
+
+[show poison example in BOTH start of new vid and end of vid 1.]
+
+<<<
+We've discussed projecting from higher dimensions...
+    GEB image
+
+Now that we've connected the geometry of linear algebra to neural networks, we can finally begin to study its world of concepts. What lies in this mysterious realm of AI imagination?
+    AI animate DMT space, feature viz
+    neural network feature visualization interpolation
+
+    https://www.youtube.com/watch?v=C_XNdGGs6qM&ab_channel=marian519
+
+<<<<<<<<<<<<
+Conclusion
+
+[play end of wind in the rushes based on how long it takes to say this (ie if 30 secs, play last 30secs)
+
+wind in rushes starts playing again from where it left off, but gets more 'everywhere at end of time' as it goes on. cat person wakes up, thinks is out of dream. but within bubble, sees matrix models. then bigger cloud encapsulates them all. fades out, and end proof
+https://www.youtube.com/watch?v=nOI0RHcl-2I&ab_channel=Mastering%E2%80%A4com%28formerlyMusicianonaMission%29
+crackling, vintage
+
+]
+
+We talked about using different sets of dimensions in Latent Space to represent our data. But there's still many questions about Latent Space to answer. In the next video of this series, 
+
+
+So far, we summarized concepts from 3Blue1Brown videos that are relevant for our future videos, where we'll discuss topics such as matrix factorization and Rank-One Model Editing on GPT neurons.
+
+For now, we've figured out how to predict which cat people enjoy naps, so we can just put that to rest.
+
+<<
+[cat person naps while comm dia is created, fading out until only square is left. music fades out
+
+use the commutative diagram logo as an 'end proof' square, which begins moving as everything else fades, and is the last thing staying.
+
+bottomright, fade in then out: "As above, so below" like in cowboy bebop? ]
