@@ -22,7 +22,7 @@ But we don't know how nose tips exactly affects enjoying naps. How big of a Nap 
 
 We're going to have to figure this out by using a neural network that takes in a cat person's nose tip as input, and predicts their nap enjoyment level.
 
-<<<
+
 Let's start with the input. We're only going to measure nose tip, capturing it into a Data Measurement.
 
 These are measured using 1 unit of nose tip, which is a basic measuring unit, just like using 1 meter for distance, or using 1 second for time.
@@ -65,7 +65,7 @@ The sigma is called an activation function, which we also don't need to discuss 
 
 Now, both equations look similar. But what is the equation we have below? It's a neuron equation, which is what a neural network uses to compute a neuron activation. So our unit conversion equation is just a very simple neuron. 
 
-<<<
+
 W contains weight connections that the X inputs are multiplied with, and A contains the neuron activations, which in our case, is the nap neuron. 
 
 In this case, the matrix W actually just consists of a single weight variable lower case w, also called w one. Same for the X  and A matrices.
@@ -76,7 +76,7 @@ Or with two neurons, if you think of the input as a nose neuron represented by t
 
 Now, we see that our unit conversion visual has been hiding a neural network neuron all along.
 
-<<<<
+<
 So a neural network can be viewed as a function that's composed of many smaller functions. Note that it can't approximate every function, but different types of neural networks can approximate a wide variety of functions that are useful for prediction.
 
 Of course, a neural network is more than just this equation, so rather than saying this equation is a neural network, we can say it's approximate, or analogous, to a neural network.
@@ -89,7 +89,7 @@ Since we also found that ear length has some correlation with nap enjoyment, let
 
 Just like with nose tip, we also have an ear length of 1 unit, 2 units, and 3 units
 
-<<<
+
 How can we represent a Data Measurement of a cat person in terms of both nose tip and ear length? We'll use a 2-dimensional coordinate space.
 
 If we rotate our ear length number line by 90 degrees and put it next to our nose tip number line, we get a coordinate plane where we can represent each cat person using both nose tip and ear length as axes.
@@ -98,7 +98,7 @@ Now, how can we add together the Nose Tip and Ear Length Data Measurements to de
 
 Let's say we're taking measurements of a cat person named Tom. To describe him, we start at the origin point. We find that his nose tip is 1 unit, so we move from the origin to (1,0). Then we find his ears are 1 unit long, so we move up from (1,0) to (1,1).
 
-<<<
+
 These arrows that formed a path of step-by-step instructions are called Vectors, which are defined by a length, and a direction. You can place them between two coordinate points, from a tail point to a head point. 
 
 We'll use vectors to tell us where we go from one coordinate point to another, and by how much. To add vectors together, we just move the tail of one vector to the head of another.
@@ -109,7 +109,7 @@ This vector is the SAME one that's been moved here. But it is not the same as th
 
 Since the vectors can be moved, it seems like there's no fixed association between a vector and a Data Measurement. But for the ease of demonstration, we'll informally say there is to help us get a high-level understanding of how vectors add features together.
 
-<<<
+
 Looking back at our example with Tom, we'll represent our vectors using matrix brackets, whose values describe the head of a vector, with its tail on the origin.
 
 We'll show that adding these two features together is the same as adding the two vectors pointing to these features.
@@ -134,7 +134,7 @@ The Data Measurement at point 1 in ear is sent to point 0.75 in Nap, just like h
 
 And since studies on cat people suggest that nose tip and ear length can independently build on top of each other to predict nap enjoyment, we can add them together:
 
-<<<
+
 How do we add these two features to get nap smile? By using the exact same vector addition that we used in our Input Space.
 
 Now when we add together the vectors in our 2D coordinate plane, we are also adding together their analogous vectors found in our 1D Nap Space.
@@ -143,7 +143,7 @@ We move the tail of the blue vector to the head of the red vector, and after add
 
 Our Nap Space says Tom has a nap enjoyment level of 2.75.
 
-<<<
+
 Let's say a nose tip that faces down has a value of -1 units. The lower the tip points, the lower the value. 
 
 In our Input Space, it's easy to see how we can add together nose tips and ear lengths of different units. First, convert from Input Space to Nap Space using weight multiplication.
@@ -156,7 +156,7 @@ After we scale the ear vectors in both spaces, we add them together. In Nap Spac
 
 Finally, we get a Nap Smile of -0.5, which means that cat person doesn't like naps that much.
 
-<<<
+
 Notice that we're just adding together scaled versions of [1,0] and [0,1]. We call these vectors that are mapped to basic measuring units of 1 'basis vectors', because they're basic buildings blocks we can scale and add together to get any other vector in our input space. They're like an alphabet used to form words in a language.
 
 The basic measuring units labeled by the basis vectors in our Input Space are mapped to the vectors of length 3 and 2 in Nap Space. But these are no longer the basis vectors in Nap Space. The basis vector in Nap Space is a Nap Smile of Unit 1.
