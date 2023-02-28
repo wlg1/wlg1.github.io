@@ -1,3 +1,4 @@
+Subtitles available (recommended)
 
 Recommended viewing:
 
@@ -7,3 +8,17 @@ https://www.youtube.com/watch?v=CfAL_cL3SGQ&t=345s&ab_channel=SamSartor
 
 matrix factorization:
 https://www.youtube.com/watch?v=vSczTbgc8Rc&t=120s&ab_channel=VisualKernel
+
+<<<
+This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video starts at very basic concepts. This one is currently a draft of 85% of the video, with work-in-progress audio and placeholder animation; the actual video will be uploaded soon.
+
+▬ Chapters  ▬▬▬▬▬▬▬▬▬▬
+00:00 test
+1:00 test 2
+12:01 test 3
+15:01 test 4
+
+
+ ▬▬▬▬▬▬▬▬▬▬ ▬▬▬▬▬▬▬▬▬▬
+Recommended before watching:
+https://www.youtube.com/watch?v=fNk_zzaMoSs&ab_channel=3Blue1Brown

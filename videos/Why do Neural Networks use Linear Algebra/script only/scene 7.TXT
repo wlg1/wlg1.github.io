@@ -1,6 +1,6 @@
 SCENE 7:
 
-Again, this has an analogy to a neural network, where w2 is another connection from the ear neuron to the nap neuron.
+Just like before, this has an analogy to a neural network, where w2 is another connection from the ear neuron to the nap neuron.
 
 Recall how our equation with only nose to nap could also be represented as a matrix with 1 row and 1 column. Now, we go from a matrix of 1 row and 1 column, to a matrix with 1 row and 2 columns
 

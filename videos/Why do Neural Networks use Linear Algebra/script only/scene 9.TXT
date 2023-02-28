@@ -1,8 +1,8 @@
-We've been showing input space and output space as two separate spaces. But on an abstract level, they're just using the exact same numbers as a measuring tool. 
+We've been showing input space and output space as two separate spaces. But on an abstract level, they're just using the same exact numbers as a measuring tool. 
 
 To explain this, let's take two apples, and two oranges. We can use the same measuring tool, a number line ruler, to measure how many objects there are. Now two apples are not two oranges. However, if you abstract away the units, they're measured using the same number two. The space of apples is not the same as the number line ruler, and neither is the space of oranges.
 
-The same thing is happening when we're measuring our cat people data measurements using a 2D coordinate plane. Before, we used different colors for the vectors in our input and output spaces. Now let's use the same colors for both, to show they're both using the same coordinate plane, but with its vectors pointing at different data measurements. We'll also use slightly different sizes to represent our units, just to make them clearer. 
+The same thing is happening when we're measuring our cat people data measurements using a 2D coordinate plane. Before, we used different colors for the vectors in our input and output spaces. This time, let's use the same colors for both, to show they're both using the same coordinate plane, but with its vectors pointing at different data measurements. We'll also use slightly different sizes to represent our units, just to make them clearer. 
 
 In our input space, our red basis vector measures a nose tip of 1 unit. But in our output space, the same red basis vector measures a nap smile of 1 unit.
 
@@ -18,11 +18,11 @@ Now we'll look at more vectors, and have them point to Data Measurements. When w
 
 Similarly, the data measurement previously measured by the white vector [1,1] is now measured by the silver vector [4, 1]. 
     
-Since each coordinate space provides a different way to represent the data, let’s call each coordinate space a Model. Furthermore, we'll say that a model assigns meaning to each coordinate point. The meaning of a coordinate point is the label that's on it; in this case, the labels are data measurements. Subsequently, the meaning of a vector is the data measurement it points to, and is derived from the basis vectors used to construct it.
+Since each set of basis vectors provides a different way to represent the data, let’s call each set of basis vectors a Model. Furthermore, we'll say that a model assigns meaning to each coordinate point. The meaning of a coordinate point is the label that's on it; in this case, the labels are data measurements. Subsequently, the meaning of a vector is the data measurement it points to, and is derived from the basis vectors used to construct it.
 
 In Model 1, the red basis vector pointed to a cat person with a nose and no ears because it’s supposed to mean “has a nose with unit 1”. In Model 2, the red basis vector points to a cat person with a smaller nose and with ears because it’s supposed to mean “these nose and ears sizes indicate a nap smile of 1".
 
-Likewise, in Model 1, [1, 1] meant “an cat person with a nose tip of 1 and an ear length of 1". But in Model 2, this vector means "a cat person with a nap smile of 4 and a luckiness of 1".
+Likewise, in Model 1, the white vector [1, 1] meant “an cat person with a nose tip of 1 and an ear length of 1". But in Model 2, this vector means "a cat person with a nap smile of 1 and a luckiness of 1", so what's on it no longer has a nose tip of 1 and ear length of 1.
     
 This shows the difference between the data samples coming from reality, and the model that represents those data samples using labels. The vector [1, 1] is not the cat person itself; it is merely a label of it, and whichever label is used depends on the basis vectors. 
 
@@ -34,7 +34,7 @@ Let's look at data samples of our cat people reality. Without basis vectors, or 
 
 But once we add basis vectors, we lock onto an interpretation, where we can describe reality in terms of a frame of reference. It is described relative to our basis, which is an anchor to high dimensional reality. 
 
-We can describe these cat people using playful and fast, or funny and scheming, and more.    
+We can describe these cat people using playful and fast, or funny and scheming, and more. But none of these are the main way to describe it; they are all relative. Without a model, reality is anchorless.   
 
 Reality itself doesn't change. It is only our model of reality that changes. There is some sort of linear correlation between the input and output measurements. Every distance is transformed in a similar way, given by the weight matrix. Thus, all structured relationships are preserved under the matrix analogy.
 
@@ -44,12 +44,12 @@ Notice that when we performed matrix multiplication, we were bringing the data m
 
 This entire line is just scaled versions of the orange vector. What all of these scaled orange vectors share is a common ratio of nose to ear. You might have seen this before as the slope of a line.
 
-If we look at the neural network corresponding to this coordinate space representation, given that these vector dimensions each correspond to a neuron, this family of orange vectors corresponds to certain combinations nose and ear activations.
+If we look at the neural network corresponding to this coordinate space representation, given that these vector dimensions each correspond to a neuron, this family of orange vectors corresponds to certain combinations of nose and ear activations.
 
 Let's turn the neurons and weights into variables. These combinations of nose and ear neurons make up their own dimension. 
 
 When we look at reality from this dimension, defining it by placing a basis vector on it, we are looking at a region alongside these data measurements- in this case, it's a line.
 
-If we take our nap equation and re-arrange it to solve for y, the ear value, we get a yellow line. By plugging in any value for x, the nose value, such as 0 to get 1 for y, or 2 to get -3 for y, we can find an infinite number of points that map to the nap value of 1, since there are an infinite number of nose and ear combinations on the yellow line that map to a nap value of 1.
+If we take our nap equation and re-arrange it to solve for y, the ear value, and then plug in 1 for nap to find which values of nose and ear get a nap value of 1, we get a yellow line. By plugging in any value for x, the nose value, such as 0 to get 1 for y, or 1 to get -1 for y, we can find an infinite number of points that map to the nap value of 1, since there are an infinite number of nose and ear combinations on the yellow line.
 
 But for this matrix, there is another constraint- these nose and ear points must also map to a luck value. So when we transform into a nap and luck output space, these two points will be mapped to the same nap value, but will have different luck values, so they will not be mapped to the exact same point in output space.

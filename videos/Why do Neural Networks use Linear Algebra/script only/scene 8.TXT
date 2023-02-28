@@ -1,18 +1,18 @@
-The first row in our weight matrix calculates one output value. Adding a second row calculate another output value. This neural network can be mapped to a unit conversion visual. Before, our first output was Nap Smile. Let's calculate a second output called Luck, which measures how lucky a cat person is.
+The first row in our weight matrix calculates one output value. Adding a second row calculates another output value. This neural network can be mapped to a unit conversion visual. Before, our first output was Nap Smile. Let's calculate a second output called Luck, which measures how lucky a cat person is.
 
 If we rotate ear and luck to be vertical, we are mapping from one 2D coordinate space to another 2D coordinate space. The values in Input Space on the left will go through the matrix at the bottom left to be converted into our Output Space on the right.
 
-Now before we get into the visual matrix multiplication, we're going to explain how we compute it using equations. Previously, we took the dot product of our first weight matrix row and the input vector. Now, we're going to take the dot product of our second weight matrix row and the input vector.
+Now before we get into the visual matrix multiplication, we're going to explain how we compute it using equations. Previously, we took the dot product of our first weight matrix row and the input vector. This time, we're going to take the dot product of our second weight matrix row and the input vector.
 
 In our visual, we'll start by calculating the first row dot product, then the second row dot product, and finally, we'll add them up.
 
-So we'll plug in values for each weight. We'll use different weights from before, using 3 instead of 0.75 for ear to nose. As we convert from input to output, notice which weights on bottom left matrix light up. 
+So we'll plug in values for each weight. We'll use different weights from before, using 3 instead of 0.75 for ear to nap. As we convert from input to output, notice which weights on the bottom left matrix light up. 
 
-First, we'll convert our nose vector into nap space using the weight 2 nap over nose. What this weight does it map the nose basis vector to nap space. This is because x1, our input value, scales our nose vector the same amount in both spaces.
+First, we'll convert our nose vector into nap space using the weight 2 nap over nose. What this weight does is map the nose basis vector to nap space. This is because x1, our input value, scales our nose vector the same amount in both spaces.
 
 Now we'll do the same for converting our ear vector into nap space.
 
-For out input values, we'll use one for both x1 and x2, and scale the basis vectors by them in both spaces.
+For our input values, we'll use one for both x1 and x2, and scale the basis vectors by them in both spaces.
 
 Finally, we'll add our nose and ear vectors together in both spaces.
 
@@ -32,7 +32,7 @@ Now we'll take the dot product for each term, by applying the same formula at th
 
 Simplifying, we get this expression at the bottom, which is actually just adding the nose vector transformed into nap and luck space, and the ear vector transformed into nap and luck space.
 
-Note that this is actually what we've were doing before on the left side, the Input Space. For our input space, we use these weight values, which make up the identity matrix, as after it multiplies with a vector, it just returns the same vector, just like multiplying by 1.
+Note that this is actually what we've been doing before on the left side, the Input Space. For our input space, we use these weight values, which make up the identity matrix, as after it multiplies with a vector, it just returns the same vector, just like multiplying by 1.
 
 This is clear when we look at it visually. First, we transform our nose vector into nap and luck space, which we've also been calling the output space.
 

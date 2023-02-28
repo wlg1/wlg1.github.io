@@ -13,19 +13,25 @@ Since there is a misunderstanding, the English speaker needs to know what ‘gif
 Think of the weight matrix as the translator app. The input to the matrix is [-1,2], which is the pink vector where our dangerous substance is at in German space. The output of the matrix is [-4, 1], which is poison is at in English space. So the transformation moves the substance from gift to poison, allowing the English speaker to know what it truly is in their language.    
 
 In summary:
+The object on German 'gift' is not mapped to the English 'gift'
+The object on German 'gift' is mapped to the English 'poison'
 
 Relating this back to using numbers as labels:
+The German vector '[-1, 2]' is not mapped to the English vector '[-1, 2]' 
+What's on it is actually mapped to the English vector [-4, 1]
 
 Now let's label the good object with the German word 'geschenk'. Notice that when we translate it into English, this 'geschenk' vector doesn't point to any data sample. In fact, the label ‘geschenk’ does not mean anything in English. The same goes for the label poison in German. Not all labels have to point to an data sample; so in some coordinate spaces, they just mean nonsense. This follows from the advice to not confuse the map with the territory in an analogy.
 
-Given that word like gift that has different meanings in different languages is called a false friend, we take heed of the following warning: To Beware of False Friends in the Matrix.
+A word like gift that has different meanings in different languages is called a false friend. Knowing this, we take heed of the following warning: To Beware of False Friends in the Matrix.
 
+<<<<<<<
 We've learned that an entity is projected from high dimensional space down to a subspace of a group of neurons, casting a shadow, or a distorted reflection. 
 
 Though viewed from different perspectives, these shadows are often entangled, meaning that a change in one dimension is analogously reflected in another, like in a house of mirrors.
 
 Now that we've connected the geometry of linear algebra to neural networks, we can finally begin to study its world of concepts. What lies in this mysterious realm of AI imagination?
 
+<<<<<<<
 So far, we've summarized concepts from 3Blue1Brown videos that are relevant for our future videos.
 
 In our future videos, we'll discuss topics such as matrix factorization and Rank-One Model Editing on GPT neurons.
