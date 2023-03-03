@@ -31,7 +31,7 @@ After we scale the ear vectors in both spaces, we add them together. In Nap Spac
 Finally, we get a Nap Smile of -0.5, which means that cat person doesn't like naps that much.
 
 <<<
-Notice that we're just adding together scaled versions of [1,0] and [0,1]. We call these vectors that are mapped to basic measuring units of 1 'basis vectors', because they're basic buildings blocks we can scale and add together to get any other vector in our input space. They're like an alphabet used to form words in a language.
+Notice that we're just adding together scaled versions of [1,0] and [0,1]. We call these vectors that are mapped to basic measuring units of 1 'basis vectors', because they're basic buildings blocks we can scale and add together to get any other vector in our input space. They're like an alphabet (or a dictionary) used to form words in a language.
 
 The basic measuring units labeled by the basis vectors in our Input Space are mapped to the vectors of length 3 and 2 in Nap Space. But these are no longer the basis vectors in Nap Space. The basis vector in Nap Space is a Nap Smile of Unit 1.
 

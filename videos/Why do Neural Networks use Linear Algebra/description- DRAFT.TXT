@@ -1,0 +1,34 @@
+
+
+§▬▬▬▬▬§ Chapters §▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬§
+00:00 -- 0 |¤| A Dream of Cats
+01:59 -- 1 |¤| Introducing Cat People (The Model) 
+03:38 -- 2 |¤| The Nap Dimension (The Trivial Dot Product)
+05:24 -- 3 |¤| The Neural Network in Hiding (The Neuron Function)
+08:05 -- 4 |¤| Who is Tom? (The Vector and the Point) 
+11:13 -- 5 |¤| As Above, So Below (The Projection)
+15:07 -- 6 |¤| King to Queen (The Latent Space) 
+17:05 -- 7 |¤| Blind Men and an Elephant (The Interpretability of Circuits)
+19:26 -- 8 |¤| Traveling Between High Dimensions (The Change of Basis)
+24:19 -- 9 |¤| The Cat People Reality Revealed (The Analogy)
+28:33 -- ? |¤| ???
+30:14 -- 10 |¤| Inverting the World (The Invertible Matrix)
+32:11 -- 11 |¤| Beware of False Friends in the Matrix
+‡▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬‡
+
+ ▬▬▬▬▬▬▬▬▬▬ ▬▬▬▬▬▬▬▬▬▬
+Recommended before watching:
+https://www.youtube.com/watch?v=fNk_zzaMoSs&ab_channel=3Blue1Brown
+Subtitles available (recommended)
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+More recs:
+nonlinear:
+https://www.youtube.com/watch?v=CfAL_cL3SGQ&t=345s&ab_channel=SamSartor
+
+matrix factorization:
+https://www.youtube.com/watch?v=vSczTbgc8Rc&t=120s&ab_channel=VisualKernel
+
+<<<
+This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video starts at very basic concepts. This one is currently a draft of 85% of the video, with work-in-progress audio and placeholder animation; the actual video will be uploaded soon.

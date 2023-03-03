@@ -30,11 +30,3 @@ We've learned that an entity is projected from high dimensional space down to a 
 Though viewed from different perspectives, these shadows are often entangled, meaning that a change in one dimension is analogously reflected in another, like in a house of mirrors.
 
 Now that we've connected the geometry of linear algebra to neural networks, we can finally begin to study its world of concepts. What lies in this mysterious realm of AI imagination?
-
-<<<<<<<
-So far, we've summarized concepts from 3Blue1Brown videos that are relevant for our future videos.
-
-In our future videos, we'll discuss topics such as matrix factorization and Rank-One Model Editing on GPT neurons.
-(neural network interpretability and model editing on GPT neurons)
-
-For now, we've figured out how to predict which cat people enjoy naps, so we can put that matter to rest. We have only begun on the long journey of finding out just how neural networks work.

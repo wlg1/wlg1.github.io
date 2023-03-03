@@ -12,5 +12,7 @@ Knowing why this procedure is done is key to a visual intuition behind how neura
 
 Aside from knowing multiplication, there's no prereqs to watching this. We'll explain a lot of concepts from scratch. If you're unfamiliar with some terms, it's recommended to watch these 6 3Blue1Brown videos, which are in the description. But just like two classes that teach the same material from different perspectives, we'll be reviewing many of those videos' concepts to explain new ones in our series.
 
+The explanations will build up gradually, so feel free to skip ahead to any chapter using the timestamps in the description below.
+
 Ok, let's begin.
 

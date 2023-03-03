@@ -20,7 +20,7 @@ This Activation Space, commonly referred to as a Hidden or Latent Space, is wher
 
 This is called Latent Space because it's a world that's hidden from first impressions; you have to calculate it to reveal its structure.
 
-In our examples, for the purpose of gaining intuition, we defined our neurons in terms of “human-understandable measurements”. And though studies show these may exist, such as car neurons that detect car parts, neurons within network layers may not always cleanly correspond to a Human-Defined Concept. 
+In our examples, for the purpose of gaining intuition, we defined our neurons in terms of “human-understandable measurements”. And though studies show these may actually exist, such as car neurons that detect car parts, neurons within network layers may not always cleanly correspond to a Human-Defined Concept. 
 
 If you put images of a cat and a person through a neural network, in order to create a cat person, it has to recognize the patterns of 'cat' and 'face', yet the network might not have a 'cat' neuron or a 'face' neuron. In fact, most of the millions of neurons in many neural networks may not correspond to a human-defined concept. 
 

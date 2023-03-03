@@ -1,4 +1,10 @@
+shiny node orbs in thumbnail?
+
+[make copies in 'scenes- 23 2 26'. then reduce mouth declick sensitivity and just replace narration file (so auto splits it up) in copy of osp. compare to see if worked. call new file 'izo 2' but rename it 'izo']
+
 concl summary frames?
+
+fix s1 sleeping frame (dream frame 1)
 
 <<<
 plato's cave
@@ -133,3 +139,13 @@ This is a high dimensional space, where each neuron acts as its dimension. It ex
     https://www.youtube.com/watch?v=IAC0DoGk2pU&ab_channel=Visualization101
     activate manimlib
     manimgl 4D.py
+
+<<<
+scene 4: too quiet (but also syllables not clear; might want to redo whole thing)
+start of 'used by' too gruggy
+
+s4: 'id equation' is gruggy
+
+listen to a few more samples to pick final music for s4, s9 end, s10
+https://licensing.jamendo.com/en/royalty-free-music/genres/rock/psychedelic
+wild bill hickok
