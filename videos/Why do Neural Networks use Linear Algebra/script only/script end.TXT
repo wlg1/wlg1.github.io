@@ -1,0 +1,5 @@
+So far, we've summarized concepts from 3Blue1Brown videos that are relevant for our future videos. Let's watch a recap of what we have just seen.
+
+In our future videos, we'll discuss topics such as interpreting generative models using matrix factorization, and editing key-value associations found by MLPs in large language models.
+
+For now, we've figured out how to predict which cat people enjoy naps, so we can put that matter to rest. We have only begun on the long journey of finding out just how neural networks actually work.
