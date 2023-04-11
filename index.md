@@ -8,9 +8,11 @@ title: Front Page
 
 <div class="topnav">
   <a class="active" href="#Home">Home</a>
+  <!---
   <a href="expm_index.html">Experiments Index</a>
   <a href="#Techniques">Techniques Compendium</a>
   <a href="#Contact">Contact</a>
+  --->
 </div>
 
 <p align="center"><h1><b>Michael Lan</b></h1></p>
@@ -20,40 +22,29 @@ title: Front Page
 
 <span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
 
-[ Website in process of being built. To be completed by: April 2023 ][^footnote]
+[ Website in process of being built. Projects in progress are not added yet and will be added soon. ]
+<!---
+[^footnote]
 
 [^footnote]: Future uploads include tutorials that walk through experiments, starting with simple ones. Most of the experiments done so far are still in draft form, rather than in tutorial format.
-
+--->
 ---
 <p style="font-size:20px"><b>
 <a href="https://www.youtube.com/@neoknowstic">Educational Videos on Neural Network Math</a>
 </b></p>
 
-Why do Neural Networks use Linear Algebra? || Pt 1: The Visual Intuition of Cat Mathematics
+Why do Neural Networks use Linear Algebra? || The Visual Intuition of Cat Mathematics
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DHjwbleAgPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 This is a video series aimed at a general audience explaining the math behind neural network interpretability. 
 
----
-<p style="font-size:20px"><b>
-<a href="https://github.com/wlg1/analogous_neuron_circuit_expms">Analogous Neural Circuit Experiments</a>
-</b></p>
-
-Analogous Neural Circuit Experiments aim to find common patterns in neural network activations based on inputs with varying similarities. Why study Analogous Neural Circuit Experiments? These studies enhance Neural Network Interpretability by connecting model predictions to patterns the model uses to make its predictions. This has significant applications, which include:
-<ul>
-<li><b>Improving Trust in AI:</b> When AI makes important decisions, such as in medical treatment or financial investments, knowing why the AI made those predictions is crucial to ensuring that it is not using faulty reasoning to make its predictions. </li>
-<li><b>Improving Model Debugging:</b> By uncovering the black box that obscures how neural networks make decisions, practitioners will have more control over debugging neural networks to do what they want. </li>
-<li><b>Improving Transfer Learning:</b> By understanding which parts of a neural network perform what function, practitioners will be able to dissect neural networks to retrieve the part they need, and apply transfer learning to fine tune that part to suit their own, specific goals.</li>
-</ul>
-
-These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted. An example of a notebook demonstrating simple experiments is given below:
-
-<a href="https://colab.research.google.com/drive/12hQolN9TLXsakkG96nYUgU30_6YL74bf">TUTORIAL 1: Compare Neuron Activations Between Pairs of Images</a>
 
 <!---
 [image of face and face w/o mouth, showing toy circuits of each and what differs]
 --->
+
+<!---
 ---
 <p style="font-size:20px"><b>
 <a href="eduBlogHome.html">Making the Math of Neural Networks Intuitive</a>
@@ -76,6 +67,8 @@ This blog overcomes this problem by explaining many required prerequisites from 
 </b></p>
 
 Another way to study how neural networks make decisions is to study the geometry of their latent space. This leads to powerful methods such as Style Editing, in which one can turn the face of a generated person from old to young.
+
+--->
 
 ---
 <p style="font-size:20px"><b>
@@ -104,6 +97,24 @@ Utilized graph analytics to compare the network statistics of diﬀerent communi
 ![final_model](/datasci/final_model.PNG)
 ![datasci_networks](/datasci/datasci_networks.png)
 --->
+
+---
+<b>UNDER CONSTRUCTION:</b>
+
+<p style="font-size:20px"><b>
+<a href="https://github.com/wlg1/analogous_neuron_circuit_expms">Analogous Neural Circuit Experiments</a>
+</b></p>
+
+Analogous Neural Circuit Experiments aim to find common patterns in neural network activations based on inputs with varying similarities. Why study Analogous Neural Circuit Experiments? These studies enhance Neural Network Interpretability by connecting model predictions to patterns the model uses to make its predictions. This has significant applications, which include:
+<ul>
+<li><b>Improving Trust in AI:</b> When AI makes important decisions, such as in medical treatment or financial investments, knowing why the AI made those predictions is crucial to ensuring that it is not using faulty reasoning to make its predictions. </li>
+<li><b>Improving Model Debugging:</b> By uncovering the black box that obscures how neural networks make decisions, practitioners will have more control over debugging neural networks to do what they want. </li>
+<li><b>Improving Transfer Learning:</b> By understanding which parts of a neural network perform what function, practitioners will be able to dissect neural networks to retrieve the part they need, and apply transfer learning to fine tune that part to suit their own, specific goals.</li>
+</ul>
+
+These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted. An example of a notebook demonstrating simple experiments is given below:
+
+<a href="https://colab.research.google.com/drive/12hQolN9TLXsakkG96nYUgU30_6YL74bf">TUTORIAL 1: Compare Neuron Activations Between Pairs of Images</a>
 
 ---
 
