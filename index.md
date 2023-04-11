@@ -23,11 +23,7 @@ title: Front Page
 <span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
 
 [ Website in process of being built. Projects in progress are not added yet and will be added soon. ]
-<!---
-[^footnote]
 
-[^footnote]: Future uploads include tutorials that walk through experiments, starting with simple ones. Most of the experiments done so far are still in draft form, rather than in tutorial format.
---->
 ---
 <p style="font-size:20px"><b>
 <a href="https://www.youtube.com/@neoknowstic">Educational Videos on Neural Network Math</a>
