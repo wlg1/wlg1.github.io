@@ -1,0 +1,8 @@
+Highlighted comments are not exported. backlinks also not exported
+
+toggles are exported
+
+rather than just using comments, also put an indent and toggle if you it's too long and don't take up space. this will track changes on export and won't easily be deleted like comments
+
+try footnotes 
+https://www.notion.so/help/create-links-and-backlinks

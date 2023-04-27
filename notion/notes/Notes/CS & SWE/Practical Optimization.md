@@ -1,0 +1,3 @@
+# Practical Optimization
+
+[Nearest Neighbor](Practical%20Optimization%20998e549d5e164bb6b9ff3bf5330019ce/Nearest%20Neighbor%2067a33e872fd741b3aeccd794cec3a653.md)
