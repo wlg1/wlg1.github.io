@@ -1,0 +1,5 @@
+https://openai.com/blog/clip/
+CLIP pre-trains an image encoder and a text encoder to predict which images were paired with which texts in our dataset. We then use this behavior to turn CLIP into a zero-shot classifier. We convert all of a dataset’s classes into captions such as “a photo of a dog” and predict the class of the caption CLIP estimates best pairs with a given image.
+
+https://arxiv.org/pdf/2103.17249.pdf
+StyleCLIP

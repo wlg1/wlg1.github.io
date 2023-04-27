@@ -1,0 +1,38 @@
+Run dreambooth after training using 5 imgs from amogus spaceman
+
+https://www.youtube.com/watch?v=kgmeMaZJ-Qc&ab_channel=Wingman
+
+Code:
+https://colab.research.google.com/drive/19MQtIWTBs-aFY9EOO0W5eRJ_qH-MH0Z0
+
+date: 3/6
+
+seed: 52362
+
+results in:
+D:\Documents\_rsch\educate\videos\video drafts\how to turn anyone into amogus\dreambooth amogus\using 5 imgs from amogus spaceman\seed 52362\v2
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+using imgs from pareidolia from vid1
+
+<<<
+subtasks:
+get frames from 
+https://www.youtube.com/watch?v=xSeXZRJOX54&ab_channel=DraconeJM
+
+using videoproc converter. 
+bottom: toolbox -> snapshot -> setting (top right icon on snapshot), set # pics to 100
+
+results in:
+D:\Documents\_rsch\educate\videos\video drafts\how to turn anyone into amogus\dreambooth amogus\using imgs from pareidolia from vid1
+
+don't use fp16 b/c takes up too much space? also don't use 
+  --use_8bit_adam \ and use --sample_batch_size=1 \
+
+If don't do this, generation will not have enough memory. generate 1 sample at a time. num_inference_steps doesn' take up mem 
+
+<<<
+RESULTS: 
+not amogus enough; they just look like ovals with an oval inside. True amogus is an amogus body (legs) with an oval. perhaps improve training data
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

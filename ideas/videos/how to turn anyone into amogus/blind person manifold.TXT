@@ -1,0 +1,6 @@
+
+Suppose the blind person wants to measure the distance between two points on the object, but cannot see the object or use a ruler. Instead, they can only touch the object with their hands and feel the surface.
+
+In this analogy, the object is the manifold, and the blind person's hands represent the tangent spaces. The blind person can move their hands along the surface of the object to feel its shape and texture, just as a tangent space can be used to approximate the behavior of a manifold near a particular point.
+
+To measure distances between points on the object, the blind person could use a string to connect the two points, and then use their hands to trace the path of the string. Similarly, to measure distances on a manifold with a hard-to-measure metric, we can use pullbacks to map the manifold to a more well-behaved space (such as Euclidean space), where distances can be more easily measured using standard methods.

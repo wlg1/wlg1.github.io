@@ -1,0 +1,88 @@
+https://news.ycombinator.com/item?id=34422627
+    https://promptable.ai/
+
+https://python.langchain.com/en/latest/index.html
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+https://www.youtube.com/playlist?list=PLIUOU7oqGTLieV9uTIFMm6_4PXg-hlN6F
+LangChain (no pinecone)
+
+https://www.pinecone.io/learn/langchain-intro/
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+https://www.youtube.com/watch?v=J_0qvRt4LNk&list=PL8motc6AQftk1Bs42EW45kwYbyJ4jOdiZ&ab_channel=SamWitteveen
+LangChain Basics Tutorial #1 - LLMs & PromptTemplates with Colab
+
+Builds apps that allow llm to interact w/ software stack (apis, dbs, etc)
+
+https://www.youtube.com/watch?v=phHqvLHCwH4&list=PL8motc6AQftk1Bs42EW45kwYbyJ4jOdiZ&index=3&ab_channel=SamWitteveen
+chat markup language- internal gpt tokens used for diff things?
+<|im_start|>user
+How are you<|im_end|>
+<|im_start|>assistant
+
+chat: q+a
+completion: finish the input
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+https://www.youtube.com/watch?v=e9TSnAZAXOo&list=PLIUOU7oqGTLjpy44hZWE62K3RG4RTvuWt&index=2&ab_channel=JamesBriggs
+#2. Get refs of refs etc to understand concept in paper that relies on them
+knowledge_base/constructors.py
+
+ArxivGraphScraper._build_papers()
+    ArxivGraphScraper._create_paper()
+        Arxiv.load()
+            Arxiv._convert_pdf_to_text()
+            Arxiv._download_meta() ## search arxiv
+        Arxiv.get_meta()
+        Arxiv.get_refs()
+        Arxiv.chunker()
+        Arxiv.save_chunks
+
+https://www.youtube.com/watch?v=CeZroxbdLXY&list=PLIUOU7oqGTLjpy44hZWE62K3RG4RTvuWt&index=3&ab_channel=JamesBriggs
+Chatting with ArXiv Research Papers — AI Assistant #3
+manager/bots.py
+
+bot = arxiv_bot.manager.bots.Arxiver()
+    _init_memory()
+        arxiv_db_tool()
+            _search_arxiv_db
+
+    ._add_article_to_db()
+        # similar to ArxivGraphScraper._create_paper()
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+https://www.youtube.com/watch?v=ih9PBGVVOO4&ab_channel=Chatwithdata
+GPT-4 & LangChain Tutorial: How to Chat With A 56-Page PDF Document (w/Pinecone)
+
+uses js
+
+<<<<<<
+https://www.youtube.com/watch?v=Ix9WIZpArm0&t=900s&ab_channel=Chatwithdata
+GPT-4 Tutorial: How to Chat With Multiple PDF Files (~1000 pages of Tesla's 10-K Annual Reports)
+
+uses js
+
+<<<<<<<<<<<<<
+https://www.youtube.com/watch?v=5MNqn_7ty8A&ab_channel=Weights%26Biases
+Fine-tuning GPT-3 with OpenAI API and W&B: A Tutorial Using Doctor Who Episode Synopses Generation
+
+<<<<<<<<<<<<
+https://www.youtube.com/watch?v=h0DHDp1FbmQ&t=369s&ab_channel=DataIndependent
+LangChain101: Question A 300 Page Book (w/ OpenAI + Pinecone)
+2/27
+
+loads pdf, but there's error for .load()
+
+<<<<<<<<<<<<
+https://www.youtube.com/watch?v=2xNzB7xq8nk&t=629s&ab_channel=DavidShapiro~AI
+Chatbot with INFINITE MEMORY using OpenAI & Pinecone - GPT-3, Embeddings, ADA, Vector DB, Semantic
+2/20
+
+<<<<<<<<<<<<
+https://www.youtube.com/watch?v=cVA1RPsGQcw&ab_channel=PradipNichite
+Building a Document-based Question Answering System with LangChain, Pinecone, and LLMs like GPT-4.
+4/13
+

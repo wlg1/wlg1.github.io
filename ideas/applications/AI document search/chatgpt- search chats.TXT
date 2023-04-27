@@ -1,0 +1,2 @@
+currently:
+when chats get too old and are further down the list, export them and delete the chat, then feed it all (or summary/edited) back into the model as a new chat

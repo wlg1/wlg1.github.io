@@ -1,0 +1,14 @@
+search
+
+adaptable filters (similar to filter or facet search)
+
+easy way to block things
+
+change font size
+
+toggle AND be header at same time
+
+collapse notion blocks w/ toggle of diff font size
+    AND toggle isn't indented (reason needs to be is see what's inside toggle block). toc and sections like colab
+
+toggle box can't do 2 cols of 2 imgs on same row

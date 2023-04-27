@@ -1,0 +1,13 @@
+-> self.play(Transform(left_ear_copy, left_ear_2), Transform(right_ear_copy, right_ear_2))
+(Pdb) left_ear_copy
+VGroup(Line, Line)
+(Pdb) left_ear_copy[0]
+Line
+(Pdb) left_ear_copy[0].end
+array([-1. ,  2.5,  0. ])
+(Pdb) left_ear_2
+VGroup(Line, Line)
+(Pdb) left_ear_2[0]
+Line
+(Pdb) left_ear_2[0].end
+array([-1. ,  2.5,  0. ])

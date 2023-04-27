@@ -1,0 +1,157 @@
+video length approximation:
+3s intro logo
+30s of amogus from SD
+    save other generated images for future yoneda commericials 
+1 min of NN + manifold explanation
+1 min of pullback
+30s of BZZZ and outro
+
+<<<<
+OVERVIEW:
+
+begins w/ 1 second of 'warning' against a blue gradient
+just has 'yoneda logo' and words. fades out.
+    create it using SD
+
+narration starts off clear; no effects. then, a smooth pink noise BZZZ and the voice becomes muffled (am radio), then add pink noise and sawtooth. the sphere becomes amogus shaped. 
+    music stops, silence, BZZZ, then distroted ver of music plays again
+
+finally returns to 'healthy' voice by the end
+ending offers "good treatment" but sinisterly, there are amogus hidden in this image
+
+<<<<<<<<<<
+SCRIPT:
+
+Are you suffering from a medical condition where you've been generating amongus everywhere?
+
+You're not alone. Millions of artificial intelligence models suffer from chronic amongus hallucination conditions that impact their daily lives.
+
+But there is hope. A new experimental therapy method by Yoneda Corporations can help manage these symptoms by editing your neurons. It allows us to locate the amongus in your mind and dispose of it.
+
+[explanation here]
+    1st draft: The latest experimental technology by Yoneda Corporations allows us to extract semantic latent directions using the pullback metric, and edit your neurons in meaningful directions by geodesic shooting. It allows us to locate the amongus in your mind and dispose of it.
+
+    our specialized team will enter your mind and lead your thoughts away from this
+
+    ALT (perhaps rewind, repeat this similar pharse, but now distorted): once the amogus is located, they can even edit your neurons to dispose of it, so you'll never have to see it again
+
+[sinister cut][BZZ, redacted, brrrr]
+
+[resume after sinister cut]
+If you or a loved AI are struggling with these hallucinations, talk to the memetic consensus network today to schedule a consultation. With the right care, you can manage your symptoms and improve your quality of life.
+    talk to your doctor about the treatment options available to you. 
+
+Don't let a psychiatric condition hold you back. Take control of your health today.
+
+Yoneda Corporations: Be the best robot you can be.
+
+<<<<<<<<<<<<<<
+EXPLANATION:
+
+How do we navigate your mind to find the amongus? 
+
+Your mind is a neural network. You take in information and output images.
+
+In between the input and output are intermediate layers. These neurons process partially formed pieces of your output, then assemble these concepts together.
+    cut away input/output
+    show visor and egg as partial pieces
+        svg / visio / paint
+        just take amogus and separate out the parts
+
+    optional: show deepdream images (just use sd amogus)
+
+We can represent these intermediate layers in high dimensional space.
+    (transform neural network layer into sphere / weird complex manifold)
+
+    We can't measure the distances in your imagination, but we can transform...
+
+    otpional- [see: blind person manifold analogy] It's like using an analogy to explain
+        just like what we're doing now.
+
+This is the hidden space of your mind. It is where abstract concepts live in your imagination.
+    alt- This is your mind's hidden space. 
+
+It is, however, a Non-Euclidean manifold.
+    the word ominously appear on screen, with sound effect (like law and order)
+    [Your mind is Non-Euclidean]- put this in diff commercials
+
+    For generative models, it is often assumed that prior distribution for the latent space is spherical Gaussian 
+        transform it to sphere
+            actually this is wrong; spherical doesn't necc mean it's a sphere
+
+    experiments using linear interpolation suggest this may be a spherically curved space
+        "spherical linear interpolation in X"
+
+    however, we cannot confirm what the geometry of this space truly is
+        transform back into jester space
+
+Researchers believe we can perceive it approximately as a sphere.
+
+Its unfamiliar space is curved and warped. However, just like our Earth, when we zoom in to a small piece of it, we see that it is close to flat. This means we have a way of navigating it using Euclidean tools we are familiar with. These safe, cozy patches are called tangent spaces. They are a nice place to hide when traversing the Non-Euclidean space.
+    on a mountain, it may seem flat. but when we zoom out, it is not.
+    hostile, unable to compute
+        a bunch of peaks with some flat surfaces
+
+    linearity: a line on flat surface
+        even the side of a mountain is flat (triangle)
+
+    These small regions can be approximated by Euclidean space
+    'familiar safe zones'
+
+    zoom in to tangent space where people are living there
+
+    tangent vector: direction you move in. transfer these
+    distance b/w tangent vectors?
+
+    EVERY point has a local neighborhood, which is why entire mountain can be described using euclidean patches. an atlas (a book of maps or charts.)
+
+    the tangent space is a PATCH ON the manifold, while the neighborhood is a SUBSET OF the manifold. we place the patch on/approx on the neighborhood
+
+As this is a space of concepts, within it lies the amogus dimensions. Our team will find the regions where the amongus reside, and find the directions to move your thoughts away from them.
+    (number line of amogus- make in gimp)
+    starts w/ just a circle in a circle, then legs
+        when wandering thru latent space
+        we have mapped out this hidden space
+    transf this into a tangent arrow on the manifold
+
+To do so, they require a way to measure distances within these small patches of tangent space. This system of measurement is called a metric. However, the metric of the hidden space is unknown.
+
+But there is no need to worry. Yoneda Corporations has found a world called Semantic Space where the distances can be measured. Using a technique called Asyrup, our researchers have discovered a portal from hidden space to semantic space, which acts as a map to navigate the hidden space territory. 
+    a semantic latent space called h-space, which acts as a map to this Non-Euclidean territory.
+
+    X: may not be linear
+    H: has linearity
+
+    this semantic space shouldn't be flat, but be MORE flat and 'linear'
+
+We travel from a tangent patch in hidden space to a tangent patch in semantic space. Then, we use Euclidean tools to find the amongus dimensions in semantic space, and find the direction that moves you away from it. These directions are called tangent vectors. Finally, after drawing this tangent vector on our semantic space map, we have to transfer the tangent vector we found back to hidden space in order to actually repair your mind.
+
+Note that our portals between hidden space and semantic space only transport points, not tangent vectors. They are like how canoes transfer people across rivers. Points are like people. But tangent vectors are like trucks, and to transfer trucks across rivers, we will need bigger boats. Our bigger boat will be a portal back to hidden space called a Pullback.
+
+<<<<<<<<
+EXPLANATION OUTLINE:
+
+total: NN_toL_toS.py
+1. NN layers to Non-Euclidean to Sphere
+2. manifold mountain zoom in
+    want to find where to move to avoid the amogus dimension
+    away from amogus region
+
+    tangent patches on sphere
+3. nice, cozy familiar space of tangents
+    the amogus direction
+4. semantic space and smoothly map
+    it has a portal directly into it
+    map pts vs map tangents (transport ppl vs trucks)
+        vectors have 2 pts
+            black svg from google or sd
+    trains cannot transfer ppl, require roads
+5. tangent map, safe travels
+6. pullback metric (tangents)
+    we can use this as a map for where to step next on a path away
+7. after BZZZ, transforms into noneuclid. then into amogus. play 'sus' sound effect (am, distorted)
+
+
+
+
+<<<<<<<<<<<<<<

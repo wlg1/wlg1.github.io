@@ -1,0 +1,69 @@
+Rather than studying for math class, come watch some furries instead.
+
+-----------------------------------
+Subtitles available (recommended along with headphones)
+
+§▬▬▬▬▬§ Chapters §▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬§
+00:00 -- 0 |¤| A Dream of Cats
+01:59 -- 1 |¤| Introducing Cat People (The Model) 
+03:38 -- 2 |¤| The Nap Dimension (The Trivial Dot Product)
+05:24 -- 3 |¤| The Neural Network in Hiding (The Neuron Function)
+08:05 -- 4 |¤| Who is Tom? (The Vector and the Point) 
+11:13 -- 5 |¤| As Above, So Below (The Projection)
+15:07 -- 6 |¤| King to Queen (The Latent Space) 
+17:05 -- 7 |¤| Blind Men and an Elephant (The Interpretability of Circuits)
+19:26 -- 8 |¤| Traveling Between High Dimensions (The Change of Basis)
+24:19 -- 9 |¤| The Cat People Reality Revealed (The Analogy)
+28:33 -- ? |¤| ???
+30:14 -- 10 |¤| Inverting the World (The Bijective Linear Map)
+32:11 -- 11 |¤| Beware of False Friends in the Matrix
+‡▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬‡
+Recommended watching:
+
+Essence of linear algebra: Chapters 1, 2, 3, 9, 13: https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&ab_channel=3Blue1Brown
+But what is a neural network? | Chapter 1, Deep learning: https://www.youtube.com/watch?v=aircAruvnKk&ab_channel=3Blue1Brown
+
+‡▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬‡
+Academic papers referenced:
+
+Geometric Deep Learning: Going beyond Euclidean data-: https://ieeexplore.ieee.org/document/7974879
+Zoom In: An Introduction to Circuits: https://distill.pub/2020/circuits/zoom-in/
+Mass Editing Memory in a Transformer: https://memit.baulab.info/
+The Building Blocks of Interpretability: https://distill.pub/2018/building-blocks/
+Distillation of Neural Network Into a Soft Decision Tree: https://vgg.fiit.stuba.sk/people/martak/distill-nn-tree
+Making Decision Trees Accurate Again: https://bair.berkeley.edu/blog/2020/04/23/decisions/
+Toy Models of Superposition: https://transformer-circuits.pub/2022/toy_model/index.html
+
+-----------------------------------
+Video clips from:
+
+Visualization of the DeepSDF latent space using t-SNE: https://www.youtube.com/watch?v=C_XNdGGs6qM&ab_channel=marian519
+Memory from Dead Mans Trip: https://www.youtube.com/watch?v=ph4szaVTWSY&t=9s&ab_channel=SymmetricVision
+CRISPR: Gene editing and beyond: https://www.youtube.com/watch?v=4YKFw2KZA5o&t=162s&ab_channel=naturevideo
+A.I. Experiments: Visualizing High-Dimensional Space: https://www.youtube.com/watch?v=wvsE8jm1GzE&ab_channel=GoogleDevelopers
+A Computer That Runs on Marbles: https://www.youtube.com/watch?v=8BOvLL8ok8I&t=334s&ab_channel=TheActionLab
+Dictyostelium - a Cellular Slime Mold: https://www.youtube.com/watch?v=5h8WOWEqP6o&ab_channel=JeremyPickett-Heaps
+"The Lady From Shanghai" Funhouse mirrors 1947: https://www.youtube.com/watch?v=F-BqDWG72iM&ab_channel=RobertJ.Fuller
+Eulers Disc: https://www.youtube.com/watch?v=rFtYzVJcWyA&ab_channel=GrandIllusions
+
+-----------------------------------
+Music by:
+
+Wind In The Rushes -By Jeremy Sherman
+Working Time -By Dream-Protocol
+Trip to Home -By Lesfm
+Road in the Forest -By Olexy
+Morning Garden -By Olexy
+Moon Acoustic Vibes -By Lesfm
+Romantic Acoustic Guitar Ballad -By JuliusH
+Old Photos -By Olexy
+Acoustic Guitars Ambient Uplifting -By Lesfm
+Focus On Her -By Dream-Protocol
+Vibes of Nature -By Olexy
+Nature Calls -By Olexy
+Nature wakes up -By Olexy
+Just Relax -By Lesfm
+
+-----------------------------------
+Images from:
+https://pastebin.com/aMR325Yy

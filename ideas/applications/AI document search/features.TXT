@@ -1,0 +1,97 @@
+FEATURES:
+* compare papers and repos from pinecone to create experiment descriptions, experiment code, organized experiment outputs, and analysis drafts in latex
+
+-compare papers, news, blogs, threads, docs in a way the reader understands
+    -explain unfamiliar parts; drill down
+-write code for machine learning research 
+-convert its analysis into text and latex papers
+-log and search experiments in an organized way
+    try on simple expms first (MLP) then trn attns
+-generate ideas for experiments and future research directions based on papers it read
+
+eg) say 'create expm to find abstr circuits...' and w/ specs, will organize results into tables by itself. MULTIPLE interpretations to choose from. then summarize into latex.
+
+semantic search: turn the question into synonymous sentences, instead of just searching by keywords or pagerank
+
+- write pseudocode in latex given steps. use in-context learning to make corrections in formatting based on algo library
+
+- get a list of related works from the paragraphs of a paper
+- auto obtain related works to use for a paper. search 'papers which are about model editing'; this gets cands, which can be manually edited for precision
+
+-present multiple viewpts 'assuming style of other paper/hypo' (get into someone else's mind for critique, predict what they'll say)
+-organize and search thru chats; tell what's junk or not, avoid repeats, look for consistencies using a double proofer model, etc.
+-learn useful/common formats, madlib analogies
+-double check existing corrections, suggest
+-suggest RELEVANT prerequisites (texts, blogs, papers) and summarize them in a way that allows user to further edit/tune request
+-source
+-tune it in a way that the user understands (user has history of what works and what doesn't. gets feedback from suggestions. knows user's prereqs)
+- give a flowchart of reasoning (edited by user)
+-visualize math and other mechanisms
+    visuals on projections- allow rotations to see what happens, feature viz, etc. to play around.
+        to prev your identity / others stealing work, only show subset of these on stream to be used in 'useless apps' or non-cuttingEdge (paper worthy) apps
+
+- I will give you a list of references from a paper. You will then output the authors who are in universities that are in the usa
+
+In a problem and solution format, give the problems and sub problems introduced in this paper and how they were solved
+
+- chatgpt is still not accurate, even within chatpdf. Eg) in 'diffusion semantic' paper, it mixes up q(x) and q(ε), and you can get it to correct itself with the wrong answer.
+- doesn't give the correct page
+
+instead of just technqs of one paper, give it a bunch of experimental technqs that are just pieces, may not work. just like photoshop, it's a workshop. use these as variations to run diff expms, and compare. make gui
+
+auto train ml model to be used in expms
+It will gather data with the right mods set for comparison 
+
+Turn long pipelines into single ai tasks. See what colab or repo common work lines are. Such as if need to compare model. This is like creating lib or fn
+Wth ai these pipelines are just pure code but include semantic understanding that should be backed by reasons n refs
+
+Parse thru many generalizations of expms, quickly tweaking Params, run others code quickly to test, build code from papers, rank based on results, build many diff suggested results
+
+Index neg results fast, have to do placeholders and what happens if missing or done
+
+Relate other papers to your work and search them, explain using analogies, break down into prob soln format with diagrams and refs and link to nbs or potential code
+
+
+<<<
+specialized: giving the llm too many options to select means less chance it sels right one. give it less options to select for a task
+
+<<<<
+a bunch of technqs:
+
+compare models, slightly modified. does abstraction / cluster of related facts live in both llama and gpt j? how diff is it?
+
+add gaussian noise
+
+try circuit
+
+find matches
+
+train model
+
+<<<
+linear algebra:
+
+project to eigenbasis (pca) to reduce params
+    generalize: do this for any matrix. AI will suggest when to do it.
+        "It seems your matrix is large. Clippy- do you want to pca it?"
+    not just pca; any type of projection to eigenbasis, so not just for cov cases. break down steps.
+
+langchain will convert matrix to be recognized as 'big', then this info passed to gpt to suggest what to use (taken from notion).
+
+gpt can also put things into notion. it has its own section called 'gpt things', which you take suggestions from into your own side (the safer, human revised section)
+
+<<<
+INDEX ORGANIZATION:
+
+create subsections such as by dividers. the dividers used by notion don't lend well to subsections, rather need to use tabs or toggle
+
+organize expms into views, then summarize comparisons b/w them. summarize the sumary of comparisons, etc. search through this (feed them all back into AI). store the best.
+
+auto store findings and tests (ie. test if gpt can do this) instead of making ones manually in notion; then organize and clean mass data using commands
+
+<<<<<<<<<<<<<
+FEATURES THAT WILL PROBABLY BE DONE ALREADY BY OTHERS:
+
+read images, latex, algos, refs in pdf
+
+check if latex math is correct

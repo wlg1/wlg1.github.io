@@ -1,0 +1,9 @@
+I realized I don't remember where I got a lot of my info from. Or I didn't verify it; I just saw some post on the internet. But that's the thing- anyone can make things up on the internet. So I wanted to verify my beliefs.
+people ask why? source?
+so I call this tool Source. 
+
+<<<
+source as plugin: highlight anything and search it in your 'source' that shows what args used to back it up, which args back those args up, etc
+
+gpt index
+https://www.youtube.com/watch?v=Dhc_fq5iCnU&ab_channel=1littlecoder

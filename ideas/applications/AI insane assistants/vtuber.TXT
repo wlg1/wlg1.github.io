@@ -1,0 +1,53 @@
+https://www.youtube.com/watch?v=EXICATDyYWI&t=1323s&ab_channel=AdiPanda
+How to make an AI VTuber Using GPT 3 and Google Cloud TTS
+
+(see README steps)
+1. twitch auth, openai key
+    https://www.twitchapps.com/tmi/
+    https://platform.openai.com/account/billing/limits
+2. new project in gcp, open. api services -> cloud tts api, enable
+3. gcp IAM -> admin -> service accounts (owner) -> actions -> new json key
+4. clone: https://github.com/adi-panda/Kuebiko.git
+5. download gcp key into repo
+6. Kuebiko/creds.py:
+    twitch token, channel name, gcp key filename (w/ .json), openai
+7. conda create --name twitchbot [mini]
+    pip install -r requirements.txt 
+8. type input in here: https://www.twitch.tv/popout/[username]/chat
+    python main.py
+9. https://vb-audio.com/Cable/
+    README IN ZIP: Just UNZIP the package in a folder somewhere on your hard-disk and launch the Setup program from there (! IN ADMINISTRATOR MODE !).
+    https://en.wikipedia.org/wiki/Virtual_Audio_Cable
+10. downlaod vtube studio (doubl click for menu)
+    settings -> microphone (yes 'use mic') -> vb
+    top left body icon -> scroll down to mouth smile 
+        -> input ., output parammouthform
+    mouth opne -> voicevolplusmouthopen, output: paramouthopenY
+        if sel your own mic, its mouth will open when yours does
+            input- voicevolplusmouthopen is most impt
+    body rot x -> autoblink, autobreath
+11. laptop sound settings -> adv -> 
+    OBS input (bottom or right): vb
+        CHANGE BACK WHEN DONE 
+    vtub -> input: vb
+12. run 'python main.py' and input 'test' in chat
+    sound settings -> python output: vb [DONT CHANGE MASTER I/O]
+    THUS: output of python goes into vtube studio and OBS
+13. obs -> new game capture (spec window: vtub) -> sel GC -> run
+    change mic input to vb (... properties)
+    you MUST UNMUTE OBS OR IT WON'T RECORD SOUND. you won't hear sound but it will be on obs (when streaming or recorded)- to hear it, open up your own tab on twitch or view recording
+
+
+<<<<<<<<<<<
+https://www.youtube.com/watch?v=dKFnJCtcfMk&t=335s&ab_channel=SchizoDev
+How I Programmed My Own AI Girlfriend
+
+https://www.youtube.com/watch?v=1MrDnLBc-wQ&ab_channel=SchizoDev
+I made an AI to Livestream for me
+
+https://github.com/Koischizo/AI-Vtuber
+
+https://github.com/taizan-hokuto/pytchat
+
+install for simpleaudio did not run successfully.:
+https://stackoverflow.com/questions/64261546/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-inst

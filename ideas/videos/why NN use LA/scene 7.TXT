@@ -1,0 +1,81 @@
+SCENE 7:
+
+Again, this has an analogy to a neural network, where w2 is another connection from the ear neuron to the nap neuron.
+    transform it to NN with 2 inputs, 1 output
+    7.1.py- copied 6.1, takes anims from 4.1
+        comment out 6.1 self.wait by replace all w/ # self.wait
+
+Recall how our equation with only nose to nap could also be represented as a matrix with 1 row and 1 column. Now, we go from a matrix of 1 row and 1 column, to a matrix with 1 row and 2 columns
+    7.2.py, from 1.3.py
+
+    w1*nose + (w2) * ear = nap
+
+    one by one, map each to its matrix rep. transform w to w1 when expanding its brackets to the right
+
+    replay this alongside the visual, transforming the steps at same time.
+
+The number of columns in W are the number of inputs, and the number of rows are the number of outputs, meaning there's a connection for every matrix entry.
+
+This explains why we use that strange algebraic procedure of matrix multiplication where we multiply the first row by the first column. This procedure is none other than the Dot Product. 
+    write out dot product: w dot x = w11*x1 + w12*x2
+
+And our dot product is just performing a Change of Units, or in other words, a Change of Basis.
+
+
+<<<<<<<<<<<<
+So our Input Space and our Nap Space are measuring neuron activations. We call these spaces 'Activation Spaces'.
+    transform NN from 7.2.py into DMs on basis vectors
+
+Since the nose and ear neurons in the first layer act as basis vectors in Input Space, and the gold Nap neuron in the second layer acts as a basis vector in Nap Space, we come to a very important concept:
+    transform NN nodes into DM on basis
+
+Neurons are Basis Vectors in an Activation Space.
+    write out on screen on top of coord space
+
+<<<<
+This Activation Space, commonly referred to as a Hidden or Latent Space, is where analogies such as King - Man + Woman = Queen can be made by adding its vectors. Based on your space's basis vectors, there are multiple ways to represent this.
+    7.3.py
+
+    https://www.ed.ac.uk/informatics/news-events/stories/2019/king-man-woman-queen-the-hidden-algebraic-struct
+
+    https://medium.com/analytics-vidhya/featurization-of-text-data-bow-tf-idf-avgw2v-tfidf-weighted-w2v-7a6c62e8b097
+
+This is called Latent Space because it's a world that's hidden from first impressions; you have to calculate it to reveal its structure.
+
+<<<<<
+In our examples, for the purpose of gaining intuition, we defined our neurons in terms of “human-understandable measurements”. And though studies show these may exist, such as car neurons that detect car parts, neurons within network layers may not always cleanly correspond to a Human-Defined Concept. 
+    https://distill.pub/2020/circuits/zoom-in/
+
+If you put images of a cat and a person through a neural network, in order to create a cat person, it has to recognize the patterns of 'cat' and 'face', yet the network might not have a 'cat' neuron or a 'face' neuron. In fact, most of the millions of neurons in many neural networks may not correspond to a human-defined concept. 
+    unk_NN.py
+    fade in big NN and change cat to question marks
+
+Still, evidence supports hypothesis that some representations of neural network components are interpretable. Otherwise, how else would a neural network be able to derive novel analogies that don't even come from pieces of training data? 
+    OR lerp cat
+    https://bair.berkeley.edu/blog/2020/04/23/decisions/
+
+For instance, research has shown how to not only find where certain factual associations are in language models, but also how to edit them.
+    MEMIT
+
+So just how are these abstract patterns recognized? Instead of being calculated by one neuron, they may be processed by a group of neurons, such as in the sparse coding hypothesis. These group of neurons may process information in a circuit.
+    https://distill.pub/2018/building-blocks/
+    http://www.scholarpedia.org/article/Sparse_coding
+
+We can think of every neuron in a neural network as a measurement on the data, coming up with an interpretation for it from its own perspective through a projection. 
+    cat_face_pplShadows.py
+    end of s6 but with people stick figure's heads as nodes
+
+This is like the parable of the blind men and an elephant, where one man only touches part of the elephant's trunk and thinks it's a snake, and another touches only its feet and think it's a tree trunk, and so forth. Each man is like a neuron, and using a matrix, they each pass the information they gather to a judge neuron, who calculates that it should actually be an elephant.
+    blind men on elephant with arrow to a judge that says, "it's an elephant"
+    https://www.interaction-design.org/literature/article/6-blind-men-walk-into-a-bar-the-ux-punchline
+
+    https://www.svgrepo.com/svg/76321/woman-judge
+
+One alternative possibility is that, instead, each neuron has multiple roles in affecting the calculations of other neurons, similar to if-else branches in a decision tree, though not in the exact same way, as they are two different models.
+    decision trees NN.TXT
+
+But a lot of research still has to be done to dissect what circuits of neurons are actually doing.
+(, which may allow us to stitch pretrained neural network patterns together, similar to genes)
+    https://vgg.fiit.stuba.sk/people/martak/distill-nn-tree
+
+

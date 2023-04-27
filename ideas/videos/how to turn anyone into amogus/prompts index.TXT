@@ -1,0 +1,102 @@
+(use 'negative space' of black outline to create 'legs'?)
+(the red or whatever color is the background)
+(try green amogus)
+
+https://prompthero.com/
+highly detailed, intricate, sharp focus, digital art, 8 k
+
+<<<<<<<<<<<<<<<<<<<
+prompt 1: 
+trashcan, photorealistic, hyper realism, highly detailed, 85mm portrait photography, award winning, hard rim lighting photography–beta –ar 9:16 –s 5000 –testp –upbeta –upbeta –upbeta
+
+prompt 2:
+mailbox, photorealistic, hyper realism, highly detailed, 85mm portrait photography, award winning, hard rim lighting photography–beta –ar 9:16 –s 5000 –testp –upbeta –upbeta –upbeta
+
+prompt 3:
+mailbox, photorealistic, highly detailed, 85mm portrait photography
+
+prompt 4:
+door, photorealistic, highly detailed, 85mm portrait photography
+
+prompt 5:
+a red tomato with a silver plate, chilis, lots of small details, cooking, chef, beautiful composition, photograph, reflection, gradients
+
+prompt 6:
+lots of small details, beautiful composition, photograph, reflection, gradients, valley of roses, woman lying down wearing silver dress
+
+prompt 7:
+lots of small details, beautiful composition, photograph, reflection, gradients, back of red chair with two legs
+
+prompt 8:
+lots of small details, beautiful composition, photograph, reflection, gradients, black outline of a man on bottom, red background, silver TV screen above
+
+prompt 9:
+lots of small details, beautiful composition, photograph, reflection, gradients, valley of snow, woman lying down wearing silver dress
+
+prompt 10:
+lots of small details, beautiful composition, photograph, reflection, gradients, valley of snow, woman black outline, pond, lake, cloud
+
+prompt 11:
+lots of small details, beautiful composition, photograph, reflection, gradients, valley of snow, woman black outline, circle pond on top, lake, cloud
+
+prompt 12:
+lots of small details, beautiful composition, photograph, reflection, gradients, highly detailed water, woman black outline, circle pond on top, lake, cloud
+
+prompts 13:
+lots of small details, beautiful composition, photograph, reflection, gradients, cream filling, blue candy
+
+prompts 14:
+lots of small details, beautiful composition, photograph, reflection, gradients, black outline of a hand holding an umbrella in the rain
+
+<<<
+prompts 15:
+red trashcan in cafeteria, photorealistic, highly detailed, 85mm portrait photography
+
+negative: blurry
+
+<<
+prompts 16:
+red door, house, photorealistic, highly detailed, 85mm portrait photography
+
+negative: blurry
+
+<<<<
+brown, Liminal4 - brown trashcan in kid's playroom - cfg 7 denoise 0.54 - o1
+
+<<<
+red trashcan in cafeteria, backrooms, liminal space, dreamy, low res, blurry
+
+<<<
+brown gumball machine  in cafeteria, liminal space, dreamy, low res, blurry, lonely room, scary atmosphere, empty feelings, void
+
+<<<
+A low quality photo of brown doors in an infinite room, low res, lonely room, scary atmosphere, empty feelings, void, familiar, (({paranoia|nostalgia|uncanny})), unsettling, ((unnatural)), (Liminal space), fake, dreamlike, {overexposed|underexposed|blurry|light leaks|unfocused|out of focus|chromatic aberration|low resolution|compression artefacts}, noisy
+
+Negative Prompt: (monochromatic:0.1), high quality 
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ideas:
+
+amogus as floor plan of house (white background)
+
+guitar with v shape body
+
+red book, magnifying glass, photorealistic, highly detailed, 85mm portrait photography
+
+petri dish, red table
+bowl, red table
+
+gramophone
+
+chair
+
+hieroglyphics
+
+<<<
+it seems like can't do BOTH liminal space and using 'negative space'
+
+but can do 'pepe salad' of amogus + liminal space
+
+<<<
+dreambooth to recognize amogus shape, then amogus windows
+

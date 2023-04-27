@@ -1,0 +1,12 @@
+Is it known if the latent space of neural networks is non euclidean? Cite references
+There is ongoing research on the geometry of the latent space of neural networks, and there is evidence to suggest that the space is often non-Euclidean.
+
+One example of this is the work on hyperbolic neural networks, which use hyperbolic geometry to model the latent space. Hyperbolic geometry is a non-Euclidean geometry that allows for curved spaces with negative curvature, and has been shown to have advantages in modeling hierarchical data structures and capturing long-range dependencies. Some examples of hyperbolic neural networks include Poincaré embeddings and Lorentzian neural networks.
+
+Another line of research has focused on the use of graph convolutional neural networks (GCNs), which operate on non-Euclidean domains such as graphs and manifolds. GCNs use graph-based representations of data, which can be thought of as non-Euclidean spaces. Recent work has explored the use of geometric deep learning techniques for GCNs, which allow for learning on non-Euclidean geometries.
+
+References:
+
+Nickel, M., Kiela, D., & Pfeiffer, T. (2017). Poincaré embeddings for learning hierarchical representations. In Advances in neural information processing systems (pp. 6338-6347).
+Ganea, O. E., & Bécigneul, G. (2018). Hyperbolic neural networks. arXiv preprint arXiv:1805.09112.
+Bronstein, M. M., Bruna, J., LeCun, Y., Szlam, A., & Vandergheynst, P. (2017). Geometric deep learning: going beyond Euclidean data. IEEE Signal Processing Magazine, 34(4), 18-42.

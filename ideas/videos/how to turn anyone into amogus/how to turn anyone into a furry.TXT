@@ -1,0 +1,453 @@
+How to Turn Anyone into a Furry (using a Neural Network Matrix)
+
+channel and github name: Neoknowstic
+
+thumbnail has 10% furry man and girl, and 60% furry bedroom eyes #SOME, #SOME2
+cat body using anime man. originally was a cat, but this video already used cat man in its title, so we are forced to do this
+[just take cat and put furry face on it, like lion king]
+before defining furries, we have to define cats. furries can't exist without cats.
+first: describe how to change face into furry face
+    need latnet spce of GANs. what are those? why do they work? why this series of matrices works? why use dot product?
+        in b/w describing pure cats, also show how each new concept works on your face to cats. ie) this 'recognizes' your nose, your ears. same for a cat face. how to map them?
+middle: show latnet space proj of generative model (wont go into detail of GANs)
+    goes backwards. 
+end: show project anyone's face into model, latent space. then edit to make it furrier.
+
+classical music and furries- juxtaposed serious tone with humorous subject. shift back and forth in video to light tone on boring subject.
+
+
+3 types of videos: just scroll through, serious video with some editing, less serious video with more editing
+Work on all at the same time, but when less serious video almost done, release the first two
+
+More serious video (no humor): What is the MEANING of matrix multiplication?
+
+video that just scrolls through the website you made. Make this private at first, and publish before the furry video.
+scroll thru a NEW repo w/ pseudo identity
+
+generate parts of thumbnail using stable diffusion
+
+<<<<
+Video 1: "In terms of basis" and showing process
+Video 2: Dot product and showing process
+Video 3: InterFaceGAN on generated image
+Video ??: various practical tuning of furry NNs
+
+<<<<<
+https://www.youtube.com/watch?v=25ru31kPT2w&ab_channel=JewceMan
+https://www.youtube.com/watch?v=2zE-J1rK1NQ&ab_channel=videogamedunkey
+Neural Networks. The hope of the future.
+
+They can also create this.
+
+What causes this? What made them this way? 
+What is the attraction? What keeps us fascinated?
+
+<<<
+https://wlg1.github.io/ch1.1.html
+Let’s start with an example that will show us how matrix multiplication transforms data to reveal new insights. Say there’s a population of cats and rats, and we represent them in a dataset. However, the dataset is only able to measure two features: body size, and face length (or more specifically, snout length).
+
+Body size: rat is short, cat is bigger
+face length: literally the face
+
+quick flash on screen: (they seem familiar, like a famous cat and mouse duo)
+tom and jerry (AI generated to prevent copyright strike)
+tim and larry (to avoid it)
+
+<<<
+There's already dozens of videos explaining how training, GANs, diffusion, etc. work (link them), so instead of discussing how to train using those architectures, what we're going to talkin about here is how the matrix itself plays an important role in this. 
+why do we even use the matrix? what's with the strange operations?
+
+Start of video- show the black box IO. We'll be unveiling how this actually works.
+First we'll explain MM, then explain NN filter
+(final video: explain how the practical details / code of the training works)
+disclaimer- i am not a furry (running joke repeated many times)
+
+Before explaining how to turn people into furries, we'll first explain how the NN recognizes furries.
+
+Don't punch down on furries, treat them as a normal subject (though some things are absurd like the abominations from bad NNs)
+
+later video:
+There already exist NNs that do this, but we'll be making our own, and also tweaking it for more specific types of outputs (eg. beastar furries)
+
+Actually show how to do it: (simplified version of a generator)
+video short clip of your longer vid: just run the person thru and get an abomination, and say nothing (then link this very short vid to superchat, with a link at end of vid to longer vid)
+famous influencers- try this for multiple people
+yannic, 3blue1brown mascot, vtubers
+before using real people, use meme people first. in second vid, use real ppl
+
+[a NN for this is linked in github]
+
+Takes in face pixels and embeds
+Measures pixels into roles of neurons
+    'how likely it is to be a nose'
+    Keep in mind what the neurons actually measure is a mystery, but it IS doing a form of unit conversion. It's converting to some measurement, but it's hard to tell what that measurement is
+Keeps transforming using matrices until outputs new pixels
+
+But we're not done yet. Why do we even use the dot product here?
+In the next video...
+
+Show how dot product is used to identify features of the face.
+
+<<<
+each output node is a pixel
+
+link to previous video (how to turn anyone into a cat) in middle and at end of video and in description
+
+the 'how to turn anyone into a cat' is the ENTIRE blog post(s) content in video form. 'to a furry' only takes parts of it; the rest explain practically how NNs work and with other more accessible things like showing actual furry art generation
+
+<<<
+to avoid controversy from western artists led by misinformation claiming their specific art was used, draw data from chinese/japanese artists and famous studios that don't have history of copyright suing. use danbooru
+
+show the code for each step. say they can try it themselves.
+
+show you cannot copy an exact image by storing pixels using neurons, but also mention that the work does not devalue the dedication required for a human artist to learn to draw something of comparable quality. don't mention the controversy or use the word 'steal' in this video
+
+early on, state your intention is to explain how this mysterious object- the Matrix- does this. 'you may have seen how it works before'. 'how it takes each row, column'.... but WHY does it take what's called the 'dot product' of each row and col?
+
+<<<
+use an avatar throughout the video then transform it to a furry partway thru and keep it there for several vids; there is lore
+
+<<<
+https://www.quora.com/Should-I-make-longer-or-shorter-YouTube-videos-to-grow-my-channel
+Generally speaking, longer videos do WAY better than shorter videos.
+
+For example, if you post 5 minute videos regularly and your 1000 subscribers watch the whole way through, you have 5,000 minutes of watch time.
+
+But then you upload another video, and this one is 20 minutes. Even if your subscribers only watch half of the video (on average) then you get 10,000 minutes of watch time.
+
+https://www.quora.com/Do-longer-videos-rank-higher-on-YouTube
+According to a study by Wistia, videos over two minutes tend to get more views and engagement than shorter videos. In fact, their data showed that engagement dropped off sharply at around two minutes and 30 seconds.
+
+<<<
+At start, discussion the joy of art. How each line by line, there is a feeling of joy. Make it poetic. There is a correlation; a feeling that a shape is there as it emerges out of your hand. It looks familiar. You fill it in.
+
+Then relate this to how the AI does art. How it makes correlations, but generalizes.
+
+Have bookmarks at start, where viewer can jump to. Discuss how the main topic (second half) is about the matrix, of which a more detailed discussion is in (linked video).
+
+Show how the output is a never before seen image. How does it do that? This has been seen in snapchat, on [sites where you turn yourself into an anime], etc. 
+
+<<<
+Videos showing you are drawing it from scratch can make an art piece have a higher value than the AI art, which may oversaturate the market given its low barriers to entry, making human made art more rare and valuable.
+
+(unless eventually they can be deepfaked)
+
+
+<<<
+We're just reverse engienering the already existing AI. We know how the AI works in that it learns and generalizes, but we don't know what each of its neural patterns represents, just like how we don't know how our own brain works in a lot of ways. 
+
+The reason we're reverse engineering the AI is so we can gain more knowledge about this mysterious, crazy thing. Say there's a hypothetical virus, and we'll call it the clownvirus, that spreads really fast. You're like, wow, that spreads really fast, and you want to figure out why. So you reverse engineering it by studying how its internal mechanisms works. Now what someone can do with that knowledge is to create a cure for it, but they can also use to it create another deadly virus. But without getting the knowledge of how its insides work, we're at a disadvantage for creating a cure for it if it mutates. We need more knowledge to be able to fight against the unknown, or else the unknown will use our own ignorance against us.
+
+<<<
+Though we may not use backprop, the very high level, general principle is similar- that we are updating how we pass information to make decisions
+
+<<<
+the human has the advantage that they can make specific mistakes, following very specific instructions that the AI lacks. the AI can't do something very specific. nor does it attach an interpretation to it, nor does it have a personal history. the value of human art lies in its flaws. without flaws, there is no tragedy, there is no chaos to sculpt the order.
+
+<<<
+clown parasite (make it sound practical, not fictional)
+clown parasite: causes neurological disease, perhaps similar to the pseudobulbar affect
+https://www.webmd.com/brain/pseudobulbar-affect
+prevent it from spreading, and figure out how to reverse its effects, which could lie
+don't name this 'clown' until after describing its effects
+
+Toxoplasma gondii 
+ between 30% and 50%, 
+Toxoplasma gondii establishes a chronic infection state in the brain and skeletal muscle of its mammalian host. Toxoplasma crosses the blood-brain barrier as either extracellular tachyzoites that infect and replicate with brain endothelial cells or within an infected monocyte
+
+like other complex structures that have self-organized in the universe, the AI has self-organized in many intricate shapes and patterns (snowflakes, caves, cheetah stripes, etc)
+
+3 things: how it works, the data it uses, and how it's used and commercialized
+it works even if a) all the data was voluntary, and b) it's not used for any application or commercialized at all
+and how it works is mind blowing
+
+at start, go over both good and bad
+
+good:
+proteins, drug discovery: alphafold
+health care
+DNA, evolution, fight diseases
+    can help all sorts of animals, from humans to mice
+neuroscience against diseases
+climate change and ecology
+
+do not mention covid
+
+https://thegradient.pub/ai-scientific-revolution/
+The wave of papers and data being produced far exceeds any scientists’ ability to read them
+
+bad:
+replacing programmers just like the car did for the horse
+scientists
+writers
+
+it's not sophisticated to replace a lot of the work they do yet, but it has the potential to do so in the future
+
+<<<
+Parts of math to go over: (around 10 mins)
+all of 1.1, adapted to furries
+briefly, 30 seconds of 1.2?
+just link to both 1.2 and 1.3 b/c it's too much detail
+
+show how it's different from brain
+
+discuss ways 
+
+you NEED a part two. all topics are introduced in pt 1, but pt2 just expands on them. don't call it 'pt 1' but call 'pt 2' of 'a sequel to...'
+
+<<<
+compression, overfitting
+
+artbreeder 2020
+
+<<<
+find traditional artist who also uses ai / stable diffusion
+
+<<<
+Much like how a botanist would study a tree, or how a programmer would reverse engineer an iPhone
+
+<<<
+https://www.kaggle.com/datasets/crawford/cat-dataset
+perhaps avoid cats as that's someone's pet
+
+https://www.kaggle.com/datasets/andrewmvd/animal-faces
+
+we don't even need furries. we can generate toaster people by mixing the people model with toaster images
+
+use familiar youtube sounds
+https://www.youtube.com/watch?v=xy_NKN75Jhw&list=PLya__OBTLMkONuQDu0kHDCrml2xuEINSi&ab_channel=GamingSoundFX
+https://www.youtube.com/watch?v=BDaW6p2YVk8&list=PLya__OBTLMkONuQDu0kHDCrml2xuEINSi&index=34&ab_channel=GamingSoundFX
+https://www.youtube.com/watch?v=I_rvG74yQmo&list=PLya__OBTLMkONuQDu0kHDCrml2xuEINSi&index=47&ab_channel=GamingSoundFX
+
+https://www.youtube.com/watch?v=A_Gj-RJeeng&list=PLhXE6u8HSm21NqNyhWTpUcF9Ynzu2bVtX&index=2&ab_channel=PorkyMinch
+https://www.youtube.com/watch?v=czTksCF6X8Y&list=PLhXE6u8HSm21NqNyhWTpUcF9Ynzu2bVtX&index=3&ab_channel=NickCagnetti
+Sanctuary Guardians
+
+https://www.youtube.com/watch?v=krISRDj6_2w&list=PLhXE6u8HSm21NqNyhWTpUcF9Ynzu2bVtX&index=36&ab_channel=TwyVid
+DSi Shop Theme (High Quality)
+
+intro starts triumphantly, then quickly dissolves as distroted outputs are shown
+
+we will not be using stable diffusion, but an older model
+
+we will not be using lensa (while user content legality zooms in on screen for few secs, but don't talk about that)
+
+https://arstechnica.com/information-technology/2022/09/artist-finds-private-medical-record-photos-in-popular-ai-training-data-set/
+
+<<<
+https://www.neosounds.com/articles/royalty-free-music-for-youtube
+
+https://www.neosounds.com/royalty-free-music/songs/3004/sagebrush-lynnemusic
+
+<<<
+we have failed in our task to create furries, as our NN is nothing compared to the 3 billion parameter models of X, but we have successfully failed in our task to create furry abominations
+
+but we did not set out to do anything successful in the first place; we're just blowing stuff up in a lab to see what would happen for fun. we're just messing around (don't use this phrase as too many connotations)
+we're just playing with it
+just blowing stuff up in a lab
+we're bored and seeing what would happen
+our goal isn't to do academic experiments
+
+<<<
+here's the dataset. you might even be able to find your own work of art in it
+
+and you can ask it to be removed and it'd be re-trained again without it
+
+https://thisfursonadoesnotexist.com/
+https://github.com/arfafax/E621-Face-Dataset
+
+full body images: hands, feet. that's too easy- it doesn't conform to one's body. the furry is only different b/c of their face. the body is too different for a filter to work
+
+put it all together later
+
+<<<
+we can dissect each piece of the code
+
+<<<
+if the dataset is all artificial, is it the same?
+
+artbreeder:
+generations of diluting 
+
+<<<
+(the github already has all the original urls )
+create a tool to link the image back to each artist. the artist can choose if they want their image to be in the dataset or not
+
+volunteer piles
+convince at least one furry artist to use their work to train a dataset
+
+you can email them
+
+10k, at this pt, is more than enough
+
+
+<<<
+PARTS:
+1. Intro about ethics
+2. How the NN works to generate
+3. Experiments
+
+Video 1: How to Turn Anyone into a Furry (Using a Neural Network)
+Video 2: How to Turn Anyone into a Furry | Pt 2: Using a Neural Network MATRIX
+1. Math
+
+<<<
+do NOT mention the word lensa, or the medical records. just say that if you find yours, it can be requested to be removed
+
+then show the AI will not be able to learn from it
+
+<<<
+have the AI learn to draw bad. it's just for fun
+
+the outputs don't have to be good, it just has to have the chance to give out something interesting
+
+<<<
+If it was trained to only copy
+
+But it's not trained to overfit; overfitting is bad, and all papers which want to generalize seek to avoid that
+
+All the specifics are lost
+
+It's highly unlikely someone's specific shape and scene is 
+
+Further studies can be done
+theroetically very unliely, but we want to see just how unlikely it is. perhaps there is something we're missing that no one knows about yet
+
+https://arxiv.org/pdf/2202.06533.pdf
+An Introduction to Neural Data Compression
+
+vagueness vs specifics
+just like cold reading
+
+https://www.youtube.com/watch?v=auQG5GBNtic&ab_channel=DavidShapiro
+Can GPT-3 generate training data? Short answer? Yes! Here's why that's a legit methodology...
+This is about using generated samples as training data, not getting it back
+
+can stable diffusion output its training data?
+
+difference compression vs generative models neural?
+
+in compression, the image is taken in by the NN during training and also testing
+in generative models, the image is not taken in. 
+
+latent space is huge
+
+<<<
+https://jalammar.github.io/illustrated-stable-diffusion/
+The sampled noise is predicted so that if we subtract it from the image, we get an image that’s closer to the images the model was trained on (not the exact images themselves, but the distribution
+
+<<<
+https://www.technologyreview.com/2022/09/16/1059598/this-artist-is-dominating-ai-generated-art-and-hes-not-happy-about-it/
+
+https://haveibeentrained.com/
+
+<<<
+maybe make the furry video later when you have more info about how this works. for now, to avoid all mentions of art, you can train this on pictures of a famous youtuber who doesn't mind AI stuff (such as moistcritical). then 'how to turn anyone into moistcritical'
+
+'moistcritical ai voice'
+https://www.reddit.com/r/Cr1TiKaL/comments/j9fgbg/there_is_now_a_cr1tikal_texttospeech_voice/
+he received this positively, so may also receive this positively too
+
+https://www.youtube.com/watch?v=U5Jf13Azi9Q&ab_channel=penguinz0
+I'm AI Generated
+
+turn amogus into moistcritical
+
+turn anyone into amogus (no; not enough features)
+
+moistcritical deepfake: this is not the same as a deepfake b/c those replace someone's face with charlie. 
+
+before data scraping charlie, try an existing dataset used for deepfakes that doesn't require scraping. in case you cannot scrape charlie in time, first do this one. then make a sequel with charlie
+
+not just him, but list of other celebrities/memes (not art):
+[ make sure these are lightheard people who will not object to their likeness being used. also, avoid controversial ppl like xqc or mizkif ]
+- ludwig
+- mr beast
+- PewDiePie (? controversial ?)
+- 3blue1brown's pi mascot
+- tommyinnit
+- nikocado (he clearly loves attention and his face. just don't mock him on vid)
+
+then superchat them
+
+mix moistcritical and ludwig into 1
+similar to artbreeder, but now make it a filter for any face
+
+memes:
+shrek (ok)
+amogus (not enough features but you can just do it)
+
+you should also mention compression and overfitting here, and how unlikely it is, but then say 'it will be for a future video'
+
+https://avatarify.ai/
+
+<<<
+for now, a furry example can quickly go into the first cat video for a few secs (rat person, cat person). save the title for later, perhaps even after the 'memes' video
+
+https://medium.com/deep-learning-digest/deepfacedrawing-neural-network-that-turns-sketches-into-people-faces-6a9991413d59
+
+<<<
+how many images you need? what kind?
+
+https://www.youtube.com/watch?v=Wx_SN_PdNaM&ab_channel=ProjectAI
+Easy DeepFake Tutorial: 2022 DeepFaceLab Updated Tutorial
+
+<<<
+https://bennycheung.github.io/stable-diffusion-training-for-embeddings
+According to Jame Cunliffe’s video, we learned that only 20 images are sufficient.
+
+https://www.youtube.com/watch?v=P1dfwViVOIU&ab_channel=JAMESCUNLIFFE
+Create Art From Your Face With AI For Free Part 2 | No Google Colab | No Code | Automatic1111 Guide
+
+<<<
+also have a filter for nikocado skinny
+
+<<<
+before traiing this, try typing this as a prompt in stable diffusion. if this result is not satsifactory, try training your own model
+
+also, this may not contain faces not in the training data
+
+https://huggingface.co/spaces/stabilityai/stable-diffusion
+nicolas cage as nikocado
+nicolas cage face blended with nikocado
+
+these seemingly don't recognize nikocado
+
+nicolas cage face blended with jesus
+    it's still his face, but with jesus imagery
+
+nicolas cage face blended with chris hemsworth face
+    it kinda of works, but looks more like nic cage with some blonde hair and green eyes
+    some is actually pretty good
+
+ok so you CAN'T do TOO famous people. we don't need our own NN for nic cage or chris hemsworth
+
+moistcritical face blended with nicolas cage face
+    this sort of fails, really can't see charlie in it
+
+nikocado
+    it has absolutely no idea what he is
+
+penguinz0 moistcritical charlie
+    this just gives penguins
+
+MoistCr1TiKaL Cr1TiKaL charlie
+    this gives mayan pyramids???
+
+this is great, it motivates us to do transfer learning
+
+<<<
+here's memes anon made, NOT an artist with a name:
+wojak
+chungus
+
+<<<
+try artbreeder or other AI blending first
+
+<<<
+we have createed a useless model
+
+we have succeeded in creating a model that outputs abominations
+
+<<<
+instead of mocking nikocado, say he is a talented comedic actor and writer

@@ -1,0 +1,27 @@
+idea blocks: can mark as 'unsure if true' for say, proofs you write
+
+<<<
+the idea blocks allow you to contribute to a lot of things using showerthoughts
+
+<<<
+GPT mod to flag spam and review it via humans by vote
+
+first keep this system local to a team of trusted people. then unleash a version for the public (that doesn't interfere with local one)
+
+<<<
+[put this into an idea block, explain in vid why you do this; don't have time to specialize, but can contribute in an incremental way]
+one of many questions you don't have time to answer:
+need to send a team of diffEQ ppl after this. on stream, use decentralized human discord chat + AI as your search engine. have some ppl act as 'messengers' (even if no knowledger of field) to recruit or spread the word.
+
+<<<
+you don't always have to just jot it down and leave it there. when someone adds it to, it can overcome 'writer's block', and you can add to want they added. they had the missing piece of the bridge you needed to keep on adding
+
+
+<<<
+idea blocks are like working in a team, but the team is decentralized to many places. papers usually only publish final results. but what if someone had an idea about say, one part or step of a technique. on github, they can suggest a change to one line of code. but this isn't done for other projects, such as math, science or art. papers are not flexible enough to accept "small" ideas.
+
+even if you keep it secret until you release the polished product, someone will copy it anyways, just like notion vs loop, or myspace vs facebook. so just announce it first with a crude prototype (proof of concept) on a big platform tied to you, and copyright some stuff beforehand. expect to be copied.
+
+you may get stuck somewhere, but someone else with a diff perspective can pick up the torch. and someone else can branch it to something completely different. that's why it's called 'relayT'
+
+this can also be done with messy threads found around the web, but this puts things together, which otherwise wouldn't be. it organizes them and allows them to be found next to other relevant ideas.

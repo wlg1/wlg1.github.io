@@ -1,0 +1,4 @@
+meme stat tests: just state results, don't draw strong conclusions from them. 'we're just going to throw things under a microscope/jar of chemicals and see what happens, not drawing conclusions but just seeing what patterns emerge'. the program/test gives new patterns/perspectives.
+
+<<<
+to compare someone w/ disorder and someone w/o, compare how they do, and see how test runs on diagnosis traits on the someone w/o

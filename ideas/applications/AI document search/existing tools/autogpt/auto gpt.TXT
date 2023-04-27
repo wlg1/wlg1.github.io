@@ -1,0 +1,78 @@
+https://www.youtube.com/watch?v=6K8WrIsX5H4&ab_channel=MattVidProAI
+
+https://www.youtube.com/watch?v=7MeHry2pglw&ab_channel=Aitrepreneur
+how to use to read code
+
+https://www.youtube.com/watch?v=LuIJRnMJHbM&ab_channel=AIAndy
+only discusses it for a few secs
+
+<<<
+prob:
+
+Downloading google_api_python_client-2.84.0-py2.py3-none-any.whl (11.2 MB)
+     ------------------------------ --------- 8.6/11.2 MB 6.2 kB/s eta 0:07:09
+....
+TimeoutError: The read operation timed out
+...
+pip._vendor.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out.
+
+(SOLN) TRY: 
+pip install -r requirements.txt --default-timeout=100
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+Test to see how far it can go for your tasks. Once found its limitations, extend it to reach the tasks it currently can't.
+
+<<<
+D:\Documents\_prog\repos_DL\Auto-GPT\scripts
+
+Research-GPT is: an AI designed to write code for machine learning research and convert its analysis into text and latex papers
+
+compare papers, news, blogs, threads, docs in a way the reader understands
+write code for machine learning research 
+convert its analysis into text and latex papers
+log and search experiments in an organized way
+generate ideas for experiments and future research directions based on papers it read
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+tests:
+
+google the paper "Locating and Editing Factual Associations in GPT" and read its arxiv pdf
+
+     cons- it takes time, is slow to think
+
+<<<
+Input:Summarize the paper
+SYSTEM:  Human feedback: Summarize the paper
+Warning: Failed to parse AI output, attempting to fix.
+ If you see this warning frequently, it's likely that your prompt is confusing the AI. Try changing it up slightly.
+Failed to fix ai output, telling the AI.
+Error: Invalid JSON
+ I apologize for the confusion earlier. Having only the name of the paper was not enough to do a specific search. I need to clarify whether you would like me to perform a Google search for the paper, or whether you already have a copy of the paper and want me to summarize its contents.
+
+Input:Download the paper for arxiv
+SYSTEM:  Human feedback: Download the paper for arxiv
+Warning: Failed to parse AI output, attempting to fix.
+ If you see this warning frequently, it's likely that your prompt is confusing the AI. Try changing it up slightly.
+Failed to fix ai output, telling the AI.
+Error: Invalid JSON
+ I apologize again for any confusion earlier. It seems I misunderstood your request. As an AI, I am unable to download files directly. However, here is a guide for how to download the paper from arXiv: 1. Go to the arXiv website. 2. In the search bar, type in "Locating and Editing Factual Associations in GPT". 3. Click on the title of the paper to access the abstract page. 4. Scroll down to the "Download" section and click on the link to the pdf version of the paper. Once you have downloaded the paper, you can save it to a file and read it at your leisure. Let me know if you have any further requests or if there's anything else that I can help you with!
+
+<<<<
+CON: cannot download papers!
+
+https://github.com/Torantulino/Auto-GPT#-features
+Internet access for searches and information gathering
+Long-Term and Short-Term memory management
+GPT-4 instances for text generation
+Access to popular websites and platforms
+File storage and summarization with GPT-3.5
+
+If you have PINECONE, you can use it to read pdfs?
+
+<<<
+https://github.com/Torantulino/Auto-GPT#demo-30032023
+
+seems like the tasks are done in 'goals'. but only if continuous mode used, which is dangerous
+
+<<<
+https://www.reddit.com/r/ChatGPTCoding/comments/12mmv5r/autogpt_where_is_the_magic_happening/?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=2&utm_content=share_button

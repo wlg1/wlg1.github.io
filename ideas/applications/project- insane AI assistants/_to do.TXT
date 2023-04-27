@@ -1,0 +1,23 @@
+to do:
+
+1. fine tune to a personality
+    prompt eng chatgpt using character prompt inputs
+2. 
+
+
+<<<
+future:
+
+multiple AIs talking to each other (argue)
+deploy with voice input and output
+allow both voice and text input
+avatars
+
+(built on top of AI doc search)
+
+<<<
+done:
+
+1. call openAI api to chat
+2. voice input and output
+3. deploy on AWS

@@ -1,0 +1,46 @@
+Running Large Language Models on your own hardware.
+
+Getting Started: https://rentry.org/llama-tard-v2
+
+For CPU-based inferencing:
+https://github.com/ggerganov/llama.cpp
+https://github.com/antimatter15/alpaca.cpp
+
+For GPU-based inferencing:
+https://github.com/oobabooga/text-generation-webui
+
+Resources:
+>Local models links
+https://rentry.org/localmodelslinks
+>Magnet torrent for llama.cpp's updated format
+https://rentry.org/nur779
+>Get your very own Miku here
+https://pastebin.com/vWKhETWS
+>Chinese ChatGPT
+https://github.com/THUDM/ChatGLM-6B/blob/main/README_en.md
+>Node.js WebUI on top of llama.cpp with API
+https://github.com/cocktailpeanut/dalai
+
+### Instruction:
+What is this thread about? Can I get a QRD?
+
+### Response:
+- OpenAI releases ChatGPT
+- Immediately abandons its founding principles, proceeds to monetize API access & limit access to its research
+- Meta devs publish their own in-house model, LLaMA (Large Language Model Meta AI), gets leaked a few days later
+- Model is powerful but resource-hungry and requires fine-tuning to be useful
+- Open source community releases optimizations to shrink its footprint (e.g. llama.cpp, GPTQ), allowing the smallest model to run on Androids and low-VRAM GPUs.
+- Stanford creates their own tuned version of LLaMA called Alpaca, making it more interactive like ChatGPT
+- Custom versions of Alpaca are now being trained by using Stanford's techniques with low-rank adaptation (LoRA). RAM usage is under 9GB, no GPU necessary.
+
+=== Events from the other thread ===
+- CPU models need to be seeded! Send this anon all the help you can! >>92299200 →
+- Quantized Bloom 7B & GPT-J 6B >>92310574 →
+- example convo advice for multiple bot chars >>92321431 →
+- anon does what we were all too afraid to do >>92319032 →
+- RPBT progress >>92316153 →
+- (GPT) family models can be pruned to at least 50% sparsity in one-shot, without any retraining, at minimal loss of accuracy. >>92314365 →
+
+<<<<<<<<<<<<<<<<<<
+download pyg model or route the input + output to your UI
+why are chatgpt and pyg different? why pyg behave like a character?

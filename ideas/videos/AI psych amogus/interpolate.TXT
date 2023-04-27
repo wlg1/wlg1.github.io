@@ -1,0 +1,3 @@
+inpainting to rmv amogus (no windows prompt), then interplote before after
+
+can we put v1-5-pruned-emaonly.safetensors into interpolation code?

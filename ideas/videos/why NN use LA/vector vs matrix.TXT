@@ -1,0 +1,4 @@
+1D matrix addition vs vector addition
+https://stats.stackexchange.com/questions/284995/are-1-dimensional-numpy-arrays-equivalent-to-vectors
+
+1D matrix same as vector? same as scalar? differences?

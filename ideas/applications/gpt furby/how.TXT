@@ -1,0 +1,17 @@
+https://www.youtube.com/watch?v=dv9cyqVv0CI&ab_channel=ProgrammingElectronicsAcademy
+Give your Arduino project a chatGPT AI brain - for free
+
+https://www.instructables.com/Control-a-Furby-with-Arduino-or-other-microcontrol/
+
+https://essay.utwente.nl/72152/1/Bachelor_Assignment_Gerrit_Eisma_s0126039_The_Next_Furby.pdf
+6.1.2 Electronic parts
+
+https://www.youtube.com/watch?v=lEixhS4QOVs&ab_channel=element14presents
+Retro 90's Furby Teardown - The Electronics Inside
+    exchanged furby language for english as time went on- not actually learning
+
+buy an already soldered furby?
+https://chapelierfou.org/blog/a-usb-furby.html
+https://www.reddit.com/r/arduino/comments/nh5sj4/i_made_a_lifelike_usbcontrolled_furby_with_an/
+
+https://projecthub.arduino.cc/amurison718/250901d9-f05e-4f92-81e7-4f7a5ebc0fc3

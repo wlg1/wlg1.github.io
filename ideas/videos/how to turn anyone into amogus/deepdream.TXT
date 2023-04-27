@@ -1,0 +1,15 @@
+https://www.youtube.com/watch?v=I2y6kS7396s&ab_channel=charlesleflamand
+Vincent Van Gogh in Google DeepDream Space
+
+forcing an ai to make amogus:
+train dreambooth on original amogus and its abstracts, NOT 'realistic that looks like amogus' (that's too confusing with too much other info), then output 'chair that looks like amogus', etc.
+    start w/ slideshow & music, then have mathematical explanation that uses AI narration (avoid practical how-to b/c others can replicate your work). learn 'stable diffusion latent exploration' to find 'where the amogus is'.
+        https://keras.io/examples/generative/random_walks_with_stable_diffusion/
+        total video time: possibly 2 minutes. maybe 5.
+
+https://huggingface.co/SpiteAnon/Pepestyle
+https://huggingface.co/Laughify/among-us-logic-ai-characters
+    https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb
+
+https://www.youtube.com/watch?v=VTzUhMB0ibc&ab_channel=sentdex
+https://www.youtube.com/watch?v=QEKGYqKaolY&ab_channel=MaxNovak

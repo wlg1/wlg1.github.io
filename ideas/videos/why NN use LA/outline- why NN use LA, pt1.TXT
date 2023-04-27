@@ -1,0 +1,121 @@
+D:\Documents\_prog\my_repos\wlg1.github.io
+D:\Documents\_prog\prog_cust\manim
+D:\Documents\_prog\prog_cust\manim\video 1
+
+D:\Documents\_prog\repos_DL\manim
+D:\Documents\_prog\prog_cust\manim_3b1br\video 1
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+SCENES OUTLINE:
+0. Intro
+
+start w/ low, relaxing humming / acoustic Title/Logo. A nice, relaxing animation, such as a commutative diagram. Intro of Wind in the Rushes is a good motif. Have it pause in a fading effect, then play another song. End w/ Wind in the Rushes.
+
+commutative diagram: two paths flow at same time, ending up lighting up the same thing on bottom right at same time. each time path flows to new obj, it appears. Quote: "As above (fades in), so below (fades in)".
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+1: 
+applications on cats. variety of cats. poetic, like dr seuss.
+
+Change of Basis
+
+Show matrix multiplication process of NN (similar code to 3b1br's NN video)
+
+no prereqs except an understanding of what a coordinate space is (link to a quick video), but a vague understanding of ... would help
+
+discuss how this will all lead to InterFaceGAN in later video
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+2: Fade in population of cats and rats
+
+2.1: magnifying glass in cat population to get cat picture
+
+<
+(FIND ALT b/c too much work to align box w/ cat):
+2.2: cat pic in center. fade in box around cat, then take copies of original cat and data sample and move them to left and right. fade in words at bottom
+<
+
+2.2: Start w/ cat entity on left, then make copy of it w/ box around it in middle (shift from left), then shift box to right
+    "However, the dataset is only able to..."
+
+    prog_cust\manim\video 1 \ movecat.py
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+3: rows are data pts, cols are face and body
+
+"So every entity (a cat or rat) in the population is represented in the dataset as an data sample, which is an abstraction defined only by body size and face length, such that their values are measured in “units”."
+    cursor moves from 'body size' to 'face length' parts when referring each part
+
+each row fades in and then use blue arrow to make it a pt on right
+then on top of each box cell fade in the images, and put it on the right, overlapping the pt
+
+Order figs appear:
+    1. right col (bottom), imgs to data pts
+    2. face and body shapes
+    3. units of face and body (top)
+    4. pairs of face and body
+    5. coordinate space of pts
+    6. coord space of data samples
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+4: draw in vectors, then data pts 
+'this head concept' (put hand cursor over)
+
+at bottom, show equations using concepts
+then vectors drop out from below concepts
+
+"If we see each data point as a vector, ..."
+
+fade in vectors and concepts on basis w/ coords
+fade in (0.5, 2) vector and concept
+fade in to right the equation
+fade out on top the 
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+5: What is a Change of Basis?
+
+have a bunch of data pts
+
+some rats, some cats, hard to tell (hairless sphynx cat- some cats that look like rats) / (big rats)
+
+Cluster them on a spectrum with big question?
+
+two spectrums horizontally. then move rat spectrum vertically (rotate all on it 90 degrees)
+
+another spectrum ON cat spectrum
+
+cursor over re-used body and face size images 
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+6: Model 1, green and orange dots fade it with likely to be cat text, which disappears after a few secs
+then copy fades to right and rotates, and Model 2 text appears below it
+
+red vector matrix appears next to red vector, etc.
+cursor explains vector != concept
+
+words w/ pics: vector matrix means concept (fades in)
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+7: better example of model 1 and 2
+vector != concept 
+
+cursor on 'model rep' and 'entity it represents'
+(call entities 'concepts')
+
+rotate with ghost vectors 
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+8: neuron function magnified from NN
+
+put vectors in Model 2 into matrix
+
+show the NN w/ colored matrix (cite it)
+
+"Neurons are Basis Vectors in an Activation Space."
+
+can describe cat with paws, fur, color, etc
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+9: cliffhanger: calculate the values of the vector O = WX

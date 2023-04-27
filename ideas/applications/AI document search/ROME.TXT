@@ -1,0 +1,15 @@
+How to find abstract relations:
+
+Abstract prompts:
+Animal -> Lion
+Animal -> Tiger
+
+<<<
+given this test, have autogpt auto construct tests to check it:
+
+Does ROME edit just a prefix, or all connections to the entity itself? For example, when it edits (Empire State Building is in, New York) to (Empire State Building is in, France), and it knows (Bob works in the Empire State Building), will it change Bob's fact into (Bob works in France)?
+    chatpdf claims it won't change bob's fact
+
+IF it doesn't change bob's fact, how were bob and empire state building related in the first place?
+
+i think in the yannic interview, this is stated as not true; it does change bob's work loc fact to france (sometimes- when?)

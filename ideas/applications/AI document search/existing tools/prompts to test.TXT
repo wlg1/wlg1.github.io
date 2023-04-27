@@ -1,0 +1,36 @@
+Find the latest papers on neural network editing, and make a table comparing their experimental results
+
+https://agentgpt.reworkd.ai/
+It can do it already. see 'research output 1'
+
+<<<<<<<<<<
+Find the latest papers on neural network editing, and make a table of the organizations each of their authors belongs to
+
+agentgpt: 'authors output 1'
+
+<<<<<<<<<<<
+Wait... these aren't real papers or authors. They're hallucinations. Try telling it to search the web
+
+<<<<<<<<<
+Using a web search on arxiv, find the latest papers on neural network editing, and make a table comparing their experimental results
+
+agentgpt: 'web search research output 1'
+    it fails; it cannot connect to the web! it again hallucinates
+
+autogpt: 'web search research output 1'
+    Goal 1: Search arxiv on the web
+    Goal 2: find papers on neural network editing
+    Goal 3: compare experiments
+    Goal 4: make tables comparing experimental results
+    Goal 5: export tables to csv format
+
+    it does search the web for actual papers
+
+    its continuous interface is sort of messy and you don't really know what it's doing
+
+<<<<<<<<<
+it seems the memory used isn't for storing and comparing docs; it's for conversational memory
+
+autogpt can browse the web, but it doesn't really know what it's doing. a safer, less random program can be built that directly tells gpt what to look for and how to do it (using code). simply instructing it using NLP is bound for failure; the NLP is good for generating patterned responses, but less so for telling it to understand tasks. it's too risky and random, and frustrating to get desired exact results. also, the program runs with too much unnecessary output for the user to parse through.
+
+https://github.com/Significant-Gravitas/Auto-GPT/discussions/411

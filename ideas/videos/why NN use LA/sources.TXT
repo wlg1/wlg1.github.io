@@ -1,0 +1,85 @@
+scene 1:
+
+king
+https://www.etsy.com/de-en/listing/1250668764/king-crown-svg-royal-crown-svg-queen
+
+queen
+
+
+>>>
+woman king
+
+elephant
+https://www.flickr.com/photos/climateinteractive/13944682478
+
+judge
+
+orange;
+https://www.dreamstime.com/fresh-orange-fruit-isolated-black-background-fresh-orange-fruit-isolated-black-background-image121578891
+
+apple:
+https://www.istockphoto.com/photo/red-apple-isolated-on-the-black-background-gm1182650608-332174135
+
+xcat
+https://pixels.com/featured/closeup-portrait-of-face-white-cat-blue-eyes-isolated-black-background-sergey-taran.html?product=greeting-card
+
+https://en.wikipedia.org/wiki/File:Speech_bubble.svg
+
+https://www.svgrepo.com/svg/99244/smiling-face
+
+https://commons.wikimedia.org/wiki/File:Nuvola_German_flag.svg
+https://commons.wikimedia.org/wiki/File:Nuvola_United_Kingdom_flag.svg
+
+https://logos-world.net/google-translate-logo/
+
+GEB
+
+<<<
+video sources: (by timestamp)
+
+s7:
+latent space
+https://www.youtube.com/watch?v=C_XNdGGs6qM&ab_channel=marian519
+
+s7 end:
+https://www.youtube.com/watch?v=ph4szaVTWSY&t=9s&ab_channel=SymmetricVision
+Memory from Dead Mans Trip
+
+https://www.youtube.com/watch?v=4YKFw2KZA5o&t=162s&ab_channel=naturevideo
+CRISPR: Gene editing and beyond
+
+s9:
+https://www.youtube.com/watch?v=wvsE8jm1GzE&ab_channel=GoogleDevelopers
+A.I. Experiments: Visualizing High-Dimensional Space
+    https://danielmuellerkomorowska.com/2021/01/05/introduction-to-t-sne-in-python-with-scikit-learn/
+    The first step of t-SNE is to calculate the distance matrix
+    As a small note, our joint probabilities are no longer a matrix. 
+
+https://www.youtube.com/watch?v=8BOvLL8ok8I&t=334s&ab_channel=TheActionLab
+A Computer That Runs on Marbles
+
+https://www.youtube.com/watch?v=5h8WOWEqP6o&ab_channel=JeremyPickett-Heaps
+Dictyostelium - a Cellular Slime Mold
+
+https://www.youtube.com/watch?v=F-BqDWG72iM&ab_channel=RobertJ.Fuller
+
+<<<
+sounds:
+https://www.youtube.com/watch?v=rFtYzVJcWyA&ab_channel=GrandIllusions
+eulers disk (s10)
+
+https://www.pond5.com/sound-effects/item/25160401-cute-fairy-laughter
+s9 (cat reality)
+https://www.youtube.com/watch?v=wsP0jFGEeEw&ab_channel=PatrickDeAngelo
+
+<<<
+articles:
+
+bronstein, olah, bau, hinton, berkely
+
+https://transformer-circuits.pub/2022/toy_model/index.html
+
+<<<<
+music:
+
+all from pixabay except 'wind' and ''

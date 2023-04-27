@@ -1,0 +1,7 @@
+in video, avoid mentioning probability or any other formal topics; build stuff up from scratch, using only non-field specific language and theories. you can use 'chance', counting, mapping, pigeonhole, process of elim, etc.
+
+evaluating synchronicities / 'coincidental' patterns:
+1. how many alt theories are there? [how many ways to slice, project, into interpretations?]
+2. what weights one theory over another?
+3. what are the chances this theory occurs?
+4. how many of possible alt theories (evaluated so far) come to same conclusion?

@@ -1,0 +1,43 @@
+https://techcrunch.com/2023/03/01/openai-debuts-whisper-api-for-text-to-speech-transcription-and-translation/
+Whisper API != whisper.ai
+
+<<<
+'how to make an ai respond to your voice':
+
+https://www.youtube.com/watch?v=cRSLxePDmbA&ab_channel=LinuxUnboxed
+Create an Intelligent Voice Assistant using ChatGPT models. (Using Python)
+
+<<<
+https://www.youtube.com/watch?v=lBCoktYvSKg&ab_channel=BhaveshBhatt
+Create a Smart Voice Assistant using Open AI's ChatGPT, Whisper, Python & Gradio | Python Project
+
+the transcription is slow
+
+<<<
+https://www.youtube.com/watch?v=cRSLxePDmbA&ab_channel=LinuxUnboxed
+Create an Intelligent Voice Assistant using ChatGPT models. (Using Python)
+
+
+GPT_pytts.py
+
+pip install SpeechRecognition
+pip install PyAudio
+pyttsx3
+
+https://stackoverflow.com/questions/48438686/realistic-text-to-speech-with-python-that-doesnt-require-internet
+Try to use pyttsx3 2.5, according the documentation: gTTS which works perfectly in python3 but it needs internet connection to work since it relies on google to get the audio data. But Pyttsx is completely offline and works seemlesly and has multiple tts-engine support.
+
+https://github.com/Uberi/speech_recognition/blob/master/examples/microphone_recognition.py
+
+<<<<
+extra features using speech_recognition:
+
+https://www.youtube.com/watch?v=MnYwCurv54c&ab_channel=Tommy%27sCodebase
+
+https://github.com/tommyscodebase/AI_Projects/blob/main/AI-voice-assistant/voice_assistant.py
+
+<<<<<<<<
+https://www.youtube.com/watch?v=J92qqU0Ec80&ab_channel=TheGuideChannel
+ChatGPT with Voice Control and web browser integration.
+
+search youtube "text to voice chatgpt"

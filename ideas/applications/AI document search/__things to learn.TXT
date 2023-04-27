@@ -1,0 +1,45 @@
+MOST IMPT:
+You just need ONE SHORT proj showing you know how these work:
+    gpt pdf + code + latex + figs/tabs
+1) llm using pinecone (b/c just calling llm is too easy),
+2) git merge and file struc, 
+3) deployment (low latency, high thru-put) 
+    learn these from ai auton repos
+
+Latex drafts and videos will demo this
+
+<<<<<<<<<<<<<<<
+OVERALL:
+
+1. langchain: chains, convo memory
+2. scrap: requests, bs4, re
+3. pinecone, mysql workbench
+4. auto gpt, babyagi, hugginggpt
+5. formats: read pdf, csv and latex, output to latex, etc
+6. streamlit, flask for user requests to db server
+7. deploy on aws: ec2, s3
+8. github merge, fork
+    issues, pull reqs
+9. github file org (bash): env, .yaml, reqs, scripts, tests, util
+    see: https://github.com/Torantulino/Auto-GPT
+    https://github.com/erikras/react-redux-universal-hot-example/issues/808
+10. docker, kubernetes
+
+<<<
+For expms:
+
+learn weights + biases (what features it already has)
+
+The AI will learn to use pieces of these that are helpful in overcoming certain problems, how their internals work, and create variations of them to compare models to find circuits.
+    how find abstract? -> where does it come from? -> 
+
+https://coderefinery.github.io/reproducible-research/organizing-projects/
+Authorea: collaborative platform for preprints (apparently also has Git integration)
+
+<<<
+optional tools:
+1. visual gpt
+2. gpt plug in
+
+for practice only:
+sql, java (leetcode and graphhom repo)

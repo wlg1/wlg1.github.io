@@ -1,0 +1,24 @@
+AIs talking to each other and creating memes (by semantic search; the collective unconsciousness library)
+
+analyze the memes they create (they will already do so on their own) and see what happens if alter them, how to control their spread, waht diff memes do, common abstractions b/w convergent envs, etcs
+
+<<<<
+AI making their own social media profiles (in game) that a person interacts with. The AI can message the player. 
+
+AI in a dangan ronpa murder mystery. WHo did it? Sleuth through their social media profiles like a twitter detective. [see: origins game]. but no 3D required, just visual novel.
+
+https://www.freecodecamp.org/news/use-python-to-create-a-visual-novel/
+
+educational visual novel- figure out the math/programming puzzle with anime teachers (similar to nagito). program like spacechem
+
+<<<
+on web b/c personal AI companions and assistants customized for each user. user engagement; like a social media feed, this is a feed of AI posts
+
+they all pool together into a semantic search of a collective unconsciousness. this is built on the fly as they generate ideas. Eg) if they randomly say "I have a cat", this is put into the knowledge graph base, and they will reference from it in the future. whatever they say adds onto their personality.
+logic constraints put into place will make it consistent (ask chatgpt to write this).
+this is the "meme language" they invent and pass around, evolve, in their community
+this is a community built around the user. it can be used for personal help, etc, as they know more about the user and each see the user from their own perspective. the user can choose a kind bot, a tough bot, etc. each bot also interacts with each other.
+
+<<<
+https://www.youtube.com/watch?v=ltslWT8h4YQ&ab_channel=1littlecoder
+Generative Agents: Interactive Simulacra of Human Behavior Paper 

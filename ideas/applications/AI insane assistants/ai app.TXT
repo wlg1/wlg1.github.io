@@ -1,0 +1,25 @@
+https://www.youtube.com/watch?v=KQNSPKYyQ3M&ab_channel=techie_ray
+Build a GPT-3 Chatbot with Python in 5 Minutes
+
+No GUI
+
+https://platform.openai.com/account/usage
+create new account once expires
+
+<<<
+
+
+<<<
+3. https://www.youtube.com/watch?v=2FeymQoKvrk&ab_channel=JavaScriptMastery
+Build and Deploy Your Own ChatGPT AI App in JavaScript | OpenAI, Machine Learning
+
+V 3.1. create client folder using npm and vite in VScode
+V 3.2. modify index, js, css; then 'npm run dev
+V 3.3. js frontend: loading dots, typing, uniqueID, message box
+V 3.4. js backend server: install cors, dotenv, express, nodemon, openai (dependencies). get parameters from openai to pass into response var. listen to server. npm run server & npm run dev.
+
+3.5. in client, connect to server by fetching in script.js.
+
+<<<
+4. https://www.youtube.com/watch?v=904cW9lJ7LQ&t=450s&ab_channel=PradipNichite
+Deploy GPT-3 Streamlit App on AWS EC2 | OpenAI | AWS Tutotrials

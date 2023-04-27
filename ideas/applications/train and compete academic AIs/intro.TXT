@@ -1,0 +1,1 @@
+train academic AIs to solve certain tasks, and compete with others who have diff builds. the constraints are the neurons themselves- catastrophic forgetting. others have diff patterns. there are tradeoffs.

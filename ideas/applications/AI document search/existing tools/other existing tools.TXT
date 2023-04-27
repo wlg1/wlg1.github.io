@@ -1,0 +1,83 @@
+https://www.aidemos.com/
+
+<<<
+visual gpt
+
+https://www.youtube.com/watch?v=Y6TrtFHGa0E&ab_channel=AIAndy
+
+<<<
+gpt plugins to do web browsing
+
+https://openai.com/blog/chatgpt-plugins
+
+<<<
+jaseci
+
+devops for ai, end-to-end pipelines for cog arch
+auto create pipelines/infrastructure using apis
+redesign microserves
+
+<<<
+chatpdf
+
+generate questions
+
+cons:
+cannot read latex in paper
+
+<<<
+https://writings.stephenwolfram.com/2023/03/chatgpt-gets-its-wolfram-superpowers/
+
+<<<
+latex:
+
+https://blog.writefull.com/texgpt-harness-the-power-of-chatgpt-in-overleaf/
+
+https://twitter.com/sh_reya/status/1284746918959239168?ref=gptcrushdemosofopenaisgpt3
+
+<<<
+notion ai
+
+https://pub.towardsai.net/crazy-gpt-3-use-cases-232c22142044
+
+<<<
+Reflexion
+
+talks to itself to learn from its mistakes
+
+https://www.youtube.com/watch?v=5SgJKZLBrmg&t=700s&ab_channel=AIExplained
+
+<<<
+parse website:
+
+https://zapier.com/blog/summarize-articles-with-gpt/
+
+https://zapier.com/l/install-chrome-extension
+
+<<<
+brainstorm / mind graph:
+
+https://twitter.com/hturan/status/1641780868640374784
+
+<<<
+search audio:
+
+huberman AI
+
+<<<
+search:
+
+https://chrome.google.com/webstore/detail/chatgpt-conversation-hist/ppnfnillfndkellpbphafglnljdefjph
+
+also need to search for convos, not just within convos
+
+
+<<<<<<<<<<<<<<<<
+hub to find more:
+
+https://gptcrush.com/
+
+<<<<<<<<<<<<<<<<<<<
+other models:
+
+alpaca

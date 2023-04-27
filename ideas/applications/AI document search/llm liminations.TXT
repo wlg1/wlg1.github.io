@@ -1,0 +1,9 @@
+Pros:
+Good at recognizing patterns, some analogies, and putting into format
+(like a search engine or sql retrieval)
+
+Cons:
+Bad at reasoning (eg. will say 'no, this is not the right analogy, then proceed to make the analogy that shows it's the right one'- this is b/c it knows the pattern but doesn't 'recognize' it)
+
+<<<
+chatgpt feels like less effort b/c when you look up external resource, it doesn't directly connect to what you're reading and you have to sift thru junk to piece it to it yourself. w/ chatgpt, the junk still exists (repeated defs or misunderstandings or hallucinations that are inconsistent) but it's less, and does'nt require obtaining another resource and checking if it's relevant.

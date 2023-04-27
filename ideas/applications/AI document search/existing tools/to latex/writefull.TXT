@@ -1,0 +1,16 @@
+limitations:
+
+only has these features on overleaf;
+Title Generator
+Abstract Generator
+Paraphraser
+Academizer (convert sentence to academic)
+GPT Detector
+
+https://www.youtube.com/watch?v=GFPTNmMHH2c&ab_channel=Writefull
+
+<<<
+https://www.youtube.com/watch?v=o-6uVFi5UPM&t=96s&ab_channel=Writefull
+
+word:
+only gives suggestions. doesn't analyze a set of experiments, code, cross compare papers, etc to produce a draft / analysis that the rscher can further refine and critique

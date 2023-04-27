@@ -1,0 +1,6 @@
+
+Boomy promises to just be like Autotune- a tool that doesn't replace, but makes music in new directions, and reduces barriers to entry. How to not replace artists? Instead of making a new song and replace the artists, have the AI fuse artists. The AI is trained on multiple artists and merges them together.
+
+Another way is also to have the AI perform in real time- the artists sings/plays, and the AI continues, just like those youtube vids where they're given a sample and continue to play the rest by noticing its patterns. This is exciting novelty, like watching a sports game, as you don't know what's coming next. The AI can also duel the artist.
+
+AI does not replace artist; it is only a way to create new sounds, like a synth or autotune

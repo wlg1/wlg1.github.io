@@ -1,0 +1,13 @@
+if found an idea in wild untethered to this block, can tether to the timestamped block as proof it was there first
+
+<<<
+issue: those who use idea network can steal block ideas from those who don't use idea network
+
+so 'retroactive attribution' using other sources from internet is possible. if it was proved someone did it using another timestamp, create that. note it must be known if mods or votes are used to determine this.
+    anyone can post proof of retroactive attribution. the AI will moderate this not by deciding, but acting as a search engine.
+
+<<<
+two philosophies: this is my timestamp, vs 'let it go for open source'. do you want to be attributed to the idea, or do you just want others to create it so you can see more of it bloom, as it's not yours anymore?
+
+<<<
+don't start by inputting your most valuable ideas. put, as demo, some interesting but not that valuable ones (not that unique). these are 'obvious'. this is more to orient people to be aware of these, not to attribute yourself to them.

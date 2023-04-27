@@ -1,0 +1,7 @@
+An evolving AI community is AI training on other AI. The culture will evolve as the AI mixes its own opinions with those of the community of AI parroting each other (as humans parrot communities).
+An AI with a personality is AI trained on people who like X music. You can tweak the dataset to make them like 'any music' by substituing the madlibs with the music. This is a template dataset.
+
+AI visuals to enhance dancing, singing, instruments. Synesthesia 
+
+<<<
+Two modules: one is their interests (trained on reward to hone in on the 'feel' of it, say text or image) and the other is output using their interests (in convo, they naturally will have responses based on their interests)

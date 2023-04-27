@@ -1,0 +1,23 @@
+
+controlnet amogus: make sketch of it, then fill it in with varoius objs (img2img). try to make it subtle. should be in a background (either done by gimp or re-feeding it into NN so this is recognized). ONLY photorealistic images.
+
+https://www.youtube.com/watch?v=SYNd0vAt5jk&ab_channel=CHILDISHYT
+Stable Diffusion Controlnet Extension Installation Guide Explained In detail
+
+https://www.youtube.com/watch?v=L5JUkjLhqNY&ab_channel=LevendeStreg
+
+https://www.reddit.com/r/StableDiffusion/comments/119o71b/a1111_controlnet_extension_explained_like_youre_5/
+
+https://www.youtube.com/watch?v=3FZuJdJGFfE&t=86s&ab_channel=OlivioSarikas
+ControlNET to Video - Stable Diffusion Automatic 1111 Tutorial
+
+https://www.youtube.com/watch?v=6glHekd25nE&ab_channel=OlivioSarikas
+LORA with ControlNET - Get the BEST results - Complete Guide // Jenna Ortega
+
+https://www.youtube.com/watch?v=qwvOlSJzEqA&t=782s&ab_channel=VladimirChopine%5BGeekatPlay%5D
+Make stunning AI Animation from your videos
+
+https://www.youtube.com/watch?v=fhIGt7QGg4w&t=316s&ab_channel=koiboi
+Ok, but what IS ControlNet?
+
+https://github.com/lllyasviel/ControlNet

@@ -1,0 +1,50 @@
+PAPER EXPLANATION ON PULLBACK (SIMPLE):
+
+The metric of the tangent spaces of manifolds is unknown, and even so, may not be easy to compute
+We also want to find the direction to move in
+
+So use the pullback Euclidean metric on H to define the distances between the samples in X.
+
+<<
+The pullback of a smooth map between two manifolds is a way to transfer distances (tangent vectors) from one manifold to another, given a smooth map between manifolds.
+
+The pullback uses the Jacobian matrix because it provides a linear approximation of the map that relates tangent vectors in the domain and target manifolds. 
+
+The Jacobian matrix of a smooth map gives information about how tangent vectors in the domain manifold are mapped to tangent vectors in the target manifold. 
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Q: Are the tangent spaces of spheres showing they are locally euclidean?
+
+Yes. The tangent space of a sphere at a given point is a mathematical construct that describes the local behavior of the sphere at that point. It is a vector space that is isomorphic to the Euclidean space of the same dimension, which means that they have the same geometric properties, such as distances and angles.
+
+In other words, at any point on a sphere, there exists a tangent space that looks like a Euclidean space, meaning that the sphere is locally Euclidean. This is a fundamental property of smooth manifolds, such as spheres, and is one of the key ways in which they differ from more general topological spaces.
+
+<<<
+Q: Are derivative of a function on a manifold used to find directions to move in on a manifold?
+
+Yes, the derivative of a function on a manifold is defined using tangent vectors, which represent the local behavior of the manifold at a given point. The derivative of a function at a point is a linear map that describes how the function changes as we move away from that point along a tangent vector.
+
+By computing the derivative of a function at a point on a manifold, it is possible to find the direction in which the function is changing most rapidly, which can be used to find a local maximum or minimum of the function. This is analogous to finding the gradient of a function in Euclidean space, where the gradient gives the direction in which the function is changing most rapidly.
+
+In addition to finding maxima and minima, the derivative of a function on a manifold can also be used to compute other quantities, such as the curvature of the manifold or the geodesic paths that connect two points on the manifold.
+
+Overall, the derivative of a function on a manifold is a powerful tool for analyzing the behavior of functions on curved spaces, and is used in a wide range of fields, from mathematics and physics to computer science and engineering.
+
+<<<
+Q: Why do we have to use tangent spaces? Why can't we calculate the derivative directly on the manifodl?
+
+We use tangent spaces in differential geometry because they provide a way to define the derivative of a function on a manifold in a way that is consistent with the rules of calculus in Euclidean space.
+
+A manifold is a geometric object that is curved or non-Euclidean, which means that the rules of calculus in Euclidean space may not apply. In particular, the notion of a "straight line" or a "tangent line" may not make sense on a manifold. Instead, we use tangent spaces to define the local behavior of the manifold at a given point, and to define the derivative of a function on the manifold.
+
+Tangent spaces are vector spaces that are isomorphic to Euclidean spaces, which means that they have the same algebraic structure as Euclidean space. This makes it possible to define the derivative of a function on a manifold using the same rules of calculus that apply in Euclidean space. Specifically, the derivative of a function on a manifold is defined as a linear map that takes a tangent vector as input and outputs a real number that represents the rate of change of the function in that direction.
+
+By using tangent spaces to define the derivative of a function on a manifold, we are able to apply the same calculus techniques that are used in Euclidean space, while taking into account the curvature and non-Euclidean nature of the manifold. This allows us to study and analyze complex curved spaces, and to apply the tools of calculus to a wide range of mathematical and scientific problems.
+
+<<<
+Calculus studied curves, like on spheres, which are manifolds. So 2D curves are also manifolds, and tangents on them are like tangent spaces for 3D manifolds?
+Yes, that's correct! In mathematics, a manifold is a generalization of the concept of a curve or surface, and can include objects of any dimension.
+
+A 2D curve, such as a circle or an ellipse, is a one-dimensional manifold, because it can be described using a single parameter (such as the angle around the circle) and has a one-dimensional tangent space at each point. The tangent vector at a point on a 2D curve represents the direction and rate of change of the curve at that point.
+
+Similarly, a 3D surface, such as a sphere or a torus, is a two-dimensional manifold, because it can be described using two parameters (such as latitude and longitude) and has a two-dimensional tangent space at each point. The tangent space at a point on a 3D surface represents the local behavior of the surface at that point, and can be used to compute the normal vector, curvature, and other geometric properties of the surface.

@@ -1,0 +1,12 @@
+FIRST narrate the audio as you listen to music in headphones (low vol), and visualize each animation as you go. Do this several times (v1, v2...), describing each v diff, adjusting pacing and intonation based on the animation you visualize as you come up with it on the spot.
+
+You can also, at the same time, try animation first, as the animations in manim may not always correspond to your audio. Actually, animation first may be better. The pipeline is:
+
+1) Draft contents -> 
+2) Narration audio on draft + visualize animated scene (to plan animation) -> 
+3) Make animation based on visualizations-> 
+4) Stitch together animations in video -> 
+5) Narrate over animations (can record the entire video, or just audio. recommend entire video b/c hard to match audio w/ animations)
+
+<<<
+Be inspired by each visualization. Have a want to see it realized in actuality.

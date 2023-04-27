@@ -1,0 +1,18 @@
+This is not just one video, but many short ones.
+
+1. using AI to make amogus (generate)
+    a. by only prompt words
+    b. transfer learn using dreambooth
+    c. using embeddings
+2. turning anything into amogus (img2img)
+    a. by only prompt words
+    b. transfer learn using dreambooth
+    c. using embeddings
+3. forcing AI to hallucinate amogus (deepdream)
+4. interpreting the AI brain to find why it makes amogus
+5. a big one (combines several; philosophical)
+
+Use a mix of own voice and AI generated voices
+
+amogus as a dark fantasy film
+    also explain how it works, but practically instead of theoretically; give prompt words (b/c it was low effort anyways)

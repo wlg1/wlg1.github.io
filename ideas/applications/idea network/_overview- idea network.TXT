@@ -1,0 +1,110 @@
+A simple networking community full of 'casual toy projects'. People throw out ideas, timestamped, and 'merge' with similar ideas. Everything is recorded so people feel important, like they're contributing to life. These ideas meld together and people work together to enact them, even if they're not fully realized. It's like an [embryonic] soup of creativity. Each idea is on a node, and nodes find other nodes using AI similarity algorithms. Just a simple shower thought can generate entire projects, so you get acknowledgement on your shower thought and are encouraged to innovate, but the real admiration is on those who spent much more time making that project real. Each person contributes a small step, which is able to be contributed and acknowledged because it's added to a shared workspace. Pass the torch on.
+
+It's casual because each contributer can spend just a minute contributing to it, just as adding an idea. It's relaxing and stress-free, which is suited for an ADHD social media world. Anyone can contribute and create a new branch, like github. A thousand branches can emerge, but one can use AI to search thru them for a similar branch to see if the idea's already there. One can also ask real users (everyone gets a notification each time a branch is created, or a question asked on a project/branch they're following) about whether that's been created or not. This is IMPORTANT to prevent junk from overfilling and turning people away b/c too much junk is exhausting to read through. The AI/algorithms/community filters what you see, but does it in a way that's curated, instead of being snobby using upvotes where they hide things from everyone. Instead, they hide things irrelevant to some, but push it up when it's relevant to others. One person's trash is another's treasure.
+
+This has low barriers to entry b/c they're simply just ideas. Anyone can type. You don't need to know code, or draw, or make music, but there are parts of a project where you CAN use those things, not even as final serious parts, but 'just for fun' experiments where you toy around and see what happens when you add it there. 
+
+The name should be causal, along the lines of doodling/daydreaming together
+
+Should be organized with a good way to keep track. Too messy/bulky and it loses its purpose
+
+This is a way to organize projects such that the ideas of many come together. You can only submit an idea if you read through X amount of ideas- this means they don't get buried, regardless of popular census. Limit # of ideas; if filled, create a rival project?
+
+Aside from the experiments analysis (to see what's been done and double check on it using re-testing), there are also 'generalization patterns' suggested by users/AI and further voted upon. These can inspire new ideas, or solve similar problems.
+
+Users can have an account or be anonymous
+
+Eg 1) 
+I have this idea for a crowdsourcing app
+    [AI+other algos find similar nodes]
+[ people can add onto this idea ]
+[links up w/ multiple conflicting ideas- each can create a branch]
+[AI must sort these ideas and summarize them]
+User creates a new node, store node in DB
+Types of nodes: idea node, small implementation node, test node, suggestion node, etc
+
+Types of ideas: tiktok/youtube video, music, art, multimedia collab, app, video game, board game, story, worldbuilding, minecraft world
+[ sample templates on how to organize and proceed with each; can modify. suggestions on what else is needed; gets more detailed recs when user agrees w/ suggestion ]
+
+Try diff ways to do this:
+- database retrieval: relational, noSQL/graph
+    keep in mind: query optm (joins), distributed
+- search engine (unstructured)
+- facets
+- blockchain???
+
+Other features:
+- AI NLP
+- AI recommendation systems
+
+Existing similar apps:
+- github
+- wikipedia
+- social media threads (twitter, reddit, fb)
+- google search
+- mechanical turk
+
+Existing similar frameworks:
+- software engineering principles
+- logistics and optimization (see Amazon, Uber, etc)
+- crowdsourcing
+
+Build prototype demos:
+Try diff tools, noting what's needed and pros/cons (if little diff or hard to tell now, just pick whatever and gamble. don't be picky before testing. don't build too much w/o testing.)
+
+https://sagaratechnology.medium.com/the-fundamentals-of-front-end-and-back-end-development-5973ac0910cf
+
+vague ideas
+keep track who's good at high lvl, who's good at turning vague to less vague, etc
+drown out noise. will be competitive 
+
+each person may just have a tidbit of solution to share, not necc an expert, but that tidbit can be useful if they're in the right place for a task that others are too busy to contribute to
+
+Slogan: Makes Your Ideas Real
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+naturally arises out of necessity 
+
+idea generator: keeping up with the team. that's for a middle manager to handle, keep it flexible
+even just saving 1 hr helps, b/c 1 hr is energy. if 100 ppl wasted that 1 hr doing redundant work, that's 100 hrs wasted. so don't be afraid of your contribution being 'trivial', as long as its results are easy to understand and reproduce
+
+return list of tools
+
+Just create an EXAMPLE of how to organize this. This is a sample of what was in the machine you created long ago, which you lost access to because of clown attacks, but which still runs in the background
+
+<<<
+each user has a repo(s) of their own issue-solns, general notes, etc. Then an AI finds what questions/issues that their own issue-solns can potentially answer. A branch is created that is a 'potential answer', then experiments must be used to verify this (with citations + links). Those w/ more verified experiments are higher up. Those w/ less verified are STILL recommended to 'experimentalists' to verify.
+
+Attempts to break up collusion circles must be constantly improved, as the collusion circles can find better ways to trick the system, too.
+
+not only do we have solutions, we have explanations too
+
+<<<
+Even if you just impart one sentence to the world, even if it's just repeating some other sentence and it's not novel, you are still transmitting information to others, and play a part in society. every being, just by interacting with the universe, plays a part in it. This application just allows you to have the potential to do it in more impactful ways, connecting you to others whom you would otherwise not be connected to, allowing you to share ideas that you would otherwise not have brought up in conversation, as there would be no reason to do so, or it would feel like the wrong space to do so.
+
+Don't be afraid of thinking differently, or lacking info that others have, or having obscure info. What's important is contributing to a team, even if it's adding in 'useless' info- what's useless may later become useful, just like [example]. It's not about ego or fitting in to some standard. Don't worry if what you're learning is 'useful or not' to what's required of you. NOTHING is required of you. You are a free agent who has your own customized repo of knowledge.
+
+<<<
+Multiple ways to search for already submitted hypothesis- by keywords, by AI, by mixed (recommended)
+
+Vote on which search gives good results, to improve the system w/ feedback
+
+<<<
+A lot of ideas are just sitting there, never realized due to lack fo time. Why not give them to someone else to continue?
+
+<<<
+Everyone has a role to play. Even if they're not the brightest, there's jobs that the brightest don't have time to do, or aren't specialized in. Even if you wasted a bunch of time, you can still contribute with what you have- you don't need all that time to make a contribution. 
+
+Even if your contribution does nothing now, it's stored there and can be used by someone in the future, even if it's hundreds of years later.
+
+Don't be afraid to put anything out there and allow for corrections. But make sure what you put out there is readable and accessible. You can make it short, like how a tweet is short and accessible. You don't need an entire paper, where people will criticize things such as formatting or throw the entire thing out because of one bad section. They will take what they think is good and expand on that, and correct/criticize what they think is bad.
+
+<<<
+Doesn't have to be problem solving techniques. If you do a project, or go through a life lesson, you can have 'take-aways' that others can use for their own issues. Just like learning a lesson at the end of a cartoon
+
+<<<
+the sense used in finding analogous forms can be linked to synesthesia
+
+<<<
+self assign VERY specific roles (eg. instead of 'expert of biochem', be 'read many papers bridging biochem and physics'- thus your role is not to solve problems, but to consult to check over papers)

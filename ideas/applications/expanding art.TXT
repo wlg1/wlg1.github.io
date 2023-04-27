@@ -1,0 +1,33 @@
+-focus on animation, not photos
+-wont replace artists b/c 1) no meaning, 2) photoshop allowed painting fast, but that did not replace painters. Same w/ CGI.
+    talk to artists to come up with ideas for new techniques
+        what new art can it create that previous techniques couldn't? dream-like. blending. AI creates an init template of dream-like chaos, then artist re-arranges it like LEGOs in a GANpaint way. 
+        Or a game.
+        Fill in the rest.
+        Ai gives Suggestions.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+https://www.gwern.net/docs/www/towardsdatascience.com/5188b502c4c66a609b5b65d2dc5a97144652e43a.html
+I don’t think generative models are going to remove the need for creative artists any time soon, as generative models (along with most machine learning models) focus on modeling a specific distribution. This makes creating high quality images that are different from any samples in the training distribution (creative images) difficult. Tools like the one used in this blog that allow humans to add custom alterations can help to produce more unique images however, especially if the model has learned some fundamental graphical concepts such as lighting and perspective.
+
+<<<
+Just like sculpting with marble gives new materials, the generative models create materials such as strange dream-like patterns that artists can customize and use in their own way.
+
+The AI creates patterns, just like an ocean creates waves, but it does not have any meaning. The artist must assign meaning to them, to interpret them like someone does with clouds in a sky
+
+The AI gives the starting point, then the artist fine tunes it with sketching, etc. It can act as a source of inspiration- the AI has chaotic dream-like landscapes, and the artist must turn them into something more coherent and meaningful.
+
+Artists use software like GANpaint, which they can touch, just like touching sand and making sand paintings with their hands. It's material- dream-like material created by the AI that cannot exist in the imaginations of beings who do not operate in that space, as they are confined to things they have seen in this reality. AI can see things we cannot see.
+
+<<<
+https://twitter.com/ThomasScholes/status/1177703189455310848?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1177703189455310848%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.artbreeder.com%2F
+Speedpaints with @Artbreeder
+I love that you can create variations of the initial results that spark an interest. Here I'm compositing a few similar results with minimal painting over top. Can't wait until the day I can input my own work/kits :)
+
+<<<
+https://news.ycombinator.com/item?id=23093911
+Even if you can churn out AI-generated headshots, getting the colors/markings just right for your character is nontrivial for non-generic fursonas (see https://soatok.com/static/soatok-johis-responsive.jpg for example).
+And besides, most art commissions are conducted after you have a reference sheet and/or headshot of your character.
+
+<<<
+AI also won't replace artists because artists can create something specifically from the mind of themselves or others, down to fine details. AI can't do that; it can only generate something from a description, then a human (an artist or designer) must still continue to edit what was generated in order to tune it to the specific details of one's mind

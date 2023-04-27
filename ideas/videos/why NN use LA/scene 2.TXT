@@ -1,0 +1,39 @@
+SCENE 2.1:
+
+To show why neural networks use matrix multiplication, let’s start with an example where in the future, cat people roam the world. Some evidence suggests that how much a cat person enjoys naps...
+    cat faces pop in
+
+    one of them in sleeping. zoom in to make them be the only one on screen as the zzz play
+
+... can be predicted by measuring how far away their nose tips are from the center of their face. We call this measurement, 'Nose tip'.
+    highlight the nose, scale big then down
+
+For instance, many cat people with long nose tips are said to enjoy naps. It's always the case that the more a cat person smiles when napping, the more they enjoy it. We measure how much they enjoy naps using a metric called 'Nap Smile', or just shortened to 'Naps'. 
+    grow nose, then zzz with smile
+    write out Nap 
+
+But we don't know how nose tips exactly affects enjoying naps. How big of a Nap Smile does a cat person with a nose of size 3 have, compared to a cat person with a nose of size 2? A slightly bigger smile, or a much bigger smile? 
+    show: nose_tip - ? -> Enjoy Naps
+    nose of size 2 -> happy ?
+    nose of size 3 -> how much happier ???
+
+We're going to have to figure this out by using a neural network that takes in a cat person's nose tip as input, and predicts their nap enjoyment level.
+    make these appear in input and output nodes
+
+<<<
+SCENE 2.4: 
+
+Let's start with the input. We're only going to measure nose tip, capturing it into a Data Measurement.
+    nose tip word fades on top
+    separate nose out from cat person face by moving it to left, showing words 'Data Measurement' vs 'Cat Person'
+
+These are measured using 1 unit of nose tip, which is a basic measuring unit, just like using 1 meter for distance, or using 1 second for time.
+    on right: first fade in meter, then fade out and fadein time.
+
+Let's measure along a number line which we'll call the Nose Space, or the Nose Dimension. We can make a nose tip of 1 unit twice as big to get a nose tip of 2 units, or make it three times as big to get 3 units.
+    fade in the number line, then shift
+
+    nose space words also appear
+
+Each point in Nose Space is associated with a different Data Measurement.
+    show them all at once

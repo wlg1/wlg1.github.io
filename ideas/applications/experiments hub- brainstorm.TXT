@@ -1,0 +1,15 @@
+Hub for comparing experimental results, both pos and neg
+
+GOAL: This is not a novel idea; many labs have some sort of index that chronicles both pos and neg results, which they share with other labs. The main difference with this product is we attempt to make the results formatting universal, organizing data so it is easily shared and understood by different labs, such that its storage allows for easy retrieval even many years later, and for easy citation (if you need to cite a result, refer to this site). Another advantage with this product is that the user interface allows easier ways to search for (query) and compare data across different facets (dimensions).
+
+Search by 'attempt' to find if others did it before. This site doesn't provide a definitive answer- if yes (and results is aligned with user's query intent) then it was done, if no, it doesn't mean it wasn't done before.
+
+use some sort of machine learning label that can be corrected by users and admins
+
+Crowdsource b/c we still need average people to double check 'mundane' results they can run that more skilled people don't have time to do (or not even check- look at very detailed cases). After they run, higher skilled can check, and if it passes, keep on filtering up to most skilled to check so they can spend their time wisely.
+
+Detailed cases are good b/c even mundane metrics can provide evidence arguing for whether a hypothesis is true or false.
+
+For each hypothesis statement, list out what experiments were done about it, tables analyzing it, etc.
+
+Which researchers supported those outcomes? Reputation is determined by ???

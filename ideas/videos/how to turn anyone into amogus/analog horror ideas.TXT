@@ -1,0 +1,57 @@
+amogus: modify input, prompt and parameters and keep running until get images that look realistic but also 'clever' amogus (just like salad pepe)
+    https://stable-diffusion-art.com/chatgpt-prompt/
+
+shoop amogus into an environment (contextual)
+    backroom-ish (shouldn't look 100% realistic, but should still look realistic and somewhat identifiable)
+    amogus liminal spaces, dreamcore [unique to ai]
+refine amogus 
+refine amogus with inpainting
+
+https://keras.io/examples/generative/random_walks_with_stable_diffusion/#:~:text=Stable%20Diffusion%20isn't%20just,training%2Dtime%20fine%2Dtuning.
+transform b/w similar generated images
+interpolation video / exploration space (backrooms)
+https://openreview.net/forum?id=o2Udz4LZsL5
+https://arxiv.org/pdf/2212.06013.pdf
+The Stable Artist: Steering Semantics in Diffusion Latent Space
+https://arxiv.org/pdf/2302.12469.pdf
+Unsupervised Discovery of Semantic Latent Directions in Diffusion Models
+    Riemannian geometry: manifold curvature. this is the path to travel (while exploring)
+    how to control. steer.
+    faint images of spacemen in the backrooms? no; as training manual art.
+    warped space. geodesic. semantic
+    "However, we do not have any information on [liminal space distance]. It is definitely not a Euclidean metric."
+https://paperswithcode.com/paper/discovering-interpretable-directions-in-the
+
+liminal spaces (regions) are defined as the 'interpolations' b/w samples in a semantic direction within latent space
+
+be VERY high lvl in 1st video. no complex calculations, just map curved manifold to tangent
+    at end of video, somehow say 'to be continued' (eg. say chapter 2 but cut off in middle)
+    clips of this can be shorts and tiktok. entire thing can also be on tiktok; link to utub
+
+have a blurry VHS 'training manual' similar to backrooms in b/w cut from amogus to SD latent space explanation
+    https://www.youtube.com/watch?v=ZIFhglHn3W0&ab_channel=KanePixels
+Forcing an Among Us AI to make Amogus Liminal Spaces
+Forcing an Among Us AI to make Amogus  B A C K R O O M S
+pareidolia
+
+[tutorial is 'how to']
+[deepdream is 'forcing']
+1st video: AI amogus liminal spaces
+
+your job: explore the latent, liminal space and come back with an understanding of what the directions mean. map it.
+liminal interploation, boundary
+experiment tests to see if this technique works. casualities may occur (struck out)
+
+later video, cryptic message typed out (like graffiti):
+i am tired all teh time so i can dream while awake
+(be on the verge of dreaming)
+
+noise: dream to awake
+D I F F U S I O N - vaporwave relaxation commercial (sinister underneath)
+
+backrooms vtuber- corrupted AI
+
+welcome guests to chat with AI. figure out their mysteries (main storyline) while explaining their expertise hands-on (ie. if dmt neurosci chemistry, do simulations)
+    bring guests from multiple fields (eg. math, chem); do test run first w/ no expectation to go on, then propose them to go on if you all work well together
+
+category- entertainment. but cite paper.

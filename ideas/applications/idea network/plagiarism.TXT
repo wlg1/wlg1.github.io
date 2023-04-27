@@ -1,0 +1,1 @@
+An idea block can be copied by someone, just like a tweet. The difference is, the AI can search and compare to find matches in both keyword and concept, and all idea blocks are timestamped. It can also search throughout the entire web.

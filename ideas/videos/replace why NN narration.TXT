@@ -1,0 +1,16 @@
+METHOD 1:
+
+1a: see if can directly feed audio (w/ music) into voice translator, and get clear voice + music out
+
+1b: if not, make copy and remove music, then feed narration only to translator to get new voice. then make copy of original and remove narration (not music0, and add new voice in
+
+METHOD 2:
+Instead of getting timings, don't translate voice, generate entirely new ones from text only. Then get timings from youtube (parse html)'s subtitles, and sync voice to those timings (using some program that can place audio at certain intervals?) This method is harder.
+
+VOICES: christopher lee, agent smith, morpheus
+
+Why do Neural Networks use Linear Algebra? Narrated by Morpheus
+(put him in Thumbnail. 'narrated by' in matrix colors, then his image. shrink cats and vectors. put him in middle)
+'the visual intuition of cat math' is put inside video
+
+add flashing frames of furry gen morpheus throughout video to prevent 'same video'

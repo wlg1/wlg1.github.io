@@ -1,0 +1,11 @@
+Denoising is how much to degrade the input image with noise. The more noise, the less of of the original is left, the more work SD has to do to create the image and therefore the more different it is likely to be from the original.
+
+The CFG scale adjusts how much the image looks closer to the prompt and/ or input image. If CFG Scale is greater, the output will be more in line with the input prompt and/or input image, but it will be distorted. 
+
+https://www.aidemos.info/what-are-parentheses-and-brackets-in-stable-diffusion/
+() is more emphasis
+[] is less emphasis, {} is NAI’s “implementation” of (),
+<> is for embeddings, decimals specify the number of ()’s so you don’t need to type in a bunch.
+(Blue hair) would have more weight than [Blue hair] in the final result, (blue hair:1.4) would increase the blue hair by ~40% more than what it would’ve normally been, (blue hair:0.6) will decrease it by ~40%.
+
+If using multiple (parenthesis) instead of decimals, is changed by a multiplier of 1.1 with each new parenthesis
