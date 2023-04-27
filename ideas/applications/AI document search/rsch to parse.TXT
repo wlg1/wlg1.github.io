@@ -1,7 +1,0 @@
-https://github.com/kmeng01/memit
-https://memit.baulab.info/
-
-memit explorer:
-https://memit.baulab.us/#/
-
-https://github.com/anthropics/toy-models-of-superposition/blob/main/toy_models.ipynb

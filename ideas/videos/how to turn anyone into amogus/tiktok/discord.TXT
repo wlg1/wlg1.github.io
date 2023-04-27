@@ -1,3 +1,0 @@
-Hi, I made a video about neural networks and matrix multiplication for beginners (aimed at people unfamiliar with math). The audio a bit off so I'm planning on replacing it with an AI voice once I tune it to be satisfactory. Here's the video: https://www.youtube.com/watch?v=DHjwbleAgPQ&ab_channel=neoknowstic
-
-On the same channel I also have a video about "AI among us" that discusses differential geometry but that's more of a meme video than a math one.

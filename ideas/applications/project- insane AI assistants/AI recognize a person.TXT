@@ -1,2 +1,0 @@
-AI recognize a person/name
-    https://pii-tools.com/detect-person-names-in-text/

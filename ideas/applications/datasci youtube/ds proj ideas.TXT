@@ -1,3 +1,0 @@
-brainstorm deployment apps: (web, mobile/IOT)
-crawl text and generate pic (off+online learning, real-time data), social graphs, recommendations, filters, sales traffic, finance transactions, video game AI, music, sensors
-    just one is enough. only switch to new app if stuck w/ curr app.

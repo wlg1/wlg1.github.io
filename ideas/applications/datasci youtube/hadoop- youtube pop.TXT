@@ -1,9 +1,0 @@
-
-https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf
-you can AI generate a video using what 'optimizes youtube recs to many' to test vids which gain a lot of views. explicitly state this- don't hide it. this is b/c the video will be strange (actually don't do this- too many will steal it, and youtube will dislike you for exposing them)
-or don't explain your methodlogy- make it cryptic
-just say it's 'ai gen to optimize' but don't say which parts of the video are, keep it a secret b/c it's a mystery, a puzzle game for people to figure out and speculate on.
-first upload to new channel, then make video on your channel explaining what it is (only if it succeeds; if it doesn't, forget it)
-train gen NN on a bunch of popular videos
-
-https://blog.hootsuite.com/how-the-youtube-algorithm-works/

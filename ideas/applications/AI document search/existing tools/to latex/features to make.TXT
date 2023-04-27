@@ -1,9 +1,0 @@
-chatgpt is limited:
-
-- it cannot auto-fix latex errors when compiled in overleaf, given the code it used and error returned
-- it outputs latex code that doesn't compile
-- its outputs is limited in length, so you must prompt it multiple times
-- cannot read latex or images
-
-<<<
-gpt 4:

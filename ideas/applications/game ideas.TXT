@@ -1,5 +1,0 @@
-1. NN game: change the weights / NN arch to find a way to change the output. It's like the spacechem or electrical wiring games. A continuous flow through using inputs. Visualize this. 
-
-Spacechem for NNs. Have a story + RPG system. Very simple, thus also simple for the user to understand.
-
-This also functions as a visualization tool in the NN interpretation sandbox. See tensorboard

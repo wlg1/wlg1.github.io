@@ -1,1 +1,0 @@
-The projections are cells/humans, and the entire high dim NN is the body/society/simplex. Each projection is an interpretation of the NN. The interpretations all come together to form the NN.

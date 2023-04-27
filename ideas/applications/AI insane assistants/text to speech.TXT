@@ -1,9 +1,0 @@
-https://www.thepythoncode.com/article/convert-text-to-speech-in-python
-
-D:\Documents\_prog\prog_cust\GPT 
-    \ GPT_speech_output.py
-
-https://pypi.org/project/decbot/
-
-https://stackoverflow.com/questions/43914368/how-to-choose-male-voice-in-google-text-to-speech-api
-you can't

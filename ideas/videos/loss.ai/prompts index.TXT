@@ -1,5 +1,0 @@
-prompt 1: a comic. top left panel: man arrives in hospital. top right panel: man is worried and talks to receptionist. bottom left panel: man is worried and sees a doctor. bottom right panel: man sees his wife lying on bed upset
-
-prompt 2: a comic. top left panel: shrek arrives in hospital. top right panel: shrek is worried and talks to receptionist. bottom left panel: shrek is worried and sees a doctor. bottom right panel: shrek sees his wife fiona lying on bed upset
-
-prompt 3: a comic. top left panel: spongebob arrives in hospital. top right panel: spongebob is worried and talks to receptionist. bottom left panel: spongebob is worried and sees a doctor. bottom right panel: spongebob sees his wife patrick lying on bed upset

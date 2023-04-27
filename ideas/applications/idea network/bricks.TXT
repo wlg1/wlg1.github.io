@@ -1,7 +1,0 @@
-twitter has tweets, tiktok has tiktoks, youtube has clips and shorts. the micro contributions in ReLayt (or Medley) are called 'blocks' (placeholder name), similar to Minecraft. these are like commits in github. alt names may be 'bricks', 'marks', 'posts', 'units', 'nodes', 'points', 'relations'.
-
-blocks is easier name to understand by public, node sounds too techy
-
-idea block search feature: like a zelda trading game, keep on asking around to search using human minds, instead of a search engine. a question can be reposted in other areas to ask for more info. need diff expertise from what people have seen
-
-shower thoughts is also another name (for both the entire site and the brick). but this phrase may not be known that much outside of reddit

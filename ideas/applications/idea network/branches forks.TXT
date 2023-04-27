@@ -1,5 +1,0 @@
-To prevent trolling, a user can have several options about branches:
-auto add all branches
-add only approved branches
-
-Now with approved branches, a user can ensure only quality offshoots of their idea are used, but someone is free to copy a user's branch with no restriction, and post a bunch of whatever they want after that idea block. It's just like github

@@ -1,6 +1,0 @@
-This app should never be seen as the FIRST time or THE time someone contributes that concept. But it is proof that there is A time they did so. Whether they took the idea from somewhere else or not cannot be answered through this app's data.
-
-Small ideas building up into small prototypes
-
-<<<
-instead of h-index, have another type of cooperative index 

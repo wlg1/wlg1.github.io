@@ -1,5 +1,0 @@
-cfg: lower is higher quality, but less like prompt + image
-denoising: less is more like original, high is more like prompt
-
-https://getimg.ai/guides/interactive-guide-to-stable-diffusion-steps-parameter
-Around 25 sampling steps are usually enough to achieve high-quality images. Using more may produce a slightly different picture, but not necessarily better quality. In addition, the iterative nature of the process makes generation slow; the more steps you'll use, the more time it will take to generate an image. In most cases, it's not worth the additional wait time.

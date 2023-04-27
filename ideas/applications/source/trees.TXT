@@ -1,3 +1,0 @@
-When studying / solving, do DFS on parts you don't understand. Track this stack as entire tree (have this option) or part of it (zoomed in). Fill it in with chatgpt, guess branches, searches, human experts, visuals, programs, etc. Then go back up and read the rest of it using new info that sheds light on meaning of the rest.
-
-A makeshift version of this can be done with notion and subpages

@@ -1,1 +1,0 @@
-denoising strength = 0.75
