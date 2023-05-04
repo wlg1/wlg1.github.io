@@ -108,6 +108,16 @@ Analogous Neural Circuit Experiments aim to find common patterns in neural netwo
 <li><b>Improving Transfer Learning:</b> By understanding which parts of a neural network perform what function, practitioners will be able to dissect neural networks to retrieve the part they need, and apply transfer learning to fine tune that part to suit their own, specific goals.</li>
 </ul>
 
+An index of experiments and notes is given by the links below:
+
+<a href="https://marsh-crane-a15.notion.site/Experiments-Index-33ca6dad981343abb00a974a6c4e3607">Experiments Index</a>
+
+<a href="https://marsh-crane-a15.notion.site/Notes-0c9ac6d4ec58411bb2d462ed854840c9">Notes</a>
+
+<a href="https://marsh-crane-a15.notion.site/Techniques-Compendium-ea12d22f5a8940b190b553d17200ba08">Techniques Compendium</a>
+
+<a href="https://marsh-crane-a15.notion.site/Projects-ec03f3b70b5e43c99c1625abd240fa0f">Projects</a>
+
 These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted. An example of a notebook demonstrating simple experiments is given below:
 
 <a href="https://colab.research.google.com/drive/12hQolN9TLXsakkG96nYUgU30_6YL74bf">TUTORIAL 1: Compare Neuron Activations Between Pairs of Images</a>
