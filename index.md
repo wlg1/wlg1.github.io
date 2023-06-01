@@ -22,7 +22,34 @@ title: Front Page
 
 <span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
 
-[ Website in process of being built. Projects in progress are not added yet and will be added soon. ]
+[ Website in process of being built. Some projects in progress are not added yet and will be added later. ]
+
+---
+
+<p style="font-size:20px"><b>
+<a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Transformer Comparison Circuit Experiments</a>
+</b></p>
+
+Based on previous work that used techniques such as activation patching and dot product congruence [ Interpretability in the Wild, "An" Neuron, etc to be cited ], these experiments look, in large language models, for circuits which compare information, such as sizes. For the GPT-family of models, this work is currently investigating:
+<ul>
+<li> Adjective Identification Circuits </li>
+<li> Most Recent Subject Circuits </li>
+<li> Not Identification Circuits </li>
+<li> Antonym Identification Circuits (related to Adjective ID Circuits) </li>
+</ul>
+
+Records of experiments and notes is given by the links below:
+[ put 3m overview video here an describe it]
+
+<a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Experiments Index</a>
+
+These pages are supplemental to the experiments:
+
+<a href="https://wlg1.notion.site/Notes-0c9ac6d4ec58411bb2d462ed854840c9">Notes</a>
+
+<a href="https://wlg1.notion.site/Techniques-Compendium-ea12d22f5a8940b190b553d17200ba08">Techniques Compendium</a>
+
+<a href="https://wlg1.notion.site/Ideas-b7fe100b6ddf4b3c84d702dc4b918ce6">Ideas</a>
 
 ---
 <p style="font-size:20px"><b>
@@ -107,16 +134,6 @@ Analogous Neural Circuit Experiments aim to find common patterns in neural netwo
 <li><b>Improving Model Debugging:</b> By uncovering the black box that obscures how neural networks make decisions, practitioners will have more control over debugging neural networks to do what they want. </li>
 <li><b>Improving Transfer Learning:</b> By understanding which parts of a neural network perform what function, practitioners will be able to dissect neural networks to retrieve the part they need, and apply transfer learning to fine tune that part to suit their own, specific goals.</li>
 </ul>
-
-An index of experiments and notes is given by the links below:
-
-<a href="https://marsh-crane-a15.notion.site/Experiments-Index-33ca6dad981343abb00a974a6c4e3607">Experiments Index</a>
-
-<a href="https://marsh-crane-a15.notion.site/Notes-0c9ac6d4ec58411bb2d462ed854840c9">Notes</a>
-
-<a href="https://marsh-crane-a15.notion.site/Techniques-Compendium-ea12d22f5a8940b190b553d17200ba08">Techniques Compendium</a>
-
-<a href="https://marsh-crane-a15.notion.site/Projects-ec03f3b70b5e43c99c1625abd240fa0f">Projects</a>
 
 These experiments are housed in a Github repo with Colab notebooks that walk a reader through how the experiments were conducted. An example of a notebook demonstrating simple experiments is given below:
 
