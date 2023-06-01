@@ -53,15 +53,22 @@ These pages are supplemental to the experiments:
 
 ---
 <p style="font-size:20px"><b>
-<a href="https://www.youtube.com/@neoknowstic">Educational Videos on Neural Network Math</a>
+<a href="https://www.youtube.com/@neoknowstic">Educational Videos on Neural Network Mathematics</a>
 </b></p>
 
 Why do Neural Networks use Linear Algebra? || The Visual Intuition of Cat Mathematics
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DHjwbleAgPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This is a video series aimed at a general audience explaining the math behind neural network interpretability. 
+This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video introduces the geometry of latent space for a simple MLP, explaining concepts such as the relations of neurons and feature vectors, basis vectors, dot product, and hypotheses about latent space arithmetic. To be accessible to layman, it starts with simple multiplication and change of units, gradually extending this to matrix multiplication.
 
+Note on the youtube recommendation algorithm:
+This video was climbing up in views each day until its reupload due to audio issues; afterwards, it gained very little views. It may have gotten penalized due to being nearly identical to the previous upload, as there are claims that youtube penalizes duplicate videos. Claims state the algorithm recommends videos based on current news/trends, which do not have to be large but just "large enough" (windy, not even a hurricane). Small trends meant similar videos are swept up in the conglomorate and recommended. 
+
+[to explain amogus video on same channel]:
+
+https://www.youtube.com/watch?v=MMLKwomDKDI&ab_channel=TREYtheExplainer
+An expalnation of the among us pareidolia effect
 
 <!---
 [image of face and face w/o mouth, showing toy circuits of each and what differs]
