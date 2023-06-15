@@ -77,7 +77,7 @@ This video was climbing up in views each day until its reupload due to audio iss
 ---
 <b>THE AI AMONG US in Your Non-Euclidean Mind 〘 Analog VHS Infomerical 〙</b>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5yAhJWne5-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xI7tAjoe4oc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 This second video demonstrates Diffusion Model Editing using techniques from Differential Geometry and images from Stable Diffusion. It is aimed at a non-academic audience, combining themes from popular youtube "Analog Horror" videos. It is part of a series of videos intended to introduce generative model editing to a younger, high school aged audience. The following video provides a background explanation of the content in the video:
 
