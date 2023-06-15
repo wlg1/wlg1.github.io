@@ -55,6 +55,60 @@
     - Debugging gradient computations during the backward pass
     - Implementing custom loss functions or regularization techniques
     - Extracting intermediate representations from a neural network for use in downstream tasks such as feature extraction or transfer learning.
+
+---
+
 - torch.randn(3, 3).**to("cuda")**
     
     Tensor moved to the GPU (the CUDA device) for faster computation
+    
+
+---
+
+- Broadcasting
+    
+    Broadcasting is a way of making tensors with different shapes compatible for element-wise operations. When two tensors have different shapes, broadcasting rules are used to stretch one or both tensors to match the shape of the other tensor, so that the element-wise operation can be performed.
+    
+    ```
+    tensor1 = torch.tensor([[1, 2], [3, 4]])
+    tensor2 = torch.tensor([10, 20])
+    ```
+    
+    In this case, `tensor1` has shape (2, 2), while `tensor2` has shape (2,). When we add these tensors using the `+` operator, broadcasting rules are used to stretch `tensor2` to match the shape of `tensor1` (by repeating tensor2), resulting in the following tensors:
+    
+    ```
+    tensor1 = [[1, 2], [3, 4]]
+    tensor2 = [10, 20]
+    
+    # After broadcasting:
+    tensor1 = [[1, 2], [3, 4]]
+    tensor2 = [[10, 20], [10, 20]]
+    ```
+    
+    Now that both tensors have the same shape, the element-wise addition is performed on each corresponding element of the two tensors, resulting in the following tensor:
+    
+    ```
+    tensor3 = tensor1 + tensor2
+    # tensor3 = [[11, 22], [13, 24]]
+    ```
+    
+- Can broadcasting be done if the dims of tensor2 are not a factor of tensor1's dims?
+    
+    No, broadcasting cannot be done if the dimensions of `tensor2` are not a factor of `tensor1`'s dimensions. Broadcasting requires that the dimensions of the two tensors are compatible, which means that they should either have the same size in each dimension, or one of the tensors should have a size of 1 in that dimension.
+    
+    For example, consider the following PyTorch tensors:
+    
+    ```
+    tensor1 = torch.tensor([[1, 2], [3, 4]])
+    tensor2 = torch.tensor([10, 20, 30])
+    ```
+    
+    In this case, `tensor1` has shape (2, 2), while `tensor2` has shape (3,). Since the dimensions of `tensor2` are not a factor of `tensor1`'s dimensions, broadcasting cannot be done between the two tensors.
+    
+    If we try to perform an element-wise operation between these two tensors, such as addition, PyTorch will raise a `RuntimeError` with a message similar to the following:
+    
+    ```
+    RuntimeError: The size of tensor1 (2) must match the size of tensor2 (3) at non-singleton dimension 0
+    ```
+    
+    This error message indicates that the dimensions of `tensor1` and `tensor2` are incompatible for element-wise operations, since the sizes of the first dimension (i.e., the number of rows) are different.

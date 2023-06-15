@@ -22,6 +22,8 @@ title: Front Page
 
 <span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
 
+[ Ctrl++ or Mouse Wheel to zoom in for bigger text. ]
+
 [ Website in process of being built. Some projects in progress are not added yet and will be added later. ]
 
 ---
@@ -38,10 +40,17 @@ Based on previous work that used techniques such as activation patching and dot 
 <li> Antonym Identification Circuits (related to Adjective ID Circuits) </li>
 </ul>
 
-Records of experiments and notes is given by the links below:
-[ put 3m overview video here an describe it]
+Records of experiments and notes are found in the link below:
 
 <a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Experiments Index</a>
+
+Videos introducing the work so far are also provided. The video below is a short introductory overview, while the link that follows  provides a series of videos going over the details of the work:
+
+[ introductory 3m overview video embeds here ]
+
+<a href="https://wlg1.notion.site/Videos-Interpret-Attention-Head-Circuits-of-Comparison-Inputs-DRAFTS-24b67e08b1d74f70be8ed3012e8278bc">Videos- Interpret Attention Head Circuits of Comparison Inputs (DRAFTS)</a>
+
+---
 
 These pages are supplemental to the experiments:
 
@@ -56,19 +65,28 @@ These pages are supplemental to the experiments:
 <a href="https://www.youtube.com/@neoknowstic">Educational Videos on Neural Network Mathematics</a>
 </b></p>
 
-Why do Neural Networks use Linear Algebra? || The Visual Intuition of Cat Mathematics
+<b>Why do Neural Networks use Linear Algebra? -- The Visual Intuition of Cat Mathematics</b>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DHjwbleAgPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video introduces the geometry of latent space for a simple MLP, explaining concepts such as the relations of neurons and feature vectors, basis vectors, dot product, and hypotheses about latent space arithmetic. To be accessible to layman, it starts with simple multiplication and change of units, gradually extending this to matrix multiplication.
+This is the first video in a series aimed at a general audience explaining the math behind neural network interpretability. The first video introduces the geometry of latent space for a simple MLP, explaining concepts such as the relations of neurons and feature vectors, basis vectors, dot product, and hypotheses about latent space arithmetic. To be accessible to layman, it starts with simple multiplication and change of units, gradually extending this to matrix multiplication.
 
-Note on the youtube recommendation algorithm:
-This video was climbing up in views each day until its reupload due to audio issues; afterwards, it gained very little views. It may have gotten penalized due to being nearly identical to the previous upload, as there are claims that youtube penalizes duplicate videos. Claims state the algorithm recommends videos based on current news/trends, which do not have to be large but just "large enough" (windy, not even a hurricane). Small trends meant similar videos are swept up in the conglomorate and recommended. 
+<u>Note on the youtube recommendation algorithm:</u>
+This video was climbing up in views each day until its reupload due to audio issues; afterwards, it gained very little views. It may have gotten penalized due to being nearly identical to the previous upload, as there are claims that youtube penalizes duplicate videos. Claims state the algorithm recommends videos based on current news/trends, which do not have to be large but just "large enough" (windy, not even a hurricane). Small trends meant similar videos are swept up in the conglomorate and recommended. The #SoME3 competition at the end of August 2023 is usually when educational videos trend; once the third video (about Diffusion Model Editing) on this channel is uploaded for that competition, it is expected that the other videos will also be recommended alongside it.
 
-[to explain amogus video on same channel]:
+---
+<b>THE AI AMONG US in Your Non-Euclidean Mind 〘 Analog VHS Infomerical 〙</b>
 
-https://www.youtube.com/watch?v=MMLKwomDKDI&ab_channel=TREYtheExplainer
-An expalnation of the among us pareidolia effect
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5yAhJWne5-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+This second video demonstrates Diffusion Model Editing using techniques from Differential Geometry and images from Stable Diffusion. It is aimed at a non-academic audience, combining themes from popular youtube "Analog Horror" videos. It is part of a series of videos intended to introduce generative model editing to a younger, high school aged audience. The following video provides a background explanation of the content in the video:
+
+<a href="https://www.youtube.com/watch?v=MMLKwomDKDI&ab_channel=TREYtheExplainer">An expalnation of the among us pareidolia effect</a>
+
+---
+This is an outdated site (to be updated later) explaining concepts similar to ones in the videos above in a blog format:
+
+<a href="eduBlogHome.html">Making the Math of Neural Networks Intuitive</a>
 
 <!---
 [image of face and face w/o mouth, showing toy circuits of each and what differs]

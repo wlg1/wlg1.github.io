@@ -1,10 +1,10 @@
 # Tensor
 
+**What are tensors?**
+
 [https://www.youtube.com/watch?v=L35fFDpwIM4&ab_channel=StatQuestwithJoshStarmer](https://www.youtube.com/watch?v=L35fFDpwIM4&ab_channel=StatQuestwithJoshStarmer)
 
-(Remove all the timestamps in ** and turn into a single paragraph with no new lines)
-
-(not from math view, but ML view): unlike normal scalars arrays matrices and n-dimensional matrices, tensors were designed to take advantage of hardware acceleration. In other words, tensors don't just hold data in various shapes like these, but they also allow for all the math that we have to do with the data to be done relatively quickly. Usually, tensors and the math they do are sped up with special chips called graphics processing units (GPUs). But there are also tensor processing units (TPUs) that are specifically designed to work with tensors and make neural networks run relatively quickly.
+(Not from math view, but ML view): unlike normal scalars arrays matrices and n-dimensional matrices, tensors were designed to take advantage of hardware acceleration. In other words, tensors don't just hold data in various shapes like these, but they also allow for all the math that we have to do with the data to be done relatively quickly. Usually, tensors and the math they do are sped up with special chips called graphics processing units (GPUs). But there are also tensor processing units (TPUs) that are specifically designed to work with tensors and make neural networks run relatively quickly.
 
 Automatic differentiation: tensors will also take care of derivates for you
 
@@ -57,3 +57,9 @@ Automatic differentiation: tensors will also take care of derivates for you
             ```
             
             In this case, the matrix has three columns, and each column represents a vector in three-dimensional space.
+            
+        
+
+---
+
+[**Sum over an index**](Tensor%205555c4af00994d9fb9a8b7e90d5b18de/Sum%20over%20an%20index%208e5f325c799447948ab6fc98514a56ea.md)

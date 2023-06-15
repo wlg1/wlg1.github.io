@@ -6,7 +6,7 @@ REF 2: [https://www.youtube.com/watch?v=I1ELSZNFeHc&ab_channel=BlackboxNLP](http
 
 Notes on:
 
-[ROME code](https://www.notion.so/ROME-code-c0e512b0a7304f3c8dfd6e897380cd4a) 
+[ROME code](../Code%20515029dddcdc4d268ad1b5b2298d2cd6/ROME%20code%20ceb982344bb048c58c9ff04af5cd98ba.md) 
 
 ### Prelim questions (surface level)
 
@@ -28,6 +28,17 @@ In which cases does it generalize vs not?
 > 
 > generality, generating the correct output for inputs related to the edit input (e.g., Who is the UK PM?).
 > 
+
+- What's counterfactual ?
+    
+    Counterfactual refers to a hypothetical or imagined scenario that describes what would have happened if a particular event or condition had been different from what actually occurred. It involves reasoning about an alternative outcome or state of affairs that did not happen in reality but is being contemplated for analysis or comparison.
+    
+    In the context of causal inference and causal analysis, counterfactuals are used to estimate the causal effect of a particular intervention or treatment. They represent the outcomes that would have been observed if individuals or units had been exposed to different conditions or treatments. Counterfactuals allow researchers to compare what actually occurred with what could have happened under different circumstances, enabling them to estimate causal relationships and understand the impact of interventions.
+    
+    Counterfactuals are often expressed using the notation of potential outcomes, where Y(1) represents the outcome under the treatment condition and Y(0) represents the outcome under the non-treatment or control condition. By comparing the potential outcomes for the treated and non-treated groups, researchers can estimate the causal effect of the treatment or intervention.
+    
+    Counterfactual thinking and reasoning play a crucial role in various fields such as causal inference, policy evaluation, and understanding the effects of interventions or treatments. They allow researchers to go beyond observed data and consider alternative scenarios to gain insights into causality and make informed decisions.
+    
 
 ---
 

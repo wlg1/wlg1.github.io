@@ -24,6 +24,24 @@ There are various methods for enforcing low-rank constraints on weight matrices.
     Note that the rank k can also be interpreted as the number of latent factors or hidden features that the model is learning from the input data. By reducing the rank, we can learn a lower-dimensional representation of the input data that captures the most important information and removes noise or irrelevant features.
     
 
+[https://colab.research.google.com/github/neelnanda-io/TransformerLens/blob/main/demos/Main_Demo.ipynb#scrollTo=ddd95u0bzrPN](https://colab.research.google.com/github/neelnanda-io/TransformerLens/blob/main/demos/Main_Demo.ipynb#scrollTo=ddd95u0bzrPN)
+
+- Why are low-rank factorized matrices useful for transformer interpretability?
+    
+    As argued in [A Mathematical Framework](https://transformer-circuits.pub/2021/framework/index.html), an unexpected fact about transformer attention heads is that rather than being best understood as keys, queries and values (and the requisite weight matrices), they're actually best understood as two low rank factorized matrices.
+    
+    - **Where to move information from:** , used for determining the attention pattern - what source positions to move information from and what destination positions to move them to.
+        
+        WQK=WQWTK
+        
+        - Intuitively, residual stream -> query and residual stream -> key are linear maps, *and* `attention_score = query @ key.T` is a linear map, so the whole thing can be factored into one big bilinear form `residual @ W_QK @ residual.T`
+    - **What information to move:** , used to determine what information to copy from the source position to the destination position (weighted by the attention pattern weight from that destination to that source).
+        
+        WOV=WVWO
+        
+        - Intuitively, the residual stream is a `[position, d_model]` tensor (ignoring batch). The attention pattern acts on the *position* dimension (where to move information from and to) and the value and output weights act on the *d_model* dimension - ie *what* information is contained at that source position. So we can factor it all into `attention_pattern @ residual @ W_V @ W_O`, and so only need to care about `W_OV = W_V @ W_O`
+    - Note - the internal head dimension is smaller than the residual stream dimension, so the factorization is low rank. (here, `d_model=768` and `d_head=64`)
+
 ---
 
 NOTES:

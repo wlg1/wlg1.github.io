@@ -18,6 +18,18 @@ These attention weights are then multiplied by the value vectors (V), and the re
 
 ---
 
+### Attention Pattern
+
+[REF](https://colab.research.google.com/drive/1br5wc-GQWaExgUnDIZcDarZ_zaBB-NYX#scrollTo=AmI77qenHSqU)
+
+(query = dest, rows, key = source, cols)
+
+upper right triangle on attn head are all 'next' tokens relative to current row
+
+p75, rigor test
+
+---
+
 [Hidden States](../Hidden%20States%20db3887268cff4dbebb92c9f61ad52485.md)
 
 ---
@@ -63,3 +75,9 @@ V1 = h1_t1 * W_V
 Q2 = h1_t2 * W_Q
 K2 = h1_t2 * W_K
 V2 = h1_t2 * W_V
+
+---
+
+https://youtu.be/mMa2PmYJlCo
+
+Each Attention Head focuses on part of the input, such as “mountain” or “clouds”.

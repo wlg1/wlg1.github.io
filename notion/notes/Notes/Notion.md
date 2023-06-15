@@ -43,6 +43,10 @@ Q: Why are some pages not aligned with others? It seems like there’s a space i
     Neither type of page can be dragged and dropped into another root super-notebook. However, both types can be dragged into any sub-notebooks of a super-notebook
     
 
+If you copy one page inside another, its backlinks won’t be copied.
+
+DANGER: DO NOT TURN AN IN-LINE PAGE FROM TEXT TO ‘PAGE’; IT WILL DELETE ALL IN THE PAGE
+
 ---
 
 [https://www.wepc.com/tips/chat-gpt-vs-notion-ai/](https://www.wepc.com/tips/chat-gpt-vs-notion-ai/)
@@ -67,9 +71,21 @@ BACKLINKS: These only occur if you use “@ page”, but cannot occur if you hig
 
 ---
 
-To quickly use toggle, /tog then write in header, and enter to next line, then just tab in. Alt, click the arrow and click in the body.
+To quickly use toggle, /tog then write in header, and enter to next line, then just tab in (backspace if it creates new toggle bullet). Alt, click the arrow and click in the body.
 
 To quickly put something copied w/ both header and body in toggle, use /tog then paste both header and body inside. Then just backspace header in, and tab body in.
+
+---
+
+In line equations: first must start with $$, then end with $$. If don’t start with $$ when typing it, it won’t work. To force what’s inside as an equation, using brackets: $${ }$$
+
+---
+
+Alt + enter makes less of a line space than enter
+
+---
+
+When exporting, only pages with pages within will be turned into folders (else they’ll just be files). Colons (:), etc in names will just be removed in files/folders names
 
 ---
 

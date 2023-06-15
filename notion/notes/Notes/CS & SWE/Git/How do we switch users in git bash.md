@@ -5,7 +5,6 @@
 
 ```
 git config user.name
-
 ```
 
 This will display the name of the current user.

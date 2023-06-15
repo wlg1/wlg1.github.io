@@ -21,3 +21,9 @@
 ---
 
 Non-linear functions, such as exponential, logarithmic, or trigonometric functions, generally cannot be represented by matrices. One common approach is to use an algorithm that approximates the function using a series of simpler, linear functions. This is often done using techniques such as interpolation or regression. Another approach is to use iterative numerical methods to approximate the value of the function at a given point. For example, one can use Newton's method or gradient descent to find the root of a nonlinear equation or the minimum of a nonlinear function.
+
+---
+
+[https://dynalist.io/d/AzaG5a1q-GLme4SmFrDlLD-O](https://dynalist.io/d/AzaG5a1q-GLme4SmFrDlLD-O)
+
+![Untitled](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Untitled.png)

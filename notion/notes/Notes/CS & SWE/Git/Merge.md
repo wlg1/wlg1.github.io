@@ -1,6 +1,6 @@
 # Merge
 
-always create a backup of both ‘from’ and ‘to’ first. Eg) make sure can restore both by a commit.
+Always create a backup of both ‘from’ and ‘to’ first. Eg) make sure can restore both by a commit.
 
 1. Check out the branch where you want to merge changes.
     1. git checkout main

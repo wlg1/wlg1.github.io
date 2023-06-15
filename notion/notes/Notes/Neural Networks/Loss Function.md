@@ -1,5 +1,11 @@
 # Loss Function
 
+[https://builtin.com/machine-learning/common-loss-functions](https://builtin.com/machine-learning/common-loss-functions)
+
+Mean _ error loss functions: the average of **differences between the actual and the predicted value**
+
+---
+
 Likelihood is the probability of observing the data x given a particular set of model parameters θ
 
 $$

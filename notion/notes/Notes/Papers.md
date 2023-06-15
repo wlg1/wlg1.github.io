@@ -6,15 +6,33 @@
 
 [In-context Learning and Induction Heads](Papers%203fa55c25c0194ccd89e95feefb9e16bc/In-context%20Learning%20and%20Induction%20Heads%20f6c26430e69948fd9168457739f3e173.md) 
 
-[ROME: Locating and Editing Factual Associations in GPT](Papers%203fa55c25c0194ccd89e95feefb9e16bc/ROME%20Locating%20and%20Editing%20Factual%20Associations%20in%20%205538511ecf24401ca32fd06b20eb2b42.md) 
+[Transformer Feed-Forward Layers Are Key-Value Memories](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Transformer%20Feed-Forward%20Layers%20Are%20Key-Value%20Memo%200a97101d5550430d8ef5e0a4c8016253.md)
+
+[****Interpretability in the Wild****](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Interpretability%20in%20the%20Wild%20f7e5e77ced0c4dd9812cc142ce372b37.md)
+
+[Rigorously Testing Interpretability Hypotheses Using Causal Scrubbing](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Rigorously%20Testing%20Interpretability%20Hypotheses%20Usi%200382f86cfc7341189c2fc229989e6b26.md)
+
+[Towards Automated Circuit Discovery for Mechanistic Interpretability](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Towards%20Automated%20Circuit%20Discovery%20for%20Mechanisti%20e22fd1e2478347ea9686424d6080b5b7.md)
+
+[Knowledge Neurons in Pretrained Transformers](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Knowledge%20Neurons%20in%20Pretrained%20Transformers%202bdb62adf77d4e94aa77d2a36375e570.md)
+
+### Transformer Editing
 
 [FAST MODEL EDITING AT SCALE](Papers%203fa55c25c0194ccd89e95feefb9e16bc/FAST%20MODEL%20EDITING%20AT%20SCALE%20ea8582482e514da4a9731d1ee5ac2e02.md) 
 
-[Transformer Feed-Forward Layers Are Key-Value Memories](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Transformer%20Feed-Forward%20Layers%20Are%20Key-Value%20Memo%200a97101d5550430d8ef5e0a4c8016253.md)
+[ROME: Locating and Editing Factual Associations in GPT](Papers%203fa55c25c0194ccd89e95feefb9e16bc/ROME%20Locating%20and%20Editing%20Factual%20Associations%20in%20%205538511ecf24401ca32fd06b20eb2b42.md) 
 
 [MEMIT](Papers%203fa55c25c0194ccd89e95feefb9e16bc/MEMIT%207db0877ab4334c3eba4e8d208ee8245e.md) 
 
 [Modifying Memories in Transformer Models](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Modifying%20Memories%20in%20Transformer%20Models%20aca25361c9e14f2788b6649f1ada82c8.md)
+
+### Non-Academic Projects: Transformer Interpretability
+
+***[List of Alignment Jams](Papers%203fa55c25c0194ccd89e95feefb9e16bc/List%20of%20Alignment%20Jams%20bf0d94025dff4de386f2e405b10f4528.md)*** 
+
+[Identifying a Preliminary Circuit for Predicting Gendered Pronouns in GPT-2 Small](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Identifying%20a%20Preliminary%20Circuit%20for%20Predicting%20G%2011c53a178e3845669fa2ea2678840c48.md)
+
+[****Model editing hazards at the example of ROME****](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Model%20editing%20hazards%20at%20the%20example%20of%20ROME%2022a6a45865894960803d902ff3b406a6.md)
 
 ---
 
@@ -24,4 +42,8 @@
 
 [Unsupervised Discovery of Semantic Latent Directions in Diffusion Models](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Unsupervised%20Discovery%20of%20Semantic%20Latent%20Directio%203f04374d123b414692e1c7bd66e03a99.md)
 
-[Erasing Concepts from Diffusion Models](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Erasing%20Concepts%20from%20Diffusion%20Models%203abab3717e9e4d94a2134fb703757693.md)
+[Erasing Concepts from Diffusion Models](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Erasing%20Concepts%20from%20Diffusion%20Models%203abab3717e9e4d94a2134fb703757693.md) 
+
+---
+
+[AlphaTensor](Papers%203fa55c25c0194ccd89e95feefb9e16bc/AlphaTensor%20688928e3a83944649bdaa541a309e4e3.md)

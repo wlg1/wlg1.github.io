@@ -8,7 +8,7 @@
 
 [Practical Optimization](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Practical%20Optimization%20998e549d5e164bb6b9ff3bf5330019ce.md)
 
-### OS
+### OS & Related Tools
 
 ---
 
@@ -16,7 +16,27 @@
 
 [Bash](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Bash%202a08c45ec15548dc968f872461395b68.md) 
 
-### Services
+### Programming Languages & Their Tools
+
+---
+
+[Python](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Python%20f5fe14898d744a74819532b914123159.md) 
+
+[PyTorch](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/PyTorch%202a665e7d823b4f58b3226e98d4de3a01.md)
+
+[Colab / Jupyter](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Colab%20Jupyter%20565557ea395f4767b53b9c787ed9208d.md)
+
+### Hardware
+
+---
+
+[Hardware Reqs for Models](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Hardware%20Reqs%20for%20Models%201596c45e7a3944a88fbfc2a5937dc14b.md) 
+
+[GPU](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/GPU%20ffd6c25f07a3449d9b88a1f123952b59.md)
+
+[TPU](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/TPU%206f18572c97794e339566dca7941713e6.md)
+
+### Services: Tools and Packages
 
 ---
 
@@ -32,24 +52,6 @@
 
 [Visual Studio Code](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Visual%20Studio%20Code%202142369bcaf147e1bd15445c3a48f497.md)
 
-### Programming Lang & Tools
+### Security
 
----
-
-[Python](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Python%20f5fe14898d744a74819532b914123159.md) 
-
-[PyTorch](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/PyTorch%202a665e7d823b4f58b3226e98d4de3a01.md)
-
-[Colab / Jupyter](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Colab%20Jupyter%20565557ea395f4767b53b9c787ed9208d.md)
-
-### AI programs
-
----
-
-[AI assistants](AI%20assistants%20fe45c6ae02c843a4bfbbe95d951a6a3b.md) 
-
-### Hardware
-
----
-
-[Hardware for Models](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Hardware%20for%20Models%201596c45e7a3944a88fbfc2a5937dc14b.md)
+[Dangerous Files](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Dangerous%20Files%201180beb0018b4375874a1abf8101269d.md)

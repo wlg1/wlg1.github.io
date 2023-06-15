@@ -99,3 +99,26 @@ A low-rank matrix has a low number of non-zero singular values or eigenvalues
     where U and V are orthogonal matrices, and Σ is a diagonal matrix of singular values. If A has a low rank r, then there will be r non-zero singular values in Σ, followed by (n-r) zero singular values. The columns of U corresponding to the zero singular values form a basis for the null space of A, and the rows of V corresponding to the zero singular values form a basis for the left null space of A.
     
     The high-dimensional null space of a low-rank matrix can have some useful applications. For example, in compressed sensing, a low-rank matrix is used to represent a high-dimensional signal with a small number of parameters. The null space of the matrix represents the set of possible signals that could have produced the same measurements, and this can be used to recover the original signal from incomplete or noisy measurements. Similarly, in collaborative filtering, a low-rank matrix is used to model the preferences of users and items, and the null space of the matrix represents the set of possible new items or users that could be added to the system.
+    
+
+---
+
+- How to rewrite matrices as low rank?
+    
+    Matrices can be rewritten as low rank using matrix factorization techniques. The most commonly used matrix factorization technique is Singular Value Decomposition (SVD), which factorizes a matrix into a product of three matrices, as follows:
+    
+    $$
+    A = UΣV^T
+    $$
+    
+    where A is the matrix to be factorized, U is an m × r matrix, Σ is an r × r diagonal matrix, and V^T is an r × n matrix. The columns of U are the left singular vectors, the columns of V are the right singular vectors, and the diagonal entries of Σ are the singular values.
+    
+    To obtain a low rank approximation of A, we can truncate the number of singular values used in the factorization. This is equivalent to setting some of the singular values to zero, which results in a lower rank matrix approximation. Specifically, we can approximate A as:
+    
+    $$
+    A ≈ UΣ_kV_k^T
+    $$
+    
+    where Σ_k is a diagonal matrix containing the first k singular values, and U and V_k are the corresponding matrices of left and right singular vectors.
+    
+    The resulting matrix $UΣ_kV_k^T$ is the best rank-k approximation of A in terms of the Frobenius norm. Therefore, by choosing an appropriate value of k, we can obtain a low-rank approximation of the matrix A. This technique is useful for compressing large matrices and reducing their storage requirements, as well as for dimensionality reduction in data analysis and machine learning applications.

@@ -34,11 +34,3 @@ def rename_files_and_folders(root):
                 os.rename(path, os.path.join(dir_name, new_base_name))
                 print(f'Renamed file "{name}" to "{new_base_name}"')
 
-# folder_names = ["expms", "techns", "notes", "projects", "Source"]
-folder_names = ["techns"]
-
-for fn in folder_names:
-    # check if the folder exists
-    if os.path.exists(f"C:\\Users\\mikel\\Downloads\\{fn}"):
-        top_dir = f"C:\\Users\\mikel\\Downloads\\{fn}"
-        rename_files_and_folders(top_dir)
