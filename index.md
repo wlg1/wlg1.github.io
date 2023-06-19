@@ -1,10 +1,13 @@
 ---
 title: Front Page
 ---
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" async></script>
+
+<!---
 <head>
     <link rel="stylesheet" href="index.css">
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" async></script>
 </head>
+--->
 
 <div class="topnav">
   <a class="active" href="#Home">Home</a>
