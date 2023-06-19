@@ -1,6 +1,7 @@
 ---
 title: Front Page
 ---
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" async></script>
 
 <head>
     <link rel="stylesheet" href="index.css">
@@ -18,11 +19,10 @@ title: Front Page
 <p align="center"><h1><b>Michael Lan</b></h1></p>
 <!---
 <a href="test_post.html">test</a>
+Ctrl++ or Mouse Wheel to zoom in for bigger text. 
 --->
 
 <span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
-
-[ Ctrl++ or Mouse Wheel to zoom in for bigger text. ]
 
 [ Website in process of being built. Some projects in progress are not added yet and will be added later. ]
 
@@ -141,10 +141,23 @@ Utilized graph analytics to compare the network statistics of diﬀerent communi
   </div>
 </div>
 
-<!---
-![final_model](/datasci/final_model.PNG)
-![datasci_networks](/datasci/datasci_networks.png)
---->
+---
+<p style="font-size:20px"><b>Using Materialized Views for Answering Graph Pattern Queries</b></p>
+
+[Click on the underlined links for cited sources]
+
+This dissertation is about developing algorithms to search for patterns in networks using smaller patterns that were already discovered. For example, a knowledge graph may describe entities based on observed features, but not identify them. To search for Shiba Inu, one can input a query with connections to "Japanese", "long snout" and "pet". If the dog pattern made of "long snout" and "pet" was already found, it would filter out many wrong candidate entities. These re-usable intermediate results may be pre-computed and stored. 
+
+Overall, this work is embedded within the field of graph homomorphism matching, which involves finding subgraph patterns in large datasets, going from local matches to more global matches. In simple terms, graph homomorphisms "map relationships" between graphs where some connections may be lost or merged, allowing for a more relaxed mapping than graph isomorphisms. These relationship mappings must meet certain types of structure-preserving conditions such as if $$f: A \rightarrow B$$ is a relation in system 1, $$h(A) = X$$ and $$h(B) = Y$$, then $$g: X \rightarrow Y$$ is a relation in system 2. This is similar to inference via analogical reasoning.
+
+Analogously, studies found that image recognition neural networks contained neurons that acted as feature detectors, such as ones that are highly activated given inputs of dogs. However, it has been <a href="https://distill.pub/2020/circuits/zoom-in/">hypothesized that many concepts are stored not just in one neuron, but in sub-networks of neurons, also called circuit motifs, which build into larger motifs.</a>. For instance, one may first find a more abstract dog circuit pattern and a Japanese circuit pattern, adding more connections between them to compose together into a more specific Shiba Inu circuit. It can be hypothesized that there are mappings between circuits based on analogous functional relations, rather than exact graph structure.
+
+Graph pattern matching from local matches to global matches is a technique previously used in other fields of AI, such as in Forbus's work on <a href="https://groups.psych.northwestern.edu/gentner/newpdfpapers/FalkenhainerForbusGentner89.pdf">analogical pattern matching.</a> This research is connected to the <a href="http://worrydream.com/refs/Hofstadter%20-%20Analogy%20as%20the%20Core%20of%20Cognition.pdf">work on AI analogies done by Hofstadter.</a> Recently, the concept of graph homomorphism has been used by Redwood Research to help <a href="https://www.lesswrong.com/posts/JvZhhzycHu2Yd57RN/causal-scrubbing-a-method-for-rigorously-testing
+">better formalize experimental methods in the field of neural network interpretability.</a>
+
+<a href="https://drive.google.com/file/d/14LE1NA99XAleU2hP3XW_cAYiLnmRhJcO/view?usp=sharing">This pdf is a trimmed version of the work.</a>
+
+<a href="https://docs.google.com/presentation/d/1OATw2tZGqq4hStwWnnWqRNIW0gzisAqi/edit?usp=sharing&ouid=111542027497665621431&rtpof=true&sd=true">These slides provide a beginner's introduction to the work.</a>
 
 ---
 <b>UNDER CONSTRUCTION:</b>
