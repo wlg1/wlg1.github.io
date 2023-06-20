@@ -48,9 +48,11 @@ Records of experiments and notes are found in the link below:
 
 <a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Experiments Index</a>
 
-Videos introducing the work so far are also provided. The video below is a short introductory overview, while the link that follows  provides a series of videos going over the details of the work:
+The video below is a short introductory overview of some work done so far:
 
-[ introductory 3m overview video embeds here ]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Mh5N7VLdKcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+This links to a series of videos that goes over the details of the work done so far:
 
 <a href="https://wlg1.notion.site/Videos-Interpret-Attention-Head-Circuits-of-Comparison-Inputs-DRAFTS-24b67e08b1d74f70be8ed3012e8278bc">Videos- Interpret Attention Head Circuits of Comparison Inputs (DRAFTS)</a>
 
