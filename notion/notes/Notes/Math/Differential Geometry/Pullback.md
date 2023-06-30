@@ -19,7 +19,7 @@ thus, inverse is: target -> domain
 
 pullback maps target -> domain
 
-Therefore, the Jacobian matrix is useful in computing the pullback of geometric objects such as differential forms, which are defined on the tangent spaces of the target manifold.
+Therefore, the Jacobian matrix is useful in computing the pullback of geometric objects such as differential forms, which are defined on the tang4l4. nt spaces of the target manifold.
 
 The pullback uses the Jacobian matrix because it provides a linear approximation of the map that relates tangent vectors in the domain and target manifolds.
 

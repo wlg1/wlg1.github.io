@@ -6,7 +6,7 @@
     
     Here is the code for **ft_main.py** Reply “yes”
     
-- [Colons in arguments](https://www.notion.so/Python-f5fe14898d744a74819532b914123159)
+- [Colons in arguments](https://www.notion.so/Python-f5fe14898d744a74819532b914123159?pvs=21)
 - Pre-process requests for output
     
     ```python
@@ -29,7 +29,7 @@
     f"[{request['prompt'].format(request['subject'])}] -> [{request['target_new']['str']}]"
     ```
     
-    [This is an f-string [REF]](https://www.notion.so/Python-f5fe14898d744a74819532b914123159)
+    [This is an f-string [REF]](https://www.notion.so/Python-f5fe14898d744a74819532b914123159?pvs=21)
     
     Why does `f"[{request['prompt'].format(request['subject'])}]` need .format()? I thought f-strings didn't? Give an example of inputs to be used in the code
     
@@ -137,7 +137,7 @@ The following lies within `for txt, tgt in zip(...):`
     
     The **`inputs`** dictionary contains the attention mask tensor, which is a binary mask indicating which tokens in the input sequence should be attended to by the model (i.e., which tokens are not padding tokens). The attention mask tensor has the same shape as the input tensor, with a value of 0 for each padding token and 1 for each non-padding token.
     
-    [Attention Mask](https://www.notion.so/Attention-Mask-5fe51dc6d90f4f7eb34bc6061060d44f) 
+    [Attention Mask](https://www.notion.so/Attention-Mask-5fe51dc6d90f4f7eb34bc6061060d44f?pvs=21) 
     
     The **`inputs["attention_mask"].sum(dim=1)`** computes the sum of the attention mask tensor along the second dimension, which corresponds to the sequence length. This produces a tensor of shape **`(batch_size,)`** containing the number of non-padding tokens in each input sequence.
     
@@ -183,7 +183,7 @@ The following lies within `for txt, tgt in zip(...):`
                 )
     ```
     
-    - **`model([**inputs)](https://www.notion.so/Python-f5fe14898d744a74819532b914123159)`** applies the model to the input sequences, producing an output tensor with shape **`(batch_size, sequence_length, vocab_size)`**.
+    - **`model([**inputs)](https://www.notion.so/Python-f5fe14898d744a74819532b914123159?pvs=21)`** applies the model to the input sequences, producing an output tensor with shape **`(batch_size, sequence_length, vocab_size)`**.
         - What are the arguments of model()?
             
             The **`AutoModelForCausalLM`** class is a subclass of the **`PreTrainedModel`** class, and provides a generic interface for working with various types of causal language models.
@@ -317,7 +317,7 @@ The following lies within `for txt, tgt in zip(...):`
     
     Enforces a norm constraint on the model weights by clamping their values within a certain range. Can prevent the model from overfitting to the training data and can help the model generalize better to new data. By restricting the magnitude of the weights, the model is encouraged to find a solution that is simpler and less prone to overfitting.
     
-    [Clamping](https://www.notion.so/Clamping-2e2f6208c50744b29c54b8b6edb64518) 
+    [Clamping](https://www.notion.so/Clamping-2e2f6208c50744b29c54b8b6edb64518?pvs=21) 
     
     ```python
     if type(hparams.norm_constraint) is float:

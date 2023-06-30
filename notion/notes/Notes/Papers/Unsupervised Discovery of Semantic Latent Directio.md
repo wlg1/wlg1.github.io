@@ -6,78 +6,104 @@ See:
 
 [Jacobian](../Math%2089624985ddb64f0c91c334b1ab5df1d0/Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Jacobian%20165dd8f2c88b48758e8f2b8878c49db2.md) 
 
-<<<<<<<<<<<
-Q: What is a bottleneck layer of U-Net?
-In the context of deep learning, U-Net is a convolutional neural network architecture that is commonly used for image segmentation tasks. The architecture of U-Net consists of two parts: an encoder network that extracts features from the input image, and a decoder network that produces a segmentation map from the extracted features.
+[Singular values computation](../Math%2089624985ddb64f0c91c334b1ab5df1d0/Spectral%20Theory%20e2b0310191744793b355180fe3b9e670/Singular%20values%20computation%20f1a9d77835cf4bd1b89e76f387ab4a95.md) 
 
-The bottleneck layer of U-Net is the central layer of the network, which connects the encoder and decoder networks. It is called the bottleneck layer because it is the narrowest part of the network, with the fewest number of feature maps. The purpose of the bottleneck layer is to reduce the spatial resolution of the feature maps while increasing their depth, so that the decoder network can recover the segmentation map with fine details.
+[SVD](../Math%2089624985ddb64f0c91c334b1ab5df1d0/Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/SVD%20b6e01b133b7d495b81236acafc3cea9b.md) 
 
-More specifically, the bottleneck layer of U-Net consists of a series of convolutional layers followed by a max-pooling layer. The convolutional layers extract features from the input image, while the max-pooling layer reduces the spatial resolution of the feature maps by performing down-sampling. By reducing the spatial resolution, the bottleneck layer allows the decoder network to produce a segmentation map with a higher resolution than the input image, while still retaining the important features that were extracted by the encoder network.
-
-Overall, the bottleneck layer plays a critical role in the U-Net architecture by balancing the trade-off between spatial resolution and feature depth, and allowing the network to produce accurate segmentation maps with fine details.
-
-<<<<<<<<<
-Q: What is a segmentation map?
-
-In computer vision, a segmentation map (also known as a semantic segmentation map) is a type of image annotation that assigns a label to each pixel in an input image based on its semantic meaning. The goal of semantic segmentation is to partition the input image into meaningful regions that correspond to different objects or parts of objects.
-
-A segmentation map is typically represented as a two-dimensional array of integers or color values, where each element corresponds to a pixel in the input image. Each integer or color value represents a different semantic class, such as "background", "person", "car", "tree", etc. The segmentation map assigns a unique label to each pixel in the image, indicating which semantic class it belongs to.
-
-<<<<<<<<<<<<
-What is a sum-pooled feature map?
-In deep learning, a sum-pooled feature map is a type of feature map that is commonly used in convolutional neural networks (CNNs) for image recognition and other computer vision tasks. A feature map is a two-dimensional array of values that represent the activations of a set of filters applied to an input image or previous layer.
-
-The sum-pooled feature map is obtained by applying a sum pooling operation to a feature map. In sum pooling, each element of the output feature map is the sum of a fixed-size rectangular region of the input feature map. The size of the rectangular region is usually chosen to be a small fraction of the input feature map, typically 2x2 or 3x3.
-
-Sum pooling is a type of down-sampling operation that reduces the spatial resolution of the feature map while retaining important information about the presence or absence of features in the input image. By summing the activations of nearby pixels, sum pooling captures the overall structure of the input image, while discarding fine details that may be noise or not relevant to the task at hand.
-
-The resulting sum-pooled feature map can then be passed to a subsequent layer in the CNN for further processing, such as convolution, non-linearity, or pooling. By iteratively applying these operations, the CNN can learn to extract hierarchical features from the input image, and use them to perform complex tasks such as object recognition or segmentation.
-
-In summary, a sum-pooled feature map is a type of feature map that is obtained by applying sum pooling to a previous layer in a convolutional neural network. Sum pooling reduces the spatial resolution of the feature map while retaining important information about the presence or absence of features in the input image, and it allows the CNN to extract hierarchical features that are useful for image recognition and other computer vision tasks.
-
-<<<<<<<<<
-Does sum-pooled feature map reduce parameters?
-Yes, sum-pooled feature maps can reduce the number of parameters in a neural network.
-
-In a convolutional neural network (CNN), the number of parameters is determined by the number of filters in each layer and the size of each filter. The filters are learned during the training process and are used to extract features from the input data.
-
-By applying sum pooling to the feature maps, the spatial resolution of the feature maps is reduced, which in turn reduces the number of parameters in the subsequent layers. This is because sum pooling combines the activations of adjacent neurons in the feature map, effectively reducing the number of unique activations that need to be passed to the next layer.
-
-For example, consider a feature map with dimensions 16x16x32 (i.e., 16x16 pixels with 32 feature maps). If we apply 2x2 sum pooling with a stride of 2, the resulting feature map will have dimensions 8x8x32. This reduces the number of parameters in the subsequent layers by a factor of four, since we are only passing on the sum of every four adjacent neurons.
-
-Reducing the number of parameters can be beneficial in several ways. It can reduce the memory and computational requirements of the network, making it faster and more efficient to train and evaluate. It can also reduce the risk of overfitting, since the network has fewer parameters to memorize the training data and is more likely to generalize well to new data.
-
-In summary, sum-pooled feature maps can reduce the number of parameters in a neural network by combining the activations of adjacent neurons in the feature map, which reduces the unique activations that need to be passed to the next layer. This can make the network more efficient, less prone to overfitting, and faster to train and evaluate.
-
-<<<<<<<<<<<<<<<<<<<<<<
-
-Why do we map the latent space to the intermediate feature maps of the U-Nets? Why do the intermediate feature maps of the U-Nets have a metric and tangent vectors we can use?
-
-We map the latent space to the intermediate feature maps of the U-Nets because they exhibit local linearity.
-
-This allows us to adopt the Euclidean metric on the feature maps, which is not available on the original latent space. With this metric, we can measure the distances between samples in the original space using the pullback metric, as well as calculate semantic directions for individual samples by finding the Jacobian of the map between the original space and the feature maps.
-[3] Additionally, the tangent vectors allow us to find global semantic directions by averaging the local semantic directions of individual samples, and manipulate any sample to have the same interpretable features. [3] Finally, we use geodesic metric to define the curvedness of a line segment and measure the semantic path length between two points on the manifold. [7]
+[Singular Values](../Math%2089624985ddb64f0c91c334b1ab5df1d0/Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Singular%20Values%20837973abb02f400faa322e0a56f9415b.md) 
 
 <<<
-Why are we able to map the latent space to the intermediate feature maps of the U-Nets? What map allows us to do this?
 
-We are able to map the latent space to the intermediate feature maps of the U-Nets by using the pullback Euclidean metric on H to define the distances between the samples in X. This is done through the differentiable map f: X → H, which is the Jacobian Jx = ∇xh that determines how a vector v ∈ Tx is mapped into a vector u ∈ Th by u = Jxv [3]. The pullback metric of the mapped space is used to measure the distances in the original space, which allows us to extract semantic latent directions in the latent space of DMs using differential geometry [3].
+Variables:
+
+- manifold X
+- bottleneck layer H
+- latent variable $x_t$
+- internal representation $h_t = bn(x_t)$ at the bottleneck
+- differentiable map f: X → H
+- linear map Jacobian J: Tx → Th
+- n selected eigenvectors (semantic directions)
+- right singular vector $v_i \in T_x$ for n directions
+- J = grad(h)
+- u = Jv = grad(h)*v
+    - J: v $\in T_x$ —> u $\in T_h$
+    - grad(h) is the direction of
+
+Described Terms:
+
+- Manifold
+- Tangent Space Patches
+- Pullback metric
+- Euclidean metric
+
+To describe:
+
+- U-net
+- geodesic
+- linearity
+- Jacobian
+- SVD, Right singular vector
+- eigenvectors; low rank approx by selecting eigenvectors
+- parallel transport algo
+- geodesic shooting algo: parallel transport if no path, just starting pt
+- lerp and slerp interpolation
+
+Optional terms:
+
+- arc length, energy functional (bent takes more energy to go from A to B?)
+- 
+
+- For neural networks, when to use taylor's first order approximation?
+    
+    Taylor's first order approximation, also known as the linear approximation, is often used in the context of neural networks when you need to approximate a function or its derivative around a specific point. It provides a simple linear approximation of the function using its value and gradient at that point.
+    
+    1. Initialization: When initializing the parameters of a neural network, you can use Taylor's approximation to estimate the initial values based on the data distribution or prior knowledge. By approximating the function locally around the initialization point, you can set the initial parameters in a way that speeds up convergence.
+    2. Optimization: In gradient-based optimization algorithms, such as stochastic gradient descent (SGD), Taylor's first order approximation is often used to update the parameters. The gradient of the loss function with respect to the parameters is used to guide the updates, and the approximation helps in estimating the direction and magnitude of the update step.
+    3. Backpropagation: During the backpropagation algorithm, which is used to compute the gradients of the loss function with respect to the network parameters, Taylor's approximation can be employed to simplify the calculation. By linearly approximating the function or its derivatives at each step, you can propagate the gradients efficiently through the network layers.
+    4. Local analysis: Taylor's first order approximation can be utilized to analyze the behavior of neural networks locally around a specific point. It allows you to understand how the network behaves in the vicinity of the point, including its sensitivity to changes in input or parameters.
+    
+    However, it's important to note that Taylor's first order approximation is only accurate in the immediate neighborhood of the chosen point. As you move further away, the approximation becomes less accurate, and higher-order terms may be necessary to capture the behavior of the function more precisely. Therefore, the applicability of Taylor's first order approximation depends on the specific context and the level of accuracy required.
+    
 
 <<<
-What is the difference between the latent space and the intermediate feature maps of the U-Nets? Aren't they both intermediate, latent layers?
 
-The latent space is the space of the latent variables of Diffusion Models (DM). The intermediate feature maps of the U-Nets are the bottleneck representation of the U-Nets, which correspond to the latent variables of the DMs. [1]
+Questions:
 
-According to Riemannian geometry, there is a linear map between the tangent space Tx of the latent variables at x and the tangent space Th of the intermediate feature maps at h. [2]
+- Why Jacobian for a map in tangent space?
+    - Shao: describes gradient
+- Why is H relatively flat?
+- Why would repeating the adding right singular vector (may) make it escape the tangent space?
 
-This linear map can be described by the Jacobian Jx = ∇xh, which determines how a vector v in Tx is mapped into a vector u in Th by u = Jxv. [3] The pullback Euclidean metric on H is used to define the distances between the samples in X. [4] The semantic path length between two points on a manifold is defined by the sum of the local warpage of the line segments which connects them along the manifold. [5] Semantic directions can be found from individual samples in X, and global semantic directions can be found by averaging the local directions. [6] The discovered semantic latent directions mostly yield disentangled attribute changes, and are globally consistent across different samples. [7] Furthermore, editing in earlier timesteps edits coarse attributes, while ones in later timesteps focus on high-frequency details.
+- What is a bottleneck layer of U-Net?
+    
+    U-Net has an encoder and decoder; the bottleneck is the central layer between them, and is the narrowest part with the fewest number of feature maps. Its purpose is to reduce the spatial resolution of the feature maps while increasing their depth, so that the decoder network can recover the image with fine details.
+    
+    The bottleneck layer consists of a series of convolutional layers followed by a max-pooling layer (for down-sampling, reducing the spatial resolution for the decoder to produce a segmentation map with a higher resolution than the input image, while still retaining the important features.) It balances the trade-off between spatial resolution and feature depth.
+    
 
-<<<
-How are the U-nets related to diffusion models?
+- Why do we map the latent space to the intermediate feature maps of the U-Nets? Why do the intermediate feature maps of the U-Nets have a metric and tangent vectors we can use?
+    
+    We map the latent space to the intermediate feature maps of the U-Nets because they exhibit local linearity.
+    This allows us to adopt the Euclidean metric on the feature maps, which is not available on the original latent space. With this metric, we can measure the distances between samples in the original space using the pullback metric, as well as calculate semantic directions for individual samples by finding the Jacobian of the map between the original space and the feature maps. [3] Additionally, the tangent vectors allow us to find global semantic directions by averaging the local semantic directions of individual samples, and manipulate any sample to have the same interpretable features. [3] Finally, we use geodesic metric to define the curvedness of a line segment and measure the semantic path length between two points on the manifold. [7]
+    
+- Why are we able to map the latent space to the intermediate feature maps of the U-Nets? What map allows us to do this?
+    
+    We are able to map the latent space to the intermediate feature maps of the U-Nets by using the pullback Euclidean metric on H to define the distances between the samples in X. This is done through the differentiable map f: X → H. 
+    
+- What is the difference between the latent space and the intermediate feature maps of the U-Nets? Aren't they both intermediate, latent layers?
+    
+    The latent space is the space of the latent variables of Diffusion Models (DM). The intermediate feature maps of the U-Nets are the bottleneck representation of the U-Nets, which correspond to the latent variables of the DMs. [1]
+    
+    According to Riemannian geometry, there is a linear map between the tangent space Tx of the latent variables at x and the tangent space Th of the intermediate feature maps at h. [2]
+    
+    This linear map can be described by the Jacobian Jx = ∇xh, which determines how a vector v in Tx is mapped into a vector u in Th by u = Jxv. [3] The pullback Euclidean metric on H is used to define the distances between the samples in X. [4] The semantic path length between two points on a manifold is defined by the sum of the local warpage of the line segments which connects them along the manifold. [5] Semantic directions can be found from individual samples in X, and global semantic directions can be found by averaging the local directions. [6] The discovered semantic latent directions mostly yield disentangled attribute changes, and are globally consistent across different samples. [7] Furthermore, editing in earlier timesteps edits coarse attributes, while ones in later timesteps focus on high-frequency details.
+    
 
-Diffusion models (DMs) are a type of generative models which use U-nets for their encoder. U-nets are used to encode the latent variables or intermediate features of the models which are then used to generate the resulting images [1]
+- How are the U-nets related to diffusion models?
+    
+    DMs use U-nets for their encoder
+    
 
-<<<
 Q: When can the metric be defined as a dot product?
 chatgpt (not pdf): A metric can be defined as a dot product in certain cases where the mathematical space in question is a vector space and where the inner product of vectors in that space satisfies the axioms of a metric.
 

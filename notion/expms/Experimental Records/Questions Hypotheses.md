@@ -8,6 +8,8 @@
     
     This differs from Experimental Results because “Results” can contain findings that were not originally questions/hypotheses
     
+    We wont’ be able to record every single question or hypothesis we have here. So try to clean it up so that only “important” questions are recorded here (the others can be semantially searched on the fly; not yet implemented)
+    
 
 ## Questions
 
@@ -28,6 +30,14 @@
         - ATTEMPT: try difference thresholds. find what happens after removing those neurons that activate after those thresholds
             - if these neurons do change the class, is there a pattern to what they are between images? Between classes? Between models?
     - ISSUE: out of millions of weights, which combination of them to change? Too many combinations.
+    - what decides what’s query vs what’s key? query is source sentence, key is target sentence. in decoder-only (gpt), they’re the same? then value can be used in either? no- if q=3, k=5, then v is always for 5, not 3. and if q=5, k=3, then v is always for 3, not 5 (?)
+
+GPT-2-Small Circuits:
+
+- Are there consistent patterns in inputs that allow us to identify which subject, among given subjects, the model will output? Motivated by tests from [test_prompt_most_recent_S.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md)
+    - [HYPOTHESIS: It may be that the “default” would output earliest.](Questions%20Hypotheses%2087e989748e1942dfa05a7d90433f2e40.md)
+- How does adding a duplicate name change from outputting “earliest subject” to “latest subject”?
+    - HYPOTHESIS: ???
 
 - MLP:
     - Do there exist neurons which fire for class A, but not class B?
@@ -66,11 +76,36 @@
     - Simple CNN
     - Inception V1
 
+Superposition
+
+- If a neuron activates for 2 unrelated objs, is there actually something they have in common? Perhaps down the line in a circuit? Or a “shared role” (inhibition, eg) is used for them?
+    - Expm by finding commonalities in their circuits
+    
+
 ## Hypotheses
 
 ---
 
-[ Evidence level: ? ]
+[ Evidence level: ? how to quanify this in comparable ways, if possible ? ]
+
+GPT-2-Small Circuits:
+
+- HYPOTHESIS: It may be that the “default” would output earliest. This means there’s no further “in-context” suggestions. But with in-context (”The child is…” as a “source example to-output”; or a pattern such as Alice-Bob, Alice- that may utilize duplicate heads), the model would output latest.
+    - Evidence:
+        - [REF](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md) (for GPT-2-small )
+- HYPOTHESIS: If the “to-output” pattern is given in the source, in many cases, the high output probability “latest subject” will be outputted compared to the 2nd place output.
+    - Evidence:
+        - For GPT-2-small: provided in [test_prompt_most_recent_S.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md)
+    - NOTE: Unlike IOI, this doesn’t seem to correspond to a “human-reasaonble” prediction. However, since it is still a re-occurring pattern, it is interesting to investigate why GPT-2-small has learned this, and how this anomaly differs from how humans interpret these types of inputs
+- HYPOTHESIS: However, [this statement](Questions%20Hypotheses%2087e989748e1942dfa05a7d90433f2e40.md) holds true for fewer subjects; as the number of subjects increases, it is less likely that the “latest subject” will be outputted.
+    - Evidence:
+        - There is not a lot of evidence to support this so far. Only [one test](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md) has been done.
+- HYPOTHESIS: the signal for a “more recent” subject has not “died out” as much because the model wants to attend to what’s “more recent” as “more relevant”; tokens from before are considered less relevant.
+    - Question: Why does the high output logit for “most recent” occur under certain “unexpected” conditions, such as including a “to-output” phrase in a source section?
+    - CRITICISM: Residual stream carries “unaltered” signals
+- HYPOTHESIS: There are “not” mover heads
+    - Evidence:
+        - [adjective_mover_prompts.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/adjective_mover_prompts%20ipynb%20cf8a6d9206fb47588b60c921c090b348.md)
 
 ### For Papers
 

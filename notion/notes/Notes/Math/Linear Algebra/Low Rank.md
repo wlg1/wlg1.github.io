@@ -79,8 +79,6 @@ A low-rank matrix has a low number of non-zero singular values or eigenvalues
     
     Rank revealing QR decomposition: This method computes the QR decomposition of a matrix and also reveals its rank by computing the maximum number of linearly independent columns of the upper triangular factor of the QR decomposition.
     
-    ## It's important to note that these methods are not foolproof and can be affected by noise and other factors. Additionally, the choice of method for estimating the rank of a matrix depends on the specific problem and the properties of the matrix.
-    
 
 ---
 

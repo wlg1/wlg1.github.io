@@ -38,4 +38,4 @@ Attention patterns findings are consistent with computational graph (fig 4) find
 
 ---
 
-Some Reproduced Results: [Repro: Identifying a Preliminary Circuit for Predicting Gendered…](https://www.notion.so/Repro-Identifying-a-Preliminary-Circuit-for-Predicting-Gendered-2348b33bad384c9e85b717b18c385070)
+Some Reproduced Results: [Repro: Identifying a Preliminary Circuit for Predicting Gendered…](https://www.notion.so/Repro-Identifying-a-Preliminary-Circuit-for-Predicting-Gendered-2348b33bad384c9e85b717b18c385070?pvs=21)

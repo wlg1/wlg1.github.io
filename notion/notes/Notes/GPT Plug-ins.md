@@ -23,3 +23,9 @@ Zapier lets you set a custom possible action chatGPT can take itself, along with
 ---
 
 Chat with code repo:
+
+---
+
+[https://www.youtube.com/watch?v=0lOSvOoF2to&t=165s&ab_channel=sentdex](https://www.youtube.com/watch?v=0lOSvOoF2to&t=165s&ab_channel=sentdex)
+
+****OpenAI GPT-4 Function Calling: Unlimited Potential****

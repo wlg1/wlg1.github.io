@@ -4,6 +4,8 @@
 
 simple_analogies_circuits.ipynb : 
 
+small and large: number seq and simple analogy using in-context learning. Use diff ways to corrupt and format inputs. Test on logit diff, attn pats, actv patch. based on exploratory demo
+
 GPT-2-small prompts:
 
 - "1 2 3 4”
@@ -41,3 +43,5 @@ Try:
 simple_analogies_pt3.ipynb
 
 [https://colab.research.google.com/drive/1GQo_RSEY40ncByvwy81kxwSKGPHlbxSx?usp=sharing](https://colab.research.google.com/drive/1GQo_RSEY40ncByvwy81kxwSKGPHlbxSx?usp=sharing)
+
+test tall vs short, big vs small. based on exploratory demo

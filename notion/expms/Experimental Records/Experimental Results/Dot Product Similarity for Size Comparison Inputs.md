@@ -2,7 +2,7 @@
 
 - REFS:
     
-    [1]: [https://www.notion.so/Congruence-1585ccca1ae94a0ca7dc6ad88ff9e808](https://www.notion.so/Congruence-1585ccca1ae94a0ca7dc6ad88ff9e808)
+    [1]: [https://www.notion.so/Congruence-1585ccca1ae94a0ca7dc6ad88ff9e808](https://www.notion.so/Congruence-1585ccca1ae94a0ca7dc6ad88ff9e808?pvs=21)
     
 - Type Labels
     

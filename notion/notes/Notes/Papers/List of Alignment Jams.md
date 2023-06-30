@@ -66,4 +66,8 @@ Jam #6
     
     Most are relevant
     
+    [https://alignmentjam.com/project/solving-the-cnn-mech-int-challenge](https://alignmentjam.com/project/solving-the-cnn-mech-int-challenge)
+    
+    [https://www.lesswrong.com/posts/znShPqe9RdtB6AeFr/superposition-and-dropout](https://www.lesswrong.com/posts/znShPqe9RdtB6AeFr/superposition-and-dropout)
+    
     [https://apartresearch.itch.io/othelloscope](https://apartresearch.itch.io/othelloscope)

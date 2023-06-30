@@ -183,14 +183,74 @@ Residual stack: sequence of residual components
     This plot lines up with our guess in the drawing above. The layers at the end stopped attending to John_10 because the information there is moved to to_14, so the later layers attend to it there instead.
     
 
+---
+
+NOTE: Head attribution is different than activation head patching!!!
+
+Logit diff head attribution
+
+![Untitled](Exploratory%20Analysis%20Demo%20c61288d8f11b45d993c796ec28a62132/Untitled%204.png)
+
+Activation head patching
+
+![Untitled](Exploratory%20Analysis%20Demo%20c61288d8f11b45d993c796ec28a62132/Untitled%205.png)
+
+Activation head patching seems to reveal more
+
+---
+
 ### **Visualizing Attention Patterns**
 
 while *one* early head (blue) attends from the second subject to its first copy, the other two mysteriously attend to the word *after* the first copy.
 
-![Untitled](Exploratory%20Analysis%20Demo%20c61288d8f11b45d993c796ec28a62132/Untitled%204.png)
+![Untitled](Exploratory%20Analysis%20Demo%20c61288d8f11b45d993c796ec28a62132/Untitled%206.png)
 
 Second John query: Blue attends to “john”, but red and green attend to “mary”
 
 middle heads attend from the final token (query, row) to the second subject (key, column)
 
-![Untitled](Exploratory%20Analysis%20Demo%20c61288d8f11b45d993c796ec28a62132/Untitled%205.png)
+![Untitled](Exploratory%20Analysis%20Demo%20c61288d8f11b45d993c796ec28a62132/Untitled%207.png)
+
+---
+
+**Decomposing Heads**
+
+We can disentangle which of these is important by patching in just the attention pattern *or* the value vectors.
+
+Heatmap:
+
+- Explanation
+    
+    The code you provided seems to be patching the head vectors of a model and calculating the differences between the original and patched logits. Here's a breakdown of what the code does:
+    
+    1. Initializes a tensor called `patched_head_v_diff` with zeros. This tensor will store the normalized differences between the original and patched logits for each head vector.
+    2. Iterates over each layer and head index in the model's configuration.
+    3. Defines a partial function `hook_fn` using the `patch_head_vector` function, which takes the head index and a `clean_cache` parameter as arguments.
+    4. Calls the `model.run_with_hooks` method to run the model with the `corrupted_tokens` input. The `fwd_hooks` argument specifies a hook function to be applied during the forward pass of the model. In this case, it hooks into the specified attention head using the `hook_fn`.
+    5. The resulting `patched_logits` are computed by applying the hook function to the model's forward pass with the corrupted tokens.
+    6. The `logits_to_ave_logit_diff` function is applied to calculate the differences between the `patched_logits` and the `answer_tokens`.
+    7. The `normalize_patched_logit_diff` function is used to normalize the differences between the original and patched logits.
+    8. The normalized difference is assigned to the corresponding index in the `patched_head_v_diff` tensor.
+    
+    Overall, this code calculates and stores the normalized differences between the original and patched logits for each head vector in the model.
+    
+
+```
+patched_logits = model.run_with_hooks(
+            corrupted_tokens, 
+            fwd_hooks = [(utils.get_act_name("v", layer, "attn"), 
+                hook_fn)], 
+            return_type="logits"
+        )
+patched_logit_diff = logits_to_ave_logit_diff(patched_logits, answer_tokens)
+patched_head_v_diff[layer, head_index] = normalize_patched_logit_diff(patched_logit_diff)
+```
+
+Scatterplot:
+
+```
+x=utils.to_numpy(patched_head_v_diff.flatten()), 
+y=utils.to_numpy(patched_head_z_diff.flatten()),
+```
+
+`patched_head_z_diff` is from “Activation Patching—Heads”

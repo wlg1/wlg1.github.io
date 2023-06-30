@@ -44,3 +44,5 @@
 ### Practices
 
 [Academic Procedures](Notes%200c9ac6d4ec58411bb2d462ed854840c9/Academic%20Procedures%2014c7a5039f9a4d27b0d14730733553ed.md)
+
+[Research Workflows](Notes%200c9ac6d4ec58411bb2d462ed854840c9/Research%20Workflows%20bcd96fb6120445f68eba2b5b44a0aa00.md)

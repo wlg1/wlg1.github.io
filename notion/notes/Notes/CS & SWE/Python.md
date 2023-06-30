@@ -2,6 +2,8 @@
 
 [Packages](Python%20f5fe14898d744a74819532b914123159/Packages%20022db6d85ead45658f8c4d9f5fc49996.md)
 
+[ChatGPT prompts](Python%20f5fe14898d744a74819532b914123159/ChatGPT%20prompts%20aec0e6ae2f0d46d8a764d9c15fc8ff26.md)
+
 ---
 
 - any()

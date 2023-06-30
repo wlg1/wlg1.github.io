@@ -30,13 +30,19 @@
 
 ***[List of Alignment Jams](Papers%203fa55c25c0194ccd89e95feefb9e16bc/List%20of%20Alignment%20Jams%20bf0d94025dff4de386f2e405b10f4528.md)*** 
 
+[“An” neuron](Papers%203fa55c25c0194ccd89e95feefb9e16bc/%E2%80%9CAn%E2%80%9D%20neuron%2092888cb0c37548b7949c1d9c3c9d260d.md)
+
 [Identifying a Preliminary Circuit for Predicting Gendered Pronouns in GPT-2 Small](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Identifying%20a%20Preliminary%20Circuit%20for%20Predicting%20G%2011c53a178e3845669fa2ea2678840c48.md)
 
 [****Model editing hazards at the example of ROME****](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Model%20editing%20hazards%20at%20the%20example%20of%20ROME%2022a6a45865894960803d902ff3b406a6.md)
 
+[Superposition and Dropout](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Superposition%20and%20Dropout%20d5a635a009d04664a20a936b3b6ae86e.md)
+
 ---
 
 ### Latent Space Geometry
+
+[The Riemannian Geometry of Deep Generative Models](Papers%203fa55c25c0194ccd89e95feefb9e16bc/The%20Riemannian%20Geometry%20of%20Deep%20Generative%20Models%20166bf2926bde41ec8c7a50b5cf3a54fd.md)
 
 [DIFFUSION MODELS ALREADY HAVE A SEMANTIC LATENT SPACE](Papers%203fa55c25c0194ccd89e95feefb9e16bc/DIFFUSION%20MODELS%20ALREADY%20HAVE%20A%20SEMANTIC%20LATENT%20SP%209c344e4167724b02bf9f1f4422c57a18.md) 
 
@@ -44,6 +50,12 @@
 
 [Erasing Concepts from Diffusion Models](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Erasing%20Concepts%20from%20Diffusion%20Models%203abab3717e9e4d94a2134fb703757693.md) 
 
+### Text to Video
+
+[MAKE-A-VIDEO](Papers%203fa55c25c0194ccd89e95feefb9e16bc/MAKE-A-VIDEO%2076fe263dd33942f9a03d2aa6d0683e1b.md)
+
 ---
+
+### Numerical Linear Algebra
 
 [AlphaTensor](Papers%203fa55c25c0194ccd89e95feefb9e16bc/AlphaTensor%20688928e3a83944649bdaa541a309e4e3.md)

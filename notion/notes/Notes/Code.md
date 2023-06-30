@@ -8,7 +8,7 @@
 
 [Auto-GPT code](Code%20515029dddcdc4d268ad1b5b2298d2cd6/Auto-GPT%20code%20d093a96c03094b64b2e356af401923c4.md) 
 
-[4. Find how ‘arxiv-bot code’ searches for pdfs](https://www.notion.so/4-Find-how-arxiv-bot-code-searches-for-pdfs-519c75e8c3da41799f69e537974d0d3e) 
+[4. Find how ‘arxiv-bot code’ searches for pdfs](https://www.notion.so/4-Find-how-arxiv-bot-code-searches-for-pdfs-519c75e8c3da41799f69e537974d0d3e?pvs=21) 
 
 ### Transformer Interpretability
 

@@ -2,7 +2,7 @@
 
 [https://colab.research.google.com/drive/1lZQkZ5u2mQxsYyiGaUKbW-XjdHP0GJpA](https://colab.research.google.com/drive/1lZQkZ5u2mQxsYyiGaUKbW-XjdHP0GJpA#scrollTo=ACs7g7pt5KMa)
 
-Does a single, or several, neuron(s) in MLP(s) activate for opposites tall and short? What about big and small; do they have some similar activations to tall and short? Based on [“An” neuron](https://www.notion.so/An-neuron-cd5793cd0e2749c59cc92cab1bbc7e5f) 
+Does a single, or several, neuron(s) in MLP(s) activate for opposites tall and short? What about big and small; do they have some similar activations to tall and short? Based on [“An” neuron](https://www.notion.so/An-neuron-cd5793cd0e2749c59cc92cab1bbc7e5f?pvs=21) 
 
 - ********************Finding 1: Actv patching on MLPs, then on its neurons********************
     
@@ -133,6 +133,8 @@ Does a single, or several, neuron(s) in MLP(s) activate for opposites tall and s
     Note that neurons are polysemantic. This neuron also stands out with “am nothing”
     
     Check what texts other neurons highlight compared to 4413.
+    
+    ---
     
     ****************************************************************************************Check any comparison to see if L25, N-4413 also stands out****************************************************************************************
     
@@ -295,3 +297,5 @@ Note that this contribution is small. Instead of manual inspection, use actv pat
 - the neuron’s output weights have a high dot product with the embedding for the token `“ an”`?
 - finding 3
 - Sparse coding says groups of neurons, so neurons with low amounts are impt if together they contribute. Look for ones in ranking that stand out, even if low actv
+
+---

@@ -1,10 +1,16 @@
 # Linear Algebra
 
+[Matrix Multiplication](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Matrix%20Multiplication%20114407d494a34203b4e6e68b5496efe3.md)
+
 [Low Rank](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Low%20Rank%20818dedfe95ac406c8a655a1bcb715813.md) 
+
+[Determinant](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Determinant%20a06d6e4f4bca4a8fa95e6ca6d5364b61.md)
 
 [Eigenvalues](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Eigenvalues%2089e61573e33743da932dbb63575d7600.md) 
 
 [Singular Values](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Singular%20Values%20837973abb02f400faa322e0a56f9415b.md) 
+
+[SVD](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/SVD%20b6e01b133b7d495b81236acafc3cea9b.md)
 
 [Positive semidefinite](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Positive%20semidefinite%20920c5133c7164318beee2503e482dda6.md)
 
@@ -17,6 +23,14 @@
 [Dot Product](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Dot%20Product%20db791e171b114aa1b4dd4edf67362ab3.md)
 
 [Unstable Matrices](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Unstable%20Matrices%20058376257eae4b09b7adf3cad29ff23d.md) 
+
+[Rank-1 Updates](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Rank-1%20Updates%205c333cecc74b4b17a0e585b31bbc6849.md)
+
+[Affine](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Affine%20afe0e7fdf70a41bd94641bff03fbd4c4.md)
+
+---
+
+[MIT 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/MIT%2018%20065%20Matrix%20Methods%20in%20Data%20Analysis,%20Signal%2006b8a1fe738744d0890b812702c5cd60.md)
 
 ---
 

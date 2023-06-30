@@ -89,4 +89,8 @@ When exporting, only pages with pages within will be turned into folders (else t
 
 ---
 
-test [one two](https://www.notion.so/one-two-c58906e250cd409fb78e59293a340598) three
+To quickly use emojis in text, use “/emo”
+
+---
+
+test [one two](https://www.notion.so/one-two-c58906e250cd409fb78e59293a340598?pvs=21) three

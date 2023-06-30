@@ -54,3 +54,20 @@ v = … W_V : value matrix of head (arg to fn)
 v+= : add bias head
 
 o : OV matrix
+
+---
+
+scatter_attention_and_contribution
+
+[https://colab.research.google.com/drive/1YM-0MPw0KKKkjRU855Js3HxBHDgePL1S#scrollTo=BLS99Wg3OuXw&line=5&uniqifier=1](https://colab.research.google.com/drive/1YM-0MPw0KKKkjRU855Js3HxBHDgePL1S#scrollTo=BLS99Wg3OuXw&line=5&uniqifier=1)
+
+[https://github.com/redwoodresearch/Easy-Transformer/blob/main/easy_transformer/ioi_utils.py](https://github.com/redwoodresearch/Easy-Transformer/blob/main/easy_transformer/ioi_utils.py)
+
+- Which variables from ioi_dataset does it use?
+    1. `ioi_dataset.toks`: It uses the `toks` attribute of the `ioi_dataset` object. This attribute contains the tokenized input sequences.
+    2. `ioi_dataset.ioi_prompts`: It uses the `ioi_prompts` attribute of the `ioi_dataset` object. This attribute contains a list of dictionaries, where each dictionary represents a prompt for IO and S tokens corresponding to an input sequence.
+    
+    The function iterates over each input sequence and corresponding prompt in the `ioi_dataset.ioi_prompts` list to calculate attention probabilities and dot products.
+    
+
+Calculates the attention probabilities and contribution values for each input sequence and prompt.

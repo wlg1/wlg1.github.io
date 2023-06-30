@@ -25,7 +25,7 @@ Once you have estimated the probability distributions of the two samples, you ca
 Here is the general procedure for computing KL-divergence between two dataset samples:
 
 1. Estimate the probability distributions of each sample using a histogram or kernel density estimation.
-2. Compute the empirical probability mass functions or probability density functions of each sample. [REF](https://www.notion.so/Compute-the-empirical-probability-mass-functions-or-probability-density-functions-of-each-sample-e4837b0258bd40a791cd19299dbdeda5)
+2. Compute the empirical probability mass functions or probability density functions of each sample. [REF](https://www.notion.so/Compute-the-empirical-probability-mass-functions-or-probability-density-functions-of-each-sample-e4837b0258bd40a791cd19299dbdeda5?pvs=21)
 3. Compute the KL-divergence using the formula
 
 Note that the estimated probability distributions may not be exact, and the KL-divergence calculation is sensitive to the quality of the estimates. Therefore, it is important to choose an appropriate method for estimating the probability distributions and to evaluate the quality of the estimates before computing the KL-divergence.

@@ -12,7 +12,7 @@ In $\sqrt{|S_i|}$   , |Si| is the number of vertices in connected component i.
 
 $L * v_i = 0$ shows it’s an eigenvector AND it has an eigenvalue of 0, since v is nonzero.
 
-See also: [Show a vector has an eigenvalue of 0](https://www.notion.so/Show-a-vector-has-an-eigenvalue-of-0-03adefc312044ecf905a8f61dc93de23) 
+See also: [Show a vector has an eigenvalue of 0](https://www.notion.so/Show-a-vector-has-an-eigenvalue-of-0-03adefc312044ecf905a8f61dc93de23?pvs=21) 
 
 - ???: This is “=0” because:
     

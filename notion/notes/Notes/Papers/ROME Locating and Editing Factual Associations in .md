@@ -74,6 +74,20 @@ EQN 1:
 
 hidden = prev hidden + attn + MLP
 
+---
+
+**3.1 Rank-One Model Editing: Viewing the Transformer MLP as an Associative Memory**
+
+[Rank-1 Updates](../Math%2089624985ddb64f0c91c334b1ab5df1d0/Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Rank-1%20Updates%205c333cecc74b4b17a0e585b31bbc6849.md) 
+
+![Untitled](ROME%20Locating%20and%20Editing%20Factual%20Associations%20in%20%205538511ecf24401ca32fd06b20eb2b42/Untitled%201.png)
+
+**WHY:** Any matrix W can act as key-value store by solving WK $\approx$ V
+
+**SOLN:** 
+
+**HOW:** WK $\approx$ V solved using Moore-Penrose Pseudoinverse W = VK+
+
 ### Experiments
 
 ---

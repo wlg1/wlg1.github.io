@@ -17,7 +17,7 @@
     
     [https://colab.research.google.com/drive/1GQo_RSEY40ncByvwy81kxwSKGPHlbxSx](https://colab.research.google.com/drive/1GQo_RSEY40ncByvwy81kxwSKGPHlbxSx)
     
-    [https://www.notion.so/Brainstorm-about-relations-between-analogy-order-task-and-IOI-task-d6428f8228444e4584e2a30fc993b59a?pvs=4#43532eb8a7584f9895795ae380ec754f](https://www.notion.so/Brainstorm-about-relations-between-analogy-order-task-and-IOI-task-d6428f8228444e4584e2a30fc993b59a)
+    [https://www.notion.so/Brainstorm-about-relations-between-analogy-order-task-and-IOI-task-d6428f8228444e4584e2a30fc993b59a?pvs=4#43532eb8a7584f9895795ae380ec754f](https://www.notion.so/Brainstorm-about-relations-between-analogy-order-task-and-IOI-task-d6428f8228444e4584e2a30fc993b59a?pvs=21)
     
 - EXPM: Continuing analyzing the prompt above, observe the logit lens diff for “short” vs “tall”
     

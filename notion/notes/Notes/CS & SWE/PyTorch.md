@@ -112,3 +112,17 @@
     ```
     
     This error message indicates that the dimensions of `tensor1` and `tensor2` are incompatible for element-wise operations, since the sizes of the first dimension (i.e., the number of rows) are different.
+    
+
+---
+
+- How is pytorch bulit using c++?
+    
+    PyTorch is primarily implemented in C++ to provide efficient tensor computations and deep learning operations. The C++ core of PyTorch is responsible for executing the underlying numerical operations and managing the computational graph.
+    
+    1. **Libtorch**: The core of PyTorch is implemented in C++ and is commonly referred to as "Libtorch." Libtorch provides C++ APIs for tensor operations, autograd (automatic differentiation), and neural network building blocks.
+    2. **Tensors**: The fundamental data structure in PyTorch is the tensor, which represents multidimensional arrays. Libtorch provides efficient implementations of tensor operations using optimized C++ code.
+    3. **Autograd**: PyTorch's automatic differentiation engine, known as "autograd," allows for efficient computation of gradients for backpropagation. Autograd keeps track of operations performed on tensors and dynamically builds a computational graph. The C++ implementation of autograd efficiently calculates and propagates gradients through the computational graph.
+    4. **Integration with Python**: While the core of PyTorch is implemented in C++, the Python front end provides a user-friendly and intuitive interface to interact with the underlying C++ functionality. PyTorch leverages the Python programming language for tasks like high-level model specification, training loops, and data handling. The Python interface interacts with the C++ core through bindings generated using tools like Pybind11, which enables seamless integration between the C++ and Python code.
+    
+    By leveraging C++ for the core functionality, PyTorch achieves a balance between performance and ease of use, allowing users to take advantage of efficient tensor computations while benefiting from the flexibility and simplicity of Python.

@@ -1,6 +1,16 @@
 # Eigenvalues
 
-- Do eigenvalues non-symmetric?
+[https://www.youtube.com/watch?v=PFDu9oVAE-g&ab_channel=3Blue1Brown](https://www.youtube.com/watch?v=PFDu9oVAE-g&ab_channel=3Blue1Brown)
+
+7m: After transformation, non-zero eigenvectors stay on the same span (a line). The determinant measures the “areas” between where the basis vectors are sent. Since ~~the eigenvectors don’t rotate before and after~~, the basis vectors are sent to a lower dim, this area (the determinant) is 0.
+
+det (A- lambda*I) = is the det value. So lambda is like a knob
+
+A non-zero vector that’s sent to 0 under the transformation (A- lambda*I) is sent to itself under the transformation A
+
+---
+
+- Can eigenvalues be for non-symmetric?
     
     Yes, eigenvalues can be defined for non-symmetric matrices. However, the eigenvalues of a non-symmetric matrix may have more complex properties than those of a symmetric matrix.
     

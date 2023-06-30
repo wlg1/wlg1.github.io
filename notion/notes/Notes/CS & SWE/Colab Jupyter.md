@@ -98,3 +98,7 @@ A100: 15
 [https://colab.research.google.com/notebooks/pro.ipynb](https://colab.research.google.com/notebooks/pro.ipynb)
 
 Making the Most of your Colab Subscription
+
+---
+
+NOTE: if drive uploads an .ipynb, don’t copy drive link, copy the colab url either from ad bar or cell

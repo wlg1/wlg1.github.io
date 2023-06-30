@@ -2,7 +2,7 @@
 
 rome_main.py —> apply_rome_to_model()
 
-—> execute_rome() —> compute_u(), compute_v()
+—> execute_rome() —> [compute_u.py](https://github.com/kmeng01/rome/blob/0874014cd9837e4365f3e6f3c71400ef11509e04/rome/compute_u.py)/compute_u(), [compute_v.py](https://github.com/kmeng01/rome/blob/0874014cd9837e4365f3e6f3c71400ef11509e04/rome/compute_v.py)/compute_v()
 
 ---
 
@@ -29,7 +29,7 @@ rome_main.py —> apply_rome_to_model()
     
     weights are changed, then stored
     
-    Delta dictionary STORE the changes to each weight
+    Delta dictionary STORES the changes to each weight
     
     ```python
     weights[weight_name][...] += upd_matrix
@@ -41,6 +41,18 @@ rome_main.py —> apply_rome_to_model()
     
     upd_matrix: the update matrix is a rank-1 matrix, which means that it has the lowest possible rank for a non-zero matrix. A rank-1 matrix can be expressed as the outer product of two vectors, which are commonly referred to as the left and right singular vectors of the matrix. These vectors represent the directions in which the matrix has the most influence.
     
+    - Does a rank-1 matrix mean both that the matrix is rank-1 and that it can be decomposed into an outer product of two rank-1 matrices?
+        
+        Yes, a rank-1 matrix satisfies both conditions: it is a matrix of rank 1, and it can be decomposed into an outer product of two rank-1 matrices.
+        
+        A matrix is said to have rank 1 if the maximum number of linearly independent rows or columns in the matrix is 1. In other words, all the rows or columns of a rank-1 matrix can be expressed as scalar multiples of a single row or column vector.
+        
+        Mathematically, a rank-1 matrix can be written as the outer product of two vectors. Let's say we have a matrix A of size m x n, and it has rank 1. This means that there exist two vectors u (of size m x 1) and v (of size 1 x n) such that A = uv, where uv represents the outer product of u and v.
+        
+        The outer product of two vectors u and v is defined as the matrix product of u and the transpose of v: uv = u * v^T.
+        
+        Therefore, a rank-1 matrix can indeed be decomposed into an outer product of two rank-1 matrices, where the first matrix represents a column vector and the second matrix represents a row vector.
+        
     - Why outer product?
         
         [Outer Product](../../Math%2089624985ddb64f0c91c334b1ab5df1d0/Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Outer%20Product%2065f8a1a8e8fd45c4ac6e59d22afad162.md) 
@@ -69,7 +81,7 @@ rome_main.py —> apply_rome_to_model()
     
     the **`v`** vector is computed by minimizing
     
-    (**`u`**-modified model output for the modified prompt) - (its output for the original prompt)
+    (**`u`**-modified model output for the modified prompt) - (its output for the original prompt)  (= original - orignal = 0 ????)
     
     ```python
     weight_name = f"{hparams.rewrite_module_tmp.format(layer)}.weight"

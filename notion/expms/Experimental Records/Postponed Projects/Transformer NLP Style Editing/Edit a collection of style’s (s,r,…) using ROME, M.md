@@ -26,7 +26,7 @@ cannot just edit “a bunch of objects” b/c that can be done with MEMIT. findi
 
 ISSUE: these simple styles are not facts. Unlike (s,r,o), when the object is long, it will be different each time and is too hard to say there’s an association between that (s,r) and (o). 
 
-[ROME code](https://www.notion.so/ROME-code-c0e512b0a7304f3c8dfd6e897380cd4a) 
+[ROME code](https://www.notion.so/ROME-code-c0e512b0a7304f3c8dfd6e897380cd4a?pvs=21) 
 
 ---
 

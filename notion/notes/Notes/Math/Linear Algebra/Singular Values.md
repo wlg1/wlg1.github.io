@@ -52,3 +52,26 @@
     The right singular vectors represent the songs themselves. These vectors are the ones that, when multiplied by the matrix, are transformed into the sound that the person plays on the guitar. In other words, the right singular vectors represent the set of songs that the person wants to learn.
     
     So, in summary, the left singular vectors represent the chords and techniques that are most important for transforming the songs, while the right singular vectors represent the set of songs that the person wants to learn. By understanding these concepts, the person can learn the chords and techniques that are most important for playing the songs well.
+    
+
+---
+
+- are right and left singular vectors always orthogonal?
+    
+    Yes, the right and left singular vectors in the singular value decomposition (SVD) are always orthogonal.
+    
+    In the SVD of a matrix A = UΣV^T, the columns of U are the left singular vectors, and the columns of V are the right singular vectors. Both U and V are orthogonal matrices, which means their columns are mutually orthogonal unit vectors.
+    
+    Orthogonality of the left singular vectors (columns of U):
+    The columns of U are the eigenvectors of the matrix AA^T (or A^TA in the case of a rectangular matrix). These eigenvectors are mutually orthogonal. The reason for orthogonality is that AA^T is a symmetric positive-semidefinite matrix, and such matrices have orthogonal eigenvectors. Therefore, the left singular vectors in U are orthogonal to each other.
+    
+    Orthogonality of the right singular vectors (columns of V):
+    Similarly, the columns of V are the eigenvectors of the matrix A^TA. As with AA^T, A^TA is also a symmetric positive-semidefinite matrix, and its eigenvectors are orthogonal to each other. Thus, the right singular vectors in V are orthogonal.
+    
+    This orthogonality property is a fundamental characteristic of the SVD and plays a crucial role in various applications, such as dimensionality reduction, data compression, and solving linear systems of equations using the pseudo-inverse.
+    
+- In an analogy, can we think of the left singular vectors and right singular vectors are length and width of the matrix M?
+    
+    While the left singular vectors and right singular vectors in the SVD of a matrix M can be loosely compared to the length and width of a matrix, it is important to note that this analogy is not entirely accurate and can be misleading.
+    
+-

@@ -105,3 +105,23 @@ Prefix Matching: “node” (A) is the prefix. “structuion” (B) is copied
     
 
 Since we'reusing PCA, each direction can be thought of as a vector of log-likelihoods that models are movingalong
+
+---
+
+[https://www.youtube.com/watch?v=dCkQQYwPxdM&t=2099s&ab_channel=NeelNanda](https://www.youtube.com/watch?v=dCkQQYwPxdM&t=2099s&ab_channel=NeelNanda)
+
+****A Walkthrough of In-Context Learning and Induction Heads Part 1 of 2 (w/ Charles Frye)****
+
+48m: One reason the 2nd mysterious attends to “,because” instead of “mysterious” in the 1st “mytserious, because” may be because it wants to look ahead to make sure it’s the same type of “mysterious”; it may deviate into “mysterious-like”, which is different (?)
+
+Per-token-loss: to plot how loss for each token changes over training
+
+1hr: just adding one bit allows a lot more encoding of info (2^n, n=#bits)
+
+exponentially “sure”: adding one more bit of evidence means 2x more sure
+
+1h2m:  Cross entropy transforms the multiplicative updates that you would do in accumulating evidence in a Bayesian way into additive updates as if you're working in that log space
+
+There's an n-category Cafe article about this as a full and faithful functor 
+
+[https://golem.ph.utexas.edu/category/2014/02/relative_entropy.html](https://golem.ph.utexas.edu/category/2014/02/relative_entropy.html)

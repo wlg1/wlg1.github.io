@@ -17,6 +17,10 @@
 
 **Basic Workflow**
 
+- Workflow Diagram
+    
+    ![Untitled](Git%204c9bd0a8425541b68fa7a146f2df3f37/Untitled.png)
+    
 - How to create a repo on github from your local repo
     1. Log in to your GitHub account and click on the "New" button on the top right-hand side of the page. Click on "Create repository"
     2. Locally, cd to dir with files for local repo. Initialize the local repository:
@@ -25,26 +29,17 @@
         
     3. Add the remote repository URL by typing the following command in the terminal:
         
-        `git remote add origin <remote repository URL>`
+        `git remote add <remote-name> <remote repository URL>`
         
-        Now you can add files to local, commit, then push to remote
+        `<remote-name>` is usually `origin`
         
-- Update from local repo onto remote repo
-    1. Add all the files to the local repository by typing the following command in the terminal:
-        
-        `git add .`
-        
-    2. Commit the changes by typing the following command in the terminal:
-        
-        `git commit -m "[what was changed]"`
-        
-    3. Push the changes to the remote repository by typing the following command in the terminal:
-        
-        `git push -u origin main`
-        
-        OR: `git push`
-        
-- Make branch (when adding new feature or move b/w commits)
+        - Why does url have .git?
+            
+            The inclusion of ".git" in the URL is a convention and not always required. Some Git hosting services or repositories may allow you to omit the ".git" suffix in the URL and still successfully interact with the repository. 
+            
+            The ".git" suffix in the remote repository URL refers to the Git repository itself. Including ".git" in the URL helps Git clients and tools identify that the provided URL is for a Git repository and ensures that the necessary Git-specific operations and protocols are used when interacting with that URL.
+            
+- Make new branch *(when adding new feature or move b/w commits)*
     
     [https://www.git-tower.com/learn/git/faq/create-branch](https://www.git-tower.com/learn/git/faq/create-branch)
     
@@ -56,32 +51,113 @@
     
     `git checkout -b iss53`
     
-
-[Merge](Git%204c9bd0a8425541b68fa7a146f2df3f37/Merge%209ebb454e688443e6884980079a13df63.md)
-
-- Make Pull Request on Github
+    To push this local branch to remote:
+    
+    `git push <repo-name> <new-branch-name>`
+    
+    <<<
+    
+    - What does 'move b/w commits' mean?
+        
+        When referring to "moving between commits," it means changing the current state of your repository to a specific commit in the commit history.
+        
+        1. **Viewing Previous Versions**: You can move to a previous commit to see the state of your project at that particular point in time. This can be useful for inspecting code, reviewing changes, or identifying when a specific feature or bug was introduced.
+        2. **Branch Switching**: By moving to a specific commit, you can switch to a different branch or create a new branch from that commit. This is commonly done when you want to work on a specific feature or fix a bug independently from the current branch.
+        3. **Rewriting History**: Moving between commits allows you to modify the commit history, such as rearranging, squashing, or amending commits. These operations can be performed with Git commands like `git rebase`, `git cherry-pick`, or interactive rebasing (`git rebase -i`).
+        
+        To move between commits, you typically use Git commands such as `git checkout` or `git switch`. For example:
+        
+        ```
+        git checkout <commit-hash>
+        ```
+        
+        Replace `<commit-hash>` with the actual commit hash or a branch name pointing to the desired commit. 
+        
+- Update remote branch with local branch changes
+    1. Add all the files from working machine to the local repository by typing the following command in the terminal:
+        
+        `git add .`
+        
+    2. Commit the changes by typing the following command in the terminal:
+        
+        `git commit -m "[what was changed]"`
+        
+    3. Push the changes to the remote repository by typing the following command in the terminal:
+        
+        `git push -u <repo-name> <branch-name>`
+        
+        OR: `git push`
+        
+        - What does "push -u" do?
+            
+            Set up tracking between the local branch and the remote branch
+            
+            By setting up tracking, Git remembers the relationship between the local and remote branches. This allows you to use subsequent `git push` or `git pull` commands without specifying the remote branch explicitly.
+            
+            For example, if you are on the "feature-branch" and run `git push -u origin feature-branch`, Git pushes the "feature-branch" to the "origin" remote repository and sets up tracking between the local "feature-branch" and the "origin/feature-branch" on the remote repository. After this, you can use `git push` and `git pull` without specifying the remote and branch names.
+            
+            Additionally, when you run `git status`, Git will show you the relationship between the local and upstream branches, informing you of the ahead/behind status.
+            
+            Using `git push -u` is particularly useful when you are pushing a branch for the first time.
+            
+- Make [Pull Requests](Git%204c9bd0a8425541b68fa7a146f2df3f37/Pull%20Requests%20c48bf9dcf2944e2989b66f2e5e53124b.md) on Github
     
     This is to change remote main branch with changes from another branch
     
-    A pull request (or PR) is a way to alert a repo's owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the primary branch.
+    A pull request alerts a repo's owners that you want to make changes to their code. It allows them to review the code.
     
-- git pull
+    - Do you have to do a pull request?
+        
+        Not in **Individual Work**. It serves as a way in collabs to propose and review changes before merging.
+        
+- [Merge](Git%204c9bd0a8425541b68fa7a146f2df3f37/Merge%209ebb454e688443e6884980079a13df63.md) new branch from
+- Update your local repo with remote changes
     
-    This is to change your local repo with updates from remote 
+    `git pull`
     
     - What does it mean "pull the changes from upstream”
         
-        When you "pull the changes from upstream," it means you are retrieving the latest changes made to a repository or branch in a version control system, such as Git. The term "upstream" typically refers to the original repository or branch that you cloned or forked from. By pulling the changes from upstream, you bring those updates into your local copy, allowing you to incorporate the latest modifications made by others into your own codebase.
-        
-        The process of pulling involves comparing your local repository's commit history with the upstream repository's commit history. The version control system identifies the differences between the two and brings the new commits from upstream into your local repository. This operation can be done through various commands, such as `git pull` in Git.
-        
-        Pulling changes from upstream is particularly useful when collaborating on a project with other developers. It allows you to stay up to date with the latest code changes, bug fixes, or new features added by your team members or the project maintainers. By pulling regularly, you can avoid conflicts and ensure that your local codebase remains synchronized with the upstream repository.
+        When you "pull the changes from upstream," it means you are retrieving the latest changes made to a repository or branch in a version control system, such as Git. The term "upstream" typically refers to the original repository or branch that you cloned or forked from. By pulling regularly, you can avoid conflicts .
         
 
-- Workflow Diagram
+### All Notes
+
+[Remote Repo](Git%204c9bd0a8425541b68fa7a146f2df3f37/Remote%20Repo%20065557e5db3d4170bcee5b1714ad6efc.md)
+
+[Fork](Git%204c9bd0a8425541b68fa7a146f2df3f37/Fork%203c0dff0745b84401a39f322a2a232bb6.md)
+
+[Staging](Git%204c9bd0a8425541b68fa7a146f2df3f37/Staging%206b42eb45b45b4ee7b8ffb818f4a7eafa.md)
+
+[Commit](Git%204c9bd0a8425541b68fa7a146f2df3f37/Commit%205b1331da28bd4dc89826002c931cb6a2.md)
+
+[Branch](Git%204c9bd0a8425541b68fa7a146f2df3f37/Branch%20265cb6cbc5ee44b1a5aee59ea96804ac.md)
+
+[Merge](Git%204c9bd0a8425541b68fa7a146f2df3f37/Merge%209ebb454e688443e6884980079a13df63.md)
+
+[Pull Requests](Git%204c9bd0a8425541b68fa7a146f2df3f37/Pull%20Requests%20c48bf9dcf2944e2989b66f2e5e53124b.md)
+
+- Git fetch vs pull?
     
-    ![Untitled](Git%204c9bd0a8425541b68fa7a146f2df3f37/Untitled.png)
+    ![Untitled](Git%204c9bd0a8425541b68fa7a146f2df3f37/Untitled%201.png)
     
+    1. `git fetch`: This command retrieves the latest changes from the remote repository, including all branches and tags, without automatically merging them into your current branch. It updates your local copy of the remote branches, allowing you to inspect and review the changes before incorporating them into your work. Fetching essentially synchronizes your local repository with the remote repository, ensuring you have the latest commits, branch updates, and tags.
+    2. `git pull` merges the remote branch into your current local branch.
+    - If you want to review the changes before merging them, use `git fetch`. This allows you to inspect the changes, compare branches, run tests, or make other preparations before merging.
+    - If you trust the changes and want to quickly integrate them, use `git pull`. It automatically merges the changes from the remote branch into your current branch, saving you the extra step of manually performing a merge.
+    - If you're working on a shared branch or collaborating with others, it's generally a good practice to use `git fetch` and review the changes before merging. This allows you to maintain control over what gets merged and resolve any conflicts that may arise.
+    
+    It's worth noting that both `git fetch` and `git pull` can be configured with additional options and arguments to customize their behavior. For example, you can specify the remote repository and branch to fetch or pull from.
+    
+
+[Rebase](Git%204c9bd0a8425541b68fa7a146f2df3f37/Rebase%20ab7a3565d33344aa9958e3d17b285919.md)
+
+[Switch Users](Git%204c9bd0a8425541b68fa7a146f2df3f37/Switch%20Users%200f47e20825d648b398cc49c1afe05a9f.md)
+
+[Security](Git%204c9bd0a8425541b68fa7a146f2df3f37/Security%208b45c6b0f41b4a55ac1f5b402f39c00a.md)
+
+File Types
+
+[requirements.txt](Git%204c9bd0a8425541b68fa7a146f2df3f37/requirements%20txt%204528740894b7494f933c0915795d144a.md) 
 
 ### Errors
 
@@ -166,42 +242,20 @@
         
         If there are still conflicts, you may need to repeat the above steps until all conflicts are resolved. After the stash is applied successfully, you should review and test your changes carefully to ensure that everything is working as expected.
         
-
-### Other Notes
-
-[Remote Repo](Git%204c9bd0a8425541b68fa7a146f2df3f37/Remote%20Repo%20065557e5db3d4170bcee5b1714ad6efc.md)
-
-[Branches](Git%204c9bd0a8425541b68fa7a146f2df3f37/Branches%20265cb6cbc5ee44b1a5aee59ea96804ac.md)
-
-[requirements.txt](Git%204c9bd0a8425541b68fa7a146f2df3f37/requirements%20txt%204528740894b7494f933c0915795d144a.md) 
-
-[Fork](Git%204c9bd0a8425541b68fa7a146f2df3f37/Fork%203c0dff0745b84401a39f322a2a232bb6.md)
-
-[Staging](Git%204c9bd0a8425541b68fa7a146f2df3f37/Staging%206b42eb45b45b4ee7b8ffb818f4a7eafa.md)
-
-- Git fetch vs pull?
+- fatal: The current branch feature-A has no upstream branch.
+To push the current branch and set the remote as upstream, use `git push --set-upstream origin feature-A`
     
-    ![Untitled](Git%204c9bd0a8425541b68fa7a146f2df3f37/Untitled%201.png)
+    An upstream branch is a remote branch in a remote repo. When you push changes using just "git push" from a branch in a local repo to a branch in a remote repo, git tries to find a branch in the remote repo with the same name. So if this remote branch name doesn’t exist, you will get this error. So either be more specific with `git push <remote> <branch>` or push this local branch to the remote repo.
     
-    1. `git fetch`: This command retrieves the latest changes from the remote repository, including all branches and tags, without automatically merging them into your current branch. It updates your local copy of the remote branches, allowing you to inspect and review the changes before incorporating them into your work. Fetching essentially synchronizes your local repository with the remote repository, ensuring you have the latest commits, branch updates, and tags.
-    2. `git pull` merges the remote branch into your current local branch.
-    - If you want to review the changes before merging them, use `git fetch`. This allows you to inspect the changes, compare branches, run tests, or make other preparations before merging.
-    - If you trust the changes and want to quickly integrate them, use `git pull`. It automatically merges the changes from the remote branch into your current branch, saving you the extra step of manually performing a merge.
-    - If you're working on a shared branch or collaborating with others, it's generally a good practice to use `git fetch` and review the changes before merging. This allows you to maintain control over what gets merged and resolve any conflicts that may arise.
-    
-    It's worth noting that both `git fetch` and `git pull` can be configured with additional options and arguments to customize their behavior. For example, you can specify the remote repository and branch to fetch or pull from.
-    
-
-How do you see the local repo, not just the working dir?
 
 ### Questions
 
 ---
 
-[How do we switch users in git bash?](Git%204c9bd0a8425541b68fa7a146f2df3f37/How%20do%20we%20switch%20users%20in%20git%20bash%200f47e20825d648b398cc49c1afe05a9f.md)
-
-[After cloning repo to local, how to get latest updates?](Git%204c9bd0a8425541b68fa7a146f2df3f37/After%20cloning%20repo%20to%20local,%20how%20to%20get%20latest%20upd%20200fe381701442be903a5542e9d8202d.md) 
-
+- After cloning repo to local, how to get latest updates?
+    
+    SOLN: git pull
+    
 - What's the best format to save a github directory structure in?
     1. JSON: This is a common format for representing structured data, and it's easy to parse and manipulate using many programming languages. GitHub's API returns directory structure data in JSON format, so you could save it directly as a JSON file. However, JSON may not be the best format for human-readable data.
     2. YAML: This is a human-readable format that is often used for configuration files. It's easy to read and write by both humans and computers, and it supports hierarchical structures. YAML can be a good choice if you want to make the directory structure easily readable and editable by humans.
@@ -253,12 +307,6 @@ How do you see the local repo, not just the working dir?
     
     Note that the GitHub API has rate limits, so you may need to authenticate or use pagination to retrieve the entire directory structure of a large repository.
     
-- Make personal access token
-    
-    [https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-    
-    settings → dev settings (bottom) 
-    
 - see all new commits
     
     git log
@@ -266,6 +314,149 @@ How do you see the local repo, not just the working dir?
 - see which files are unmerged at any point after a merge conflic
     
     git status
+    
+- in github, how do we add work to an existing commit?
+    
+    git add -A
+    
+    git commit --amend
+    
+    git push  (says still have to: [https://smartlogic.io/blog/git-commit-amend/](https://smartlogic.io/blog/git-commit-amend/) )
+    
+    OR: git push --force origin main
+    
+    ---
+    
+    To add work to an existing commit in Git, you typically need to follow these steps:
+    
+    1. **Create a new branch (optional):** It's a good practice to create a new branch before making any changes to the commit history. This helps keep your changes separate from the main branch until you're ready to merge them.
+        
+        ```
+        git checkout -b new-branch-name
+        
+        ```
+        
+    2. **Make the desired changes:** Modify the files in your project as needed.
+    3. **Stage the changes:** Add the modified files to the staging area.
+        
+        ```
+        git add file1 file2 ...
+        
+        ```
+        
+    4. **Amend the commit:** Combine your new changes with the existing commit using the `git commit --amend` command. This command replaces the previous commit with a new commit that includes both the original changes and your new changes.
+        
+        ```
+        git commit --amend
+        
+        ```
+        
+        This will open your default text editor where you can modify the commit message if needed. Save and close the editor to finalize the changes.
+        
+    5. **Push the changes (optional):** If you created a new branch, you can push the changes to the remote repository.
+        
+        ```
+        git push origin new-branch-name
+        
+        ```
+        
+        If you're working on an existing branch and want to update the remote branch with your amended commit, you can use the `--force` flag to overwrite the branch history. Be cautious when using `--force` as it can affect other collaborators working on the branch.
+        
+        ```
+        git push --force origin existing-branch-name
+        
+        ```
+        
+    
+    That's it! Your changes will now be included in the existing commit.
+    
+    - I did not create a new branch, and after commit --amend, I got this error:
+        - error
+            
+            $ git push
+            To [https://github.com/wlg1/wlg1.github.io](https://github.com/wlg1/wlg1.github.io)
+            ! [rejected]        main -> main (non-fast-forward)
+            error: failed to push some refs to '[https://github.com/wlg1/wlg1.github.io](https://github.com/wlg1/wlg1.github.io)'
+            hint: Updates were rejected because the tip of your current branch is behind
+            hint: its remote counterpart. Integrate the remote changes (e.g.
+            hint: 'git pull ...') before pushing again.
+            hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+            
+        
+        The error message you received indicates that the remote branch has been updated since your last commit, and Git is rejecting your push because it would result in overwriting the remote changes. To resolve this, you can follow these steps:
+        
+        1. **Fetch the latest changes:** Start by fetching the latest changes from the remote repository. This will update your local copy of the remote branch without merging anything.
+            
+            ```
+            git fetch origin
+            
+            ```
+            
+        2. **Rebase your changes:** Once you have fetched the latest changes, you can rebase your changes on top of the updated branch. This will apply your amended commit on the latest commit from the remote branch.
+            
+            ```
+            git rebase origin/main
+            
+            ```
+            
+            If you encounter any conflicts during the rebase process, you'll need to resolve them by editing the conflicting files manually. You can use `git status` to see which files have conflicts.
+            
+        3. **Push your changes:** After resolving any conflicts, you can push your changes to the remote repository.
+            
+            ```
+            git push origin main
+            
+            ```
+            
+            If the push still fails, it may be necessary to force the push. However, be cautious when using `--force` as it can overwrite other collaborators' changes.
+            
+            ```
+            git push --force origin main
+            
+            ```
+            
+        
+        Please note that using `--force` can cause data loss if you're not careful. It's essential to communicate with your team members and ensure that no one else has made important changes that could be overwritten by forcing the push.
+        
+- (main|REBASE 1/1)
+    
+    It seems like you're currently in the middle of a rebase operation. When you see the `(main|REBASE 1/1)` status in your Git command prompt, it indicates that you're rebasing your changes on top of the latest commit from the `main` branch.
+    
+    To proceed with the rebase or resolve any conflicts, follow these steps:
+    
+    1. **Resolve conflicts:** If Git encounters conflicts during the rebase process, you need to resolve them manually. Open the files with conflicts, locate the conflict markers (`<<<<<<<`, `=======`, and `>>>>>>>`), and modify the code to resolve the conflicts. Once you've resolved all conflicts in a file, save the changes.
+    2. **Stage the resolved changes:** After resolving conflicts in a file, you need to stage the resolved changes to continue the rebase.
+        
+        ```
+        git add resolved-file1 resolved-file2 ...
+        
+        ```
+        
+    3. **Continue the rebase:** Once you've resolved all conflicts and staged the changes, you can continue the rebase operation.
+        
+        ```
+        git rebase --continue
+        
+        ```
+        
+        If there are additional conflicts, Git will prompt you to resolve them and continue until the rebase is complete.
+        
+    4. **Push the changes:** After successfully completing the rebase, you can push your changes to the remote repository.
+        
+        ```
+        git push origin main
+        
+        ```
+        
+        If the push still fails, you might need to force the push, as mentioned earlier. However, exercise caution when using `--force` to avoid overwriting others' work.
+        
+        ```
+        git push --force origin main
+        
+        ```
+        
+    
+    Remember to communicate with your team members to ensure you don't inadvertently overwrite their changes when using `--force`.
     
 
 **To Answer Later**

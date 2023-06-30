@@ -26,11 +26,19 @@
 
 [Colab / Jupyter](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Colab%20Jupyter%20565557ea395f4767b53b9c787ed9208d.md)
 
-### Hardware
+[OOP](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/OOP%2062851ee2db93432aa62bfd1b8a56a5f0.md)
+
+[SQL](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/SQL%20f6898703d8ef43f7a192c8e0324f73b5.md)
+
+### Computer Systems
 
 ---
 
+[Computer Architecture](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Computer%20Architecture%20787e10fd7b904ce9a4577ae48e0d26f6.md)
+
 [Hardware Reqs for Models](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Hardware%20Reqs%20for%20Models%201596c45e7a3944a88fbfc2a5937dc14b.md) 
+
+[Computer Parts](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Computer%20Parts%2061840596736c4d5b984e61c640b626db.md)
 
 [GPU](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/GPU%20ffd6c25f07a3449d9b88a1f123952b59.md)
 
@@ -55,3 +63,7 @@
 ### Security
 
 [Dangerous Files](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Dangerous%20Files%201180beb0018b4375874a1abf8101269d.md)
+
+### Practices
+
+[DevOps](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/DevOps%20a4a7755f75b245e884aebd12cb243136.md)

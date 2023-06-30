@@ -6,7 +6,7 @@
 
 ### Polar Coordinates:
 
-![Untitled](Polar%20Coordinates%209b869db478544856aec499c96898eb27/Untitled.png)
+![Untitled](../Calculus%20f42e1a6d9f0e43f29356c8ee5162dc1c/Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%205.png)
 
 sin is the height. As the arc length changes, the height goes up 
 
@@ -27,4 +27,4 @@ In polar coordinates above, this is a circle because we only plot by (r, theta),
 
 ### ${f(\theta)} = {y = r * sin(\theta) = sin(\theta)}$:
 
-![Untitled](Polar%20Coordinates%209b869db478544856aec499c96898eb27/Untitled%201.png)
+![Untitled](../Calculus%20f42e1a6d9f0e43f29356c8ee5162dc1c/Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%206.png)

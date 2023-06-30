@@ -15,3 +15,5 @@
 [Thoughts](Neuroscience%20and%20Psychology%205dfd6e95a9a04fd5aad4e1a5b7c2fad5/Thoughts%203939e25fb34e48b4a8389887137af1b5.md)
 
 https://youtu.be/3Sr5OOEcHQQ
+
+https://youtu.be/CDUetQMKM6g

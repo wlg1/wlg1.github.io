@@ -6,9 +6,9 @@ Autoregressive means ‘causal’. It refers to a type of mathematical model whe
 
 [Embeddings](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Embeddings%20c4e515f0f63844d8bdd5309d041e40cf.md)
 
-[Query, Key, Value Matrices](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Query,%20Key,%20Value%20Matrices%20fe92464f6ee24068b6aaa56bb85e903e.md)
+[Query, Key, Value, Output Matrices](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Query,%20Key,%20Value,%20Output%20Matrices%20fe92464f6ee24068b6aaa56bb85e903e.md)
 
-[Self-attention](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Self-attention%2064a3e43e6ac8491f8a7ddc54a071b903.md) 
+[Self-attention (QK)](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Self-attention%20(QK)%2064a3e43e6ac8491f8a7ddc54a071b903.md) 
 
 [Attention Mask](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Attention%20Mask%205fe51dc6d90f4f7eb34bc6061060d44f.md)
 

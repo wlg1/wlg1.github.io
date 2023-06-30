@@ -10,19 +10,28 @@ Test Input Promps
 
 [adjective_mover_prompts.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/adjective_mover_prompts%20ipynb%20cf8a6d9206fb47588b60c921c090b348.md)
 
-[Size Comparison Inputs](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/Size%20Comparison%20Inputs%20a35672eda7744de79c08e30faf4642ae.md)
+[test_prompt_most_recent_S.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md)
 
 Look for Important Attention Heads
 
-[tall_short_circuit_draft.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_circuit_draft%20ipynb%2060d5d6b60d014ebd950e958ed1264c6a.md)
-
 [most_recent_S_name_movers_DRAFT.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/most_recent_S_name_movers_DRAFT%20ipynb%20ee6f1afdee0b4f369cf505ae00aaed4d.md)
+
+[adj_iden_circuits_DRAFT.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/adj_iden_circuits_DRAFT%20ipynb%207e1a22ebddc44a51b2b1d6570bec0b0f.md)
 
 Look for Important MLP Neurons
 
 [tall_short_neuron_investigation.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_neuron_investigation%20ipynb%20b6fb8fd5adfc47f4b7b737249042ae53.md)
 
+tall_short_neuron_v2.ipynb
+
 [dotprod_size_tokens.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/dotprod_size_tokens%20ipynb%204997734c9c34454fb03dfe31698a529f.md)
+
+[dotprod_size_tokens_GPTsmall.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/dotprod_size_tokens_GPTsmall%20ipynb%2048e2ade011e7429aa6721e08a4666242.md)
+
+- Tests
+    
+    [tall_short_circuit_draft.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_circuit_draft%20ipynb%2060d5d6b60d014ebd950e958ed1264c6a.md)
+    
 
 ---
 

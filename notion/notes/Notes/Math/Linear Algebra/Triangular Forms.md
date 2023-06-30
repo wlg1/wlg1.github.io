@@ -6,4 +6,4 @@ A: Triangular means there are rows of variables consecutively from 1 to n. When 
 
 GENERALIZATION: 
 
-[Solve a system of linear equations](https://www.notion.so/Solve-a-system-of-linear-equations-4ecfbe3a1bb3407185215d4fd8ec5212)
+[Solve a system of linear equations](https://www.notion.so/Solve-a-system-of-linear-equations-4ecfbe3a1bb3407185215d4fd8ec5212?pvs=21)

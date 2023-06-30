@@ -29,7 +29,7 @@
 
 The fine tuning updates the loss using only the examples of (input seq, target seq) passed in.
 
-[Modifying Memories in Transformer Models](https://www.notion.so/Modifying-Memories-in-Transformer-Models-aca25361c9e14f2788b6649f1ada82c8) (Zhu, et al) is used in execute_ft() by specifiying `type(hparams.norm_constraint) is float`. It modifies the weights to be within a user-specified hyperparameter range after each epoch’s loss update.
+[Modifying Memories in Transformer Models](https://www.notion.so/Modifying-Memories-in-Transformer-Models-aca25361c9e14f2788b6649f1ada82c8?pvs=21) (Zhu, et al) is used in execute_ft() by specifiying `type(hparams.norm_constraint) is float`. It modifies the weights to be within a user-specified hyperparameter range after each epoch’s loss update.
 
 ### Future Work
 
