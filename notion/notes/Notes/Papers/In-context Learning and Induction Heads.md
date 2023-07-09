@@ -29,6 +29,73 @@
 
 For example, given “The cat sat on the mat. The cat …”, induction heads will promote the continuation “sat on the mat”.
 
+Kaplan et al: “Decreasing loss at incrasing token indices” because with more context, model is more sure what the specifics are
+
+We verify that these heads score highly on our [“copying” and “prefix matching” evaluations](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html#head-activation-evaluators) (that is, they increase the probability of the token they attend to, and attend to tokens where the prefix matches the present token on random text)
+
+![Untitled](In-context%20Learning%20and%20Induction%20Heads%20f6c26430e69948fd9168457739f3e173/Untitled.png)
+
+- Prefix Matching: “node” (A) is the prefix. “structuion” (B) is copied
+
+• **Copying.** Does the head’s direct effect on the residual stream increase the logits of the same token as the one being attended to?
+
+- What does it mean for an attention head to “copy a token”?
+    
+    When an attention head "copies a token," it means that it assigns a relatively high attention weight to a specific token in the input sequence, indicating that the information from that token is considered important for further processing. In other words, the attention head is focused on that particular token and will incorporate its information into subsequent computations (to the output)
+    
+    When the model copies a token B, it is more likely to output B again.
+    
+
+**Per-token loss**
+
+Each snapshot is a model, and has a vector of losses for each token. Each element is one token from one example
+
+Q: What decides which token to take from each example?
+
+Q: What does this have to do wtih function spaces?
+
+> Since we're using PCA, each direction can be thought of as a vector of log-likelihoods that models are moving along
+> 
+
+********************************Argument summary********************************
+
+For smaller models, we use ablations and other technqs to find examples and correlations of induction heads. But for larger models, there are too many other heads to show that these induction heads account for most of the in-context learning. So we can only rely on correlation, which has the downside of having confounded variables.
+
+- Argument 1: During phase change when induction heads form, in-context learning improves dramatically [correlation]
+- Argument 2: When we change arch to change if and when induction heads form, in-context learning improvement ALSO shifts dramatically [correlation upon change]
+- Argument 3: When we remove induction heads after training, in-context learning greatly decreases [correlation upon ablation]
+
+********************Argument 1********************
+
+In-context learning score: the loss of the 500th token in the context minus the average loss of the 50th token in the context, averaged over dataset examples. Measured in nats
+
+y-axis: loss(500th token in input) - avg_loss(50th token in input)
+
+b/c 50th to 500th is the “in-context window” (where examples are provided)
+
+we expect the first term < second term, so (first term - second term) < 0
+
+Thus, the more negative this value is, the better the model gets
+
+x-axis: total tokens in training dataset (10,000,000,000 = 10 billion)
+
+- In transformers, as each token is added during training, do they always use all the previous tokens from the training set as part of the input? That is, all the tokens are part of one linear sequence in the training dataset. So the 1st token from a book and the 1 million token from a webpage are considered in one sequence. Or is there way some way to separate the context they came from?
+    
+    In transformer models like GPT-3, the training data is not treated as one long continuous sequence. Instead, the data is broken up into smaller chunks or sequences, often referred to as "windows" or "contexts". Each of these sequences is processed independently during training.
+    
+    The length of these sequences is determined by the model's "context window" size, which is a fixed number of tokens. For example, GPT-3 has a context window of 2048 tokens. This means that when the model is being trained, it considers a sequence of 2048 tokens at a time. The model does not have any awareness of tokens outside of this window.
+    
+    So, to answer your question, the 1st token from a book and the 1 millionth token from a webpage would not be considered in the same sequence, unless they happen to fall within the same 2048-token window, which is highly unlikely if they are from different sources.
+    
+    It's also important to note that these sequences are typically constructed in a way that respects the boundaries of individual documents. That is, sequences would not typically span across the boundary between two different documents (like a book and a webpage). This helps to ensure that each sequence has a coherent and meaningful context.
+    
+    In terms of "separating the context they came from", the model does not have an explicit mechanism for tracking the source of each sequence. However, the way the sequences are constructed (i.e., not spanning across document boundaries) helps to ensure that the context is preserved to some extent.
+    
+
+The loss function measures value between the predicted output and the desired output.
+
+The training dataset contains token sequences and the correct token is the next one.
+
 - For transformers, what's nats ?
     
     In the context of transformers, "nats" refers to a unit of measurement called "natural units" or "nats" (short for natural logarithm units). It is a logarithmic scale used to measure the amount of information or entropy in a probability distribution.
@@ -89,22 +156,14 @@ For example, given “The cat sat on the mat. The cat …”, induction heads wi
     By measuring the cross-entropy loss in nats, you can assess the model's ability to predict the true labels and minimize the uncertainty or entropy associated with the token distributions.
     
 
-We verify that these heads score highly on our [“copying” and “prefix matching” evaluations](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html#head-activation-evaluators) (that is, they increase the probability of the token they attend to, and attend to tokens where the prefix matches the present token on random text)
+********************Argument 3********************
 
-![Untitled](In-context%20Learning%20and%20Induction%20Heads%20f6c26430e69948fd9168457739f3e173/Untitled.png)
+This is causal because it’s saying when we knock out JUST this variable and NO OTHER VARIABLES, there is a big change. This reduces the possibility of confounding variables causing the change (it isolates the effect).
 
-Prefix Matching: “node” (A) is the prefix. “structuion” (B) is copied
+It’s still possible for there to be confoudning vars:
 
-• **Copying.** Does the head’s direct effect on the residual stream increase the logits of the same token as the one being attended to?
-
-- What does it mean for an attention head to “copy a token”?
-    
-    When an attention head "copies a token," it means that it assigns a relatively high attention weight to a specific token in the input sequence, indicating that the information from that token is considered important for further processing. In other words, the attention head is focused on that particular token and will incorporate its information into subsequent computations (to the output)
-    
-    When the model copies a token B, it is more likely to output B again.
-    
-
-Since we'reusing PCA, each direction can be thought of as a vector of log-likelihoods that models are movingalong
+- Could be something within; a subset of what was knocked out
+- Ablating causes an indirect change in confoudning vars too, so it’s not frozen. we just don’t know what the confounding vars are
 
 ---
 

@@ -4,6 +4,8 @@
 
 Project Start Date: ~5/1/2023 (learn from previous papers), ~5/15/2023 (start new expms)
 
+Postponed: 6/21 - 7/4 ; Re-start: 7/4 - Ongoing
+
 To do next: 
 
 - See first item of ‘Working On’ in Project Planning
@@ -47,9 +49,13 @@ Expm Results Notes
 
 [_*List of Code Notebooks*_](Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/_List%20of%20Code%20Notebooks_%2066bcbc2013ce465fbc61a281bc3ffa1f.md)
 
+Most recent S:
+
 [Most Recent S Name Movers](Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md)
 
 [S-Inhibition for Latest S heads](Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/S-Inhibition%20for%20Latest%20S%20heads%2094ec995d650f408eac783a06732a7f4f.md)
+
+Adjectives:
 
 [Adjective Identification Heads](Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Adjective%20Identification%20Heads%20f85cc6a172664109bf10cbfb5b49381a.md)
 

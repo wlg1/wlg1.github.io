@@ -22,6 +22,7 @@ Expm blocks: [EB- Analysis on Inputs for Tall vs Short](../Experimental%20Result
     
     Thus, just take code from the IOI notebook and use it for new tasks
     
+- Dot prod of large and huge and decline
 
 ### Future Work
 
@@ -36,7 +37,6 @@ Expm blocks: [EB- Analysis on Inputs for Tall vs Short](../Experimental%20Result
 - Check if similar heads for “synonyms”, “same type of opposites comparisons (large/small, black/white, man/woman, king/queen, etc)
 - Check how embeddings get more similar over time
 - Trace thru a token by dot product sequences. What is obscured (not findable) by this approach? Why must locate components it uses by actv patch over other methods?
-- Dot prod of large and huge and decline
 - Dot prod of Chihuahua with dog+small, like king queen
 - Give the embedding or dot of embs to gpt to see if it recognizes it, in some universal way
 - Generalize causal trace to patch any component

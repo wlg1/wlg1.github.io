@@ -1,5 +1,20 @@
 # SVD
 
+REASON: for decomposition, which allows us to pick the most important components, thus reducing dim while preserving most of the values of the matrix. This is just like PCA (which is SVD specific to covariance matrices, while SVD is for all matrices)
+
+- how do we measure “how much” is preserved by selecting singular vectors of SVD? is it by ratio of selected singular values to the rest?
+    
+    The Singular Value Decomposition (SVD) is a matrix factorization technique that decomposes a matrix into three components: U, Σ, and V^T. The diagonal elements of the Σ matrix represent the singular values of the original matrix.
+    
+    When performing SVD, selecting singular vectors refers to choosing a subset of the columns of U and V corresponding to the most significant singular values. The significance of a singular value can be interpreted as its contribution to the overall structure or information content of the original matrix.
+    
+    To measure how much information is preserved by selecting singular vectors, you can use the concept of explained variance or energy. The total energy of the matrix is defined as the sum of the squares of all singular values. By selecting a subset of singular vectors, you can calculate the energy of the selected singular values and compare it to the total energy.
+    
+    The ratio of the selected singular values' energy to the total energy gives you an indication of how much information is preserved. If the ratio is high (close to 1), it means that a large portion of the original matrix's information is captured by the selected singular vectors. On the other hand, if the ratio is low, it implies that a significant amount of information is lost by discarding the remaining singular values.
+    
+    In summary, you can measure "how much" is preserved by selecting singular vectors of SVD by computing the ratio of the energy of the selected singular values to the total energy of the matrix. A higher ratio indicates more preserved information, while a lower ratio suggests more loss of information.
+    
+
 [https://www.youtube.com/watch?v=vSczTbgc8Rc&t=163s&ab_channel=VisualKernel](https://www.youtube.com/watch?v=vSczTbgc8Rc&t=163s&ab_channel=VisualKernel)
 
 ****SVD Visualized, Singular Value Decomposition explained | SEE Matrix , Chapter 3****
@@ -661,7 +676,7 @@ Imagine A has dims nap and red. Then A^T A has first elem nap*nap + nap*nose. na
 
 nap/nose * nap/nose = nap^2 / nose^2 . This is saying how many times squared nap goes into squared nose. It projects nose^2 onto nap^2. This not interpretable, esp when added with other things.
 
-So for now we should end trying to “interpret” eigenvectors of A^T A, and thus right singular vectors. Instead, just treat them on a surface level and say why we use them, and how to derive them.
+So for now we should end trying to “interpret” eigenvectors of A^T A in terms of the basis vectors of A (eg if they represented nap), and thus right singular vectors. Instead, just treat them on a surface level and say why we use them, and how to derive them.
 
 <<<
 
@@ -720,3 +735,230 @@ Thus showing each unit vector is a derivative.
     It's important to note that these notations are just conventions, and different sources or authors may use slightly different notations based on their preference or the specific context of the discussion. The choice of notation may also depend on the level of formality and mathematical rigor being employed.
     
     In any case, the notation used should be clear and consistent within the given context to properly represent the tangent vectors as a basis in a tangent space.
+    
+
+[https://www.youtube.com/watch?v=mhy-ZKSARxI&t=471s&ab_channel=VisualKernel](https://www.youtube.com/watch?v=mhy-ZKSARxI&t=471s&ab_channel=VisualKernel)
+
+****Visualize Spectral Decomposition | SEE Matrix, Chapter 2****
+
+[https://www.sjsu.edu/faculty/guangliang.chen/Math253S20/lec5svd.pdf](https://www.sjsu.edu/faculty/guangliang.chen/Math253S20/lec5svd.pdf)
+
+<<<
+
+algebraically solve A and A^T A, and also visually plot them. Is there a pattern for all A?
+
+also do this for singular vectors and eigenvectors. pattern?
+
+finally, plug in values for basis dims (eg. nap) and see how they cause diff “change in units” algebraically and geometrically. interpret the resulting units
+
+eigenvector: just stretched
+
+singular: stretched then rotated
+
+Av = sigma * u
+
+A^T A v = A^T sigma * u 
+
+A^T A v = lambda * v ?= v
+
+- Does A^A A = identity?
+    
+    No, in general, the product of a matrix A with its transpose A^T (or A^A) does not result in the identity matrix, unless A is an orthogonal matrix.
+    
+    If A is an orthogonal matrix, then A^T = A^(-1), where A^(-1) is the inverse of A. In this case, we have:
+    
+    A^T * A = A^(-1) * A = I,
+    
+    where I represents the identity matrix.
+    
+    However, for a general matrix A, the product A^T * A does not necessarily equal the identity matrix. The resulting matrix will depend on the specific properties and structure of matrix A.
+    
+
+A^T sigma * u = lambda * v = sigma * sigma * v
+
+A^T u = sigma v
+
+A A^ T u ******************************=****************************** lambda * u = A sigma v
+
+A v = sigma u (back to where we started)
+
+A^T is not always a rotation b/c A is not always orthogonal
+
+So what does A^T do to sigma * u? It causes it to equal lambda * v
+
+sigma * u: stretch u
+
+lambda * v: stretch v MORE (2x amount of sigma)
+
+A^T A v = A^T sigma * u = lambda * v
+
+A A^ T u ******************************=****************************** A sigma v = lambda * u
+
+Multiplying by A^T or A causes eigenvector to rotate and scale into singular vctor
+
+Why does every square mat have (real or complex) eigenvector? Proof
+
+- prove every square symmetric has real eigenvector
+    
+    To prove that every square symmetric matrix has real eigenvectors, we can use the Spectral Theorem, which states that every symmetric matrix is orthogonally diagonalizable.
+    
+    Let A be a square symmetric matrix. By the Spectral Theorem, there exists an orthogonal matrix P such that P^T * A * P = D, where D is a diagonal matrix with the eigenvalues of A on its diagonal.
+    
+    Let's consider an eigenvector x of A with eigenvalue λ. This means that Ax = λx. We can express x in terms of the columns of P as x = P * y, where y is a vector.
+    
+    Substituting this expression into the eigenvector equation, we have:
+    
+    A(P * y) = λ(P * y).
+    
+    Multiplying both sides by P^T from the left, we get:
+    
+    P^T * A * (P * y) = λ(P^T * P * y).
+    
+    Since P is an orthogonal matrix, P^T * P = I (the identity matrix). Therefore, the equation becomes:
+    
+    P^T * A * P * y = λI * y,
+    
+    which simplifies to:
+    
+    D * y = λy.
+    
+    Here, D is a diagonal matrix with the eigenvalues of A on its diagonal. We can see that multiplying y by D simply scales the vector y by the eigenvalues. Since D is a diagonal matrix, the scaling factor λ applies independently to each component of y.
+    
+    Therefore, we have shown that the eigenvector y (and hence x = P * y) is a real vector, as it is not affected by any complex scaling factors. Since x is expressed in terms of the columns of the orthogonal matrix P, which are real vectors, x itself must be a real vector.
+    
+    Hence, every square symmetric matrix has real eigenvectors.
+    
+
+[https://brilliant.org/wiki/spectral-theorem/](https://brilliant.org/wiki/spectral-theorem/)
+
+<<<
+
+the eigenvectors are linear combos of basis, which have interpretation. so the ratio of the basis features describe what eigenvectors represent.
+
+Eg) if eigenvector is 0.8 body and 0.3 face, that’s “more cat like”.
+
+Thus, this is a new feature that doesn’t rely on body and face, but more on the ratio, to describe the matrix. Just keeping this ratio while discarding all other considerations (other combinations of basis features) is enough.
+
+Now, this is intuitive when A’s basis are “interpretable”. But A^T * A elements are a combination of these units, so may not be. We can try to input them into chatgpt to see if it finds ones that fit.
+
+- Let A = [a b, c d]. What are the values of A^T * A? express in latex
+    
+    $A^T * A = \begin{bmatrix}
+    a & c \\
+    b & d \\
+    \end{bmatrix} * \begin{bmatrix}
+    a & b \\
+    c & d \\
+    \end{bmatrix}  = \begin{bmatrix}
+    a^2 + c^2 & ab + cd \\
+    ab + cd & b^2 + d^2 \\
+    \end{bmatrix}$
+    
+- Let a = nap/nose, b = nap/ear ; c = luck/nose, d = luck/ear. Substitute these values into the following:
+    
+    Substituting the given values into the expression:
+    
+    $A^T * A = \begin{bmatrix}
+    \frac{nap}{nose} & \frac{luck}{nose} \\
+    \frac{nap}{ear} & \frac{luck}{ear} \\
+    \end{bmatrix} * \begin{bmatrix}
+    \frac{nap}{nose} & \frac{nap}{ear} \\
+    \frac{luck}{nose} & \frac{luck}{ear} \\
+    \end{bmatrix} = \begin{bmatrix}
+    \left(\frac{nap}{nose}\right)^2 + \left(\frac{luck}{nose}\right)^2 & \left(\frac{nap}{nose}\right)\left(\frac{nap}{ear}\right) + \left(\frac{luck}{nose}\right)\left(\frac{luck}{ear}\right) \\
+    \left(\frac{nap}{nose}\right)\left(\frac{nap}{ear}\right) + \left(\frac{luck}{nose}\right)\left(\frac{luck}{ear}\right) & \left(\frac{nap}{ear}\right)^2 + \left(\frac{luck}{ear}\right)^2 \\
+    \end{bmatrix}$
+    
+    Simplifying the expression further, we have:
+    
+    $A^T * A = \begin{bmatrix}
+    \left(\frac{nap^2}{nose^2}\right) + \left(\frac{luck^2}{nose^2}\right) & \left(\frac{nap}{nose}\right)\left(\frac{nap}{ear}\right) + \left(\frac{luck}{nose}\right)\left(\frac{luck}{ear}\right) \\
+    \left(\frac{nap}{nose}\right)\left(\frac{nap}{ear}\right) + \left(\frac{luck}{nose}\right)\left(\frac{luck}{ear}\right) & \left(\frac{nap^2}{ear^2}\right) + \left(\frac{luck^2}{ear^2}\right) \\
+    \end{bmatrix}$
+    
+    if Ax get nap and luck as new axis, then A^T Ax should have nap and luck as denominators. (nap, luck) is in each row. But what’s numberators? No one knows until after, b/c interpretation is human subjective measured. It’s not absolute. We are guessing they mean nap and luck b/c they correlate with nap and luck. If they correlate with other things that are analogous rise/falls with nap and luck, we can interpret them as those, too. These ratios are NOT inherent to the matrix, which is just a collection of values. Secondly, this is for demo purposes and shouldn’t be extended outside of it. It’s like labeling a target with red tape to see it better during training, the red tape is not going to be part of the wild when you’re hunting with a bow.
+    
+- Find dimensions of a, b, c, d corresponding to real world values that "make sense" when substituted into A^T * A. For example, a= length, b=color, etc.
+    
+    [fails]
+    
+
+If we treat first row of A^T A as how previous basis compute first new basis vec, then clearly the first row (basis vec) Is nap^2 + luck^2. But unlike when just Ax, A^T Ax uses nose^2 and nose*ear as its previous basis! This also doesn’t make sense because after Ax, those basis vectors should be nap and luck. 
+
+I suppose it only makes sense once you project nap onto those new dims (elements of A^T A), then add them to get the basis elems of A^T A.
+
+Actually this made a mistake; A^T A units don’t act on Ax, so nap and luck shouldn’t be the prev basis vectors. A^T A still acts on x, so nose and ear are still the basis vectors.
+
+What doesn’t make sense is that both basis vectors (both rows) are nap^2 + luck^2, but calculated in 2 different ways (ratios of prev basis). In fact, the mirrored diagonal is the same (nose * ear) while the diagonal is diff (nose^2 vs ear^2 in denominator).
+
+In this case, we must change our perspective if we believe the original basis was ALWAYS “nose” and “ear”- it’s not. It’s ENTIRELY RELATIVE to the matrix! That’s the main lesson in one of the sections of the “why NNs use LA” video. If the matrix was about using “red and blue”, the original wouldn’t be “nose and ear”. So in this case, A^T A ISN’T using nose and ear, but nose^2 and nose*ear for the first, then an entirely different one for the second row!
+
+Yet, the value used for nose^2 and nose*ear is the same (x_1). This is stating that the ratios used to calculate the two are the same in the matrix, despite interpreting as different units.
+
+But if they’re not the same, that is- relative ot the matrix- how can we “carry over” the units upon A^T A? 
+
+Make a separate video for this; don’t put it into your entry for SoME3. Put it as a “quick PSA” that the Some3 links to. This is b/c too much detail, and too controvserial. “Still under investigation” by Yoneda corp. This video doesn’t need geom (besides repeating prev video), just show algebra and “real world ex” units substi in.
+
+This makes sense, still, if instead of substituing nap and etc, we keep a b c d and look at the elemtsn of A^T A. “Don’t do that just yet”. Keep it
+
+But if we allow x_1 and x_2 to be diff units for each row, it no longer makes sense to interpret the denoms as x_1 and x_2. I proporse this instead:
+
+$A^T * A = \begin{bmatrix}
+a & c \\
+b & d \\
+\end{bmatrix} * \begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}  -> \begin{bmatrix}
+\frac{a^2 + c^2}{x_1} & \frac{ab + cd}{x_2} \\
+\frac{ab + cd}{x_1} & \frac{b^2 + d^2}{x_2} \\
+\end{bmatrix}$
+
+Thus, first row is : $a^2 + c^2 + ab +cd$
+
+Thus, 2nd row is : $b^2 + d^2 + ab +cd$
+
+The ratio units ONLY make sense during MM; they are not inherent to the matrix themselves. 
+
+- Let a = nap/nose, b = nap/ear ; c = luck/nose, d = luck/ear. Substitute these into A * A^T
+    
+    $A * A^T = \begin{bmatrix}
+    \frac{nap}{nose} & \frac{nap}{ear} \\
+    \frac{luck}{nose} & \frac{luck}{ear} \\
+    \end{bmatrix} * \begin{bmatrix}
+    \frac{nap}{nose} & \frac{luck}{nose} \\
+    \frac{nap}{ear} & \frac{luck}{ear} \\
+    \end{bmatrix} = \begin{bmatrix}
+    \left(\frac{nap}{nose}\right)^2 + \left(\frac{nap}{ear}\right)^2 & \left(\frac{nap}{nose}\right)\left(\frac{luck}{nose}\right) + \left(\frac{nap}{ear}\right)\left(\frac{luck}{ear}\right) \\
+    \left(\frac{luck}{nose}\right)\left(\frac{nap}{nose}\right) + \left(\frac{luck}{ear}\right)\left(\frac{nap}{ear}\right) & \left(\frac{luck}{nose}\right)^2 + \left(\frac{luck}{ear}\right)^2 \\
+    \end{bmatrix}$
+    
+    Simplify:
+    
+    $A * A^T = \begin{bmatrix}
+    \frac{nap^2}{nose^2} + \frac{nap^2}{ear^2} & \frac{nap \cdot luck}{nose^2} + \frac{nap \cdot luck}{ear^2} \\
+    \frac{nap \cdot luck}{nose^2} + \frac{nap \cdot luck}{ear^2} & \frac{luck^2}{nose^2} + \frac{luck^2}{ear^2} \\
+    \end{bmatrix}$
+    
+
+Propagate ratio units from A to A^T A to eigenvector of A^T A. Show how these, in the end, reconstruct the units for A using USV. This will describe what U and V are doing to “make up” A. And why truncate are most impt.
+
+<<<<
+
+if det is area, then the daigonal values created L and W? then for 3D det…
+
+<<<
+
+[https://www.youtube.com/watch?v=wCZ1VEmVjVo&t=255s&ab_channel=Mathemaniac](https://www.youtube.com/watch?v=wCZ1VEmVjVo&t=255s&ab_channel=Mathemaniac)
+
+6m: jacobian is local linear map [3]
+
+as we zoom in more, f(a) becomes more like the Jacobian value df/da = 3
+
+the derivative is the scaling factor
+
+<<<
+
+ch2.3 -2.4 visual intro diff forms
+
+diff forms connects

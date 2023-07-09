@@ -34,8 +34,6 @@ Ongoing
 
 [Interpret Attention Head Circuits of Comparison Inputs](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b.md)
 
-[Brainstorm Plans](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Brainstorm%20Plans%20f817fb00f1d34afc871717452941d74d.md)
-
 Postponed/Finished
 
 [_Project Ideas_](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/_Project%20Ideas_%205d516ef4cb104f8fa0397ff0793ae0d4.md)
@@ -45,6 +43,8 @@ Postponed/Finished
 ---
 
 ### Expms from Other Research Groups
+
+[Expms on other’s work](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Expms%20on%20other%E2%80%99s%20work%2020fe4166597c45ed844fbdff1d2bb956.md)
 
 [Reproduced Results](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Reproduced%20Results%20deca1fcd683a483d9b9b2400dcc83c5e.md)
 
@@ -58,7 +58,7 @@ Postponed/Finished
 
 [Grants and Funding](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Grants%20and%20Funding%208d6ff0f6c1f24db0a1b09acaf24dcb67.md)
 
-[Journals and Conferences ](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Journals%20and%20Conferences%206812ab43707a406c9fabad42b60342ee.md)
+[Journals, Conferences and Workshops](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Journals,%20Conferences%20and%20Workshops%206812ab43707a406c9fabad42b60342ee.md)
 
 [Reviews and Revisions](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Reviews%20and%20Revisions%20a50f6c11143a4df5b0cbf3957a5acf72.md)
 

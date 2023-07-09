@@ -2,6 +2,8 @@
 
 ### Transformer Interpretability
 
+*[_Paper Summaries_](Papers%203fa55c25c0194ccd89e95feefb9e16bc/_Paper%20Summaries_%20ccce3eab6abe4da9a415ddf6814db920.md)* 
+
 [****A Mathematical Framework for Transformer Circuits****](Papers%203fa55c25c0194ccd89e95feefb9e16bc/A%20Mathematical%20Framework%20for%20Transformer%20Circuits%20236be728258d45febca2b1bf2ab0aa4b.md)
 
 [In-context Learning and Induction Heads](Papers%203fa55c25c0194ccd89e95feefb9e16bc/In-context%20Learning%20and%20Induction%20Heads%20f6c26430e69948fd9168457739f3e173.md) 
@@ -16,6 +18,8 @@
 
 [Knowledge Neurons in Pretrained Transformers](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Knowledge%20Neurons%20in%20Pretrained%20Transformers%202bdb62adf77d4e94aa77d2a36375e570.md)
 
+[****Toy Models of Superposition****](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Toy%20Models%20of%20Superposition%209538794a63a541ebbd6aa19b19195839.md)
+
 ### Transformer Editing
 
 [FAST MODEL EDITING AT SCALE](Papers%203fa55c25c0194ccd89e95feefb9e16bc/FAST%20MODEL%20EDITING%20AT%20SCALE%20ea8582482e514da4a9731d1ee5ac2e02.md) 
@@ -29,6 +33,8 @@
 ### Non-Academic Projects: Transformer Interpretability
 
 ***[List of Alignment Jams](Papers%203fa55c25c0194ccd89e95feefb9e16bc/List%20of%20Alignment%20Jams%20bf0d94025dff4de386f2e405b10f4528.md)*** 
+
+*[Hackathon Summaries](Papers%203fa55c25c0194ccd89e95feefb9e16bc/Hackathon%20Summaries%20f0e8e76afe934abcb54bdeb72a0e1147.md)* 
 
 [“An” neuron](Papers%203fa55c25c0194ccd89e95feefb9e16bc/%E2%80%9CAn%E2%80%9D%20neuron%2092888cb0c37548b7949c1d9c3c9d260d.md)
 

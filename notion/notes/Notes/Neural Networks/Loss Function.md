@@ -59,3 +59,16 @@ This is why instead of asking p(x | θ), we semantically think of it as L(θ | x
     where p_i is the true probability of the i-th class and q_i is the predicted probability of the i-th class.
     
     By minimizing the cross-entropy loss, we can train our model to make more accurate predictions, and in particular, to minimize the surprise we experience when observing the true labels.
+    
+
+---
+
+- Are logits measured in nats?
+    
+    In the context of neural networks and machine learning, the term "logits" refers to the output values of a model before they are transformed by a probability distribution function (such as softmax) into probabilities. Logits can be measured in various units depending on the specific problem and the activation function used in the output layer of the model.
+    
+    Typically, logits are not measured in nats by default. The measurement of logits depends on the chosen activation function and the problem domain. For example, in binary classification problems, logits may represent log-odds or logit scores, which are not inherently measured in nats. In multi-class classification problems, logits can represent unnormalized class scores or log-probabilities.
+    
+    On the other hand, the natural logarithm (ln) is commonly used in the softmax function, which is often applied to logits to transform them into probabilities. The natural logarithm has the base of e, where e is Euler's number approximately equal to 2.71828. Therefore, the softmax function with natural logarithm can produce probabilities measured in nats.
+    
+    In summary, while logits themselves are not inherently measured in nats, the use of the natural logarithm in the softmax function, applied to logits, can result in probabilities measured in nats.

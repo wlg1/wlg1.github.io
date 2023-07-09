@@ -24,9 +24,9 @@ Jam #1
     
     [https://jacyanthis.itch.io/mechanisms-of-causal-reasoning](https://jacyanthis.itch.io/mechanisms-of-causal-reasoning)
     
-    [https://poppingtonic.itch.io/ob](https://poppingtonic.itch.io/ob)
-    
     [https://astowolfo.itch.io/sparsity-lens](https://astowolfo.itch.io/sparsity-lens)
+    
+    [https://poppingtonic.itch.io/ob](https://poppingtonic.itch.io/ob)
     
     [https://edkins.itch.io/war-is-conflic-dragonmagazine](https://edkins.itch.io/war-is-conflic-dragonmagazine)
     

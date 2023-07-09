@@ -2,37 +2,7 @@
 
 ### Working on
 
-- correlation value in scatterplot
-    
-    [https://www.notion.so/wlg1/3-Figuring-out-Head-Functionality-for-Most-Recent-Name-Movers-d35d8e08cfc649d7838236eb03e6bf22?pvs=4#46884b3c68fc4d2ab5b1529b1f690869](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
-    
-    - make new notebook to keep outputs of bugs in prev. **latest_S_name_movers_DRAFT_v2.ipynb** cleans up bugs, runs from start w/o errors
-    
-    [https://www.notion.so/wlg1/3-Figuring-out-Head-Functionality-for-Most-Recent-Name-Movers-d35d8e08cfc649d7838236eb03e6bf22?pvs=4#c2ccb59d9c30446ca5b7f403795910cd](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
-    
-    To calculate the correlation between two variables in a scatterplot, you can use the `pearsonr` function from the `scipy.stats` module in Python. Here's an example of how to calculate the correlation:
-    
-    ```
-    import scipy.stats as stats
-    
-    # X and Y are the variables for which you want to calculate the correlation
-    # They should be arrays, lists, or pandas Series containing the data points
-    correlation, p_value = stats.pearsonr(X, Y)
-    
-    print("Correlation:", correlation)
-    print("p-value:", p_value)
-    
-    ```
-    
-    In the code above, `stats.pearsonr(X, Y)` calculates the Pearson correlation coefficient between `X` and `Y`. It returns two values: the correlation coefficient and the p-value.
-    
-    - The correlation coefficient (`correlation`) ranges from -1 to 1. A value close to 1 indicates a strong positive correlation, a value close to -1 indicates a strong negative correlation, and a value close to 0 indicates no or weak correlation.
-    - The p-value (`p_value`) represents the probability of observing the correlation coefficient under the null hypothesis that there is no correlation between `X` and `Y`. A lower p-value suggests stronger evidence against the null hypothesis.
-    
-    Make sure that `X` and `Y` contain numerical data and have the same length. The `pearsonr` function expects arrays, lists, or pandas Series as inputs.
-    
-    By using the `pearsonr` function, you can calculate the correlation coefficient to measure the strength and direction of the linear relationship between two variables plotted in a scatterplot.
-    
+- S-inhibition heads using Explr nb
 
 ### Ongoing Issues
 
@@ -198,33 +168,46 @@
         
         - ✅ In RELEVANT_TOKENS, comment all out except `RELEVANT_TOKENS[head] = ["end"]` . Then commit ioi_circuit_extraction.py and try `do_circuit_extraction()` again
         - Debug: `'Dataset' object has no attribute 'groups'`
+- ✅ correlation value in scatterplot
+    
+    [https://www.notion.so/wlg1/3-Figuring-out-Head-Functionality-for-Most-Recent-Name-Movers-d35d8e08cfc649d7838236eb03e6bf22?pvs=4#46884b3c68fc4d2ab5b1529b1f690869](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
+    
+    - make new notebook to keep outputs of bugs in prev. **latest_S_name_movers_DRAFT_v2.ipynb** cleans up bugs, runs from start w/o errors
+    
+    [https://www.notion.so/wlg1/3-Figuring-out-Head-Functionality-for-Most-Recent-Name-Movers-d35d8e08cfc649d7838236eb03e6bf22?pvs=4#c2ccb59d9c30446ca5b7f403795910cd](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
+    
+- ✅ Neuron Dir: Try [Random Linear Updates on “Language Models Implement .. Vector Arithmetic”](../Expms%20on%20other%E2%80%99s%20work%2020fe4166597c45ed844fbdff1d2bb956/Random%20Linear%20Updates%20on%20%E2%80%9CLanguage%20Models%20Implemen%202d2e575a175b4a7a8ee0228fa87ee998.md)
 
 ### Future Work Ideas / Postponed
 
 **Next in line to do**
 
+Activation Patching to find Circuits
+
 Find if there are S-inhibition heads. See [S-Inhibition for Latest S heads](S-Inhibition%20for%20Latest%20S%20heads%2094ec995d650f408eac783a06732a7f4f.md) 
+
+Exploratory analysis nb says just to guess mid layers are doing this, using actv patching on logit outputs; no need for head outputs
+
+[Activation patching on head outputs instead of logits](Project%20Planning%20821fd0c71f4d4a44b5f7b240725c5547/Activation%20patching%20on%20head%20outputs%20instead%20of%20log%20647ee177f3414718b97953d2ccbf8a22.md)
+
+Brainstorm alternative ways to get S-inhibition
 
 - Try new ACDC notebook
 
 [https://colab.research.google.com/github/ArthurConmy/Automatic-Circuit-Discovery/blob/main/notebooks/colabs/ACDC_Editing_Edges_Demo.ipynb](https://colab.research.google.com/github/ArthurConmy/Automatic-Circuit-Discovery/blob/main/notebooks/colabs/ACDC_Editing_Edges_Demo.ipynb)
 
-<<<
+Heads Functioanlity
 
-Activation Patching to find Circuits
-
+- large negative copy score
 - **Copy Scores for multiple prompts**
     
     [https://colab.research.google.com/drive/1NCBOLPx038FxwEacmHDsCesWIAW1z8kU#scrollTo=0MBbP2Agg-iR](https://colab.research.google.com/drive/1NCBOLPx038FxwEacmHDsCesWIAW1z8kU#scrollTo=0MBbP2Agg-iR)
     
 
-Heads Functioanlity
-
-- large negative copy score
-
 Congruence
 
-- Neuroscope
+- Neuroscope + Automated by fasttext
+- [https://colab.research.google.com/github/neelnanda-io/TransformerLens/blob/main/demos/Interactive_Neuroscope.ipynb](https://colab.research.google.com/github/neelnanda-io/TransformerLens/blob/main/demos/Interactive_Neuroscope.ipynb)
 - [https://colab.research.google.com/drive/1lZQkZ5u2mQxsYyiGaUKbW-XjdHP0GJpA#scrollTo=ykzEQtT65KMZ](https://colab.research.google.com/drive/1lZQkZ5u2mQxsYyiGaUKbW-XjdHP0GJpA#scrollTo=ykzEQtT65KMZ)
     
     ~~NOTE: maybe the difference is so small in actv patching bc that neuron 4413 has both tall and short, so the corruption should actually be on a different token? unless tall and short have big logit diff too~~

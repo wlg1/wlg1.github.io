@@ -40,6 +40,14 @@ logits:**`[batch_size, sequence_length, vocab_size]`**,
 
 Eg) Subject S is “mary”, so finds the index of mary. This gives the logit of mary for the prompt sequence
 
+- In a transformer, why does logits have size [batch_size, seq_length, vocab_size]? Why for every batch, for every token in an input is there a logit for every token?
+    
+    The model aims to predict the probability distribution over all possible tokens at each position in the sequence. This allows the model to capture the relationships between tokens and generate the most likely token at each position.
+    
+- Why for each position? Doesn't the model just need to predict the next token? How does it uses these logits for each token?
+    
+    I’m guessing it has to do with attention. We still need scores for every token so they can be put through the QK and OV matrices at future layers.
+    
 - Modify the following to check if "short" appears in top logits instead of the subject or IO:
     
     GPT fails to do this correctly. Too big of a step to understand how to do it all correctly; try more gradual changes

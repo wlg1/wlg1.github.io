@@ -12,6 +12,10 @@ See:
 
 [Singular Values](../Math%2089624985ddb64f0c91c334b1ab5df1d0/Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Singular%20Values%20837973abb02f400faa322e0a56f9415b.md) 
 
+emaiL:
+
+unsupervised, so directions found were not manually looked for. instead, they were found by themselves, then later interpreted by a human. how many were found, and how many had to be gone through?
+
 <<<
 
 Variables:

@@ -1,4 +1,4 @@
-# Journals and Conferences
+# Journals, Conferences and Workshops
 
 Workshops
 
