@@ -36,11 +36,11 @@ Ctrl++ or Mouse Wheel to zoom in for bigger text.
 <a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">One is 1: Analyzing Activations of Numerical Words vs Digits</a>
 </b></p>
 
-<img src="/index_imgs/number_heads.PNG" width="350" height="300" alt="Figure 10 – Middle Heads for “Adam is 1…” prompts">
+<img src="/index_imgs/number_heads.PNG" alt="Figure 10 – Middle Heads for “Adam is 1…” prompts" style="width: 50%; height: auto;">
 
 This is a hackathon project submitted to the <a href="https://alignmentjam.com/jam/interpretability">Interpretability Hackathon 3.0</a> (under a similar name). To test for the existence of shared circuits, I compare activations analogous numerical sequences, such as the digits “1, 2, 3, 4”, the words “one, two, three, four”, and the months “January, February, March, April”. These findings demonstrate preliminary evidence suggesting that these semantically  related sequences share common activation patterns in GPT-2 Small, and allow the construction of a hypothesized circuit that detects and moves numbers, sending relevant information from attention heads to MLPs to  obtain the next number or analogous element. The techniques used include activation patching, attention pattern analysis, neuron feature analysis, mean ablation, logit lens, and circuit surgery.
 
-The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWRy548npN_ECb56E-lHbsLCC/view?usp=sharing">in this link</a>, and this is the <a href="https://wlg1.notion.site/Videos-Interpret-Attention-Head-Circuits-of-Comparison-Inputs-DRAFTS-24b67e08b1d74f70be8ed3012e8278bc">link to the code and experiments</a>.
+The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWRy548npN_ECb56E-lHbsLCC/view?usp=sharing">in this link</a>, and this is the <a href="https://github.com/wlg100/numseqcont_circuit_expms">link to the code and experiments</a>.
 
 ---
 
