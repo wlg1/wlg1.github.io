@@ -38,7 +38,7 @@ Ctrl++ or Mouse Wheel to zoom in for bigger text.
 
 <img src="/index_imgs/number_heads.PNG" alt="Figure 10 – Middle Heads for “Adam is 1…” prompts" style="width: 75%; height: auto;">
 
-This is a hackathon project submitted to the <a href="https://alignmentjam.com/jam/interpretability">Interpretability Hackathon 3.0</a> (under a similar name). To test for the existence of shared circuits, I compare activations analogous numerical sequences, such as the digits “1, 2, 3, 4”, the words “one, two, three, four”, and the months “January, February, March, April”. These findings demonstrate preliminary evidence suggesting that these semantically  related sequences share common activation patterns in GPT-2 Small, and allow the construction of a hypothesized circuit that detects and moves numbers, sending relevant information from attention heads to MLPs to  obtain the next number or analogous element. The techniques used include activation patching, attention pattern analysis, neuron feature analysis, mean ablation, logit lens, and circuit surgery.
+This is a hackathon project submitted to the <a href="https://alignmentjam.com/jam/interpretability">Interpretability Hackathon 3.0</a> (under a similar name). To test for the existence of shared circuits, I compare the activations of analogous numerical sequences, such as the digits “1, 2, 3, 4”, the words “one, two, three, four”, and the months “January, February, March, April”. These findings demonstrate preliminary evidence suggesting that these semantically  related sequences share common activation patterns in GPT-2 Small, and allow the construction of a hypothesized circuit that detects and moves numbers, sending relevant information from attention heads to MLPs to  obtain the next number or analogous element. The techniques used include activation patching, attention pattern analysis, neuron feature analysis, mean ablation, logit lens, and circuit surgery.
 
 The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWRy548npN_ECb56E-lHbsLCC/view?usp=sharing">in this link</a>, and this is the <a href="https://github.com/wlg100/numseqcont_circuit_expms">link to the code and experiments</a>.
 
@@ -48,7 +48,7 @@ The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWR
 <a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Transformer Comparison Circuit Experiments</a>
 </b></p>
 
-Based on previous work that used techniques such as activation patching and dot product congruence [ Interpretability in the Wild, "An" Neuron, etc to be cited ], these experiments look, in large language models, for circuits which compare information, such as sizes. For the GPT-family of models, this work is currently investigating:
+Based on previous work that used techniques such as causal tracing and dot product congruence [ Interpretability in the Wild, "An" Neuron, etc to be cited ], these experiments look, in large language models, for circuits which compare information, such as sizes. For the GPT-family of models, this work is currently investigating:
 <ul>
 <li> Adjective Identification Circuits </li>
 <li> Most Recent Subject Circuits </li>
