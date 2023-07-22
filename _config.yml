@@ -1,7 +1,3 @@
 theme: jekyll-theme-minimal
 url: https://wlg1.github.io/
 markdown: kramdown
-name: my site
-title: null
-github:
-  is_project_page: false
