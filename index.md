@@ -1,15 +1,14 @@
 ---
 title: Front Page
 ---
-<!---
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" async></script>
---->
 
 <head>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
+
+<img src="banner.png" alt="Banner">
 
 <div class="topnav">
   <a class="active" href="#Home">Home</a>
@@ -27,8 +26,6 @@ title: Front Page
 <a href="test_post.html">test</a>
 Ctrl++ or Mouse Wheel to zoom in for bigger text. 
 --->
-
-<img src="banner.png" alt="Banner">
 
 <span><b>H</b></span>ello. A selection of my projects can be found below [^0]. Click on each title link to learn more:
 
@@ -66,7 +63,7 @@ The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWR
 
 [^1]: <u>Note on the project ordering:</u> The order of the projects is only ordered for the top 4, while the rest of the ordering is the submission order from latest to earliest (I observed this as I had submitted the 3rd entry, but it appears as the 1st now as the other two were moved when pinned as 2nd and 3rd place)
 
----
+<hr style="height:2px; border:none; color:#333; background-color:#333;">
 
 <p style="font-size:20px"><b>
 <a id="comparison_circuits" href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Transformer Comparison Circuit Experiments</a>
@@ -149,16 +146,10 @@ This blog overcomes this problem by explaining many required prerequisites from 
 
 ![2mod_vecs](/ch1/2mod_out.PNG)
 
----
-<p style="font-size:20px"><b>
-<a href="">Latent Space Experiments</a>
-</b></p>
-
-Another way to study how neural networks make decisions is to study the geometry of their latent space. This leads to powerful methods such as Style Editing, in which one can turn the face of a generated person from old to young.
-
 --->
 
----
+<hr style="height:2px; border:none; color:#333; background-color:#333;">
+
 <p style="font-size:20px"><b>
 <a id="datasci" href="https://mikelan300.wixsite.com/portfolio">Machine Learning and Data Analytics on Social Media</a>
 </b></p>
@@ -181,7 +172,8 @@ Utilized graph analytics to compare the network statistics of diﬀerent communi
   </div>
 </div>
 
----
+<hr style="height:2px; border:none; color:#333; background-color:#333;">
+
 <p style="font-size:20px"><b><a id="GPM">Using Materialized Views for Answering Graph Pattern Queries</a></b></p>
 
 This dissertation is about developing algorithms to search for patterns in networks using smaller patterns that were already discovered. For example, a knowledge graph may describe entities based on observed features, but not identify them. To search for Shiba Inu, one can input a query with connections to "Japanese", "long snout" and "pet". If the dog pattern made of "long snout" and "pet" was already found, it would filter out many wrong candidate entities. These re-usable intermediate results may be pre-computed and stored. 
@@ -199,7 +191,8 @@ Graph pattern matching from local matches to global matches is a technique previ
 
 <a href="https://docs.google.com/presentation/d/1OATw2tZGqq4hStwWnnWqRNIW0gzisAqi/edit?usp=sharing&ouid=111542027497665621431&rtpof=true&sd=true">These slides provide a beginner's introduction to the work.</a>
 
----
+<hr style="height:2px; border:none; color:#333; background-color:#333;">
+
 <b>UNDER CONSTRUCTION:</b>
 
 <p style="font-size:20px"><b>
@@ -217,7 +210,8 @@ These experiments are housed in a Github repo with Colab notebooks that walk a r
 
 <a href="https://colab.research.google.com/drive/12hQolN9TLXsakkG96nYUgU30_6YL74bf">TUTORIAL 1: Compare Neuron Activations Between Pairs of Images</a>
 
----
+<hr style="height:2px; border:none; color:#333; background-color:#333;">
+
 
 
 
