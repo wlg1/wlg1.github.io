@@ -9,11 +9,10 @@ title: Front Page
 </head>
 
 <div class="topnav">
-  <a class="active" href="#Home">Home</a>
+  <a class="active"  href="index.html">Home</a>
   <a href="about.html">About</a>
+  <a href="eduBlogHome.html">Edu Blog Home</a>
 </div>
-
-<img src="banner2.PNG" alt="Banner">
 
 <p align="center"><h1><b>My Long Term Goals</b></h1></p>
 
