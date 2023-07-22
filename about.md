@@ -24,3 +24,4 @@ For long term goals, with many troubles plaguing the universe, even down to the 
 
 <p align="center"><h3><b>Contact Info</b></h3></p>
 - <a href="https://linkedin.com/in/mikelan17">LinkedIn</a>
+- <a href="https://drive.google.com/file/d/1ZGyRdGnjLr_Hx3yJ6ZPeqep72MC2mNWa/view?usp=sharing">Resume</a>
