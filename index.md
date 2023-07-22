@@ -25,7 +25,7 @@ title: Front Page
 Ctrl++ or Mouse Wheel to zoom in for bigger text. 
 --->
 
-<img src="banner.png" alt="Banner">
+<img src="banner2.png" alt="Banner">
 
 <span><b>H</b></span>ello. A selection of my projects can be found below [^0]. Click on each title link to learn more:
 
