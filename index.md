@@ -26,10 +26,11 @@ title: Front Page
 Ctrl++ or Mouse Wheel to zoom in for bigger text. 
 --->
 
-<span><b>H</b></span>ello. My projects can be found below [^0]. Click on each title link to learn more:
+<span><b>H</b></span>ello. A selection of my projects can be found below [^0]. Click on each title link to learn more:
 
 [^0]:  Website in process of being built. Some projects in progress are not added yet and will be added later. 
 
+<a id="toc"></a>
 ### Table of Contents
 
 - [One is 1: Analyzing Activations of Numerical Words vs Digits](#oneis1)
@@ -43,6 +44,7 @@ Ctrl++ or Mouse Wheel to zoom in for bigger text.
 <p style="font-size:20px"><b>
 <a  id="oneis1" href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">One is 1: Analyzing Activations of Numerical Words vs Digits</a>
 </b></p>
+[Back to TOC ⬆](#toc)
 
 <img src="/index_imgs/number_heads.PNG" alt="Figure 10 – Middle Heads for “Adam is 1…” prompts" style="width: 75%; height: auto;">
 
