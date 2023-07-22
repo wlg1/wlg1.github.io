@@ -11,19 +11,7 @@ title: Front Page
 <div class="topnav">
   <a class="active" href="#Home">Home</a>
   <a href="about.html">About</a>
-  <!---
-  <a href="expm_index.html">Experiments Index</a>
-  <a href="#Techniques">Techniques Compendium</a>
-  <a href="#Contact">Contact</a>
-  --->
 </div>
-
-<!---
-<p align="center"><h1><b>Michael Lan</b></h1></p>
-
-<a href="test_post.html">test</a>
-Ctrl++ or Mouse Wheel to zoom in for bigger text. 
---->
 
 <img src="banner2.PNG" alt="Banner">
 
