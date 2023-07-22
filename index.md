@@ -14,7 +14,7 @@ title: Front Page
   <a href="eduBlogHome.html">Edu Blog Home</a>
 </div>
 
-<img src="banner.PNG" alt="Banner">
+<img src="banner.png" alt="Banner">
 
 <span><b>H</b></span>ello. A selection of my projects can be found below [^0]. Click on each title link to learn more:
 

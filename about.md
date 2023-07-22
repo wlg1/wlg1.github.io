@@ -14,7 +14,7 @@ title: Front Page
   <a href="eduBlogHome.html">Edu Blog Home</a>
 </div>
 
-<img src="banner.PNG" alt="Banner">
+<img src="banner.png" alt="Banner">
 
 <p align="center"><h1><b>My Long Term Goals</b></h1></p>
 
