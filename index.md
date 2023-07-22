@@ -8,8 +8,6 @@ title: Front Page
     <link rel="stylesheet" href="index.css">
 </head>
 
-<img src="banner.png" alt="Banner">
-
 <div class="topnav">
   <a class="active" href="#Home">Home</a>
   <a href="about.html">About</a>
@@ -26,6 +24,8 @@ title: Front Page
 <a href="test_post.html">test</a>
 Ctrl++ or Mouse Wheel to zoom in for bigger text. 
 --->
+
+<img src="banner.png" alt="Banner">
 
 <span><b>H</b></span>ello. A selection of my projects can be found below [^0]. Click on each title link to learn more:
 
