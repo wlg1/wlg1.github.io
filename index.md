@@ -13,6 +13,7 @@ title: Front Page
 
 <div class="topnav">
   <a class="active" href="#Home">Home</a>
+  <a href="about.html">About</a>
   <!---
   <a href="expm_index.html">Experiments Index</a>
   <a href="#Techniques">Techniques Compendium</a>
@@ -20,13 +21,14 @@ title: Front Page
   --->
 </div>
 
-<p align="center"><h1><b>Michael Lan</b></h1></p>
 <!---
+<p align="center"><h1><b>Michael Lan</b></h1></p>
+
 <a href="test_post.html">test</a>
 Ctrl++ or Mouse Wheel to zoom in for bigger text. 
 --->
 
-<img src="github-header-image.png" alt="Banner">
+<img src="banner.png" alt="Banner">
 
 <span><b>H</b></span>ello. A selection of my projects can be found below [^0]. Click on each title link to learn more:
 
