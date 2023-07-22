@@ -32,6 +32,7 @@ Ctrl++ or Mouse Wheel to zoom in for bigger text.
 
 ## Table of Contents
 
+[Jump to Section](#mySection)
 - [One is 1](#Oneis1)
 - [tw](#tw)
 
@@ -54,7 +55,7 @@ The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWR
 ---
 
 <p style="font-size:20px"><b>
-<a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Transformer Comparison Circuit Experiments</a>
+<a id="mySection" href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Transformer Comparison Circuit Experiments</a>
 </b></p>
 
 ###### [tw](https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607)
