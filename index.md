@@ -32,11 +32,12 @@ Ctrl++ or Mouse Wheel to zoom in for bigger text.
 
 ## Table of Contents
 
-- [One is 1](#Oneis)
+- [One is 1](#Oneis1)
+- [tw](#tw)
 
 ---
 
-## Oneis
+## One is 1
 
 <p style="font-size:20px"><b>
 <a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">One is 1: Analyzing Activations of Numerical Words vs Digits</a>
@@ -55,6 +56,8 @@ The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWR
 <p style="font-size:20px"><b>
 <a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Transformer Comparison Circuit Experiments</a>
 </b></p>
+
+## tw
 
 Based on previous work that used techniques such as causal tracing and dot product congruence [ Interpretability in the Wild, "An" Neuron, etc to be cited ], these experiments look, in large language models, for circuits which compare information, such as sizes. For the GPT-family of models, this work is currently investigating:
 <ul>
@@ -88,7 +91,7 @@ These pages are supplemental to the experiments:
 
 ---
 <p style="font-size:20px"><b>
-<a href="https://www.youtube.com/@neoknowstic">Educational Videos on Neural Network Mathematics</a>
+<a href="https://www.youtube.com/@neoknowstic">Educational Videos on AI Safety and Neural Network Mathematics</a>
 </b></p>
 
 <b>Why do Neural Networks use Linear Algebra? -- The Visual Intuition of Cat Mathematics</b>
