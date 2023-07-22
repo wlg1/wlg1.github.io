@@ -41,10 +41,17 @@ Ctrl++ or Mouse Wheel to zoom in for bigger text.
 
 ---
 
+<!---
 <p style="font-size:20px"><b>
 <a  id="oneis1" href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">One is 1: Analyzing Activations of Numerical Words vs Digits</a>
 </b></p>
 [Back to TOC ⬆](#toc)
+--->
+
+<div style="font-size:20px; display: flex; align-items: baseline; justify-content: space-between;">
+    <b><a id="oneis1" href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">One is 1: Analyzing Activations of Numerical Words vs Digits</a></b>
+    <a href="#toc">Back to TOC ⬆</a>
+</div>
 
 <img src="/index_imgs/number_heads.PNG" alt="Figure 10 – Middle Heads for “Adam is 1…” prompts" style="width: 75%; height: auto;">
 
