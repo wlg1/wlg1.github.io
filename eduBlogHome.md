@@ -33,9 +33,19 @@ But this blog takes an even further step: by generalizing this solution to solve
 fig Eg) [give an example of issue- reasoning- soln - generalization, that concisely explains all after prereqs]
 --->
 
+Not sure where to start? Start with the video below:
+
+<b>Why do Neural Networks use Linear Algebra? -- The Visual Intuition of Cat Mathematics</b>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DHjwbleAgPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<u>NOTE:</u> Ch 1 of this site is outdated and will be updated later. It is recommended to watch this video instead, which encapsulates the same concepts as Ch 1 but in a better way.
+
+<!---
 Not sure where to start?
 
 **[Start Here](ch1.1.md)**
+--->
 
 ---
 **CHAPTER 1: How Neural Networks Reveal Hidden Insights in Data (using Matrix Multiplication)**
