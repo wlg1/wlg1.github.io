@@ -25,7 +25,7 @@ title: Front Page
 Ctrl++ or Mouse Wheel to zoom in for bigger text. 
 --->
 
-<img src="banner2.png" alt="Banner">
+<img src="banner2.PNG" alt="Banner">
 
 <span><b>H</b></span>ello. A selection of my projects can be found below [^0]. Click on each title link to learn more:
 
@@ -37,7 +37,7 @@ Ctrl++ or Mouse Wheel to zoom in for bigger text.
 - [One is 1: Analyzing Activations of Numerical Words vs Digits](#oneis1)
 - [Transformer Comparison Circuit Experiments](#comparison_circuits)
 - [Educational Videos on AI Safety and Neural Network Mathematics](#edu_vids)
-- [Machine Learning and Data Analytics on Social Media](#datasci)
+- [Machine Learning and Analytics on Social Media Data](#datasci)
 - [Using Materialized Views for Answering Graph Pattern Queries](#GPM)
 
 ---
@@ -151,7 +151,7 @@ This blog overcomes this problem by explaining many required prerequisites from 
 <hr style="height:2px; border:none; color:#333; background-color:#333;">
 
 <p style="font-size:20px"><b>
-<a id="datasci" href="https://mikelan300.wixsite.com/portfolio">Machine Learning and Data Analytics on Social Media</a>
+<a id="datasci" href="https://mikelan300.wixsite.com/portfolio">Machine Learning and Analytics on Social Media Data</a>
 </b></p>
 
 Regression Analysis on Video Game Sales using Unstructured Data from Reddit 
