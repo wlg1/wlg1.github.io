@@ -30,7 +30,13 @@ Ctrl++ or Mouse Wheel to zoom in for bigger text.
 
 [ Website in process of being built. Some projects in progress are not added yet and will be added later. ]
 
+## Table of Contents
+
+- [One is 1](#Oneis)
+
 ---
+
+## Oneis
 
 <p style="font-size:20px"><b>
 <a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">One is 1: Analyzing Activations of Numerical Words vs Digits</a>
