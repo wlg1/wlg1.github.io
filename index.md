@@ -26,20 +26,21 @@ title: Front Page
 Ctrl++ or Mouse Wheel to zoom in for bigger text. 
 --->
 
-<span><b>H</b></span>ello. My projects can be found below. Click on the title link to learn more:
+<span><b>H</b></span>ello. My projects can be found below [^0]. Click on the title link to learn more:
 
-[ Website in process of being built. Some projects in progress are not added yet and will be added later. ]
+[^0]:  Website in process of being built. Some projects in progress are not added yet and will be added later. 
 
 ## Table of Contents
 
-[Jump to Section](#mySection)
+- [One is 1: Analyzing Activations of Numerical Words vs Digits](#oneis1)
+- [Transformer Comparison Circuit Experiments](#comparison_circuits)
 - [One is 1](#Oneis1)
 - [tw](#tw)
 
 ---
 
 <p style="font-size:20px"><b>
-<a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">One is 1: Analyzing Activations of Numerical Words vs Digits</a>
+<a  id="oneis1" href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">One is 1: Analyzing Activations of Numerical Words vs Digits</a>
 </b></p>
 
 <img src="/index_imgs/number_heads.PNG" alt="Figure 10 – Middle Heads for “Adam is 1…” prompts" style="width: 75%; height: auto;">
@@ -55,7 +56,7 @@ The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWR
 ---
 
 <p style="font-size:20px"><b>
-<a id="mySection" href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Transformer Comparison Circuit Experiments</a>
+<a id="comparison_circuits" href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Transformer Comparison Circuit Experiments</a>
 </b></p>
 
 ###### [tw](https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607)
