@@ -57,7 +57,7 @@ The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWR
 <a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Transformer Comparison Circuit Experiments</a>
 </b></p>
 
-###### tw
+###### [tw](https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607)
 
 Based on previous work that used techniques such as causal tracing and dot product congruence [ Interpretability in the Wild, "An" Neuron, etc to be cited ], these experiments look, in large language models, for circuits which compare information, such as sizes. For the GPT-family of models, this work is currently investigating:
 <ul>
