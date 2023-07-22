@@ -26,16 +26,17 @@ title: Front Page
 Ctrl++ or Mouse Wheel to zoom in for bigger text. 
 --->
 
-<span><b>H</b></span>ello. My projects can be found below [^0]. Click on the title link to learn more:
+<span><b>H</b></span>ello. My projects can be found below [^0]. Click on each title link to learn more:
 
 [^0]:  Website in process of being built. Some projects in progress are not added yet and will be added later. 
 
-## Table of Contents
+### Table of Contents
 
 - [One is 1: Analyzing Activations of Numerical Words vs Digits](#oneis1)
 - [Transformer Comparison Circuit Experiments](#comparison_circuits)
-- [One is 1](#Oneis1)
-- [tw](#tw)
+- [Educational Videos on AI Safety and Neural Network Mathematics](#edu_vids)
+- [Machine Learning and Data Analytics on Social Media](#datasci)
+- [Using Materialized Views for Answering Graph Pattern Queries](#GPM)
 
 ---
 
@@ -93,7 +94,7 @@ These pages are supplemental to the experiments:
 
 ---
 <p style="font-size:20px"><b>
-<a href="https://www.youtube.com/@neoknowstic">Educational Videos on AI Safety and Neural Network Mathematics</a>
+<a id="edu_vids" href="https://www.youtube.com/@neoknowstic">Educational Videos on AI Safety and Neural Network Mathematics</a>
 </b></p>
 
 <b>Why do Neural Networks use Linear Algebra? -- The Visual Intuition of Cat Mathematics</b>
@@ -150,7 +151,7 @@ Another way to study how neural networks make decisions is to study the geometry
 
 ---
 <p style="font-size:20px"><b>
-<a href="https://mikelan300.wixsite.com/portfolio">Data Science Projects</a>
+<a id="datasci" href="https://mikelan300.wixsite.com/portfolio">Machine Learning and Data Analytics on Social Media</a>
 </b></p>
 
 Regression Analysis on Video Game Sales using Unstructured Data from Reddit 
@@ -172,7 +173,7 @@ Utilized graph analytics to compare the network statistics of diﬀerent communi
 </div>
 
 ---
-<p style="font-size:20px"><b>Using Materialized Views for Answering Graph Pattern Queries</b></p>
+<p style="font-size:20px"><b><a id="GPM">Using Materialized Views for Answering Graph Pattern Queries</a></b></p>
 
 This dissertation is about developing algorithms to search for patterns in networks using smaller patterns that were already discovered. For example, a knowledge graph may describe entities based on observed features, but not identify them. To search for Shiba Inu, one can input a query with connections to "Japanese", "long snout" and "pet". If the dog pattern made of "long snout" and "pet" was already found, it would filter out many wrong candidate entities. These re-usable intermediate results may be pre-computed and stored. 
 
