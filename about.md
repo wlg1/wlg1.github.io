@@ -9,8 +9,8 @@ title: Front Page
 </head>
 
 <div class="topnav">
-  <a class="active"  href="index.html">Home</a>
-  <a href="about.html">About</a>
+  <a href="index.html">Home</a>
+  <a class="active" href="about.html">About</a>
   <a href="eduBlogHome.html">Edu Blog Home</a>
 </div>
 
@@ -20,5 +20,5 @@ For long term goals, with many troubles plaguing the universe, even down to the 
 
 ---
 
-<p align="center"><h1><b>Contact Info</b></h1></p>
-- <a  href="linkedin.com/in/mikelan17">LinkedIn</a>
+<p align="center"><h3><b>Contact Info</b></h3></p>
+- <a href="https://linkedin.com/in/mikelan17">LinkedIn</a>
