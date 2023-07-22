@@ -100,7 +100,8 @@ These pages are supplemental to the experiments:
 - <a href="https://wlg1.notion.site/Techniques-Compendium-ea12d22f5a8940b190b553d17200ba08">Techniques Compendium</a>
 - <a href="https://wlg1.notion.site/Ideas-b7fe100b6ddf4b3c84d702dc4b918ce6">Ideas</a>
 
----
+<hr style="height:2px; border:none; color:#333; background-color:#333;">
+
 <p style="font-size:20px"><b>
 <a id="edu_vids" href="https://www.youtube.com/@neoknowstic">Educational Videos on AI Safety and Neural Network Mathematics</a>
 </b></p>
