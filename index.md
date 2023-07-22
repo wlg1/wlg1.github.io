@@ -47,7 +47,7 @@ This is a hackathon project submitted to the <a href="https://alignmentjam.com/j
 
 The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWRy548npN_ECb56E-lHbsLCC/view?usp=sharing">in this link</a>, and this is the <a href="https://github.com/wlg100/numseqcont_circuit_expms">link to the code and experiments</a>. A short video, approximate to the project's 7min presentation limit, <a href="https://vimeo.com/846333360?share=copy">is showcased here</a>.
 
-# Oneis1
+###### [One is 1](https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607)
 
 [^1]: <u>Note on the project ordering:</u> The order of the projects is only ordered for the top 4, while the rest of the ordering is the submission order from latest to earliest (I observed this as I had submitted the 3rd entry, but it appears as the 1st now as the other two were moved when pinned as 2nd and 3rd place)
 
