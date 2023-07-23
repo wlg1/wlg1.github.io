@@ -143,12 +143,12 @@ This blog overcomes this problem by explaining many required prerequisites from 
 <a id="datasci" href="https://mikelan300.wixsite.com/portfolio">Machine Learning and Analytics on Social Media Data</a>
 </b></p>
 
-Regression Analysis on Video Game Sales using Unstructured Data from Reddit 
+<a href="https://mikelan300.wixsite.com/portfolio/post/regression-analysis-on-video-game-sales-using-unstructured-data-from-reddit">Regression Analysis on Video Game Sales using Unstructured Data from Reddit </a>
 <ul>
 <li>Employed web APIs to scrap Reddit posts and semi-structured Wikipedia infoboxes. Cleaned and
 explored data, then ﬁt models applicable for business decisions in marketing and ﬁnance. </li>
 </ul>
-Facebook and YouTube Social Network Friend Prediction via SVMs 
+<a href="https://mikelan300.wixsite.com/portfolio/post/facebook-and-youtube-social-network-friend-prediction-via-support-vector-machines">Facebook and YouTube Social Network Friend Prediction via SVMs</a>
 <ul>
 <li>Trained Support Vector Machines that achieved high accuracy and AUC scores on testing data.
 Utilized graph analytics to compare the network statistics of diﬀerent communities.</li>
