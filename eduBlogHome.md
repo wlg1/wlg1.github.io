@@ -39,7 +39,7 @@ Not sure where to start? Start with the video below:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DHjwbleAgPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<u>NOTE:</u> Ch 1 of this site is outdated and will be updated later. It is recommended to watch this video instead, which encapsulates the same concepts as Ch 1 but in a better way.
+<u>NOTE:</u> Ch 1 (along with many other chapters) is outdated and will be updated later. It is recommended to watch this video instead, which encapsulates the same concepts as Ch 1 but in a better way.
 
 <!---
 Not sure where to start?
@@ -68,6 +68,7 @@ Not sure where to start?
 </details>
 <br>
 
+
 **CHAPTER 2: How Neural Networks Make Faces Look Younger (using Vector Projection)**
 
 &nbsp;&nbsp;&nbsp;&nbsp;2.0: Face Filters, Anime Filters, and Fake People
@@ -85,6 +86,8 @@ Not sure where to start?
 <br><br>
 </details>
 <br>
+
+### Work in Progress:
 
 **CHAPTER 3: How Neural Networks Find the Most Important Features in Data (using Eigenvectors)**
 
