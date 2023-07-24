@@ -28,11 +28,11 @@ As a TA and lecturer, I practiced identifying which aspects of communication wor
 3) I drill down on explaining unfamiliar terms, based on prerequisite assumptions for the average target audience member. For example, instead of just assuming the audience knows what a tangent vector is- which in the original paper, would otherwise go unexplained- I explain the properties of it that are directly relevant to the main topic currently being discussed.
 
 Overall, I plan to create two types of videos: 
-A) straightforward, purely educational videos that clearly explain the purpose of each concept, and 
-B) sci-fi story-oriented videos about AI safety, contrasting beneficial AI and harmful AI, and how they use actual AI mathematics to understand and cure harmful disorders. These would employ AI voices to narrate concepts, and AI generated media to animate them.
+
+A) Straightforward, purely educational videos that clearly explain the purpose of each concept, and 
+
+B) Sci-fi story-oriented videos about AI safety, contrasting beneficial AI and harmful AI, and how they use actual AI mathematics to understand and cure harmful disorders. These would employ AI voices to narrate concepts, and AI generated media to animate them.
 
 As I have only made a few videos so far, I am still learning how to best utilize the youtube algorithm. Essentially, as uploading more videos increases the chances of views, I plan to upload more videos, with the next one being a submission to the 3Blue1Brown competition in the middle of August. I also plan to go over research papers and their code, interacting with on-screen avatars of AI assistants and human guests to break down these works from different perspectives.
 
-These videos can be found in the following link:
-
-https://wlg1.github.io/index.html#edu_vids
+<a href="https://wlg1.github.io/index.html#edu_vids">This link showcases a selection of these videos.</a>
