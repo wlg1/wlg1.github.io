@@ -10,7 +10,7 @@ title: Making the Math of Neural Networks Intuitive - HOME
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a class="active" href="eduBlogHome.html">Edu Blog Home</a>
-  <a href="eduPlan.html">Edu Overview</a>
+  <a href="eduPlan.html">Edu Plan</a>
 </div>
 
 <p align="center"><h1><b>Making the Math of Neural Networks Intuitive</b></h1></p>

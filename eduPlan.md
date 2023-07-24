@@ -12,7 +12,7 @@ title: Edu Plan
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="eduBlogHome.html">Edu Blog Home</a>
-  <a class="active" href="eduPlan.html">Edu Overview</a>
+  <a class="active" href="eduPlan.html">Edu Plan</a>
 </div>
 
 <img src="banner.png" alt="Banner">

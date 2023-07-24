@@ -12,7 +12,7 @@ title: Front Page
   <a class="active" href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="eduBlogHome.html">Edu Blog Home</a>
-  <a href="eduPlan.html">Edu Overview</a>
+  <a href="eduPlan.html">Edu Plan</a>
 </div>
 
 <img src="banner.png" alt="Banner">
