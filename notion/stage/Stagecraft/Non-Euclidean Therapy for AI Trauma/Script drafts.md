@@ -329,6 +329,10 @@
     “hallucinations of a puppet show”
     
 
+in description, link the script, too (neoknowstic2 github pages?)
+
+timestamps [spoilers ahead]:
+
 ---
 
 - intro
