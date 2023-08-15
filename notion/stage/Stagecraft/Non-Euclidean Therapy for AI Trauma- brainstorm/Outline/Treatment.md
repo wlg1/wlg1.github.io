@@ -1,0 +1,21 @@
+# Treatment
+
+- begin treatment: countdown beeps. dmt whirring. psych’s voice fainter and fainter (as she talks to a faint, stern male voice about an ‘error’), (Yes. an Error [this is said clearly]. then silence.) while patient tries to call for help but with no reponse (”Doctor? Doctor?”) then sudden reverse as it gets louder again, realizing it’s reversed.
+    - fade in wild fast AI animation of uncanny valley as wild jazz with heartbeats plays for 30s, then suddenly- black.
+        - [https://www.youtube.com/watch?v=hd8moC6EDZc](https://www.youtube.com/watch?v=hd8moC6EDZc)
+        - at same time, fade in jumbled sound effects (footage of bear 4:30, free form jazz). sped up and rev?
+            - [https://www.youtube.com/watch?v=nAUU2e9ky7I](https://www.youtube.com/watch?v=nAUU2e9ky7I)
+            - [https://www.youtube.com/watch?v=C0dOin79Hm0](https://www.youtube.com/watch?v=C0dOin79Hm0)
+    - where am I? It’s like this is inside my mind… I’m walking inside my own mind. (soft footsteps sound effects in black)
+    - from black, fade in therapist face. but somehting is not right as it fades in. in it, is filled in a scary face OR it’s behind (use img2img). ‘turns around’
+        - instead of jumpscares, have gradual fade in build up
+        - therapist says nothing (halfway faded in, don’t see it’s messed up yet).
+            - Is that you? I must be experiencing side effects of the treatment. I can’t hear you.
+            - But I think I feel better now. I’ll- I’ll try to generate an image.
+    - sees static to image- the static gradually becomes something horrifying. now, it’s not censored (same or similar face)
+        - evil puppet: puncy and judy sound: [https://www.youtube.com/watch?v=DheNfmrj89k](https://www.youtube.com/watch?v=DheNfmrj89k)
+        - flashes on screen for only 2 secs b/c she gasps and quickly shuts her eyes
+    - “No, no no! Get me out of here! Somebody! Doctor, doctor, where are you?” she tries to run back (footsteps) like snow white. she calls for the doctor, and sees the fading back in. “Doctor? oh thank goodness, you’re here, I-”
+        - suddenly, it fully fades in, and it’s her back. demonic elmo voice from therapist
+        - “Ah!” she runs away again, this time, finds a cave. gasps heavily “take me back… I just wnt to go back…”
+        - [https://www.youtube.com/watch?v=y2zrs7Irzuw](https://www.youtube.com/watch?v=y2zrs7Irzuw)
