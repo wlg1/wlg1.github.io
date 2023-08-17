@@ -14,8 +14,6 @@ Analog archives
 
 [Script drafts](Non-Euclidean%20Therapy%20for%20AI%20Trauma%20353aa98799c442ea831d8b3421e12ddb/Script%20drafts%20579052ef4990435cad14176f2582aee3.md)
 
-Inverses only exist for square matrices. That means if you don't the same number of equations as variables, then you can't use this method. Not every square matrix has an inverse.
-
 [Pullback Metric](Non-Euclidean%20Therapy%20for%20AI%20Trauma%20353aa98799c442ea831d8b3421e12ddb/Pullback%20Metric%2026f1296523784372a5cca0c828d9d45d.md)
 
 [SVD](Non-Euclidean%20Therapy%20for%20AI%20Trauma%20353aa98799c442ea831d8b3421e12ddb/SVD%2028715ccee1ce43cf8ec421393a4be7c2.md)
@@ -37,6 +35,7 @@ I’ll try to follow along, but math isn’t my strong suit.
     https://runwayml.com/ai-magic-tools/frame-interpolation/
     
     - is there a simple to use UI or notebook where I can take two images and create an interpolation video between them? For instance, I take an image, then perform img2img or style editing to get a similar image, and then input the two images into the program to create an interpolation video? thanks
+    - is there a way to create videos longer than 3 seconds ai text to video
 - sound effects (such as during portals explanation)
     - see: [https://www.youtube.com/watch?v=IbGNZQvobkc&t=33s](https://www.youtube.com/watch?v=IbGNZQvobkc&t=33s)
     - [https://pixabay.com/sound-effects/search/space/](https://pixabay.com/sound-effects/search/space/)

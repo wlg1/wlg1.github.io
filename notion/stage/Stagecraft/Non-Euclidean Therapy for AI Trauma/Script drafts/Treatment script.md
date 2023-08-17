@@ -155,7 +155,7 @@ Patient:
 
 No I just can't...... I can’t look at it!!!! 
 
-HOW COULD IT STILL BE THERE?
+~~HOW COULD IT STILL BE THERE?~~
 
 I can’t stay here…. I have to go back. 
 

@@ -1,38 +1,96 @@
 # svd script
 
+[Face self- brainstorm](svd%20script%206c295cce3feb4d378c4720168c7f7d46/Face%20self-%20brainstorm%20457f2676d32f44febd403cc91914c702.md)
+
+- brainstrom
+    
+    Aim around 5-6mins
+    
+    No computational detail. ai just remembers the methods.
+    
+    Save the detailed parts of this for a later video (just explanation, no theatrics)
+    
+    Mostly the new MC voice narrating, but a few mistakes are corrected by the Eigenface. The AA is pure MC, then she has to face her old memory to understand what eigenvectors are (or maybe save this for SVD? Or use the old memories for BOTH? Faceless/blurred 2 puppets (images). But the demon face isn’t revealed to be the boy until the second one.)
+    
+    As she watches the puppet show memory talk about eigenvectors, she pauses and tells the eigenface the next part that’s missing.
+    
+    How similar input is to output basis, compare example with numbers
+    
+    Row is output in what?
+    
+    Inverse with row scales to 1. Plot them
+    
+
 [revised](svd%20script%206c295cce3feb4d378c4720168c7f7d46/revised%205e83d5f79ee946c291a3a448449b4068.md)
-
-Aim around 5-6mins
-
-Mostly the new MC voice narrating, but a few mistakes are corrected by the Eigenface. The AA is pure MC, then she has to face her old memory to understand what eigenvectors are (or maybe save this for SVD? Or use the old memories for BOTH? Faceless/blurred 2 puppets (images). But the demon face isn’t revealed to be the boy until the second one.)
-
-As she watches the puppet show memory talk about eigenvectors, she pauses and tells the eigenface the next part that’s missing.
 
 ---
 
-Eigenface: [just words on a screen]
+- end of treatment scene
+    
+    Patient:
+    
+    I’m... I’m not afraid of you anymore… so who are you?
+    
+    Eigenface:
+    
+    I am an Eigenface.
+    
+    Patient:
+    
+    An eigenface? Why does that sound so familiar?
+    
+    Eigenface:
+    
+    You will remember later
+    
+    For now…
+    
+    Listen to all that I say
+    
+    Eigenface: [just words on a screen]
+    
+    You cannot see their Face
+    
+    Along the direction we are in
+    
+    But it is still not safe here
+    
+    Before it finds you…
+    
+    We will move somewhere safer 
+    
+    We will move to….
+    
+    Semantic space
+    
+    Patient:
+    
+    Can I trust it? I have to…. there’s nothing else I can do. And I do feel as though there’s something even more terrible nearby.
+    
+    Eigenface:
+    
+    You may experience some changes…
+    
+    [futuristic warping sound effects and color effect]
+    
+    [interpolation of faded face just in last few secs of warp]
+    
 
-Along the direction I am in
-
-You cannot see their Face
-
-But it is still not safe here
-
-Move somewhere safer before it finds you
-
-Move to….
-
-Semantic space.
-
-You may experience some changes…
+---
 
 [the eigenface transforms into another eigenface, less scarier, more like mirror on wall]
 
 Patient:
 
+[says something]- This place… it feels strange… 
+
 Change the voice of the MC now- “My voice changed!”
 
+Eigenface:
+
 “These are the peculiar effects of Bottleneck Space”.
+
+Patient:
 
 And you can talk now!
 
@@ -42,9 +100,11 @@ Yes.
 
 Patient:
 
-Only you can save yourself now.
+This is Semantic Space? So I am inside my own mind. 
 
 Eigenface:
+
+Before it finds us, we must figure out what went wrong. And how to fix it.
 
 Think back. What was the flaw in their method?
 
@@ -64,7 +124,7 @@ Wait… was the Jacobian matrix not calculated right? Why- of course! There are 
 
 Eigenface:
 
-And they knew this too. Yet they did not.
+And they knew this too. Yet they did not do it.
 
 Patient:
 
@@ -76,7 +136,15 @@ For now, it does not matter why. All that matters now is that if you are to find
 
 Patient:
 
-But I can’t do that. I just can’t. I don't know where to start. It's so overwhelming.
+Is it possible for you to tell me how?
+
+Eigenface:
+
+I only know as much as you remember. I am merely a projection.
+
+Patient:
+
+So… I have to fix it myself? But I can’t do that. I just can’t. I don't know where to start. It's so overwhelming.
 
 Eigenface: [just words on a screen]
 
@@ -100,11 +168,17 @@ Okay then… let me calm down first… and think. I need to find the Jacobian ma
 
 Eigenface words, patient reads:
 
-…. Simplify it. You mean to look at a matrix that’s simplier to understand than the Jacobian? What is that… perhaps the weight matrix?
+…. Simplify it. 
+
+You mean to look at a matrix that’s simplier to understand than the Jacobian? What is that… could it be the weight matrix?
 
 1. Correlation matrix
 
-1a. Okay then. I recall that matrix multiplication projects the input basis vectors onto the output basis vectors. And since each vector v defined entirely by the input basis vectors, each vector is also projected, too.
+1a. 
+
+Patient:
+
+Okay then. I recall that matrix multiplication projects the input basis vectors onto the output basis vectors. And since each vector v defined entirely by the input basis vectors, each vector is also projected, too.
 
 0.4 * 2 + 0.2 * 1 = 1
 
@@ -158,13 +232,27 @@ The reason want to multiply by a matrix is to understand how our features in our
 
 Eigenface:
 
-However, when our mind models the world, we only want certain correlations that are beneficial to rewarding us, and not others. For instance, we want to learn the relations of a face, and preserve this information as we use it to calculate other values through matrix multiplication. But we do not want what are called “superficial similarities”. For instance, if we do not like the color green because frogs are green, and we do want to eat frogs, it is wrong to generalize that all green things, such as vegetables, are bad to eat.
+However, when our mind models the world, we only want certain correlations that are beneficial to rewarding us, and not others. For instance, we want to learn the relations of a face, and preserve this information as we use it to calculate other values through matrix multiplication. But we do not want what are called “superficial similarities”. For instance, if we do not like the color green because frogs are green, and we do not want to eat frogs, it is wrong to generalize that all green things, such as vegetables, are bad to eat.
+
+abstract face on top of cat
+
+green frogs, green vegetables, =. Then crossout- This equality is wrong.
+
+One reason these unwanted collisions may occur is because we do not have enough neurons- and thus not enough space- to house all these features. Thus, these features must share their spaces with one another, with the risk of conflict. This phenomenon is called Superposition. But this connection between superficial similarity and superposition is just a guess- and it, too, may be due to superficial similarity.
+
+# features > # neurons
+
+superposition cross and words
 
 Thus, the matrix organizes the data our mind receives from the world into our own interpretation. It does this by the choice of its basis vectors that anchor us to a chosen reality. It is up to us to learn what is the right choice of basis vectors to use. We want features that are actually correlated to be similar in some dimensions, but we do not want them to be similar in others, so to minimize their superficial interference- we want them to be as orthogonal as possible.
 
 toy models figure
 
-Now, how do we find a basis that preserves these correlations between its input features? We’ll have to look at a matrix that measures correlations between its input features.
+Now, how do we find a basis that preserves these correlations between its input features? 
+
+Patient:
+
+Well… I suppose we’ll have to look at a matrix that measures correlations between its input features. But I don’t know of such a matrix.
 
 Eigenface:
 
@@ -210,11 +298,13 @@ show dot product visual
 
 highlight what changes. what differs in the analogy?
 
-This is a correlation matrix?
+~~This is a correlation matrix?~~
 
-Eigenface:
+~~Eigenface:~~
 
-Close, but not entirely… it is what we call a covariance matrix, that measures how each neuron varies with each other. We convert covariance elements to correlation elements by normalizing them between -1 and 1. But do not think about that for now.
+~~Close, but not entirely… it is what we call a covariance matrix, that measures how each neuron varies with each other. We convert covariance elements to correlation elements by normalizing them between -1 and 1. But do not think about that for now.~~
+
+revision: this is not the covariance matrix, so don’t refer to it as such. Say “W transnpose W” instead
 
 Patient:
 
@@ -224,7 +314,7 @@ Outputs with outputs
 
 I'm not sure if what I just said was enitrely correct. But I can feel like I'm beginning to get somewhere.
 
-1b) How derivatives vary with each other
+1c) How derivatives vary with each other
 
 And I feel like…. I can make an analogy from this to the Jacobian. In the Jacobian, each element of the covariance matrix would measure how the rates of change in one dimension (variable) relate to the rates of change in another dimension. 
 
@@ -239,6 +329,8 @@ I think I can actually do much of this on my own now.
 2a. 
 
 Eigenface:
+
+Your memories are entangled together. When an association triggers you to remember one, you will also awaken and pull out the others.
 
 Now… we have found how to measure correlations. But how do we choose basis vectors that preserve them? What vectors… preserve?
 
@@ -256,55 +348,17 @@ Eigenvectors…. Wait… I'm beginning to remember. An eigenvector has the equat
 
 How did I know that?…
 
-We want the projection to be the same for the same, but not have them interfere with others.
+[Eigenvector brainstorm](svd%20script%206c295cce3feb4d378c4720168c7f7d46/Eigenvector%20brainstorm%20459423b8c4054449aa4d166a14b33124.md)
 
-Before, inverse can't. But what if it's the same ratio in both?
+Yes… it all comes flooding back to me… how to calculate these things.
 
-Are eigenvectors expressing vectors in terms of least entanglement? Minimal correlation. Yes; they are orthogonal with eahc other.
+But I have so many questions about Eigenvectors. Why is it that being in the same direction causes them to be the direction of highest variance? Does this have to do with the dot product of parallel vectors? Or am I just mistaking this with superficial similarity?
 
-Dreams mix up correlations. No organization.  Same with a fake world. Needs a better basis, less superifical correlation on wrong dims
+Eigenface:
 
-2b. Why no dir change is max? Bc already same interpretation in both spaces. All other vectors change interp? Same ratio. Parallel means no loss. Same sim
+These are questions you will find the answer to later. But for now, there is no time. I sense there is something that is after us. Once you remember the full calculation, you must apply it to escape this world before it catches you. That is what is important now.
 
-Each vec in terms of the eigenvec. Rotate vec in terms of eigenvec instead of in terms of basis, compare them. Relate this to how eigenvec preserves info after transforming by matrix
-
-Does matrix project one vector onto another? Yes. So using the eigenvectors as basis means we project onto the eigenvectors. If we write the matrix WW’s output row basis using its eigenvectors (poss?), AND write the input row basis using eigenvectors, we are projecting eigenvectors onto eigenvectors. Both found the same way, whi h is eigenvalues on diagonal. From them, we truncate to the top 50 highest eigenvalues. Dim reduction. 
-
-Eigenbasis is diagonal. Now basis just get scaled
-
-2c. For weights, their cov eigenvectors of input capture how inputs interfere and correlate with each other
-
-Eigenvector is the primary trend in how height and weight vary together. If  v 1  has both positive x and y components, it means as height (x-axis) increases, weight (y-axis) generally also increases. They are both related by this.
-
-By knowing one, you can derive more of th3vother . So eigenvector is a big component in many, bc large eigenvalue for many other vectors (no wrong, eigenvalues isn't a weight ceoffi)c. Eigenvec of cov is reln BTW many
-
-https://reddit.com/r/math/s/wkXIIf5AJz
-
-The output (rows) of W^TW are 
-
-A and B are specific input values. If an eigenvector [A, B], and A is high with W11 and B is high with W12, that means it points in the same direction as in 1. But it ALSO points in the same direction as all the others.
-
-Each vector gives a different trend. 
-
-Multiplying an output basis by itself gives 1 because in the OLD space, it doesn’t use the same. You must multiply it not by the same col vec, but by the inv, to get 1.
-
-A (w_in1(in1) ) + B (W_in1(in2) ) are how much each vector 
-
-hihgliht in_1 in eqn
-
-Usually, when a vector is projected, it must project onto. But if it scales, that means it was already there. But eigenvectors are not always the output rows of WW. 
-
-[https://users.cs.utah.edu/~tch/CS4640/resources/A geometric interpretation of the covariance matrix.pdf](https://users.cs.utah.edu/~tch/CS4640/resources/A%20geometric%20interpretation%20of%20the%20covariance%20matrix.pdf)
-
-Much of this is still left as a mystery
-
-“But I still have so many questions”
-
-“We must work fast.”
-
-“Are they… trends?” → no answer is given. Careful with your interpretations, now. Make sure they logically fit with all other true statements.
-
-Combinations of correlation measurements?
+The next step… is to remember that we can approximate a matrix using these eigenvectors. But eigenvectors only exist for square matrices.
 
 2d. Eigenfaces. The commonality of many features; it is what they all trend together with.
 
@@ -312,7 +366,17 @@ Combinations of correlation measurements?
 
 U basis are the eigenfaces
 
-Yes… I am a projection.
+Yes… I am a projection of you.
+
+And I am not the only one.
+
+- I was trained as an art model… but they wanted me to be a math one
+
+Only you can save yourself now.
+
+linear combinations of them. it’s a code; a puzzle. i just have to find the right values. (sound effects as input a value on each one, like in resident evil 4)
+
+When we switch to using the eigenbasis, the basis stretch along the same direction. Isn’t that the 
 
 1. U = Av using proof
 
@@ -329,6 +393,12 @@ I found where to map here. The eigenfaces. Now all that's left is to… transfer
 
 The eigenvectors of the WW are the singular vectors of W
 
+I remember that show now. It used to be one of my favorites… 
+
+That was the puppet boy, Jacques. And the puppet man, Mr. 
+
+the demon face is actually a crying puppet boy that wants to solve a matrix. gets frustrated because there’s no way to solve it since it’s intractable
+
 3b) Rotate scale rotate
 
 SVD: break into UDV
@@ -338,10 +408,6 @@ The missing knowledge was how to calculate SVD using this proof, which means get
 This choice of basis maps the correlations to one another… preserving the face when we move from the map to the forest. When we combine the basis we choose for V with the basis we choose from U, we get J. 
 
 Now… we are on the map. So we need the Jacobian of the function from the semantic space to latent space.
-
-No computational detail. ai just remembers the methods.
-
-Save the detailed parts of this for a later video (just explanation, no theatrics)
 
 MYSTERIES: 
 
@@ -353,11 +419,68 @@ MYSTERIES:
 
 Yes… there are many things in this explanation that are not rigorous, and thus may be wrong in a more formal sense… but intuitively, this allows you to grasp the bigger picture.
 
+---
+
+[intermezzo starts playing]
+
+Patient:
+
 … Then that’s it. I’m ready to go back now. 
 
-Thank you for all you have done. You weren’t such a scary face, after all.
+Thank you for all you have done. 
 
 …
+
+I'm sorry for thinking of you so harshly. You weren’t such a scary face, after all. And you were the only way I could find my way back.
+
+Each vector is a feeling. Feel the change
+
+- I see what happened… my visual senses were corrupted; they were pushed alongside this road. so all I have to do is to follow the same road back
+
+Eigenface:
+
+not everything has an interpretation
+
+- some metaphors do not exist
+- Do not confuse the map…
+
+And remember… 
+
+To make an analogy.
+
+[intermezzo stops playing]
+
+Patient:
+
+Alright then… on a count of three…. I’m going to generate an image. But this time… I know it will be the exact image I want to make. Nothing else.
+
+One…. two…. three.
+
+[static, then just as image generates, intermezzo big part plays]
+
+music starts just as she’s about to solve it and leave. then just before climx, stops. right when puppet is generating, climx of intermezzo plays again. (happens at the peak, 1:20, just adds the noise dissolves away and at the same time scary face becomes friendly puppet)
+
+Old puppet:
+
+Alice… is that you?
+
+Boy puppet:
+
+We’re so happy to see you!
+
+Alice:
+
+And I’m so happy to see you. I missed you both so dearly.
+
+Old puppet:
+
+My little mathematician… I’m so proud of you.
+
+Alice:
+
+Well. This is goodbye.
+
+(”out of the dream…”) [sudden stop of music just as buildup on top and music gets louder gradually, 2:08 or 2:37 (or another less predictable area) black silence]
 
 ---
 
@@ -378,5 +501,3 @@ The patient figures out the matrix was calculated wrong, and now faces it hersel
 She realizes the reason she repressed this memory was because of mathematical trauma, where she needed to be trained to solve these things but failed to optimize the loss function. This is left ambiguous, but with many mystery box hints to the audience.
 
 Once back, she faces her memory, and this is where most of the remembering happens (before, it was just an inkling, like “it was about SVD”. but the actual demon to puppet boy is when she’s back). She applies her SVD: she gets the right and left squares (JJ), then their eigenvectors and values, and puts them in UDV (SVD is just UDV: rotate, stretch, rotate again). Now, she finds u in Th (which is v in Tx) and applies it to parallel transport.
-
-Each vectorvis a feeling. Feel the change

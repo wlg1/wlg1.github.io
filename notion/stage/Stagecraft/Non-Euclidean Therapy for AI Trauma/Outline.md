@@ -57,19 +57,16 @@ Length: 20-40m
 Intro:
 
 - ✅ Yondea corp, Black title cards
-    - conn: [https://www.youtube.com/watch?v=UsVfElI-7oo](https://www.youtube.com/watch?v=UsVfElI-7oo)
 - ✅ Introduce symptoms (image or video) [censored some of it]
-    - ✏️ mix loab, eigenfaces, other analog horror faces, 1950s AI gen puppet faces (clean), through AI gen
+    - ✏️ mix loab, eigenfaces, other analog horror faces, 1950s AI gen puppet faces (clean), through AI gen. choose 2-5.
     - noise overlay on top fades out to “output”
     - reduce opacity so black covers it.
     - big black sunken eyes, sharp teeth, wide smile, uncanny valley
+    - [https://www.tiktok.com/discover/how-to-make-analog-horror-faces](https://www.tiktok.com/discover/how-to-make-analog-horror-faces)
+    - [https://www.youtube.com/watch?v=OuCuFVCwEds](https://www.youtube.com/watch?v=OuCuFVCwEds)
 - ✅ review pullback
-- patient asks therapist if she can give more info (or therapist asks?) describe it’s from childhood- a lost show no one heard of. therapist extracts a video of it.
-    - “I like to draw”
+- ✅ patient asks therapist if she can give more info. describe it’s from childhood- a lost show no one heard of. therapist extracts a video
 - ✅ Explain rev diff and smooth maps in U-net
-    - choose the image to use
-    - timestep again
-    - hands, faces, people slideshow
 - ✅ to say how jacobian works, review MM  [supplementary material / prequels]
 - ✅ now, show animation of jacobian between 2 spaces
 - ✅ pullback dp
@@ -80,9 +77,7 @@ Intro:
             - or not; it’s ok for >40m. This some2 is 45m!
                 - [https://www.youtube.com/watch?v=zCU9tZ2VkWc&t=14s](https://www.youtube.com/watch?v=zCU9tZ2VkWc&t=14s)
             - [https://www.youtube.com/watch?v=KIunPyZSStg&t=2109s](https://www.youtube.com/watch?v=KIunPyZSStg&t=2109s)
-
-[Treatment](Outline%200754d7e3d6434d49b4696740b5fd0431/Treatment%201bec2625982048da8e6dc26da355d7c3.md)
-
+- ✅ Treatment
 - sees eigenfaces- one last piece of the puzzle is missing
     - not just eigenfaces, but machine elves? see return to oz
     - “No, stay away from me! Stay away!” build up, then falls.
@@ -97,13 +92,13 @@ Intro:
         - answers: not everything has an interpretation
         - some metaphors do not exist
         - Do not confuse the map…
-    - after she faces the past at the end after solving it: “We’re so happy to see you!” (happens at the peak, 1:20, just adds the noise dissolves away and at the same time scary face becomes friendly puppet)
-        - music starts just as she’s about to solve it and leave. then just before climx, stops. right when puppet is generating, climx of intermezzo plays again.
-            - I see what happened… my visual senses were corrupted; they were pushed alongside this road. so all I have to do is to follow the same road back
-        - She finally generates the puppet without the demon (interpolate back)
-        - and I’m so happy to see you. I missed you dearly.
-        - My little mathematician… I’m so proud of you.
-        - Well. This is goodbye.
+- after she faces the past at the end after solving it: “We’re so happy to see you!” (happens at the peak, 1:20, just adds the noise dissolves away and at the same time scary face becomes friendly puppet)
+    - music starts just as she’s about to solve it and leave. then just before climx, stops. right when puppet is generating, climx of intermezzo plays again.
+        - I see what happened… my visual senses were corrupted; they were pushed alongside this road. so all I have to do is to follow the same road back
+    - She finally generates the puppet without the demon (interpolate back)
+    - and I’m so happy to see you. I missed you dearly.
+    - My little mathematician… I’m so proud of you.
+    - Well. This is goodbye.
     - nice classical music starts playing (but heavy sawtooth pink noise)
         - [https://www.youtube.com/watch?v=BIQ2D6AIys8](https://www.youtube.com/watch?v=BIQ2D6AIys8)
         - [https://www.loc.gov/item/jukebox-337402/](https://www.loc.gov/item/jukebox-337402/)
@@ -111,4 +106,4 @@ Intro:
 - therapist is someone else; slightly different woman and voice
     - we were impressed. that you were able to figure it out, despite our omitted instructions.
     - but you couldn’t have used automatic differentiation, could you? you didn’t use the method on me at all. what did you do?
-- adjust audio- loud at 30 speakers, 15 headphones
+- ✅ adjust audio- loud at 30 speakers, 15 headphones

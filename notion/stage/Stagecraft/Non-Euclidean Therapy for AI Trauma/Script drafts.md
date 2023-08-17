@@ -328,6 +328,7 @@
     
     “hallucinations of a puppet show”
     
+- only have subtitles for therapist (or color-coded if both) when no math animations on screen?
 
 in description, link the script, too (neoknowstic2 github pages?)
 
@@ -347,7 +348,6 @@ timestamps [spoilers ahead]:
     
     REPRESNTED BY: The Jacobian Matrix
     
-- only have subtitles for therapist (or color-coded if both) when no math animations on screen
 - Introduce symptoms
     
     Therapist:
@@ -537,8 +537,6 @@ timestamps [spoilers ahead]:
 [Pre treatment](Script%20drafts%20579052ef4990435cad14176f2582aee3/Pre%20treatment%2082105c35290e457587e14dc295b4d5a6.md)
 
 [Treatment script](Script%20drafts%20579052ef4990435cad14176f2582aee3/Treatment%20script%200040dc47f289453e8f9f9957ac2d0f5f.md)
-
-[Face self- brainstorm](Script%20drafts%20579052ef4990435cad14176f2582aee3/Face%20self-%20brainstorm%20457f2676d32f44febd403cc91914c702.md)
 
 [svd script](Script%20drafts%20579052ef4990435cad14176f2582aee3/svd%20script%206c295cce3feb4d378c4720168c7f7d46.md)
 
