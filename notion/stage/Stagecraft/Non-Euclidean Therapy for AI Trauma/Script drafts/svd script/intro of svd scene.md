@@ -64,7 +64,9 @@ Eigenface:
 
 To approximate a matrix means that you must only keep the most important dimensions. If you used every neuron to represent the matrix, that would be millions of dimensions to calculate. But you don’t need that many.
 
-show jacobian again
+show jacobian again then quickly
+
+cut away rows and cols
 
 For example, think of a matrix as a way to convey information. Perhaps to tell someone that they are like a cat. We define a cat as a small, domesticated four legged mammal of the family Felidae with soft fur and a short snout. Now, that’s a mouthful, isn’t it? Imagine each word being a basis vector used to define a concept. Instead of saying all those words in a sentence, we can just compress it into one word: cat. The word “cat” is a vector that is a linear combination of other words.
 
@@ -73,6 +75,8 @@ all those words in visio
 then = cat
 
 So we don’t need to use every basis vector; we can just use words that capture the most important combinations of basis vectors. When we define concepts in terms of these more efficient vectors, we are using a different basis. Thus, there are multiple basis that can be used to define the same matrix. Not only that, but for some basis, only a few of the most important words matter- the rest can be discarded, as they are used less frequently. Now, it is up to you to figure out what is the fewest set of words that capture the most information.
+
+show cob anim of diff language OR have a long description of full defs, that is replaced by 3 compressed words (highlighted in color)
 
 Patient:
 

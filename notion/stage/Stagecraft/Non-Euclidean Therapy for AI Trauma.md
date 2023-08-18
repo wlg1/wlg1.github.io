@@ -1,6 +1,6 @@
 # Non-Euclidean Therapy for AI Trauma
 
-**Non-Euclidean Therapy for AI Trauma #SoME3**
+**Non-Euclidean Therapy for AI Trauma [Analog Archives] #SoME3**
 
 Thumbnail has ai images with eigenfaces overlaying the horrifying parts (over the eyes, covering the mouth or other way around)
 
@@ -21,6 +21,8 @@ Analog archives
 [Entanglement](Non-Euclidean%20Therapy%20for%20AI%20Trauma%20353aa98799c442ea831d8b3421e12ddb/Entanglement%20415409e2c52d45b194faeb7d898d95a6.md)
 
 I’ll try to follow along, but math isn’t my strong suit.
+
+One interpretation is that rotate is carousel, scale is limb elongate
 
 [Analog horror insp](Non-Euclidean%20Therapy%20for%20AI%20Trauma%20353aa98799c442ea831d8b3421e12ddb/Analog%20horror%20insp%20d713d2ea06744c05a898d1ad17297c3a.md)
 

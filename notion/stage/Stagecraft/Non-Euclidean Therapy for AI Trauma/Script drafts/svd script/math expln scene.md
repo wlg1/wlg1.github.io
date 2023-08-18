@@ -1,5 +1,14 @@
 # math expln scene
 
+- what's the connection bewteen row basis and column basis in a matrix?
+    
+    umber of vectors in its column basis, and this number is the rank of the matrix.
+    
+- The **dot product** of two vectors gives a scalar.
+- The **cross product** of two vectors gives another vector (and is only defined in 3D space).
+
+---
+
 1. Correlation matrix
 
 1a. Matrix Projection as similarity and explanation

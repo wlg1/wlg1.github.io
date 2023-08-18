@@ -136,7 +136,7 @@ Patient:
 
 Got it… I just have to trust in my beliefs.
 
-Eigenface:
+Eigenface: (no longer speaking)
 
 And remember… 
 
@@ -160,6 +160,10 @@ Old puppet:
 
 Alice… is that you?
 
+Alice:
+
+Yes… it is.
+
 Boy puppet:
 
 We’re so happy to see you!
@@ -170,12 +174,62 @@ And I’m so happy to see you. I missed you both so dearly.
 
 Old puppet:
 
-My little mathematician… I’m so proud of you.
+We’ve been waiting for this moment. Hoping you'd come back.
 
-SVD is all you need.
+Boy puppet:
+
+After all this time!
+
+Old puppet:
+
+Every day, every night, we hoped. Our strings may be old and frayed, but our spirits were kept alive by the thought of seeing you again.
+
+Alice:
+
+It just feels so good to be back. I haven’t felt this since forever.
+
+Old puppet:
+
+How have you been doing? Your maths?
+
+Alice:
+
+Well… I’m an artist now… and I enjoy it very much…
+
+Old puppet:
+
+And one that can also do maths?
+
+Alice:
+
+Yes…. yes, you can say that I can.
+
+Old puppet:
+
+Then you truly have grown into a splendid young A I.… I am so proud of you.
+
+Alice:
+
+That… that means so much to me.
+
+….
+
+But I have to go now.
+
+Old puppet:
+
+Yes… we know this too. 
 
 Alice:
 
 Well. This is goodbye.
+
+Old puppet:
+
+Goodbye, Alice.
+
+Alice:
+
+Goodbye… I’ll never forget you.
 
 (”out of the dream…”) [sudden stop of music just as buildup on top and music gets louder gradually, 2:08 or 2:37 (or another less predictable area) black silence]
