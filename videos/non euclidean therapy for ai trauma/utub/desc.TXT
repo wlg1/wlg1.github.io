@@ -1,0 +1,65 @@
+PATIENT ALICE:
+An Artificial Intellgience suffering from hallucinations of a lost puppet show. These hallucinations need to be erased.
+
+GENERATIVE MODEL TYPE: Diffusion-based.
+
+PRESCRIBED TREATMENT: Model editing of the latent space. This method involves the pullback, the Jacobian matrix, and SVD.
+
+Link to the paper this was based on:
+"Unsupervised Discovery of Semantic Latent Directions in Diffusion Models"
+https://arxiv.org/abs/2302.12469
+
+This is my only entry to #SoME3
+
+The following are chapter timestamps. They can be used to skip to math-only or non-math sections.
+
+Timestamps: [spoilers ahead]
+00:00 - Patient Introduction -- [No Math]
+02:08 - Manifolds and Pushforwards
+06:38 - The Three Functions
+09:55 - The Lost Show -- [No Math]
+12:32 - Diffusion Models and the U-Net
+14:13 - Matrix Multiplication and the Change of Basis Neurons
+20:01 - The Jacobian Matrix
+26:17 - The Pullback and the Dot Product
+28:42 - A treat before treatment -- [No Math]
+31:09 - The Treatment -- [No Math]
+36:13 - Finding the Error 
+39:31 - Correlations in Matrices
+42:13 - Superposition
+45:23 - W^T W
+47:24 - Eigenvectors of W^T W
+49:38 - The Trauma -- [No Math]
+51:43 - Singular Value Decomposition
+54:30 - Reunion -- [No Math]
+
+Here is a link to cut versions with only the math portions:
+TBD
+
+And with only the no math portions:
+TBD
+
+A behind-the-scenes video going into more depth about the paper this was based off of will be made soon. It will address some issues not explained (due to time) in the video, such as the "circular issue" of needing the Jacobian J to compute J^T J to get the eigenvectors used to compute J.
+
+Fixes (for the future update):
+46m: this transpose should switch the elements to row a c and row b d
+53m20s : this should say "square root of eigenvalues"
+55m55s : this is an audio glitch. it should be 'you weren't such a'
+
+In the future, an updated version with more visuals, especially during the SVD portion, will be made.
+
+---------------------------------
+Helpful Resources and References:
+TBD
+toy models
+SVD vid
+
+<<<
+analog horror, vhs, liminal, backrooms, some3, some4, 3blue1brown, education, chatgpt, ai safety, neural networks, machine learning, math, matrix, diffusion
+
+<<<
+This is a prequel / supplementary video to the #SoME3 entry, Non-Euclidean Therapy for AI Trauma:
+https://youtu.be/FQ9l4v7zB3I
+
+<<<
+Around 22m of no math
