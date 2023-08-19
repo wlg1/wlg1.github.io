@@ -7,13 +7,11 @@ GENERATIVE MODEL TYPE: Diffusion-based.
 PRESCRIBED TREATMENT: A Latent Space Editing method that involves the Pullback, the Jacobian Matrix, Eigenfaces and SVD.
 
 -------------------------------------------
-2. This video experimented with a different approach, combining a mystery story told by analog VHS effects with an explanation of a very recent paper about latent space editing in diffusion models. 
+2. This video experimented with a different approach, combining a mystery story told by analog VHS effects with an explanation of a very recent paper about latent space editing in diffusion models. This is my only entry to #some3 
 
 Link to the paper this was based on:
 "Unsupervised Discovery of Semantic Latent Directions in Diffusion Models"
 https://arxiv.org/abs/2302.12469
-
-This is my only entry to #SoME3
 
 -------------------------------------------
 3. The following are chapter timestamps. They can be used to skip to math-only or non-math sections.
@@ -56,7 +54,7 @@ https://arxiv.org/abs/2307.12868
 53m20s : this should say "square root of eigenvalues"
 55m55s : this is an audio glitch. it should be 'you weren't such a'
 
-In the future, an updated version with improved narration and visuals (such as for the patient voice during the latter half) may be uploaded. This video was not re-uploaded with fixes due to 8/18 being the deadline for SoME3.
+In the future, an updated version with improved narration and visuals (such as for the patient voice during the latter half) may be uploaded. This video was not re-uploaded with fixes due to 8/18 being the deadline for #SoME3.
 
 ---
 A behind-the-scenes video going into more depth about the paper this was based off of may be made soon. It will address some issues not explained (due to time) in the video.
@@ -95,7 +93,7 @@ Around 22m of no math
 
 <<<
 post on discord share:
-This video experimented with a different approach, combining a mystery story told by analog vhs effects with an explanation of the Jacobian Matrix, Eigenfaces, and SVD. It's based on a very recent paper about latent space editing in diffusion models. 
+This video experimented with a different approach, combining a mystery story told by analog VHS effects with an explanation of the Jacobian Matrix, Eigenfaces, and SVD. It's based on a very recent paper about latent space editing in diffusion models. 
 
 <<<
 Pinned comment:
