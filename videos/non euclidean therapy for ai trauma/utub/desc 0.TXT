@@ -50,9 +50,10 @@ through the Lens of Riemannian Geometry":
 https://arxiv.org/abs/2307.12868
 
 4.3. Other Fixes (for the future update):
+37m35s: This could be misleading; singular vectors are neglected, not dropped, so the matrix would have the same dim (see: https://stats.stackexchange.com/questions/107533/how-to-use-svd-for-dimensionality-reduction-to-reduce-the-number-of-columns-fea)
 46m: this transpose should switch the elements to row a c and row b d
-53m20s : this should say "square root of eigenvalues"
-55m55s : this is an audio glitch. it should be 'you weren't such a'
+53m20s: this should say "square root of eigenvalues"
+55m55s: this is an audio glitch. it should be 'you weren't such a'
 
 In the future, an updated version with improved narration and visuals (such as for the patient voice during the latter half) may be uploaded. This video was not re-uploaded with fixes due to 8/18 being the deadline for #SoME3.
 
@@ -118,6 +119,7 @@ A behind-the-scenes video going into more depth about the paper this was based o
 
 [This comment is separated so it can be edited later if more needs to be added]
 3. Other Fixes (for the future update):
+37m35s: This could be misleading; singular vectors are neglected, not dropped, so the matrix would have the same dim (see: https://stats.stackexchange.com/questions/107533/how-to-use-svd-for-dimensionality-reduction-to-reduce-the-number-of-columns-fea)
 46m: this transpose should switch the elements to row a c and row b d
 53m20s : this should say "square root of eigenvalues"
 55m55s : this is an audio glitch. it should be 'you weren't such a'
