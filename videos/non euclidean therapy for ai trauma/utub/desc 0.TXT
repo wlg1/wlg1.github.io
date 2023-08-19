@@ -41,7 +41,7 @@ Links to cut versions with only the math portions and only the no math portions 
 -------------------------------------------
 4. ERRATA
 
-4.1. This video refers to needing to find singular vectors to "compute the Jacobian" but that's poorly worded; it actually means "for multiplying the Jacobian with input vectors to compute the Jacobian output" and other operations using J. The Jacobian matrix, as stated in the paper, is computed via "a sum-pooled feature map of the bottleneck representation of H" to reduce the number of parameters to compute.
+4.1. This video refers to needing to find singular vectors to "compute the Jacobian" but that's poorly worded; it actually means for calculations involving the Jacobian, such as "for J^T * J to compute the SVD and get editable directions". The Jacobian matrix, as stated in the paper, is computed via "a sum-pooled feature map of the bottleneck representation of H" to reduce the number of parameters to compute.
 
 4.2. This video states that the SVD is used to compute both the Jacobian and the semantic directions. But the SVD is actually only used to obtain the semantic directions. To compute the SVD, in section 3.2 of a subsequent paper, the Power Method is used to compute the singular vectors without computing (M^T)(M). An updated version will fix this by stating that "dimensionality reduction" should be performed on J before multiplying with it; this was not done in the paper, so the video will take a different approach than it for the sake of explaining dimensionality reduction. This would fix the "circular issue" of needing the Jacobian J to compute J^T J to get the eigenvectors used to compute J.
 
@@ -50,7 +50,7 @@ through the Lens of Riemannian Geometry":
 https://arxiv.org/abs/2307.12868
 
 4.3. Other Fixes (for the future update):
-37m35s: This could be misleading; singular vectors are neglected, not dropped, so the matrix would have the same dim (see: https://stats.stackexchange.com/questions/107533/how-to-use-svd-for-dimensionality-reduction-to-reduce-the-number-of-columns-fea)
+37m35s: This could be misleading; singular vectors are neglected, not dropped, so the matrix would have the same dim, but with a reduced rank (see: https://stats.stackexchange.com/questions/107533/how-to-use-svd-for-dimensionality-reduction-to-reduce-the-number-of-columns-fea)
 46m: this transpose should switch the elements to row a c and row b d
 53m20s: this should say "square root of eigenvalues"
 55m55s: this is an audio glitch. it should be 'you weren't such a'
@@ -101,7 +101,7 @@ Pinned comment:
 
 ERRATA (important to read)
 
-1. This video refers to needing to find singular vectors to "compute the Jacobian" but that's poorly worded; it actually means "for multiplying the Jacobian with input vectors to compute the Jacobian output" and other operations using J. The Jacobian matrix, as stated in the paper, is computed via "a sum-pooled feature map of the bottleneck representation of H" to reduce the number of parameters to compute.
+1. This video refers to needing to find singular vectors to "compute the Jacobian" but that's poorly worded; it actually means for calculations involving the Jacobian, such as "for J^T * J to compute the SVD and get editable directions". The Jacobian matrix, as stated in the paper, is computed via "a sum-pooled feature map of the bottleneck representation of H" to reduce the number of parameters to compute.
 
 2. This video states that the SVD is used to compute both the Jacobian and the semantic directions. But the SVD is actually only used to obtain the semantic directions. To compute the SVD, in section 3.2 of a subsequent paper, the Power Method is used to compute the singular vectors without computing (M^T)(M). An updated version will fix this by stating that "dimensionality reduction" should be performed on J before multiplying with it; this was not done in the paper, so the video will take a different approach than it for the sake of explaining dimensionality reduction. This would fix the "circular issue" of needing the Jacobian J to compute J^T J to get the eigenvectors used to compute J.
 
@@ -116,10 +116,10 @@ In the future, an updated version with improved narration and visuals (such as f
 A behind-the-scenes video going into more depth about the paper this was based off of may be made soon. It will address some issues not explained (due to time) in the video.
 
 >next reply (do this so it can be edited later on)
+dont say- [This comment is separated so it can be edited later if more needs to be added]
 
-[This comment is separated so it can be edited later if more needs to be added]
 3. Other Fixes (for the future update):
-37m35s: This could be misleading; singular vectors are neglected, not dropped, so the matrix would have the same dim (see: https://stats.stackexchange.com/questions/107533/how-to-use-svd-for-dimensionality-reduction-to-reduce-the-number-of-columns-fea)
+37m35s: This could be misleading; singular vectors are neglected, not dropped, so the matrix would have the same dim, but with a reduced rank (see: https://stats.stackexchange.com/questions/107533/how-to-use-svd-for-dimensionality-reduction-to-reduce-the-number-of-columns-fea)
 46m: this transpose should switch the elements to row a c and row b d
 53m20s : this should say "square root of eigenvalues"
 55m55s : this is an audio glitch. it should be 'you weren't such a'
