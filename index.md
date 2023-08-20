@@ -93,13 +93,22 @@ These pages are supplemental to the experiments:
 <a id="edu_vids" href="https://www.youtube.com/@neoknowstic">Educational Videos on AI Safety and Neural Network Mathematics</a>
 </b></p>
 
+<b>Non-Euclidean Therapy for AI Trauma</b>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FQ9l4v7zB3I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+This is a video that explains the mathematics behind the paper <a href="https://arxiv.org/abs/2302.12469">"Unsupervised Discovery of Semantic Latent Directions in Diffusion Models"</a>, a latent space editing techniques that modifies image styles in diffusion models, such as converting old faces to young faces. The concepts covered include the Pullback, the Jacobian Matrix, Eigenfaces and SVD. They are presented through a science fiction mystery story featuring analog VHS effects. The story revolves around an AI patient is experiencing a puppet show hallucination that appears in their generated images, and how a therapist proposes a method to erase it from their mind.
+
+---
 <b>Why do Neural Networks use Linear Algebra? -- The Visual Intuition of Cat Mathematics</b>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DHjwbleAgPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This is the first video in a series aimed at a general audience explaining the math behind neural network interpretability. The first video introduces the geometry of latent space for a simple MLP, explaining concepts such as the relations of neurons and feature vectors, basis vectors, dot product, and hypotheses about latent space arithmetic. To be accessible to laymen, it starts with simple multiplication and change of units, gradually extending this to matrix multiplication (see note on the youtube algorithm) [^2].
+This is the first video in a series aimed at a general audience explaining the math behind neural network interpretability. The first video introduces the geometry of latent space for a simple MLP, explaining concepts such as the relations of neurons and feature vectors, basis vectors, dot product, and hypotheses about latent space arithmetic. To be accessible to laymen, it starts with simple multiplication and change of units, gradually extending this to matrix multiplication (see note on the youtube algorithm).
 
-[^2]: <u>Note on the youtube recommendation algorithm:</u> This video was climbing up in views each day until its reupload due to audio issues; afterwards, it gained very little views. It may have gotten penalized due to being nearly identical to the previous upload, as there are claims that youtube penalizes duplicate videos. Claims state the algorithm recommends videos based on current news/trends, which do not have to be large but just "large enough" (windy, not even a hurricane). Small trends meant similar videos are swept up in the conglomorate and recommended. The #SoME3 competition at the end of August 2023 is usually when educational videos trend; once the third video (about Diffusion Model Editing) on this channel is uploaded for that competition, it is expected that the other videos will also be recommended alongside it.
+<!---
+[^2]: <u>Note on the youtube recommendation algorithm:</u> This video was climbing up in views each day until its reupload due to audio issues; afterwards, it gained very little views. It may have gotten penalized due to being nearly identical to the previous upload, as there are claims that youtube penalizes duplicate videos. Claims state the algorithm recommends videos based on current news/trends, which do not have to be large but just "large enough" (windy, not even a hurricane). Small trends meant similar videos are swept up in the conglomorate and recommended.
+--->
 
 ---
 <b>THE AI AMONG US in Your Non-Euclidean Mind 〘 Analog VHS Infomerical 〙</b>
