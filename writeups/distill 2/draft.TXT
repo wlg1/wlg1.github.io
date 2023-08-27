@@ -26,17 +26,15 @@ Linear vs nonlinear case
 For now, explain up to and including sec 4 (geometry)
 list of open questions
 
+1. Intro
 
-Introduction
-
-Superposition refers to the phenomenon where neural networks “represent more features than they have dimensions or neurons”. [cite toy models] We will break down what each term, such as “feature”, means in this definition in detail soon; for now, to describe gain an intuitive understanding of superposition and how it relates to AI existential safety, we just have to know that a model exhibiting superposition cannot represent a feature with just one neuron, and thus features must be represented by sharing neurons using approaches such as “distributed representations”, as shown in Figure 1. In this figure, a model is trying to tell apart three shapes based on how they activate its neurons. It cannot pair each of the three shape features with its own neuron “N”, as there are only two neurons. So to assign each feature with a uniquely identifiable label using neurons, the model represents them each as a “distributed representation”, or a weighted sum, of two neurons [cite: neurons in a hay]. In this manner, the model is able to distinguish the three features from one another based on the activations of only two neurons. A circle would have a high N1, and a low N2, while a triangle would have a low N1 and a high N2, and a square would never occur when N1 activates. Even though each feature cannot be provided with its own neuron, it is able to share neurons with others, which is an efficient representation.
+Superposition refers to the phenomenon where neural networks “represent more features (learned concepts) than they have dimensions or neurons”. A model exhibiting superposition cannot represent a feature with just one neuron, and thus features must be represented by sharing neurons using approaches such as “distributed representations”, as shown in Figure 1. In this figure, a model is trying to tell apart three shapes based on how they activate its neurons. It cannot pair each of the three shape features with its own neuron “N”, as there are only two neurons. So to assign each feature with a uniquely identifiable label using neurons, the model represents them each as a “distributed representation”, or a weighted sum, of two neurons. In this manner, the model is able to distinguish the three features from one another based on the activations of only two neurons. A circle would have a high N1, and a low N2, while a triangle would have a low N1 and a high N2, and a square would never occur when N1 activates. Even though each feature cannot be provided with its own neuron, it is able to share neurons with others, which is an efficient representation.
 
 
 Figure 1: A case of superposition with distributed representations
 
 In this configuration, a circle and a square would both have a “high N1”, meaning they are associated in this dimension. This representation was decided to be beneficial based on its performance for a given dataset. However, what does this dimension even “mean” when extrapolating it to tasks beyond the objective of correctly labeling that dataset? Subsequently, what does this “association” of the circle and square mean along their shared dimensions? When the AI must make decisions that take into account human ethical concerns, is this “association” of the circle and square aligned with human beliefs, or was it merely a good “trick” for the limited dataset it was trained on? AI interpretability research that studies superposition aims to answer these questions by identifying the manner of superposition a model is in, based on the features it must represent. This is done by analyzing the distributed representations that features are in with one another for a model.
 
-— (temporary divider)
 What are the dangers of superposition from the view of AI Existential Safety?
 
 We often hear that someone has an “irrational fear”. This could be someone who avoids eating anything said to “contain a chemical”, as their reasoning is that chemicals like bleach are harmful to consume. Though this is a decent guess on what is “bad to eat”, it is wrong to use this reasoning to claim that “all chemicals are bad because bleach is bad”, since consumable products, such as drinks that contain H2O, contain chemicals. Many human beings already have strange beliefs and associations that lead to decisions which are not rationally beneficial for their survival. As society develops superintelligent AI, it is important to understand what features the AI decides are correlated or associated with one another in order to understand its reasonings and beliefs, and thus ensure we are developing the AI in the right directions.
@@ -45,7 +43,6 @@ On the surface, we might see an AI making decisions to “eradicate a bad compou
 
 [ See “strategic position” section- solving superposition for better feature interpretability, thus reducing the unknowns of how AI piece features together into larger representations. For instance, one solution is to create models without superposition. ]
 
-— (temporary divider)
 What are features in latent space?
 
 Though there are multiple ways to define a feature, to describe superposition, a good definition to use is to view features as directions in a “latent space”, which is a coordinate system that represents each dimension with a neuron in a layer, measuring its activation strength. Each layer has its own latent space, so the input data is transformed to a new latent space in each layer. Since each dimension is where a basis vector lies, that means each vector is described as a linear combination, or a weighted sum, of basis vectors. Some of these vectors may correspond to a feature. Figure 2 illustrates a simple example of this using height and tail as basis vectors to describe a cat feature and a bear feature, measuring how much an item is “like a cat” or “like a bear” based on how long its tail and height are. An item that is shorter with a longer tail compared to other items seen in training data is “more like a cat” than “like a bear”. 
@@ -56,30 +53,28 @@ Note that features are not explicitly defined during training; rather, they are 
 
 Moreover, some activation patterns do not necessarily correspond to features as human-understandable “traits”. For instance, studies have provided evidence for the existence of circuits, in which groups of neurons act as modules that each perform a task, which then piece together into larger groups of neurons to perform compound tasks in an algorithmic fashion. One such discovered circuit type is the Indirect Object Identification [in-line cite] in GPT-2 Small, which involves inputs such as “John and Mary went to the store, John gave a book to” that should predict “Mary” as the next subject token. This circuit type first uses a module to identify subjects in an input token sequence, and then uses another module to identify duplicate subjects, and finally inhibits the duplicate subjects so that the model’s prediction value for the non-duplicate subject, which would be “Mary”, would be higher. 
 
-In this manner, we can describe circuit behavior as analogous to the parable of the “Blind Men and an Elephant” [cite], where several blind men each touch an elephant but don’t know what it is as a whole. One touches a tail and thinks it’s a snake, while another touches a leg and thinks it’s a tree trunk. But if they each tell their own observations to a blind judge, then the judge can use all this information to deduce that this object is actually an elephant. In this analogy, each blind man is like a module, and their message passing to a judge would constitute a circuit. Therefore, activation patterns may not only serve to identify “traits”, but to pass information along to computational units that process these traits.
+In this manner, circuit behavior can be described as analogous to the parable of the “Blind Men and an Elephant”, where several blind men each touch an elephant but don’t know what it is as a whole. One touches a tail and thinks it’s a snake, while another touches a leg and thinks it’s a tree trunk. But if they each tell their own observations to a blind judge, then the judge can use all this information to deduce that this object is actually an elephant. In this analogy, each blind man is like a module, and their message passing to a judge would constitute a circuit. Therefore, activation patterns may not only serve to identify “traits”, but to pass information along to computational units that process these traits.
 
-—
 What’s the difference between superposition, polysemanticity, and distributed representations?
 
-Now that we’ve established definitions for “feature” and “circuit”, we are ready to define other terms related to superposition. We will start with commonly confused terms that are often used interchangeably with one another; however, for the sake of clarity, we will try to avoid this by stating the following definitions:
+Now that definitions for “feature” and “circuit” have been established, other terms that build upon them can be introduced. The following three words are commonly confused terms that are often used interchangeably with one another:
 Superposition is a phenomenon for a model when there are more features than neurons
 Polysemanticity is a property of a neuron when one neuron corresponds to multiple features
 Distributed Representation is a property of a feature where the feature is represented as a linear combination of neurons
 
 Superposition implies the existence of Polysemantic Neurons (and often, Distributed Representations). However, the converse is not true.
 
-We should also distinguish between a sparse feature and a sparse distributed representation:
+A sparse feature and a sparse distributed representation may also be confused with one another:
 A sparse feature is not “frequently encountered” in a data distribution compared to other features
 A sparse distributed representation uses a few neurons in its summation compared to the total number of neurons in a layer
 
-For our explanations, it is helpful to define even more definitions:
+For these explanations, it is helpful to define even more definitions:
 
 Dot product, cosine sim
 Interference, orthogonal
 
 
 
-—
 How do we experimentally study superposition?
 
 In [toy models], it was observed that the “degree” of superposition a model has, and thus the way a model represents features, is affected primarily by two properties:
@@ -90,13 +85,13 @@ Therefore, superposition can be studied by comparing how models represent featur
 
 [more here]
 
-Correlated features were found to be represented in orthogonal directions. One hypothesis for why this occurs is because when two features often co-occur in an input, the model requires a way to tell them apart. If fur and tail, which are often used together to describe animals, were activated in the same way by the same neurons, then when an input contains both fur and tail, a model would have trouble telling apart which is fur and which is tail. Thus, it aims to represent them using features which have little similarity with one another, at least in some directions. It might be confusing how correlated features can be orthogonal while still being conceptually similar. We can speculate that many correlated concepts would be similar in some directions- that is, they have high cosine similarity with “like a cat” features- but there would be other directions in which they are not in order to tell them apart. However, this is pure speculation with no evidence so far.
+Correlated features were found to be represented in orthogonal directions. One hypothesis for why this occurs is because when two features often co-occur in an input, the model requires a way to tell them apart. If fur and tail, which are often used together to describe animals, were activated in the same way by the same neurons, then when an input contains both fur and tail, a model would have trouble telling apart which is fur and which is tail. Thus, it aims to represent them using features which have little similarity with one another, at least in some directions. It might be confusing how correlated features can be orthogonal while still being conceptually similar. It can be speculated that many correlated concepts would be similar in some directions- that is, they have high cosine similarity with “like a cat” features- but there would be other directions in which they are not in order to tell them apart. However, this is pure speculation with no evidence so far.
 
 In contrast, anti-correlated features are not correlated with one another. Most features are anticorrelated; for instance, calculus and furries are often not used in the same context. Thus, the model may decide for them to share the same neuron activation patterns, as it often doesn’t need to distinguish which is which to make predictions, since they are often not used together to make a decision involving both calculus and furries; additionally, the model can tell them apart by other features in their surrounding context.
 
-—
 6. How do we measure superposition?
 
 W^T W: measure correlations
 
 [figure showing in dot in]
+
