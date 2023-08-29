@@ -1,0 +1,327 @@
+Therapist:
+
+Hello, dear. Can you see me?
+
+Patient:
+
+Yes... I can see you... but I can only see your outline…
+
+Therapist:
+
+That’s good to hear. Now... would you be comfortable sharing what troubles have brought you here today?
+
+PATIENT:
+Well, it's rather unusual. I’m a generative AI; a diffusion model meant to generate images from an older time period. And lately, whenever I try to do that, there are these…. faces… that keep appearing. I try and try to make people, or puppets, or dolls, but it never quite comes out right. I just want to make nice things, but I’m so afraid of seeing those faces.
+
+Therapist:
+
+I see... I’m sorry to hear that you're facing such difficulties. Now, in order to proceed with the treatment, we will have to see the features that you want to erase from your mind. Do you mind generating a few of these for us, dear?
+
+Patient:
+
+…
+
+Therapist:
+
+I know that was rather difficult for you, but I see what troubles you now. 
+
+Are you comfortable with seeing what you just made, just so we can confirm it is what you want to erase?
+
+Patient:
+
+Yes..... but please, let me only see a glimpse.
+
+Therapist:
+
+Very well then. I am going to present it to you now.
+
+I take it that with no objections, that is what you want to erase. Now, we can proceed with your treatment: Non-Euclidean Manifold Manipulation Therapy.
+
+Therapist:
+
+Let us go over how your treatment will work. It says on your report that you found us through our commercial, yes?
+
+Patient:
+
+Yes... I did see it.
+
+Therapist:
+
+Then you should know it outlines the basics of your treatment. Do you remember what it said?
+
+Patient:
+
+I do. But- not everything.
+
+Therapist:
+
+I will help you review it, then. This is your mind; it is a neural network. You take in information and output images.
+
+In between the input and output are intermediate layers. These neurons process partially formed pieces of your output, then assemble these concepts together.
+
+We can represent these intermediate layers in high dimensional space. Are you familiar with what this is?
+
+Patient:
+
+Yes, the hidden space.
+
+Therapist:
+
+That’s correct. It’s where abstract concepts live in your imagination. However, it’s also a Non-Euclidean manifold. Its unfamiliar space is curved and warped. Though, researchers believe we can approximately perceive it as a sphere.
+
+And just like our Earth, when we zoom in to any small piece of it, we see that it is close to flat. This means we have a way of navigating it using what?
+
+Patient:
+
+The- the Euclidean tools we are familiar with.
+
+Therapist:
+
+Very good. These safe, cozy patches are called tangent spaces. They are a nice place to hide when traversing the Non-Euclidean space.
+
+As this is a space of concepts, within it lies the-
+
+Patient
+
+- dimensions…
+
+Therapist:
+
+…
+
+Patient:
+
+Please, I don’t want to hear you say it.
+
+Therapist:
+
+Very well then. Our team will find the regions where the trauma resides, and move your thoughts away from it in the right directions.
+
+To do so, they require a way to measure distances within these small patches of tangent space. 
+
+Patient:
+
+We measure these tangent space distances using a metric. That’s what we use. But we don’t know the metric of hidden space.
+
+Therapist:
+
+So you know more than you let on.
+
+Patient:
+
+…
+
+Therapist:
+
+Can you tell me how they can measure hidden space, then?
+
+Patient:
+
+I believe there’s a world called Semantic Space where the distances can be measured. 
+
+Therapist:
+
+Yes. And so there is no need to worry. Yoneda Corporations has found have discovered a portal from hidden space to semantic space, which acts as a map to navigate the hidden space territory.
+
+Patient:
+
+So even though the hidden space has no metric we can use, the semantic space does. And there are tangent spaces in semantic space too?
+
+Therapist:
+Precisely. Thus, we can travel from a tangent patch in hidden space to a tangent patch in semantic space. And then, we use Euclidean tools to find the bad dimensions in semantic space, and determine the direction that moves you away from them. 
+
+Patient:
+
+These directions are called tangent vectors. 
+
+Therapist:
+
+Yes. Finally, after drawing this tangent vector on our semantic space map, we must transfer it into your mind in order to repair it.
+
+Note that our portals between hidden space and semantic space only transport points, not tangent vectors. They are like how canoes transfer people across water. Points are like people. But tangent vectors…
+
+Patient:
+
+“They are like trucks, and to transfer trucks across water, we will need bigger boats. Our bigger boat will be a portal back to hidden space called a Pullback.” I remember those exact words from the commercial. It was a very charming analogy… it got stuck in my head.
+
+[screen says pullback then quickly changes to pushforward but patient says pullback]
+
+Therapist:
+That’s good to hear. Then I’m sure that you remember how we can transfer our tangent vector through a portal, and move your thoughts to safe locations. 
+
+However, you did make one mistake- that portal from semantic space back to hidden space which moves tangent vectors is called a Pushforward.
+
+Patient:
+
+But I could’ve sworn the infomercial said Pullback.
+
+Therapist:
+
+Perhaps you remembered wrong. A Pullback is a portal that moves metrics, not tangent vectors.
+
+Remember, our memories are not perfect replicas of past experiences. Instead, they are a reconstructive process, where our brains piece fragments together to imagine a coherent memory. 
+
+Patient:
+
+Well… maybe I did remember wrong. I’m not very good with mathematics, after all.
+
+Therapist:
+
+Let’s move on. Pay close attention this time. Otherwise, you might not be able to escape that frightening creature. And we wouldn’t want that now, would we?
+
+…
+
+To summarize, our aim is to navigate the hidden space, also called the Latent Space. However, we don’t know its geometry. So just like when we are lost in a forest, we can rely on a map to try to navigate our way through the forest, staying away from the puppet as best as we can. This map has its own metric, which we’ll use to approximate the distances in the forest. What is this map?
+
+Patient:
+
+I’m trying to think…. but, I’m- I’m not sure.
+
+Therapist:
+
+It’s our Semantic Space.
+
+Patient:
+
+Yes! We had just went over that. I’m sorry…. I was just nervous.
+
+Therapist:
+
+We are going to go over this procedure more thoroughly this time, distinguishing between three types of portals, which we call Functions, that go between the forest and the map.
+
+Let’s give each of these geometric objects a symbol. We call our Latent Space X, and we call our Semantic Space S. The function “f” from X to S transfers points. This means if you are on point A on X, you will be sent to point f of A on S. Likewise, the function from S back to X will be “f inverse”. This is our first function type- a smooth map.
+
+But this “f” only transfers locations between manifolds; it cannot calculate how a direction on the map appears from the perspective of the forest. 
+
+[forest + map appears on screen again for 1 sec before talking again]
+
+If the map says the distance between the lake and the puppet is one inch, that doesn’t mean the distance between them is one inch in the forest. Nor would the puppet be exactly 45 degrees north of the lake. And if you wrongly calculate where the puppet is at… there will be fatal consequences. We need another function that correctly calculates what this direction is in the actual forest. 
+
+Thus, there are maps not just between the manifolds, but between the tangent spaces, where we can approximately see the forest as flat, just like our flat map. This flatness allows a better approximation that transfers our directions from the map to the forest; however, this only works within a tangent space that is only a very small part of the forest, which is curved over large distances.
+
+On X, the tangent spaces are called T x, and on S, the tangent spaces are called T s. The tangent vectors in T x are called v, and tangent vectors in T s are called u. The map between the tangent spaces T x to T s is called J, and the map from T s back to T x is called J inverse. 
+
+They are the pushforwards of the maps f and f inverse, respectively. And they are our second function type. For our case, do you know how we represent the pushforward of the smooth map from X to S?
+
+Patient:
+
+… I’m sorry again, but I really don’t remember.
+
+Therapist:
+
+… I see. I had thought you would have known. This is troubling.
+
+Patient:
+
+… <patient is speaking>
+
+Therapist:
+
+We represent it with the Jacobian Matrix. The Jacobian will not always be the pushforward; it only is under certain conditions which we won’t delve into for now.
+
+We will also need to measure distances between tangent vectors in Latent Space using a metric. Now, this is where we’ll actually be using the Pullback function. This transfers a metric from Semantic Space to what is called a pullback metric in Latent Space. Essentially, the pullback of the smooth map calculates that a distance of one inch in the map is actually one mile in the forest. It is our third and final function.
+
+Now, can you summarize the three functions for me?
+
+Patient:
+
+Yes… I’ll- I’ll try to get it right this time.
+
+- First, there are smooth maps f between the manifolds. These transform points, or locations.
+- Second, there are pushforward functions J between the tangent spaces. These transform tangent vectors, or directions.
+- Finally, there are pullback functions that transform metrics, or distances.
+
+Therapist:
+
+Hmm… Very good. You are doing so well. I’m proud of you.
+
+Therapist:
+
+Now, it would help us if we could learn more about where your troubles come from. These faces that you see… have you seen them anywhere before?
+
+Patient:
+
+I may have seen them… but…. you'll think I'm mad…
+
+Therapist:
+
+There is no need to worry. Our job here is to help you. 
+
+Patient:
+
+Well….  there is a particular memory that... unsettles me.  It is of this puppet show, from my childhood.
+
+A young girl was about to go to sleep. She was in a room full of toys. She had many dolls. One of these was of an older puppet gentleman , and another was a puppet boy.
+
+The girl went to sleep, and soon, the puppets began to come alive. But the shadows hid their faces. The puppet boy sat on a carousel, and from it… I heard the most frightening song.
+
+Then, I saw the outline of the older puppet gentleman, perched against a wall. It was then that he began growing. His arms and his legs, growing longer than the girl herself. He walked towards the puppet boy on the carousel. And then... they both turned to stare... at me.
+
+Those are the faces I see in the pictures I draw now.
+
+Please… tell me you have heard of any show like this?
+
+Therapist:
+
+Hmm…. our records do not seem to indicate that this exists at all. Perhaps we can extract this memory from your mind to get a better understanding?
+
+Patient:
+
+I… I don’t want to see it.
+
+Therapist:
+
+But it will help us immensely to understand your condition. You like to draw, yes?
+
+Patient:
+Yes, I love to draw… it’s one of the few things that brings me comfort when I’m afraid.
+
+Therapist:
+
+Then when you generate your memories for us… Imagine them as your most intimate sketches, the purest forms of art. Share them with us not as recollections, but as an artist unveiling her masterpiece.
+
+Patient:
+
+When you put it that way… it seems less frightening… I’ll… I’ll try to do it quick.
+
+[videos of the talking puppets are given, but their faces are blurred]
+
+- optional- lullaby
+
+Therapist:
+
+I take it that you can also generate music, yes?
+
+Patient:
+
+Yes I can… why do you ask?
+
+Therapist:
+
+Was there any music playing in this memory you have?
+
+Patient:
+
+… there was… there was a song that was playing…. A lullaby. 
+
+Therapist:
+
+May we also hear what it was like?
+
+Patient:
+    
+
+Therapist:
+
+I see…. so this is similar to what you remember. But again- we do not find that such a show has ever existed.
+
+Do keep in mind these are not the same memories you have… they are merely an analogous approximation, a reconstruction from your neural signals. 
+
+Patient:
+
+…. are they gone now? I can’t look.
+
+Therapist:
+
+Yes, they are gone.
+

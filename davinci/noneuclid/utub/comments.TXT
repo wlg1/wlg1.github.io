@@ -1,0 +1,17 @@
+Thanks for the fantastic and insightful review! It's awesome you enjoyed it. Finding how to blend this type of storytelling while still keeping the explanation as clear and rigorous possible was challenging; it's a new approach I'm looking to refine even further in the future! Another video may be made that only explains the educational portion of it.
+
+<<<
+It's definitely based on analog horror such as Gemini Home Entertainment, but it's not so much a horror story (there's no jumpscares), more like a mystery. Other inspirations were "How to turn a Sphere Inside Out" ("Outside In") and the ZenoRogue channel videos. There's probably others like various sci-fi stories, but I don't remember right now. Looking forward to your own content!
+
+<<<
+Yes, I had the same reactions when I wrote the script. I aimed to tweak it more to make it clearer, but I made the video in around a month and by the time I was approaching the deadline, I just had the characters read from the explanation, and also didn't have time to be selective about the voices. The Alice and Eigenface convo is meant to be more of a "how does one do problem solving?" idea based on Polya's techniques that'll be refined in future vids. 
+
+So I'm planning to do 2 types of videos for this channel: straightforward explanations of AI techniques, and a more experimental format that's meant for more entertainment purposes, and I'm playing around with some 3D visuals on what that's like. Maybe something like an ARG or video game concept involving the player needing to decipher an AI model anomaly while an AI avatar interacts with the player in real time, like talking to someone in a stream. Another heavy inspiration I forgot to mention was the Loab story. So some sort of fake documentary in the style of Nexpo is the aim. Overall I think this type of presentation will get refined over time if people work on it.
+
+<<<
+Thanks for watching till the end! Kept replaying the twist in my head for a week and it was great to see it on a screen.
+
+<<<
+Yes I'm definitely going to make a non-horror version; both possibly by cutting this video and a straightforward explanation where I just talk about the math + code used in the paper
+
+The timestamped sections that don't have "No Math" next to them are all safe (eg. Manifolds and Pushforwards)
