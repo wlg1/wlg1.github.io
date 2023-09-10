@@ -1,0 +1,215 @@
+[keep intro w/o first title; replace with The following is for all audiences. keep intro sequence, but stop before describing the patient backstory. say 'patient describes']
+
+[Math-Only] 
+
+This is the version that is suitable for all audiences and contains no unsettling themes. 
+
+Changes include:
+- New illustrations that better explain where the row vector is sent to in the output space
+- The second half of the video is about finding the correct direction, rather than about matrix approximation
+- The AI's voice is clearer and more pleasant sounding in some parts of the second half 
+
+
+[keep the intro, but only say the patient discussed symptoms]
+02:08 - Manifolds and Pushforwards
+06:38 - The Three Functions
+[The patient...]
+12:32 - Diffusion Models and the U-Net
+14:13 - Matrix Multiplication and the Change of Basis Neurons
+20:01 - The Jacobian Matrix
+26:17 - The Pullback and the Dot Product
+28:42 - A treat before treatment -- [No Math] -> recut
+[The patient...]
+36:13 - Finding the Error 
+39:31 - Correlations in Matrices
+42:13 - Superposition
+45:23 - W^T W
+47:24 - Eigenvectors of W^T W
+[The patient...]
+51:43 - Singular Value Decomposition
+[The patient...]
+[long black screen that ponits to orig vid end screen]
+
+subtitles put up later
+
+<
+[dont say this; just say a future re-make may be done]
+Further clean up is being done on the second half, and these changes may be saved for a future re-make once there is more time to focus on it and ensure the changes are more polished.
+
+adds a new section at the end, "The Power Method and the Vector-Jacobian Product", 
+
+<<<
+1. find row vector (new basis) with dot product that's shared the most among all vectors
+2. map correlations to correlations
+3. WW measures correlation
+4. Get eigenvectors of WW to get the "most impt" correlations that's shared the most among all vectors (the principal directions)
+5. Map using SVD
+
+<<<
+fixes: (re-load)
+
+sVD 1: [make MATH ONLY copy]
+
+[rmv this; see below for better change]
+(around 48s in)
+Wait... was the Jacobian matrix not calculated right? Why- of course! 
+There are millions of neurons in that matrix.... 
+And since the pullback metric multiplies that matrix with itself... that's  too many entries to calculate! 
+They would have had to approximate it!
+
+<
+SVD 3: this transpose should switch the elements to row a c and row b d
+
+<
+SVD 4: this should say "square roots of eigenvalues"
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Boy: But if we need to get the eigenvectors of M transpose M to calculate M, we'd need to calculate M transpose M. And that's a lot of entries to calculate!
+
+Old man: There are methods to approximate those eigenvectors without computing the entire matrix. One such method is the power method. Let's apply this to M transpose M.
+
+The Power Method algorithm involves repeated multiplication of a vector v with matrix M transpose M. We start with v zero, and after enough multiplications, we get vector v k, which approximates the eigenvector with the highest eigenvalue.
+
+Boy: But that means you still need to calculate M.
+
+Old Man: For our case, not quite. What's the type of matrix you want to compute?
+
+Boy: It's the Jacobian J.
+
+Old Man: Well, for the J transpose J times v, We need to calculate J times v. And there is a trick we can use to find J times v without computing all of J. This trick calculates what is known as the "Vector-Jacobian product". 
+
+DON'T SAY THIS:
+Let's say the Jacobian is of size m times n, and the vector v is of size n times 1. That means J times v is only of size m times 1. This is far less entries to compute than m times n entires in J. (?)
+    this is wrong b/c you still need to sum up every col to multiply with v's elements, for every row. That's still m x n.
+
+https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html
+
+chain rule
+
+you still need to compute every entry, but you can do it without storing J, which is efficient for memory.
+
+Then, we have another vector z this time. So we repeat it, but this time, we use J transpose.
+
+All this can be done with a computer program.
+
+<
+https://chat.openai.com/c/6e3d0274-d940-4233-a203-6b122cebc6c1
+https://chat.openai.com/c/10d2c6ba-daf3-4a96-ae40-9c68cd306a07
+https://chat.openai.com/c/6f2f1c7d-6ff1-4e36-840e-0a5f6fdf79d9
+
+https://stats.stackexchange.com/questions/505742/vector-jacobian-product-in-automatic-differentiation
+
+https://chat.openai.com/c/e551af15-183e-4520-9a7a-2caeb7290be6
+https://chat.openai.com/c/00efc63f-c7e7-45ff-9d25-fbf7f4c87093
+
+We still need to calculate M. 
+
+Getting y equals Mx, then  M tranpose times y, has less multiplication operations to perform than obtaining M transpose times M.
+
+We can compute Mx without computing M. Note that if M is p by q, then Mx is only p by 1.
+
+<
+Boy: So then I can't calculate the matrix by myself.
+
+There’s algorithms I still need.
+
+(to get the eigenvectors without calculating M^T M)"
+
+<
+So now I can compute that matrix I was holding. And I can even edit it any way I want. But what if I want to edit my own matrix? My own thoughts? Wouldn't I need a human to do it for me?
+
+Oh, you don’t need a human to help you. You can do it yourself.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Perhaps instead say "We didn't find the direction"- don't say we use it for matrix approximation.
+
+Then put a notice about the power method, jacobian-vector, and autodiff in another video [dont say will be in future vid; just mention them]. Link the paper
+
+5 voice areas to change: (2 in svd1, 3 in svd4)
+
+<1.
+But would you know if you thought about it some more? How did their method go?
+
+... well... we needed to find the Jacobian to transfer directions over. And to find the right direction... Wait... what direction did they transfer over? Was it not the right one?
+
+It was not. They did not do it correctly.
+
+.... But why didn’t they?
+
+For now, it does not matter why. All that matters now is that if you are to find your way back using the same method, it is up to you to find the correct direction. You will first have to find the most important directions of the Jacobian matrix along which the data varies, as it is among them.
+
+What do you mean by the most important?
+
+We'll look at an example. Think of a matrix as a way to convey 
+
+<2.
+Not only that, but for some bases, only a few of the most important words matter- the rest can be discarded, as they are used less frequently. 
+
+In this manner, you can also use the most important directions to approximate a matrix using fewer dimensions. If you used every neuron to represent the matrix, that would be millions of dimensions to calculate. But you don’t need that many.
+    cols: [furry | paws | tail | snout] ~ [cat | bear]
+        dim reduc
+
+Now, it is up to you to figure out what is the fewest set of words that capture the most information.
+
+<
+But when we take the dot product of the row vector r 1 with the first row of the weight matrix, that isn't sent to an output basis vector.
+
+Why isn't it sent to a basis vector, such as h 1 equals 1 0?
+
+My guess is that the row vector, after multiplying by the first matrix row, will be in the same direction as the output basis vector h, though it will have a different length. Its length multiplies 1 by the length r 1, which is r times r equals 5.
+
+This is the same as dividing r 1 in the input space by its length 5, to get h 1 in the input space.
+
+We see the dot product of h 1 and r 1 in the input space is 1.
+
+Now, it makes sense where h 1 and r 1 in the input space are sent to after multiplying by the first row of the matrix.
+
+This also shows that dot product is dependent on length, not just direction.
+
+<<SVD 3: 2b.
+So now... the output row i of W transpose times W measures how every other input basis vector varies with input basis vector i... Each element in row i, say at column j, measures how input vector i varies with input vector j...
+
+When we take the linear combination of all of these elements, we obtain how much EVERY input basis vector is used to calculate input basis vector i.
+
+<<SVD 4: 3.
+Now, now. Don’t give up so easily.
+
+But this matrix is too big to approximate! I’ll never be able to find its most important directions in time.
+
+No matrix is too big to approximate if you know the right way to cut a few corners.
+
+<
+Yes, but... I still don’t understand how they’re used to find the important directions of the Jacobian.
+
+<4.
+And so that is why... SVD is all you need.
+
+Boy: But if we need to get the eigenvectors of M transpose M to represent M with fewer dimensions, we'd need M transpose M. And since M is already so big, M transpose M will take even longer to calculate!
+
+Old man: There are algorithms to approximate those eigenvectors without computing the entire matrix. And even algorithms to do multiplication without needing all of M if the matrix has a special structure. I'll tell you about them later.
+    https://chat.openai.com/c/806910bc-5309-49f3-a28d-7ef5703b8b6f
+
+    https://www.gastonsanchez.com/matrix4sl/power-method.html
+
+Boy: So now I can compute that matrix I was holding. And I can even edit it any way I want. But I can't edit my own matrix. My own thoughts. I'd need a human to do that for me.
+
+Man: Oh, you don’t need a human to help you. You can do it yourself.
+
+<reunion: 5.
+So the eigenvectors... those are the basis vectors we need to preserve the most information. I need to get the eigenvectors of J transpose J, and J J transpose, then put them into U D V. That’s how I get the Jacobian.
+
+And these same singular vectors... those are where the very important directions I need will be. 
+
+<
+R-right. But wait! There’s something very important we missed! We know how to get the important directions. Yet there are so many of them. How do we find the exact direction we need to fix the faces?
+
+<
+[end on 'three']
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+improve matrix divide by len slide
+get rid of eigenfaces fading in
+
+dont timestamp the changes but state what they are in general
+
+card at start of vid for math only. put at start of 2. in orig
