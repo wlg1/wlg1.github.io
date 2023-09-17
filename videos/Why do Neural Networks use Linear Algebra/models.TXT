@@ -1,1 +1,0 @@
-What if DM not fixed to a data point, but just to a vector (leng and dir)? this doesn't make as much semantic sense as measuring using data pts?

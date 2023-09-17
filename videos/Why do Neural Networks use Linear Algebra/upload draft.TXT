@@ -1,7 +1,0 @@
-[This is just a draft so far of half the video with unclear placeholder audio and missing animations. Final version to be uploaded by 1/26]
-
-This is a video series aimed at a general audience explaining the math behind neural network interpretability. The first video starts at very basic concepts. The one below is currently a draft of half the video, with placeholder audio and missing animation; the actual video will be uploaded by 1/26.
-
-narration may be hard to hear as it's mumbling (due to being a draft, so I'm just using it for timing and will revise it)
-
-https://www.dropbox.com/s/cdw2w16fugunoa9/video%201%20draft.mp4?dl=0
