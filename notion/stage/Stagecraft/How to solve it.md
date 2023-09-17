@@ -12,8 +12,6 @@ Psych and polya on understanding papers (to solve new ones, both to understand a
 
 Each person has their own way. This isn't the best way, subjective. 
 
-There is a lot more to say about this, so more videos will be made about it. Lisr some pts and put on github and notion site neoknowstic
-
 Different feelings of abstraction. For example, feel it's binary search, vs spec using binary search tree. Skim. Intuition on what to try
 
 Look at polya. What to choose? It's intuition. Just like sports, games like chess, answer isn't always clear. Each person has their own 

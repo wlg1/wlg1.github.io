@@ -350,7 +350,7 @@ Patient:
 
 Therapist:
 
-Yes, they are.
+Yes, they are gone.
 
 …
 

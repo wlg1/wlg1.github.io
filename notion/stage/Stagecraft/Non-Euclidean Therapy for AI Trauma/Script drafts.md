@@ -330,7 +330,7 @@
     
 - only have subtitles for therapist (or color-coded if both) when no math animations on screen?
 
-in description, link the script, too (neoknowstic2 github pages?)
+in description, link the script, too
 
 timestamps [spoilers ahead]:
 
@@ -541,3 +541,5 @@ timestamps [spoilers ahead]:
 [svd script](Script%20drafts%20579052ef4990435cad14176f2582aee3/svd%20script%206c295cce3feb4d378c4720168c7f7d46.md)
 
 [ending](Script%20drafts%20579052ef4990435cad14176f2582aee3/ending%20cf64a190121549769ad0de79bd3bc2fb.md)
+
+[full script](Script%20drafts%20579052ef4990435cad14176f2582aee3/full%20script%207cf191d1810746819dd5f2bed17d9055.md)

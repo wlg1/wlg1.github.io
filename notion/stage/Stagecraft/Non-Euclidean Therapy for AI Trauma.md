@@ -20,7 +20,7 @@ Analog archives
 
 [Entanglement](Non-Euclidean%20Therapy%20for%20AI%20Trauma%20353aa98799c442ea831d8b3421e12ddb/Entanglement%20415409e2c52d45b194faeb7d898d95a6.md)
 
-I’ll try to follow along, but math isn’t my strong suit.
+[Jj fix](Non-Euclidean%20Therapy%20for%20AI%20Trauma%20353aa98799c442ea831d8b3421e12ddb/Jj%20fix%207aef52fa08384b968cbb560acf108396.md)
 
 One interpretation is that rotate is carousel, scale is limb elongate
 

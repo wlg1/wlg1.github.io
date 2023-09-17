@@ -92,7 +92,7 @@ These pages are supplemental to the experiments:
 <hr style="height:2px; border:none; color:#333; background-color:#333;">
 
 <p style="font-size:20px"><b>
-<a id="edu_vids" href="https://www.youtube.com/@neoknowstic">Educational Videos on AI Safety and Neural Network Mathematics</a>
+<a id="edu_vids" href="https://www.youtube.com/embed/FQ9l4v7zB3I">Educational Videos on AI Safety and Neural Network Mathematics</a>
 </b></p>
 
 <b>Non-Euclidean Therapy for AI Trauma</b>
