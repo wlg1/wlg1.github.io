@@ -30,8 +30,6 @@ Use chatgpt/claude
 
 ---
 
-Make neoknowstic website + videos
-
 Topics: (for refining interpretations and solving problems)
 
 1. Polya techniques: describe and associate

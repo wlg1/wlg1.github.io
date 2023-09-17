@@ -6,8 +6,6 @@ How do I contribute to mechanistic interpretability research by generalizing fro
 
 [https://www.youtube.com/watch?v=2PCmNCRU-cI&t=1910s](https://www.youtube.com/watch?v=2PCmNCRU-cI&t=1910s)
 
-make timestamps as neoknowstic2 comment
-
 Many diff lvls of abstraction
 
 Not too obvious but not too infrequent. Pred will be used later due to a common problem that's not obvious to solve. somewhere in middle. Agin, terms like obvious are subjective, so this is subjective to the author.
