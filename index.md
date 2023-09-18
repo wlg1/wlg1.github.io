@@ -95,25 +95,25 @@ These pages are supplemental to the experiments:
 <a id="edu_vids" href="https://youtu.be/FQ9l4v7zB3I">Educational Videos on AI Safety and Neural Network Mathematics</a>
 </b></p>
 
-<b>Non-Euclidean Therapy for AI Trauma</b>
+<b>Paper Explanation: Unsupervised Discovery of Semantic Latent Directions in Diffusion Models</b>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FQ9l4v7zB3I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 This is a video that explains the mathematics behind the paper <a href="https://arxiv.org/abs/2302.12469">"Unsupervised Discovery of Semantic Latent Directions in Diffusion Models"</a>, a latent space editing techniques that modifies image styles in diffusion models, such as converting old faces to young faces. The concepts covered include the Pullback, the Jacobian Matrix, Eigenfaces and SVD. They are presented through a science fiction mystery story featuring analog VHS effects. The story revolves around an AI patient is experiencing a puppet show hallucination that appears in their generated images, and how a therapist proposes a method to erase it from their mind.
 
 ---
-<b>Why do Neural Networks use Linear Algebra? -- The Visual Intuition of Cat Mathematics</b>
+<b>Why do Neural Networks use Linear Algebra?</b>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DHjwbleAgPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 This is the first video in a series aimed at a general audience explaining the math behind neural network interpretability. The first video introduces the geometry of latent space for a simple MLP, explaining concepts such as the relations of neurons and feature vectors, basis vectors, dot product, and hypotheses about latent space arithmetic. To be accessible to laymen, it starts with simple multiplication and change of units, gradually extending this to matrix multiplication (see note on the youtube algorithm).
 
 ---
-<b>THE AI AMONG US in Your Non-Euclidean Mind 〘 Analog VHS Infomerical 〙</b>
+<b>Introduction to Diffusion Model Editing</b>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xI7tAjoe4oc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This second video demonstrates Diffusion Model Editing using techniques from Differential Geometry and images from Stable Diffusion. It is aimed at a non-academic audience, combining themes from popular youtube "Analog Horror" videos. It is part of a series of videos intended to introduce generative model editing to a younger, high school aged audience. The following video provides a background explanation of the content in the video:
+This video demonstrates Diffusion Model Editing using techniques from Differential Geometry and images from Stable Diffusion. It is aimed at a non-academic audience, combining themes from popular youtube "Analog Horror" videos. It is part of a series of videos intended to introduce generative model editing to a younger, high school aged audience. The following video provides a background explanation of the content in the video:
 
 <a href="https://www.youtube.com/watch?v=MMLKwomDKDI&ab_channel=TREYtheExplainer">An expalnation of the among us pareidolia effect</a>
 
