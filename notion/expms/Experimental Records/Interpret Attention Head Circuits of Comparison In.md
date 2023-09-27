@@ -2,9 +2,14 @@
 
 [Project Planning](Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Project%20Planning%20821fd0c71f4d4a44b5f7b240725c5547.md)
 
-Project Start Date: ~5/1/2023 (learn from previous papers), ~5/15/2023 (start new expms)
-
-Postponed: 6/21 - 7/4 ; Re-start: 7/4 - Ongoing
+- **Approximate Timeline of Work:**
+    
+    Project Start Date: ~5/1/2023 (learn from previous papers), ~5/15 - 6/20 (start new expms)
+    
+    Postponed: 6/21 - ? ; learning new techniques and refine understanding of previous ones
+    
+    Re-start: ?
+    
 
 To do next: 
 
@@ -64,6 +69,8 @@ Adjectives:
 [Antonym Circuits and Neurons ](Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Antonym%20Circuits%20and%20Neurons%20824f0d162ce84a8fb09c27f4e4931194.md)
 
 [Not Identification Circuits](Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Not%20Identification%20Circuits%20db48cd1bd4844b25994773248e9a587c.md)
+
+[Tall Short Neuron Exploration](Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Project%20Planning%20821fd0c71f4d4a44b5f7b240725c5547/Initial%20Exploration%20and%20Brainstorm%2006eb3b02c5684ef88cb6f64881f8a44f/Tall%20Short%20Neuron%20Exploration%20f68842d97ef64f3cabbc2ffad0d9e06f.md) 
 
 Code Analysis Notes
 

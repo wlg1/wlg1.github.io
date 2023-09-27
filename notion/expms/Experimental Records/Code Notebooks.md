@@ -28,6 +28,10 @@ tall_short_neuron_v2.ipynb
 
 [dotprod_size_tokens_GPTsmall.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/dotprod_size_tokens_GPTsmall%20ipynb%2048e2ade011e7429aa6721e08a4666242.md)
 
+Latent Space Arithmetic
+
+[vec_arith_template.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/vec_arith_template%20ipynb%201eef0c2e0fa148e7bc9bb56ab9fd28b5.md)
+
 - Tests
     
     [tall_short_circuit_draft.ipynb](Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_circuit_draft%20ipynb%2060d5d6b60d014ebd950e958ed1264c6a.md)

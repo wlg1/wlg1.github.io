@@ -2,7 +2,7 @@
 
 [https://colab.research.google.com/drive/1lZQkZ5u2mQxsYyiGaUKbW-XjdHP0GJpA](https://colab.research.google.com/drive/1lZQkZ5u2mQxsYyiGaUKbW-XjdHP0GJpA#scrollTo=ACs7g7pt5KMa)
 
-Does a single, or several, neuron(s) in MLP(s) activate for opposites tall and short? What about big and small; do they have some similar activations to tall and short? Based on [“An” neuron](https://www.notion.so/An-neuron-cd5793cd0e2749c59cc92cab1bbc7e5f?pvs=21) 
+Does a single, or several, neuron(s) in MLP(s) activate for opposites tall and short? What about big and small; do they have some similar activations to tall and short? Based on [“An” neuron](https://www.notion.so/An-neuron-92888cb0c37548b7949c1d9c3c9d260d?pvs=21) 
 
 - ********************Finding 1: Actv patching on MLPs, then on its neurons********************
     
@@ -270,6 +270,8 @@ The attention heads circuit takes information from MLPs. So find specific MLPs t
     
     This has 5120*36 neurons. Despite this, the dot product of each one with a token is very fast. This is because it’s just one dot product
     
+
+NOTE: neurons each only have one set of weights. But there are input values into the neuron, and output values out of it. The “output weights” are just the neuron weights. The weights are multiplied by every value in the input vector, and this create an output value for a single neuron.
 
 Brainstorm a workflow from broad to specific to find MULTIPLE neurons for each token and see how they add up with each other and with the attention heads circuit:
 

@@ -2,7 +2,39 @@
 
 ### Working on
 
-- S-inhibition heads using Explr nb
+- ✅ Make template for Expl demo. Automate analysis from writing to code
+    
+    [https://colab.research.google.com/drive/1nLb8rq60wEoT5_QFXFoyI5rWHFbshAwJ#scrollTo=n3-krbwKIAiV](https://colab.research.google.com/drive/1nLb8rq60wEoT5_QFXFoyI5rWHFbshAwJ#scrollTo=n3-krbwKIAiV)
+    
+    circuits_template.ipynb
+    
+- ✅ MLP_expms_template.ipynb (neuroscope + congruence)
+    
+    [https://colab.research.google.com/drive/1oh1pUcXPdHLudWqTI2rAUaphGvS09d2d](https://colab.research.google.com/drive/1oh1pUcXPdHLudWqTI2rAUaphGvS09d2d)
+    
+    Take from:
+    
+    - dotprod_size_tokens.ipynb [https://colab.research.google.com/drive/1rch6VaG9O1YFJT1wPjjbXyDgXizGT7WV#scrollTo=Dot_products_of_tokens_after_embedding_layer](https://colab.research.google.com/drive/1rch6VaG9O1YFJT1wPjjbXyDgXizGT7WV#scrollTo=Dot_products_of_tokens_after_embedding_layer)
+        - [Draft- Adjectives Congruence](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Adjectives%20Congruence%20f95dc5b0f41c4b10ac6e5a96bde7e8c6.md)
+    - tall_short_neuron_investigation.ipynb [https://colab.research.google.com/drive/1lZQkZ5u2mQxsYyiGaUKbW-XjdHP0GJpA](https://colab.research.google.com/drive/1lZQkZ5u2mQxsYyiGaUKbW-XjdHP0GJpA)
+        
+        tall_short_neuron_v2.ipynb
+        
+        [https://colab.research.google.com/drive/1Gvt1esiymU9UPfDKB1Nc7gMMUhJadLa1](https://colab.research.google.com/drive/1Gvt1esiymU9UPfDKB1Nc7gMMUhJadLa1)
+        
+        [tall_short_neuron_investigation.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_neuron_investigation%20ipynb%20b6fb8fd5adfc47f4b7b737249042ae53.md) 
+        
+    - Neuroscope (finding 2 of “an neuron”)
+- Brainstorm circuit based on heads found; S-inhibition heads using Explr nb
+    
+    The S-inhibition heads from IOI should carry over into Name Mover. The mid-layers contain S-inhibition. You DON’T NEED path patching to find these!
+    
+
+We already know induction heads in gpt2-small via:
+
+[https://www.neelnanda.io/mosaic](https://www.neelnanda.io/mosaic)
+
+So if we find an impt head that’s one of these, ask why it’s also induction.
 
 ### Ongoing Issues
 
@@ -177,6 +209,7 @@
     [https://www.notion.so/wlg1/3-Figuring-out-Head-Functionality-for-Most-Recent-Name-Movers-d35d8e08cfc649d7838236eb03e6bf22?pvs=4#c2ccb59d9c30446ca5b7f403795910cd](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
     
 - ✅ Neuron Dir: Try [Random Linear Updates on “Language Models Implement .. Vector Arithmetic”](../Expms%20on%20other%E2%80%99s%20work%2020fe4166597c45ed844fbdff1d2bb956/Random%20Linear%20Updates%20on%20%E2%80%9CLanguage%20Models%20Implemen%202d2e575a175b4a7a8ee0228fa87ee998.md)
+- Make [vec_arith_template.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/vec_arith_template%20ipynb%201eef0c2e0fa148e7bc9bb56ab9fd28b5.md)
 
 ### Future Work Ideas / Postponed
 
@@ -203,6 +236,7 @@ Heads Functioanlity
     
     [https://colab.research.google.com/drive/1NCBOLPx038FxwEacmHDsCesWIAW1z8kU#scrollTo=0MBbP2Agg-iR](https://colab.research.google.com/drive/1NCBOLPx038FxwEacmHDsCesWIAW1z8kU#scrollTo=0MBbP2Agg-iR)
     
+- guess: off-distribution means not common (eg. meaningless repeated patterns like XYXY detected by induction heads aren’t common because they’re nonsense?)
 
 Congruence
 

@@ -10,7 +10,13 @@ eg) ablate combos of abstractions based on Neuroscope
 eg) project onto right singular vector
 Eg) causal intervention on restoring combos
 
-<<<
+---
+
+in-context give activations + circuit to GPT-4 to have it predict functionality of new activations + circuit (likely must do it on very narrow region with lots of in-context). if possible to some degree, this means it may be able to predict shared components too? -- likely not poss as GPT was not trained on this association, nor does it ever appear in the text datasets. instead of gpt-4, may train another meta-model for this
+
+to search for circuits, have GPT-4 be given a task and guess several algorithms to carry that out. then, see if these algorithms can be matched to circuit structures found by ACDC
+
+---
 
 Superposition allows neurons to represent more features because a neuron isn’t dedicated to just one feature.
 
@@ -59,3 +65,11 @@ local edge: inh head to mover head. if missing, circuit not present.
 Generate Data using chatGPT
 
 - Find a way to automate generating many patterns and running them all at once, seeing which yield significant results. Brainstorming patterns requires chatgpt to self reflect after testing them.
+
+---
+
+[https://colab.research.google.com/drive/1nD6tfM33StbAqXG5HnYPlC40hKSj8mzD#scrollTo=AXZEGMLmIAih](https://colab.research.google.com/drive/1nD6tfM33StbAqXG5HnYPlC40hKSj8mzD#scrollTo=AXZEGMLmIAih)
+
+The above suggests that it would be a useful bit of infrastructure to have a "wiki" for the heads of a model, giving their scores according to some metrics re head functions, like the ones we've seen here. HookedTransformer makes this Hooked to make, as just changing the name input to `HookedTransformer.from_pretrained` gives a different model but in the same architecture, so the same code should work. If you want to make this, I'd love to see it!
+
+As a proof of concept, [I made a mosaic of all induction heads across the 40 models then in HookedTransformer](https://www.neelnanda.io/mosaic).

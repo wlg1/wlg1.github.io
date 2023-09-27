@@ -1,0 +1,3 @@
+﻿Hypothesis,Results found in,Tests
+"There exist neurons which fire for class A, but not class B",@Untitled  (Notebooks%20Database%20196af7e228ab46f8803dafb2688ea296/@Untitled%20c45814b4ebd544369c03bf1d0ca66cf8.md),Compare 1 vs 7 activations in an MNIST trained on only 1s and 7s by getting test set image indices with labels of 1 and 7
+"There exists alice (https://www.notion.so/There-exists-alice-a61d6e0dd3db46738bcff4c6abbe0b32?pvs=21) ",@Untitled  (Notebooks%20Database%20196af7e228ab46f8803dafb2688ea296/@Untitled%20c45814b4ebd544369c03bf1d0ca66cf8.md),

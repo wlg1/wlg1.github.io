@@ -94,3 +94,7 @@ Applications for the 2023-2024 academic year are now closed.
 
 [https://futureoflife.org/about-us/our-people/fellowship-winners-2022/](https://futureoflife.org/about-us/our-people/fellowship-winners-2022/)
 Vitalik Buterin Postdoctoral Fellows (****No longer accepting submissions after 01/03/2023)****
+
+[https://futureoflife.org/about-us/our-people/ai-existential-safety-community/](https://futureoflife.org/about-us/our-people/ai-existential-safety-community/)
+
+[https://futureoflife.org/our-work/grantmaking-work/](https://futureoflife.org/our-work/grantmaking-work/)
