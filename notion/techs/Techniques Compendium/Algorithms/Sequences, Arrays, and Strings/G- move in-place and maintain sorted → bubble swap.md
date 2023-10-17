@@ -1,0 +1,1 @@
+# G- move in-place and maintain sorted → bubble swap

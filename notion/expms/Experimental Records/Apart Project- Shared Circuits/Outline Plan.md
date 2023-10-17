@@ -4,11 +4,14 @@
 
 justify these reason with a sentence of why they bolster evidence; use comparison to simialr but diff technq from other papers
 
-- Finish by Week 1:
-    - Path Patching on all sequence types
-- Finish by Week 2:
-    - 
-- Finish by Week 3:
+- Finish by Week 1, 10/3: Find common circuits for more numerical tasks (not just seq cont)
+    - Compare w/ Greater-than, less-than
+        - Use ACDC for greater-than
+    - Compare w/ Mod
+    - Path Patching on multiple sequence types
+- Finish by Week 2, 10/10:
+    - Run on GPT-Neo and LLaMA 2
+- Finish by Week 3, 10/16 8am:
     - 
 
 Get GPT4 EDA to review paper

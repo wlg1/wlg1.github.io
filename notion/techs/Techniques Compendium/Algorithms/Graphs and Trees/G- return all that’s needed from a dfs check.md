@@ -1,0 +1,1 @@
+# G- return all that’s needed from a dfs check

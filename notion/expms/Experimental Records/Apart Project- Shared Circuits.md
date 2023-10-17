@@ -70,11 +70,29 @@
 
 ### Project Docs
 
+Brainstorming Notes
+
+[Outline Plan](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Outline%20Plan%203935b02babc84c70a2be3545257d9b3e.md)
+
 [Main Aim of Paper](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Main%20Aim%20of%20Paper%20e8f679aa680247cfa76b19edb04c5233.md)
+
+[Brainstorm](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Brainstorm%207f2162094b5d412187f4af9137210dc7.md)
+
+[Hypotheses to Test](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Hypotheses%20to%20Test%2092b4e89245a142e89267edd9880ffa43.md)
+
+[Search Methods- brainstorm](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Search%20Methods-%20brainstorm%2015a3020ab00b40adb79b0acf3622f5f4.md)
+
+[Search Methods- ask ChatGPT](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Search%20Methods-%20ask%20ChatGPT%20c68457cff88c4c3ba4b7fc775684496a.md)
+
+[Findings](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Findings%20dd87002c715d49c8a5f41f3a3d43be82.md)
+
+[Future work](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Future%20work%20a8d30bf9c84546da862cb2a95da71dfc.md)
 
 Writeup
 
 [https://www.overleaf.com/8957882739zmjxqsvbgtwx](https://www.overleaf.com/8957882739zmjxqsvbgtwx)
+
+[Style Formating and Rules](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Style%20Formating%20and%20Rules%20e17cd649ece749dba77f3cdcb19357a4.md)
 
 Repo (push new expms here once cleaned up)
 
@@ -88,14 +106,10 @@ all files: [https://drive.google.com/drive/folders/1WCAioyU4pJFsWpVF4GukpG8osG5S
 
 test other paper’s code: [https://drive.google.com/drive/folders/1GgF91n2YNLXJD2KHhHe1WUhXe4zRrqQe](https://drive.google.com/drive/folders/1GgF91n2YNLXJD2KHhHe1WUhXe4zRrqQe)
 
-Brainstorming Notes
+Others’ code
 
-[Brainstorm](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Brainstorm%207f2162094b5d412187f4af9137210dc7.md)
-
-[Outline Plan](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Outline%20Plan%203935b02babc84c70a2be3545257d9b3e.md)
+[gpt2-greater-than](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/gpt2-greater-than%201d1763531c964ad28af1ee43c2253f19.md)
 
 Funding
 
-[https://funds.effectivealtruism.org/apply-for-funding](https://funds.effectivealtruism.org/apply-for-funding)
-
-[https://docs.google.com/document/d/18LsGgv1omHYol2v_tMFpA0De1N5lz5FRtAae8hlh3KM/edit](https://docs.google.com/document/d/18LsGgv1omHYol2v_tMFpA0De1N5lz5FRtAae8hlh3KM/edit)
+[Grants](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Grants%20feb38126ec674f9999143814dcb37b7a.md)

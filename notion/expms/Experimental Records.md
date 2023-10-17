@@ -34,15 +34,17 @@ Ongoing
 
 [Apart Project- Shared Circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79.md)
 
-[Agency Hackathon](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Agency%20Hackathon%2005fccdfc9f064cd7acad0c68fa76603d.md)
-
-[Interpret Attention Head Circuits of Comparison Inputs](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b.md)
+[Shared subj + adj circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Shared%20subj%20+%20adj%20circuits%202d73069926fc41ea9ce744e05de33103.md)
 
 Postponed/Finished
 
 [_Project Ideas_](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/_Project%20Ideas_%205d516ef4cb104f8fa0397ff0793ae0d4.md)
 
 [Postponed Projects](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Postponed%20Projects%20a8d1660ad8394f389d9ec0d01d070b02.md)
+
+[Agency Hackathon](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Agency%20Hackathon%2005fccdfc9f064cd7acad0c68fa76603d.md)
+
+[Interpret Attention Head Circuits of Comparison Inputs](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b.md)
 
 ### Proof Projects
 

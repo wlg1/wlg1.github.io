@@ -14,6 +14,9 @@
 ## Questions
 
 - Transformers:
+    - circuits may not work b/c EVERY node contributes A LITTLE to the final effect
+    - does KEEPING some MLPs make it worse? b/c they're not intended to be part of circuit? we see how removing some nodes from the full circuit actually makes the model perform better than the full circuit- is this a coding error, or is it actually doing better without them?
+    
     - The NN learns to predict tokens. Can it predict its own hidden states? That is, given a long series of hidden states it has, would it predict the “next” one? The output would be a matrix that represents a layer output.
     - Why do backup heads exist? What incentized the model to learn a redundancy, if it didn’t encounter the “danger” of ablation during training? Perhaps for some other purpose, or just a side effect with no purpose?
         

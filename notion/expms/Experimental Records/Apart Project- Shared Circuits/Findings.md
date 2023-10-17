@@ -1,0 +1,5 @@
+# Findings
+
+- "seq cont" circuit is much bigger than prev thought, it seems to require a lot of attention heads to work, in contrast to other circuits like IOI which relied on say 10 or so heads.
+    - found circuit for sequence completion with stronger arguments (from path patching, better mean ablation approaches, and additional functionality checks like SVD; previously, the evidence from only actv patching + attn pattern analysis was not as strong)
+- Another issue is that sometimes removing certain heads (at the last layers) will give performance better than using all heads. Either there's an issue with the approach I was using or this may happen due to some heads not being needed for a task. I was looking to ask around ppl for ideas on if they saw this in their expms before, not sure if anyone you know has heard of this (actually that has a simple explanation perhaps, it's just using logit diff of correct - incorrect so the head removal would move the incorrect logit ranking more down, so doesn't really mean much)

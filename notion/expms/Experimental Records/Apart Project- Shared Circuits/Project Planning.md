@@ -2,223 +2,154 @@
 
 ### Working on
 
-- 
+Circuit Connectivity
 
-### Done
+- [Play around with manually sel heads for **incr digits circuit**, and check their func](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
+    - see if removal coincides with importance on attnpat; record what performance difference each of the circuit’s heads makes. Are numdetect heads like 4.4 crucial? Are there backups?
+        - May be worthless by themselves, but work in conjunction with other heads?
+        - This gets 75% perf. Note that this is diff from this circ: [https://colab.research.google.com/drive/1CHRn-AMko9RNrl1bqiCwB7DS-rz1CoBP#scrollTo=78x6pmqkFnrP&line=1&uniqifier=1](https://colab.research.google.com/drive/1CHRn-AMko9RNrl1bqiCwB7DS-rz1CoBP#scrollTo=78x6pmqkFnrP&line=1&uniqifier=1)
+            
+            That has nodes from L4 for some reason
+            
+    - **[iter patch from manual sel](https://colab.research.google.com/drive/1onREXMNmc9ks0xpwDslUX2pdG0RSYtWS#scrollTo=ratQ65XwBdFx&line=1&uniqifier=1)**
+        - re-run ablation on circ found from path patch (that adds nodes)
+        - also get circ which only adds edges; doesn’t add node if not in input to fn
+- See how many further heads can be removed to achieve various levels of performance (70%, 80%, etc.).
+    - Top 10 most impt when rmv is inacc bc performance dependent on other heads?
+    - Plot perf on x-axis and # heads on y-axis? Table showing what heads differ with each % being row, and cols of Same and Diff from 97%
+    - (90 to 80%): However, there are heads not found from before, such as heads 3.2, 4.6, 5.0, 5.11, 6.8, and 8.6. This implies that the order we remove heads may matter. Thus we also try different orders to remove heads, and find how frequently heads appear in the final circuit over all orders. [only matters if don’t find minimal based on thres]
+        
+        Strange that 25% iter pruning keeps nodes that are not from 2%
+        
+- Ablate MLPs, neurons, and res stream outputs. See actv patching (EA, An)
+    - What heads do MLPs rely on?
+- Convert ‘mean ablation’ table to having circuits for each task found by ablation on each row
+- ablate by seq pos (found by attention pattern analysis)
+    
+    Change both of these (dict key is head type): **is seq pos q or k?**
+    
+    - CIRCUIT = {"number mover": lst,
+        
+        SEQ_POS_TO_KEEP = {"number mover": "end",
+        
+- ablate by qkv
+- ISSUE- a circuit has source nodes that are not part of the first layer?
+    - As seen in IOI/ACDC diagram, you CAN have heads w/ no incoming edges that are in later layers, as long as they have an edge from an input token.
+- use different colors (fill and outline) to denote common nodes and node types. re-order so prev layer heads are further on top
 
-- ✅ Review hackathon project and convert to overleaf
-    - ✅ Make table comparing copy scores between analogous seqs
+<<<after nov 1st
 
-Quick Lit Review
+- Mean ablation using other corruption types (repeatAll, rand some, etc)
+- Try alt measures KL div
+    - Check if large logit diff coincides with a true difference in correct vs incorrect token logits.
+        
+        `logits_to_ave_logit_diff_2`
+        
+        - Debug why mean resampling sometimes gets high scores. Logit diff gets bigger upon removal…?
+            - This is explained by “ACDC” paper; so they use KL div instead
+- among words circuits- what’s different?
+- decreasing months seq
 
-- ✅ read EMNLP 2023 paper on attn head MLP interactions
-    - how reliable is GPT-4? too much of a black box to assess its consistent reliability?
-    - we analyse the associations between attention heads and next-token neurons by looking at how much each attention head activates the neuron
-- ✅ read “The Larger They Are, the Harder They Fail”
-- Further test the circuit hypothesis by:
-    - checking “performance scores” of heads
-    - finding “+1” (aka next) MLPs neurons
-- ✅ Msg some other authors to ask about how high lvl description of paper idea would do at a conference
-- ✅ Find “Next Heads” by coding “next scores”
+<<<optional:
+
+- Ask slack about difference b/w transformerLens and huggingface for token prediction. first input code to chatgpt to look for difference?
     
-    [numseq_nextScores.ipynb](Expm%20Results%208de8fe5b943641ec92c4496843189d36/numseq_nextScores%20ipynb%202578dc5c770641f4bcb2045281d9b44a.md) 
+    [https://github.com/neelnanda-io/TransformerLens/blob/main/transformer_lens/utils.py](https://github.com/neelnanda-io/TransformerLens/blob/main/transformer_lens/utils.py)
     
-- ⚠️ gpt2_Neuron2Graph.ipynb
+- try different dataset size batches for ablation
+
+Circuit Functionality
+
+- Find attnpat + OV scores of heads found from [manual adding and checking perf](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
+    - [https://colab.research.google.com/drive/16b8SwFckyC7Gv3RPUX8mme_Y8dfw0o1g](https://colab.research.google.com/drive/16b8SwFckyC7Gv3RPUX8mme_Y8dfw0o1g)
+- the induction patterns are irregular; attneds n-3, then n-7 instead of n-6
+- OV scores of early layer heads (1.5, 4.4)
+- how to tell if a head is inh or boost another? name movers caused pos logit diff, while s inh caused neg logit diff
+    - so dont just measure change in logit diff, but pos or neg on heatmap. Read IOI
+- [Information movement using corruption on diff tokens/positions](https://www.lesswrong.com/posts/u6KXXmKFbXfWzoAXn/a-circuit-for-python-docstrings-in-a-4-layer-attention-only#Patching_experiments)
+    - Corrupt “Adam is 1…” mean ablation using repeated seqs
+- The corruption type used in auto ablation and path patching tells the functionality
     
-    [https://colab.research.google.com/drive/1Vzs-gH1vM1xSk8JcRjM2HF_Zm7XHJdWA#scrollTo=gqUTXwB32Fbo](https://colab.research.google.com/drive/1Vzs-gH1vM1xSk8JcRjM2HF_Zm7XHJdWA#scrollTo=gqUTXwB32Fbo)
+    eg) If a head influences an induction head (find this via path patching / iterative pruning via ablation), that head may be a prev token head (induction requires prev token head)
     
-    STUCK: can’t scrape neuron activations due to empty list. which (layer, neuron) is empty?
-    
-- ✅ [Find more “next” heads](Expm%20Results%208de8fe5b943641ec92c4496843189d36/numseq_nextScores%20ipynb%202578dc5c770641f4bcb2045281d9b44a.md)
-- TBC- Read reviews of IOI for ICLR: [https://openreview.net/forum?id=NpsVSN6o4ul](https://openreview.net/forum?id=NpsVSN6o4ul)
-- ✅ Package natbib Warning: Citation `geva2020transformer' on page 1 undefined on input line 4.
-    
-    \bibliography{bibliography.bib}
-    % \bibliographystyle{bibliography.bib}
-    \bibliographystyle{plainnat}
-    
-    # bibliographystyle is required else cits are ?
-    
-    - what is plainnat
-        
-        The `plainnat` bibliography style is one of the styles provided for use with the `natbib` package in LaTeX for rendering bibliographies. The `natbib` package allows you to format your citations and reference list with a more flexible interface than LaTeX's basic `cite` mechanism, supporting both numerical and author-year citation styles.
-        
-        The `plainnat` style is an extension of the standard `plain` style that comes with LaTeX. Like `plain`, `plainnat` lists references alphabetically by authors' last names, but it also supports the additional citation commands provided by `natbib`, such as `\\citep` and `\\citet`.
-        
-        Here's a simple example to demonstrate how `plainnat` might be used:
-        
-        Your LaTeX document might have a preamble that looks like:
-        
-        ```latex
-        \\documentclass{article}
-        \\usepackage{natbib}
-        \\bibliographystyle{plainnat}
-        
-        ```
-        
-        Then, in the body of your document, you could use various `natbib` citation commands:
-        
-        ```latex
-        \\begin{document}
-        
-        According to some research \\citep{Smith2000}, we find that...
-        The result is shown by \\citet{Jones1999} to be...
-        
-        \\bibliography{mybibfile} % Replace "mybibfile" with the name of your .bib file, without the extension
-        \\end{document}
-        
-        ```
-        
-        In your `.bib` file (`mybibfile.bib`), you would have entries like:
-        
-        ```
-        @article{Smith2000,
-          author  = {Smith, John},
-          title   = {A Study on Something Interesting},
-          journal = {Journal of Interesting Studies},
-          year    = {2000},
-          volume  = {1},
-          pages   = {1--10},
-        }
-        
-        @article{Jones1999,
-          author  = {Jones, Jane},
-          title   = {Another Study},
-          journal = {Another Journal},
-          year    = {1999},
-          volume  = {2},
-          pages   = {11--20},
-        }
-        
-        ```
-        
-        After compiling the document (LaTeX -> BibTeX -> LaTeX -> LaTeX), the references would appear at the end of the document, formatted according to the `plainnat` style.
-        
-        Remember that `plainnat` is one of several pre-defined styles you could use with `natbib`. Others include `abbrvnat` and `unsrtnat`, each with its own rules for formatting citations and reference lists.
-        
-    - Instead of plainnat, how can I turn the inline citations into numbers?
-        
-        If you want your inline citations to appear as numbers, you can switch from an author-year style to a numerical citation style. One commonly used style for numerical citations is `unsrt` or its `natbib`-compatible version `unsrtnat`.
-        
-        To use numerical citations, you would adjust your LaTeX document preamble like this:
-        
-        ```latex
-        \\documentclass{article}
-        \\usepackage[numbers]{natbib}  % Add the 'numbers' option
-        \\bibliographystyle{unsrtnat} % Use unsrtnat instead of plainnat
-        
-        ```
-        
-        Or if you're not using `natbib`:
-        
-        ```latex
-        \\documentclass{article}
-        \\bibliographystyle{unsrt} % Use unsrt for plain LaTeX
-        
-        ```
-        
-        In the body of your document, you can use `\\cite` or `\\citep` for citations, and they will appear as numbers.
-        
-        ```latex
-        \\begin{document}
-        
-        According to some research \\cite{Smith2000}, we find that...
-        The result is shown by another study \\cite{Jones1999}...
-        
-        \\bibliography{mybibfile} % Replace "mybibfile" with the name of your .bib file, without the extension
-        \\end{document}
-        
-        ```
-        
-        Your `.bib` file would remain the same. After compiling your document with LaTeX -> BibTeX -> LaTeX -> LaTeX, the inline citations should appear as numbers, and the references at the end of your document will be numbered as well.
-        
-        The `unsrt` and `unsrtnat` styles also sort the references in the order in which they are cited in the text, rather than alphabetically or by year. This is the meaning of "unsrt", which stands for "unsorted".
-        
-    
-    \bibliography{bibliography.bib}
-    \bibliographystyle{unsrt}
-    
-    However, ICLR doesn’t use numbers. It uses (author, year). But plainnat makes it into “author (year)”.
-    
-    - I want the citations to use (author, year). But plainnat makes it into “author (year)”.
-        
-        The `natbib` package provides different citation commands that allow you to manipulate the appearance of citations. However, if you find that the `plainnat` style doesn't format the citations exactly the way you want (e.g., "author (year)" instead of "(author, year)"), you might have to use additional LaTeX commands to customize the output or even consider creating a custom `.bst` file.
-        
-        That being said, you can manually adjust the output using `natbib`'s flexible citation commands:
-        
-        - Use `\\citep` for parenthetical citations, which usually appear as "(Author, Year)".
-        - Use `\\citet` for textual citations, which usually appear as "Author (Year)".
-        
-        ### Example with plainnat:
-        
-        Here is an example of how you might use these in a LaTeX document:
-        
-        ```latex
-        \\documentclass{article}
-        \\usepackage{natbib}
-        \\bibliographystyle{plainnat}
-        
-        \\begin{document}
-        
-        % This will output as: (Smith, 2000)
-        Some text that needs a citation \\citep{Smith2000}.
-        
-        % This will output as: Smith (2000)
-        As \\citet{Smith2000} have shown...
-        
-        \\bibliography{your_references} % your_references.bib is your .bib file
-        \\end{document}
-        
-        ```
-        
-        ### Force Parenthetical Style:
-        
-        If `plainnat` doesn't do what you want and you need to force a parenthetical style throughout, you could redefine the `\\citet` command to act like `\\citep` as follows (though be cautious as this is a bit of a hack):
-        
-        ```latex
-        \\documentclass{article}
-        \\usepackage{natbib}
-        \\bibliographystyle{plainnat}
-        
-        \\renewcommand{\\citet}[1]{\\citep{#1}}
-        
-        \\begin{document}
-        
-        % Both of these will output as: (Smith, 2000)
-        Some text that needs a citation \\citep{Smith2000}.
-        As \\citet{Smith2000} have shown...
-        
-        \\bibliography{your_references}
-        \\end{document}
-        
-        ```
-        
-        These are some workarounds, but if you find yourself having to do this frequently, you might want to look into creating a custom `.bst` file that defines the citation style exactly as you want. This is more involved and requires knowledge of the BibTeX stack language.
-        
-    
-    SOLN: \citep{} w/ plainnat
-    
-    Use \cite when using the authors as a subject (eg. Xiao et al (2020) claim….) but use \citep when not doing so (eg. This was found in previous papers (Lin et al., 2020; Ben…)
-    
-    See: [https://openreview.net/pdf?id=3dnrKbeVatv](https://openreview.net/pdf?id=3dnrKbeVatv)
-    
-- ✅ figures not in section
-    
-    \begin{figure}[H]
-    % \begin{figure}[ht]
-    
-    H forces it to be in section, but causes large white spaces. ht is better to reduce white space, but it may not be in same section.
-    
-- TCD- study: [Towards Automated Circuit Discovery for Mechanistic Interpretability](https://www.notion.so/Towards-Automated-Circuit-Discovery-for-Mechanistic-Interpretability-e22fd1e2478347ea9686424d6080b5b7?pvs=21)
-- (FIXED)⚠️ [Early head validation code](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20head%20validation%20code%20be7fc9bbf047474388f55bbe8f04eb17.md)
-- ⚠️ [SVD interpretable dirs](Expm%20Results%208de8fe5b943641ec92c4496843189d36/SVD%20interpretable%20dirs%2083533467cd334293af5913675fdeee97.md)
-- TBC- [Outline Plan](Outline%20Plan%203935b02babc84c70a2be3545257d9b3e.md)
+    - Swap at different positions
+    - Or random num at a pos
+- check which heads’ copy scores are specific for numbers, not just “any type”. use multiple input types to those heads. Note that 7.10, 7.11 and 8.11 aren’t “name mover heads”, though 8.10 was a “s-inh” head
+    - IOI small circuit (not found by ACDC) only got 87% score of original logit diff in ‘faithfulness’
+
+<<<after nov 1st
+
+- Early and mid head output scores: Try copy scores on “similar token” early heads to show they’re not looking at pos, but token type. early and late have their own OV sections. a summary of all early to late can be put in appendix
+- test irregular lengths to make sure not just n-2 pos head, but ‘sim type’
+    - what makes each head diff from other heads than just “attends to type”?
+- also look for ‘greater-than’ output scores, etc. which means ANY, not just +1.
+
+<<<optional:
+
+- try other fns: [https://github.com/alan-cooney/CircuitsVis/blob/main/python/Demonstration.ipynb](https://github.com/alan-cooney/CircuitsVis/blob/main/python/Demonstration.ipynb)
+- SVD as perc of (l,h,dir), NOT (l,h). this is bc each dir has its own feature, not (l,h)
+- In svd, don’t just search for “digit” dirs, but “next” or “change” dirs
+- logit lens is supposed to be for all tokens (a table); prev, we only used one col (last token)
+- logit lens of which component?
+- https://github.com/AlignmentResearch/tuned-lens
+- MLP Probing, superposition
+
+Shared Circuits for Similar Tasks
+
+- Test backw method on greater-than task
+    - Sum probs of greater than vs less than
+    - start from greater-than and add heads until get to increasing by 1
+        - Perhaps more heads are needing for more “specific”; try to vary by how specific the range is. Also by seq length (greater-than tasks use “one” sequence)
+            - how does it change the probability of tokens further away from seq?
+        - How can greater-than not have heads that are recognizing words other than the digit? Surely, it must process the other words, too. Note this in “future work”?
+- is less-than a subcircuit of decreasing seq?
+    - Use incontext learning to get less than
+- Get circuits with lower performance (to make smaller) to compare and find sub-circuits with greater-than. At what threshold does it lose shared sub-circuits with greater-than?
+- Ablate the greater-than sub-circuit in the sequence completion (just delete from “keep circuits” head list). Run tokens through it.
+    - which parts of the circuit are the most impt, for what fns? based on logit diff recovery % when ablating them.
+- Compare overlap to non-numerical circuits
+    - IOI does not use 9.1 nor 6.9; it uses 9.6 (fig 17 is bigger; p27)
+    - docstring doesn’t use GPT-2
+    - pronoun (fig 25) also doesn’t use 9.1
+
+<<< optional:
+
+- Run pruning algorithm on medium, then use embedding method to match with small
+
+Writing
+
+- consider div by technq again (attn pattern, OV score, QK-OV corr) and subsubsub (bold) for early-mid-late in each technq section. this is better if the technqs compare e-m-l to each other; but if each is sep, consider e-m-l as more supersection instead
+- prev scores
+- Comment out background details, focus on parts less familiar to reviewers
+- Patterns that GPT learns from data? Eg) war lasts 20 years
+- Given that full circuit, we still refer to a subgraph of any size as a circuit.   But we do want to look for minimal circuits, smaller circuits
+- [https://info.arxiv.org/help/submit/index.html](https://info.arxiv.org/help/submit/index.html)
+- [https://info.arxiv.org/help/availability.html](https://info.arxiv.org/help/availability.html)
+
+Predicted criticism:
+
+- search for backup, negative heads
+
+---
+
+[Done](Project%20Planning%203798a71e7c5d4a888cad9a7d25a1275c/Done%20b715c92198314529880806d9f206803d.md)
+
+if a component actv for 2 very diff types of tokens (eg. names and numbers), what’s the cosine sim between names and numbers? what about along certain feature vecs?
 
 ### Future Work Ideas / Postponed
 
 Find common circuits for more numerical tasks (not just seq cont)
 
-- email authors of ‘greater-than’ paper
+- (path patching cod- skip z is z vector output for MLPs?)
+- Validate early heads again- what are they really doing?
+- email/msg to ask if the classification of “two types of methods” are valid
+    
+    We characterize circuit discovery methods into two types: 1) Circuit connectivity methods, and 2) Component functionality methods. The first type includes direct logit attribution patching, activation patching, path patching, and ACDC, which are types of causal mediation analysis that can be done on various component levels (residual stream layer, MLP, neuron, etc.). The second type includes attention pattern analysis, logit lens, OV-type scores (eg. copy scores), and using PCA and SVD to find interpretable directions. Note that this characterization is a generalized heuristic and not a strict classification, and observations from one "connectivity" method type may be used to obtain insights about "functionality', and vice versa.
+    
+- msg PQ for tips on grokking / analyze model training
+- email authors of ‘greater-than’ paper about code + questions
+    - What other circuits were discovered for these tasks?
+    - Is there a list of tasks? (see appendix)
 - Use ACDC to find common graphs for greater-than & less-than, and other numerical circuits (do they all use 9.1 for a similar purpose?)
     - email authors for questions
 - new operations instead of just “next”, modular addition circuits
@@ -229,6 +160,13 @@ Find common circuits for more numerical tasks (not just seq cont)
         
 - [https://arena-ch1-transformers.streamlit.app/%5B1.4%5D_Balanced_Bracket_Classifier](https://arena-ch1-transformers.streamlit.app/%5B1.4%5D_Balanced_Bracket_Classifier)
     - may have something to do with counting. even subject can do ‘counting’. But is counting and number recog the same? perhaps if a meta-model recog them to be the same in a model, that meta-model will develop a link between them
+- Make summary video
+
+Ablation
+
+- Attempt to get less-than circuit diagram
+
+- Ask chatgpt about forward pass after backwards (double simulation? filter local, then build global. test graph props, eg. weis-l test, and also algtop props)
 
 ---
 
@@ -329,6 +267,7 @@ Find common circuits for more numerical tasks (not just seq cont)
 
 ---
 
+- instead of ablating, just remove non-circuit nodes and keep the circuit. but given circuits are matrices, isn't this the same as zero ablating?
 - Understand inputs + outputs of N2G nb
     
     [Neuron2Graph.ipynb](https://www.notion.so/Neuron2Graph-ipynb-1194a0bf97744b3ab86b19fc9d0bbd06?pvs=21) 
@@ -337,7 +276,6 @@ Find common circuits for more numerical tasks (not just seq cont)
     - use neuron2graph to find more number neurons
 - [NOTE: these 'random circuits' may be disconnected; what about testing against "connected" random circuits?]
 - read othellogpt world model: [https://www.alignmentforum.org/posts/nmxzr2zsjNtjaHh7x/actually-othello-gpt-has-a-linear-emergent-world](https://www.alignmentforum.org/posts/nmxzr2zsjNtjaHh7x/actually-othello-gpt-has-a-linear-emergent-world)
-- to get more ideas for hypothesizing how circuits may work, read: [https://www.lesswrong.com/posts/u6KXXmKFbXfWzoAXn/a-circuit-for-python-docstrings-in-a-4-layer-attention-only](https://www.lesswrong.com/posts/u6KXXmKFbXfWzoAXn/a-circuit-for-python-docstrings-in-a-4-layer-attention-only)
 - digits has far more samples than others and thus its statistics may be 'more accurate'; other should have more samples. figure out new input types that have more possible samples
 - copy scores for other important components
 - figure out how to deal with multi-token words
@@ -352,3 +290,19 @@ Find common circuits for more numerical tasks (not just seq cont)
 - compare MLPs between analogous seqs using N2G
 - interpolation of predicted words when changing part of circuit
 - feed info about circuits into chatgpt and talk to it
+
+---
+
+Turging weight to 0 removes ndoe, while 0 activwrion doesn't and is zero ablating
+
+No, both do the same thing of giving 0 output to next. Actually not really, 0 Wright on one edge doesn't mean 0 on all, while 0 actv does
+
+[http://blog.ezyang.com/2019/05/pytorch-internals/](http://blog.ezyang.com/2019/05/pytorch-internals/)
+
+Examine and compare
+
+---
+
+**********Previous To-Do list categories**********
+
+[23 10 9 - 23 10 15](Project%20Planning%203798a71e7c5d4a888cad9a7d25a1275c/23%2010%209%20-%2023%2010%2015%20546cb16c31664f68a2eb976d8a60e033.md)

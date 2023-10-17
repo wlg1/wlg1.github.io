@@ -1,0 +1,1 @@
+# G- already sorted → use binary search
