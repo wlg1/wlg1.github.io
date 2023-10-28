@@ -1,0 +1,3 @@
+# Why is pure digits circuit bigger than among words
+
+Why is pure digits circuit bigger than among words? perhaps pure digits somehow “spreads out” the signals to more heads, while digits among words concentrates the signals to certain heads specialized to detecting sequence members such as numbers. Then it’s harder to say what’s going on with pure digits other than it uses the next head on the last two members.

@@ -14,6 +14,8 @@ Connectivity
 
 [Numwords path patch](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Numwords%20path%20patch%20324547790e19453c9c0dc07488a9b67b.md)
 
+[Manual path patch](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Manual%20path%20patch%208d30748bcf9448bf9a0b76ce78ed1dfb.md)
+
 Attention Head Functionality
 
 [numseq_nextScores.ipynb](Expm%20Results%208de8fe5b943641ec92c4496843189d36/numseq_nextScores%20ipynb%202578dc5c770641f4bcb2045281d9b44a.md)
@@ -21,6 +23,8 @@ Attention Head Functionality
 [Early head validation code](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20head%20validation%20code%20be7fc9bbf047474388f55bbe8f04eb17.md)
 
 [Early Head Analysis](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
+
+[logit lens decr](Expm%20Results%208de8fe5b943641ec92c4496843189d36/logit%20lens%20decr%2080b75441653c4fed99eb1f3919e37dfb.md)
 
 MLP Functionality
 
@@ -31,3 +35,9 @@ Holistic Circuit Causality
 [Mean Resampling Ablation](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Mean%20Resampling%20Ablation%20d7fd15fac3324baa96d82bada82340a1.md)
 
 [Months circuit](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Months%20circuit%20765ea1869818426298c439544a337efc.md)
+
+[QK ablation](Expm%20Results%208de8fe5b943641ec92c4496843189d36/QK%20ablation%20f9f1b2ff2d944674a98e5b872acd5009.md)
+
+[amongWords- QK ablation](Expm%20Results%208de8fe5b943641ec92c4496843189d36/amongWords-%20QK%20ablation%20a6648bdac8b14573880294c84ead3474.md)
+
+[repeatDigits_autoAblation](Expm%20Results%208de8fe5b943641ec92c4496843189d36/repeatDigits_autoAblation%206d3119d544f24f938eb4abe0016e9503.md)

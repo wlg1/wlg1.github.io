@@ -77,9 +77,3 @@ cleaned up copy: [multiAdamis1_newAttnPat_draftv2](https://colab.research.google
 the induction patterns are irregular; attneds n-3, then n-7 instead of n-6
 
 Why numdetect heads have non-black first col? Dupl heads have black first col? (not always, such as 0.10)
-
----
-
-**[Manual rmv from work backw circ](https://colab.research.google.com/drive/1CHRn-AMko9RNrl1bqiCwB7DS-rz1CoBP#scrollTo=0zheHQmPw2Gk&line=1&uniqifier=1)**
-
-If rmv head, is corr answer still in 1st place; if not, what does it fall to?

@@ -11,7 +11,7 @@
     
     AISTATS- oct 14th (variety?)
     
-    *EACL - oct 15th (NLP): [https://2024.eacl.org/](https://2024.eacl.org/)
+    EACL - oct 15th (NLP): [https://2024.eacl.org/](https://2024.eacl.org/)
     
     [https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_computationallinguistics](https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_computationallinguistics)
     
@@ -34,6 +34,14 @@
     [https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_computationallinguistics](https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_computationallinguistics)
     
     3rd
+    
+    *ACL - feb 15 2024
+    
+    [https://www.aclweb.org/portal/content/submission-dates-and-process-eaclnaacl-and-acl-2024](https://www.aclweb.org/portal/content/submission-dates-and-process-eaclnaacl-and-acl-2024)
+    
+    *ICML: Jan 26th 2024
+    
+    *EACL workshop: Dec 11th
     
     [https://aclrollingreview.org/dates](https://aclrollingreview.org/dates)
     
@@ -72,11 +80,13 @@
 
 Brainstorming Notes
 
+[_Brainstorm plans (chrono)](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4.md)
+
 [Outline Plan](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Outline%20Plan%203935b02babc84c70a2be3545257d9b3e.md)
 
 [Main Aim of Paper](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Main%20Aim%20of%20Paper%20e8f679aa680247cfa76b19edb04c5233.md)
 
-[Brainstorm](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Brainstorm%207f2162094b5d412187f4af9137210dc7.md)
+[Brainstorm- proj start](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Brainstorm-%20proj%20start%207f2162094b5d412187f4af9137210dc7.md)
 
 [Hypotheses to Test](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Hypotheses%20to%20Test%2092b4e89245a142e89267edd9880ffa43.md)
 
@@ -87,6 +97,14 @@ Brainstorming Notes
 [Findings](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Findings%20dd87002c715d49c8a5f41f3a3d43be82.md)
 
 [Future work](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Future%20work%20a8d30bf9c84546da862cb2a95da71dfc.md)
+
+[New Novel Contributions](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/New%20Novel%20Contributions%207ec236f64f394e9cb03b32ca0fbf319b.md)
+
+[Multiple Matches Algo](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Multiple%20Matches%20Algo%203d83df8af72c4233b51d6c60cd022f8b.md)
+
+[format circ diagrams](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/format%20circ%20diagrams%206c4906c1a09f4df399d376dee58af27b.md)
+
+[Why is pure digits circuit bigger than among words](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Why%20is%20pure%20digits%20circuit%20bigger%20than%20among%20words%2094916895ee7c464780702d5720045b50.md)
 
 Writeup
 

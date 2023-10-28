@@ -81,3 +81,9 @@ Previous Apart Projects
 https://docs.google.com/document/d/1p-ggQV3vVWIQuCccXEl1fD0thJOgXimlbBpGk6FI32I/edit#heading=h.m7pqjq9qci8f
 
 [https://www.infoq.com/news/2023/02/deepmind-tracr/](https://www.infoq.com/news/2023/02/deepmind-tracr/)
+
+---
+
+tools
+
+[https://zohaib.me/debugging-in-google-collab-notebook/](https://zohaib.me/debugging-in-google-collab-notebook/)

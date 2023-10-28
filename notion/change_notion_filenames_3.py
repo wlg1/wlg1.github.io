@@ -61,5 +61,3 @@ for fn in folder_names:
     if os.path.exists(f"C:\\Users\\mikel\\Downloads\\{fn}"):
         top_dir = f"C:\\Users\\mikel\\Downloads\\{fn}"
         rename_files_and_folders(top_dir)
-
-# https://chat.openai.com/c/0179ee90-5a81-4bac-85bc-39a8b04c27ff

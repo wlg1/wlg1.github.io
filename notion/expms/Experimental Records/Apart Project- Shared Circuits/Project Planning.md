@@ -1,110 +1,154 @@
 # Project Planning
 
+[Done](Project%20Planning%203798a71e7c5d4a888cad9a7d25a1275c/Done%20b715c92198314529880806d9f206803d.md)
+
+---
+
 ### Working on
 
 Circuit Connectivity
 
-- [Play around with manually sel heads for **incr digits circuit**, and check their func](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
-    - see if removal coincides with importance on attnpat; record what performance difference each of the circuit’s heads makes. Are numdetect heads like 4.4 crucial? Are there backups?
-        - May be worthless by themselves, but work in conjunction with other heads?
-        - This gets 75% perf. Note that this is diff from this circ: [https://colab.research.google.com/drive/1CHRn-AMko9RNrl1bqiCwB7DS-rz1CoBP#scrollTo=78x6pmqkFnrP&line=1&uniqifier=1](https://colab.research.google.com/drive/1CHRn-AMko9RNrl1bqiCwB7DS-rz1CoBP#scrollTo=78x6pmqkFnrP&line=1&uniqifier=1)
-            
-            That has nodes from L4 for some reason
-            
-    - **[iter patch from manual sel](https://colab.research.google.com/drive/1onREXMNmc9ks0xpwDslUX2pdG0RSYtWS#scrollTo=ratQ65XwBdFx&line=1&uniqifier=1)**
-        - re-run ablation on circ found from path patch (that adds nodes)
-        - also get circ which only adds edges; doesn’t add node if not in input to fn
-- See how many further heads can be removed to achieve various levels of performance (70%, 80%, etc.).
-    - Top 10 most impt when rmv is inacc bc performance dependent on other heads?
-    - Plot perf on x-axis and # heads on y-axis? Table showing what heads differ with each % being row, and cols of Same and Diff from 97%
-    - (90 to 80%): However, there are heads not found from before, such as heads 3.2, 4.6, 5.0, 5.11, 6.8, and 8.6. This implies that the order we remove heads may matter. Thus we also try different orders to remove heads, and find how frequently heads appear in the final circuit over all orders. [only matters if don’t find minimal based on thres]
+Circuit Connectivity- better iterative algos for all tasks
+
+- ✅ Do fwd backw and bf both converge to same circ? Prob not bc combos matter so order matters. Find differ between them.
+    - ✅ [incr digits, randAll:](https://colab.research.google.com/drive/12HF5UCvMERizkhOiYJKDziahgVq_3KD9#scrollTo=ZXouisDpS4qb) no, but they’re very similar for most impt heads. Their scores are both ~97.1%. In fact, getting their intersection gives a circuit of 82%, which is only a 15% drop.
         
-        Strange that 25% iter pruning keeps nodes that are not from 2%
+        we could claim that these are “alternative circuits” such that what’s in fb but not in bf is an “alternative path”, akin to backup heads
         
+        make a diagram of this for red, blue, purple
+        
+        We’ll just choose to use fb_3.
+        
+- path patching threshold: double check that the final head pruned via path patching still has same score via ablation
+    - Do head have to conn only to adjacent layer? Review meaning of path patching
+    - Do not remove heads without outgoing. see fig 17 in ACDC; it keeps heads without incoming or outgoing. though all heads are conn. if you see heads without any nodes, you should change the threshold
+        - justify this in paper (like ACDC, we do not bc…)
+    - the threshold itself is meaningless. it should be like p-value: what percentage of edges are above it? Eg) keep only edges in the top 50% of distribution
+        - the reason is 50% (high) is because…
+    - [numseq_IPP_randAll.ipynb](https://colab.research.google.com/drive/1JFcEjNe0X4G1SrE52df4RFnP1bEza-re#scrollTo=QZ0QiQPgqw4a)
+- redo all circuits
+    - list tasks and try all
+        - Tasks:
+            1. incr digits
+                1. incr digits among words
+            2. incr numwords
+            3. incr months
+            4. greater-than
+            5. decr digits (and variations of 1a to 3)
+            6. less-than
+            
+            <<After nov 1st: (only mention in paper appendix before nov1)
+            
+            1. plus one induction 
+            2. alphabet
+            3. repeat digits 
+                1. among words
+                2. repeat letters / words
+            4. 2 4 6 vs 2 4 8 in larger models
+            5. corr: 1234 vs 1233. 1233 has a circuit too for ‘repeat’
+        - use larger or more comparable datasets
+            
+            overlapping vs non-overlapping datasets (req. overlapping for months!)
+            
+        - with same thresholds (may not be needed)
+
+Circuit Connectivity- MLPs
+
 - Ablate MLPs, neurons, and res stream outputs. See actv patching (EA, An)
-    - What heads do MLPs rely on?
-- Convert ‘mean ablation’ table to having circuits for each task found by ablation on each row
-- ablate by seq pos (found by attention pattern analysis)
+    - What heads do MLPs rely on? path patch head to MLPs
     
-    Change both of these (dict key is head type): **is seq pos q or k?**
+- Circuit Connectivity-  postponed
     
-    - CIRCUIT = {"number mover": lst,
-        
-        SEQ_POS_TO_KEEP = {"number mover": "end",
-        
-- ablate by qkv
-- ISSUE- a circuit has source nodes that are not part of the first layer?
-    - As seen in IOI/ACDC diagram, you CAN have heads w/ no incoming edges that are in later layers, as long as they have an edge from an input token.
-- use different colors (fill and outline) to denote common nodes and node types. re-order so prev layer heads are further on top
-
-<<<after nov 1st
-
-- Mean ablation using other corruption types (repeatAll, rand some, etc)
-- Try alt measures KL div
-    - Check if large logit diff coincides with a true difference in correct vs incorrect token logits.
-        
-        `logits_to_ave_logit_diff_2`
-        
-        - Debug why mean resampling sometimes gets high scores. Logit diff gets bigger upon removal…?
-            - This is explained by “ACDC” paper; so they use KL div instead
-- among words circuits- what’s different?
-- decreasing months seq
-
-<<<optional:
-
-- Ask slack about difference b/w transformerLens and huggingface for token prediction. first input code to chatgpt to look for difference?
+    <<<after nov 1st
     
-    [https://github.com/neelnanda-io/TransformerLens/blob/main/transformer_lens/utils.py](https://github.com/neelnanda-io/TransformerLens/blob/main/transformer_lens/utils.py)
+    - See how many further heads can be removed to achieve various levels of performance (70%, 80%, etc.).
+        - Get circuits with lower performance (to make smaller) to compare and find sub-circuits with greater-than. At what threshold does it lose shared sub-circuits with greater-than?
+        - Count the number of heads for 97% perf, Ethres 0.002 after get rid of no outgoing E
+            - what is the true perf of circ after get rid of no outgoing E?
+        - Venn diagrams for each lvl of performance
+        - Top 10 most impt when rmv is inacc bc performance dependent on other heads?
+        - Plot perf on x-axis and # heads on y-axis? Table showing what heads differ with each % being row, and cols of Same and Diff from 97%
+        - (90 to 80%): However, there are heads not found from before, such as heads 3.2, 4.6, 5.0, 5.11, 6.8, and 8.6. This implies that the order we remove heads may matter. Thus we also try different orders to remove heads, and find how frequently heads appear in the final circuit over all orders. [only matters if don’t find minimal based on thres]
+        - Try random order
+        - Srange that 25% iter pruning keeps nodes that are not from 2%. Debug by tracking their perf diff in the two runs.
+    - re-order circuit diagrams so prev layer heads are further on top.
+        - make a table format of layer top bot, head# left right
+    - check MLPs for decr circ
+        - synergistic of MLP9 with 8.8? get logits for corr answer (not just top) after unembed each component and MLP component
+            - what does tuned lens do?
+    - how do we track the signal along a path? decr seems to differ how it computes based on seq len, check which components differ (4 to 8 len) but also on which members are in it. get logit lens “when it changes to get corr, if it ever does”, for all numbers 100 to k+1 for certain len k. get proportion
+    - diff circuits for diff seq lengths. change seq circ to another seq circ
+    - autoablate: mix in 1 dataset diff len random words (see IOI templates)
+        - take avg of multiple templates of ‘random words’ in between digits seq. make sure, first, that gpt2-small can recognize these
+        - was each template replaced by any other ABC, or just its own ABC?
+    - why is pure digits circuit bigger than among words and can’t ablate by pos?
+        
+        How many extra heads are needed to deal with the noise? Shouldn’t be any more because attention works in parallel in the query weight matrix.
+        
+        If this is the case, why does among words need LESS heads? Shouldn’t it be the same amount?
+        
+        similar to among words: number multiple choice task. among words and IOI and color multiple choice all involve searching for and copying (or nexting). 
+        
+    - not all heads (see IOI) obtain output “from the embedding layer”; name movers in fig don’t. patch from MLP0 to them to check this.
+        - [https://arena-ch1-transformers.streamlit.app/[1.3]_Indirect_Object_Identification](https://arena-ch1-transformers.streamlit.app/%5B1.3%5D_Indirect_Object_Identification)
+        - perhaps just all nodes without incoming nodes auto have edge to ‘embed’? same with logits. check in ACDC figs
+            - NOTE: this is wrong. Fig 17 shows 0.10 not having edge from embed
+    - Use fn results to construct QK diagram in visio stating which queries the heads attend from, and which keys they attend to.
+    - automate ablate seq pos by brute force. visualize scores?
+        - Does ACDC automate ablate by seq pos?
+    - automate by filtering via attention pattern first
+    - patch by qkv; [see explr nb](https://colab.research.google.com/drive/1swp35sxN_1zNuIW4i4JyhWeY-YUlmUkk#scrollTo=JAbsTRepIAic)
     
-- try different dataset size batches for ablation
+    <<<after nov 5th
+    
+    - what are similar “polysemantic heads” or neurons that are the same but used in VERY DIFFERENT tasks? that is, “polysemantic sub-circuits”.
+    - Try alt measures KL div
+        - Check if large logit diff coincides with a true difference in correct vs incorrect token logits.
+            
+            `logits_to_ave_logit_diff_2`
+            
+            - Debug why mean resampling sometimes gets high scores. Logit diff gets bigger upon removal…?
+                - This is explained by “ACDC” paper; so they use KL div instead
+    - decreasing months seq
+    
+    <<<optional:
+    
+    - Causal trace by entire subcircuit
+    - Simulated annealing search and choose smallest circuit with highest perf
+    - add input and logit nodes to circuit diagrams
+    - Measure the "amount shared". Make a figure which highlights what is shared between the sequence types.
+    - Ask slack about difference b/w transformerLens and huggingface for token prediction. first input code to chatgpt to look for difference?
+        
+        [https://github.com/neelnanda-io/TransformerLens/blob/main/transformer_lens/utils.py](https://github.com/neelnanda-io/TransformerLens/blob/main/transformer_lens/utils.py)
+        
+    - try different dataset size batches for ablation
+    - 2 4 6 8; fibonacci etc on, large, pythia, llama, etc.
+    - detect the sequence out of multiple possible numbers. toy model- is there a sequence?
+
+---
 
 Circuit Functionality
 
-- Find attnpat + OV scores of heads found from [manual adding and checking perf](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
-    - [https://colab.research.google.com/drive/16b8SwFckyC7Gv3RPUX8mme_Y8dfw0o1g](https://colab.research.google.com/drive/16b8SwFckyC7Gv3RPUX8mme_Y8dfw0o1g)
-- the induction patterns are irregular; attneds n-3, then n-7 instead of n-6
-- OV scores of early layer heads (1.5, 4.4)
-- how to tell if a head is inh or boost another? name movers caused pos logit diff, while s inh caused neg logit diff
-    - so dont just measure change in logit diff, but pos or neg on heatmap. Read IOI
-- [Information movement using corruption on diff tokens/positions](https://www.lesswrong.com/posts/u6KXXmKFbXfWzoAXn/a-circuit-for-python-docstrings-in-a-4-layer-attention-only#Patching_experiments)
-    - Corrupt “Adam is 1…” mean ablation using repeated seqs
-- The corruption type used in auto ablation and path patching tells the functionality
-    
-    eg) If a head influences an induction head (find this via path patching / iterative pruning via ablation), that head may be a prev token head (induction requires prev token head)
-    
-    - Swap at different positions
-    - Or random num at a pos
-- check which heads’ copy scores are specific for numbers, not just “any type”. use multiple input types to those heads. Note that 7.10, 7.11 and 8.11 aren’t “name mover heads”, though 8.10 was a “s-inh” head
-    - IOI small circuit (not found by ACDC) only got 87% score of original logit diff in ‘faithfulness’
+Circuit Functionality- Sims + Diffs
 
-<<<after nov 1st
-
-- Early and mid head output scores: Try copy scores on “similar token” early heads to show they’re not looking at pos, but token type. early and late have their own OV sections. a summary of all early to late can be put in appendix
-- test irregular lengths to make sure not just n-2 pos head, but ‘sim type’
-    - what makes each head diff from other heads than just “attends to type”?
-- also look for ‘greater-than’ output scores, etc. which means ANY, not just +1.
-
-<<<optional:
-
-- try other fns: [https://github.com/alan-cooney/CircuitsVis/blob/main/python/Demonstration.ipynb](https://github.com/alan-cooney/CircuitsVis/blob/main/python/Demonstration.ipynb)
-- SVD as perc of (l,h,dir), NOT (l,h). this is bc each dir has its own feature, not (l,h)
-- In svd, don’t just search for “digit” dirs, but “next” or “change” dirs
-- logit lens is supposed to be for all tokens (a table); prev, we only used one col (last token)
-- logit lens of which component?
-- https://github.com/AlignmentResearch/tuned-lens
-- MLP Probing, superposition
-
-Shared Circuits for Similar Tasks
-
+- look at the nodes/edges diff between each circuit and try to explain them
 - Test backw method on greater-than task
     - Sum probs of greater than vs less than
     - start from greater-than and add heads until get to increasing by 1
         - Perhaps more heads are needing for more “specific”; try to vary by how specific the range is. Also by seq length (greater-than tasks use “one” sequence)
             - how does it change the probability of tokens further away from seq?
         - How can greater-than not have heads that are recognizing words other than the digit? Surely, it must process the other words, too. Note this in “future work”?
+- Convert ‘mean ablation’ table to having circuits for each task found by ablation on each row
+- read “circuits re-use” for how they compared diff fns of components
+- try removing 9.5 in numwords and ablate
+- ~~how much do 6.9 and 8.11 add to increasing digits?~~
+- stare at similar circuits and see what’s sim/diff in them. look at conns + relate to head fns
+    - you don’t need to compare or explain all the differing heads; just the most impt ones. get importance score of each head after removing
+- Ablate on one circuit and check for analogous drop in prediction in another
+    - The ablation changes it in an analogous way based on what is predicted. Can we knockout the ability to predict next is we knockout 9.1? Are there backups?
+    - edit next to prev
 - is less-than a subcircuit of decreasing seq?
     - Use incontext learning to get less than
-- Get circuits with lower performance (to make smaller) to compare and find sub-circuits with greater-than. At what threshold does it lose shared sub-circuits with greater-than?
 - Ablate the greater-than sub-circuit in the sequence completion (just delete from “keep circuits” head list). Run tokens through it.
     - which parts of the circuit are the most impt, for what fns? based on logit diff recovery % when ablating them.
 - Compare overlap to non-numerical circuits
@@ -112,27 +156,97 @@ Shared Circuits for Similar Tasks
     - docstring doesn’t use GPT-2
     - pronoun (fig 25) also doesn’t use 9.1
 
-<<< optional:
-
-- Run pruning algorithm on medium, then use embedding method to match with small
+- Circuit Functionality-  postponed
+    
+    <<<after nov 1st
+    
+    - Put MLP0 embedding thru MLP
+    - [Information movement using corruption on diff tokens/positions](https://www.lesswrong.com/posts/u6KXXmKFbXfWzoAXn/a-circuit-for-python-docstrings-in-a-4-layer-attention-only#Patching_experiments)
+        
+        When clean patched with corrupted, red means “it got worse”? When corrupted patched with clean, blue means “It got better”???
+        
+        - [https://colab.research.google.com/drive/1swp35sxN_1zNuIW4i4JyhWeY-YUlmUkk#scrollTo=YzmdOdeJIAiY&line=20&uniqifier=1](https://colab.research.google.com/drive/1swp35sxN_1zNuIW4i4JyhWeY-YUlmUkk#scrollTo=YzmdOdeJIAiY&line=20&uniqifier=1)
+        - Corrupt “Adam is 1…” mean ablation using repeated seqs
+    - The corruption type used in auto ablation and path patching tells the functionality
+        
+        eg) If a head influences an induction head (find this via path patching / iterative pruning via ablation), that head may be a prev token head (induction requires prev token head)
+        
+        - Swap at different positions
+        - Or random num at a pos
+    - Move most of early heads to appendix if not that impt. Connect it with months, number words, etc. and relate why greater-than needs less early heads than incr digits.
+    - Find attnpat + OV scores of heads found from [manual adding and checking perf](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
+        - [https://colab.research.google.com/drive/16b8SwFckyC7Gv3RPUX8mme_Y8dfw0o1g](https://colab.research.google.com/drive/16b8SwFckyC7Gv3RPUX8mme_Y8dfw0o1g)
+    - record how induction is used differently in each circuit
+        
+        How induction circuits work differently as sub-circuits in not just similar but dissimilar tasks, and what non-shared components differentiate these circuits from one another; IOI and many others already have induction inherently as a sub-circuit.
+        
+    - the induction patterns are irregular; attneds n-3, then n-7 instead of n-6
+        - Try to reproduce ioi results on early
+    - OV scores of early layer heads (1.5, 4.4)
+    - loop through the output of OV unembeddings (just like SVD) and use GPT-4 to classify each (instead of just finding if copying or not). more than just top 5 tokens
+    - attn pat on months/words (put in appendix; state in main they had similar patterns)
+    - how to tell if a head is inh or boost another? name movers caused pos logit diff, while s inh caused neg logit diff
+        - so dont just measure change in logit diff, but pos or neg on heatmap. Read IOI
+    - check which heads’ copy scores are specific for numbers, not just “any type”. use multiple input types to those heads. Note that 7.10, 7.11 and 8.11 aren’t “name mover heads”, though 8.10 was a “s-inh” head
+        - IOI small circuit (not found by ACDC) only got 87% score of original logit diff in ‘faithfulness’
+    - bigger white line above eve in attn pat viz
+    - head 9.1 also has n-3 attn pat. OV scores when pass "is" to 9.1?
+    
+    <<<after nov 7th
+    
+    - attn pat and output scores on add2, mult2, for medium
+        
+        [med_add2Scores.ipynb](https://colab.research.google.com/drive/18pPnSCWCdFKaiiMwBUAbQ_KrLDJ-vNnA#scrollTo=4rTl9Yd0Bcro)
+        
+        checked the "add 2 scores" of medium and it seems so far there's a couple of heads that are "add 2" heads in gpt-2med. which means we can perhaps find a more general class than just "next sequence" heads. interestingly, no clear "previous seq" heads so far. or rather than "add 2" their top 5 tokens are next members of the input token, some are even previous members. so i'll double check what i said about prev seq heads
+        
+        I remember someone in the third cohort made a blog post about addition in a toy model. i'll read it and perhaps there may be a connection to its patterns in larger models
+        
+    - Run tests on non seq number data thru heads to see if they still rec them
+    - Early and mid head output scores: Try copy scores on “similar token” early heads to show they’re not looking at pos, but token type. early and late have their own OV sections. a summary of all early to late can be put in appendix
+    - test irregular lengths to make sure not just n-2 pos head, but ‘sim type’
+        - what makes each head diff from other heads than just “attends to type”?
+    - also look for ‘greater-than’ output scores, etc. which means ANY, not just +1.
+    
+    <<<optional:
+    
+    - if numwords is too similar to digits, may add another increasing seq task aside from greater-than to compare overlaps
+    - Run pruning algorithm on medium, then use embedding method to match with small
+    - try other fns: [https://github.com/alan-cooney/CircuitsVis/blob/main/python/Demonstration.ipynb](https://github.com/alan-cooney/CircuitsVis/blob/main/python/Demonstration.ipynb)
+    - SVD as perc of (l,h,dir), NOT (l,h). this is bc each dir has its own feature, not (l,h)
+    - In svd, don’t just search for “digit” dirs, but “next” or “change” dirs
+    - logit lens is supposed to be for all tokens (a table); prev, we only used one col (last token)
+    - logit lens of which component?
+    - https://github.com/AlignmentResearch/tuned-lens
+    - MLP Probing, superposition
 
 Writing
 
+- footnote?: we note this is only one possible circuit for the task, and not the minimal circuit
+- we note there are several types of ‘shared circuits’
+    - same circuit, similar tokens
+    - same sub-circuit, branching components
+    - same sub-circuit, components work together in diff ways (incr vs decr at diff lens)
 - consider div by technq again (attn pattern, OV score, QK-OV corr) and subsubsub (bold) for early-mid-late in each technq section. this is better if the technqs compare e-m-l to each other; but if each is sep, consider e-m-l as more supersection instead
 - prev scores
 - Comment out background details, focus on parts less familiar to reviewers
 - Patterns that GPT learns from data? Eg) war lasts 20 years
 - Given that full circuit, we still refer to a subgraph of any size as a circuit.   But we do want to look for minimal circuits, smaller circuits
+- discuss entanglement and interference? superposition?
 - [https://info.arxiv.org/help/submit/index.html](https://info.arxiv.org/help/submit/index.html)
 - [https://info.arxiv.org/help/availability.html](https://info.arxiv.org/help/availability.html)
 
 Predicted criticism:
 
-- search for backup, negative heads
+- search for backup (L10 and 11?), negative heads
 
 ---
 
-[Done](Project%20Planning%203798a71e7c5d4a888cad9a7d25a1275c/Done%20b715c92198314529880806d9f206803d.md)
+Collective of agents working on any rsch peoblem, say circuits. Come up with prompts. Generalize techn from other papers
+
+If components all matter and it's like a symbolic code of what value is at each pos, then we can use code breaking. Eg. Mlp1 2 and 3 all en ode for feature.
+
+If queried and keys act as lookup, then how do they relate to one another?
 
 if a component actv for 2 very diff types of tokens (eg. names and numbers), what’s the cosine sim between names and numbers? what about along certain feature vecs?
 

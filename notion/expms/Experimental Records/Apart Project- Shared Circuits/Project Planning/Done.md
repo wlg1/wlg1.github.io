@@ -361,7 +361,7 @@ Path Patching
     
     - Try corr by random nums Mean Ablation
 - ✅ overleaf related work: Sec 5: Expanding our hypothesis to include those nodes allowed us to recover 82.8% of performance. So, similar tasks seem to use similar, but not identical, circuits.
-- ⚠️ Debug path patching to get edges that connect all heads, such that all connected heads get score that is close to full performance.
+- ~~⚠️~~ Debug path patching to get edges that connect all heads, such that all connected heads get score that is close to full performance.
     - ✅ SOLN: the heatmap uses `100*results`, so what you see if 100x bigger than the actual values. Thus, adjust edge threshold to be the ACTUAL results, not 100x. The reason 100x was used is because values like 0.0001 are displayed with sigfigs badly on heatmap
     - ✅ plot distribution of path patch edge thresholds for each end-head to get avg for all. combine all into one
         
@@ -450,3 +450,160 @@ Attention Head Functionality
     - ✅ re-org next/copy scores to combine w/ mid/late
 - ✅ [How did prev papers diagnose early + mid? Try getting interpretations from prev papers that used the same heads](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
 - ✅ [look at attn patterns for more heads than just the top 10](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
+
+Connectivity
+
+- 🐣 [Play around with manually sel heads for **incr digits circuit**, and check their func](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Manual%20path%20patch%208d30748bcf9448bf9a0b76ce78ed1dfb.md)
+    - 🐣 **[iter patch from manual sel](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)**
+        - ✅ re-run ablation on circ found from path patch (that adds nodes).
+        - ✅ how much better is it than before adding nodes?
+        - [✅ re-run ablation on circuit after ipp gets rid of nodes w/o outgoing edges.](../Project%20Planning%203798a71e7c5d4a888cad9a7d25a1275c.md)
+        - ✅ Re-run ablation on both “no new nodes from ipp” and “then rmv nodes w/ no outgoing E” on lower Ethres of 0.001
+        - 🐣 How much above the mean actv logit diff is Ethres of 0.001 ?
+        - 🐣 w/o incoming edges?
+    - 🐣 If rmv head, is correct answer still in 1st place; if not, what does it fall to?
+    - 🐣 see if removal coincides with importance on attnpat; record what performance difference each of the circuit’s heads makes. Are numdetect heads like 4.4 crucial? Are there backups?
+- ✅ ISSUE- a circuit has source nodes that are not part of the first layer?
+    
+    As seen in IOI/ACDC diagram, you CAN have heads w/ no incoming edges that are in later layers, as long as they have an edge from an input token.
+    
+    - get circuit which only adds edges; don’t add node if not in input to fn. Run on circuit found via manual sel
+
+Writing :  ✅ move early heads to appendix; new writing about seq det only
+
+- [✅ plan](../_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4/23%2010%2021-%20Plan%2004b6844e61624b28a654df94ee7e7a40.md)
+
+Conn/Fn: 
+
+- ✅ ⚠️ prune backw once by among words
+    - ✅ ⚠️ figure out how to ablate repeated seq pos
+    - ✅ [OR test among names without repeated tokens like ‘is’, ‘.’ also works](https://colab.research.google.com/drive/1E1afH63aiKqTp9fqn3hnun1EwErZXzRt#scrollTo=3M6ZKSyJtOAE&line=1&uniqifier=1)
+        - ✅ ⚠️ [run from full circ](https://colab.research.google.com/drive/1E1afH63aiKqTp9fqn3hnun1EwErZXzRt#scrollTo=Oq0svFCVsp7N&line=14&uniqifier=1) to get among words circuit
+        - ✅ ⚠️ get set diff with pure circuit
+- ✅ make template for autoAblation
+- ⚠️ to get more diverse circuits (months circ arguably is the same), try other sequences
+    - ⚠️ repeating autoAblation
+- ✅ debug why `ioi_circuit_extraction.add_mean_ablation_hook` , when passing in full circuit for *********seemingly********* every pos, doesn’t get 100% of score. this is likely due to not every pos being accounted for.
+    - ✅ SOLN: seems like `tokens.index(target_token)` is the issue because the repeated numbers have multiple indices. Instead, these indices should be put in prompt_dict when the prompt is created. add `pos_dict` to `prompts_list` before passing to `dataset` class
+- ✅ back to [repeatDigits_autoAblation](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/repeatDigits_autoAblation%206d3119d544f24f938eb4abe0016e9503.md)
+    - ✅ run backw once ablation on repeatDigits and compare circ to IOI
+    - ✅ compare to repeatLetters
+- ✅ ablate by seq pos (found by attention pattern analysis) [QK ablation](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/QK%20ablation%20f9f1b2ff2d944674a98e5b872acd5009.md). ([revisit](Done%20b715c92198314529880806d9f206803d.md))
+    - ✅ Change both of these (dict key is head type): **is seq pos q or k? See prev n**
+        
+        `CIRCUIT = {"number mover": lst,`
+        
+        `SEQ_POS_TO_KEEP = {"number mover": "end",`
+        
+        key vectors are always kept; query vectors only kept if specified
+        
+    - ✅ ablate by among words (for number detectors). [amongWords- QK ablation](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/amongWords-%20QK%20ablation%20a6648bdac8b14573880294c84ead3474.md)
+        - ✅ why not get 100% when pass in full circ?
+            
+            SOLN: the corrupted had repeated tokens in “Adam 1 Bob 2 Claire 3 Don 3 Eve”, so the repeated query seq pos index (the second 3) was not kept (non-ablated) when running `tokens.index(target_token)`. The previous dataset of “1 2 3 3” did not have this issue as the datasets always kept the query end pos non-ablated, which was coincidentally on the second 3. But in the new case, the last token was “Eve” so this did not occur.
+            
+        - ✅ run auto ablate on all seq pos
+        - ✅ run pure digits on obtained circ
+            
+            [strangely, it doesn’t work](https://colab.research.google.com/drive/1E1afH63aiKqTp9fqn3hnun1EwErZXzRt#scrollTo=qgpGMTWLbibq&line=1&uniqifier=1)
+            
+        - ✅ compare with IOI, which had 87% of original logit diff. So use a 90% circuit
+        - ✅ ablate using guessed seq pos from attn pats
+        - ✅ [This shows you don’t need any heads for the names at all](https://colab.research.google.com/drive/1E1afH63aiKqTp9fqn3hnun1EwErZXzRt#scrollTo=KCQHY4f8DnYS&line=37&uniqifier=1)
+        - ✅ [Try random words instead of names](https://colab.research.google.com/drive/1E1afH63aiKqTp9fqn3hnun1EwErZXzRt#scrollTo=OQpqlEjwED7b&line=1&uniqifier=1)
+- ✅ [reformat_circ_diag.ipynb](https://colab.research.google.com/drive/1UNl70DP9z76Lb7BNiruWP8gJVm0WLRhR#scrollTo=A35UJE7yw5pO)
+    - ✅ save matplotlib as pdf instead of pasting png into visio and exporting
+
+writing
+
+- ✅ open problems msg
+    
+    I did some preliminary work on this during a hackathon this July, and found components shared between sequence contnuation tasks such as head 9.1 that were found to output the “next member” of a circuit. The work was rushed and crude but I am looking to polish and continue it in the future. A link to it can be found here: [https://alignmentjam.com/project/one-is-1-analyzing-activations-of-numerical-words-vs-digits](https://alignmentjam.com/project/one-is-1-analyzing-activations-of-numerical-words-vs-digits)
+    
+- ✅ post on mech interp server
+    
+    Hi everyone, I’m yonedo and started getting into interpretability this year. A starter project I did this July was to tackle a problem from Neel’s 200 open problems list about continuing sequences that could be mapped to the natural numbers such as numbers, months, days, and letters. One of the things found was that these tasks share a lot of components, such as head 9.1 in gpt2-small (which, by checking which values are written by its OV matrix, seemed to output the “next member” of a sequence). This prelim analysis was crude and thrown together in a few days, but I’ve been working on continuing it in a new direction! I’m open to collaborating on anything similar so feel free to reach out! (or if you/a group want to polish and extend it yourself, feel free to let me know which direction you’re taking so I can plan another a different one and not spend time doing the same thing you’re doing haha). I’ll likely be lurking a lot to learn and try experiments I see before posting more (Project link): [https://alignmentjam.com/project/one-is-1-analyzing-activations-of-numerical-words-vs-digits](https://alignmentjam.com/project/one-is-1-analyzing-activations-of-numerical-words-vs-digits)
+    
+
+✅ [New Novel Contributions](../New%20Novel%20Contributions%207ec236f64f394e9cb03b32ca0fbf319b.md) 
+
+✅ [Multiple Matches Algo](../Multiple%20Matches%20Algo%203d83df8af72c4233b51d6c60cd022f8b.md) 
+
+- ✅ [format circ diagrams](../format%20circ%20diagrams%206c4906c1a09f4df399d376dee58af27b.md)
+    - ✅ use different colors (fill and outline) to denote common nodes and node types.
+    - ✅ highlight edges if they’re between 2 highlighted nodes.
+
+Circuit Connectivity
+
+- ✅ 2 4 6 8 VS 2 4 8 16 on medium
+    - [add2_med_autoAblate.ipynb](https://colab.research.google.com/drive/1kpKTk7E4iUgiByOAL-8Jr2kHN2Q--1u8#scrollTo=DQF0lzuokQer)
+    - [add1_med_autoAblate.ipynb](https://colab.research.google.com/drive/1Pvoo3wchXIhYof11hUJHpOONELzQccjd)
+    - [multp2_med_autoAblate.ipynb](https://colab.research.google.com/drive/1ofiEOCaS7-f4CBOgLqGX2g30ToMNHONr#scrollTo=cL6iz8nbIRcL)
+        
+        medium fails on mulpt2 for seqs not starting at 2 unless you give it at least 6 members in input
+        
+- [✅ brainstorm plans](../_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4.md)
+- ✅ [Why is pure digits circuit bigger than among words](../Why%20is%20pure%20digits%20circuit%20bigger%20than%20among%20words%2094916895ee7c464780702d5720045b50.md) : [hyp](../Why%20is%20pure%20digits%20circuit%20bigger%20than%20among%20words%2094916895ee7c464780702d5720045b50.md)
+- ⚠️ Make overall circuit diagram using “less accurate” circuits so far
+    - ✅ color nodes based on overlap
+        
+        [https://chat.openai.com/c/dd496692-4b97-4b21-8ec6-e28d39dea31c](https://chat.openai.com/c/dd496692-4b97-4b21-8ec6-e28d39dea31c)
+        
+    - ⚠️ add legend
+        
+        [https://chat.openai.com/c/548af866-8605-454a-a071-6c0ae9a0feee](https://chat.openai.com/c/548af866-8605-454a-a071-6c0ae9a0feee)
+        
+        [https://chat.openai.com/c/687e8659-1b6d-4c66-8710-fa594d0c5108](https://chat.openai.com/c/687e8659-1b6d-4c66-8710-fa594d0c5108)
+        
+        [https://chat.openai.com/c/d7648bbd-61b9-42a7-bccd-e1d52b37f623](https://chat.openai.com/c/d7648bbd-61b9-42a7-bccd-e1d52b37f623)
+        
+    - color edges based on head node
+    - position words by clustering nodes of certain color in different places
+        - [https://chat.openai.com/c/5298883a-4979-4cb4-a97f-0872776c6821](https://chat.openai.com/c/5298883a-4979-4cb4-a97f-0872776c6821)
+        given a that each set of nodes is in the format similar to [(0, 1), (0, 3), (0, 5), (5, 5), (6, 1), (7, 10), (9,1)], rewrite the following code so that after sorted, the earlier nodes are on top of the graph while the later nodes are more towards the bottom:
+    - order nodes by sorted label
+- ✅ Make draft of “overall figure” manually in visio
+- ✅ test prompt: “x + 1 =” for various x
+    - ✅ [try on gpt2-small](https://colab.research.google.com/drive/1rNRrvr4qzy_zjPUK-4mJHruwFKnomrnP#scrollTo=f-69B8EZN28Q&line=1&uniqifier=1) : it doesn’t work
+    - ✅ [gpt2-med:](https://colab.research.google.com/drive/1QXktEOMDojC7QpfHjX2eSqsRkn8gt4er#scrollTo=f-69B8EZN28Q) it doesn’t work, even with in-context. But it DOES work in-context with this: `["1 table 2. 10 table 11. 3 table 4. 5 table"](https://colab.research.google.com/drive/1QXktEOMDojC7QpfHjX2eSqsRkn8gt4er#scrollTo=_hXXwqqNQ4Wi&line=3&uniqifier=1)`
+        - comment
+            
+            I was also testing "x + 1 =" prompts for gpt2 small and med and it doesn't work, even with in-context. however, there's some strange in-context pattern where "1 table 2. 10 table 11. 3 table 4. 15 table" gets "16." And replacing that last number 15 with "101 table" gets "102". This strange pattern may be combining both induction and "next seq" and may have overlaps with seq cont, I'm going to look into its circuit now (the "table" is just a random word, as the induction patterns in the anthropic paper tested random word data to find induction heads. it can be replaced with other words)
+            
+            basically one of the main goals now is to figure out what components separate diff circuits, such as incr digits vs greater-than. I think the task described above can shed light on this as it is somewhere between those two tasks
+            that's true, too many tasks would not fit the paper. I think that's all the new tasks I'll look into (we have around 8) so it'd be feasible to analyze them until next week (11/1). then we can get the first draft around that time on arxiv
+            
+- 🐣 [logit lens decr](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/logit%20lens%20decr%2080b75441653c4fed99eb1f3919e37dfb.md)
+- ✅ daily [plan](../_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4.md)
+
+Circuit Connectivity- better corrupted dataset patching
+
+- ✅ [numseq_mincirc_repeatAll.ipynb :](https://colab.research.google.com/drive/1AZrx6xvGt1t1m9oKVkrRgIzkoKZRzq8F#scrollTo=Lk3bffnCYq-p) fix the “same index” issue that cause it not to keep all pos of circ during SEQ_TO_KEEP. Run fb, bf- at 3%, 10% and 20%. Get diffs
+    - ✅ instead of repeating all nums of 1st elem, replace with repeats of a rand number bigger than them (eg. 100). [numseq_mincirc_repeatRandElem](https://colab.research.google.com/drive/1pFAit_o0k6u-EugBcWFAlwQxxo74Rjwk).ipynb
+    - ✅ [test back_3 of ‘repeatAll’ using dataset of repeatRand](https://colab.research.google.com/drive/1pFAit_o0k6u-EugBcWFAlwQxxo74Rjwk#scrollTo=GFv3kw2tf6cB&line=1&uniqifier=1)
+        
+        It only gets 9%.
+        
+    - ✅ [test back_3 of ‘repeatRand’ using dataset of repeatAll](https://colab.research.google.com/drive/1AZrx6xvGt1t1m9oKVkrRgIzkoKZRzq8F#scrollTo=RUl8oHsrg61n&line=1&uniqifier=1)
+        
+        On the other hand, this gets 66%
+        
+    - ISSUE: this is making removal have greater logit diff sometimes.
+        - looking at `logits_to_ave_logit_diff_2()`, and `new_score = logits_to_ave_logit_diff_2(ioi_logits_minimal, dataset)` , the aim is that so after ablating every head except the ones in the circuit, the correct token is still much higher than the incorrect token (eg. 5 vs 4). If it’s not still much higher (5 and 4 are close now), that circuit is missing key heads.
+            - When a head is removed, if the score is HIGHER, that means the correct token is much higher than the incorrect score. So that head may have acted as an inhibition head.
+            - How much higher? Ablate the model and run tokens through it to get predictions `ioi_logits_minimal`.
+        - Try: KL divergence
+- 🐣 [resample from random number seq.](https://colab.research.google.com/drive/12HF5UCvMERizkhOiYJKDziahgVq_3KD9#scrollTo=Lk3bffnCYq-p)
+    - ✅ **[compare with repeatRandElem](https://colab.research.google.com/drive/12HF5UCvMERizkhOiYJKDziahgVq_3KD9#scrollTo=RUl8oHsrg61n)**
+        
+        actually does pretty well
+        
+    - ⚠️ issue is, what is the incorrect? see ABC for IOI. KL div doesn’t need this? (this is NOT an issue for mean ablation, only path patching).
+        - find what IOI used as incorrect token in ABC: (lines 314?) [https://github.com/redwoodresearch/Easy-Transformer/blob/main/easy_transformer/ioi_dataset.py](https://github.com/redwoodresearch/Easy-Transformer/blob/main/easy_transformer/ioi_dataset.py)
+        - this is only an issue when you’re doing path patching. usually incorrect token is what’s predicted (eg. repeat is the last few repeats). if random, what’s predicted? try them on test prompts
+            - SOLN: run them and get their top answer. use that as the ‘incorrect’ token
+    - mean ablation by random numbers for pure and among words
+- 🐣 Compare the two new corruption types (repeatAll, repeatRand, randAll)
+    - compare circs of all 5 corruptions types to each other for incr digits
+    - get avg of what components appear in all various pruning and corruption runs
+        - how impt are they (change in perf) and what’s their func? Func when together?

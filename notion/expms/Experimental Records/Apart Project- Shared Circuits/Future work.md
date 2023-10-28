@@ -43,3 +43,5 @@ Analogous Concepts
 (these are very speculative and likely infeasible, but may be revised to become more feasible):
 
 - in-context give activations + circuit to GPT-4 to have it predict functionality of new activations + circuit (likely must do it on very narrow region with lots of in-context). if possible to some degree, this means it may be able to predict shared components too? -- likely not poss as GPT was not trained on this association, nor does it ever appear in the text datasets. instead of gpt-4, may train another meta-model for this
+
+Tasks being in the same circuit are like features being in the same polysemantic neurons?

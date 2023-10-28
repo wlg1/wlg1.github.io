@@ -14,6 +14,7 @@
 ## Questions
 
 - Transformers:
+    - If there are fewer features than neurons, will any neurons still be polysemanric? Is it optimal in anyway to be polysemantic in this case?
     - circuits may not work b/c EVERY node contributes A LITTLE to the final effect
     - does KEEPING some MLPs make it worse? b/c they're not intended to be part of circuit? we see how removing some nodes from the full circuit actually makes the model perform better than the full circuit- is this a coding error, or is it actually doing better without them?
     

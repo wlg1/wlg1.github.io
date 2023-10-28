@@ -12,6 +12,12 @@
     
     [More About Experimental Records](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/More%20About%20Experimental%20Records%204574ef1621034988a2371bf3cca93c35.md)
     
+- Task emoji legend key
+    - ✅ Done
+    - ⚠️ Stuck, possibly due to an error
+    - ✅ ⚠️  was an error, but fixed later (scour later in timeline to find when fixed)
+    - 🐣 / TBC: Partially done, may continue later (usually not b/c stuck, just not prioritized)
+    - 🔧 / N: working on now
 - Overview: 3m Video Walkthrough
 
 ---

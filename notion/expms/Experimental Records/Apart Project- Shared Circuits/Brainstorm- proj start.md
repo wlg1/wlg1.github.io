@@ -1,4 +1,4 @@
-# Brainstorm
+# Brainstorm- proj start
 
 Questions to answer
 
@@ -8,7 +8,7 @@ Questions to answer
     
     - Ablate multiple at the same time, choosing another based on a bottom-up greedy algorithm
 
-[SUB-ISSUE: How to define “analogous tasks”?](Brainstorm%207f2162094b5d412187f4af9137210dc7/SUB-ISSUE%20How%20to%20define%20%E2%80%9Canalogous%20tasks%E2%80%9D%20333b7aa1455848748dab3f768b8dfb55.md)
+[SUB-ISSUE: How to define “analogous tasks”?](Brainstorm-%20proj%20start%207f2162094b5d412187f4af9137210dc7/SUB-ISSUE%20How%20to%20define%20%E2%80%9Canalogous%20tasks%E2%80%9D%20333b7aa1455848748dab3f768b8dfb55.md)
 
 - How to find shared circuits for “analogous tasks”?
     
