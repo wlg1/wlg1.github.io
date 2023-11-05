@@ -6,60 +6,105 @@
 
 ### Working on
 
-Circuit Connectivity
-
-Circuit Connectivity- better iterative algos for all tasks
-
-- ✅ Do fwd backw and bf both converge to same circ? Prob not bc combos matter so order matters. Find differ between them.
-    - ✅ [incr digits, randAll:](https://colab.research.google.com/drive/12HF5UCvMERizkhOiYJKDziahgVq_3KD9#scrollTo=ZXouisDpS4qb) no, but they’re very similar for most impt heads. Their scores are both ~97.1%. In fact, getting their intersection gives a circuit of 82%, which is only a 15% drop.
-        
-        we could claim that these are “alternative circuits” such that what’s in fb but not in bf is an “alternative path”, akin to backup heads
-        
-        make a diagram of this for red, blue, purple
-        
-        We’ll just choose to use fb_3.
-        
-- path patching threshold: double check that the final head pruned via path patching still has same score via ablation
-    - Do head have to conn only to adjacent layer? Review meaning of path patching
-    - Do not remove heads without outgoing. see fig 17 in ACDC; it keeps heads without incoming or outgoing. though all heads are conn. if you see heads without any nodes, you should change the threshold
-        - justify this in paper (like ACDC, we do not bc…)
-    - the threshold itself is meaningless. it should be like p-value: what percentage of edges are above it? Eg) keep only edges in the top 50% of distribution
-        - the reason is 50% (high) is because…
-    - [numseq_IPP_randAll.ipynb](https://colab.research.google.com/drive/1JFcEjNe0X4G1SrE52df4RFnP1bEza-re#scrollTo=QZ0QiQPgqw4a)
-- redo all circuits
-    - list tasks and try all
-        - Tasks:
-            1. incr digits
-                1. incr digits among words
-            2. incr numwords
-            3. incr months
-            4. greater-than
-            5. decr digits (and variations of 1a to 3)
-            6. less-than
-            
-            <<After nov 1st: (only mention in paper appendix before nov1)
-            
-            1. plus one induction 
-            2. alphabet
-            3. repeat digits 
-                1. among words
-                2. repeat letters / words
-            4. 2 4 6 vs 2 4 8 in larger models
-            5. corr: 1234 vs 1233. 1233 has a circuit too for ‘repeat’
-        - use larger or more comparable datasets
-            
-            overlapping vs non-overlapping datasets (req. overlapping for months!)
-            
-        - with same thresholds (may not be needed)
+- IPP graph at various lvls of perf and pure/mixed comparisons
+    - greater-than & overlap
+    - decr & overlap
+    - Get intersection of all perf and find its perf.
+    - plot num_heads vs performance
+- Functionality of similar components
+    - mix digits, numwords, months in same prompt (two jan).
+    - obtain for pure digits
+    - try repeated months, months not in order, etc.
+    - get induction offset scores and loop thru to find them
+    - OV scores for the 3 types.
 
 Circuit Connectivity- MLPs
 
 - Ablate MLPs, neurons, and res stream outputs. See actv patching (EA, An)
     - What heads do MLPs rely on? path patch head to MLPs
     
+- Writing
+    - describe more on months, greater-than, decr circuits (prev scores)
+    - describe this briefly:
+        - we ablate on every position
+        - path patching conscv layers like conmy, no input/residual post
+        - footnote?: we note this is only one possible circuit for the task, and not the minimal circuit
+            - Given that full circuit, we still refer to a subgraph of any size as a circuit.   But we do want to look for minimal circuits, smaller circuits
+    - just metnion in future work:
+        - future work: circuits of mixed/among
+        - remove by combos at a time (eg. rand choose 3)
+            
+            Without 5.5, may have to rely on other heads. 
+            
+        - corr types (appndx): switchLastTwo, repeatLastTwo, repeatFirstAll, repeatRand, permutation, randAll (only use this one out of the 6)
+        - we note there are several types of ‘shared circuits’
+            - same circuit, similar tokens
+            - same sub-circuit, branching components
+            - same sub-circuit, components work together in diff ways (incr vs decr at diff lens)
+        - Patterns that GPT learns from data? Eg) war lasts 20 years
+    - ~~consider div by technq again (attn pattern, OV score, QK-OV corr) and subsubsub (bold) for early-mid-late in each technq section. this is better if the technqs compare e-m-l to each other; but if each is sep, consider e-m-l as more supersection instead~~
+    - ~~Comment out background details, focus on parts less familiar to reviewers~~
+
+query (dest) of where info moves to. move to all pos. however we will perform more expms to verify this claim in future work. this means each token relies on those heads to get info. only head 9.1 can be put at end without any change. non-ablate every query pos. future work: ablate every query pos except the important ones where the head is important for moving info to.
+
+Circuit Connectivity- better iterative algos for all tasks
+
+- path patching threshold re-check
+    - [Should the negative values be taken?](https://colab.research.google.com/drive/19Le39gsiZOPqEat4VPHWDyU06My8GupZ#scrollTo=fg1gtdoVl6mU&line=2&uniqifier=1)
+    - Do head have to conn only to adjacent layer? Review meaning of path patching
+        
+        [https://chat.openai.com/c/9e2fd95b-a957-4d81-940b-f774f4dd5f7e](https://chat.openai.com/c/9e2fd95b-a957-4d81-940b-f774f4dd5f7e)
+        
+        residual stream. but don’t explain in detail, just state edges between non-adjacent layers as in previous works (cite ACDC)
+        
+    - [https://arena-ch1-transformers.streamlit.app/[1.3]_Indirect_Object_Identification](https://arena-ch1-transformers.streamlit.app/%5B1.3%5D_Indirect_Object_Identification)
+    Note that we're always measuring performance ***with respect to the correct answers for the IOI dataset, not the ABC dataset***
+        - Incorrect token doesn’t need to be the correct answer of ABC; it just needs to be any arbitrary incorrect token (opt- that’s not too far away from IOI). notice ‘corrupted logit diff’ is only used in PP for normalizing. the ‘patching logit diff’ uses the original dataset; it only patches activations
+    - Do not remove heads without outgoing. see fig 17 in ACDC; it keeps heads without incoming or outgoing. though all heads are conn. if you see heads without any nodes, you should change the threshold
+        - justify this in paper (like ACDC, we do not bc…)
+    - double check that the final circ pruned via path patching still has same score via ablation
+
+---
+
+after 11/3
+
+- use among words circuits to get more randomness
+- look at the nodes/edges diff between each circuit and try to explain them
+- Already have logits after ablation, so just unembed them like in [extract_model](https://colab.research.google.com/drive/1cyW5ZlupQH0VJ6qWcFBkGMbOrDeHWMdD) to get values
+    
+    rmv what destroys its ability to pred next?
+    
+    This finds which heads are involved in decreasing. Instead, ends up pred same as last.
+    
+- make 80% be subcirc of 90% by starting from 90% and then removing more nodes.
+- the reason months and numwords is smaller is because of a smaller dataset?
+    
+    actually this is wrong because we tried 0 to 12 for digits, and it still had a big circuit
+    
+    test this again on very small digits dataset
+    
+- Ablate sub-circ on one circuit and check for analogous drop in prediction in another
+    - The ablation changes it in an analogous way based on what is predicted. Can we knockout the ability to predict next is we knockout 9.1? Are there backups?
+    - Ablate the greater-than sub-circuit in the sequence completion (just delete from “keep circuits” head list). Run tokens through it.
+        - which parts of the circuit are the most impt, for what fns? based on logit diff recovery % when ablating them.
+    - edit next to prev by replacing actv (see ‘circuits re-use’)
+- redo greater-than to use more samples in corrupted dataset
+
+~~place all tasks in 1 nb to prevent reload times~~
+
+~~improve randomness by not having any repeats?~~
+
+[https://colab.research.google.com/drive/1KcODa7naVMJbOvHBGUL_CFxyfmAMM5YI#scrollTo=LkatbMdmp-W2&line=2&uniqifier=1](https://colab.research.google.com/drive/1KcODa7naVMJbOvHBGUL_CFxyfmAMM5YI#scrollTo=LkatbMdmp-W2&line=2&uniqifier=1)
+
+there is an alternative circuit that doesn’t use 9.1 but distributes the computation of next more across other nodes
+
+---
+
+Circuit Connectivity
+
 - Circuit Connectivity-  postponed
     
-    <<<after nov 1st
+    <<<after nov 3rd
     
     - See how many further heads can be removed to achieve various levels of performance (70%, 80%, etc.).
         - Get circuits with lower performance (to make smaller) to compare and find sub-circuits with greater-than. At what threshold does it lose shared sub-circuits with greater-than?
@@ -99,7 +144,7 @@ Circuit Connectivity- MLPs
     - automate by filtering via attention pattern first
     - patch by qkv; [see explr nb](https://colab.research.google.com/drive/1swp35sxN_1zNuIW4i4JyhWeY-YUlmUkk#scrollTo=JAbsTRepIAic)
     
-    <<<after nov 5th
+    <<<after nov 15th
     
     - what are similar “polysemantic heads” or neurons that are the same but used in VERY DIFFERENT tasks? that is, “polysemantic sub-circuits”.
     - Try alt measures KL div
@@ -124,42 +169,18 @@ Circuit Connectivity- MLPs
     - try different dataset size batches for ablation
     - 2 4 6 8; fibonacci etc on, large, pythia, llama, etc.
     - detect the sequence out of multiple possible numbers. toy model- is there a sequence?
+    - try random permutation corruption [issue- doesn’t erase all info]
 
 ---
 
 Circuit Functionality
 
-Circuit Functionality- Sims + Diffs
-
-- look at the nodes/edges diff between each circuit and try to explain them
-- Test backw method on greater-than task
-    - Sum probs of greater than vs less than
-    - start from greater-than and add heads until get to increasing by 1
-        - Perhaps more heads are needing for more “specific”; try to vary by how specific the range is. Also by seq length (greater-than tasks use “one” sequence)
-            - how does it change the probability of tokens further away from seq?
-        - How can greater-than not have heads that are recognizing words other than the digit? Surely, it must process the other words, too. Note this in “future work”?
-- Convert ‘mean ablation’ table to having circuits for each task found by ablation on each row
-- read “circuits re-use” for how they compared diff fns of components
-- try removing 9.5 in numwords and ablate
-- ~~how much do 6.9 and 8.11 add to increasing digits?~~
-- stare at similar circuits and see what’s sim/diff in them. look at conns + relate to head fns
-    - you don’t need to compare or explain all the differing heads; just the most impt ones. get importance score of each head after removing
-- Ablate on one circuit and check for analogous drop in prediction in another
-    - The ablation changes it in an analogous way based on what is predicted. Can we knockout the ability to predict next is we knockout 9.1? Are there backups?
-    - edit next to prev
-- is less-than a subcircuit of decreasing seq?
-    - Use incontext learning to get less than
-- Ablate the greater-than sub-circuit in the sequence completion (just delete from “keep circuits” head list). Run tokens through it.
-    - which parts of the circuit are the most impt, for what fns? based on logit diff recovery % when ablating them.
-- Compare overlap to non-numerical circuits
-    - IOI does not use 9.1 nor 6.9; it uses 9.6 (fig 17 is bigger; p27)
-    - docstring doesn’t use GPT-2
-    - pronoun (fig 25) also doesn’t use 9.1
-
 - Circuit Functionality-  postponed
     
-    <<<after nov 1st
+    <<<after nov 3rd
     
+    - is less-than a subcircuit of decreasing seq?
+        - Use incontext learning to get less than
     - Put MLP0 embedding thru MLP
     - [Information movement using corruption on diff tokens/positions](https://www.lesswrong.com/posts/u6KXXmKFbXfWzoAXn/a-circuit-for-python-docstrings-in-a-4-layer-attention-only#Patching_experiments)
         
@@ -192,7 +213,7 @@ Circuit Functionality- Sims + Diffs
     - bigger white line above eve in attn pat viz
     - head 9.1 also has n-3 attn pat. OV scores when pass "is" to 9.1?
     
-    <<<after nov 7th
+    <<<after nov 15th
     
     - attn pat and output scores on add2, mult2, for medium
         
@@ -219,22 +240,6 @@ Circuit Functionality- Sims + Diffs
     - logit lens of which component?
     - https://github.com/AlignmentResearch/tuned-lens
     - MLP Probing, superposition
-
-Writing
-
-- footnote?: we note this is only one possible circuit for the task, and not the minimal circuit
-- we note there are several types of ‘shared circuits’
-    - same circuit, similar tokens
-    - same sub-circuit, branching components
-    - same sub-circuit, components work together in diff ways (incr vs decr at diff lens)
-- consider div by technq again (attn pattern, OV score, QK-OV corr) and subsubsub (bold) for early-mid-late in each technq section. this is better if the technqs compare e-m-l to each other; but if each is sep, consider e-m-l as more supersection instead
-- prev scores
-- Comment out background details, focus on parts less familiar to reviewers
-- Patterns that GPT learns from data? Eg) war lasts 20 years
-- Given that full circuit, we still refer to a subgraph of any size as a circuit.   But we do want to look for minimal circuits, smaller circuits
-- discuss entanglement and interference? superposition?
-- [https://info.arxiv.org/help/submit/index.html](https://info.arxiv.org/help/submit/index.html)
-- [https://info.arxiv.org/help/availability.html](https://info.arxiv.org/help/availability.html)
 
 Predicted criticism:
 

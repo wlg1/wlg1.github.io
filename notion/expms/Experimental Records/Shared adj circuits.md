@@ -1,4 +1,4 @@
-# Shared subj + adj circuits
+# Shared adj circuits
 
 % \subsection{Shared Circuit Analysis of Subject Identification Tasks}
 

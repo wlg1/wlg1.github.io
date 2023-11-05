@@ -40,7 +40,7 @@ Ongoing
 
 [Apart Project- Shared Circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79.md)
 
-[Shared subj + adj circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Shared%20subj%20+%20adj%20circuits%202d73069926fc41ea9ce744e05de33103.md)
+[Shared adj circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Shared%20adj%20circuits%202d73069926fc41ea9ce744e05de33103.md)
 
 Postponed/Finished
 

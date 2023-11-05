@@ -41,3 +41,7 @@ Holistic Circuit Causality
 [amongWords- QK ablation](Expm%20Results%208de8fe5b943641ec92c4496843189d36/amongWords-%20QK%20ablation%20a6648bdac8b14573880294c84ead3474.md)
 
 [repeatDigits_autoAblation](Expm%20Results%208de8fe5b943641ec92c4496843189d36/repeatDigits_autoAblation%206d3119d544f24f938eb4abe0016e9503.md)
+
+Compare Circuits Conn and Func
+
+[Impt Decr Circ Heads](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Impt%20Decr%20Circ%20Heads%20109317c38d2d4bf2ba1c721d44e17d1a.md)

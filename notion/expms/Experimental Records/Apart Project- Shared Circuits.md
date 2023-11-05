@@ -80,37 +80,15 @@
 
 Brainstorming Notes
 
-[_Brainstorm plans (chrono)](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4.md)
-
-[Outline Plan](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Outline%20Plan%203935b02babc84c70a2be3545257d9b3e.md)
-
-[Main Aim of Paper](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Main%20Aim%20of%20Paper%20e8f679aa680247cfa76b19edb04c5233.md)
-
-[Brainstorm- proj start](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Brainstorm-%20proj%20start%207f2162094b5d412187f4af9137210dc7.md)
-
-[Hypotheses to Test](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Hypotheses%20to%20Test%2092b4e89245a142e89267edd9880ffa43.md)
-
-[Search Methods- brainstorm](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Search%20Methods-%20brainstorm%2015a3020ab00b40adb79b0acf3622f5f4.md)
-
-[Search Methods- ask ChatGPT](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Search%20Methods-%20ask%20ChatGPT%20c68457cff88c4c3ba4b7fc775684496a.md)
-
-[Findings](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Findings%20dd87002c715d49c8a5f41f3a3d43be82.md)
-
-[Future work](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Future%20work%20a8d30bf9c84546da862cb2a95da71dfc.md)
-
-[New Novel Contributions](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/New%20Novel%20Contributions%207ec236f64f394e9cb03b32ca0fbf319b.md)
-
-[Multiple Matches Algo](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Multiple%20Matches%20Algo%203d83df8af72c4233b51d6c60cd022f8b.md)
-
-[format circ diagrams](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/format%20circ%20diagrams%206c4906c1a09f4df399d376dee58af27b.md)
-
-[Why is pure digits circuit bigger than among words](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Why%20is%20pure%20digits%20circuit%20bigger%20than%20among%20words%2094916895ee7c464780702d5720045b50.md)
+[Brainstorming Notes](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4.md)
 
 Writeup
 
 [https://www.overleaf.com/8957882739zmjxqsvbgtwx](https://www.overleaf.com/8957882739zmjxqsvbgtwx)
 
 [Style Formating and Rules](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Style%20Formating%20and%20Rules%20e17cd649ece749dba77f3cdcb19357a4.md)
+
+[ArXiV](Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/ArXiV%207dd28819e9ce4a1fb3faaab10ac880ad.md)
 
 Repo (push new expms here once cleaned up)
 

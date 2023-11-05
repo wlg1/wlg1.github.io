@@ -206,7 +206,7 @@ Quick Lit Review
 - TBC- study: [Towards Automated Circuit Discovery for Mechanistic Interpretability](https://www.notion.so/Towards-Automated-Circuit-Discovery-for-Mechanistic-Interpretability-e22fd1e2478347ea9686424d6080b5b7?pvs=21)
 - (FIXED)⚠️ [Early head validation code](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20head%20validation%20code%20be7fc9bbf047474388f55bbe8f04eb17.md)
 - ⚠️ [SVD interpretable dirs](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/SVD%20interpretable%20dirs%2083533467cd334293af5913675fdeee97.md)
-- TBC- [Outline Plan](../Outline%20Plan%203935b02babc84c70a2be3545257d9b3e.md)
+- TBC- [Outline Plan](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Outline%20Plan%203935b02babc84c70a2be3545257d9b3e.md)
 
 Find common circuits for more numerical tasks (not just seq cont)
 
@@ -233,12 +233,12 @@ Path Patching
 - ⚠️ Mean ablation numseq by repeating last. [Mean Resampling Ablation](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Mean%20Resampling%20Ablation%20d7fd15fac3324baa96d82bada82340a1.md)
     - ✅ Check how Greater-Than circuit performs here
     - Brainstorm how to properly use and analyze path patching results to find the right heads
-    - [Search Methods- ask ChatGPT](../Search%20Methods-%20ask%20ChatGPT%20c68457cff88c4c3ba4b7fc775684496a.md)
+    - [Search Methods- ask ChatGPT](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Search%20Methods-%20ask%20ChatGPT%20c68457cff88c4c3ba4b7fc775684496a.md)
     - Narrow circuit search to seq positions for ablation expms
     - Narrow to q, k, or v
     
 - TBC- Make copy of current, then idealized draft
-- ✅ [Draft search “work backwards”](../Search%20Methods-%20brainstorm%2015a3020ab00b40adb79b0acf3622f5f4.md)
+- ✅ [Draft search “work backwards”](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Search%20Methods-%20brainstorm%2015a3020ab00b40adb79b0acf3622f5f4.md)
 - ⚠️ Mean ablation on greater-than task
     
     [https://colab.research.google.com/drive/1WmFphzbrqRugdUa1w7KBc2AWONMe765x](https://colab.research.google.com/drive/1WmFphzbrqRugdUa1w7KBc2AWONMe765x#scrollTo=b13177b7)
@@ -259,7 +259,7 @@ Path Patching
     - (TBC- mean ablation doesn’t reproduce greater-than results. Is bug in making dataset or something else?)
 - ⚠️ [gpt2-greater-than](../gpt2-greater-than%201d1763531c964ad28af1ee43c2253f19.md)
     - try to use rust-circuits in colab
-- ✅ Turn ‘work backw’ to code. [Search Methods- brainstorm](../Search%20Methods-%20brainstorm%2015a3020ab00b40adb79b0acf3622f5f4.md)
+- ✅ Turn ‘work backw’ to code. [Search Methods- brainstorm](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Search%20Methods-%20brainstorm%2015a3020ab00b40adb79b0acf3622f5f4.md)
 - ✅ Automate to get edges: [Path Patching after Work Backw](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Path%20Patching%20after%20Work%20Backw%20926c3d71d6304852afcc271974028aec.md)
 - ✅ Wedn night: Book meeting or send msg on what has been done
 - ⚠️ Use threshold on edges instead of top 5.
@@ -436,7 +436,7 @@ Writing
 
 - ✅ ask about eacl workshop abstract submission deadline
     - [https://openreview.net/](https://openreview.net/) : login to see list of workshops
-- ✅ Move novel methods brainstorm to [Future work](../Future%20work%20a8d30bf9c84546da862cb2a95da71dfc.md)
+- ✅ Move novel methods brainstorm to [Future work](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Future%20work%20a8d30bf9c84546da862cb2a95da71dfc.md)
 
 Attention Head Functionality
 
@@ -471,7 +471,7 @@ Connectivity
 
 Writing :  ✅ move early heads to appendix; new writing about seq det only
 
-- [✅ plan](../_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4/23%2010%2021-%20Plan%2004b6844e61624b28a654df94ee7e7a40.md)
+- [✅ plan](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4/23%2010%2021-%20Plan%2004b6844e61624b28a654df94ee7e7a40.md)
 
 Conn/Fn: 
 
@@ -525,11 +525,11 @@ writing
     Hi everyone, I’m yonedo and started getting into interpretability this year. A starter project I did this July was to tackle a problem from Neel’s 200 open problems list about continuing sequences that could be mapped to the natural numbers such as numbers, months, days, and letters. One of the things found was that these tasks share a lot of components, such as head 9.1 in gpt2-small (which, by checking which values are written by its OV matrix, seemed to output the “next member” of a sequence). This prelim analysis was crude and thrown together in a few days, but I’ve been working on continuing it in a new direction! I’m open to collaborating on anything similar so feel free to reach out! (or if you/a group want to polish and extend it yourself, feel free to let me know which direction you’re taking so I can plan another a different one and not spend time doing the same thing you’re doing haha). I’ll likely be lurking a lot to learn and try experiments I see before posting more (Project link): [https://alignmentjam.com/project/one-is-1-analyzing-activations-of-numerical-words-vs-digits](https://alignmentjam.com/project/one-is-1-analyzing-activations-of-numerical-words-vs-digits)
     
 
-✅ [New Novel Contributions](../New%20Novel%20Contributions%207ec236f64f394e9cb03b32ca0fbf319b.md) 
+✅ [New Novel Contributions](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/New%20Novel%20Contributions%207ec236f64f394e9cb03b32ca0fbf319b.md) 
 
-✅ [Multiple Matches Algo](../Multiple%20Matches%20Algo%203d83df8af72c4233b51d6c60cd022f8b.md) 
+✅ [Multiple Matches Algo](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Multiple%20Matches%20Algo%203d83df8af72c4233b51d6c60cd022f8b.md) 
 
-- ✅ [format circ diagrams](../format%20circ%20diagrams%206c4906c1a09f4df399d376dee58af27b.md)
+- ✅ [format circ diagrams](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/format%20circ%20diagrams%206c4906c1a09f4df399d376dee58af27b.md)
     - ✅ use different colors (fill and outline) to denote common nodes and node types.
     - ✅ highlight edges if they’re between 2 highlighted nodes.
 
@@ -542,8 +542,8 @@ Circuit Connectivity
         
         medium fails on mulpt2 for seqs not starting at 2 unless you give it at least 6 members in input
         
-- [✅ brainstorm plans](../_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4.md)
-- ✅ [Why is pure digits circuit bigger than among words](../Why%20is%20pure%20digits%20circuit%20bigger%20than%20among%20words%2094916895ee7c464780702d5720045b50.md) : [hyp](../Why%20is%20pure%20digits%20circuit%20bigger%20than%20among%20words%2094916895ee7c464780702d5720045b50.md)
+- [✅ brainstorm plans](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4.md)
+- ✅ [Why is pure digits circuit bigger than among words](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Why%20is%20pure%20digits%20circuit%20bigger%20than%20among%20words%2094916895ee7c464780702d5720045b50.md) : [hyp](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Why%20is%20pure%20digits%20circuit%20bigger%20than%20among%20words%2094916895ee7c464780702d5720045b50.md)
 - ⚠️ Make overall circuit diagram using “less accurate” circuits so far
     - ✅ color nodes based on overlap
         
@@ -574,7 +574,7 @@ Circuit Connectivity
             that's true, too many tasks would not fit the paper. I think that's all the new tasks I'll look into (we have around 8) so it'd be feasible to analyze them until next week (11/1). then we can get the first draft around that time on arxiv
             
 - 🐣 [logit lens decr](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/logit%20lens%20decr%2080b75441653c4fed99eb1f3919e37dfb.md)
-- ✅ daily [plan](../_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4.md)
+- ✅ daily [plan](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4.md)
 
 Circuit Connectivity- better corrupted dataset patching
 
@@ -607,3 +607,313 @@ Circuit Connectivity- better corrupted dataset patching
     - compare circs of all 5 corruptions types to each other for incr digits
     - get avg of what components appear in all various pruning and corruption runs
         - how impt are they (change in perf) and what’s their func? Func when together?
+        
+
+Circuit Connectivity- better iterative algos for all tasks
+
+- ✅ path patching threshold: threshold itself is meaningless. it should be like p-value: what percentage of edges are above it? Eg) keep only edges in the top 50% of distribution
+    
+    [numseq_IPP_randAll.ipynb](https://colab.research.google.com/drive/1JFcEjNe0X4G1SrE52df4RFnP1bEza-re)
+    
+- ✅ Do fwd backw and bf both converge to same circ? Prob not bc combos matter so order matters. Find differ between them.
+    - ✅ [incr digits, randAll:](https://colab.research.google.com/drive/12HF5UCvMERizkhOiYJKDziahgVq_3KD9#scrollTo=ZXouisDpS4qb) no, but they’re very similar for most impt heads. Their scores are both ~97.1%. In fact, getting their intersection gives a circuit of 82%, which is only a 15% drop.
+        
+        we could claim that these are “alternative circuits” such that what’s in fb but not in bf is an “alternative path”, akin to backup heads
+        
+        make a diagram of this for red, blue, purple
+        
+        We’ll just choose to use fb_3.
+        
+- ✅ the pp threshold itself is meaningless. it should be like p-value: what percentage of edges are above it? Eg) keep only edges in the top 50% of distribution
+    - [numseq_IPP_randAll.ipynb](https://colab.research.google.com/drive/1JFcEjNe0X4G1SrE52df4RFnP1bEza-re)
+- ✅ Reproduce and expand results of greater-than task
+    
+    [greaterThan_mincirc_draft.ipynb](https://colab.research.google.com/drive/1WmFphzbrqRugdUa1w7KBc2AWONMe765x#scrollTo=OO0m6DkS6klE)
+    
+    - ✅ Sum probs of greater than vs less than
+    - ✅ Get pos of all input tokens for seq_to_keep
+    - ✅ ablate by seq pos
+    - ✅ backw prune
+    - ✅ Test on more data samples
+        
+        [greaterThan_mincirc_draftv2.ipynb](https://colab.research.google.com/drive/14NrurcflDe4hC9WJqCvuJHzUR_q5wJJ-#scrollTo=WZl2yDK9BPtA)
+        
+    - ✅ Test fb prune and ipp on greater-than task
+        
+        [greaterThan_IPP.ipynb](https://colab.research.google.com/drive/19Le39gsiZOPqEat4VPHWDyU06My8GupZ#scrollTo=fg1gtdoVl6mU&line=2&uniqifier=1)
+        
+    - plot incr circ + greater-than in same graph (highL their E and overlap E)
+    - ⚠️ start from greater-than and add heads, test probs of output tokens greater than YY, until get to increasing by 1
+        - Does more heads mean less far away from YY? Measure each YY to 99.
+        - Perhaps more heads are needing for more “specific”; try to vary by how specific the range is. Also by seq length (greater-than tasks use “one” sequence)
+            - how does it change the probability of tokens further away from seq?
+        - How can greater-than not have heads that are recognizing words other than the digit? Surely, it must process the other words, too. Note this in “future work”?
+- ✅ ran iter N+E on decr
+- ✅ from outputted circ, rmv head one at a time to find how impt it is for circ
+    - [Impt Decr Circ Heads](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Impt%20Decr%20Circ%20Heads%20109317c38d2d4bf2ba1c721d44e17d1a.md)
+- ✅ [numWords_pruneNodes_randAll](https://colab.research.google.com/drive/1QTv-4osLHadCAay0beew-xlXszPCG88s#scrollTo=Lk3bffnCYq-p).ipynb
+- ✅ incr months
+    1. ✅ nodes: [months_mincirc_randAll](https://colab.research.google.com/drive/1lhQqlizYGMC11vzp6I9mJ3dyxIr8tV3l#scrollTo=VaxbugcfGlBA)
+        1. 4.4 seems very impt, more than 9.1
+    2. ✅ edges: [months_IPP_randAll](https://colab.research.google.com/drive/1Y4aWml4Y7PxcZtLwVt9FxIhr-MYmhoGX#scrollTo=9CApvkRLon1T).ipynb
+- ✅ 123 medium
+    
+    [add1_med_autoAblate_randAll.ipynb](https://colab.research.google.com/drive/1chZ6_lfm1o6TYkuzW292dH_uMRKh4_S0#scrollTo=BU78LW-8zn5l)
+    
+    [numseq_nextScores_medium.ipynb](https://colab.research.google.com/drive/1FAeWI25abCXpL6DQzXwR1mqSwmlEfqpM#scrollTo=tVDqHi-jihTh)
+    
+- ✅ test 246 fails on medium; plus1 ind fails on small
+- ✅ moreData incr digits fb 10: moreData_numseq_mincirc_randAll_v1.ipynb
+- ✅ change ‘moreData’ corr to have digits between a certain range of decades, rather than random numbers from far away, so that it’s more within distribution of increasing numbers. see if it makes a difference in circuit size. Run on fb_10: [moreData_numseq_mincirc_randAll](https://colab.research.google.com/drive/1mFWmGAKtigFcqqWWMCwU7wWQY2HT5ZOo#scrollTo=C2fvsn5SFnrO).ipynb
+    
+    Doesn’t make a difference. Actually slightly worse.
+    
+- ✅ [Random removal](https://colab.research.google.com/drive/1mFWmGAKtigFcqqWWMCwU7wWQY2HT5ZOo#scrollTo=0sZHzHG9Qvla&line=1&uniqifier=1)
+- ✅ Run incr digits at fb_25
+- ✅ Find most impt heads for months
+    - ✅ months: corr using rand months: months_mincirc_randAll.ipynb
+        
+        even if use no attn heads, get 7%. seems too high.
+        
+    - ✅ months: corr using rand digits: months_mincirc_randDigits.ipynb
+        
+        now this is way TOO low
+        
+    - ✅ randAll again but keep rand until get something where ‘no heads’ is decently low
+        - use this
+            
+            [{'S1': 'April',
+            'S2': 'October',
+            'S3': 'April',
+            'S4': 'September',
+            'corr': 'April',
+            'incorr': 'September',
+            'text': 'April October April September'},
+            {'S1': 'April',
+            'S2': 'May',
+            'S3': 'April',
+            'S4': 'September',
+            'corr': 'April',
+            'incorr': 'September',
+            'text': 'April May April September'},
+            {'S1': 'September',
+            'S2': 'June',
+            'S3': 'June',
+            'S4': 'January',
+            'corr': 'September',
+            'incorr': 'January',
+            'text': 'September June June January'},
+            {'S1': 'April',
+            'S2': 'December',
+            'S3': 'February',
+            'S4': 'April',
+            'corr': 'April',
+            'incorr': 'April',
+            'text': 'April December February April'},
+            {'S1': 'June',
+            'S2': 'April',
+            'S3': 'October',
+            'S4': 'December',
+            'corr': 'June',
+            'incorr': 'December',
+            'text': 'June April October December'},
+            {'S1': 'October',
+            'S2': 'March',
+            'S3': 'July',
+            'S4': 'February',
+            'corr': 'October',
+            'incorr': 'February',
+            'text': 'October March July February'},
+            {'S1': 'September',
+            'S2': 'January',
+            'S3': 'February',
+            'S4': 'April',
+            'corr': 'September',
+            'incorr': 'April',
+            'text': 'September January February April'},
+            {'S1': 'April',
+            'S2': 'January',
+            'S3': 'April',
+            'S4': 'December',
+            'corr': 'April',
+            'incorr': 'December',
+            'text': 'April January April December'}]
+            
+    - 🐣 run until fb_25 and bf_25, and rand_25
+    
+    Months uses the SAME circuit. No; it’s a SUB-CIRCUIT of increasing digits, as it doesn’t need as many due to the network needing to handle a smaller range of tokens.
+    
+- ✅ Most impt heads for numwords
+
+Circuit Functionality- Sims + Diffs
+
+- ✅ [List Tasks](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/List%20Tasks%2075facafe9dd445a19ab98886caaaeaea.md)
+- ✅ read “circuits re-use” for how they compared diff fns of components
+- ✅ [Compare incr digits subcirc to non-numericals](../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Compare%20incr%20digits%20subcirc%20to%20non-numericals%20867b7e175ac3405db361e57d9e07710f.md)
+- get ipp graphs of 4 tasks (cols) at 4 lvls of perf (3, 10, 20, ~~25~~) using fb, bf, or rand
+    - ✅ fb 80%: digits + numwords
+        - [fb: moreData_numseq_mincirc_randAll.ipynb](https://colab.research.google.com/drive/1lhQqlizYGMC11vzp6I9mJ3dyxIr8tV3l#scrollTo=563kZf_4r_mw&line=2&uniqifier=1)
+        - fb: [months_mincirc_randAll2.ipynb](https://colab.research.google.com/drive/1lhQqlizYGMC11vzp6I9mJ3dyxIr8tV3l#scrollTo=563kZf_4r_mw&line=2&uniqifier=1)
+        - fb: [numWords_pruneNodes_randAll.ipynb](https://colab.research.google.com/drive/1QTv-4osLHadCAay0beew-xlXszPCG88s#scrollTo=563kZf_4r_mw&line=2&uniqifier=1)
+    - ✅ [bf 97%](https://colab.research.google.com/drive/13WyGfWWN8tqso5vcegXcbZtLVtzhWnGR#scrollTo=N1up5KmnuLSL&line=1&uniqifier=1) digits + numwords
+- table: rows are most impt heads, cols are tasks, values are importance
+    - fb 80%
+- Convert ‘mean ablation’ table to having circuits for each task found by ablation on each row (****************See IPP for circ)****************.
+- ⚠️ [decr rand at fb 80: decr_numseq_iterN_randAll.ipynb](https://colab.research.google.com/drive/142sKzJR1Dnzn9rLcjTEw9EfdfAizpxDU#scrollTo=cGX9iHAz_UKX)
+    - [compare to prev scores](https://colab.research.google.com/drive/1gYqAcfJS3igpZsD97KffPK1E9saN33oY)
+- ✅ Use more data for numwords
+    - ISSUE: the performance highly depends on the random dataset (esp when fewer datasamples!) Try to increase from 6 samples to more! Perhaps 1.5 is more active when there are more samples.
+        
+        [numWords_pruneNodes_v2ipynb](https://colab.research.google.com/drive/1A8Q01TvO5ZQxY-OtVN9amRsAu4fUlRT3#scrollTo=0lAe9hlO8m93&line=1&uniqifier=1)
+        
+        [https://chat.openai.com/c/e4388104-2564-46aa-ab72-07ca41e9b0b3](https://chat.openai.com/c/e4388104-2564-46aa-ab72-07ca41e9b0b3)
+        
+        wait; I can use as many as I want for clean (one to twelve). corrupted just has to use one to ten. but this fails upon twenty.
+        
+        when choosing ‘random words’ for one to twelve, dataset_2.toks has dims (8,5) while clean has dims (8,4)
+        
+        The culprit is “eleven” is two tokens. Twelve is 1 token. yet how come dataset_1 doesn’t suffer from this?
+        
+        ![Untitled](Done%20b715c92198314529880806d9f206803d/Untitled.png)
+        
+        when eleven is in front, it’s split into 2 tokens. when elven has a space in front, it’s 1 token:
+        
+        ![Untitled](Done%20b715c92198314529880806d9f206803d/Untitled%201.png)
+        
+        One solution is to always use a space in front, even for start of seq
+        
+        [Interestingly enough, this increases the correct prob (perhaps bc all are seen as the same)](https://colab.research.google.com/drive/1A8Q01TvO5ZQxY-OtVN9amRsAu4fUlRT3#scrollTo=jTR2muCD-jxb&line=2&uniqifier=1)
+        
+        now that it expands from 6 to 16, it’s a bit more accurate in terms of randomness (around 45 to 55, instead of wildly varying from 40 to 70 more often; the distribution is more narrow though still susceptible ):
+        [https://colab.research.google.com/drive/1A8Q01TvO5ZQxY-OtVN9amRsAu4fUlRT3#scrollTo=61QILI7yChjM&line=1&uniqifier=1](https://colab.research.google.com/drive/1A8Q01TvO5ZQxY-OtVN9amRsAu4fUlRT3#scrollTo=61QILI7yChjM&line=1&uniqifier=1)
+        
+    - spaces in front due to separating into two tokens when no space for some number words over ten, such as ‘eleven’
+    - don’t add space in dataset, just when making prompts
+    - cleanup in: [moreData_numWords_pruneNodes](https://colab.research.google.com/drive/1DRUn2CYHbb_8H7MpZljCNfcjeXIvrvnj#scrollTo=YyiuksuLCQSA).ipynb
+    - re-run numwords circuit at 80, 90, 97
+- ✅ [repeatNew](https://colab.research.google.com/drive/1DRUn2CYHbb_8H7MpZljCNfcjeXIvrvnj#scrollTo=PjLGSZgqWvKt&line=1&uniqifier=1): replace with a repeating rand number (last two) and predict that as the ‘incorr’ token
+    
+    to erase info about all numbers in input, given last token T, use T+2 repeat last two (mod len words if numwords or months), then randomize first two or use T+2 again, or T+4 and T+7 (T+4, T+7, T+2, T+2) to reduce randomness. If this doesn’t make a difference, don’t use it.
+    
+    T+2 is that it’s sometimes “second place”:
+    
+    ![Untitled](Done%20b715c92198314529880806d9f206803d/Untitled%202.png)
+    
+    Not always:
+    
+    ![Untitled](Done%20b715c92198314529880806d9f206803d/Untitled%203.png)
+    
+    actually this doesn’t work; it predict the next one instead of the repeat:
+    
+    ![Untitled](Done%20b715c92198314529880806d9f206803d/Untitled%204.png)
+    
+    - maybe just repeat all for T+2 or T+3 or i-1 mod R
+    
+- ✅ [replace numword results using ‘more data’ and new rand corr DS (clean measures dist of i+4 to i-1)](https://colab.research.google.com/drive/1DRUn2CYHbb_8H7MpZljCNfcjeXIvrvnj#scrollTo=0lQxi-66nK-E&line=1&uniqifier=1)
+    - ✅ compare this to repeating using clean logit diff of i-1 vs i+3
+- ✅ all_in_one_randAll_cleanedUp.ipynb - ISSUE: model run with cache is unique to each dataset. so it’s better to separate them into new nbs to prevent this.
+- ✅ clean up numwords and run again: [numwords_randAll_cleanedUp](https://colab.research.google.com/drive/1WsZXGXtWLHdvkP93Qd4jenE1kzKySz9o#scrollTo=cGX9iHAz_UKX).ipynb
+- ✅ clean up digits using 'incorr': str(i+3):
+- ✅ ISSUE: months i+3 doesn’t get 9.1!  But incorr i does using the same rand DS!
+    - [run it again to confirm more it’s i+3](https://colab.research.google.com/drive/1KcODa7naVMJbOvHBGUL_CFxyfmAMM5YI#scrollTo=UCsBj6jxUlnY&line=1&uniqifier=1), using differ rand DS
+        - AGAIN, i+3 rmvs 9.1! The score is way tooo high when using i+3.
+        - For months, perhaps stick with i as the incorr?
+- ✅ run digits and numwords again using incorr as i
+    - circs are slightly bigger
+    - their comparisons to each other’s (i+3, i) and months i:
+        - digits is around the same
+        - numwords does worse on both digits and months
+        
+        VS 
+        
+    - (them using incorr i+3)
+    - run this again- why does digits incorr(i+3) have inconsistent score slight drop? is it not using the same random corr data?
+- ⚠️ use more data to corr greater-than
+    - v2: don’t use 10 to 90
+    - v3: use 10 to 90, compare to others
+- ✅ use the same rand generated corr datasets to cross-test and do IPP
+    - overall_circ_diag_draftv3.ipynb: multi numwords using incorr token i+3, while months using incorr token i.
+    - revise digits to use corr dataset of between decade range (but no seqs), as this has a smaller circuit
+- ✅ [97% digits incorr i+3 but using decades as rand](https://colab.research.google.com/drive/1A3EgZW_0HWrIX3woMk8ZEdrbEQid25Yq#scrollTo=5WMQhoCYvacq&line=1&uniqifier=1)
+    - is this smaller, and thus more displayable? incorr using i wasn’t much smaller.
+        - nope, it’s 54. so the only one being 42 prob just got lucky.
+- ✅ redo this all for 80% using incorr i+3
+    - [overall_circ_diag_draftv3.ipynb](https://colab.research.google.com/drive/18xrVQC6RsfYqk79TLC7pbcgYR-nflSkZ#scrollTo=Z2sR97NZCESJ)
+    - reduce graph size using ranksep 0.45, nodesep 0.12
+        
+        [https://chat.openai.com/c/b226b8a6-b808-4ac1-9679-6caae41ca694](https://chat.openai.com/c/b226b8a6-b808-4ac1-9679-6caae41ca694)
+        
+- ✅ redo fig 1
+
+Finalize shared circuit table results into writeup
+
+- ✅ table: rows are most impt heads, cols are tasks, values are importance (2 dec places)
+    - ✅ fb, 80% circuits
+        - [digits](https://colab.research.google.com/drive/1mFWmGAKtigFcqqWWMCwU7wWQY2HT5ZOo#scrollTo=kSqJW5C6k2X2&line=1&uniqifier=1)
+        - [numwords](https://colab.research.google.com/drive/1QTv-4osLHadCAay0beew-xlXszPCG88s#scrollTo=S3AxZcsWe30_&line=1&uniqifier=1)
+        - [months](https://colab.research.google.com/drive/1lhQqlizYGMC11vzp6I9mJ3dyxIr8tV3l#scrollTo=S3AxZcsWe30_&line=1&uniqifier=1)
+        - decr_numseq_iterN_randAll.ipynb : use len 8 instead of 10;
+    - ✅ bf, 97% circuits, rand ablation, clean incorr is i+3
+        - [~~numwords~~](https://colab.research.google.com/drive/1A8Q01TvO5ZQxY-OtVN9amRsAu4fUlRT3#scrollTo=C2EgKgmJS4qb&line=2&uniqifier=1) replace this with more data numwords
+            - ~~this has 1.5~~
+        - [numwords](https://colab.research.google.com/drive/1A3EgZW_0HWrIX3woMk8ZEdrbEQid25Yq#scrollTo=MrMM2RCA1QJ_&line=7&uniqifier=1)
+        - [digits](https://colab.research.google.com/drive/1mFWmGAKtigFcqqWWMCwU7wWQY2HT5ZOo#scrollTo=C2EgKgmJS4qb&line=1&uniqifier=1)
+- ✅ Convert ‘mean ablation’ table to having circuits for each task found by ablation on each row (****************See IPP for circ)****************.
+    - ✅ fb 80% comparisons
+        - [Incr Circ(s) on other tasks (numwords, months, decr)](https://colab.research.google.com/drive/1mFWmGAKtigFcqqWWMCwU7wWQY2HT5ZOo#scrollTo=dC4VKp97r1-e&line=1&uniqifier=1), GT, IOI
+        - [numwords](https://colab.research.google.com/drive/1QTv-4osLHadCAay0beew-xlXszPCG88s#scrollTo=dC4VKp97r1-e)
+        - [greaterthan](https://colab.research.google.com/drive/14NrurcflDe4hC9WJqCvuJHzUR_q5wJJ-#scrollTo=dC4VKp97r1-e)
+    - ✅ bf 97% comparisons
+        - [numwords](https://colab.research.google.com/drive/1A3EgZW_0HWrIX3woMk8ZEdrbEQid25Yq#scrollTo=xbZkzn0nrrxt&line=1&uniqifier=1)
+
+Attn pats for all types
+
+- ✅ Functionality of similar components
+    - ✅ stare at similar circuits for what’s sim/diff. look at conns + relate to head fns
+        
+        you don’t need to compare or explain all the differing heads; just the most impt ones. get importance score of each head after removing
+        
+    - ✅ fix `import seaborn as sns` in multiAdamis1_newAttnPat_draftv3.ipynb
+        
+        AttributeError: module 'numpy.linalg._umath_linalg' has no attribute '_ilp64’
+        
+        - notice the error only occurs after loading the setup; we can import seaborn if we don’t load the setup.
+            
+            SOLN: get rid of this:
+            
+            ```
+            # !curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -; sudo apt-get install -y nodejs
+            # %pip install git+https://github.com/neelnanda-io/PySvelte.git
+            ```
+            
+            and run ‘import seaborn as sns’ before loading and installing git repo
+            
+    - [rand1_attnPatipynb](https://drive.google.com/drive/folders/1gUqvn_ASP3gGo-4BCGdWcZ9aNtIo7kWJ)
+        - ✅ fix colors and lines, etc.
+        - ✅ table 1 lamp 2
+        - ✅ amongNumWords_attnPatipynb
+        - ✅ months
+        - ✅ get all 4 impt heads for all prompts
+    - ✅ numwords and months doesn’t need 1.5. check 1.5 on digits vs others.
+        
+        note- 1.5 and 4.4 were not considered ‘most impt heads’ in hackathon rep
+        
+        7.11 has very low copy and next scores; 7.10 has high copy scores
+        
+- ✅ IPP graph at various lvls of perf and pure/mixed comparisons
+    - ✅ fb 80%
+    - ✅ bf 97%
+    - overlapping graphs for months & other 2 (test variations)
+        - ✅ months and digits 80%, 3et (rmv nodes)
+            - [months after rmv](https://colab.research.google.com/drive/1KcODa7naVMJbOvHBGUL_CFxyfmAMM5YI#scrollTo=emDa-KEmFwyk&line=2&uniqifier=1)
+        - ✅ numberwords and months 80%, 10et (rmv nodes)
+        - ✅ numberwords and months 80%, 15et (no rmv any)
+    - ✅ 5 or 10% E threshold for digits 80% n thres
+    - ✅ all 3 tasks in 1: [overall_circ_diag_draftv5](https://colab.research.google.com/drive/1NhIZyQdiz88xblWmHFtgAufovLeUlJ8F#scrollTo=fNOHvdKOafxK).ipynb
+        - ✅ get edges for numwords + months, digits + months, and all too
+
+Writing
+
+- ✅ discuss entanglement and interference? superposition?
+- ✅ attn pat in methods
+- ✅ Definitions: Do not consider a circuit a *************fucntional sub-circuit/subset************* unless its nodes perform the same function. Define what percentage of it shares functionality. However, do consider circuits a **********connective sub-circuit/subset********** only if it shares impt nodes/edges. Say subset of if not all E appear; subgraph if all E of A are in B
