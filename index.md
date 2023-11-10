@@ -37,7 +37,10 @@ title: Front Page
 <a  id="seqCirc" href="https://arxiv.org/abs/2311.04131">Locating Cross-Task Sequence Continuation Circuits in Transformers</a>
 </b></p>
 
-<img src="/index_imgs/summaryCircuit.PNG" alt="Simplified circuits for the Increasing Digits (red) and Increasing Number Words (blue) tasks merged into one diagram. The purple portions denote a shared, entangled sub-circuit across both tasks" style="width: 75%; height: auto;">
+<div style="text-align: center;">
+    <img src="/index_imgs/summaryCircuit.PNG" alt="Simplified circuits" style="width: 75%; height: auto;">
+</div>
+<!-- <img src="/index_imgs/summaryCircuit.PNG" alt="Simplified circuits" style="width: 75%; height: auto;"> -->
 
 An ArXiV paper that is in the process of being submitted to a conference. The abstract is given as follows:
 
@@ -75,7 +78,9 @@ These pages are supplemental to the experiments:
 </div>
 --->
 
-<img src="/index_imgs/number_heads.PNG" alt=" Attention Heads for “Adam is 1…” prompts" style="width: 75%; height: auto;">
+<div style="text-align: center;">
+    <img src="/index_imgs/number_heads.PNG" alt=" Attention Heads for “Adam is 1…” prompts" style="width: 75%; height: auto;">
+</div>
 
 This is a hackathon project submitted to the <a href="https://alignmentjam.com/jam/interpretability">Interpretability Hackathon 3.0</a> (under a similar name; see note on how the projects are ordered on the site). To test for the existence of shared circuits, I compare the activations of analogous numerical sequences, such as the digits “1, 2, 3, 4”, the words “one, two, three, four”, and the months “January, February, March, April”. These findings demonstrate preliminary evidence suggesting that these semantically  related sequences share common activation patterns in GPT-2 Small, and allow the construction of a hypothesized circuit that detects and moves numbers, sending relevant information from attention heads to MLPs to  obtain the next number or analogous element. The techniques used include activation patching, attention pattern analysis, neuron feature analysis, mean ablation, logit lens, and circuit surgery.
 
