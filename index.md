@@ -24,13 +24,43 @@ title: Front Page
 <a id="toc"></a>
 ### Table of Contents
 
+- [Locating Cross-Task Sequence Continuation Circuits in Transformers](#seqCirc)
 - [One is 1: Analyzing Activations of Numerical Words vs Digits](#oneis1)
-- [Transformer Comparison Circuit Experiments](#comparison_circuits)
+<!-- - [Transformer Comparison Circuit Experiments](#comparison_circuits) -->
 - [Educational Videos on AI Safety and Neural Network Mathematics](#edu_vids)
 - [Machine Learning and Analytics on Social Media Data](#datasci)
 - [Using Materialized Views for Answering Graph Pattern Queries](#GPM)
 
 ---
+
+<p style="font-size:20px"><b>
+<a  id="seqCirc" href="https://arxiv.org/abs/2311.04131">Locating Cross-Task Sequence Continuation Circuits in Transformers</a>
+</b></p>
+
+<img src="/index_imgs/summaryCircuit.PNG" alt="Simplified circuits for the Increasing Digits (red) and Increasing Number Words (blue) tasks merged into one diagram. The purple portions denote a shared, entangled sub-circuit across both tasks" style="width: 75%; height: auto;">
+
+An ArXiV paper that is in the process of being submitted to a conference. The abstract is given as follows:
+
+While transformer models exhibit strong capabilities on linguistic tasks, their complex architectures make them difficult to interpret. Recent work has aimed to reverse engineer transformer models into human-readable representations called circuits that implement algorithmic functions. We extend this research by analyzing and comparing circuits for similar sequence continuation tasks, which include increasing sequences of digits, number words, and months. Through the application of circuit analysis techniques, we identify key sub-circuits responsible for detecting sequence members and for predicting the next member in a sequence. Our analysis reveals that semantically related sequences rely on shared circuit subgraphs with analogous roles. Overall, documenting shared computational structures enables better prediction of model behaviors, identification of errors, and safer editing procedures. This mechanistic understanding of transformers is a critical step towards building more robust, aligned, and interpretable language models.
+
+The ArXiV version can be found <a href="https://arxiv.org/abs/2311.04131">in this link</a>, and the link to the code and experiments will be uploaded soon. Another version can be <a href="https://drive.google.com/file/d/1olgAPjNdxP6QSOMm3DH6yitWHW4gXHw-/view?usp=drive_link">viewed here</a>.
+
+<!-- The video below is a short introductory overview of the work: -->
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Mh5N7VLdKcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+---
+Records of experiments and notes are found in the link below:
+
+<a href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">Experiments Index</a>
+
+These pages are supplemental to the experiments:
+
+- <a href="https://wlg1.notion.site/Notes-0c9ac6d4ec58411bb2d462ed854840c9">Notes</a>
+- <a href="https://wlg1.notion.site/Techniques-Compendium-ea12d22f5a8940b190b553d17200ba08">Techniques Compendium</a>
+- <a href="https://wlg1.notion.site/Ideas-b7fe100b6ddf4b3c84d702dc4b918ce6">Ideas</a>
+
+<hr style="height:2px; border:none; color:#333; background-color:#333;">
 
 <p style="font-size:20px"><b>
 <a  id="oneis1" href="https://wlg1.notion.site/Experimental-Records-33ca6dad981343abb00a974a6c4e3607">One is 1: Analyzing Activations of Numerical Words vs Digits</a>
@@ -45,7 +75,7 @@ title: Front Page
 </div>
 --->
 
-<img src="/index_imgs/number_heads.PNG" alt="Figure 10 – Middle Heads for “Adam is 1…” prompts" style="width: 75%; height: auto;">
+<img src="/index_imgs/number_heads.PNG" alt=" Attention Heads for “Adam is 1…” prompts" style="width: 75%; height: auto;">
 
 This is a hackathon project submitted to the <a href="https://alignmentjam.com/jam/interpretability">Interpretability Hackathon 3.0</a> (under a similar name; see note on how the projects are ordered on the site). To test for the existence of shared circuits, I compare the activations of analogous numerical sequences, such as the digits “1, 2, 3, 4”, the words “one, two, three, four”, and the months “January, February, March, April”. These findings demonstrate preliminary evidence suggesting that these semantically  related sequences share common activation patterns in GPT-2 Small, and allow the construction of a hypothesized circuit that detects and moves numbers, sending relevant information from attention heads to MLPs to  obtain the next number or analogous element. The techniques used include activation patching, attention pattern analysis, neuron feature analysis, mean ablation, logit lens, and circuit surgery.
 
@@ -53,7 +83,7 @@ The pdf report can be found <a href="https://drive.google.com/file/d/1dIcwn0nUWR
 
 <!---
 [^1]: <u>Note on the project ordering:</u> The order of the projects is only ordered for the top 4, while the rest of the ordering is the submission order from latest to earliest (I observed this as I had submitted the 3rd entry, but it appears as the 1st now as the other two were moved when pinned as 2nd and 3rd place)
---->
+
 
 <hr style="height:2px; border:none; color:#333; background-color:#333;">
 
@@ -88,6 +118,8 @@ These pages are supplemental to the experiments:
 - <a href="https://wlg1.notion.site/Notes-0c9ac6d4ec58411bb2d462ed854840c9">Notes</a>
 - <a href="https://wlg1.notion.site/Techniques-Compendium-ea12d22f5a8940b190b553d17200ba08">Techniques Compendium</a>
 - <a href="https://wlg1.notion.site/Ideas-b7fe100b6ddf4b3c84d702dc4b918ce6">Ideas</a>
+
+--->
 
 <hr style="height:2px; border:none; color:#333; background-color:#333;">
 
