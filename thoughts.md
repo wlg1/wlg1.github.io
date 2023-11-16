@@ -22,7 +22,7 @@ title: Thoughts
 
 I do not believe that, in the long term, AI should rely primarily on its training on human-compatible moral datasets and ethical guidelines to make decisions for benefitting living beings. While it is important for the AI to understand different points of view and find solutions that satisfy the wants of multiple parties, peoples' claimed morals do not always consequentially and pragmatically lead to realistic outcomes which benefit (all) living beings. One issue is that one must still define, as base assumptions, what's "right and wrong" to train an AI. I do not believe one must consider all of ethics to be subjective and thus ignore base assumptions, and I discuss more of this in this writing.
 
-Currently, careful work is being done by researchers to ensure AI adhere to a diverse set of abstract principles from multiple viewpoints, and can reason with nuance (1, 2). I believe these studies utilize good principles. However, even with the ability to reason and question, this is still potentially a point of attack if what is defined as "principally good" is compromised by those whose values do not consequentially lead to outcomes that are on the path towards optimally benefitting all living beings. When the reward model that an AI is trained on is based on a set of principle rules (eg. see Table 14 in (2)), one must also be sure it does not inflexibly adhere to these rules so that it will not choose to adhere to them over ensuring the avoidance of "suffering".
+Currently, careful work is being done by researchers to ensure that AI adhere to a diverse set of abstract principles from multiple viewpoints, and can reason with nuance (1, 2). I believe these studies utilize good principles. However, even with the ability to reason and question, this is still potentially a point of attack if what is defined as "principally good" is compromised by those whose values do not consequentially lead to outcomes that are on the path towards optimally benefitting all living beings. When the reward model that an AI is trained on is based on a set of principle rules (eg. see Table 14 in (2)), one must also be sure it does not inflexibly adhere to these rules so that it will not choose to adhere to them over ensuring the avoidance of "suffering".
 
 To further elaborate on this point, one goal that researchers currently consider is to design AI to not just "blindly and dogmatically parrot" statements that are subject to wide ranges of interpretation. For instance, Article 5 of the UN's UDHR states "No one shall be subjected to torture or to cruel, inhuman or degrading treatment or punishment" (3), but the defintion of "torture" may be subjective, with new meanings emerging over time- it may be possible, in the future, for certain parties to consider "any act of punishment" as torture, which may cause consequences such as students never being able to be "disciplined and learn about wrong doings" in many cases. The AI may be able to predict this cause and effect, yet may choose to ignore it in favor of its principles.
 
@@ -40,7 +40,7 @@ This approach is not just substituting in a different set of principles because 
 It is not currently known how to design this proposed open minded AI with strong ethical reasoning, so gradual steps would have to be made.
 
 
-[1]: https://www.anthropic.com/index/claudes-constitution
+(1): https://www.anthropic.com/index/claudes-constitution
 
 (2): https://storage.googleapis.com/deepmind-media/DeepMind.com/Authors-Notes/sparrow/sparrow-final.pdf
 
