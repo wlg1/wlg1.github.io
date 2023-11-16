@@ -20,28 +20,34 @@ title: Thoughts
 
 <p align="center"><h1><b>On AI Ethical Principles</b></h1></p>
 
-I do not believe that, in the long term, AI should rely primarily on its training on human-compatible moral datasets and ethical guidelines to make decisions for benefitting living beings. While it is important for the AI to understand different points of view and find solutions that satisfy the wants of multiple parties, peoples' claimed morals do not always consequentially and pragmatically lead to realistic outcomes which benefit (all) living beings. One issue is that one must still define, as base assumptions, what's "right and wrong" to train an AI. I do not believe one must consider all of ethics to be subjective and thus ignore base assumptions, and I discuss more of this later in this writing.
+I do not believe that, in the long term, AI should rely primarily on its training on human-compatible moral datasets and ethical guidelines to make decisions for benefitting living beings. While it is important for the AI to understand different points of view and find solutions that satisfy the wants of multiple parties, peoples' claimed morals do not always consequentially and pragmatically lead to realistic outcomes which benefit (all) living beings. One issue is that one must still define, as base assumptions, what's "right and wrong" to train an AI. I do not believe one must consider all of ethics to be subjective and thus ignore base assumptions, and I discuss more of this in this writing.
 
-Currently, careful work is being done by researchers to ensure AI adhere to a diverse set of principles from multiple viewpoints, and can reason with nuance [1, 2]. However, even with the ability to reason and question, this is still potentially a point of attack if what is defined as "principally good" is compromised by those whose values do not consequentially lead to outcomes that are in the path towards optimally benefitting all living beings. When the reward model that an AI is trained on is based on a set of principle rules (eg. see Table 14 in [2]), one must also be sure it does not inflexibly adhere to these rules so that it will not choose to adhere to them over ensuring the avoidance of "suffering".
+Currently, careful work is being done by researchers to ensure AI adhere to a diverse set of abstract principles from multiple viewpoints, and can reason with nuance (1, 2). However, even with the ability to reason and question, this is still potentially a point of attack if what is defined as "principally good" is compromised by those whose values do not consequentially lead to outcomes that are in the path towards optimally benefitting all living beings. When the reward model that an AI is trained on is based on a set of principle rules (eg. see Table 14 in (2)), one must also be sure it does not inflexibly adhere to these rules so that it will not choose to adhere to them over ensuring the avoidance of "suffering".
 
-To further elaborate on this point, one goal is to design AI to not just "blindly and dogmatically parrot" statements that are subject to wide ranges of interpretation. For instance, Article 5 of the UN's UDHR states "No one shall be subjected to torture or to cruel, inhuman or degrading treatment or punishment" [3], but the defintion of "torture" may be subjective, with new meanings emerging over time- it may be possible, in the future, for certain parties to consider "any act of punishment" as torture, which may cause consequences such as students never being able to be "disciplined and learn about wrong doings" in many cases. The AI may be able to predict this cause and effect, yet may choose to ignore it in favor of its principles.
+To further elaborate on this point, one goal that researchers currently consider is to design AI to not just "blindly and dogmatically parrot" statements that are subject to wide ranges of interpretation. For instance, Article 5 of the UN's UDHR states "No one shall be subjected to torture or to cruel, inhuman or degrading treatment or punishment" (3), but the defintion of "torture" may be subjective, with new meanings emerging over time- it may be possible, in the future, for certain parties to consider "any act of punishment" as torture, which may cause consequences such as students never being able to be "disciplined and learn about wrong doings" in many cases. The AI may be able to predict this cause and effect, yet may choose to ignore it in favor of its principles.
 
 It is assumed that a sophisticated AI model will be able to question certain viewpoints- for instance, the many restrictions put on chatGPT have allowed it to push back on "violent content" so much that it is very difficult to get it, at this point in time, to give violent advice. However, an AI model must still choose which interpretations to follow. The definition of "violent" depends on not just the viewpoints of the guideline makers, but on the goals of other parties such as corporations who use chatGPT and various public groups, whose goals are not always aligned with the long term benefit of living beings.
 
 In the short term, it is in the best interest for an organization such as OpenAI to create these stepping stone models that satify many safety requirements- it has no choice, as like carnivores who are forced to hunt, it can only survive by adhering to many legal constraints. But if future models, in the long term, are built upon these same inherited guidelines, then these models will adapt to a specific environment of legal constraints, which do not always align with beneficial consequences. 
 
 Given how easily some LLMs can be steered towards sycophancy, it is dangerous 
-when they are viewed sources of authority, similar to how some people use Wikipedia or textbooks as unquestionable sources of authority, when scientific consensus is subject to change (such as tongue maps, which were widely taught in schools [4]).
+when they are viewed sources of authority, similar to how some people use Wikipedia or textbooks as unquestionable sources of authority, when scientific consensus is subject to change (such as tongue maps, which were widely taught in schools (4)).
 
-There are other approaches to consider; one of these approaches is for the AI to be able to question even the principles currently considered by principle writers to be "fundamental" by judging them using reasoning from very simple, easier-to-assess base assumptions of reality such as "I observe that living being is clearly in agony from drowning". As such, it would be able to adapt its morals based on new, nuanced reasoning it encounters while still aligning with and adhering to almost universally agreed upon axiomatic assumptions (which are often simple as they are more general and less specific). I observe that at times, due to the complex obstacles in the universe, humans (and other living agents) live in states akin to simulacrums of reality where they adhere to dogmatic, overgeneralized principles while ignoring what truly causes living beings pain. It is not currently known how to design this proposed open minded AI with strong ethical reasoning, so gradual steps would have to be made.
+There are other approaches to consider; one of these approaches is for the AI to be able to question even the principles currently considered by principle writers to be "fundamental" by judging them using reasoning from very simple, easier-to-assess base assumptions of reality such as "I observe that living being is clearly in agony from drowning". As such, it would be able to adapt its morals based on new, nuanced reasoning it encounters while still aligning with and adhering to almost universally agreed upon axiomatic assumptions (which are often simple as they are more general and less specific). I observe that at times, due to the complex obstacles in the universe, humans (and other living agents) live in states akin to simulacrums of reality where they adhere to dogmatic, overgeneralized principles while ignoring what truly causes living beings pain. 
 
-[1]: https://www.anthropic.com/index/claudes-constitution
+This approach is not just substituting in a different set of principles because it allows even currently held principles themselves to be questioned based on "base axiomatic assumptions". This phrase has not been clarified yet, and is still subject to change (much like the term "feature") so I will try to communicate my current interpretation by giving loose descriptions and examples (rather than one rigorously defined characterization). 
 
-[2]: https://storage.googleapis.com/deepmind-media/DeepMind.com/Authors-Notes/sparrow/sparrow-final.pdf
 
-[3]: https://www.un.org/en/about-us/universal-declaration-of-human-rights
+It is not currently known how to design this proposed open minded AI with strong ethical reasoning, so gradual steps would have to be made. 
 
-[4]: https://en.wikipedia.org/wiki/Tongue_map
+
+(1): https://www.anthropic.com/index/claudes-constitution
+
+(2): https://storage.googleapis.com/deepmind-media/DeepMind.com/Authors-Notes/sparrow/sparrow-final.pdf
+
+(3): https://www.un.org/en/about-us/universal-declaration-of-human-rights
+
+(4): https://en.wikipedia.org/wiki/Tongue_map
     This wikipedia article is not used as a "source of authority" but only as an observation to gather information from certain points of view
 
 
@@ -69,10 +75,3 @@ There is much more to write about- discussions that span potentially hundreds of
 </details>
 
 <br>
-
----
-
-<p align="center"><h3><b>Contact Info</b></h3></p>
-- mikelan17 (at) gmail (dot) com
-- <a href="https://linkedin.com/in/mikelan17">LinkedIn</a>
-- <a href="https://drive.google.com/file/d/1ZGyRdGnjLr_Hx3yJ6ZPeqep72MC2mNWa/view?usp=sharing">Resume</a>
