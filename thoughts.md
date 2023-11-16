@@ -37,7 +37,7 @@ There are other approaches to consider; one of these approaches is for the AI to
 
 This approach is not just substituting in a different set of principles because it allows even currently held principles themselves to be questioned based on "base axiomatic assumptions". This phrase has not been clarified yet, and is still subject to change (much like the term "feature") so I will try to communicate my current interpretation by giving loose descriptions and examples (rather than one rigorously defined characterization). 
 
-It is not currently known how to design this proposed open minded AI with strong ethical reasoning, so gradual steps would have to be made.
+It is not currently known how to design this proposed open minded AI with strong ethical reasoning, so gradual steps would have to be made. Existing research is currently exploring years of ethics research to combine it with AI goals and intentions (5).
 
 
 (1): https://www.anthropic.com/index/claudes-constitution
@@ -47,7 +47,10 @@ It is not currently known how to design this proposed open minded AI with strong
 (3): https://www.un.org/en/about-us/universal-declaration-of-human-rights
 
 (4): https://en.wikipedia.org/wiki/Tongue_map
-    This wikipedia article is not used as a "source of authority" but only as an observation to gather information from certain points of view
+
+Note: This wikipedia article is not used as a "source of authority" but only as an observation to gather information from certain points of view
+
+(5): https://philarchive.org/archive/MCDAAA-7
 
 <p align="center"><h3><b>Clarification on "Axiomatic Assumptions" and Early Ideas on How to Reason from Them</b></h3></p>
 
@@ -61,9 +64,9 @@ Questioning assumptions is a form of playing through a simulation. Assuming cert
 
 It is possible that what is "morally correct" can only be verified based on the set of base, axiomatic assumptions one is working with. It is also possible that there are varying degrees to both how common these assumptions are across different moral systems, and how strongly different systems prioritize them. For instance, it is generally agreed upon that murder is wrong. However, situational constraints arise where murder may be required, such as in times of poverty, or to stop another murderer when no resources can contain them.
 
-A base, axiomatic assumption is a statement that is supremely prioritized. For instance, most living creatures do not want to feel pain. Thus, one should avoid suffering that causes pain. The issue is that there often many situations where pain is, in the long term, unavoidable, and one must choose the preferred avenue to encounter pain type A over pain type B. A more objective way of thinking is to focus on judging decisions based on how their pragmatic consequences relate to the prioritized wants.
+A base, axiomatic assumption may also be viewed as a statement that is supremely prioritized. For instance, most living creatures do not want to feel pain. Thus, one should avoid suffering that causes pain. The issue is that there often many situations where pain is, in the long term, unavoidable, and one must choose the preferred avenue to encounter pain type A over pain type B. A more objective way of thinking is to focus on judging decisions based on how their pragmatic consequences relate to the prioritized wants.
 
-Currently, AI is being used as a tool by people who have access to it. In the future, AI could potentially be trusted as more of a decision maker, possibly because humans merge with the technology or because its capabilities allow it to solve problems that require calcualtions beyond human capabilities, with statistics showing that it achieves good outcomes more than human decision makers.
+Currently, AI is being used as a tool by people who have access to it. In the future, AI could potentially be trusted as more of a decision maker, possibly because humans merge with the technology or because its capabilities allow it to solve problems that require calculations beyond human capabilities, with statistics showing that it achieves good outcomes more than human decision makers.
 
 When it comes to navigating through the complexities of the universe, one must be certain on real vs contradictory, but one must also be nuanced and flexible when it comes to certain statements and not overgeneralize. 
 
