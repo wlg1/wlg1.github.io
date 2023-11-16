@@ -49,7 +49,7 @@ It is not currently known how to design this proposed open minded AI with strong
 (4): https://en.wikipedia.org/wiki/Tongue_map
     This wikipedia article is not used as a "source of authority" but only as an observation to gather information from certain points of view
 
-<p align="center"><h3><b>Clarification on "base axiomatic assumptions" and Early Ideas on How to Reason from Base Assumptions</b></h3></p>
+<p align="center"><h3><b>Clarification on "Axiomatic Assumptions" and Early Ideas on How to Reason from Them</b></h3></p>
 
 Listing out all base assumptions may not be efficient, as evaluating them depends on the nuance of specific situations. Often, they are brought into consideration in response to specific situations by asking "Why?" iteratively until reaching "base assumptions" that one responds with "It just is" (and thus are lazily generated). For instance, one can question why it's wrong to steal when one can afford to buy food. There are still reasons this judgement is based on, such as how stealing causes merchants to not want to sell, which causes people to be unable to obtain the food they need, and not having food causes the pain of starvation, which is bad because "it just is". But this is a specific case- it is not always the case where stealing is wrong. If one is unfairly put in a prison and had their food taken away from, then would stealing be unjustified? In one case, not stealing leads to avoidance of pain, while in another, stealing leads to the avoidance of pain. It should not be a universal principle to say 'stealing is wrong'- there are reasons behind it.
 
