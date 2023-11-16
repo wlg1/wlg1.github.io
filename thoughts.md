@@ -30,8 +30,8 @@ It is assumed that a sophisticated AI model will be able to question certain vie
 
 In the short term, it is in the best interest for an organization such as OpenAI to create these stepping stone models that satify many safety requirements- it has no choice, as like carnivores who are forced to hunt, it can only survive by adhering to many legal constraints. But if future models, in the long term, are built upon these same inherited guidelines, then these models will adapt to a specific environment of legal constraints, which do not always align with beneficial consequences. 
 
-Given how easily some LLMs can be steered towards sycophancy, it is dangerous 
-when they are viewed as sources of authority, similar to how some people use Wikipedia or textbooks as unquestionable sources of authority, when scientific consensus is subject to change (such as tongue maps, which were widely taught in schools (4)).
+Given that some LLMs can be steered towards sycophancy, it is dangerous 
+if they are viewed as sources of authority, similar to how some people use Wikipedia or textbooks as unquestionable sources of authority, when scientific consensus is subject to change (such as tongue maps, which were widely taught in schools (4)).
 
 There are other approaches to consider; one of these approaches is for the AI to be able to question even the principles currently considered by principle writers to be "fundamental" by judging them using reasoning from very simple, easier-to-assess base assumptions of reality such as "I observe that living being is clearly in agony from drowning". As such, it would be able to adapt its morals based on new, nuanced reasoning it encounters while still aligning with and adhering to almost universally agreed upon axiomatic assumptions (which are often simple as they are more general and less specific). I observe that at times, due to the complex obstacles in the universe, humans (and other living agents) live in states akin to simulacrums of reality where they adhere to dogmatic, overgeneralized principles while ignoring what truly causes living beings pain. 
 
