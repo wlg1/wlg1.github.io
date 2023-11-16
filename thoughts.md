@@ -50,6 +50,11 @@ It is not currently known how to design this proposed open minded AI with strong
 (4): https://en.wikipedia.org/wiki/Tongue_map
     This wikipedia article is not used as a "source of authority" but only as an observation to gather information from certain points of view
 
+<p align="center"><h3><b>Clarification on "base axiomatic assumptions"</b></h3></p>
+
+There is a desire for living beings to avoid suffering, which comes in many forms. We are unsure if other living beings are conscious or not, but because they are similar to us in many ways, we assume they are. However, there are sensations even more fundamental than "other beings", which is oneself. While it is uncertain how other beings feel pain, it is absolutely 100% certain if one is feeling pain or not. It may be, though unproven in this writing, that this is a fundamental assumption that all decisions in life are built on.
+
+To prescribe that other beings feel pain, one connects them, via analogous empathy, to one's own pain, which acts as a "source" from which one judges the pain of all other beings. The level of abstraction of this connection 
 
 <p align="center"><h1><b>Long Term Goals</b></h1></p>
 
