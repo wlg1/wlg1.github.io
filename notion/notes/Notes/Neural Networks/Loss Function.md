@@ -1,5 +1,22 @@
 # Loss Function
 
+- log_softmax
+    
+    We need to know what log_softmax does so that when we modify the loss fn for new tasks, we need to know if we need to modify log_softmax, and if so, how.
+    
+    Let logits have dim [batch_size=2, seq_len=3, vocab_size=4]
+    
+    Each batch of logits is a 2-dimensional tensor with shape `[3, 4]`. The "last dimension" in this context refers to the innermost dimension when the tensor is viewed as a nested list, which is the dimension with size `4` in this case. Each inner list (or row) has four elements.
+    
+    When operations like `softmax` or `log_softmax` are applied along the last dimension (`dim=-1`), they are performed independently on each row.
+    
+    For each list, the operation converts these values into a probability distribution, where each element is a probability corresponding to a class or category, typically in a machine learning classification task. In this case, each row could represent the log probabilities of different classes for a specific instance or time step in a sequence.
+    
+    ![Untitled](Loss%20Function%20e75bb14ae1cf419294c3327de8c86c9b/Untitled.png)
+    
+
+---
+
 [https://builtin.com/machine-learning/common-loss-functions](https://builtin.com/machine-learning/common-loss-functions)
 
 Mean _ error loss functions: the average of **differences between the actual and the predicted value**

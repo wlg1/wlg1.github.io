@@ -6,46 +6,14 @@
 
 ### Working on
 
-- IPP graph at various lvls of perf and pure/mixed comparisons
-    - greater-than & overlap
-    - decr & overlap
-    - Get intersection of all perf and find its perf.
-    - plot num_heads vs performance
-- Functionality of similar components
-    - mix digits, numwords, months in same prompt (two jan).
-    - obtain for pure digits
-    - try repeated months, months not in order, etc.
-    - get induction offset scores and loop thru to find them
-    - OV scores for the 3 types.
+after 11/7
+
+structure code like Hanma et al repo
 
 Circuit Connectivity- MLPs
 
 - Ablate MLPs, neurons, and res stream outputs. See actv patching (EA, An)
     - What heads do MLPs rely on? path patch head to MLPs
-    
-- Writing
-    - describe more on months, greater-than, decr circuits (prev scores)
-    - describe this briefly:
-        - we ablate on every position
-        - path patching conscv layers like conmy, no input/residual post
-        - footnote?: we note this is only one possible circuit for the task, and not the minimal circuit
-            - Given that full circuit, we still refer to a subgraph of any size as a circuit.   But we do want to look for minimal circuits, smaller circuits
-    - just metnion in future work:
-        - future work: circuits of mixed/among
-        - remove by combos at a time (eg. rand choose 3)
-            
-            Without 5.5, may have to rely on other heads. 
-            
-        - corr types (appndx): switchLastTwo, repeatLastTwo, repeatFirstAll, repeatRand, permutation, randAll (only use this one out of the 6)
-        - we note there are several types of ‘shared circuits’
-            - same circuit, similar tokens
-            - same sub-circuit, branching components
-            - same sub-circuit, components work together in diff ways (incr vs decr at diff lens)
-        - Patterns that GPT learns from data? Eg) war lasts 20 years
-    - ~~consider div by technq again (attn pattern, OV score, QK-OV corr) and subsubsub (bold) for early-mid-late in each technq section. this is better if the technqs compare e-m-l to each other; but if each is sep, consider e-m-l as more supersection instead~~
-    - ~~Comment out background details, focus on parts less familiar to reviewers~~
-
-query (dest) of where info moves to. move to all pos. however we will perform more expms to verify this claim in future work. this means each token relies on those heads to get info. only head 9.1 can be put at end without any change. non-ablate every query pos. future work: ablate every query pos except the important ones where the head is important for moving info to.
 
 Circuit Connectivity- better iterative algos for all tasks
 
@@ -64,11 +32,12 @@ Circuit Connectivity- better iterative algos for all tasks
         - justify this in paper (like ACDC, we do not bc…)
     - double check that the final circ pruned via path patching still has same score via ablation
 
----
-
-after 11/3
-
+- Get intersection of all perf and find its perf.
 - use among words circuits to get more randomness
+- more attn pats
+    - try repeated digits or months
+    - multiprompt of random among words
+    - get induction offset scores and loop thru to find them
 - look at the nodes/edges diff between each circuit and try to explain them
 - Already have logits after ablation, so just unembed them like in [extract_model](https://colab.research.google.com/drive/1cyW5ZlupQH0VJ6qWcFBkGMbOrDeHWMdD) to get values
     
@@ -89,10 +58,16 @@ after 11/3
         - which parts of the circuit are the most impt, for what fns? based on logit diff recovery % when ablating them.
     - edit next to prev by replacing actv (see ‘circuits re-use’)
 - redo greater-than to use more samples in corrupted dataset
-
-~~place all tasks in 1 nb to prevent reload times~~
-
-~~improve randomness by not having any repeats?~~
+- footnote?: we note this is only one possible circuit for the task, and not the minimal circuit
+    - Given that full circuit, we still refer to a subgraph of any size as a circuit.   But we do want to look for minimal circuits, smaller circuits
+- corr types (appndx): switchLastTwo, repeatLastTwo, repeatFirstAll, repeatRand, permutation, randAll (only use this one out of the 6)
+- we note there are several types of ‘shared circuits’
+    - same circuit, similar tokens
+    - same sub-circuit, branching components
+    - same sub-circuit, components work together in diff ways (incr vs decr at diff lens)
+- Patterns that GPT learns from data? Eg) war lasts 20 years
+- update fig1
+- residaul stream, MLPs in graph fig
 
 [https://colab.research.google.com/drive/1KcODa7naVMJbOvHBGUL_CFxyfmAMM5YI#scrollTo=LkatbMdmp-W2&line=2&uniqifier=1](https://colab.research.google.com/drive/1KcODa7naVMJbOvHBGUL_CFxyfmAMM5YI#scrollTo=LkatbMdmp-W2&line=2&uniqifier=1)
 
@@ -425,3 +400,5 @@ Examine and compare
 **********Previous To-Do list categories**********
 
 [23 10 9 - 23 10 15](Project%20Planning%203798a71e7c5d4a888cad9a7d25a1275c/23%2010%209%20-%2023%2010%2015%20546cb16c31664f68a2eb976d8a60e033.md)
+
+---

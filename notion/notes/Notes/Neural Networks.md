@@ -16,11 +16,19 @@
 
 [Low Rank](Neural%20Networks%20e6abb23474464e098117dced189fb7bb/Low%20Rank%2080625e8314d84dadb475196257ea6009.md) 
 
-[PCA](Neural%20Networks%20e6abb23474464e098117dced189fb7bb/PCA%2006651e45a22843a29529bcf6b112ceb5.md) 
-
 [Hidden States](Neural%20Networks%20e6abb23474464e098117dced189fb7bb/Hidden%20States%20db3887268cff4dbebb92c9f61ad52485.md)
 
+Dim Reduc
+
+[PCA](Neural%20Networks%20e6abb23474464e098117dced189fb7bb/PCA%2006651e45a22843a29529bcf6b112ceb5.md) 
+
+Matrix Approximation
+
+[https://jonathan-hui.medium.com/machine-learning-singular-value-decomposition-svd-principal-component-analysis-pca-1d45e885e491](https://jonathan-hui.medium.com/machine-learning-singular-value-decomposition-svd-principal-component-analysis-pca-1d45e885e491)
+
 ---
+
+[Kl div](Neural%20Networks%20e6abb23474464e098117dced189fb7bb/Kl%20div%203e67a04a238e4631afc3ab0fa9e2a994.md)
 
 [Loss Function](Neural%20Networks%20e6abb23474464e098117dced189fb7bb/Loss%20Function%20e75bb14ae1cf419294c3327de8c86c9b.md)
 
@@ -35,6 +43,10 @@
 [Regularization](Neural%20Networks%20e6abb23474464e098117dced189fb7bb/Regularization%2012c65aa5e118436fb60a4c8e0b0fde6e.md) 
 
 [Dropout](Neural%20Networks%20e6abb23474464e098117dced189fb7bb/Dropout%20a7f554dda7aa43eda6858776d66fd319.md)
+
+---
+
+[Geometric Deep Learning](Neural%20Networks%20e6abb23474464e098117dced189fb7bb/Geometric%20Deep%20Learning%20c0f206cb539d4aed9e4a5c64446c6a1d.md)
 
 ---
 

@@ -2,6 +2,8 @@
 
 [https://colab.research.google.com/drive/1Jte9lTR05cfwToO-OyoP83R7o2qNQ1UJ#scrollTo=yBShE5-G4YvL](https://colab.research.google.com/drive/1Jte9lTR05cfwToO-OyoP83R7o2qNQ1UJ#scrollTo=yBShE5-G4YvL)
 
+This explains functions in the library used to build tools; it doesn’t focus on how to use tools to find circuits, which is what the EA demo does.
+
 ### Introduction
 
 - **`gpt2_cache` (activations)**

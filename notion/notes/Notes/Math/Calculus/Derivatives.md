@@ -39,7 +39,7 @@ $$
 
 ### [Polar Coordinates:](../Trigonometry%20b26a4065a8ea4ce28cbea6bb4c3ab69a/Polar%20Coordinates%209b869db478544856aec499c96898eb27.md)
 
-![Untitled](../Trigonometry%20b26a4065a8ea4ce28cbea6bb4c3ab69a/Polar%20Coordinates%209b869db478544856aec499c96898eb27/Untitled.png)
+![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%205.png)
 
 sin is the height. As the arc length changes, the height goes up 
 
@@ -60,32 +60,32 @@ In polar coordinates above, this is a circle because we only plot by (r, theta),
 
 ### ${f(\theta)} = {y = r * sin(\theta) = sin(\theta)}$:
 
-![Untitled](../Trigonometry%20b26a4065a8ea4ce28cbea6bb4c3ab69a/Polar%20Coordinates%209b869db478544856aec499c96898eb27/Untitled%201.png)
+![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%206.png)
 
 <<<
 
 Green triangles are [similar](../Trigonometry%20b26a4065a8ea4ce28cbea6bb4c3ab69a/Similar%20Triangles%20a6464122a42248d49080c68d07aea0bc.md). Thus, the same theta used to define polar coordinates is the angle between d(sin(th)) and d(th).
 
-![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%205.png)
+![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%207.png)
 
-![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%206.png)
+![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%208.png)
 
 ---
 
 ****[Visualizing the chain rule and product rule | Chapter 4, Essence of calculus](https://www.youtube.com/watch?v=YG15m2VwSjA&t=184s&ab_channel=3Blue1Brown)****
 
-![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%207.png)
-
-![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%208.png)
-
-### Product Rule
-
 ![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%209.png)
-
-### Chain Rule
 
 ![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%2010.png)
 
+### Product Rule
+
 ![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%2011.png)
 
+### Chain Rule
+
 ![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%2012.png)
+
+![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%2013.png)
+
+![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%2014.png)

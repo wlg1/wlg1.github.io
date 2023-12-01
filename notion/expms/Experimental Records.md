@@ -40,7 +40,9 @@ Ongoing
 
 [Apart Project- Shared Circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Apart%20Project-%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79.md)
 
-[Shared adj circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Shared%20adj%20circuits%202d73069926fc41ea9ce744e05de33103.md)
+[Modular](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Modular%20525eda602e234affa006bdc27456c483.md)
+
+[deceptive MI](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/deceptive%20MI%208e01703d090b40ddbbb9ed25baec5b60.md)
 
 Postponed/Finished
 
@@ -50,7 +52,9 @@ Postponed/Finished
 
 [Agency Hackathon](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Agency%20Hackathon%2005fccdfc9f064cd7acad0c68fa76603d.md)
 
-[Interpret Attention Head Circuits of Comparison Inputs](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b.md)
+[Comparison Circuits ](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b.md)
+
+[Shared adj circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Shared%20adj%20circuits%202d73069926fc41ea9ce744e05de33103.md)
 
 ### Proof Projects
 
@@ -75,6 +79,12 @@ Postponed/Finished
 [Journals, Conferences and Workshops](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Journals,%20Conferences%20and%20Workshops%206812ab43707a406c9fabad42b60342ee.md)
 
 [Reviews and Revisions](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Reviews%20and%20Revisions%20a50f6c11143a4df5b0cbf3957a5acf72.md)
+
+### Edu Blog Plosts
+
+[How do I contribute to research by generalizing?](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/How%20do%20I%20contribute%20to%20research%20by%20generalizing%20c4f3e5041f4b4d68babb9949873ec2c6.md)
+
+[Distill jam 2](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Distill%20jam%202%2003752a34b2ae4ab797f699100e202246.md)
 
 ---
 

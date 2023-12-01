@@ -1,131 +1,94 @@
 # Python
 
+[General](Python%20f5fe14898d744a74819532b914123159/General%20442c3ebf87744b33804eceea5d5609eb.md)
+
 [Packages](Python%20f5fe14898d744a74819532b914123159/Packages%20022db6d85ead45658f8c4d9f5fc49996.md)
 
-[ChatGPT prompts](Python%20f5fe14898d744a74819532b914123159/ChatGPT%20prompts%20aec0e6ae2f0d46d8a764d9c15fc8ff26.md)
+[Good practices](Python%20f5fe14898d744a74819532b914123159/Good%20practices%20f1bbbab0d7254ba9a72b433f1dffed93.md)
+
+[conda](Python%20f5fe14898d744a74819532b914123159/conda%20c93465991ea648fbb2e6db2795f837ae.md)
+
+[snippets and prompts](Python%20f5fe14898d744a74819532b914123159/snippets%20and%20prompts%20aec0e6ae2f0d46d8a764d9c15fc8ff26.md)
+
+- List concepts to apply
+    1. Magic methods, `__repr__`
+    2. Inheritance, Multiple Inheritance
+    3. Composition / Delegation
+    4. Dependency Injection design pattern
+    5. Polymorphism
+    6. Collections
+    7. Decorators
+    8. Yield, generators, iterators
+    9. `@dataclass`
+    10. `@contextmanagers`, with try/finally
+    11. `@abstractmethod`
+    12. Multiple constructors, overloading
+    13. `@classmethod`, `@staticmethod`
+    14. `__getitem__`, `@property`, encapsulation
+    15. Unpacking args
+    16. Typing, mutable
+    17. Raise error, try/except
+    18. Unit testing, `assert`
 
 ---
 
-- any()
-    
-    The **`any()`**  function takes an iterable (in this case, a list comprehension) as its argument and returns **`True`** if at least one element of the iterable is truthy, and **`False`** otherwise.
-    
+[Arrays](Python%20f5fe14898d744a74819532b914123159/Arrays%209ff46dd495534de884fcd66115a18ffe.md)
+
+[Numpy](Python%20f5fe14898d744a74819532b914123159/Numpy%2036fa39684bc241569f0b6b9793fe0e3d.md)
+
+[Regular Expr](Python%20f5fe14898d744a74819532b914123159/Regular%20Expr%20798e184cb9bc4bcab206eb2aed152b30.md)
+
+[Collections](Python%20f5fe14898d744a74819532b914123159/Collections%20baba4e28545148df8eb607e6c8e7f6cb.md)
+
+[Typing](Python%20f5fe14898d744a74819532b914123159/Typing%20848e0a28968643f5a9b5888663b2daf1.md)
+
+[File handling](Python%20f5fe14898d744a74819532b914123159/File%20handling%202d31fc16ee4a4f37a3fbfda857c4c802.md)
+
+[Context managers](Python%20f5fe14898d744a74819532b914123159/Context%20managers%20a022cedc35734193a19e38dff0bcdb1b.md)
+
+[Error handling](Python%20f5fe14898d744a74819532b914123159/Error%20handling%206cdbac4c29e64006ae1640d2cdd2a93d.md)
+
+[Testing](Python%20f5fe14898d744a74819532b914123159/Testing%20e6e9ada72fe240b4b7a6517c47f964ab.md)
 
 ---
 
-- [https://realpython.com/python-f-strings/#f-strings-a-new-and-improved-way-to-format-strings-in-python](https://realpython.com/python-f-strings/#f-strings-a-new-and-improved-way-to-format-strings-in-python)
-    
-    f-strings are not the old way to format strings
-    
-    OLD METHODS:
-    
-    ```python
-    >>> "Hello, {}. You are {}.".format(name, age)
-    'Hello, Eric. You are 74.'
-    
-    >>> person = {'name': 'Eric', 'age': 74}
-    >>> "Hello, {name}. You are {age}.".format(**person)
-    'Hello, Eric. You are 74.'
-    ```
-    
-    NEW METHOD (f-strings):
-    
-    ```python
-    >>> name = "Eric"
-    >>> age = 74
-    >>> f"Hello, {name}. You are {age}."
-    'Hello, Eric. You are 74.'
-    ```
-    
-    There is no need to format as long as you put f in front.
-    
+[Lambda](Python%20f5fe14898d744a74819532b914123159/Lambda%20422adcf91677481db2522ca5a4fdbe92.md)
+
+[Decorator](Python%20f5fe14898d744a74819532b914123159/Decorator%20a3bfd9efbcc6452f88d4b7415a16629b.md)
+
+[Generators and iterators](Python%20f5fe14898d744a74819532b914123159/Generators%20and%20iterators%20168af09744c34862ad7845f9d2a6deea.md)
 
 ---
 
-- [https://stackoverflow.com/questions/54962869/function-parameter-with-colon](https://stackoverflow.com/questions/54962869/function-parameter-with-colon)
-    
-    ```
-    def splitComma(line: str) -> str:
-        ...
-    ```
-    
-    It's a function annotation; function arguments and the return value (after ->) can be tagged with arbitrary Python expressions. Python itself ignores the annotation (other than saving it), but third-party tools can make use of them.
-    
-    In this case, it is intended as type hint: programs like [mypy](https://github.com/python/mypy) can analyze your code statically (that is, without running it, but only looking at the source code itself) to ensure that only `str` values are passed as arguments to `splitComma`.
-    
-- [https://medium.com/@thomas_k_r/whats-this-weird-arrow-notation-in-python-53d9e293113](https://medium.com/@thomas_k_r/whats-this-weird-arrow-notation-in-python-53d9e293113)
-    
-    ```python
-    def useful_function(x) -> int:
-        # Useful code, using x, here
-        return x
-    ```
-    
-    Return type is an int
-    
+[OOP](Python%20f5fe14898d744a74819532b914123159/OOP%20c62170ec71fe42acb5e885267f5e2381.md)
+
+[Magic methods](Python%20f5fe14898d744a74819532b914123159/Magic%20methods%20d7a7291d8778431982440eca086acaea.md)
+
+[classmethod](Python%20f5fe14898d744a74819532b914123159/classmethod%205de27c6dfe1e4fde84bf3b8edd264653.md)
+
+[static](Python%20f5fe14898d744a74819532b914123159/static%203a04c6361b6c4add9f704d40531fb646.md)
+
+[Multiple constructors](Python%20f5fe14898d744a74819532b914123159/Multiple%20constructors%2079607dfe6cc04716a7be3d440467da28.md)
+
+[property](Python%20f5fe14898d744a74819532b914123159/property%205753cbc032c541a999233da96b5fc56d.md)
+
+[__**getitem__**](Python%20f5fe14898d744a74819532b914123159/__getitem__%20cf8240ebf7194fd5aeb1be41688db92b.md)
+
+[Dataclass](Python%20f5fe14898d744a74819532b914123159/Dataclass%208305689b884f4e53ad9b186e41de00a4.md)
+
+[args kwargs](Python%20f5fe14898d744a74819532b914123159/args%20kwargs%2086abf9d6ded6447eac977afd97c0f4f1.md)
+
+[abstract class ](Python%20f5fe14898d744a74819532b914123159/abstract%20class%208b5f5b9d8bfe4b98b7a8ba4d36b762c2.md)
+
+[Encapsulation ](Python%20f5fe14898d744a74819532b914123159/Encapsulation%202ee31f9534334f1ba6d9d4f56afb433d.md)
+
+[polymorphism](Python%20f5fe14898d744a74819532b914123159/polymorphism%20b57b5ee4efdf48c7bcb82972d67e574a.md)
+
+[Design patterns](Python%20f5fe14898d744a74819532b914123159/Design%20patterns%20e7a8b98b73084e948458ad988e47e29c.md)
 
 ---
 
-- [https://stackoverflow.com/questions/36901/what-does-double-star-asterisk-and-star-asterisk-do-for-parameters](https://stackoverflow.com/questions/36901/what-does-double-star-asterisk-and-star-asterisk-do-for-parameters)
-    
-    The `*args` and `**kwargs` is a common idiom to allow arbitrary number of arguments to functions as described in the section [more on defining functions](http://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions) in the Python documentation.
-    
-    The `*args` will give you all function parameters [as a tuple](https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists):
-    
-    ```
-    def foo(*args):
-        for a in args:
-            print(a)
-    
-    foo(1)
-    # 1
-    
-    foo(1,2,3)
-    # 1
-    # 2
-    # 3
-    
-    ```
-    
-    The `**kwargs` will give you all **keyword arguments** except for those corresponding to a formal parameter as a dictionary.
-    
-    ```
-    def bar(**kwargs):
-        for a in kwargs:
-            print(a, kwargs[a])
-    
-    bar(name='one', age=27)
-    # name one
-    # age 27
-    ```
-    
-    ---
-    
-    What is model (**inputs)?
-    
-    In Python, the double-asterisk notation **`**`** is used to pass a dictionary of keyword arguments to a function. In the given code, **`**inputs`** is used to pass the dictionary **`inputs`** as keyword arguments to the **`model`** function.
-    
-    Here's how it works:
-    
-    - **`inputs`** is a dictionary that contains the input sequences as PyTorch tensors. The keys of the dictionary correspond to the names of the input tensors that the model expects (e.g., **`"input_ids"`**, **`"attention_mask"`**, etc.).
-    - **`*inputs`** unpacks the **`inputs`** dictionary into a set of keyword arguments that can be passed to the **`model`** function. This is equivalent to calling the function with the keyword arguments explicitly specified, like this: **`model(input_ids=inputs["input_ids"], attention_mask=inputs["attention_mask"], ...)`**.
-    - By using the **`*`** notation, we avoid having to manually unpack the **`inputs`** dictionary and specify each keyword argument separately. This makes the code cleaner and more concise.
-
----
-
-[https://www.stechies.com/range-vs-arangein-python/](https://www.stechies.com/range-vs-arangein-python/)
-
-Use range() for iterations
-
-arange(): NumPy arrays are fast and creating a homogenous array; good for large data sets
-
-x = np.arange(1, 10, 3)
-
-[1 4 7]
-
----
-
-- Modify in-place
+- Modify weights in-place
     
     ```
     v[...] = torch.clamp(v, min=weights_copy[k] - eps, max=weights_copy[k] + eps)
@@ -134,18 +97,3 @@ x = np.arange(1, 10, 3)
     This operation clamps the values of `v` between `min=weights_copy[k] - eps` and `max=weights_copy[k] + eps`.,  where eps is the norm constraint specified in hparams (from a file). The ellipsis (`[...]`) in the left-hand side of the assignment indicates that the values of `v` should be modified in place.
     
     The weights are modified in place because it is more efficient than creating a new tensor with the modified values. Therefore, it is a memory-efficient way to modify the tensor without creating a new tensor.
-    
-
----
-
-[https://pythonbasics.org/constructor/](https://pythonbasics.org/constructor/)
-
-The constructor `__init__(self)` is a method that is called when an object is created. This method is defined in the class and can be used to initialize basic variables.
-
-- super().**init**()
-    
-    **`super().__init__()`** is a call to the constructor of the superclass (parent class) of the current class. In Python, the **`super()`** function returns a temporary object of the superclass, which allows you to call its methods. **`__init__()`** is a method used to initialize an instance of a class.
-    
-    When you call **`super().__init__()`**, you are essentially calling the constructor of the superclass, passing it any arguments that were passed to the current class constructor. This is commonly used in object-oriented programming when you want to inherit properties and methods from a parent class while also adding your own functionality in the child class.
-    
-    For example, if you have a class **`Child`** that inherits from a class **`Parent`**, and both classes have an **`__init__()`** method, you can use **`super().__init__()`** in the **`Child`** class to call the constructor of the **`Parent`** class and initialize any properties that it defines. This allows you to reuse the code in the **`Parent`** class without having to redefine it in the **`Child`** class.

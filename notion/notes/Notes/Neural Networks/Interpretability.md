@@ -1,5 +1,15 @@
 # Interpretability
 
+[List of Circuits](Interpretability%20f36507ee13ac4e3996063b9939b8d062/List%20of%20Circuits%205d420f64bdbf45bb9312c576225c701b.md)
+
+Useful techniques:
+
+- convert weights to be usable by library
+- hooks
+- parallel processing
+
+---
+
 Lottery Ticket Hypothesis
 
 [https://www.lesswrong.com/posts/Z7R6jFjce3J2Ryj44/exploring-the-lottery-ticket-hypothesis](https://www.lesswrong.com/posts/Z7R6jFjce3J2Ryj44/exploring-the-lottery-ticket-hypothesis)

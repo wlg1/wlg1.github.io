@@ -95,6 +95,8 @@ To quickly use emojis in text, use “/emo”
 
 test [one two](https://www.notion.so/one-two-c58906e250cd409fb78e59293a340598?pvs=21) three
 
+[https://www.reddit.com/r/Notion/comments/pz7cts/is_there_no_simple_way_to_add_tags_to_pages/](https://www.reddit.com/r/Notion/comments/pz7cts/is_there_no_simple_way_to_add_tags_to_pages/)
+
 ---
 
 When making a two col after another two col, just drag below into next row of col isntead of making new two col. Making a new one will create a smaller ‘two col within two col’

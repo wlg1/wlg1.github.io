@@ -30,3 +30,15 @@
     6. Peer Review Process: Investigate the rigor and reputation of the peer review process. Some conferences and journals may have a more thorough and rigorous review process, which can improve the quality of published work.
     7. Track Record and Reputation: Research the previous papers published in the conference or journal you are considering. Assess the quality and relevance of the papers to ensure it aligns with your expectations and goals.
     8. Cost and Budget: Be mindful of any associated fees for submission, publication, or conference attendance. Top-tier conferences or journals may have higher costs, which may impact your decision depending on your available resources.
+    
+- Poster vs paper at a conf
+    
+    [https://academia.stackexchange.com/questions/194018/what-is-the-difference-between-paper-presentation-and-poster-presentation-in-te](https://academia.stackexchange.com/questions/194018/what-is-the-difference-between-paper-presentation-and-poster-presentation-in-te#:~:text=A%20paper%20presentation%20almost%20certainly,some%20feedback%20from%20conference%20attendees)
+    
+    This probably depends on the field, but in CS, at least, a paper presentation is much more valued than a poster. Moreover, conferences are thought of as more valuable than journal publications due to the sorter time scale between submission and the conference vs submission and final publication.
+    
+    A paper presentation almost certainly gets more review than a poster, even with short time scales. Posters may be most valuable to students looking to get a start on making their, not quite ready, work visible and getting some feedback from conference attendees.
+    
+    Moreover, it may be (or not) that the papers are published in the proceedings or an associated journal that doesn't include posters.
+    
+    For some purposes one can do both, actually, even at the same conferences. The paper is expected to be more refined and complete, however.

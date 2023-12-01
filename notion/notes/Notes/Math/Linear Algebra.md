@@ -28,6 +28,10 @@
 
 [Affine](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Affine%20afe0e7fdf70a41bd94641bff03fbd4c4.md)
 
+[Moore penrose inverse](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Moore%20penrose%20inverse%2096b4529e2abb4a0cab9ad796f01eff1f.md)
+
+[Matrix row vectors](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/Matrix%20row%20vectors%2048855e328f26473d8351c564fe666de6.md)
+
 ---
 
 [MIT 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning](Linear%20Algebra%20e6bc642112314024b2392685dfd6e47a/MIT%2018%20065%20Matrix%20Methods%20in%20Data%20Analysis,%20Signal%2006b8a1fe738744d0890b812702c5cd60.md)

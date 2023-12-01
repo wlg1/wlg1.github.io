@@ -33,11 +33,17 @@
 
 [Notion](Notes%200c9ac6d4ec58411bb2d462ed854840c9/Notion%2003b683dc0d694a6c863be959c6458bb7.md) 
 
+[LaTeX](Notes%200c9ac6d4ec58411bb2d462ed854840c9/LaTeX%2026f81e40be384817a706c88e8fcf5968.md)
+
 [Using GPT models](Notes%200c9ac6d4ec58411bb2d462ed854840c9/Using%20GPT%20models%20927375e848ef4e22b160a9599f319af5.md) 
 
 [AI assistants](Notes%200c9ac6d4ec58411bb2d462ed854840c9/AI%20assistants%20fe45c6ae02c843a4bfbbe95d951a6a3b.md)
 
 [GPT Plug-ins](Notes%200c9ac6d4ec58411bb2d462ed854840c9/GPT%20Plug-ins%20f14353da2d2e4e4dbde3b528642ef3ab.md)
+
+[Claude](Notes%200c9ac6d4ec58411bb2d462ed854840c9/Claude%20e936a4b07cef4a0e804fea33718cd528.md)
+
+[Google services](Notes%200c9ac6d4ec58411bb2d462ed854840c9/Google%20services%20432a06e4c3ec42d7b04ce289f3975f92.md)
 
 ---
 

@@ -26,3 +26,11 @@ the ϕi could be basis functions (neurons). Adjusting the weights αi (on neuron
 except in a few bad cases, "straighten" the basis so it's orthonormal (unshear, rotate, whatever...Gram-Schmidt fixes it automatically), meaning the αi's will operate independently
 
 linear combos make up lvl sets?
+
+---
+
+https://math.stackexchange.com/questions/487462/understanding-the-definition-and-meaning-of-cotangent-space/495467#495467
+
+https://math.stackexchange.com/questions/36591/what-is-the-intuitive-meaning-of-the-dual-space-of-a-tangent-space
+
+https://youtu.be/CYz_s82JnY8

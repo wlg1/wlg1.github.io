@@ -4,7 +4,7 @@ most_recent_S_attn_pat.ipynb
 
 [https://colab.research.google.com/drive/1KaqcS92-BI4FZ7m-r8rCW9tIovxA_s93#scrollTo=VcFgqbcF4YvI](https://colab.research.google.com/drive/1KaqcS92-BI4FZ7m-r8rCW9tIovxA_s93#scrollTo=VcFgqbcF4YvI)
 
-[Most Recent S Name Movers](../../../Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md) 
+[Most Recent S Name Movers](../../../Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b/Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md) 
 
 Based on IOI findings, we expect to find:
 

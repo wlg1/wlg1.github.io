@@ -1,5 +1,19 @@
 # Self-attention (QK)
 
+What does it mean to move information from position A to position B?
+
+As we see in [Query, Key, Value, Output Matrices](Query,%20Key,%20Value,%20Output%20Matrices%20fe92464f6ee24068b6aaa56bb85e903e.md), 
+
+- The dims of input to head are $n \times d_e$
+- The dims of query and key **weight matrices** are $d_e \times d_q$
+- So dims of query and key **matrices are** $n \times d_q$
+
+So every token position (n) has its own query vector and key vector
+
+When key vector associated with position A is multiplied with the query vector associated with position B, and the resulting activation (called ‘attention’) is high, that means position B pays strong attention to position A.
+
+---
+
 The self-attention mechanism computes the dot product between the query vector of a token and the key vectors of all tokens, including itself, in the sequence. This operation measures the similarity or relationship between the tokens.
 
 These attention weights are then multiplied by the value vectors (V), and the resulting vectors are summed up to produce the output for each token. This output is a weighted combination of the input hidden states, where the weights are determined by the attention mechanism. In this way, the dot product allows hidden states to affect each other based on the relationships between the tokens in the sequence.

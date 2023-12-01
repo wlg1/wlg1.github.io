@@ -1,6 +1,6 @@
 # Videos- Interpret Attention Head Circuits of Comparison Inputs (DRAFTS)
 
-These videos describe the work done so far for the project [Interpret Attention Head Circuits of Comparison Inputs](../Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b.md) (DRAFTS) from 5/1/2023 - 6/15/2023
+These videos describe the work done so far for the project [Comparison Circuits ](../Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b.md) (DRAFTS) from 5/1/2023 - 6/15/2023
 
 Table of Contents
 

@@ -1,6 +1,13 @@
 # Transformers
 
-Autoregressive means ‘causal’. It refers to a type of mathematical model where a variable is modeled as a function of its own past values. In other words, it predicts future values based on previous values of the same variable.
+- Autoregressive
+    
+    Autoregressive means ‘causal’. It refers to a type of mathematical model where a variable is modeled as a function of its own past values. In other words, it predicts future values based on previous values of the same variable.
+    
+    [https://huggingface.co/blog/how-to-generate](https://huggingface.co/blog/how-to-generate)
+    
+    *auto-regressive* language generation is based on the assumption that the probability distribution of a word sequence can be decomposed into the product of conditional next word distributions:
+    
 
 [Tokenizers](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Tokenizers%20f9909472886e40ccbabcf1f4d8349f41.md)
 
@@ -19,6 +26,12 @@ Autoregressive means ‘causal’. It refers to a type of mathematical model whe
 [Positional Encoding](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Positional%20Encoding%2027e592dc216e43cdb52abea533181cb6.md)
 
 [Skip connections](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Skip%20connections%20864e4b2e107c45eebf775fb463ca7e50.md)
+
+[B**igrams**](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Bigrams%2065f9a3dccc5646c2af43b68397a9a18f.md)
+
+[Choosing next token](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Choosing%20next%20token%201e0a56d892ae41ed8698df50d7c08d49.md)
+
+[Vanishing grad](Transformers%2003e1e4e7e9654bd199395f7c72a88571/Vanishing%20grad%2083bb4d5f6c3e40b19f506dab8f16ebe5.md)
 
 - Give the dimensions of each matrix multiplication step of a transformer, including the details of query key and value matrices. Provide the matrix multiplcation dimension calculations to get these output dimensions
     

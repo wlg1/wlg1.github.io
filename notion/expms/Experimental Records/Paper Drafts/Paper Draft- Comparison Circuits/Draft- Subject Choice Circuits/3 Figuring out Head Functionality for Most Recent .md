@@ -1,10 +1,10 @@
 # 3. Figuring out Head Functionality for Most Recent Name Movers
 
-[Most Recent S Name Movers](../../../Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md)
+[Most Recent S Name Movers](../../../Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b/Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md)
 
-[Custom Dataset for Circuit Discovery](../../../Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Custom%20Dataset%20for%20Circuit%20Discovery%20ba320205d59c4251bb59c262f1c839b5.md) 
+[Custom Dataset for Circuit Discovery](../../../Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b/Custom%20Dataset%20for%20Circuit%20Discovery%20ba320205d59c4251bb59c262f1c839b5.md) 
 
-[Modify copy circuits code](../../../Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Modify%20copy%20circuits%20code%20004c16a403b04ddbb7c09b62cad532d7.md) 
+[Modify copy circuits code](../../../Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b/Modify%20copy%20circuits%20code%20004c16a403b04ddbb7c09b62cad532d7.md) 
 
 Outline:
 
@@ -42,7 +42,7 @@ x-axis, attention probability: this is the QK ACTIVATION VALUE of a (layer, head
 
 y-axis, dot product: logit score $<h_i (X), W_U (N)>$ measuring how much head $h_i$ on input $X$ is writing in the direction of the logit of the name $N$ (subject)
 
-[see code for the calculation](../../../Interpret%20Attention%20Head%20Circuits%20of%20Comparison%20In%20c1d0ec7e43214760b4062ae4cdc0cd6b/Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md)
+[see code for the calculation](../../../Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b/Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md)
 
 This dot product is like taking the “final” activations and projecting into output space, but instead of “final”, this is the “premature intermediate activations”. That is, what prediction values does the head assign to the subject token? We must use W_U because the activations don’t contain the vocab_size dim.
 

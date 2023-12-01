@@ -6,9 +6,9 @@
     
     [https://www.notion.so/GPT-4-2890fb0c171b4179b0db779ac4e6f1c1?pvs=4#69e7c57e8d74411983db6321f2257f0a](https://www.notion.so/Failures-2890fb0c171b4179b0db779ac4e6f1c1?pvs=21)
     
-    ![Untitled](../Using%20GPT%20models%20927375e848ef4e22b160a9599f319af5/Failures%20a0e9fb20cd944c758b975221e7976553/Untitled.png)
-    
     ![Untitled](Transformer%20Feed-Forward%20Layers%20Are%20Key-Value%20Memo%200a97101d5550430d8ef5e0a4c8016253/Untitled.png)
+    
+    ![Untitled](Transformer%20Feed-Forward%20Layers%20Are%20Key-Value%20Memo%200a97101d5550430d8ef5e0a4c8016253/Untitled%201.png)
     
 
 - Given an input vector x, why is the probability distribution P(k | x) for vector k in modeled as an exponential distribution of exp(x dot k)? (Section 2)

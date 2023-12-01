@@ -8,6 +8,70 @@ p9: Demontrating superposition:
 
 ![Untitled](Toy%20Models%20of%20Superposition%209538794a63a541ebbd6aa19b19195839/Untitled.png)
 
+W from high to lower dim space is like bottleneck?
+
+**************************Sec 2- Basic results**************************
+
+Measure the sum of a row of W^T W to find the direction of a feature in relation to other features. This is 0 (black, orthogonal to all) if no interference, and 1 (yellow). The more interference, the more superposition
+
+1 - S =1 means dense
+
+1 - S = 0.001 means sparse
+
+Black means less superposition, yellow means more
+
+More superposition means more interference, and LESS orthogonal features
+
+Too much interference can prevent superposition- as feature are not represented right? But you can still have superposition if interference is not severe enough to make features too entangled for predictions?
+
+Interference is “pain”- increases the loss function, so self org features tend to avoid it if they can? (don’t put this in formal work as seems like it’s anthropm)
+
+L ~= benefit + interference : (trade-off)
+
+**Sec 2- Mathematical**
+
+************************Phase Change************************
+
+**Geometry**
+
+W is n by m
+
+Frobenius norm measures number of features a model has learned. it’s not per “i”, but the whole W
+
+D*: dims per feature
+
+line plot: sparsity vs D*. Since m is fixed, D* decreases as Frobenius grows bigger than m, meaning the model learns more features than hidden dimensions (neurons). These features are presumably sparse, meaning we can pack them together as say antipodal pairs, since one often activates without needing the other.
+
+“Sticky” D* for a range of sparsity means stays and “prefers” that level of D*. The 1/2 is an antipodal pair, which is effective.
+
+The log scale means the graph appears more “linear”; if the x-axis was linear, the graph would appear big value at start, and very low values soon later into a tail?
+
+Dimensionality D equation: the length of a vector is how much of the total length?
+
+This plots is similar to the previous one, but overlay with scatter plots for each model (trained on data with different feature sparsity levels)
+
+The geometries are the “individual communities” within the graph. A graph has a mix of community types- some are pairs, others are triangles, etc. Show a figure of a bigger geometric structure- 2D vs 3D (denominator).
+
+As seen in the ‘aside low rank matrices’, the edges are the covariances between features.
+
+Non-uniform:
+
+some features more important or more frequent than others (give an example to a real world analogy, “As an analogy”)
+
+Correlated features prefer to be orthogonal because they don’t want to be mixed up (too similar; needs something to distinguish). This is in contrast to believing they share something. PERHAPS they have a lot of interference in some directions (as they must to be similar; high dot prod means high interference) but low interference in distinct directions (the “branches” that help distinguish them in a decision tree?)
+
+Actually- correlated are orthogonal (90 degrees) while anticorrelated are in opposite (180)
+
+**anticorrelated: python vs romance (this is similar unless more words distinguish the info; higher entropy means more words)**
+
+[https://chat.openai.com/c/f470d8a0-7a3d-41e2-a92a-22e9a5c3bb07](https://chat.openai.com/c/f470d8a0-7a3d-41e2-a92a-22e9a5c3bb07)
+
+<<<
+
+Sec 9:
+
+For example, if one is concernedabout language models exhibiting manipulative behavior, one might ask if an input has asignificant cosine similarity to the representations of other examples of deceptive behavior. Unfortunately, superposition means that cosine similarity has the potential to be misleading, since unrelated features start to be embedded with positive dot products to each other.
+
 ---
 
 [https://www.youtube.com/watch?v=R3nbXgMnVqQ&ab_channel=NeelNanda](https://www.youtube.com/watch?v=R3nbXgMnVqQ&ab_channel=NeelNanda)
@@ -48,7 +112,11 @@ the more important it is, the more orthogonal they should be to minimize interfe
 
 47m: nonlinear actv fn magnifies interference
 
-<<<
+2h2m25s : try to measure how much a model gives a feature its own dimension VS sharing dims with other features
+
+antipodal pair of features: in opposite directions. each feature has 1/2 of the total projection onto the direction
+
+---
 
 - Relation between linear probes and tangent spaces for neural network interpretability of latent space?
     

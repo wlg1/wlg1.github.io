@@ -102,3 +102,5 @@ Making the Most of your Colab Subscription
 ---
 
 NOTE: if drive uploads an .ipynb, don’t copy drive link, copy the colab url either from ad bar or cell
+
+when you upload a notebook, it will appear in the Colab Notebooks folder by default, instead of the new notebook you created; it will not replace that new untitlted notebook. so you need to move it and delete the old untitlted one

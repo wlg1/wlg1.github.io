@@ -79,3 +79,9 @@ On the left side, feature ${x_i}$ goes from i=1 to B. This feature ${x_i}$ actua
 - Somewhat analogous to **[BatchNorm](https://www.wikipedia.org/en/Batch_normalization)**, but it doesn’t need any averaging over the batch
 - Intuitively, it makes residual stream vectors *consistent* - mapping them to the same size and range, in a way that makes things more stable for the layer using them
     - But in practice, people use it because it works, and this kind of intuition can easily be wrong
+
+---
+
+[https://arena-ch1-transformers.streamlit.app/[1.1]_Transformer_from_Scratch](https://arena-ch1-transformers.streamlit.app/%5B1.1%5D_Transformer_from_Scratch)
+
+LayerNorm is annoying for interpertability - the scale part is not linear, so you can't think about different bits of the input independently.

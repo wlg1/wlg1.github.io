@@ -122,6 +122,10 @@
 
 ### All Notes
 
+[.gitconfig](Git%204c9bd0a8425541b68fa7a146f2df3f37/gitconfig%20c8688a89b5d4416987f091604d8864ff.md)
+
+[Switch users on same machine](Git%204c9bd0a8425541b68fa7a146f2df3f37/Switch%20users%20on%20same%20machine%200f47e20825d648b398cc49c1afe05a9f.md)
+
 [Remote Repo](Git%204c9bd0a8425541b68fa7a146f2df3f37/Remote%20Repo%20065557e5db3d4170bcee5b1714ad6efc.md)
 
 [Fork](Git%204c9bd0a8425541b68fa7a146f2df3f37/Fork%203c0dff0745b84401a39f322a2a232bb6.md)
@@ -151,13 +155,51 @@
 
 [Rebase](Git%204c9bd0a8425541b68fa7a146f2df3f37/Rebase%20ab7a3565d33344aa9958e3d17b285919.md)
 
-[Switch Users](Git%204c9bd0a8425541b68fa7a146f2df3f37/Switch%20Users%200f47e20825d648b398cc49c1afe05a9f.md)
-
 [Security](Git%204c9bd0a8425541b68fa7a146f2df3f37/Security%208b45c6b0f41b4a55ac1f5b402f39c00a.md)
 
-File Types
+[Remove repo files](Git%204c9bd0a8425541b68fa7a146f2df3f37/Remove%20repo%20files%2095dee8c0a3874318be107b573ddc1cea.md)
 
-[requirements.txt](Git%204c9bd0a8425541b68fa7a146f2df3f37/requirements%20txt%204528740894b7494f933c0915795d144a.md) 
+[Github site GUI](Git%204c9bd0a8425541b68fa7a146f2df3f37/Github%20site%20GUI%20451532bc939b433d8c31ddc097cffa7d.md)
+
+- Delete last commit
+    
+    git push -f origin HEAD^:main
+    
+- a file system that does not record ownership
+    
+    This occurs when the folder you’re performing git operations like `add` is on a folder that is not a subdirectory of the folder where your .config file is in (eg. on an ext HD). Add folder dir to .config using:
+    
+    `git config --global --add safe.directory [dir_of_repo]`
+    
+- LF will be replaced by CRLF the next time Git touches it
+    
+    The message "LF will be replaced by CRLF the next time Git touches it" is related to how Git handles line endings in files. This is a common situation when working with Git on different operating systems, especially when you switch between Unix-like systems (like Linux or macOS) and Windows.
+    
+    The message "LF will be replaced by CRLF the next time Git touches it" is related to how Git handles line endings in files. This is a common situation when working with Git on different operating systems, especially when you switch between Unix-like systems (like Linux or macOS) and Windows.
+    
+    Here's what you need to know:
+    
+    1. **Line Endings**: Different operating systems use different characters to represent the end of a line in a text file. Unix-like systems use LF (Line Feed, represented as `\\n`), while Windows uses CRLF (Carriage Return Line Feed, represented as `\\r\\n`).
+    2. **Git's Behavior**: To maintain consistency and avoid issues when collaborating across different operating systems, Git can automatically convert line endings. When you check out code on a Windows system, Git will convert LF to CRLF; when you commit code, it converts CRLF back to LF to maintain consistency in the repository.
+    3. **The Message**: The message "LF will be replaced by CRLF the next time Git touches it" is a warning that Git will automatically convert line endings from LF (Unix-style) to CRLF (Windows-style) when the file is next modified or checked out. This is Git's way of normalizing line endings.
+    4. **Configuration**: You can configure this behavior in Git using the `core.autocrlf` setting. For example:
+        - `git config --global core.autocrlf true` on Windows: Converts LF to CRLF when checking out, and CRLF to LF when committing.
+        - `git config --global core.autocrlf input` on Unix-like systems: Ensures that CRLF is converted to LF on commit but doesn't change LF to CRLF on checkout.
+        - `git config --global core.autocrlf false`: Disables automatic conversion. Not recommended if you're working across different OSes, as it can lead to inconsistent line endings.
+    5. **Handling Existing Repositories**: If you already have a repository with mixed line endings, you can normalize them. Be cautious, as this will change the files in your repository, which might be an issue if other collaborators have pending changes.
+        
+        To normalize line endings in your repository:
+        
+        - Set the `core.autocrlf` setting appropriately.
+        - Add a `.gitattributes` file to your repository with line ending settings (e.g., `text=auto`).
+        - Run `git add --renormalize .` and then commit the changes.
+    
+    Remember, changing line ending settings can affect all files in your repository, so coordinate with your team when making such changes to avoid merge conflicts or other issues.
+    
+- what is verified next to github commit? is it bad if not verified?
+    
+    In summary, while having a "Verified" label on your commits can enhance trust and security, especially in collaborative and open-source projects, it's not inherently "bad" if your commits are not verified. It depends on the specific requirements and security policies of the project you are working on.
+    
 
 ### Errors
 
@@ -458,11 +500,127 @@ To push the current branch and set the remote as upstream, use `git push --set-u
     
     Remember to communicate with your team members to ensure you don't inadvertently overwrite their changes when using `--force`.
     
+- how to delete a commit to github repo after pushing it
+    
+    To delete a commit from a GitHub repository after pushing it, you need to follow these steps:
+    
+    1. **Make sure you have the necessary permissions**: Deleting a commit from a GitHub repository requires sufficient permissions. Ensure that you have the necessary access rights and authority to modify the repository.
+    2. **Locally remove the commit**: Start by removing the commit locally. You can use the `git rebase` command to interactively modify the commit history and remove the undesired commit. Open your terminal or command prompt, navigate to your local repository, and run the following command:
+        
+        ```
+        git rebase -i <commit-id>
+        
+        ```
+        
+        Replace `<commit-id>` with the commit ID of the commit you want to delete or modify. This will open an interactive rebase editor.
+        
+    3. **Delete the commit in the rebase editor**: In the interactive rebase editor, you will see a list of commits, starting from the commit you specified. Locate the line corresponding to the commit you want to delete, delete that line from the file, and save the changes. This action effectively removes the commit from the commit history.
+    4. **Push the modified commit history**: After deleting the commit locally, you need to force push the modified commit history to the GitHub repository. However, keep in mind that force pushing rewrites the repository's commit history, so exercise caution when performing this step. Run the following command:
+        
+        ```
+        git push --force
+        
+        ```
+        
+        This command overwrites the remote branch with your modified commit history. Note that using `--force` can have implications for collaborators and other branches based on the original commit, so communicate and coordinate with your team if necessary.
+        
+    5. **Verify the commit deletion on GitHub**: Once the push is complete, visit your GitHub repository and verify that the commit has been removed from the commit history.
+    
+    It's important to note that deleting a commit from a shared repository can disrupt the repository's history and affect other contributors. Therefore, it's advisable to communicate with your team members before making any significant changes to the commit history.
+    
+- when i use rebase, why are there two commits with the same name?
+    
+    When using the `git rebase` command, you may encounter situations where there are two commits with the same name. This can occur when you have multiple commits with identical changes or when you're performing a rebase that involves merging or resolving conflicts.
+    
+    Here's an example scenario to help explain why this can happen:
+    
+    1. Let's say you have a branch with three commits:
+        
+        ```
+        A -> B -> C
+        
+        ```
+        
+    2. You run the following command to perform an interactive rebase, specifying the commit before the one you want to delete (`B` in this case):
+        
+        ```
+        git rebase -i B
+        
+        ```
+        
+    3. An interactive rebase editor opens, showing the commit history:
+        
+        ```
+        pick A First commit
+        pick B Second commit
+        pick C Third commit
+        
+        ```
+        
+    4. To delete commit `B`, you delete the line corresponding to it in the editor and save the changes:
+        
+        ```
+        pick A First commit
+        # pick B Second commit (deleted)
+        pick C Third commit
+        
+        ```
+        
+    5. Git performs the rebase and applies the changes. However, during the process, Git may need to recreate the changes made in commit `B` if there are dependencies or conflicts. This results in a new commit that has the same changes as the original `B` commit. The new commit will have a different commit ID but the same commit message and changes. The resulting branch history might look like this:
+        
+        ```
+        A -> B -> C -> B'
+        
+        ```
+        
+    
+    In this case, `B'` represents the new commit that was created during the rebase process. It has the same changes as the original `B` commit but a different commit ID.
+    
+    The presence of two commits with the same name can make it confusing, especially when viewing the branch history. However, the commit IDs are different, and the original commit `B` is no longer part of the branch history.
+    
+    Note that conflicts or other factors during the rebase process can also lead to manual intervention, such as resolving conflicts, which can further complicate the commit history. It's essential to review the changes and the resulting history carefully to ensure everything is as desired before sharing or pushing the branch.
+    
+- in git editor, i added and committed but didn't push. how do i undo this?
+    
+    If you have made a commit locally but haven't pushed it yet, you can undo the commit using the following steps:
+    
+    1. **Undo the commit with a new commit**: The simplest way to undo the last commit is to create a new commit that undoes the changes introduced by the commit you want to remove. You can use the `git revert` command for this purpose. Here's what you can do:
+        
+        ```
+        git revert HEAD
+        
+        ```
+        
+        This command reverts the changes made in the last commit and creates a new commit to record the undoing.
+        
+    2. **Amend the previous commit**: If you want to modify the previous commit instead of creating a new commit, you can use the `git commit --amend` command. This allows you to make changes to the most recent commit, including updating the commit message or adding/removing files. Here are the steps:
+        - Make the necessary changes to your files.
+        - Stage the modified files using `git add`.
+        - Run the following command to amend the previous commit:
+            
+            ```
+            git commit --amend
+            
+            ```
+            
+        - This will open your default text editor where you can modify the commit message if needed. Save and close the editor.
+    3. **Discard the commit entirely**: If you want to completely discard the commit and any changes associated with it, you can use the `git reset` command. However, be cautious when using this method, as it discards the commit and its changes permanently. Here's how you can do it:
+        
+        ```
+        git reset HEAD^ --hard
+        
+        ```
+        
+        This command moves the branch pointer to the previous commit (`HEAD^`) and discards all changes made in the most recent commit using the `--hard` option.
+        
+    
+    Remember, these methods only affect the local repository. If you have already pushed the commit to a remote repository, you may need to take additional steps to remove it from the remote history, such as force pushing or collaborating with others to handle the situation appropriately.
+    
+
+[https://stackoverflow.com/questions/45403222/how-to-completely-delete-a-commit-from-github](https://stackoverflow.com/questions/45403222/how-to-completely-delete-a-commit-from-github)
 
 **To Answer Later**
 
 How do we restore a local repo based on the last commit in the local repo, not from the remote repo?
 
-Remove from staging (after add, before commit)? 
-
-Remove from commit (before push)?
+Remove from staging (after add, before commit)?

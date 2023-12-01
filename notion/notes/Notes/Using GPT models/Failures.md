@@ -50,7 +50,7 @@
     
     [https://www.notion.so/Transformer-Feed-Forward-Layers-Are-Key-Value-Memories-0a97101d5550430d8ef5e0a4c8016253?pvs=4#838db617c2c3420e94640e6651cfc861](../Papers%203fa55c25c0194ccd89e95feefb9e16bc/Transformer%20Feed-Forward%20Layers%20Are%20Key-Value%20Memo%200a97101d5550430d8ef5e0a4c8016253.md)
     
-    ![Untitled](Failures%20a0e9fb20cd944c758b975221e7976553/Untitled.png)
+    ![Untitled](../Papers%203fa55c25c0194ccd89e95feefb9e16bc/Transformer%20Feed-Forward%20Layers%20Are%20Key-Value%20Memo%200a97101d5550430d8ef5e0a4c8016253/Untitled.png)
     
 - It contradicts itself if you claim it’s wrong, so you don’t know what the answer actually is
     

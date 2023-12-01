@@ -8,7 +8,7 @@ Similar to Figure 11 from Appendix B in paper, with activation values added. For
 
 Patch paths: h → R . h is the red node in pass C, R are yellow nodes in pass C
 
-Forward pass C: The purpose is to compute the yellow nodes R, whose only difference from their values in pass B is that their term h used to compute them is from pass A”
+Forward pass C: The purpose is to compute the yellow nodes R, whose only difference from their values in pass B is that their term h used to compute them is from pass A
 
 eg) In a simplified analogy, if R = p + q + h, then 
 
