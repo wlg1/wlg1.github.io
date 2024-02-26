@@ -1,5 +1,9 @@
 # Brainstorm
 
+Inspiration from:
+
+[https://github.com/fbarez/actbasedoninternal](https://github.com/fbarez/actbasedoninternal)
+
 ---
 
 branching circuits between base and mesa objectives- can we detect this beforehand using testing on circuits instead of just relying on output feedback from model?

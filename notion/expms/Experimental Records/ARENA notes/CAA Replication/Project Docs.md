@@ -24,13 +24,17 @@ Exploratory tests
 
 [nnsight errors](Project%20Docs%20b831ce760ca248db9b8071691d76b7ee/nnsight%20errors%20954a9e52b43b42c98dffd0af28a53468.md)
 
-test other’s code:
-
-[https://drive.google.com/drive/folders/1BV-QUGDLg5GRb7ejuif4yc_hSHQTm-Eg](https://drive.google.com/drive/folders/1BV-QUGDLg5GRb7ejuif4yc_hSHQTm-Eg)
-
 your new code:
 
 [https://drive.google.com/drive/folders/1cWRIQxprRzvxWdmTVGW4hWXdo_yGMRqR](https://drive.google.com/drive/folders/1cWRIQxprRzvxWdmTVGW4hWXdo_yGMRqR)
+
+1.5:
+
+[https://colab.research.google.com/drive/1dQ-p8j_cCjHCQ82pc446vxxj5pNd2DvN?usp=sharing#scrollTo=5a3d619d](https://colab.research.google.com/drive/1dQ-p8j_cCjHCQ82pc446vxxj5pNd2DvN?usp=sharing#scrollTo=5a3d619d)
+
+test other’s code:
+
+[https://drive.google.com/drive/folders/1BV-QUGDLg5GRb7ejuif4yc_hSHQTm-Eg](https://drive.google.com/drive/folders/1BV-QUGDLg5GRb7ejuif4yc_hSHQTm-Eg)
 
 ### Notes
 
@@ -49,3 +53,5 @@ Brainstorm Pseudocode
 [PsC- Generating Steering Vectors](Project%20Docs%20b831ce760ca248db9b8071691d76b7ee/PsC-%20Generating%20Steering%20Vectors%208cfb1f9c9fe24d84baed58c9610d089b.md)
 
 [PsC- steering vectors](Project%20Docs%20b831ce760ca248db9b8071691d76b7ee/PsC-%20steering%20vectors%20444d5a9716234fe48231fba7d0d14de8.md)
+
+[Callum meeting notes](Project%20Docs%20b831ce760ca248db9b8071691d76b7ee/Callum%20meeting%20notes%20d6f37e8629824b269c00a2a23a3d84ea.md)

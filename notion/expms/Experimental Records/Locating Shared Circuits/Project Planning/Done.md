@@ -560,3 +560,128 @@ by finding circuits, we can scale down the model size to bare essentials
 Review period
 
 - ✅ Make rebuttals: [NAACL 2024 Reviews](../NAACL%202024%20Reviews%2052f78bfcd0634835959fb1cd81bf1c79.md)
+
+Clean up code
+
+Incrementally upload new code to both github repos
+
+- ✅ Delete old files or move them to folder outside of repo
+    - `saveRandDS_months_bigdata_randAll.ipynb` (vs Copy of…) and `saveRandDS_nw_bigdata_randAll` (vs nw_bigdata_randAll): Stops after 1 iter of each (1 backw, 1 fwd) by taking in ‘iter’ as arg to run_backd. Also forgoes MLPs in fwd (since assumed they were rmved in backw). They were run again on the new random dataset because that was the one used with path patching (?)
+    - Also, `saveRandDS_months_bigdata_randAll` is used to get “months circuit keeping MLP 11”
+- ✅ make attention patterns using the large dataset of “Anne born in 2” etc.
+    - ISSUE: iter nodes didn’t need cache (just logits), but attn pat needs cache, which is too much even for A100. So make it less
+- ✅ check attn pats were mean in prev paper: IOI paper, p5 “Name mover heads”: "the average attention probability of all heads over pIOI is 0.59”
+- ✅ attnpat- [:, ] on batch, then take mean
+- ✅ place data files in folder and load them in colab
+    - ✅ replace calling data files from /content/ with calling from your repo
+- ✅ find common functions in notebooks and place them in .py files
+    
+    (first in repo `seqcont_circ_expms`, then in shared repo)
+    
+    - ✅ if you used “from x import y” and changed repo on github, after ~rm -rf it and cloning again, you must do “import x” then “import importlib, importlib.reload(x)”, and “from x import y”. Run “y” to see its new args
+        
+        ```jsx
+        %cd ..
+        !rm -rf seqcont_circ_expms
+        
+        import node_ablation_fns
+        importlib.reload(node_ablation_fns)
+        from node_ablation_fns import *
+        ```
+        
+    - replace calling fns from ARENA with calling fns from your repo
+        - ✅ node ablation: dataset, metrics, ablation, pruning loops
+            - ✅ change function names in .py to not same as ARENA
+            - ✅ copy to mod for nw and months
+        - ✅ logit lens
+        - ✅ attn pat
+        - 🐣 OV scores
+        - ✅ edge ablation
+        - ✅ generate data
+        - test prompts, seq len
+    - make new folder with colab notebooks containing all fns (not imported), “self contained”
+- ✅ iter node ablation: make main script that runs algos given parser args
+    
+    The code that’s in the main script isn’t in fns as they’re suited for parsing the user args
+    
+    - [run_node_ablation.ipynb](https://colab.research.google.com/drive/1tbF5vCCyl3ew5nzQTF-rE52lkVeRBxv1#scrollTo=wvZfsSvO3713)
+        - ✅ first test giving just model name as parser arg and running logit diff
+        - ✅ ISSUE: `ioi_logits_original = model(dataset.toks)` will `^C` if takes too long. This happens when not using big enough GPU on colab.
+        - ✅ ISSUE: even with A100, CUDA out of memory when running model
+            - 512 per samp type is too much, but 300 works
+            - in colab, when you call a python file using !python, is the file run using the selected GPU on colab (say A100)?
+                
+                
+        - ✅ use more parser args: task type, num samps (per task)
+        - change data filename path to use local directory, not from colab
+        - run iter node ablation using threshold and iter type params
+- ✅ requirements.txt
+    - You don’t always need many packages, or even vers. ACDC and TF don’t even have reqs. Grokking just has a few (https://github.com/neelnanda-io/Grokking). just need torch, tf, einops. But CAA has many. Using vers is good bc other vers may not work, so this makes it more exact.
+    - NOTE: when pip installing transformerlens, it will automatically install needed packages, incl the right vers it currently uses
+    - **`jaxtyping`** is not a native Python library
+- ⚠️ make own logit lens code based on merullo
+    
+    seq_cont_logit_lens.ipynb
+    
+    - ✅ take existing code and replace wrapper with code dir from wrapper (on repo)
+    - ✅ run_logit_lens.ipynb: Runs logit lens on MLP output layers (these are same as hidden state outputs, as MLP + layernorm is end of hidden state block)
+    - ⚠️ debug why num_corr is diff in running file VS using colab
+- ✅ reorg files to src structure
+- 🐣 try to import files from other folders
+    - ⚠️ use __init__ to import fns from files in other folders
+    - 🐣 Ask KP and JR in slack
+        
+        Hi, wondering if you got time for a simple python question; right now, to import from 'folder_2/file_2' to `folder_1/file_1', I'm using sys.path.append(/root/folder_2/file_2). I heard relative imports is better, but I couldn't get it to work using from ..folder_2.file_2 even with __init__.py. What's the industry standard way of doing this?
+        
+        ANSWER: make a package, or rearrange to only import from child folders
+        
+- ✅ attn pats- locally run code
+- 🐣 OV scores- locally run code
+    - ✅ clean up nb
+    - use tf instead of oudated easyt
+    - make .py fns for local  use
+- ✅ change name of apart repo
+- ✅ iter edge pruning- locally run code
+    - ✅  change imports, get filenames to use apart repo
+    - ✅ clean up metrics fn
+    - ✅ get rid of IOIDataset types using Replace All
+    - ✅ replace old node ablation fns  (we need node ablation when rmv edges!)
+    - ✅ alter edge pruning fn names, docstrings, comments, varnames. c+p these:
+        
+        ### 1. Get activations ###
+        
+        ### 2. Frozen Clean Run with sender node patched from Corrupted Run ###
+        
+        ### 3. Clean Run with patched receiver node from step 2 ###
+        
+- ✅ generate data- locally run code
+    - ✅ mod vars in generate_data.py for numwords
+    - gen rand datasets
+- ✅ run scripts for all code by pasting from nb, update readme
+    - ✅ edge ablation: load heads_not_ablate, mlps_not_ablate as json
+    - change filename paths in run scripts
+- ✅ make sure can run locally (low data)
+    
+    `conda create --name loc_seqcont_expms`
+    
+    - run scripts on colab (more data)
+
+ACL vers:
+
+- ✅ add more to related work on how diff than succ heads
+- ✅ sharedOnly_final_circuit.ipynb : only show subcirc in Fig 2. Move full circ to Appendix A.
+    - Discuss Appendix A in main paper
+- ✅ update attn pats
+    - ✅ fix captions of fig 7.11 and 9.1
+    - ✅ mention they use mean
+    - for numwords, state the values in fig vs avg bc color too dark to see diff
+- ✅ Finish doc on ‘what is different’
+- ✅ openreview subm
+    
+    prev subm: [https://openreview.net/forum?id=IG1Kic353N](https://openreview.net/forum?id=IG1Kic353N)
+    
+    We believe that reviewer 6UWV had a lack of familiarity with the area of mechansitic interpretability.
+    
+    tl;dr - Discovery the existence of shared circuit components for sequence continuation in a large language model via mechanistic interpretability
+    
+    While transformer models exhibit strong capabilities on linguistic tasks, their complex architectures make them difficult to interpret. Recent work has aimed to reverse engineer transformer models into human-readable representations called circuits that implement algorithmic functions. We extend this research by analyzing and comparing circuits for similar sequence continuation tasks, which include increasing sequences of Arabic numerals, number words, and months. By applying circuit interpretability analysis, we identify a key sub-circuit in GPT-2 responsible for detecting sequence members and for predicting the next member in a sequence. Our analysis reveals that semantically related sequences rely on shared circuit subgraphs with analogous roles. Overall, documenting shared computational structures enables better model behavior predictions, identification of errors, and safer editing procedures. This mechanistic understanding of transformers is a critical step towards building more robust, aligned, and interpretable language models.

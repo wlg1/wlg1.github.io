@@ -14,8 +14,8 @@
     
 - Task emoji legend key
     - ✅ Done
-    - ⚠️ Stuck, possibly due to an error
-    - ✅ ⚠️  was an error, but fixed later (scour later in timeline to find when fixed)
+    - ⚠️ Stuck, possibly due to an error. not resolved yet (or didn’t updated that was resolved)
+    - ✅ ⚠️ (or🐣) was an error/to-do, but fixed later (scour later in timeline to find when fixed)
     - 🐣 / TBC: Partially done, may continue later (usually not b/c stuck, just not prioritized)
     - 🔧 / N: working on now
 - Overview: 3m Video Walkthrough
@@ -38,13 +38,15 @@
 
 [Video Walkthroughs](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Video%20Walkthroughs%20e4dccce9803c48ea858e70157e62a701.md)
 
+[Guides- How to Rsch](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Guides-%20How%20to%20Rsch%20f7c39992641140dab85ee4e96ed97d39.md)
+
 ### Experiment Projects
 
 Ongoing
 
 [Locating Shared Circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79.md)
 
-[Concept Hierarchy Components](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Concept%20Hierarchy%20Components%201a3f902d677c4593b7eebfe4009cd3c0.md)
+[Concept Hierarchy Subvectors](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Concept%20Hierarchy%20Subvectors%201a3f902d677c4593b7eebfe4009cd3c0.md)
 
 [Editing Deceptive Behavior](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Editing%20Deceptive%20Behavior%208e01703d090b40ddbbb9ed25baec5b60.md)
 

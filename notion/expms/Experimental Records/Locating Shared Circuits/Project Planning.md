@@ -6,34 +6,41 @@
 
 ### Working on
 
-Clean up code
+Interval Sequences on Larger Models
 
-- ✅ Delete old files or move them to folder outside of repo
-    - `saveRandDS_months_bigdata_randAll.ipynb` (vs Copy of…) and `saveRandDS_nw_bigdata_randAll` (vs nw_bigdata_randAll): Stops after 1 iter of each (1 backw, 1 fwd) by taking in ‘iter’ as arg to run_backd. Also forgoes MLPs in fwd (since assumed they were rmved in backw). They were run again on the new random dataset because that was the one used with path patching (?)
-    - Also, `saveRandDS_months_bigdata_randAll` is used to get “months circuit keeping MLP 11”
-- ✅ make attention patterns using the large dataset of “Anne born in 2” etc.
-    - ISSUE: iter nodes didn’t need cache (just logits), but attn pat needs cache, which is too much even for A100. So make it less
-- : on batch, then take mean
-    - IOI paper, p5 “Name mover heads”: "the average attention probability of all heads over pIOI is 0.59”
-- run hook on local cache to only save the attention heads that are needed (this avoids GPU memory overload)
-- find common functions in notebooks and place them in .py files
-    - make new folder with colab notebooks containing all fns (not imported), “self contained”
-    - replace calling fns from ARENA with calling fns from your repo
-        - dataset
-        - get scores
-        - ablation
-        - pruning loops
-- place data files in folder and load them in colab
-    - replace calling data files from /content/ with calling from your repo
-- upload new code to github (can do this incrementally too)
-    - del revision history by making copy of all and del old ones
-    - give links to publically shared colab notebooks
-
-in 1.5, show that for that query (row April), the key March is the HIGHEST it attends to. This isn’t about top values for all, but for each row.
+- In new drive folder, test prompts on Llama-2. See if can do 2, 4, 6 and Fibonacci
+    
+    test_prompts_llama2_7b.ipynb
+    
+    [https://colab.research.google.com/drive/1zFWHdQkE8vpRe6PcQwoOVz1qAdNBwtdY](https://colab.research.google.com/drive/1zFWHdQkE8vpRe6PcQwoOVz1qAdNBwtdY#scrollTo=eq6akFaINAwV)
+    
 
 <<<
 
-use both abs E thres (not below 80%, lower bound) and relative thres (must also be within this much of curernt score)
+[https://drive.google.com/drive/folders/1pXm-TS83EAfS4r3sqtSosx-J67SrnHEK](https://drive.google.com/drive/folders/1pXm-TS83EAfS4r3sqtSosx-J67SrnHEK)
+
+[https://github.com/apartresearch/seqcont_circuits/tree/main](https://github.com/apartresearch/seqcont_circuits/tree/main)
+
+[https://github.com/wlg1/seqcont_circ_expms](https://github.com/wlg1/seqcont_circ_expms)
+
+<<<
+
+- utils, helper
+- test
+- asserts in fns
+- more typing in fns
+- make package
+- Make classes: model wrapper
+
+- results folder
+- change iter node pruning threshold from 20 to 0.8 (convert input to fn var once (1-x)/100)
+- del nbs_as_py in apart repo
+- move readme details to another file (in readme state “see X file”)
+- del revision history by making copy of all and del old ones
+- give links to publically shared colab notebooks
+- in 1.5, show that for that query (row April), the key March is the HIGHEST it attends to. This isn’t about top values for all, but for each row.
+- run hook on local cache to only save the attention heads that are needed (this avoids GPU memory overload)
+- use both abs E thres (not below 80%, lower bound) and relative thres (must also be within this much of curernt score)
 
 - OPTIONAL:
     - neuron patch MLP 9 and neuroscope

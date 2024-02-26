@@ -14,11 +14,7 @@ Calendar
 
 ---
 
-Paper Replication
-
-[Project Planning](ARENA%20notes%201a8ff2624cff486e9d91b13139420026/Project%20Planning%207fb9304394ea4a728098c812a60d7034.md)
-
-[Project Docs](ARENA%20notes%201a8ff2624cff486e9d91b13139420026/Project%20Docs%20b831ce760ca248db9b8071691d76b7ee.md)
+[CAA Replication](ARENA%20notes%201a8ff2624cff486e9d91b13139420026/CAA%20Replication%20c7062646b89f46b2b623d72f722a7902.md)
 
 ---
 
@@ -88,6 +84,8 @@ Exercise Notes
 
 [Neel marius talks](ARENA%20notes%201a8ff2624cff486e9d91b13139420026/Neel%20marius%20talks%20b0b1f02919324d74a53e1f81c205ce06.md)
 
+[Other groups capstones](ARENA%20notes%201a8ff2624cff486e9d91b13139420026/Other%20groups%20capstones%20ab601971f1c84033b39c150985da1e7c.md)
+
 Are there any tips on deciding how many people should work on a paper and estimate their contribution (via task allocation)? (Eg. some papers only have 1 author, some have 20)
 
 Talk to authors about next steps (email, discord)
@@ -144,6 +142,8 @@ Important and common generalizable techniques (in response to issues):
 Only choose if both commonly used in ARENA and useful in rsch
 
 When reviewing: In each exercise, give bullets on what was used, and also make new page. Have page for both technique and sub-problem type. Eg) exercise has sub-problem “matrix multiply”, solved by technique “einsum”. Outline sub-problems by logically what is needed to be solved next.
+
+Things I found non-trivial, derived from when problem solving vs when 
 
 - Capstone recruitment post
     

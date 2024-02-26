@@ -19,3 +19,5 @@ Full Code Workflow Drafts
 [steer_llama2_nnsight_draft.ipynb](https://colab.research.google.com/drive/172FZBqjhnFtkVlWYvHKuPUlWIdNlr9vV)
 
 [steer_llama2_nnsight_draft_7bchat.ipynb](https://colab.research.google.com/drive/1c0FcOpM6ltSUoaTaqVtD_mhmjeeHOsZT)
+
+[steer_llama2_13b_nnsight_draft_v2](https://colab.research.google.com/drive/1UquKE3Ky9vwlwOfPSOZxXUyyYTeY4h8E)
