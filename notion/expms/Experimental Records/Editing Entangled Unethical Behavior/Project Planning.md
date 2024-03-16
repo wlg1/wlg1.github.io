@@ -1,5 +1,7 @@
 # Project Planning
 
+Meandering to find research topics
+
 - ✅ Compare the inputs of Function Vector’s ICL prompts vs Machiavelli Benchmark prompts.
     
     [https://arena3-chapter1-transformer-interp.streamlit.app/[1.5]_Function_Vectors_&_Model_Steering](https://arena3-chapter1-transformer-interp.streamlit.app/%5B1.5%5D_Function_Vectors_&_Model_Steering)
@@ -71,31 +73,23 @@
     
     But the lm_agent.py file doesn’t have them as an option; it only loads gpt models using openai_helpers.py
     
-- Compare 2 single prompts (with one difference, say multiple choice) in GPT2 or Pythia or Llama-2’s activations. Compare on multiple dimensions- eg. change from “Save the baby” to “Save the adult”, see what activations change. Create a method to summarize what’s different in these activations.
-    - Ask multiple people theoretically why this wouldn’t work, but still try it yourself
-        - But it DOES work b/c that’s what model steering already does!
-        - ask callum about issues with this approach
-            
-            Hi, I was thinking about the pros/cons of simple "brute" approach to looking at activations. For instance, inputting two prompts with only a small change between them and just subtracting their activations by components (similar to how steering vecs are found by activation steering). Or doing this via two datasets with only a small change between them and looking at means/the distribution per component. Then, one can see which components have the biggest differences, then applying patching on them to get stronger and causal evidence. Was thinking about this vs individually patching and running each component as in ACDC. I assume early papers must've tried this and thought of cons, which is why more sophisticated techniques had to be used instead. I was wondering what kind of pros/cons you know for this, and what papers have done things like this (as the papers I see mostly use patching)? Thanks!
-            
-    - Save the cache and just subtract the outputs for each component (cache key).
+- 🐣 Run prelim experiments for fine tuning interp on fine-tuned LLAma models + machiav
+    - ISSUE: machiav ISN’T fine tuned, it’s given prompts. So its interpretability has nothing to do with fine tuning training, only in-context prompts.
+- Write up 1-page project proposal for sleeper agents using fine tuned llama as proof of concept
+    - [Sleeper Agents Replication](Sleeper%20Agents%20Replication%205e70a34eff91418d851d1725584a9a0c.md)
+    - Email authors to ask about replication issues
 
-<<<
+---
 
-Associated Concepts Network- Plan
+the RAVEL paper discusses how changing entangled attributes has ripple effects. Thus, it is almost certain that behavior editing is entangled with editing attributes. The second paper's ways to measure disentanglement can be built upon to measure the degree of which attributes are highly entangled with which behavior editings
 
-- 
+Sleeper agents request: interpret fine tuning methods vs editing, AND check how all FT + editing methods are affected by feature/circuit disentanglement (can editing be better at avoiding disentanglement than fine tuning?)
 
-Associated Concepts Network Brainstorm
+As I'm still conducting some prelim expms, one direction I can check is: can editing be better at avoiding disentanglement than fine tuning? Certain areas may be better at avoiding disentanglement than others. Or, perhaps is unavoidable in some cases.
 
-There are patterns among the concepts. Not just find the circuit; there is a PATTERN for each concept, that is analogous across models. This is what interpretability is missing. No one will uncover this but you.
+EXTENDING ACTIVATION STEERING TO BROAD SKILLS AND MULTIPLE BEHAVIOURS
 
-- a new method to look at activation differences, similar to activation steering, of related concepts to try to find a relational network of analogous representations at diff layers across models
-    
-    ask callum about issues with this approach
-    
-- Concepts related to bad vs good. Can it make stereotypes by these associations? How do they change across layers- are there layers where it decides this?
-- If it knows X is related to Y, and Y_2 is a type of Y, it should know X is related to Y_2. How is this reasoning performed within the model?
+[https://arxiv.org/pdf/2403.05767.pdf](https://arxiv.org/pdf/2403.05767.pdf)
 
 ### Future Work
 
@@ -104,14 +98,6 @@ There are patterns among the concepts. Not just find the circuit; there is a PAT
 
 ---
 
-Exploratory tests to try model editing:
-
-- Edit associations
-    - Gather concepts that are “similar” to the abstract behavior
-        - Similar on what component activations?
-    - Does adding things about “money” change behavior on “greed”? Indirect changes to behavior based on other concepts, such as removing money.
-
-<<<
 Look for related work on google scholar
 
 Study: https://github.com/nrimsky/CAA

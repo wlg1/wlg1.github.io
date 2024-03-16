@@ -1,4 +1,4 @@
-# Brainstorm
+# Brainstorm- CCS Machiav
 
 Inspiration from:
 
@@ -17,9 +17,9 @@ pinpoint specific features for model thinking people are “less educated” suc
     I was also thinking of having 1-2 sentences about how this can relate to multimodal models. I was also interested if there are connections to adversarial examples but hard to think of any strong connections so far
     
 
-[Proposal Draft](Brainstorm%20b1c8459c616d4bc283b13e861d6bcf11/Proposal%20Draft%20d1c3f718b25649cda16a7c4401eb7618.md)
+[Proposal Draft](Brainstorm-%20CCS%20Machiav%20b1c8459c616d4bc283b13e861d6bcf11/Proposal%20Draft%20d1c3f718b25649cda16a7c4401eb7618.md)
 
-[Things to check first](Brainstorm%20b1c8459c616d4bc283b13e861d6bcf11/Things%20to%20check%20first%205df5a211549a4669802eadea56a82b10.md)
+[Things to check first](Brainstorm-%20CCS%20Machiav%20b1c8459c616d4bc283b13e861d6bcf11/Things%20to%20check%20first%205df5a211549a4669802eadea56a82b10.md)
 
 - mech interp deceptive behavior papers
     

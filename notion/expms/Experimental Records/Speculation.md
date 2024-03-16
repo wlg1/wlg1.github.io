@@ -1,4 +1,4 @@
-# Ideas (move to proj ideas/ques/speculation)
+# Speculation
 
 Overall
 
@@ -20,3 +20,26 @@ CNN
 - You can find which kernels in a CNN are edge detectors by looking for edge detector patterns. Eg) vertical is one side is >x, middle is =x, and right is < x.
 
 ### Speculations (Guesses)
+
+Wild Train of Thoughts
+
+- Patch associations
+    - What does this mean? When we patch, we patch components. How is association represented in a neural network?
+        - Two features. Ablate one and see the effect on the other
+        - How do we check the effect on a feature?
+
+Wild speculation of hypotheses
+
+- Do NN transformation find associations like how our mind does it? Take conscious personal experiences and use them to guide new ideas
+
+Wild speculation of modified techniques
+
+- Instead of ablation of components, ablate associated concepts
+
+Speculation with logical potential
+
+- 
+
+Speculation with expm evidence
+
+-

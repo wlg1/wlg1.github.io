@@ -48,23 +48,25 @@ Ongoing
 
 [Concept Hierarchy Subvectors](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Concept%20Hierarchy%20Subvectors%201a3f902d677c4593b7eebfe4009cd3c0.md)
 
-[Editing Deceptive Behavior](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Editing%20Deceptive%20Behavior%208e01703d090b40ddbbb9ed25baec5b60.md)
+[Editing Entangled Unethical Behavior](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Editing%20Entangled%20Unethical%20Behavior%208e01703d090b40ddbbb9ed25baec5b60.md)
 
 [ARENA notes](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/ARENA%20notes%201a8ff2624cff486e9d91b13139420026.md)
 
-Postponed/Finished
+Postponed
 
 [_Project Ideas_](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/_Project%20Ideas_%205d516ef4cb104f8fa0397ff0793ae0d4.md)
 
 [Postponed Projects](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Postponed%20Projects%20a8d1660ad8394f389d9ec0d01d070b02.md)
-
-[Agency Hackathon](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Agency%20Hackathon%2005fccdfc9f064cd7acad0c68fa76603d.md)
 
 [Comparison Circuits ](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b.md)
 
 [Shared adj circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Shared%20adj%20circuits%202d73069926fc41ea9ce744e05de33103.md)
 
 [Modular](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Modular%20525eda602e234affa006bdc27456c483.md)
+
+Finished
+
+[Agency Hackathon](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Agency%20Hackathon%2005fccdfc9f064cd7acad0c68fa76603d.md)
 
 ### Proof Projects
 
@@ -78,17 +80,27 @@ Postponed/Finished
 
 [Paper Reviews](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Paper%20Reviews%2031600f21f02f4cde91ef54082d46600e.md)
 
-### Related Records
+---
+
+### Ideas for Experiments
+
+[General Ideas](https://www.notion.so/General-Ideas-b7fe100b6ddf4b3c84d702dc4b918ce6?pvs=21) 
+
+[Speculation](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Speculation%2018dcd2cbad7f4bcc987f62409f8f23af.md) 
 
 ---
 
-[Ideas (move to proj ideas/ques/speculation)](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Ideas%20(move%20to%20proj%20ideas%20ques%20speculation)%2018dcd2cbad7f4bcc987f62409f8f23af.md) 
+### Logistics
+
+[Papers-Authors Databases](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Papers-Authors%20Databases%20ff68c4c3822340afabd6e0262a7cc5cf.md)
 
 [Grants and Funding](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Grants%20and%20Funding%208d6ff0f6c1f24db0a1b09acaf24dcb67.md)
 
 [Journals, Conferences and Workshops](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Journals,%20Conferences%20and%20Workshops%206812ab43707a406c9fabad42b60342ee.md)
 
 [Reviews and Revisions](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Reviews%20and%20Revisions%20a50f6c11143a4df5b0cbf3957a5acf72.md)
+
+---
 
 ### Edu Blog Plosts
 

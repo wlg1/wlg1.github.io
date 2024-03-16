@@ -1,10 +1,56 @@
 # Project Proposal
 
-[https://docs.google.com/document/d/1BiDRKuTWls0mBhV-mjixNTIIKB1J3YRaRkHLXWhH3-Y/edit](https://docs.google.com/document/d/1BiDRKuTWls0mBhV-mjixNTIIKB1J3YRaRkHLXWhH3-Y/edit)
+[https://docs.google.com/document/d/1-8PEvchtGqBbP0RUdS1USHE80XTQpnvJcVf5HFKwhhU/edit](https://docs.google.com/document/d/1-8PEvchtGqBbP0RUdS1USHE80XTQpnvJcVf5HFKwhhU/edit)
+
+Choose one of these topics to be the main one for Oxford; the other(s) will be side projects:
+
+1. Interpreting Sleeper Agents: fine tuning vs editing
+2. Editing Entangled Unethical Behavior 
+    1. edit chains of features, possibly representing abstract commonality, to behavior
+    2. compare these edits to fine tuning
+3. [ any other editing research problem you come up with while reading papers / others propose ]
+
+---
+
+How ADAM affects basis alignment by momentum (SGD doesn’t normalize it in a way to do basis alignment). 
+
+<<<
+
+SHAP-E: High dim formula ; express any topology using any parameters. Isntead of stable diffusion learning pixels, this learns parameters of function. Then is a regular diffusion model. Mesh point clouds. Geometric deep learning
+
+[https://github.com/openai/shap-e](https://github.com/openai/shap-e)
+
+3D is for game assets generation, as it has physics. Video generation doesn’t have physics. Nerf into 3D asset. Ray tracing synthesse an image into 3D asset. Topologically equivalent to a sphere.
+
+[https://www.matthewtancik.com/nerf](https://www.matthewtancik.com/nerf)
+
+Apply MI to new models; more innovative than just a new task for same model
+
+Open source tools like transformerlens
+
+[https://www.lesswrong.com/posts/kobJymvvcvhbjWFKe/laying-the-foundations-for-vision-and-multimodal-mechanistic](https://www.lesswrong.com/posts/kobJymvvcvhbjWFKe/laying-the-foundations-for-vision-and-multimodal-mechanistic)
+
+[https://graph-neural-networks.github.io/static/file/chapter7.pdf](https://graph-neural-networks.github.io/static/file/chapter7.pdf)
+
+[https://thegradient.pub/transformers-are-graph-neural-networks/](https://thegradient.pub/transformers-are-graph-neural-networks/)
+
+would deceptive models be too specific and not universsal enough for long lasting high imapct citations?
+
+connor henderson
+
+<<<
+
+(below is not up to date compared to docs link above)
 
 ~~I have summarized a project plan into a short and readable 1-page summary.~~
 
 Server msg: Is anyone interested in talking about model editing papers? We can discuss research ideas about model editing and fine tuning interpretablity.
+
+read abstracts and mix ideas to find potential solns
+
+use ai safety camp plans + discord calls to brainstorm ideas
+
+Ideas from: [https://aisafety.camp/](https://aisafety.camp/)
 
 Summary
 
@@ -93,26 +139,23 @@ To Contact
 
 Timeline with dates
 
-10 weeks to NeurIPS
+~~10 weeks to NeurIPS~~
 
-- March: Do preliminary experiments and find team members (2-4 more people)
-- April: Finish conducting main experiments
-- May: Writeup results so far in a persuadable format for NeurIPS
+10 weeks to find team members (2-4 more people)
+
+- March: Do preliminary experiments ~~and find team members (2-4 more people)~~
+- April: Finish conducting main (prelim) experiments
+- ~~May: Writeup results so far in a persuadable format for NeurIPS~~
+
+Likely will not submit to NeurIPS, so can take 3 months to find team members / prelim expms
 
 12 weeks to ICLR
 
 - June, July, August: Continue experiments
-- September: Re-submit to ICLR
+- September: Finalize for ICLR
 
 16 weeks to ICML
 
->>>>
+---
 
-Make modification to existing by changing one attribute of it:
-
-eg) Instead of antonyms, apply the steering vector 
-
-Techniques
-
-- Look at activations as a whole instead of causally ablating. Then from the activations, causally ablate.
-- Algebraic topology: The overlaps (interactions) are joins. The 5D
+[2024 Project Plans](https://www.notion.so/2024-Project-Plans-2b27f52fcb9543cb882c3a1cb2a0ec78?pvs=21)

@@ -106,6 +106,8 @@ Brainstorming Notes
 
 [Brainstorming Notes](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4.md)
 
+[Fibonacci plan](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Fibonacci%20plan%202e0e51805bee4b44ba09fe671e89ab19.md)
+
 Writeup
 
 [https://www.overleaf.com/8957882739zmjxqsvbgtwx](https://www.overleaf.com/8957882739zmjxqsvbgtwx)
@@ -124,9 +126,10 @@ Expm Results
 
 [Expm Results](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Expm%20Results%208de8fe5b943641ec92c4496843189d36.md)
 
-all files: [https://drive.google.com/drive/folders/1WCAioyU4pJFsWpVF4GukpG8osG5S-02k](https://drive.google.com/drive/folders/1WCAioyU4pJFsWpVF4GukpG8osG5S-02k)
+[Expm Results- Llama 2](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Expm%20Results-%20Llama%202%20bc7eb66db28f4bbda27403862beea6ec.md)
 
-test other paper’s code: [https://drive.google.com/drive/folders/1GgF91n2YNLXJD2KHhHe1WUhXe4zRrqQe](https://drive.google.com/drive/folders/1GgF91n2YNLXJD2KHhHe1WUhXe4zRrqQe)
+- (old) all files: [https://drive.google.com/drive/folders/1WN6s8r0altehoiLdMR2dM5dyje47a_G5](https://drive.google.com/drive/folders/1WN6s8r0altehoiLdMR2dM5dyje47a_G5)
+- test other paper’s code: [https://drive.google.com/drive/folders/1GgF91n2YNLXJD2KHhHe1WUhXe4zRrqQe](https://drive.google.com/drive/folders/1GgF91n2YNLXJD2KHhHe1WUhXe4zRrqQe)
 
 Others’ code
 
@@ -139,3 +142,5 @@ Funding
 Paper Reviews and Rebuttals
 
 [NAACL 2024 Reviews](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/NAACL%202024%20Reviews%2052f78bfcd0634835959fb1cd81bf1c79.md)
+
+[How to Improve](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/How%20to%20Improve%20377ff9e7e3f5488f924b3dc428d31c74.md)

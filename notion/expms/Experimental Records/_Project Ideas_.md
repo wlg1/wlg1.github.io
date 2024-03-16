@@ -83,3 +83,43 @@ If components all matter and it's like a symbolic code of what value is at each 
 If queried and keys act as lookup, then how do they relate to one another?
 
 if a component actv for 2 very diff types of tokens (eg. names and numbers), what’s the cosine sim between names and numbers? what about along certain feature vecs?
+
+---
+
+Neuron search just correlated groups. Coarse to fine, like bisection. Correlated groups by pca, what neurons link to one another, clusters
+
+---
+
+Do vision models recognize eigenfaces? To what degree?
+
+---
+
+Find ground features of features automated until down to base
+
+Get associated concepts by model output to abstract property questions
+
+Patch TDA
+
+---
+
+Instead of looking at edges use a graph similarity metric for circuit edges
+
+Use this metric to train a nn to be like another
+
+Analogy mapping loss
+
+Circuit loss
+
+---
+
+Features should have relation, distance, that is similar to one another. Relation between features, not just decompose activations
+
+These relations are also features in order for nn to recognize
+
+Path patching on features
+
+Non interp features 
+
+Weights and inputs should have relation to one another. Should similar weights and similar inputs activate high?
+
+Instead of incorr logit, have corr token target have big enough diff from second ranked logit. Or kl divergence
