@@ -13,7 +13,7 @@ title: Front Page
   <a href="about.html">About</a>
   <a href="eduBlogHome.html">Edu Blog Home</a>
   <a href="eduPlan.html">Edu Plan</a>
-  <a href="thoughts.html">Thoughts</a>
+  <!-- <a href="thoughts.html">Thoughts</a> -->
 </div>
 
 <img src="banner.png" alt="Banner">
