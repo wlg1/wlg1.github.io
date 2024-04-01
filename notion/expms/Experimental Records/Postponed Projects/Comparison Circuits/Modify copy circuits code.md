@@ -8,7 +8,7 @@
 > Convert to vocab space: `logits = model_small.unembed(model_small.ln_final(o))`
 > 
 
-[most_recent_S_name_movers_DRAFT.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/most_recent_S_name_movers_DRAFT%20ipynb%20ee6f1afdee0b4f369cf505ae00aaed4d.md) 
+[most_recent_S_name_movers_DRAFT.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/most_recent_S_name_movers_DRAFT%20ipynb%20ee6f1afdee0b4f369cf505ae00aaed4d.md) 
 
 z_0.shape = [1, 6, 1280]
 

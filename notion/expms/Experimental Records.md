@@ -26,7 +26,7 @@
 
 ---
 
-### **General Index**
+### **General Index (outdated from 2023)**
 
 [Questions/Hypotheses](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Questions%20Hypotheses%2087e989748e1942dfa05a7d90433f2e40.md)
 
@@ -50,6 +50,10 @@ Ongoing
 
 [Editing Entangled Unethical Behavior](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Editing%20Entangled%20Unethical%20Behavior%208e01703d090b40ddbbb9ed25baec5b60.md)
 
+[Sleeper Agents Feature Editing](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Sleeper%20Agents%20Feature%20Editing%2018e798edf7b544a2a8fd78b4c717b30a.md)
+
+[Multimodal Interp Survey](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Multimodal%20Interp%20Survey%20b32c593275f9413cb12d2c6f7c62510d.md)
+
 [ARENA notes](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/ARENA%20notes%201a8ff2624cff486e9d91b13139420026.md)
 
 Postponed
@@ -57,12 +61,6 @@ Postponed
 [_Project Ideas_](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/_Project%20Ideas_%205d516ef4cb104f8fa0397ff0793ae0d4.md)
 
 [Postponed Projects](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Postponed%20Projects%20a8d1660ad8394f389d9ec0d01d070b02.md)
-
-[Comparison Circuits ](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b.md)
-
-[Shared adj circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Shared%20adj%20circuits%202d73069926fc41ea9ce744e05de33103.md)
-
-[Modular](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Modular%20525eda602e234affa006bdc27456c483.md)
 
 Finished
 

@@ -1,4 +1,4 @@
-# Relevant Notes
+# Tooling
 
 [GPU Training at Scale](https://www.notion.so/GPU-Training-at-Scale-a7a483a375f6496a878bd4c644c2f222?pvs=21) 
 

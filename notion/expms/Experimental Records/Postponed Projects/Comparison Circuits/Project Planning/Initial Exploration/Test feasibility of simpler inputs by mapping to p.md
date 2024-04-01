@@ -236,7 +236,7 @@ gpt-2-small gives a linear logit lens graph. Try gpt-2-large instead.
 
 6) New notebook with right setup code
 
-[simple_analogies_circuits.ipynb](../../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/simple_analogies_circuits%20ipynb%20766fb391cad246da9150bcd5d98248a4.md) 
+[simple_analogies_circuits.ipynb](../../../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/simple_analogies_circuits%20ipynb%20766fb391cad246da9150bcd5d98248a4.md) 
 
 [https://colab.research.google.com/drive/1mhcgx2SU3GrDq3pMZp_-JPtE_fO-7kGg](https://colab.research.google.com/drive/1mhcgx2SU3GrDq3pMZp_-JPtE_fO-7kGg)
 

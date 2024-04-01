@@ -34,6 +34,8 @@ Ideas to try: (talk to collaborators about them)
         
     - Does the model “label” the man and the glass as the same? do they have similar measures when projected onto the labeling vector?
 
+- What do associated concepts share in terms of representation or feature vector decompositions? (eg. knife with danger, or bathtub + toaster with danger)
+
 ---
 
 Out of scope: (use this for second paper)

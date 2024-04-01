@@ -1,10 +1,10 @@
 # PLAN- Size Comparison Circuits and Neurons
 
-Previously: [tall_short_neuron_investigation.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_neuron_investigation%20ipynb%20b6fb8fd5adfc47f4b7b737249042ae53.md)
+Previously: [tall_short_neuron_investigation.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_neuron_investigation%20ipynb%20b6fb8fd5adfc47f4b7b737249042ae53.md)
 
-Expm blocks: [EB- Analysis on Inputs for Tall vs Short](../Experimental%20Results%208545f5a36448499c934d8659ba08d2c1/EB-%20Analysis%20on%20Inputs%20for%20Tall%20vs%20Short%20370cf22d285243ec9dd1f4ad9e25efe8.md) 
+Expm blocks: [EB- Analysis on Inputs for Tall vs Short](../../Experimental%20Results%208545f5a36448499c934d8659ba08d2c1/EB-%20Analysis%20on%20Inputs%20for%20Tall%20vs%20Short%20370cf22d285243ec9dd1f4ad9e25efe8.md) 
 
-[tall_short_circuit_draft.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_circuit_draft%20ipynb%2060d5d6b60d014ebd950e958ed1264c6a.md) 
+[tall_short_circuit_draft.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_circuit_draft%20ipynb%2060d5d6b60d014ebd950e958ed1264c6a.md) 
 
 ### Working on
 

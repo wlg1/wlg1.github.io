@@ -2,7 +2,7 @@
 
 [https://drive.google.com/drive/folders/1E8_BvBowK4t6NuwPrCBwakETCmYFyNe9](https://drive.google.com/drive/folders/1E8_BvBowK4t6NuwPrCBwakETCmYFyNe9)
 
-[ find a way to copy by ref the nbs in [Code Notebooks](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a.md) 
+[ find a way to copy by ref the nbs in [Code Notebooks](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a.md) 
 
 Most Recent Name Mover Heads Notebooks
 

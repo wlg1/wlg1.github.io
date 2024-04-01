@@ -46,6 +46,8 @@ Brainstorming Notes
     using structure preservation: If A→ B, then h(A) →h(B). This is similar to the definition of graph homomorphism.
     
 
+[Shared adj circuits](Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b/Shared%20adj%20circuits%202d73069926fc41ea9ce744e05de33103.md)
+
 Task Planning Notes (scattered & not listed in order of worked on, unlike in “Proj Plan”)
 
 [PLAN- Size Comparison Circuits and Neurons](Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b/PLAN-%20Size%20Comparison%20Circuits%20and%20Neurons%201111d95ef57b4131b259ef88363f3010.md)
@@ -82,8 +84,8 @@ Writeups
 
 [Outline Writeup Draft](Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b/Outline%20Writeup%20Draft%2096f5c9785c684e359a76ecb09d264875.md)
 
-[Paper Draft- Comparison Circuits](Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50.md) 
+[Paper Draft- Comparison Circuits](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50.md) 
 
 Presentations
 
-[Videos- Interpret Attention Head Circuits of Comparison Inputs (DRAFTS)](Video%20Walkthroughs%20e4dccce9803c48ea858e70157e62a701/Videos-%20Interpret%20Attention%20Head%20Circuits%20of%20Compa%2024b67e08b1d74f70be8ed3012e8278bc.md)
+[Videos- Interpret Attention Head Circuits of Comparison Inputs (DRAFTS)](../Video%20Walkthroughs%20e4dccce9803c48ea858e70157e62a701/Videos-%20Interpret%20Attention%20Head%20Circuits%20of%20Compa%2024b67e08b1d74f70be8ed3012e8278bc.md)

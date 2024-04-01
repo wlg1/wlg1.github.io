@@ -15,14 +15,14 @@
     Take from:
     
     - dotprod_size_tokens.ipynb [https://colab.research.google.com/drive/1rch6VaG9O1YFJT1wPjjbXyDgXizGT7WV#scrollTo=Dot_products_of_tokens_after_embedding_layer](https://colab.research.google.com/drive/1rch6VaG9O1YFJT1wPjjbXyDgXizGT7WV#scrollTo=Dot_products_of_tokens_after_embedding_layer)
-        - [Draft- Adjectives Congruence](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Adjectives%20Congruence%20f95dc5b0f41c4b10ac6e5a96bde7e8c6.md)
+        - [Draft- Adjectives Congruence](../../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Adjectives%20Congruence%20f95dc5b0f41c4b10ac6e5a96bde7e8c6.md)
     - tall_short_neuron_investigation.ipynb [https://colab.research.google.com/drive/1lZQkZ5u2mQxsYyiGaUKbW-XjdHP0GJpA](https://colab.research.google.com/drive/1lZQkZ5u2mQxsYyiGaUKbW-XjdHP0GJpA)
         
         tall_short_neuron_v2.ipynb
         
         [https://colab.research.google.com/drive/1Gvt1esiymU9UPfDKB1Nc7gMMUhJadLa1](https://colab.research.google.com/drive/1Gvt1esiymU9UPfDKB1Nc7gMMUhJadLa1)
         
-        [tall_short_neuron_investigation.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_neuron_investigation%20ipynb%20b6fb8fd5adfc47f4b7b737249042ae53.md) 
+        [tall_short_neuron_investigation.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_neuron_investigation%20ipynb%20b6fb8fd5adfc47f4b7b737249042ae53.md) 
         
     - Neuroscope (finding 2 of “an neuron”)
 - Brainstorm circuit based on heads found; S-inhibition heads using Explr nb
@@ -96,12 +96,12 @@ So if we find an impt head that’s one of these, ask why it’s also induction.
 - ✅ [Size Comparison Congruence](PLAN-%20Size%20Comparison%20Circuits%20and%20Neurons%201111d95ef57b4131b259ef88363f3010/Size%20Comparison%20Congruence%20e94368b6a22a4e9e9d0d444b3c5972e5.md) : review and continue
     - ✅ # Dot products of input after first MLP layer: Use this for congruence: z_0 = model.blocks[1].attn.ln1(cache["blocks.0.hook_resid_post"])
     - ✅ Divide results for -large and -small in same notebook
-        - [dotprod_size_tokens_GPTsmall.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/dotprod_size_tokens_GPTsmall%20ipynb%2048e2ade011e7429aa6721e08a4666242.md)
+        - [dotprod_size_tokens_GPTsmall.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/dotprod_size_tokens_GPTsmall%20ipynb%2048e2ade011e7429aa6721e08a4666242.md)
     - ✅ ISSUE: the “intermediate output dot product code” used an older version of the library (IOI notebook) to get the model, so it doesn’t work using the setup code from “an neuron” notebook. Move IOI notebook’s setup to GPTsmall dot products and see if it can be run again
         - It runs with no errors
     
-- ✅ More diverse examples that output “most recent subject”. [test_prompt_most_recent_S.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md)
-- [**POSTP**] Writeup activation head patching, scatter plot, and copy scores for subject movers. [Most Recent S Name Movers](Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md) into [Draft- Subject Choice Circuits](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7.md)
+- ✅ More diverse examples that output “most recent subject”. [test_prompt_most_recent_S.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md)
+- [**POSTP**] Writeup activation head patching, scatter plot, and copy scores for subject movers. [Most Recent S Name Movers](Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md) into [Draft- Subject Choice Circuits](../../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7.md)
     - Re-read IOI paper, explor an nb for ideas on which findings to select
         1. Activation Patching for Most Recent Name Movers
         - ✅ Was logit diff commented on? If so, how?
@@ -112,7 +112,7 @@ So if we find an impt head that’s one of these, ask why it’s also induction.
                 
                 We also need a list of descriptions, and a list of single token names. Then make a template that uses placeholders for them, and fill in the template.
                 
-                - ✅ Try using promptgen from [most_recent_S_name_movers_DRAFT.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/most_recent_S_name_movers_DRAFT%20ipynb%20ee6f1afdee0b4f369cf505ae00aaed4d.md). Note that uses an older library, so see if code is compatible with logit diff
+                - ✅ Try using promptgen from [most_recent_S_name_movers_DRAFT.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/most_recent_S_name_movers_DRAFT%20ipynb%20ee6f1afdee0b4f369cf505ae00aaed4d.md). Note that uses an older library, so see if code is compatible with logit diff
                 - ✅ change logit_diff() to not use len(dataset), but dataset.N
                 - Edit promptgen code to fit logit diff code
                     - ✅ ISSUE: AttributeError: 'Dataset' object has no attribute 'io_tokenIDs’
@@ -134,8 +134,8 @@ So if we find an impt head that’s one of these, ask why it’s also induction.
     - How was activation head patching described?
         
         
-- ✅ Try more variations with different number of names, varying in source and target (eg. s-3 t-3, or s-2 t-3, etc). Continue in [test_prompt_most_recent_S.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md) [[LINK](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md)]
-- ✅ Writeup activation head patching, scatter plot, for subject movers. [Most Recent S Name Movers](Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md) into [Draft- Subject Choice Circuits](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7.md)
+- ✅ Try more variations with different number of names, varying in source and target (eg. s-3 t-3, or s-2 t-3, etc). Continue in [test_prompt_most_recent_S.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md) [[LINK](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md)]
+- ✅ Writeup activation head patching, scatter plot, for subject movers. [Most Recent S Name Movers](Most%20Recent%20S%20Name%20Movers%20a72ccc6fdccc4e4baa78251399fdd2d7.md) into [Draft- Subject Choice Circuits](../../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7.md)
     
     [NOTE: Head attribution is different than activation head patching!!!](https://www.notion.so/Exploratory-Analysis-Demo-c61288d8f11b45d993c796ec28a62132?pvs=21)
     
@@ -172,9 +172,9 @@ So if we find an impt head that’s one of these, ask why it’s also induction.
     
 - ✅ Move some logit diff and actv patch sentences to overleaf draft as placeholders to get a sense of what to carve down or add in
 - ✅ Write up copy scores draft; take sentence from prev and apply it to new
-- [**POSTP**] Attention patterns (QK) analysis for latest S. [3. Figuring out Head Functionality for Most Recent Name Movers](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
+- [**POSTP**] Attention patterns (QK) analysis for latest S. [3. Figuring out Head Functionality for Most Recent Name Movers](../../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
 - ✅ Put a table of a few results for “latest S input prompts” in overleaf
-- ✅ For GPT-small, describe some dot product results we had so far and put them into ‘expm blocks’ or [Draft- Adjectives Congruence](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Adjectives%20Congruence%20f95dc5b0f41c4b10ac6e5a96bde7e8c6.md) .
+- ✅ For GPT-small, describe some dot product results we had so far and put them into ‘expm blocks’ or [Draft- Adjectives Congruence](../../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Adjectives%20Congruence%20f95dc5b0f41c4b10ac6e5a96bde7e8c6.md) .
     
     Just put a sentence or two in for now
     
@@ -202,14 +202,14 @@ So if we find an impt head that’s one of these, ask why it’s also induction.
         - Debug: `'Dataset' object has no attribute 'groups'`
 - ✅ correlation value in scatterplot
     
-    [https://www.notion.so/wlg1/3-Figuring-out-Head-Functionality-for-Most-Recent-Name-Movers-d35d8e08cfc649d7838236eb03e6bf22?pvs=4#46884b3c68fc4d2ab5b1529b1f690869](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
+    [https://www.notion.so/wlg1/3-Figuring-out-Head-Functionality-for-Most-Recent-Name-Movers-d35d8e08cfc649d7838236eb03e6bf22?pvs=4#46884b3c68fc4d2ab5b1529b1f690869](../../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
     
     - make new notebook to keep outputs of bugs in prev. **latest_S_name_movers_DRAFT_v2.ipynb** cleans up bugs, runs from start w/o errors
     
-    [https://www.notion.so/wlg1/3-Figuring-out-Head-Functionality-for-Most-Recent-Name-Movers-d35d8e08cfc649d7838236eb03e6bf22?pvs=4#c2ccb59d9c30446ca5b7f403795910cd](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
+    [https://www.notion.so/wlg1/3-Figuring-out-Head-Functionality-for-Most-Recent-Name-Movers-d35d8e08cfc649d7838236eb03e6bf22?pvs=4#c2ccb59d9c30446ca5b7f403795910cd](../../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Subject%20Choice%20Circuits%20293b34dee6104b619beee9b28e7392a7/3%20Figuring%20out%20Head%20Functionality%20for%20Most%20Recent%20%20d35d8e08cfc649d7838236eb03e6bf22.md)
     
-- ✅ Neuron Dir: Try [Random Linear Updates on “Language Models Implement .. Vector Arithmetic”](../Expms%20on%20other%E2%80%99s%20work%2020fe4166597c45ed844fbdff1d2bb956/Random%20Linear%20Updates%20on%20%E2%80%9CLanguage%20Models%20Implemen%202d2e575a175b4a7a8ee0228fa87ee998.md)
-- Make [vec_arith_template.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/vec_arith_template%20ipynb%201eef0c2e0fa148e7bc9bb56ab9fd28b5.md)
+- ✅ Neuron Dir: Try [Random Linear Updates on “Language Models Implement .. Vector Arithmetic”](../../Expms%20on%20other%E2%80%99s%20work%2020fe4166597c45ed844fbdff1d2bb956/Random%20Linear%20Updates%20on%20%E2%80%9CLanguage%20Models%20Implemen%202d2e575a175b4a7a8ee0228fa87ee998.md)
+- Make [vec_arith_template.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/vec_arith_template%20ipynb%201eef0c2e0fa148e7bc9bb56ab9fd28b5.md)
 
 ### Future Work Ideas / Postponed
 
@@ -280,7 +280,7 @@ Techniques to Try
     
     [**Exploratory Analysis Demo**](https://www.notion.so/Exploratory-Analysis-Demo-c61288d8f11b45d993c796ec28a62132?pvs=21) 
     
-- Perform actual hypothesis testing to get p-value for congruence histogram (of dot product)? See [Draft- Adjectives Congruence](../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Adjectives%20Congruence%20f95dc5b0f41c4b10ac6e5a96bde7e8c6.md)
+- Perform actual hypothesis testing to get p-value for congruence histogram (of dot product)? See [Draft- Adjectives Congruence](../../Paper%20Drafts%20c8403ec170204b3aa40fd28465a5635d/Paper%20Draft-%20Comparison%20Circuits%20852d577eb555460e87ae511a1750ef50/Draft-%20Adjectives%20Congruence%20f95dc5b0f41c4b10ac6e5a96bde7e8c6.md)
     
     
 

@@ -2,7 +2,7 @@
 
 In circuits v3, we found by chance that tall/short (opposites prediction) works consistently for large, somewhat less for small. Experiment with it in a notebook:
 
-[tall_short_neuron_investigation.ipynb](../../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_neuron_investigation%20ipynb%20b6fb8fd5adfc47f4b7b737249042ae53.md) 
+[tall_short_neuron_investigation.ipynb](../../../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/tall_short_neuron_investigation%20ipynb%20b6fb8fd5adfc47f4b7b737249042ae53.md) 
 
 TEST PROMPTS: (recap of before)
 

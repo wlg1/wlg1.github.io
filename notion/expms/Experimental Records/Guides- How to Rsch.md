@@ -1,5 +1,7 @@
 # Guides- How to Rsch
 
+[Steps to start](Guides-%20How%20to%20Rsch%20f7c39992641140dab85ee4e96ed97d39/Steps%20to%20start%20d764d5352e6748149744148621c02772.md)
+
 Be as innovative as possible; accuracy is not as important. I don’t care about how showing you people in the research community how accurate I am. I want to show off how innovative I am.
 
 You must be okay with the innovative approach coded and plotted simply. The refinements of accuracy and optimality and formality come from others later; don’t worry about that, it’s not your job. You add value by innovation in your OWN way; you will not add much value in other ways compared to others.
@@ -91,3 +93,12 @@ Now is where the authors should focus on making the paper presentable. Making pl
 ---
 
 - be different while still adhering to vague guidelines they have
+
+How to start
+
+- find papers + think about unanswered questions they pose (eg. extensions)
+    - look at related work for what extensions done so far, do sim things
+    - measure the validity of a paper using likely T / F
+        - don't give score, list statements and WHY
+    - abstract it, more abstract than just 'apply to diff context'. eg. new method for  nterpretability. then, more specifically, how
+        - mixing and matching different abstract pieces is fun!

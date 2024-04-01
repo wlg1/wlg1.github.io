@@ -1,6 +1,6 @@
 # Adjective Identification Heads
 
-[adj_iden_circuits_DRAFT.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/adj_iden_circuits_DRAFT%20ipynb%207e1a22ebddc44a51b2b1d6570bec0b0f.md) 
+[adj_iden_circuits_DRAFT.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/adj_iden_circuits_DRAFT%20ipynb%207e1a22ebddc44a51b2b1d6570bec0b0f.md) 
 
 Look for Adjective Identification Heads
 
@@ -18,11 +18,11 @@ Adjective mover input tests:
 
 In the previous notebook, simple_analogies_pt2:
 
-[https://www.notion.so/Simple_analogies_circuits-766fb391cad246da9150bcd5d98248a4?pvs=4#e3ec672cd08846699eeea020c4d4f9af](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/simple_analogies_circuits%20ipynb%20766fb391cad246da9150bcd5d98248a4.md)
+[https://www.notion.so/Simple_analogies_circuits-766fb391cad246da9150bcd5d98248a4?pvs=4#e3ec672cd08846699eeea020c4d4f9af](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/simple_analogies_circuits%20ipynb%20766fb391cad246da9150bcd5d98248a4.md)
 
 We did not test these simple adjective mover inputs, but instead tested more complex ones that required the model to understand transitivity, “has”, and analogies. Make a new notebook to test more adjective mover prompts using GPT-2-small:
 
-[adjective_mover_prompts.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/adjective_mover_prompts%20ipynb%20cf8a6d9206fb47588b60c921c090b348.md) 
+[adjective_mover_prompts.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/adjective_mover_prompts%20ipynb%20cf8a6d9206fb47588b60c921c090b348.md) 
 
 [https://colab.research.google.com/drive/1e70-iPdPprDXCis-TnyJ64tFhFPS3Xej](https://colab.research.google.com/drive/1e70-iPdPprDXCis-TnyJ64tFhFPS3Xej)
 

@@ -293,11 +293,11 @@ Revisit nbs/papers analyzing these types of plots (direct logit lens, attn heads
     
     No source system:
     
-    ![Untitled](../../../Experimental%20Results%208545f5a36448499c934d8659ba08d2c1/EB-%20Analysis%20on%20Inputs%20for%20Tall%20vs%20Short%20370cf22d285243ec9dd1f4ad9e25efe8/Untitled.png)
+    ![Untitled](../../../../Experimental%20Results%208545f5a36448499c934d8659ba08d2c1/EB-%20Analysis%20on%20Inputs%20for%20Tall%20vs%20Short%20370cf22d285243ec9dd1f4ad9e25efe8/Untitled.png)
     
     With source system:
     
-    ![Untitled](../../../Experimental%20Results%208545f5a36448499c934d8659ba08d2c1/EB-%20Analysis%20on%20Inputs%20for%20Tall%20vs%20Short%20370cf22d285243ec9dd1f4ad9e25efe8/Untitled%202.png)
+    ![Untitled](../../../../Experimental%20Results%208545f5a36448499c934d8659ba08d2c1/EB-%20Analysis%20on%20Inputs%20for%20Tall%20vs%20Short%20370cf22d285243ec9dd1f4ad9e25efe8/Untitled%202.png)
     
     There's still a dip. But compare it to before. Before there were two dips, and they were deeper. Also, the end logit diff is bigger now. Could the source sentence be making it "more sure" of "short", through in-context learning and induction heads? Try more examples of "no source" vs "source".
     

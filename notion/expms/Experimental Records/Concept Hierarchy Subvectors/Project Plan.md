@@ -263,7 +263,13 @@ Turn above findings into doc pgs
 
 Export notion and place notes + code in repos (site + paper_drafts ‘notes folder’ repos)
 
+- [Brainstorm- anything](Brainstorm-%20anything%20d5fe68be1dae4787b718e7011b2f588e.md)
+
 ### Future Work
+
+Interpret Abstract Reasoning
+
+LLaMA can complete abstract reasoning. Find the components used in an abstract group.
 
 - distance of animal-cat to animal-dog
 - multiply, divide, and other strange vector operations / algorithms. ask chatgpt for ideas
@@ -342,12 +348,14 @@ Export notion and place notes + code in repos (site + paper_drafts ‘notes fold
     
     Thus, in a geometric latent space, a neural network circuit is represented as a complex geometric object or structure that reflects the interactions, functions, and dynamics of its components, rather than as a single vector. This approach offers a richer and more nuanced understanding of neural circuits, facilitating insights into their operational principles and behaviors.
     
+- [https://discordapp.com/channels/1042030674388979713/1211743151136579667/1217770018066923550](https://discordapp.com/channels/1042030674388979713/1211743151136579667/1217770018066923550)
 
 Vision
 
 - Compare text vectors to image vectors across models
 - logit lens for image models: unembed CNNs instead of feature viz
 - edit text-to-image models. does image affect behavior?
+- [https://gabgoh.github.io/ThoughtVectors/](https://gabgoh.github.io/ThoughtVectors/)
 
 LLM
 

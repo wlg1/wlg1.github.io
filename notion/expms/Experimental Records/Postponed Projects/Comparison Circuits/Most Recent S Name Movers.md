@@ -1,6 +1,6 @@
 # Most Recent S Name Movers
 
-[test_prompt_most_recent_S.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md) 
+[test_prompt_most_recent_S.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/test_prompt_most_recent_S%20ipynb%20a51ecffd653d4d6c995692f0920be200.md) 
 
 [https://colab.research.google.com/drive/1vzE3nGJm78E1SVJoCpKgl3D3HowdRXHp#scrollTo=qbjOx0YTJ2FP](https://colab.research.google.com/drive/1vzE3nGJm78E1SVJoCpKgl3D3HowdRXHp#scrollTo=qbjOx0YTJ2FP)
 
@@ -8,7 +8,7 @@ most_recent_S_attn_pat.ipynb
 
 [https://colab.research.google.com/drive/1KaqcS92-BI4FZ7m-r8rCW9tIovxA_s93#scrollTo=VcFgqbcF4YvI](https://colab.research.google.com/drive/1KaqcS92-BI4FZ7m-r8rCW9tIovxA_s93#scrollTo=VcFgqbcF4YvI)
 
-[most_recent_S_name_movers_DRAFT.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/most_recent_S_name_movers_DRAFT%20ipynb%20ee6f1afdee0b4f369cf505ae00aaed4d.md) 
+[most_recent_S_name_movers_DRAFT.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/most_recent_S_name_movers_DRAFT%20ipynb%20ee6f1afdee0b4f369cf505ae00aaed4d.md) 
 
 [https://colab.research.google.com/drive/1NCBOLPx038FxwEacmHDsCesWIAW1z8kU](https://colab.research.google.com/drive/1NCBOLPx038FxwEacmHDsCesWIAW1z8kU)
 
@@ -23,7 +23,7 @@ Can be done w/ just GPT-2-small
 
 - Previous findings:
     
-    [simple_analogies_circuits.ipynb](../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/simple_analogies_circuits%20ipynb%20766fb391cad246da9150bcd5d98248a4.md) : Expm code nb
+    [simple_analogies_circuits.ipynb](../../Code%20Notebooks%20432b45bb746f43eabf4172f69d384f8a/simple_analogies_circuits%20ipynb%20766fb391cad246da9150bcd5d98248a4.md) : Expm code nb
     
     (rename later)
     

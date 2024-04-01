@@ -1,6 +1,6 @@
 # Draft- Adjectives Congruence
 
-[Size Comparison Congruence](../../Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b/PLAN-%20Size%20Comparison%20Circuits%20and%20Neurons%201111d95ef57b4131b259ef88363f3010/Size%20Comparison%20Congruence%20e94368b6a22a4e9e9d0d444b3c5972e5.md) —- SUMMARIZE:
+[Size Comparison Congruence](../../Postponed%20Projects%20a8d1660ad8394f389d9ec0d01d070b02/Comparison%20Circuits%20c1d0ec7e43214760b4062ae4cdc0cd6b/PLAN-%20Size%20Comparison%20Circuits%20and%20Neurons%201111d95ef57b4131b259ef88363f3010/Size%20Comparison%20Congruence%20e94368b6a22a4e9e9d0d444b3c5972e5.md) —- SUMMARIZE:
 
 - [Dot products of tokens after embedding layer](https://colab.research.google.com/drive/1rch6VaG9O1YFJT1wPjjbXyDgXizGT7WV#scrollTo=Dot_products_of_tokens_after_embedding_layer)
     - [large](https://colab.research.google.com/drive/1rch6VaG9O1YFJT1wPjjbXyDgXizGT7WV#scrollTo=large)

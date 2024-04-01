@@ -1,25 +1,25 @@
 # List of papers- editing
 
-Main:
+Deception:
 
 - [Sleeper Agents](https://www.notion.so/Sleeper-Agents-247200c8dddf4fecbdee86e8a611bed2?pvs=21)
+
+Editing
+
 - Steering Llama-2 via CAA
+- EXTENDING ACTIVATION STEERING TO BROAD SKILLS AND MULTIPLE BEHAVIOURS
+    
+    [https://arxiv.org/pdf/2403.05767.pdf](https://arxiv.org/pdf/2403.05767.pdf)
+    
 
 <<<
 
 Related work:
 
-- REPRESENTATION ENGINEERING: A TOP-DOWN APPROACH TO AI TRANSPARENCY
 - 
 
 <<<
 
 Take ideas from:
 
-- 
-
----
-
-Brainstorm:
-
-- What do associated concepts share in terms of representation or feature vector decompositions? (eg. knife with danger, or bathtub + toaster with danger)
+-

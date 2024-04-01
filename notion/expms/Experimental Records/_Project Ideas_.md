@@ -1,5 +1,13 @@
 # _Project Ideas_
 
+Interpret activations of interpolated images. How do activations change as you interpolate?
+
+---
+
+Teaching a model to edit other models in general by training it on activations to input output pairs
+
+---
+
 get issue-solns-genr of existing, then solve variations. combine them to solve new problem to innovate.
 
 2 main genr: simple (if x, apply y) vs modified/mutated (if ~x, apply y+mods)
