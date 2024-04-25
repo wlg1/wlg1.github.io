@@ -143,4 +143,6 @@ Paper Reviews and Rebuttals
 
 [NAACL 2024 Reviews](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/NAACL%202024%20Reviews%2052f78bfcd0634835959fb1cd81bf1c79.md)
 
+[ACL 2024 reviews](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/ACL%202024%20reviews%2017531ea8c8354eeeab281b56b5672a92.md)
+
 [How to Improve](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/How%20to%20Improve%20377ff9e7e3f5488f924b3dc428d31c74.md)

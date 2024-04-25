@@ -14,3 +14,8 @@
     
     ah, i see. in general, i was looking to study models related to deceptive behavior, trying to find some i can study without a lot of compute
     makes sense, was looking to start small scale first for prelim expms
+    
+
+Emails
+
+[email- why algtop needed](Networking%205eb6990dfeee475b920112de369de0ab/email-%20why%20algtop%20needed%2090a8057d0f47426f848c74b01f797949.md)

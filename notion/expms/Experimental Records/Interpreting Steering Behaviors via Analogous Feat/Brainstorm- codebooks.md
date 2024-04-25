@@ -1,0 +1,3 @@
+# Brainstorm- codebooks
+
+A simpler approach is just to compare codebooks vs steering vectors vs decomposing behavior itself (not steering vectors) and steering by features. These 3 approaches are a thorough study. It may not be innovative to “just apply codebooks” but there’s probably some modifications to be done for it when it’s on behavior (plus it hasn’t been compared to these others before for this domain).

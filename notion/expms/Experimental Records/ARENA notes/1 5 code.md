@@ -26,7 +26,6 @@ QUESTIONS TO ASK
     
     They’re `transformers.AutoModelForCausalLM`, which is HuggingFace. Pytorch can be used with HF models.
     
-- calculate loss: why sum over instances? why not mean?
 
 ---
 

@@ -46,9 +46,9 @@ Ongoing
 
 [Locating Shared Circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79.md)
 
-[Concept Hierarchy Subvectors](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Concept%20Hierarchy%20Subvectors%201a3f902d677c4593b7eebfe4009cd3c0.md)
+[**Interpreting Steering Behaviors via Analogous Features**](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60.md)
 
-[Editing Entangled Unethical Behavior](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Editing%20Entangled%20Unethical%20Behavior%208e01703d090b40ddbbb9ed25baec5b60.md)
+[Concept Hierarchy Subvectors](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Concept%20Hierarchy%20Subvectors%201a3f902d677c4593b7eebfe4009cd3c0.md)
 
 [Sleeper Agents Feature Editing](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Sleeper%20Agents%20Feature%20Editing%2018e798edf7b544a2a8fd78b4c717b30a.md)
 

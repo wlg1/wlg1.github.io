@@ -11,6 +11,7 @@ Features
 
 - Sprase SAEs
     - [https://docs.google.com/document/d/18bxKmrBN4rhhY6vwhpYDf5XC4bHt0eRy3Le9Aco2-1Y/edit](https://docs.google.com/document/d/18bxKmrBN4rhhY6vwhpYDf5XC4bHt0eRy3Le9Aco2-1Y/edit)
+- [LINEARITY OF RELATION DECODING IN TRANSFORMER LANGUAGE MODELS](https://arxiv.org/pdf/2308.09124.pdf)
 
 Universality Hypothesis
 

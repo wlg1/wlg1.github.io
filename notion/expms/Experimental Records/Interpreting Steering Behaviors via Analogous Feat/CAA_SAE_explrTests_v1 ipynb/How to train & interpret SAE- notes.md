@@ -1,16 +1,6 @@
-# CAA_SAE_explrTests_v1.ipynb
+# How to train & interpret SAE- notes
 
-[https://github.com/HoagyC/sparse_coding](https://github.com/HoagyC/sparse_coding)
-
-[https://github.com/ai-safety-foundation/sparse_autoencoder](https://github.com/ai-safety-foundation/sparse_autoencoder)
-
-[https://ai-safety-foundation.github.io/sparse_autoencoder/demo/](https://ai-safety-foundation.github.io/sparse_autoencoder/demo/)
-
-[https://colab.research.google.com/github/ai-safety-foundation/sparse_autoencoder/blob/main/docs/content/demo.ipynb](https://colab.research.google.com/github/ai-safety-foundation/sparse_autoencoder/blob/main/docs/content/demo.ipynb)
-
----
-
-1.4:
+[1.4](../../ARENA%20notes%201a8ff2624cff486e9d91b13139420026/1%204%200186fae1fa2d41e49f64642d2ea523eb.md) 
 
 [https://colab.research.google.com/drive/1hoD36nsHp6K0E-YeFgPzxazlstb7HPyh](https://colab.research.google.com/drive/1hoD36nsHp6K0E-YeFgPzxazlstb7HPyh#scrollTo=2ZElPqnT5DS0)
 
@@ -22,7 +12,7 @@
 
 This is a feature vector WEIGHT: `autoencoder.W_enc[instance_idx, :, feature_idx]`
 
-This is a feature vec actv? 
+This is a feature vec actv
 
 ```
 acts = einops.einsum(
@@ -30,7 +20,3 @@ acts = einops.einsum(
         "batch_size n_input_ae, n_input_ae -> batch_size"
     )
 ```
-
----
-
-[https://colab.research.google.com/drive/1rv8d3VJBSLxtSbFGq1809VZB1BGPGiZe#scrollTo=XcgAnZZOyBYk](https://colab.research.google.com/drive/1rv8d3VJBSLxtSbFGq1809VZB1BGPGiZe#scrollTo=XcgAnZZOyBYk)
