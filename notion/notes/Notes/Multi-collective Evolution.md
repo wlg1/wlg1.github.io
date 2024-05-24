@@ -25,3 +25,15 @@ Composability [SQL](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/SQL%20f68987
     
 
 One can generalize these reasons to use composability in other systems
+
+https://youtu.be/oFxomyt4oDA?si=RUL642cSKT3oPtz0
+
+Obelisks
+
+https://youtu.be/jPhvic-eqbc?si=LUgj5H4EZAKce1PL
+
+Proteins requirr too much randomness to work to be called deterministic machines 
+
+---
+
+Does life arise with communities giving emergent rise to a higher order entity? What conditions, and why?

@@ -2,7 +2,7 @@
 
 [https://www.youtube.com/watch?v=c0gDLEHbYCk&ab_channel=It'ssoblatant](https://www.youtube.com/watch?v=c0gDLEHbYCk&ab_channel=It%27ssoblatant)
 
-****Chaos | Chapter 1 : Motion and determinism - Panta Rhei****
+**Chaos | Chapter 1 : Motion and determinism - Panta Rhei**
 
 ---
 

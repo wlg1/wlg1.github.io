@@ -17,7 +17,7 @@
     
     If the road ahead is straight, you can continue driving as usual without any change in behavior. However, if the road starts to curve, you may need to slow down or change direction to avoid running off the road. 
     
-    **************************************************What do eigenvalues of the Jacobian tell?**************************************************
+    **What do eigenvalues of the Jacobian tell?**
     
     The presence of a real eigenvalue with zero real part in the Jacobian matrix indicates that the system is at a critical point where small perturbations can cause significant changes in behavior. This is analogous to the car approaching the fork in the road, where a small change in direction can lead to a completely different path.
     

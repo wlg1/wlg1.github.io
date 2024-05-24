@@ -1,5 +1,7 @@
 # Probability
 
+[Monty Hall](Probability%2055dc8908e9204acfbb1013eb383fb72b/Monty%20Hall%2090bf31185eec4983adf28d62163f6c9a.md)
+
 [How to Solve Probability Questions](Probability%2055dc8908e9204acfbb1013eb383fb72b/How%20to%20Solve%20Probability%20Questions%20eb82e9339ba046f48de937a1b314a845.md) 
 
 [Conditional ](Probability%2055dc8908e9204acfbb1013eb383fb72b/Conditional%20d64f9a6b76094a78b5895227948f6e8d.md)

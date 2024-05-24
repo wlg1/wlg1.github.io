@@ -8,6 +8,6 @@
     
     [https://academic.oup.com/schizophreniabulletin/article/49/2/498/6865143](https://academic.oup.com/schizophreniabulletin/article/49/2/498/6865143)
     
-    ****Disorganization of Semantic Brain Networks in Schizophrenia Revealed by fMRI****
+    **Disorganization of Semantic Brain Networks in Schizophrenia Revealed by fMRI**
     
     [https://onlinelibrary.wiley.com/doi/epdf/10.1002/hbm.23480](https://onlinelibrary.wiley.com/doi/epdf/10.1002/hbm.23480)

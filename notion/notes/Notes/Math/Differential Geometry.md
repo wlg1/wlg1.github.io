@@ -23,7 +23,7 @@
 
 [https://www.youtube.com/watch?v=oH0XZfnAbxQ&t=434s&ab_channel=QilinXue](https://www.youtube.com/watch?v=oH0XZfnAbxQ&t=434s&ab_channel=QilinXue)
 
-****Differential Geometry in Under 15 Minutes****
+**Differential Geometry in Under 15 Minutes**
 
 Find linear map for curved surfaces
 

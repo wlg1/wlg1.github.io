@@ -54,7 +54,7 @@ def rename_files_and_folders(root):
 
                     file.write(f'Old name: {name}\\n')
 
-folder_names = ["expms", "techs", "notes", "apps", "Source", "ideas", "quizzes", "stage"]
+folder_names = ["expms", "techs", "notes", "apps", "eduarch", "ideas", "quizzes", "stage"]
 
 for fn in folder_names:
     # Check if the folder exists

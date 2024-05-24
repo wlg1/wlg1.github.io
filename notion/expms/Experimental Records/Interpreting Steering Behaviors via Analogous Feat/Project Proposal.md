@@ -117,7 +117,7 @@ Related work- Fine Tuning Interpretation
     - CMAP finds the mechanism improved by fine tuning
     - [https://finetuning.baulab.info/](https://finetuning.baulab.info/)
     - code: https://github.com/Nix07/finetuning
-- **[Editing Models with Task Arithmetic](https://arxiv.org/abs/2212.04089)**
+- [**Editing Models with Task Arithmetic**](https://arxiv.org/abs/2212.04089)
     - We build task vectors by subtracting the weights of a pre-trained model from the weights of the same model after fine-tuning on a task
 
 Related work- locating components

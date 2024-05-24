@@ -4,6 +4,8 @@
 
 ---
 
+[https://github.com/apartresearch/Interpreting-Reward-Models](https://github.com/apartresearch/Interpreting-Reward-Models)
+
 [https://drive.google.com/drive/folders/1PuUtKfii0pFNy8pXeLcZcK6ZXQEK3hbn](https://drive.google.com/drive/folders/1PuUtKfii0pFNy8pXeLcZcK6ZXQEK3hbn)
 
 study order:
@@ -92,8 +94,6 @@ ensemble of models (same arch, but diff data & init), get avg logit distribution
 mistrial model vs models from untrusted sources- are there backdoors?
 
 cross model patching: have not tried with features yet?
-
-[https://github.com/apartresearch/Interpreting-Reward-Models](https://github.com/apartresearch/Interpreting-Reward-Models)
 
 Why may not work:
 

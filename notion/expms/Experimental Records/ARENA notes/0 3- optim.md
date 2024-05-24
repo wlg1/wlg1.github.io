@@ -1,6 +1,6 @@
 # 0.3- optim
 
-**[Exponentially Weighted Averages](https://www.youtube.com/watch?v=lAq96T8FkTw&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=17&t=119s&ab_channel=DeepLearningAI)**
+[**Exponentially Weighted Averages**](https://www.youtube.com/watch?v=lAq96T8FkTw&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=17&t=119s&ab_channel=DeepLearningAI)
 
 [https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d](https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d)
 
@@ -26,7 +26,7 @@ G- To get moving average $V_t$ with prev pts, take the previous iteration of the
 
 ---
 
-**[Understanding Exponentially Weighted Averages (C2W2L04)](https://www.youtube.com/watch?v=k8fTYJPd3_I&ab_channel=DeepLearningAI)**
+[**Understanding Exponentially Weighted Averages (C2W2L04)**](https://www.youtube.com/watch?v=k8fTYJPd3_I&ab_channel=DeepLearningAI)
 
 Expand recursive EWMA in terms of S
 

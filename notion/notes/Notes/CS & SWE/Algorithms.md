@@ -7,3 +7,7 @@
 [Tree Traversal](Algorithms%2048626da10b7542b992a5cae82e1b156d/Tree%20Traversal%205c20b92c22ef4fa380f91f61084a9f66.md)
 
 [https://www.notion.so/wlg1/Problem-Solutions-4a3f08cb30114810bae63ad0a7893ff1](https://www.notion.so/Algorithms-4a3f08cb30114810bae63ad0a7893ff1?pvs=21)
+
+[https://github.com/varunu28/LeetCode-Java-Solutions](https://github.com/varunu28/LeetCode-Java-Solutions)
+
+[https://mindyourdecisions.com/blog/](https://mindyourdecisions.com/blog/)

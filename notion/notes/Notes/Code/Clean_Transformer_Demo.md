@@ -14,7 +14,7 @@
 
 ### LayerNorm
 
-[****Batch and Layer Normalization****](../Neural%20Networks%20e6abb23474464e098117dced189fb7bb/Batch%20and%20Layer%20Normalization%20683d66e7db994beda71b25499d026b48.md) 
+[**Batch and Layer Normalization**](../Neural%20Networks%20e6abb23474464e098117dced189fb7bb/Batch%20and%20Layer%20Normalization%20683d66e7db994beda71b25499d026b48.md) 
 
 ```python
 class LayerNorm(nn.Module):

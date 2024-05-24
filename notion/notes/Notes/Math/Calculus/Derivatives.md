@@ -72,7 +72,7 @@ Green triangles are [similar](../Trigonometry%20b26a4065a8ea4ce28cbea6bb4c3ab69a
 
 ---
 
-****[Visualizing the chain rule and product rule | Chapter 4, Essence of calculus](https://www.youtube.com/watch?v=YG15m2VwSjA&t=184s&ab_channel=3Blue1Brown)****
+[**Visualizing the chain rule and product rule | Chapter 4, Essence of calculus**](https://www.youtube.com/watch?v=YG15m2VwSjA&t=184s&ab_channel=3Blue1Brown)
 
 ![Untitled](Derivatives%204fee928e4d25473692d694d69b5545c0/Untitled%209.png)
 

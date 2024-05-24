@@ -30,6 +30,10 @@
 
 [SQL](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/SQL%20f6898703d8ef43f7a192c8e0324f73b5.md)
 
+https://youtu.be/F1tuoMobTfQ?si=tm1TMOn8Rjd2IvwE
+
+https://youtu.be/4mbb3LFQkT0?si=3VKOHQURV8Ehys1G
+
 ### Computer Systems
 
 ---
@@ -71,3 +75,13 @@
 ### Practices
 
 [DevOps](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/DevOps%20a4a7755f75b245e884aebd12cb243136.md)
+
+[Deploy Models](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Deploy%20Models%2093cd767e52d9449b8efccc7670f72725.md)
+
+[Cloud AI](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Cloud%20AI%20954af72e01214230912e854be05339c4.md)
+
+[Coding Practices](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Coding%20Practices%20bb36cf297893489685c680add2ec335d.md)
+
+### Data
+
+[Data file types](CS%20&%20SWE%20f7436b5aff924c04aa569007bb061038/Data%20file%20types%2081b4374b278e41ffa91dcd7980343c54.md)

@@ -4,7 +4,7 @@
 
 Table of Contents:
 
-**[Use a NN to model XOR](https://colab.research.google.com/drive/1bxoPm1pRYgA67UdhXOdnGIuH_2qo_QN7#scrollTo=Use_a_NN_to_model_XOR)**
+[**Use a NN to model XOR**](https://colab.research.google.com/drive/1bxoPm1pRYgA67UdhXOdnGIuH_2qo_QN7#scrollTo=Use_a_NN_to_model_XOR)
 
 [Get activations](https://colab.research.google.com/drive/1bxoPm1pRYgA67UdhXOdnGIuH_2qo_QN7#scrollTo=Get_activations)
 

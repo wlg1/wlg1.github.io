@@ -32,7 +32,7 @@ Check what percentage of “keywords” from an input prompt are in the top-k to
 
 How does copy score check if a token is copied? By this:
 
-`**if " " + prompt[word] in pred_tokens:**`
+**`if " " + prompt[word] in pred_tokens:`**
 
 The `prompt` is a dict of the prompt text and keys (`word`), such as “1” or “2”. Thus, get `prompt[word]` as a string such as “1”, change to an int and add 1, then change back to a string. Check if this “next digit” is in `pred_tokens`.
 

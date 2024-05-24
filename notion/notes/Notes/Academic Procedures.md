@@ -42,3 +42,10 @@
     Moreover, it may be (or not) that the papers are published in the proceedings or an associated journal that doesn't include posters.
     
     For some purposes one can do both, actually, even at the same conferences. The paper is expected to be more refined and complete, however.
+    
+
+[https://www.quora.com/Whats-the-difference-between-a-scientific-article-and-scientific-paper-thats-published-in-a-journal#](https://www.quora.com/Whats-the-difference-between-a-scientific-article-and-scientific-paper-thats-published-in-a-journal#)
+
+https://www.reddit.com/r/MachineLearning/s/DYkDNGLepv
+
+Add acknowledgements after peer review or a later vers of arxiv, no need to put them on first arxiv or review vers, as you'd need to ask them if they want to be in acknowledgements and they'd want to read the paper

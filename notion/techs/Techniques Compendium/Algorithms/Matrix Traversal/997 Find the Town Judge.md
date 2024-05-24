@@ -67,7 +67,7 @@ class Solution:
 
         cand_judges = {i:[] for i in range(1,n+1)}  # list of ppl who trust i
         for reln in trust:
-            if reln[0] in cand_judges:
+            if reln[0] in cand_judges: # it has out going E
                 del cand_judges[reln[0]]
             if reln[1] in cand_judges and reln[0] != reln[1]:
                 cand_judges[reln[1]].append(reln[0])

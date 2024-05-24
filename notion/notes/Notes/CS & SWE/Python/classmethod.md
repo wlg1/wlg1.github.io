@@ -57,7 +57,7 @@
     1. `Book` is our class, and each book (like `book1`, `book2`, `book3`) is an instance of the `Book` class.
     2. `_book_count` is a class variable that keeps track of the total number of book instances created.
     3. The `__init__` method is the regular instance method that is called when a new book instance is created.
-    4. `**total_books` is a `@classmethod`. It works with the class variable `_book_count` and is concerned with the class as a whole, not any individual instance. It provides information about the total number of books created.**
+    4. **`total_books` is a `@classmethod`. It works with the class variable `_book_count` and is concerned with the class as a whole, not any individual instance. It provides information about the total number of books created.**
     5. `create_from_string` is another `@classmethod` used as an alternative constructor. It allows us to create a new book instance from a string, demonstrating a different way to instantiate the `Book` class.
     
     In this scenario, `@classmethod`s are used for operations that are relevant to the class as a whole, rather than to any single instance of the class.

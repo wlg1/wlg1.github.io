@@ -69,3 +69,5 @@ The only thing that’s changed is `decorated_func = make_pretty(ordinary)` is r
 The main difference between decorator pattern and inheritance is that decorator pattern does not create a new class or a new type of object, but rather modifies an existing object by wrapping it with another object.
 
 [https://stackoverflow.com/questions/6406446/decorators-versus-inheritance](https://stackoverflow.com/questions/6406446/decorators-versus-inheritance)
+
+https://youtu.be/yNzxXZfkLUA?si=hOVtSbXZf8gx0WCF

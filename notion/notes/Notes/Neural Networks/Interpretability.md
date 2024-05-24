@@ -21,13 +21,13 @@ Lottery Ticket Hypothesis
 
 [https://transformer-circuits.pub/2022/mech-interp-essay/index.html](https://transformer-circuits.pub/2022/mech-interp-essay/index.html)
 
-*[privileged basis](https://transformer-circuits.pub/2021/framework/index.html#def-privileged-basis): Just as a CPU having operations that act on bytes encourages information to be grouped in bytes rather than randomly scattered over memory, activation functions often encourage features to be aligned with a neuron, rather than correspond to a random linear combination of neurons*
+[*privileged basis](https://transformer-circuits.pub/2021/framework/index.html#def-privileged-basis): Just as a CPU having operations that act on bytes encourages information to be grouped in bytes rather than randomly scattered over memory, activation functions often encourage features to be aligned with a neuron, rather than correspond to a random linear combination of neurons*
 
 ---
 
 [https://www.alignmentforum.org/s/yivyHaCAmMJ3CqSyj/p/o6ptPu7arZrqRCxyz](https://www.alignmentforum.org/s/yivyHaCAmMJ3CqSyj/p/o6ptPu7arZrqRCxyz)
 
-****[200 COP in MI: Exploring Polysemanticity and Superposition](https://www.alignmentforum.org/posts/o6ptPu7arZrqRCxyz/200-cop-in-mi-exploring-polysemanticity-and-superposition)****
+[**200 COP in MI: Exploring Polysemanticity and Superposition**](https://www.alignmentforum.org/posts/o6ptPu7arZrqRCxyz/200-cop-in-mi-exploring-polysemanticity-and-superposition)
 
 Superposition is when a network represents more features than it has dimensions, and squashes them all into a lower dimensional space
 
@@ -50,7 +50,7 @@ neel MLST interview (1h59m): if you take vec all 1s of 100elms and flip 1st 1 to
 
 [https://www.youtube.com/watch?v=dCkQQYwPxdM&t=2039s&ab_channel=NeelNanda](https://www.youtube.com/watch?v=dCkQQYwPxdM&t=2039s&ab_channel=NeelNanda)
 
-****A Walkthrough of In-Context Learning and Induction Heads Part 1 of 2 (w/ Charles Frye)****
+**A Walkthrough of In-Context Learning and Induction Heads Part 1 of 2 (w/ Charles Frye)**
 
 17m20s: models go through a lot of small phase transitions (eg. suddenly can play chess well), showing up as bumps in loss curves
 

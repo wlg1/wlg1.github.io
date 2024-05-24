@@ -39,7 +39,7 @@
 
 [Neuron2Graph.ipynb](Code%20515029dddcdc4d268ad1b5b2298d2cd6/Neuron2Graph%20ipynb%201194a0bf97744b3ab86b19fc9d0bbd06.md)
 
-[**[gpt2-greater-than](https://github.com/hannamw/gpt2-greater-than)**](Code%20515029dddcdc4d268ad1b5b2298d2cd6/gpt2-greater-than%20addc2d4a35354e7d9bde243b40db27e1.md)
+[[**gpt2-greater-than**](https://github.com/hannamw/gpt2-greater-than)](Code%20515029dddcdc4d268ad1b5b2298d2cd6/gpt2-greater-than%20addc2d4a35354e7d9bde243b40db27e1.md)
 
 ### LLM Function Calling Libraries
 
@@ -56,15 +56,15 @@
 ### Far AI Repos
 
 - num list
-    1. * ****Towards Automated Circuit Discovery for Mechanistic Interpretability****
-    2. * ****Training Language Models with Language Feedback at Scale****
+    1. * **Towards Automated Circuit Discovery for Mechanistic Interpretability**
+    2. * **Training Language Models with Language Feedback at Scale**
     3. **Improving Code Generation by Training with Natural Language Feedback**
     4. **Tuned Lens**
     5. **Pretraining Language Models with Human Preferences**
     6. * **Go Attack**
     7. **Imitation Learning Baseline Implementations**
 
-[Code- ****Towards Automated Circuit Discovery for Mechanistic Interpretability****](Code%20515029dddcdc4d268ad1b5b2298d2cd6/Code-%20Towards%20Automated%20Circuit%20Discovery%20for%20Mech%20999dfd3c865a403399259ca69c0ae375.md)
+[Code- **Towards Automated Circuit Discovery for Mechanistic Interpretability**](Code%20515029dddcdc4d268ad1b5b2298d2cd6/Code-%20Towards%20Automated%20Circuit%20Discovery%20for%20Mech%20999dfd3c865a403399259ca69c0ae375.md)
 
 [**Training Language Models with Language Feedback at Scale**](Code%20515029dddcdc4d268ad1b5b2298d2cd6/Training%20Language%20Models%20with%20Language%20Feedback%20at%20ba6d170069d145179c7021aa8c5456e5.md)
 

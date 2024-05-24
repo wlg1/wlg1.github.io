@@ -98,7 +98,7 @@ Subtract column 0 and col 1 to get:
 
 8 rows, 1 column, 768 “depth” —> 8 rows, 768 columns
 
-********************Logit Lens********************
+**Logit Lens**
 
 [https://www.alignmentforum.org/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens](https://www.alignmentforum.org/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens)
 
@@ -143,7 +143,7 @@ Residual stack: sequence of residual components
 
 <<<
 
-********************Layer Attribution******************** is different from “Logit Lens” because Logit Lens looks at the ACCUMULATED RESIDUAL STREAM (1, 3, 5), whereas LA is not the accumulation, but just each layer (1, 1, 1)
+**Layer Attribution** is different from “Logit Lens” because Logit Lens looks at the ACCUMULATED RESIDUAL STREAM (1, 3, 5), whereas LA is not the accumulation, but just each layer (1, 1, 1)
 
 ### Activation Patching
 

@@ -14,6 +14,10 @@
     
     Due to the flexibility of these records, sometimes solutions that aren't generalized and are specific to uncommon issues are added. Later, these may be archived then AI can clean up the library to output a version more aligned to the aim.
     
+    A ‘lazy’ eval using an AI LLM search engine is the best way to get solns to issues. This adds on to it by adding structure and extentions to knowledge it doesn’t have. Additionally, it filters out concepts that are more commonly used, so that one can study them via repetitive quizzing.
+    
+    the aim of comprendium isn't to find commonalities, but to generalize finely, even if connections aren't made and are repeated within docs. generalize finely allows mix and match adaptability in new problems.
+    
 - Note on GENR PROB vs PROB
     
     GENR has two types: in response to a problem, or in response to a pattern. GENR PROB and PROB are often just “prob” but GENR PROB is often shorter (just an if-else response) and thus more generalizable, while PROB would involve multiple GENR PROB and has a longer, more specific solution. This doesn’t mean some PROB aren’t frequently used to solve common sub-problems. The distinction between them is often subjective, so this is how we define them.
@@ -23,7 +27,7 @@
 
 [General](Techniques%20Compendium%20ea12d22f5a8940b190b553d17200ba08/General%2059edbfce78e0462499eae794a383f97b.md) 
 
-[Papers](Techniques%20Compendium%20ea12d22f5a8940b190b553d17200ba08/Papers%2020cd11d6dd1043e7bb87669cff1b3b69.md) 
+[Papers (genrz)](Techniques%20Compendium%20ea12d22f5a8940b190b553d17200ba08/Papers%20(genrz)%2020cd11d6dd1043e7bb87669cff1b3b69.md) 
 
 [Coding Solutions](Techniques%20Compendium%20ea12d22f5a8940b190b553d17200ba08/Coding%20Solutions%20d259ceae80674c2ab46ebdc6dbb5d600.md)
 
@@ -52,6 +56,8 @@
 ---
 
 [Linear Algebra](Techniques%20Compendium%20ea12d22f5a8940b190b553d17200ba08/Linear%20Algebra%20c52a99cd0c0f4099be6c4224fe8ca6f5.md) 
+
+[Algebraic Topology](Techniques%20Compendium%20ea12d22f5a8940b190b553d17200ba08/Algebraic%20Topology%20b74608cc670a446f9c9013017d8b9171.md)
 
 [Signal Processing](Techniques%20Compendium%20ea12d22f5a8940b190b553d17200ba08/Signal%20Processing%20bf2fce6e90734cf3b3f5c302ea2211bb.md) 
 

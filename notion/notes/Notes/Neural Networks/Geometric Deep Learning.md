@@ -4,7 +4,7 @@
 
 [https://www.dropbox.com/s/8pc7b53z0w2ui15/AIMS%202022%20-%20Lecture%209%20-%20Manifolds%2C%20meshes%2C%20and%20geometric%20graphs.pdf?dl=0](https://www.dropbox.com/s/8pc7b53z0w2ui15/AIMS%202022%20-%20Lecture%209%20-%20Manifolds%2C%20meshes%2C%20and%20geometric%20graphs.pdf?dl=0)
 
-****Lecture 9 (Manifolds)****
+**Lecture 9 (Manifolds)**
 
 Euclidean space allows filter to move anywhere (globally)
 

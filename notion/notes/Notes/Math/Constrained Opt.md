@@ -1,0 +1,3 @@
+# Constrained Opt
+
+https://math.libretexts.org/Courses/Monroe_Community_College/MTH_212_Calculus_III/Chapter_13%3A_Functions_of_Multiple_Variables_and_Partial_Derivatives/13.9%3A_Constrained_Optimization

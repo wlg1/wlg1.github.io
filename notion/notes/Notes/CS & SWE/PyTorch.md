@@ -149,7 +149,7 @@ https://github.com/pytorch/pytorch/issues/5544
 
 ---
 
-- **`[torch.cat](https://pytorch.org/docs/stable/generated/torch.cat.html#torch.cat)([[tensor](https://pytorch.org/docs/stable/tensors.html#torch.Tensor),** **[tensor](https://pytorch.org/docs/stable/tensors.html#torch.Tensor),** **[tensor](https://pytorch.org/docs/stable/tensors.html#torch.Tensor)],** **dim=**1**)**`
+- [**`torch.cat](https://pytorch.org/docs/stable/generated/torch.cat.html#torch.cat)([[tensor](https://pytorch.org/docs/stable/tensors.html#torch.Tensor),** [**tensor](https://pytorch.org/docs/stable/tensors.html#torch.Tensor),** [**tensor](https://pytorch.org/docs/stable/tensors.html#torch.Tensor)],** **dim=**1**)**`
     
     The `torch.cat` function in PyTorch is used to concatenate tensors along a specified dimension. The code you've posted uses this function to concatenate three tensors along the first dimension (which is `dim=1`, representing columns for a 2D tensor, i.e., matrix).
     
@@ -517,3 +517,17 @@ What are essentials to know for vectorization in pytorch?
     ```
     
     In these examples, `torch.gather` is used to flexibly extract data from tensors based on indices, which can vary per item in a batch. This kind of operation is often more complex and cumbersome to perform with traditional array slicing, which is why `torch.gather` is a valuable tool in the PyTorch toolkit.
+    
+
+---
+
+[https://stackoverflow.com/questions/69220221/use-of-torch-stack](https://stackoverflow.com/questions/69220221/use-of-torch-stack)
+
+---
+
+```
+`# Create our batch from the features, where we set some to zero
+batch = t.where(feat_is_present, feat, 0.0)`
+```
+
+****NOTE:**** t.where() applies a mask. `feat_is_present` is the masking condition of what indices are (value1) or (value2). value1 has original values from `feat`. value2 are from the "other" argument; in this case it's 0.

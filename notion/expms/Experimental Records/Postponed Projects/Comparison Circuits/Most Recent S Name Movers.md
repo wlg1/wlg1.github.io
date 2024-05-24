@@ -972,7 +972,7 @@ That’s it.
         1. `cache[f"blocks.{layer_no}.attn.hook_attn"]` retrieves the attention matrix from the cache. The attention matrix should have the shape :
             1. `[batch_size, num_heads, sequence_length, sequence_length]`.
             2. `[i, head_no, ioi_dataset.word_idx["end"][i], pos]`
-        2. `cache[f"blocks.{layer_no}.attn.hook_attn"][i, head_no, ioi_dataset.word_idx["end"][i], pos]` retrieves the attention value for a specific position in the attention matrix. It indexes the matrix using `i` for the batch dimension, `**head_no` for the head dimension**, `ioi_dataset.word_idx["end"][i]` for ~~the position of the IO token~~, and `pos` for the position within `posses`.
+        2. `cache[f"blocks.{layer_no}.attn.hook_attn"][i, head_no, ioi_dataset.word_idx["end"][i], pos]` retrieves the attention value for a specific position in the attention matrix. It indexes the matrix using `i` for the batch dimension, **`head_no` for the head dimension**, `ioi_dataset.word_idx["end"][i]` for ~~the position of the IO token~~, and `pos` for the position within `posses`.
             
             CORRECTION TO GPT: The “i” in word_idx specifies the batch index. The subject (eg. IO) token is specified by pos. That is, how does last token attend to subject?
             

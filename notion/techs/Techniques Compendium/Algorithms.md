@@ -22,12 +22,12 @@
         2. [Get start and end indices of target in sorted array](Algorithms%204a3f08cb30114810bae63ad0a7893ff1/Sequences,%20Arrays,%20and%20Strings%20193463deef6f40e9a28a3e266e998392/Get%20start%20and%20end%20indices%20of%20target%20in%20sorted%20arra%20e591b24118ad4ee5866eb405789cf6b2.md) 
         3. [Binary search](Algorithms%204a3f08cb30114810bae63ad0a7893ff1/Sequences,%20Arrays,%20and%20Strings%20193463deef6f40e9a28a3e266e998392/Binary%20search%206d6ff857e0bc43e4b152eea2c690bf90.md) 
     2. Array sort
-        1. [****Merge Sorted Arrays****](Algorithms%204a3f08cb30114810bae63ad0a7893ff1/Sequences,%20Arrays,%20and%20Strings%20193463deef6f40e9a28a3e266e998392/Merge%20Sorted%20Arrays%204443737a6e51498386b5c9d10c40bacf.md) 
+        1. [**Merge Sorted Arrays**](Algorithms%204a3f08cb30114810bae63ad0a7893ff1/Sequences,%20Arrays,%20and%20Strings%20193463deef6f40e9a28a3e266e998392/Merge%20Sorted%20Arrays%204443737a6e51498386b5c9d10c40bacf.md) 
     3. 2 pointer
         1. [Two Sum](Algorithms%204a3f08cb30114810bae63ad0a7893ff1/Multiple%20Variables%20Pointers%20manipulation%205e7021c0343b4dafa4482e1b865ac7b6/Two%20Sum%205e8e9e73e24b4ffb83420dd37fbe78c1.md) 
         2. 
     4. sliding window substring
-        1. [****[Maximum Subarray](https://www.youtube.com/watch?v=5WZl3MMT0Eg&list=PLot-Xpze53lfQmTEztbgdp8ALEoydvnRQ&index=3&ab_channel=NeetCode)****](Algorithms%204a3f08cb30114810bae63ad0a7893ff1/Sequences,%20Arrays,%20and%20Strings%20193463deef6f40e9a28a3e266e998392/Maximum%20Subarray%201622b28e7d6b460f83ffd94b9f10d205.md) 
+        1. [[**Maximum Subarray**](https://www.youtube.com/watch?v=5WZl3MMT0Eg&list=PLot-Xpze53lfQmTEztbgdp8ALEoydvnRQ&index=3&ab_channel=NeetCode)](Algorithms%204a3f08cb30114810bae63ad0a7893ff1/Sequences,%20Arrays,%20and%20Strings%20193463deef6f40e9a28a3e266e998392/Maximum%20Subarray%201622b28e7d6b460f83ffd94b9f10d205.md) 
     5. linked list
         1. Reverse linked list
     6. binary tree

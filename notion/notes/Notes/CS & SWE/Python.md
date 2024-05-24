@@ -97,3 +97,26 @@
     This operation clamps the values of `v` between `min=weights_copy[k] - eps` and `max=weights_copy[k] + eps`.,  where eps is the norm constraint specified in hparams (from a file). The ellipsis (`[...]`) in the left-hand side of the assignment indicates that the values of `v` should be modified in place.
     
     The weights are modified in place because it is more efficient than creating a new tensor with the modified values. Therefore, it is a memory-efficient way to modify the tensor without creating a new tensor.
+    
+
+- shallow vs deep copy
+    
+    The issue you're encountering is due to the mutable nature of Python dictionaries within lists. When you perform `out = data_list.copy()`, this creates a shallow copy of the list. A shallow copy means that while the list itself is a new list, the elements (dictionaries in this case) inside the list are still references to the original dictionaries in `data_list`.
+    
+    So, when you iterate over `out` and modify the dictionaries (`item`), these changes are reflected in the original dictionaries in `data_list`, because both lists contain references to the same dictionary objects.
+    
+    To avoid this, you need to create a deep copy of `data_list`. A deep copy creates new instances of the objects within the list, so modifying the copied list won't affect the original list. You can use the `copy` module for this. Here is how you can modify your function:
+    
+    ```python
+    import copy
+    
+    def replace_month_names(data_list):
+        out = copy.deepcopy(data_list)
+        # ... rest of your function ...
+    
+    ```
+    
+    Using `deepcopy`, each dictionary within `out` is a new instance, and modifying it won't affect the dictionaries in the original `data_list`.
+    
+
+NOTE: if we set a default arg in a function, if that arg var changes outside of it, you need to run the fn again

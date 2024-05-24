@@ -63,7 +63,7 @@ https://www.youtube.com/live/pLPgyGgLk3Q?si=Q7UtR1NRWxwE3Ctj
 
 - [https://scholar.google.com/citations?hl=en&user=Tt0eBesAAAAJ&view_op=list_works&sortby=pubdate](https://scholar.google.com/citations?hl=en&user=Tt0eBesAAAAJ&view_op=list_works&sortby=pubdate)
     - [A Visual Tour of Bias Mitigation Techniques for Word Representations](https://www.sci.utah.edu/~beiwang/publications/KDD_VERB_BeiWang_2021.pdf)
-- **[Going Beyond Neural Network Feature Similarity: The Network Feature Complexity and Its Interpretation Using Category Theory](https://openreview.net/forum?id=4bSQ3lsfEV)**
+- [**Going Beyond Neural Network Feature Similarity: The Network Feature Complexity and Its Interpretation Using Category Theory**](https://openreview.net/forum?id=4bSQ3lsfEV)
 - [https://iclr.cc/virtual/2022/workshop/4556](https://iclr.cc/virtual/2022/workshop/4556)
     - no interp; just geometric DL
 - [Learning a Cover (GMM, not NN)](https://arxiv.org/pdf/2309.06634.pdf)

@@ -2,6 +2,10 @@
 
 [Use shift+enter for new line without submitting prompt]
 
+Be less verbose in your responses (eg. don't repeat what you've just been told). respond yes if you understand
+
+comment in detail how this code works, return all in one code block or file. make frequent in-line comments every few lines when best needed:
+
 ### Formatting
 
 Remove all the timestamps in ** and turn into a single paragraph with no new lines:
@@ -17,6 +21,12 @@ Reply “yes”
 this prevents long outputs. “yes” must be in quotes
 
 - add-ons: if you understand.
+
+<<<
+
+Rewrite the exact thing you just wrote, but using $$ symbols around the latex math parts so they can be displayed in notion. Don't put spaces in between the $$ and the text it encloses. Don't start off with any comments, just rewrite it
+
+After pasting, delete last $ and add $ back in
 
 ---
 

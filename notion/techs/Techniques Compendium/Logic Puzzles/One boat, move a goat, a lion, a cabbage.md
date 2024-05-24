@@ -42,7 +42,7 @@ By following these steps, we ensure that the goat and cabbage are never left alo
 
 Instead of goat and cabbage being illegal to leave alone, the lion and cabbage are illegal to leave alone. A common trick with this variation is if someone uses “outside knowledge” to think it’s goat and cabbage that shouldn’t be left alone because goats eat cabbages. Instead, one should think of each item as agnostic to their outside description, and as being interchangeable with variables with no traits from outside the problem, containing only traits  what’s provided about them in the problem. 
 
-****The notion AI can solve this variation:****
+*The notion AI can solve this variation:*
 
 > If the lion and cabbage cannot be left alone, the solution would be:
 

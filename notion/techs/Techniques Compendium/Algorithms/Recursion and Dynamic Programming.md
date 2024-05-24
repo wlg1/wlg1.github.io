@@ -14,10 +14,10 @@
 
 [Robot in a Grid](Recursion%20and%20Dynamic%20Programming%20f023e9ebff6a450783e621d623adec21/Robot%20in%20a%20Grid%20fd4c33aa6a354cdc9704328b53f8e00e.md) 
 
-[**55. Jump Game** (1)](Recursion%20and%20Dynamic%20Programming%20f023e9ebff6a450783e621d623adec21/55%20Jump%20Game%20(1)%203e6cb3752e7548809c14198f997f14a2.md)
+[**55. Jump Game**](Recursion%20and%20Dynamic%20Programming%20f023e9ebff6a450783e621d623adec21/55%20Jump%20Game%203e6cb3752e7548809c14198f997f14a2.md)
 
-[****[Unique Paths - Dynamic Programming - Leetcode 62](https://www.youtube.com/watch?v=IlEsdxuD4lY&list=PLot-Xpze53lcvx_tjrr_m2lgD2NsRHlNO&index=23&ab_channel=NeetCode)****](Recursion%20and%20Dynamic%20Programming%20f023e9ebff6a450783e621d623adec21/Unique%20Paths%20-%20Dynamic%20Programming%20-%20Leetcode%2062%20a4db37f9e0e74636834f5b8a4c08fbd8.md)
+[[**Unique Paths - Dynamic Programming - Leetcode 62**](https://www.youtube.com/watch?v=IlEsdxuD4lY&list=PLot-Xpze53lcvx_tjrr_m2lgD2NsRHlNO&index=23&ab_channel=NeetCode)](Recursion%20and%20Dynamic%20Programming%20f023e9ebff6a450783e621d623adec21/Unique%20Paths%20-%20Dynamic%20Programming%20-%20Leetcode%2062%20a4db37f9e0e74636834f5b8a4c08fbd8.md)
 
-[****[Longest Common Subsequence](https://www.youtube.com/watch?v=Ua0GhsJSlWM&list=PLot-Xpze53lcvx_tjrr_m2lgD2NsRHlNO&index=14&ab_channel=NeetCode)****](Recursion%20and%20Dynamic%20Programming%20f023e9ebff6a450783e621d623adec21/Longest%20Common%20Subsequence%207205348c865743c395f03504855c1993.md)
+[[**Longest Common Subsequence**](https://www.youtube.com/watch?v=Ua0GhsJSlWM&list=PLot-Xpze53lcvx_tjrr_m2lgD2NsRHlNO&index=14&ab_channel=NeetCode)](Recursion%20and%20Dynamic%20Programming%20f023e9ebff6a450783e621d623adec21/Longest%20Common%20Subsequence%207205348c865743c395f03504855c1993.md)
 
-[**[198. House Robber](https://leetcode.com/problems/house-robber/)**](Recursion%20and%20Dynamic%20Programming%20f023e9ebff6a450783e621d623adec21/198%20House%20Robber%207fa97a243b294c2582c41970a0f51c51.md)
+[[**198. House Robber**](https://leetcode.com/problems/house-robber/)](Recursion%20and%20Dynamic%20Programming%20f023e9ebff6a450783e621d623adec21/198%20House%20Robber%207fa97a243b294c2582c41970a0f51c51.md)

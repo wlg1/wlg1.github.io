@@ -8,7 +8,7 @@ If you get the AI to make a circle shape, it thinks the shape is invulnerable an
 
 helper systems:
 
-it also poses significant problems when an AI system is tasked with [overseeing another AI system](https://far.ai/post/2023-03-safety-vulnerable-world/), such as a learned reward model being used to train a reinforcement learning policy, as the lack of robustness may cause the policy to capably pursue the wrong objective (so-called *[reward hacking](https://arxiv.org/abs/2209.13085)*).
+it also poses significant problems when an AI system is tasked with [overseeing another AI system](https://far.ai/post/2023-03-safety-vulnerable-world/), such as a learned reward model being used to train a reinforcement learning policy, as the lack of robustness may cause the policy to capably pursue the wrong objective (so-called [*reward hacking*](https://arxiv.org/abs/2209.13085)).
 
 The policy network is trained to match as closely as possible the distribution of moves output by MCTS, and the value network is trained to predict the [FINAL] outcome of games played by the agent.
 

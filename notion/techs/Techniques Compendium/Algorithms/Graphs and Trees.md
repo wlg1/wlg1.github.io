@@ -34,18 +34,18 @@
 
 ### Problems
 
-[****[Course Schedule](https://www.youtube.com/watch?v=EgI5nU9etnU&list=PLot-Xpze53ldBT_7QA8NVot219jFNr_GI&index=2&ab_channel=NeetCode)****](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Course%20Schedule%20756f8c3ea2f245a9a5410cd37369c5c2.md)
+[[**Course Schedule**](https://www.youtube.com/watch?v=EgI5nU9etnU&list=PLot-Xpze53ldBT_7QA8NVot219jFNr_GI&index=2&ab_channel=NeetCode)](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Course%20Schedule%20756f8c3ea2f245a9a5410cd37369c5c2.md)
 
 [Graph Valid Tree](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Graph%20Valid%20Tree%20fb3ee96c197a4fe0a6c93c58ade3112f.md)
 
 ### Binary Trees
 
-[****Balanced Binary Tree****](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Balanced%20Binary%20Tree%203654d88c23be413bb03459db2d74739c.md)
+[**Balanced Binary Tree**](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Balanced%20Binary%20Tree%203654d88c23be413bb03459db2d74739c.md)
 
-[****Count Good Nodes in a Binary Tree****](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Count%20Good%20Nodes%20in%20a%20Binary%20Tree%20f2460a25f8bb40eb9f2321d0f826bf3c.md)
+[**Count Good Nodes in a Binary Tree**](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Count%20Good%20Nodes%20in%20a%20Binary%20Tree%20f2460a25f8bb40eb9f2321d0f826bf3c.md)
 
 [Invert Binary Tree](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Invert%20Binary%20Tree%205883c082936640989d50ef5aa5756c73.md)
 
-[****Merge Two Binary Trees****](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Merge%20Two%20Binary%20Trees%2028a7a946dadf42e9af7a83d27bb25caf.md)
+[**Merge Two Binary Trees**](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Merge%20Two%20Binary%20Trees%2028a7a946dadf42e9af7a83d27bb25caf.md)
 
-[****Convert Sorted Array to Binary Search Tree****](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Convert%20Sorted%20Array%20to%20Binary%20Search%20Tree%201d7ac73ae9054fa194ffd4c1ca28f75c.md)
+[**Convert Sorted Array to Binary Search Tree**](Graphs%20and%20Trees%2066d3e6a3cf334508bcb55d8f174483ff/Convert%20Sorted%20Array%20to%20Binary%20Search%20Tree%201d7ac73ae9054fa194ffd4c1ca28f75c.md)

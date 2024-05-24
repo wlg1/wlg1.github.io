@@ -162,7 +162,7 @@ Workspace vs Local Repo Branches
 
 The local working machine (eg. your laptop) IS NOT the ‘main branch’ or any branch of the local repo
 
-The “working machine” is a way to say what computer your current “working directory” (where shell is pointing to) is in. **Working Directory/Working Tree** refers to the directory on your local machine where you have cloned or initialized a Git repository. Another name is ********************Workspace.********************
+The “working machine” is a way to say what computer your current “working directory” (where shell is pointing to) is in. **Working Directory/Working Tree** refers to the directory on your local machine where you have cloned or initialized a Git repository. Another name is **Workspace.**
 
 To make changes from the Workspace to the local repo, all you need to do is commit. Do not push; push is for commiting local repo changes to the remote repo.
 

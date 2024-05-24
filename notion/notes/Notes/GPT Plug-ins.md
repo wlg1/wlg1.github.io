@@ -8,13 +8,13 @@ You can also use the ‘chatwithpdf’ plugin
 
 https://youtu.be/iR99LO28nzM
 
-****Uploading Files to ChatGPT: A More Powerful Experience****
+**Uploading Files to ChatGPT: A More Powerful Experience**
 
-This prompts **********************************************************************************to create js code to makes a button in the chatgpt interface by injecting the code in through inspect elem → console**********************************************************************************
+This prompts **to create js code to makes a button in the chatgpt interface by injecting the code in through inspect elem → console**
 
 ---
 
-****Zapier Plugin:****
+**Zapier Plugin:**
 
 [https://www.youtube.com/watch?v=2ajn8Oc-kKg&ab_channel=WebcafeAI](https://www.youtube.com/watch?v=2ajn8Oc-kKg&ab_channel=WebcafeAI)
 
@@ -28,4 +28,4 @@ Chat with code repo:
 
 [https://www.youtube.com/watch?v=0lOSvOoF2to&t=165s&ab_channel=sentdex](https://www.youtube.com/watch?v=0lOSvOoF2to&t=165s&ab_channel=sentdex)
 
-****OpenAI GPT-4 Function Calling: Unlimited Potential****
+**OpenAI GPT-4 Function Calling: Unlimited Potential**

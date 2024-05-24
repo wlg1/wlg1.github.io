@@ -13,4 +13,4 @@ There are two ways to calculate the probability using the decision tree:
 
 Bayes’ Rule derivation:
 
-******TBC******
+**TBC**

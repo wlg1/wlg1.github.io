@@ -201,6 +201,8 @@
     In summary, while having a "Verified" label on your commits can enhance trust and security, especially in collaborative and open-source projects, it's not inherently "bad" if your commits are not verified. It depends on the specific requirements and security policies of the project you are working on.
     
 
+[Actions](Git%204c9bd0a8425541b68fa7a146f2df3f37/Actions%2007de399abcb04f29884a3de101fb53cc.md)
+
 ### Errors
 
 - git pull —> fatal: refusing to merge unrelated histories
@@ -289,6 +291,7 @@ To push the current branch and set the remote as upstream, use `git push --set-u
     
     An upstream branch is a remote branch in a remote repo. When you push changes using just "git push" from a branch in a local repo to a branch in a remote repo, git tries to find a branch in the remote repo with the same name. So if this remote branch name doesn’t exist, you will get this error. So either be more specific with `git push <remote> <branch>` or push this local branch to the remote repo.
     
+- [https://stackoverflow.com/questions/38378914/how-to-fix-git-error-rpc-failed-curl-56-gnutls](https://stackoverflow.com/questions/38378914/how-to-fix-git-error-rpc-failed-curl-56-gnutls)
 
 ### Questions
 
@@ -619,8 +622,64 @@ To push the current branch and set the remote as upstream, use `git push --set-u
 
 [https://stackoverflow.com/questions/45403222/how-to-completely-delete-a-commit-from-github](https://stackoverflow.com/questions/45403222/how-to-completely-delete-a-commit-from-github)
 
+- i transferred a git repo to a hard drive d:/ and access git through the hard drive. my .config is stored on c:/. the git repo has a .git file but is not recognized as a git repo. how can i turn it to one?
+    
+    SOLN: git clone the previous one instead, then use:
+    
+    `git config --global --add safe.directory [dir_of_repo]`
+    
+- can you commit not from root of local repo when using git bash, like from subfolder
+    
+    Yes, you can commit changes to a Git repository from a subfolder using Git Bash or any other command-line interface for Git. When you work with Git, the repository is recognized by the presence of the `.git` directory at the root of the repository. As long as you are within the directory tree of the repository, Git commands will be executed with respect to the repository's root. Remember, even when you are in a subfolder, these commands are relative to the root of the Git repository. The commit will be made to the repository as a whole, not just to the subfolder.
+    
+
 **To Answer Later**
 
 How do we restore a local repo based on the last commit in the local repo, not from the remote repo?
 
-Remove from staging (after add, before commit)?
+Remove from staging (after add, before commit)? 
+
+---
+
+- Give a case study example of how to effectively use github in a team. Detail the steps and put in non-trivial issues in the process, such as dealing with merge conflicts, and how they're resolved.
+    
+    [https://chat.openai.com/c/d333fc27-fa27-4234-b4aa-6eb5d821c080](https://chat.openai.com/c/d333fc27-fa27-4234-b4aa-6eb5d821c080)
+    
+    ### Case Study: Developing a Web Application with GitHub
+    
+    ### Team Setup and Initial Steps
+    
+    1. **Create a Repository (Repo):** The team leader creates a GitHub repository for the new web application project, setting it up with a README, license, and .gitignore file tailored to the project's needs (e.g., for a Node.js project, ignoring `node_modules/`).
+    2. **Define Contribution Guidelines:** To ensure consistency, the team agrees on contribution guidelines and documents them in a `CONTRIBUTING.md` file. This includes coding standards, commit message formats, and pull request (PR) procedures.
+    3. **Branching Strategy:** The team adopts a branching strategy. For simplicity, they decide on the Feature Branch Workflow: all new features and bug fixes are developed in separate branches off the main branch (`main` or `master`).
+    
+    ### Day-to-Day Development
+    
+    1. **Starting a New Feature:** When a team member begins work on a new feature, they create a new branch from the latest version of `main`, naming it descriptively, e.g., `feature/user-authentication`.
+    2. **Regular Commits:** The developer commits changes regularly to their branch with clear, descriptive commit messages that follow the agreed-upon format.
+    3. **Keeping Branches Up-to-Date:** Developers frequently pull changes from `main` into their feature branches to stay up-to-date and minimize merge conflicts later.
+    
+    ### Code Reviews and Merging
+    
+    1. **Pull Requests (PRs):** Once a feature is complete, the developer pushes their branch to GitHub and opens a pull request. The PR description summarizes the changes and any specific areas where feedback is sought.
+    2. **Code Review:** Team members review the PR, comment on any issues or improvements, and perhaps request changes. The developer addresses these comments, pushing new commits to the branch as needed.
+    3. **Dealing with Merge Conflicts:** If `main` has changed significantly since the branch was created, merging the PR might result in merge conflicts. The developer responsible for the PR must resolve these conflicts locally on their branch by:
+        - Pulling the latest changes from `main` into their branch.
+        - Manually resolving the conflicts in their code editor or IDE.
+        - Committing the resolved changes and pushing the branch back to GitHub.
+    4. **Final Review and Merge:** Once conflicts are resolved and all reviewers approve the PR, the team lead or a designated team member merges the PR into `main`. GitHub's interface provides options to rebase and merge, squash and merge, or create a merge commit, depending on the team's preference.
+    
+    ### Handling Non-Trivial Issues
+    
+    - **Merge Conflicts:** The most common non-trivial issue is merge conflicts, as mentioned above. Resolving these requires a good understanding of the codebase and the changes being merged. Communication between team members is crucial, especially if the conflict involves work from multiple developers.
+    - **Reverting Changes:** If a merged PR introduces bugs or issues, the team might decide to revert the merge commit. GitHub allows for reverting merge commits directly from the PR or commit in the repository's history, creating a new commit that undoes the changes.
+    - **Security and Permissions:** Managing access permissions to the repository is vital. The team might restrict who can merge PRs into `main`, require status checks to pass before merging, or protect `main` from direct pushes to ensure code review practices are followed.
+    
+    ### Continuous Integration and Deployment
+    
+    1. **Automation:** The team sets up continuous integration (CI) workflows using GitHub Actions or a similar tool to automate testing and build processes. This ensures that PRs can only be merged if they pass all tests and meet defined quality thresholds.
+    2. **Deployment:** For projects where continuous deployment (CD) is applicable, the team configures automatic deployments to staging or production environments based on successful builds from the `main` branch, further streamlining the development process.
+    
+    ### Conclusion
+    
+    This case study demonstrates a comprehensive approach to using GitHub in a team environment. The key to effectively dealing with issues like merge conflicts lies in maintaining clear communication, adhering to established guidelines, and leveraging GitHub's features to automate and streamline the development process. Regular team meetings and reviews can also help identify and address any issues or improvements in the workflow.

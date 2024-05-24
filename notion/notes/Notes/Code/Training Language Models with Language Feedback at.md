@@ -34,7 +34,7 @@
 
 ---
 
- /[utilities](https://github.com/JeremyAlain/imitation_learning_from_language_feedback/tree/main/utilities)/****general_utilities.py****
+ /[utilities](https://github.com/JeremyAlain/imitation_learning_from_language_feedback/tree/main/utilities)/**general_utilities.py**
 
 Only uses numpy for random
 

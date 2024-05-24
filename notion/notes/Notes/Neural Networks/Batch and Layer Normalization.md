@@ -76,7 +76,7 @@ On the left side, feature ${x_i}$ goes from i=1 to B. This feature ${x_i}$ actua
 
 [https://dynalist.io/d/n2ZWtnoYHrU1s4vnFSAQ519J#z=pndoEIqJ6GPvC1yENQkEfZYR](https://dynalist.io/d/n2ZWtnoYHrU1s4vnFSAQ519J#z=pndoEIqJ6GPvC1yENQkEfZYR)
 
-- Somewhat analogous to **[BatchNorm](https://www.wikipedia.org/en/Batch_normalization)**, but it doesn’t need any averaging over the batch
+- Somewhat analogous to [**BatchNorm**](https://www.wikipedia.org/en/Batch_normalization), but it doesn’t need any averaging over the batch
 - Intuitively, it makes residual stream vectors *consistent* - mapping them to the same size and range, in a way that makes things more stable for the layer using them
     - But in practice, people use it because it works, and this kind of intuition can easily be wrong
 

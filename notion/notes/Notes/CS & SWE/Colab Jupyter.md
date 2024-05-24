@@ -1,5 +1,9 @@
 # Colab / Jupyter
 
+You should save as both .ipynb and .py during development to record the changes on github (.ipynb won’t show fine changes in commits!). After development is done, either move that folder to “old files” or delete it (the commits showing incr changes will still be there).
+
+---
+
 - %load_ext autoreload
 %autoreload 2
     
@@ -104,3 +108,20 @@ Making the Most of your Colab Subscription
 NOTE: if drive uploads an .ipynb, don’t copy drive link, copy the colab url either from ad bar or cell
 
 when you upload a notebook, it will appear in the Colab Notebooks folder by default, instead of the new notebook you created; it will not replace that new untitlted notebook. so you need to move it and delete the old untitlted one
+
+---
+
+note- if run all very quick and download multp files at once in colab in between, files wont downlaod until finish executing or interruppt execution
+
+[https://chat.openai.com/c/6c5cac0c-b647-4099-8c5f-8003b5a82848](https://chat.openai.com/c/6c5cac0c-b647-4099-8c5f-8003b5a82848)
+
+note- tpu doesn’t work with transformerlens or jax: 'numpy.linalg._umath_linalg' has no attribute '_ilp64’
+
+---
+
+- how come I can run a script on colab's A100 fine, but when I run it using !python on colab with A100 there's cuda out of memory error?
+    1. **Different Execution Environments**: Running scripts directly in a notebook cell (e.g., using `!python script.py`) versus running Python code in the notebook's native cells might allocate resources differently. The native Colab environment might handle memory more efficiently or differently compared to invoking a script via the command line within Colab.
+    2. **Memory Overhead of the Python Interpreter**: When you run a script using `!python`, you're essentially starting a new Python interpreter on top of the one that's already running your notebook. This additional interpreter can consume extra memory, potentially leading to OOM errors, especially if your script is memory-intensive.
+    3. **CUDA Contexts**: Running the script with `!python` might create a new CUDA context, which consumes additional GPU memory. Multiple CUDA contexts can lead to increased memory usage, which might not be as efficiently managed as when running directly in the notebook's Python environment.
+    4. **Memory Not Released**: If you've run other operations on the GPU before executing your script with `!python`, it's possible that not all GPU memory was released properly. This can happen if previous executions have allocated memory that hasn't been cleared. Running scripts in the native environment might benefit from Colab's memory management, potentially avoiding this issue.
+    5. **Differences in Environment Setup**: There might be differences in how the Python environment is configured when executing a script using `!python` versus running code directly in a notebook cell. These differences can affect library versions, memory allocation, and other factors that impact GPU memory usage.

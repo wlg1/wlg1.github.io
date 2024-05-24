@@ -1,6 +1,6 @@
 # Manual path patch
 
-**[Manual rmv from work backw circ](https://colab.research.google.com/drive/1CHRn-AMko9RNrl1bqiCwB7DS-rz1CoBP#scrollTo=0zheHQmPw2Gk&line=1&uniqifier=1)**
+[**Manual rmv from work backw circ**](https://colab.research.google.com/drive/1CHRn-AMko9RNrl1bqiCwB7DS-rz1CoBP#scrollTo=0zheHQmPw2Gk&line=1&uniqifier=1)
 
 If rmv head, is correct answer still in 1st place; if not, what does it fall to?
 

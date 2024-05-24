@@ -58,7 +58,7 @@ As it is a square symmetric matrix, it can be diagonalized by choosing a new ort
 
 ---
 
-- **************************QUESTIONABLE:**************************
+- **QUESTIONABLE:**
     
     Pythagoras's theorem tells us that if the principal components are orthogonal, then the magnitude of the hypotenuse (i.e., the vector connecting the origin to a point in the dataset) is equal to the square root of the sum of the squares of the magnitudes of the other two sides (i.e., the magnitudes of the projections of the vector onto the two principal components).
     
@@ -72,3 +72,7 @@ In PCA, the data points are projected orthogonally onto the new axes (the princi
 This is because making red small is the same as making yellow large ??? No:
 
 If a and b are the two legs of a right-angled triangle, there isn't a direct inverse relationship between their lengths. However, if you increase or decrease the length of one side (a or b) while keeping the angle between them constant (90 degrees), the length of the hypotenuse (c) will also change accordingly due to the Pythagorean theorem (c² = a² + b²).
+
+---
+
+[https://jonathan-hui.medium.com/machine-learning-singular-value-decomposition-svd-principal-component-analysis-pca-1d45e885e491](https://jonathan-hui.medium.com/machine-learning-singular-value-decomposition-svd-principal-component-analysis-pca-1d45e885e491)

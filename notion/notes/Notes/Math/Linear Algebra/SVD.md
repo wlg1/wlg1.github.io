@@ -35,7 +35,7 @@ REASON: for decomposition, which allows us to pick the most important components
 
 [https://www.youtube.com/watch?v=vSczTbgc8Rc&t=163s&ab_channel=VisualKernel](https://www.youtube.com/watch?v=vSczTbgc8Rc&t=163s&ab_channel=VisualKernel)
 
-****SVD Visualized, Singular Value Decomposition explained | SEE Matrix , Chapter 3****
+**SVD Visualized, Singular Value Decomposition explained | SEE Matrix , Chapter 3**
 
 q x v matrix: maps vectors from R^v to R^q
 
@@ -302,7 +302,7 @@ use singular values
 
 [https://www.youtube.com/watch?v=mhy-ZKSARxI&t=471s&ab_channel=VisualKernel](https://www.youtube.com/watch?v=mhy-ZKSARxI&t=471s&ab_channel=VisualKernel)
 
-****Visualize Spectral Decomposition | SEE Matrix, Chapter 2****
+**Visualize Spectral Decomposition | SEE Matrix, Chapter 2**
 
 [https://www.sjsu.edu/faculty/guangliang.chen/Math253S20/lec5svd.pdf](https://www.sjsu.edu/faculty/guangliang.chen/Math253S20/lec5svd.pdf)
 
@@ -341,7 +341,7 @@ A^T sigma * u = lambda * v = sigma * sigma * v
 
 A^T u = sigma v
 
-A A^ T u ******************************=****************************** lambda * u = A sigma v
+A A^ T u **=** lambda * u = A sigma v
 
 A v = sigma u (back to where we started)
 
@@ -355,7 +355,7 @@ lambda * v: stretch v MORE (2x amount of sigma)
 
 A^T A v = A^T sigma * u = lambda * v
 
-A A^ T u ******************************=****************************** A sigma v = lambda * u
+A A^ T u **=** A sigma v = lambda * u
 
 Multiplying by A^T or A causes eigenvector to rotate and scale into singular vctor
 

@@ -1,6 +1,6 @@
 # Locating Shared Circuits
 
-[Project Planning](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Project%20Planning%203798a71e7c5d4a888cad9a7d25a1275c.md)
+[Project Planning (quests)](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c.md)
 
 [Resources](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Resources%20ffd628ad9f5f4c1d8c12a4997611bbb3.md)
 
@@ -107,6 +107,10 @@ Brainstorming Notes
 [Brainstorming Notes](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4.md)
 
 [Fibonacci plan](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Fibonacci%20plan%202e0e51805bee4b44ba09fe671e89ab19.md)
+
+[List of math reason prompts](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/List%20of%20math%20reason%20prompts%207fad070b1fa5480e858b6fbef3217c2a.md)
+
+[Successor Heads Notes](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Successor%20Heads%20Notes%203d2a9c73e41d4ca7903790b6e7914124.md)
 
 Writeup
 
