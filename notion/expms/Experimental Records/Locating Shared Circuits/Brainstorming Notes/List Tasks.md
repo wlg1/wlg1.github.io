@@ -25,7 +25,7 @@
         2. ✅ edges
     6. decr digits (and variations of 1a to 3)
         1.  nodes
-            1. ✅ [Impt Decr Circ Heads](../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Impt%20Decr%20Circ%20Heads%20109317c38d2d4bf2ba1c721d44e17d1a.md) 
+            1. ✅ [Impt Decr Circ Heads](../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Impt%20Decr%20Circ%20Heads%20109317c38d2d4bf2ba1c721d44e17d1a.md) 
             2. get top heads from actv patch (explr demo)
             3. try with 4 input tokens
         2. edges

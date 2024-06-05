@@ -6,657 +6,499 @@
 
 ### Working on
 
-Observe Mathematical Reasoning Effects
+Run Llama-2 Circuits for multi-prompts and multi-token answers
 
-- ✅ Plan updates
+- ✅ logit diff for corr answer that uses multiple tokens
     
-    [https://docs.google.com/document/d/1sBKNJ7Xut0kPnFGqRfwn0LqBoiJrgf3_4S3zNevomAQ/edit](https://docs.google.com/document/d/1sBKNJ7Xut0kPnFGqRfwn0LqBoiJrgf3_4S3zNevomAQ/edit)
+    [MultTok LogitDiff](MultTok%20LogitDiff%20ff8e7c2c11a6479f8b8edca9f9bb129c.md) 
     
-- 🐣 TransformerLens: Get code to generate math reasoning (not just next logit)
+    - we only need to use this for numbers bc nw and months use single tok
+- ✅ node ablation algo on 12 prompts numerals, en nw, en months- just run once.
+    - ✅ decide on seq len (4) and # prompts (8; bc 4 before ‘12’)
+    - ✅ change prompt dict to use all tokens incl spaces
+    - ✅ change node_ablation_fns code to use 32 layers, and one backw run only
+    - ✅ en nw- doesn’t need to use multitok logit diff nor mt mean replace bc all single toks
+        
+        Llama2_nw.ipynb
+        
+        ~3.5 hrs (45 compute units)
+        
+    - ✅ Llama2_months.ipynb
+        
+        640-1014
+        
+- ✅ try ablating by hook then using `model.generate` (note- cannot sum logits or get second highest toks this way, but can observe results)
     
-    [ablate_seqcont_then_math.ipynb](https://colab.research.google.com/drive/1OVMkA1IZKZLmKq2paGRIXykzm5fxrGIx)
+    [test_ablate_then_modelGen.ipynb](https://colab.research.google.com/drive/1q9H9smo0CJzk6wLpzg05_ismXwc-yDac#scrollTo=0luk2rHSRp1n)
     
-    - ✅ 🐣 ISSUE: after adding hook, cannot do this:
+    This also works for GPT-2, but it fails for llama-2 for some reason: [https://colab.research.google.com/drive/1b6qzlOVuQKwNehyiWEYObKk3v5SRU8Ep#scrollTo=xplS-5FUDhMG&line=1&uniqifier=1](https://colab.research.google.com/drive/1b6qzlOVuQKwNehyiWEYObKk3v5SRU8Ep#scrollTo=xplS-5FUDhMG&line=1&uniqifier=1)
+    
+- ✅ llama2_ablate_prompts_numwords_circ.ipynb: ablate numwords circ
+    
+    [llama2_ablate_prompts_numwords_circ](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_numwords_circ%2013d41c80bbac4bb196f239f5745db7e2.md) 
+    
+    - think of prompts related to knowing that two comes after one, three comes after two, etc
         
-        ```jsx
-        for i in range(10):
-            print(f"{tokens.shape[-1]+1}th char = {next_char!r}")
-            # Define new input sequence, by appending the previously generated token
-            tokens = t.cat([tokens, next_token[None, None]], dim=-1)
-            # Pass our new sequence through the model, to get new output
-            logits = model(tokens)
-        ```
+        [https://chatgpt.com/c/8c5d7cb7-03e1-4fa0-8693-b61cca1f7922](https://chatgpt.com/c/8c5d7cb7-03e1-4fa0-8693-b61cca1f7922)
         
-        `RuntimeError: The size of tensor a (4) must match the size of tensor b (36) at non-singleton dimension 1`
+- ✅ spanish nw circs: just single tok for now (used for testing)
+    - Llama2_spanish_nw
+        - ISSUE: spanish numwords AREN’T single token, and can’t cont beyond seis
+            - actually, they are single token for uno to seis, so do seqs of 3 (4 prompts)
+        - NOTE: quatro and cuatro both work?
+        - 1250-3
+- ✅ spanish months circs: just single tok for now (used for testing)
+    
+    ~~spanish months cannot complete until they start from the first month~~
+    
+    no, they require a lot of words in seq to complete. they require 5 words in initial prompt often, but sometimes even this doesn’t work: “"junio julio agosto septiembre octubre” - this would give “nov”, the english version.
+    
+    for len 3, this seems to only go up to ‘2’; marzo abril mayo cannot complete corr
+    
+    for len 4, this doesn’t work
+    
+    due to this instability, we decide to only go with 2 prompts, noting this section is not as strong, but still provides some weak evidence (put this in appendix)
+    
+    - spanish number words also require a lot of words in seq to complete; they don’t stop at seis. however, their number words after seis are multi-token.
+- ✅ shared seq circs have next heads?
+    
+    20.17 has a higher than average successor head score, as it is one of only twelve attention heads (out of 1024 total) which detects the "next" token of a sequence member token. However, all the other attention heads with a non-zero successor head score, even those with scores higher than 20.17, are not part of the circuit found for sequence continuation in Llama-2.
+    
+    - [Llama2_2468](https://colab.research.google.com/drive/1q3awIKao2inD7xbRMDO183JZZddolJfI#scrollTo=susSZdqpqVzd&line=1&uniqifier=1) has none of the [next next heads](https://colab.research.google.com/drive/11mvy5ZZud0Pyr6XYuoPBGpkfo9Hmp4tS#scrollTo=XWH8x6WD4zHX&line=2&uniqifier=1) either
+        - (20, 17) not ranked high, but 5.25 is
+    - maybe later layer heads not there bc backw run. try fwd run
+- ✅ find overlapping circ of nw, months, numbers and ablate this subcirc on prompts
+    - ✅ find_circ_overlap.ipynb
+    - ✅ ablate this subcirc on prompts: [llama2_ablate_prompts_diff_circs](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_diff_circs%207fa2537e45b84049b77f3dad6b6f190d.md)
+- ✅ Llama2_numerals_1to10.ipynb
+- ⚠️ multi tok answer for node ablation
+    
+    [Llama2_numerals_multiTok](https://colab.research.google.com/drive/1pWgh5WaTRixOA4JwJcoL1PsBfoDyMjs4)
+    
+    5 prompts (single tok ans), 15 toks (double tok ans)
+    
+    - ✅ for corr multiToks, print percentage of ablated / unabalted
+        - singleTok: mean(ablated_score) / mean(unablated_score)
+        - for a batch of prompts, multiTok is also mean(ablated) / mean(unablated)
+            - We can mix single and multi: eg. prompt 1 predicts “8” and prompts 2 predicts “10”. Prompt 1 has logit 5, and prompt 2 has logit 6+7. For ablated, prompt 1 has logit 3, prompt 2 has logit 3+4. So (3 + 7 / 2) / (5 + 13 / 2) = 0.56
+    - ✅ ISSUE: when answers in dataset take multiple runs to predict, we would have to run the prompt through multiple times because for those whose correct answer is represented as N tokens, we have to do N passes.
+        - SOLN: separate prompts with different answer lengths into different datasets. During an iteration of the backwards sweep, run each of these datasets separately. For each dataset with answer tokens of length N, run it N times. Then, [as in the example above](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c.md), take the mean of the correct (summed) token(s) logits- regardless of single or N (as this will be compared to the single and N in the unablated) to obtain the ablated and unablated scores. Finally, take their percentage.
+            - use the same metric for both (correct tok logit only)
+            - report both separate and combined results
+            - for 2 4 6 or addition, we **have** to use multi tok. But for 1 2 3, we can get away with just SINGLE.
+                - run single tok using logit diff: Llama2_numerals_1to10.ipynb
+                - 2 4 6: probably start and end at double toks only for consistency.
+    - ✅ corr: if member in clean is single tok, it should be replaced with a single token. Double toks should be replaced with double tok, etc. If it’s a space, keep it. All numwords and months are single tokens, so this is just a problem for numerals
+    - ✅ it is okay if the prompts are different lengths because using padding (requires model laoding for some reason) allows them to be put in matrix of same shape
+    - ✅ check if `'▁'` will be read same as ‘ ‘ by tokenizer
+        - doesn’t matter bc prompt_dict, circuit and seqpostokeep will always use `▁` due to tokenizing the text with `model.tokenizer`
         
-        EXPLAIN: This is related to sequence length. The ablation ablates at fixed positions (4), but the tokens passed in have seqlen 36
-        
-        QUESTION 1: But it takes an input  `'1 2 3'` of length 3 instead of 4?
-        
-        QUESTION 2: But this code can only take an input of length 2. 
-        
-        ```jsx
-        example_prompt = "1 2"
-        example_answer = " 3"
-        utils.test_prompt(example_prompt, example_answer, model, prepend_bos=True)
-        ```
-        
-    - ✅ 🐣 ISSUE: after ablating  all heads but not MLPs, ARENA approach to generate tokens yields correct token, but transformerlens approach to predict prompt yields wrong token
-        
-        DETAILS: This approach seems unaffected by ablation
-        
-        - code
-            
-            ```
-            reference_text = '1 2 3'
-            tokens = model.to_tokens(reference_text).to(device)
-            
-            print(f"Sequence so far: {model.to_string(tokens)[0]!r}")
-            
-            for i in range(10):
-                print(f"{tokens.shape[-1]+1}th char = {next_char!r}")
-                # Define new input sequence, by appending the previously generated token
-                # tokens = t.cat([tokens, next_token[None, None]], dim=-1)
-                # Pass our new sequence through the model, to get new output
-                logits = model(tokens)
-                # Get the predicted token at the end of our sequence
-                next_token = logits[0, -1].argmax(dim=-1)
-                # Decode and print the result
-                next_char = model.to_string(next_token)
-            ```
-            
-            ![Untitled](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Untitled.png)
-            
-        
-        But this approach does seem affected
-        
-        - code
-            
-            ```jsx
-            example_prompt = "1 2"
-            example_answer = " 3"
-            utils.test_prompt(example_prompt, example_answer, model, prepend_bos=True)
-            ```
-            
-            ![Untitled](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Untitled%201.png)
-            
-        
-        We check this by resetting hooks and looking at difference. The first is unchagned after reset hooks, but the second gets the correct next token as ‘3’
-        
-        TRY: check if logits of ARENA appraoch truly do match before and after ablating all components
-        
-        RESULT: the logits don’t match before and after ablate
-        
-        HYPOTHESIZE: the ablation DOES work, but ‘1 2 3’ still is strong enough to get ‘4’ due to the MLPs, just the ranking is much lower. But ‘1 2’, with less, is not enough. We would need to figure out the issue above with why it can only take prompts of a certain length after hook ablation to compare ‘1 2 3’ using both ARENA and TL approaches
-        
-    - ✅ 🐣 Go back to “[ISSUE: after adding hook](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c.md),” and study how ablation code works to find 1) why prompts of different lengths cannot be put in, 2) why is it not len 4 prompts that are allowed, but ARENA approach is len 3 and TL utils example prompt is len 2
-        - ✅ Comment ablation functions
-        - ✅ 🐣 Look at traceback error to find where in ablation functions error occurs
-            
-            ```jsx
-            <ipython-input-51-36366ada469c> in hook_func_mask_head(z, hook, components_to_keep, means)
-                 63     '''
-                 64     mask_for_this_layer = components_to_keep[hook.layer()].unsqueeze(-1).to(z.device)
-            ---> 65     z = t.where(mask_for_this_layer, z, means[hook.layer()])
-                 66 
-                 67     return z
-            
-            RuntimeError: The size of tensor a (4) must match the size of tensor b (5) at non-singleton dimension 1
-            ```
-            
-            - how does this work in detail:
-            `z = t.where(mask_for_this_layer, z, means[hook.layer()])`
-                
-                ### Components of the Line
-                
-                1. **`t.where(condition, x, y)`**:
-                    - This is a PyTorch function that returns a tensor of elements selected from either `x` or `y`, depending on the `condition`.
-                    - For each element in the `condition` tensor:
-                        - If the condition is `True`, the corresponding element from `x` is taken.
-                        - If the condition is `False`, the corresponding element from `y` is taken.
-                2. **`mask_for_this_layer`**:
-                    - This is a boolean tensor of shape `(batch, seq, head, 1)`.
-                    - It indicates which elements of `z` should be kept (`True`) and which should be replaced (`False`).
-                3. **`z`**:
-                    - This is a tensor of ORIGINAL activations from the model, with shape `(batch, seq, head, d_head)`.
-                    - It represents the output of the current layer's attention heads **before modification.**
-                4. **`means[hook.layer()]`**:
-                    - This is a tensor of the mean activations for the current layer, with the same shape as `z` but excluding the batch dimension, so it must be broadcastable to `(batch, seq, head, d_head)`.
-                    - It represents the average activations that should be used to replace the original activations where the mask is `False`.
-                
-                ### What Happens in Detail
-                
-                1. **Broadcasting**:
-                    - The `means[hook.layer()]` tensor, which has shape `(batch, seq, head, d_head)`, is broadcast to match the shape of `z`. Broadcasting in PyTorch automatically expands the smaller tensor along its dimensions to match the larger tensor's shape.
-                2. **Condition Evaluation**:
-                    - The `t.where` function evaluates the `mask_for_this_layer` condition for each element in the tensor.
-                    - This mask indicates which elements of `z` should remain unchanged (`True`) and which should be replaced with the corresponding element from `means[hook.layer()]` (`False`).
-                3. **Element-wise Selection**:
-                    - For each element in `z`:
-                        - If the corresponding element in `mask_for_this_layer` is `True`, the element from `z` is kept.
-                        - If the corresponding element in `mask_for_this_layer` is `False`, the element from `means[hook.layer()]` is used instead.
-                
-                ### Example
-                
-                Let's consider an example to illustrate the process. Suppose we have:
-                
-                - `z` is a tensor with shape `(2, 3, 4, 5)` representing the activations.
-                - `mask_for_this_layer` is a boolean tensor with shape `(2, 3, 4, 1)`.
-                - `means[hook.layer()]` is a tensor with shape `(2, 3, 4, 5)` representing the mean activations.
-                
-                ```python
-                import torch as t
-                
-                # Example tensors
-                z = t.randn(2, 3, 4, 5)
-                mask_for_this_layer = t.tensor([
-                    [[[True], [False], [True], [False]],
-                     [[True], [True], [False], [False]],
-                     [[False], [True], [True], [False]]],
-                
-                    [[[False], [False], [True], [True]],
-                     [[True], [False], [False], [True]],
-                     [[True], [True], [True], [False]]]
-                ])
-                means_for_layer = t.zeros(2, 3, 4, 5)  # Example mean activations tensor
-                
-                # Applying t.where
-                result = t.where(mask_for_this_layer, z, means_for_layer)
+    - plan to implement ideas above
+        1. ✅ when making corrupted datasets, go through each token of clean prompt and replace it with a random single digit token. since “10” is already broken into single tokens, it can be “54”. we allow numbers greater than 12. 
+        2. ✅ create separate datasets based on how many tokens are in correct answer. test this by generate. place these datasets in lists with index corresponding to N.
+            - ✅ when CORRUPT: for prompt_dict in list_of_prompts:  # cannot use prompts_list as var, else will get global instead of fn arg (more priority)
+        3. in get original score, run the Nth dataset N times and sum up the logits for the N runs. Then take the final summed logit score for these N datasets, and take the mean over the number of samples for ALL datasets.
+            - ✅ SCORING CORR ID LOGIT: for each prompt, dataset.corr_tokenIDs needs to store the correct token for not just the next char, but all chars up to the corr ans string. look at shape of this to better understand how to modify this.
                 
                 ```
+                # corr_tokenIDs is list of lists. Each list represents the "next" correct token
+                # within each list is the correct tokID for each prompt in the dataset
+                # each prompt has an item for the "next" corr token, but this should be a list now that there's multiple
                 
-                In this example:
+                # original with just one ans:
+                # eg. [tokenizer.encode(prompt["corr"])[-1] for prompt in prompts_list]
+                # [29945, 29953, 29955, 29947, 29929]
                 
-                - The `result` tensor will have elements from `z` where `mask_for_this_layer` is `True` and elements from `means_for_layer` where `mask_for_this_layer` is `False`.
+                # ans_two_dataset
+                ```
                 
-                ### Summary
-                
-                The line `z = t.where(mask_for_this_layer, z, means[hook.layer()])` effectively replaces certain activations in `z` with their mean values from `means[hook.layer()]`, based on the boolean mask `mask_for_this_layer`. This allows selective modification of the model's activations, preserving important components and replacing the rest with a baseline value.
-                
-            - z is the ORIGINAL activations obtained by passing `tokens` through the model. The hook function gets z at run-time, so not a variable within the function. `means` is obtained by running the means dataset through the model, so its number of tokens per prompt must match the current len of  `tokens`
-            - what is a referring to and what is b refeerring to
-                - `a` refers to `z`
-                - `b` refers to `means[hook.layer()]`
-        - ✅ compare number of tokens in dataset (used to ablate) vs tokens that pass in from ARENA approach to generate text
-            
-            ![Untitled](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Untitled%202.png)
-            
-            `model.to_tokens()` adds on a space in front
-            
-        - ✅ compare number of tokens that pass in from ARENA approach to generate text vs tokens used by `utils.test_prompt()`
-            
-            SOLN: `util.test_prompt()` used `prepend_bos=True`, so it only took in len 2. But now, is the same as ARENA approach when using `prepend_bos=False`
-            
-            ```
-            example_prompt = "1 2 3"
-            example_answer = " 3"
-            utils.test_prompt(example_prompt, example_answer, model, prepend_bos=False)
-            ```
-            
-        - ✅ how do I use this without appending an end text token at the front:
-        `tokens = model.to_tokens(reference_text).to(device)`
-            - ✅ how to get rid of first entry here: tensor([[50256,    16,   362,   513,   604]])
-                
-                `tokens_trimmed = tokens[:, 1:]`
-                
-            
-            Actual SOLN: [https://www.notion.so/wlg1/Project-Planning-3798a71e7c5d4a888cad9a7d25a1275c?pvs=4#403a22e3d6e74102aebd69f83f5d721b](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c.md)
-            
-        - ✅ Fixed bug `ablated_model =...` as this doesn’t modify model, so model.reset_hooks() also does nothing. Chnage to `model=...`
-        - `get_MLPs_actv_mean()` means error: `means = t.zeros(size=(n_layers, batch, seq_len, d_model), device=model.cfg.device)`, then when using `means[layer, template_group] = mlp_output_means_for_this_template`, this broadcasts the mean to every batch. But when have only one batch,
-    - ✅ **ablate head 9.1 and mlp 9 and see if corr**
-        
-        This is necessary (AND) beacuse is seeing if components are essential (no backups)
-        
-        RESULT: this destroys the ability of ‘1 2 3 4’ to predict ‘5’, and it instead predicts ‘4’
-        
-    - ablate head 9.1 and mlp 9 then generate longer outputs for math-word-problem inputs
-        - ISSUE: in curr code, when a model has a hook, can only take inputs of a certain size (same as means dataset), so cannot ‘add new token on then get next token’ when gen output longer than 1 next pos
-            - [Try: ablation not dependent on means_dataset seqlen, but on curr input’s seqlen](https://colab.research.google.com/drive/1OVMkA1IZKZLmKq2paGRIXykzm5fxrGIx#scrollTo=ecUNF1uRd7hk&line=1&uniqifier=1)
-                - Go back to [this issue](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c.md)
-                - proposed soln
+                1. ✅ automate prompts list to check if correct answer in seq is two tokens. but this should use code that recognizes numbers by spaces (split), not by tokens!
+                    - split into items sep by spaces, and checks if corr item in list is one or two tokens by splitting
+                    - OR split it into two manually (less trustworthy unless llama always does each digit is a token)
+                2. ✅ Change `prompt_dict['corr']` to be a list of ans positions
+                3. ✅ After changing `prompt_dict['corr']` to be a list, change `self.corr_tokenIDs` to be a list of lists 
                     
-                    Instead of making means shape be `n_layers, batch, seq_len, d_model`, using seq_len from means dataset, we should create a means for the specific current input. That means using a new means dataset based on the current input len. (Eg. if "1 2 3 4 5 6", make new means dataset that's len 6). This is needed since we need to get a means value for each pos of the input.
+                    Outer list lvl 2: [ [ANS_POS_0] , [ANS_POS_1] ]
                     
-                    Thus, define and pass in new dataset, and change this: `batch, seq_len = len(means_dataset), means_dataset.max_len`
+                    Within list lvl 1: [ PROMPT_1, PROMPT_2, PROMPT_3 ]
                     
-                    Then add a NEW HOOK using new dataset. So if generating, need to do this every loop
-                    
-                    Alt, use zero ablation
-                    
-        - [https://www.notion.so/wlg1/Project-Planning-3798a71e7c5d4a888cad9a7d25a1275c?pvs=4#dee8ff214d014d88b06898cc7f073014](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c.md)
-    - ✅ even if not more than one step, we need to ablate components based on new input lengths. this is just needing new `means_dataset` inputs for each input
-        - ✅ ISSUE:
-            
-            ![Untitled](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Untitled%203.png)
-            
-            - ✅ If we trace this back to how `means` is constructed, we see that its pos is determined by:
-                
-                `batch, seq_len = len(means_dataset), means_dataset.max_len`
-                
-                But `dataset_2.max_len = 12`, not 13. So it’s something else.
-                
-            - Place function in colab, and pdb in it (cannot do this if get code from repo)
-                
-                ipdb> means.shape
-                torch.Size([12, 1, 12, 12, 64]) 
-                
-                `# n_layers, batch, seq_len, n_heads, d_head`
-                
-                ipdb> means[0].shape  `# same as hook.layer() = 0`
-                torch.Size([1, 12, 12, 64])
-                
-                `z: Float[Tensor, "batch seq head d_head"],`
-                
-                “at dimension 1” means at seq. But it looks like for all layers, means dim 1 is 12. 
-                
-                <<<
-                
-                `print(hook.layer())
-                print(z.shape)
-                print(means[hook.layer()].shape)`
-                
-                0
-                torch.Size([1, 13, 12, 64])
-                torch.Size([1, 12, 12, 64])
-                
-                So it’s z that has 13, so chatgpt got this wrong by saying “a” is z. Not questioning this wrong assumption led to not finding the issue.
-                
-                SOLN: `tokens = tokens[:, 1:]`
-                
-    - ✅ get new dataset_2 to mean ablate. What did pos_dict do?
-        
-        pos_dict isn’t used to get means. `get_heads_actv_mean()` runs `means_dataset.toks.long()` as input to get a `means_cache` , which has activations for every layer
-        
-        `means_dataset.toks` is from: 
-        
-        ```
-        self.toks = torch.Tensor(self.tokenizer(texts, padding=True).input_ids).type(
-                    torch.int
-                )
-        ```
-        
-        Notice your dataset_2 DIDN’T corrupt the input “Today is…” but was the same. So make sure your corr prompts_list in its [’text’] key uses a corr vers with same len as clean input
-        
-        - ✅ [Manage to](https://colab.research.google.com/drive/1OVMkA1IZKZLmKq2paGRIXykzm5fxrGIx#scrollTo=ubcTjRDf6ETO&line=20&uniqifier=1) corrupt prompt using:
-            
-            ![Untitled](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Untitled%204.png)
-            
-            `tokens = tokens[:, 1:]`
-            
-            ![Untitled](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Untitled%205.png)
-            
-    - ✅ SOLN: how get rid of EOS token in fornt when tokenizing
-        
-        ```
-        # this turns string into LIST OF TOKEN IDS
-        tokens = model.to_tokens(reference_text).to(device)
-        tokens = tokens[:, 1:] # get rid of prepend bos when using model.to_tokens
-        
-        # this turns it INTO LIST OF STRINGS WITH SPACE CHAR IN FRONT
-        # each string in list correspond to tokens from token id list
-        model.tokenizer.tokenize(text) # this doesn't use prepend bos
-        ```
-        
-    - 🐣 [**Mean ablate for model generation**](https://colab.research.google.com/drive/1OVMkA1IZKZLmKq2paGRIXykzm5fxrGIx#scrollTo=SW9uBUML2gc4&line=1&uniqifier=1)
-        
-        Continues [this](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c.md)
-        
-- ✅ overleaf: update new sections and to-do plan
-
-Steer numbers to ranks of single tokens
-
-- 🐣 Steer numbers to ranks of single tokens using CAA code
-    
-    analogous_domain_steering_explora.ipynb
-    
-    - 🐣 check https://github.com/montemac/activation_additions : Uses TL
-        - [scripts](https://github.com/montemac/activation_additions/tree/main/scripts)/**addition_clean_reimplementation.py:** [https://chatgpt.com/c/885b4a25-837d-487c-a703-5bd289d23d5a](https://chatgpt.com/c/885b4a25-837d-487c-a703-5bd289d23d5a)
-        
-        > For example, if we run `gpt2-small` on the prompt "I went to the store because", the residual streams line up as follows:…
-        > 
-    - ✅ get simplified code to work for 2 prompts for llama-2
-    - reproduce past paper results for gpt-2 small and xl
-- ✅ [ActivationAddition_explora.ipynb:](https://colab.research.google.com/drive/1MBqXSzO-wUqoAVevWRwqa0KWd_TPwD5h) Explore existing code
-    
-    Doesn’t work
-    
-    - first - January
-    - ranks - months
-- ✅ [Test llama-2: it can do “2 days after Tuesday is”](https://colab.research.google.com/drive/1E-T03wmDOtFiIN44xxqkeStyAncmQnwS#scrollTo=psa8bcKnGBE5&line=2&uniqifier=1)
-    
-    But it CAN’T do "Three days after Tuesday is”
-    
-    - 🐣 can it still do this if we corrupt the sequence?
-
-Train SAEs on GPT2 Small [reproduce s.head feature steering]
-
-- ✅ [GPT2_SAE_MLP0_seqcont.ipynb](../Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Project%20Planning%20b4b05f73d85e409f8409b209e44ed692.md)
-    - ✅ Train it on integers, then see the highest features that light up on mod-10 tokens ending in 3
-        
-        NOTE: Most important means highest change in output after ablating. But here, we look for highest activations on these tokens. However, this doesn't mean much because certain features may fire highly for all numbers in general! So use the paper's definition of 'most important’
-        
-    - find most impt feature
-        
-        To replace feature in LLM
-        
-        - ✅ replace feature actvs from encoder output, then get decoder output
-            - ✅ get feature neuron actvs and ablate a neuron to 0
-            - ✅ reconstruct the actvs
-                - ✅ see “GPT2small_SAE_train_demo_v1.ipynb” → reconstruction loss
-                    - ✅ ISSUE:  Find an alt way to get and alter feature actvs than existing
+                    - ✅ chatgpt prompt (FAILS)
                         
-                        ```
-                        output_tuple = autoencoder.forward(post_reshaped)
-                        acts = output_tuple[3]
+                        before, prompts["corr"] was a single number for each prompt, so we used [self.tokenizer.encode(prompt["corr"])[-1] for prompt in self.prompts] to obtain a list of tokenIDs. Now, prompts["corr"] is a list of numbers for each prompts. Change [self.tokenizer.encode(prompt["corr"])[-1] for prompt in self.prompts] to be a list of lists to match the new change
+                        
+                        THIS IS WRONG: [tokenizer.encode(corr) for prompt in prompts_list for corr in [prompt["corr"]]]
+                        
+                        - you have a list of lists where each list is a prompt and the inner lists are their prompt[corr]. we want to invert this. dont invert it after it's made, i want to switch this upon making it
+                            
+                            THIS IS WRONG: 
+                            
+                            inverted_prompts_corr = list(map(lambda x: [tokenizer.encode(corr) for corr in x], zip(*[prompt["corr"] for prompt in prompts_list])))
+                            print(inverted_prompts_corr)
+                            
+                    - ✅ Easier to think of this using loop indentation lvls, rather than list compr.
+                        
+                        ```jsx
+                        corr_tokenIDs = []
+                        for ansPos in range(len(prompts_list[0]['corr'])):
+                            ansPos_corrTokIDS = [] # this is the inner list. each member is a promptID
+                            for promptID in range(len(prompts_list)):
+                                tokID = tokenizer.encode(prompts_list[promptID]['corr'][ansPos])[2:][0] # 2: to skip padding <s> and ''
+                                ansPos_corrTokIDS.append(tokID)
+                            corr_tokenIDs.append(ansPos_corrTokIDS)
+                        corr_tokenIDs
                         ```
                         
-                        SOLN: The curernt way to alter uses the code above, but this outputs to the end- the third tuple is actvs, and fourth tuple is outputs. So instead of `autoencoder.forward`, multiply by decoder W and add decoder bias
+                    - ✅ chatgpt: turn to list compr
                         
-        - ✅ replace LLM actvs in that layer with decoder output
-            - ✅ see: ARENA [1.2] Intro to Mech Interp
-            - ✅ see: seqcont_circuits/iter_node_pruning/`mlp_ablation_fns.py` (mult)
-            - ✅ NOTE: on using hooks
+                        ```jsx
+                        self.corr_tokenIDs = [
+                            [
+                                self.tokenizer.encode(self.prompts[promptID]['corr'][ansPos])[1:] 
+                                for promptID in range(len(self.prompts))
+                            ] 
+                            for ansPos in range(len(self.prompts[0]['corr']))
+                        ]
+                        ```
+                        
+                        The outer loop is the most outer list compr within outer list, and inner loop is within inner list
+                        
+                4. ✅ `get_logit_diff()` is the only fn that uses `corr_tokenIDs` . For new metric, obtain the tokIDs by `dataset.ansLen`, too. 
+                    1. NOTE: you MUST use `logits[range(logits.size(0))`, .. instead of `logits[:, ..`, else you get 15x15 instead of 15x1
+                5. ✅ To continue generating, modify`next_token`, which concats onto existing tokens, to take in a batch
+                6. ✅ Reshape next_tokens to concat with existing tokens
+                    - code
+                        
+                        ```
+                        # Reshape next_token to be a column vector, a 2D tensor with shape (15, 1).
+                        next_token_reshaped = next_token.view(-1, 1)
+                        
+                        # Concatenate along dimension 1 (columns)
+                        tokens = torch.cat((tokens, next_token_reshaped), dim=1)
+                        ```
+                        
+                7. ✅ Within each ansLen (for every runID), SUM the logits
+                8. ✅ Finally, for each ansLen, CONCAT (since this is how `.mean()` works, not by adding but by batch rows) all samples into one matrix, then use `.mean()` like in `get_logit_diff`
+                - ~~ACTUALLY- we don’t need to modify correct token IDs to be a list of lists, nor modify prompt_list’s corr tok IDs, because we can separate out ansLen by dataset! So not within dataset; each dataset has its own ansLen!~~
+                    - NO- we still need to separate this out. The dataset with ansLen = 2 must have TWO correct token IDs- one for the first run, the second for the second run.
+            - ✅ DO NOT put the “corr token” as the next token- USE THE TOP PRED TOKEN! So you need to decode BOTH the corr token and the top pred token!
+            - double check what tokenIDs the seq actually predicts- should be same as in `corr_tokenIDs`
+                - ✅ in clean, decode each pred top token (try for one)
+                    - `print(f"Sequence so far: {model.to_string(tokens[0, :])!r}")`
+                - try for multiple
+        4. ✅ in `find_circuit_backw`(), do step 2 for the ablated model in each iteration, and put this over the original score. Print this percentage. Test on 1 ablated run first.
+            - ISSUE: when dataset has diff pos, SEQ_POS_TO_KEEP is different for each prompt within a dataset.
+                - IOI didnt have this issue bc they were only ablating certain positions, but here we’re ablating EVERY position, but some pos may not be ablated
+                - So for now, just have every prompts within a dataset use the same number of tokens. We use `prompts_list = generate_prompts_list(10, 25)`, rather than (6, 21)
+            - ablation must be done within
+            - ISSUE: mean ablation somehow cannot increment new, so use zero ablation?
+            - It might not be working because the sequence circuit doesn’t affect the first token of the 2-digit answer that much. See, in the prompts ablation nbs, it’s often changed from say “14” to “11”- so the first digit is the same.
+                - We can test prompts “10 11 12 13 1” instead- giving the first digit
+                - In our appendix, we can state we tried the “sum logits of 2 diigts” approach but found this result, so that’s why we go with just predicting the second (or last) digit.
+                - HYPOTHESIS: Perhaps the model only pays attention to the LAST digit. test this.
+    - ISSUE: this removes 20.17 and other impt heads like 16.0
+        
+        test zero ablation for 1234 to check if zero ablation is culprit
+        
+        check if new measure is culprit
+        
+- ⚠️ single digit fibonacci circ
+    
+    Llama2_singleDigitFibo.ipynb
+    
+    - test ANY “add prev 2”, not just starting from 0 1 or 1 1
+        - so is it memorizing fibonacci?
+        - It can’t do “"3 4 7 11 18 “ (thinks it’s +7) or “"3 4 7 11 “ (think it’s +1)  and can’t do “3 4 7 11 18 29 “. But it CAN do "Find the next member of this sequence: “3 4 7 11 18 29 “. So it needs an instruction prompt beforehand to work.
+    - perhaps show that you don’t need a lot of prompts to find these heads; we show just a few prompts is enough to discover improtance which can affect other seqs
+- ⚠️ Llama2_036
+    
+    Llama2_036.ipynb
+    
+- ✅ HYPOTHESIS: Perhaps the model only pays attention to the LAST digit. test this.
+    
+    It might not be working because the sequence circuit doesn’t affect the first token of the 2-digit answer that much. See, in the prompts ablation nbs, it’s often changed from say “14” to “11”- so the first digit is the same.
+    
+    - In our appendix, we can state we tried the “sum logits of 2 diigts” approach but found this result, so that’s why we go with just predicting the second (or last) digit.
+    - use QK attention patterns to see what pos it attended to. last digits?
+        - Llama2_numerals_attnpats.ipynb
+            - 5.25: The last token of a numeral attends to the previous last token
+                - Seems to support that just the last digit is attended to, not the whole number?
+                    - but then how does fibonacci add entire numbers, or how addition does it?
+                        - look at quirke et al
+            - 16.0: at space after a number (for just the 2nd member?), it attends to either prev token or the last digit of prev seq member
+            - 20.17: at space after a number, it attends to either prev token or the last digit of prev seq member AND to the next seq member’s first di
+- ⚠️ debug Multi-Tok issues
+    - It might not be working because the sequence circuit doesn’t affect the first token of the 2-digit answer that much. See, in the prompts ablation nbs, it’s often changed from say “14” to “11”- so the first digit is the same.
+        - We can test prompts “10 11 12 13 1” instead of giving the first digit. This shouldn’t use multitok code as the ans is 2 toks but
+            
+            Llama2_promptsGiveFirstDigit
+            
+            try on 1234 first to ensure it keeps 20.7 etc (before trying on 246)
+            
+- ✅ ISSUE: even though the logit diff score is the same for clean run vs ablate nothing, why are the logit values different?
+    
+    Llama2_promptsGiveFirstDigit_draft_v1
+    
+    [https://colab.research.google.com/drive/1bpK-EHvZ_izbQ8I8P9TYAuUl7OvbfKXj#scrollTo=BHHvz84w70vh](https://colab.research.google.com/drive/1bpK-EHvZ_izbQ8I8P9TYAuUl7OvbfKXj#scrollTo=BHHvz84w70vh)
+    
+    - HYPOTHESIS: somehow, the differences in logit are the same, but perhaps because a position isn’t ablated, the actual values are different. diff objs, same relns?
+        - NO. `logits_original[0, -1, dataset.corr_tokenIDs] - logits_original[0, -1, dataset.incorr_tokenIDs]` should be 8, but the orig_score is 1.6. The difference is `dataset.word_idx["end"]` is 13, but `logits_original.shape[1]` is 15.
+            - `tokens = self.tokenizer.tokenize(prompt["text"])
+            end_token_index = len(tokens) - 1`
+            - `dataset.toks.shape` and `len(tokenizer.tokenize(dataset.prompts[0]["text"]))` are different. toks uses `self.tokenizer(texts, padding=True).input_ids`
+            - the culprit is that `tokenizer.tokenize(dataset.prompts[0]["text"])` just puts in one “_” in front, while `tokenizer(texts, padding=True).input_ids` puts in TWO: <s> and ‘’. However, even `tokenizer(texts, padding=False)` won’t get rid of the <s>. Instead, you have to use `dataset.toks[:, 1:]`
+            - ISSUE: clean works, but for unablated,
                 
                 ```
-                # if you use run_with_cache, you need to add_hook before
-                # if you use run_with_hooks, you dont need add_hook, just add it in fwd_hooks arg
+                The size of tensor a (15) must match the size of tensor b (14) at non-singleton dimension 1
                 ```
                 
-            - ✅ h_reconstructed `torch.Size([20, 2, 3072])` needs to rearrange
-                
-                This is the output of two SAEs. We only need one, so `h_reconstructed[:, 0, :]`. Then, we can rearrange it to LLM dims (before, could not do this with two SAEs).
-                
-        - ✅ find change in output: look at logits after new orig fwd pass after ablating
-            - see: ablate_seqcont_then_math__explora.ipynb
-            - (to measure su head output) see: allTasks_nextScores.ipynb
-        - 🐣 loop thru replacing each feature actvs with corrupted
-        - ✅ [https://www.notion.so/wlg1/Repo-Structure-b81c8e1ce00b4bb48ea4e6f1a390c45d?pvs=4#7088e5c4d74f4efdbb521412b2caefb9](https://www.notion.so/Repo-Structure-b81c8e1ce00b4bb48ea4e6f1a390c45d?pvs=21)
-        - ✅ Get output after successor heads, not after entire model
-            
-            NOTE: successor head can turn ‘3’ into ‘4’, but the model itself will turn ‘3’ into ‘.’ if there is no sequence in the prompt.
-            
-            - ✅ Get OV score code
-            - ✅ ISSUE: OV score code uses "blocks.0.hook_resid_post", but SAE was trained on 'blocks.0.mlp.hook_post'
-                - ✅ 'blocks.0.mlp.hook_post' vs  "blocks.0.hook_resid_post"
-                    - **`blocks.0.mlp.hook_post`**: A hook placed after the MLP in the first transformer block, useful for inspecting/modifying the output of the MLP.
-                    - **`blocks.0.hook_resid_post`**: A hook placed after the residual connection in the first transformer block, useful for inspecting/modifying the final output of the block before normalization.
-                - ✅ SOLN: Which one of those outputs can be multiplied by OV matrix of an attention head (has the right dims)?
-                    
-                    Needs input size of : batch_size, seq_len, d_model
-                    
-                    Given this, **`blocks.0.hook_resid_post`**
-                    
-                
-            - ✅ Re-train SAE on blocks.0.hook_resid_post activations
-                
-                Unablated: Return ‘4’ if input ‘3’
-                
-                Ablated: Return ‘third’ if input ‘3’ (ablate feature 0 of SAE)
-                
-                Interestingly, this “shifts” a number to a rank. Why?
-                
-            - ✅ save this SAE (much depends on randomness during training)
-        - loop thru replacing each feature actvs with corrupted
-- ✅ ISSUE: feature activations are all 0, and so decoder bias is broadcast (so the feature ablation of neuron idx 0 did nothing as everything in actvs was already 0). This makes the OV score be “third”
+            - for now, try instead: **orig score, but logit diff uses last entry**
+                - use dataset.toks, not sliced. we see orig score is still diff.
+            - if we increase `SEQ_POS_TO_KEEP` to match same entries as dataset.tok, we get keyerror in `means_dataset.word_idx` because our dataset ALSO needs to increase; it shouldn’t use word_idx based on `tokenizer.tokenize(dataset.prompts[0]["text"])`, but it should be based on `tokenizer(texts, padding=True).input_ids`, which adds <s>.
+                - So change `tokens` AND `pos_dict` in Dataset when making word_idx, OR change `toks`. Make sure the 4 vars `CIRCUIT, SEQPOSTOKEEP, WORD_IDX AND TOKS` all use the same consistent code together- they should be the same lengths. Here, `toks` is the only outlier that uses `input_ids`, so let’s try changing that first.
+                    - note that `tokenizer.tokenize(dataset.prompts[0]["text"])` DOESN’T change into tokenIDs, but as the str repr of those IDs .
+                    - But `tokenizer.encode(dataset.prompts[0]["text"])` is the same as `tokenizer(texts, padding=True).input_ids`, except the shape is [15] instead of [1,15]
+                    - We could try `dataset.toks[:, 1:]` WITHIN the dataset class. Perhaps this didn’t work before because we passed in dataset.toks[:, 1:] (shape 14), but our mean_dataset still used dataset.toks (shape 15). But we should try to get our dataset and mean_dataset to use the same input this time. We also need to change `max_len` because the means matrix uses this to initialize its shape in `get_heads_actv_mean()`
+                        - This fixes the issue.
+    - This means that the ablation function is NOT working properly. Check that mask is all 1.
+- ✅ run Llama2_promptsGiveFirstDigit after fixing consistent tokenization in diff fns issue
     
-    sparsity means most activations should be 0
+    [https://colab.research.google.com/drive/1l0RMob-Cijm5mvQxpQxq0UAU8cRGS44a](https://colab.research.google.com/drive/1l0RMob-Cijm5mvQxpQxq0UAU8cRGS44a)
     
-    find which feature neurons (rows) are not all 0s- ablate these
+    Summary of changes:
     
-    if feature neurons are mostly 0, how can the reconstruction be similar to the original if it just broadcasts the bias? the original didn’t have so many repeats
+    1. Use last token for `logit_diff`, not word_idx(end)
+    2. In `Dataset.toks`, take slice of first pos onwards to avoid padding for `input_ids`- [:, 1:]
+    3. In Dataset, max len uses: `len(self.tokenizer(prompt["text"]).input_ids[1:])`
+    - run on just prompt “10 12 13 14 1”
+- 🐣 Try ablating entire attention layers first before narrowing down to attention heads.
     
-    - perhaps SAE was not trained long enough. Train it on more steps
-        - ✅ 5000 steps: same issue, but now broadcasted bias makes succesor head output be “ innumerable”
-        - ✅ 10000 steps: sometimes is all 0, sometimes there are 5 VALUES out of 61435 (0.01%) that are non zero (these aren’t counting rows). This predicts ‘must’. **Reconstruction is bad-** because the ablation didn’t do much (first row likely all 0s anyways) it’s the reconstruction that messes up.
-            - actually feature coeffs (encoder output actvs) shoudl be a 1D vector?
-                - it is 1D, but acts is `[20, 2, 3840]` because of batch*seqlen and # SAE.
-- ✅ rename above as “GPT2_SAE_MLP0_seqcont_explora_v1”
-- 🐣 [GPT2_SAE_MLP0_seqcont_explora_v2](https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G).ipynb: clean up nb to only reproduce s.head’s “ablate impt feature, then pass thru s.head to see change in logits’
-    - ✅ Use bigger SAE (bigger multp factor)
-    - ✅ check reconstruction loss; how much reconstruction is similar to original actviation. see if gets same outputs in successor heads and model
-    - try to lower reconstruction loss with better training params
-        - (Cunningham et al) used small mult factor, R=2, and only 10 epochs?
-        - s.heads: Training a sparse auto-encoder withD features and regularization coefficient λ... We used the hyperparameters D = 512 and λ = 0.3, with a batch size of 64, and trained for 100 epochs
-- ✅ re-plan emnlp on overleaf + google docs
+    This works because if NO heads destroy it, that layer can be removed. But if at least one head destroys it, we search within that layer even more.
     
-    i just reread the successor head paper and realized they already did do 'transformative mapping between analogous domains'. but they didnt do much with it. i think there's other approaches to try. i guess it's not about knowing the problem to solve, but about the solution that's come up. so just bc multiple rsch groups indp find the same problem doesnt mean anything, what matters is their solution
-    
-- ✅ explain succssor heads commutative diagram
-    
-    [https://chatgpt.com/c/e3511349-5a19-4862-8f0b-18ba33dbe477](https://chatgpt.com/c/e3511349-5a19-4862-8f0b-18ba33dbe477)
-    
-    Ensure that these operations commute, meaning the different paths yield the same results, confirming that the projections πN and πD are correctly learned and that the representations are consistent.
-    
-    ![Untitled](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Untitled%206.png)
-    
-
-Test prompts
-
-- ✅ Spanish
-    
-    numseq_prompts, small, pt2.ipynb
-    
-    small cannot do spanish
-    
-    But llama-2 CAN do spanish. cannot do german
-    
-    - usually, BERT models do this (seee “Do Llamas work in English”) but GPT-2 has french
+    - 🐣 first test on GPT2: ablate_attnLayer_thenHeads_GPT2.ipynb
+        - ✅ NOTE: you cannot copy+paste colab cells from chrome to firefox, must be within browser
+        1. ✅ Mask is to keep components within a layer. instead of keeping anything, DO NOT MASK and just replace z_clean with z_corrupted
+            1. In `add_ablation_hook_head` you don’t need `mask_circ_heads`. Instead of using `hook_func_mask_head`, create a new hook_func `hook_func_attnLayer` to directly return `means[hook.layer()]`. 
+            2. Call `add_ablation_hook_attnLayer` to compute means and `hook_func_attnLayer` for a specific layer. You don’t need CIRCUIT or SEQPOSKEEP either for any fns.
+            3. ACTUALLY you should still use component to keep. This is because we’re not just ablating an entire layer, but all the circuit components removed before we tried testing that layer. 
+            4. ACTUALLY we don’t need to change ANY fns at all. Instead, in the loop fns such as `find_circuit_backw`, for CIRCUIT and SEQPOSTOKEEP, we just remove ALL the heads of a layer first. If the score is below threshold, we go through individual heads to see which is the culprit. If it’s above threshold, then all those heads can be safely removed. Write this as `find_circ_backw_attnL_thenHeads`
+        2. ✅ Test this on ablate 1, and loop ablated
+            1. NOTE: For GPT-2, DO NOT SLICE MAX_LEN OR TOKS because padding is only added for LLAMA2!
+        3. 🐣 Compare this circuit to that without using “remove attnL first”
+    - 🐣 try this on llama-2: ablate_attnLayer_thenHeads_Llama2
         
-        For smaller models, e.g., GPT-2 (Radford et al.,
-        2019) and Pythia (Biderman et al., 2023), MI approaches
-        such as sparse probing (Gurnee et al.,
-        2023) have revealed monosemantic French (Gurnee
-        et al., 2023) and German (Quirke et al., 2023) language
-        neurons and context-dependent German ngram
-        circuits (subnetworks for boosting the probability
-        of German n-grams when the monosemantic
-        German context neuron is active) (Quirke et al.,
-        2023).
         
-- ✅ Llama-2 can do interval reasoning
+- 🐣 use changes from “Llama2_promptsGiveFirstDigit”  and “ablate_attnLayer_thenHeads_Llama2” in:
+    - ⚠️ singleTok fibonacci
+        - ⚠️ still doesn’t work
+    - 🐣 multiTok: Llama_2_multiTok_1234
+        - with mean ablation
+            - ✅ using attnL first: fails on 20.17 when removing L20
+            - ✅ using just heads: this also fails on 20.17 when removing L20
+            - perhaps it’s the metric (just corr logit) that’s bad. Run again by replacing `correct_logits` with `logit_diff`
+                - ✅ remember to change original score to use logit diff too!
+                - this ALSO removes 20.17. So it’s not correct_logits, but something else
+                - ✅ **SOLN**: probably because MLPs aren’t used (due to not using logit diff before; but now we’ll use logit diff) (also bc need to modify to use new Dataset class which takes corrupted ds, corrTokIDs, etc based on ansLenPos)
+                    - strangely, when no MLPs rmv, 20.17 just has 0.05 drop. but with mlps and other heads rmvd, it has 70% drop. perhaps backups were rmvd.
+                - ~~could also be because using -1 instead of word_idx[end]~~
+        - 🐣 new nb: with zero ablation
+- ✅ single digit addition circs
     
-    in two days it will be…
+    [Llama2_singleTokAddition.ipynb](https://colab.research.google.com/drive/1OBm6nbKvpmJJzVL8efGBYNu7pw_eV26S#scrollTo=4dlDnLnesbfW)
     
-- ⚠️ Diverging sequence detection
-    
-    Two inputs sound similar, but diverge at a certain point
-    
-    unfortunately, llama-2 cant do multiplicative
-    
-- ✅ llama-2 may be able to do less than
-    
-    Bob is older than Steve. Bob is 10 and Steve is
-    
-    Bob is one year older than Steve. Bob is 6 and Steve is
-    
-    ISSUE: fails on this: Bob is three years older than Steve. If Bob is 6, how old is Steve?
-    
-- ✅ don’t rely on ‘utils’, use ‘generate next char’ code directly!
-    
-    utils test prompt is unreliable bc its answers rank changes based on what’s in example_answer!
-    
-    - prompt_llama2-7b_TLgen.ipynb
-        - this works:
+    - ✅ WRONG: strangely, unlike seq cont, this doesn’t count the spaces between the digits and operators as tokens. the spaces aren’t even within them.
+        - BUT `tokenizer.tokenize("5+4=")` is considered one token
+            - Actually, don’t rely on `tokenizer.tokenize.` Use `model.tokenizer.encode`. Then you’ll see it DOES count spaces.
+            - That means your dataset and ablation functions should use model.tokenizer.encode() instead, as it’s more accurate to how the model converts input to tokens. Perhaps encode is the same as `tokenizer(prompt["text"]).input_ids`. In a next run new nb, you should modify this to see what happens.
+        - SOLN: ACTUALLY ignore the above- those were bc chatgpt made a new tokenizer taht was NOT model.tokenizer, so it repalced it. `encode` is indeed like input_id, it will give an extra padding <s>. But `tokenizer.tokenize` does give the correct number of tokens, so don’t replace it.
+    - ✅ in corrupted, you replace the operands with new random ones. the incorrect token is this new one. when making clean_prompts, you need this incorrect, so also make the corrupted operands when making clean_prompts. you can make both clean and corrupted at the same time.
+    - ✅ keep on generating until the answers aren’t all mostly 7s and up (the distr will skew to them due to single digit sums mostly having them as answers). save this; don’t re-run!
+        - clean
             
-            ```
-            prompt = "Bob is three years older than Steve. If Bob is 6, how old is Steve?"
-            output = tl_model.generate(prompt, max_new_tokens=50, **generate_kwargs)
-            print(output)
-            ```
+            {'corr': '2', 'incorr': '7', 'text': '0 + 2 = ', 'S0': '▁', 'S1': '0', 'S2': '▁+', 'S3': '▁', 'S4': '2', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '6', 'incorr': '7', 'text': '6 + 0 = ', 'S0': '▁', 'S1': '6', 'S2': '▁+', 'S3': '▁', 'S4': '0', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '9', 'incorr': '5', 'text': '9 + 0 = ', 'S0': '▁', 'S1': '9', 'S2': '▁+', 'S3': '▁', 'S4': '0', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '7', 'incorr': '9', 'text': '4 + 3 = ', 'S0': '▁', 'S1': '4', 'S2': '▁+', 'S3': '▁', 'S4': '3', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '8', 'incorr': '6', 'text': '5 + 3 = ', 'S0': '▁', 'S1': '5', 'S2': '▁+', 'S3': '▁', 'S4': '3', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '8', 'incorr': '6', 'text': '4 + 4 = ', 'S0': '▁', 'S1': '4', 'S2': '▁+', 'S3': '▁', 'S4': '4', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '7', 'incorr': '9', 'text': '7 + 0 = ', 'S0': '▁', 'S1': '7', 'S2': '▁+', 'S3': '▁', 'S4': '0', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '5', 'incorr': '6', 'text': '5 + 0 = ', 'S0': '▁', 'S1': '5', 'S2': '▁+', 'S3': '▁', 'S4': '0', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '4', 'incorr': '9', 'text': '3 + 1 = ', 'S0': '▁', 'S1': '3', 'S2': '▁+', 'S3': '▁', 'S4': '1', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '9', 'incorr': '8', 'text': '1 + 8 = ', 'S0': '▁', 'S1': '1', 'S2': '▁+', 'S3': '▁', 'S4': '8', 'S5': '▁=', 'S6': '▁'}
             
-            Bob is three years older than Steve. If Bob is 6, how old is Steve?
+        - corrupt
             
-            Answer: If Bob is 6 years old and Bob is 3 years older than Steve, then Steve is 6 - 3 = 3 years old.</s>
+            {'corr': '2', 'incorr': '7', 'text': '2 + 5 = ', 'S0': '▁', 'S1': '2', 'S2': '▁+', 'S3': '▁', 'S4': '5', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '6', 'incorr': '7', 'text': '0 + 7 = ', 'S0': '▁', 'S1': '0', 'S2': '▁+', 'S3': '▁', 'S4': '7', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '9', 'incorr': '5', 'text': '1 + 4 = ', 'S0': '▁', 'S1': '1', 'S2': '▁+', 'S3': '▁', 'S4': '4', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '7', 'incorr': '9', 'text': '6 + 3 = ', 'S0': '▁', 'S1': '6', 'S2': '▁+', 'S3': '▁', 'S4': '3', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '8', 'incorr': '6', 'text': '5 + 1 = ', 'S0': '▁', 'S1': '5', 'S2': '▁+', 'S3': '▁', 'S4': '1', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '8', 'incorr': '6', 'text': '6 + 0 = ', 'S0': '▁', 'S1': '6', 'S2': '▁+', 'S3': '▁', 'S4': '0', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '7', 'incorr': '9', 'text': '6 + 3 = ', 'S0': '▁', 'S1': '6', 'S2': '▁+', 'S3': '▁', 'S4': '3', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '5', 'incorr': '6', 'text': '3 + 3 = ', 'S0': '▁', 'S1': '3', 'S2': '▁+', 'S3': '▁', 'S4': '3', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '4', 'incorr': '9', 'text': '9 + 0 = ', 'S0': '▁', 'S1': '9', 'S2': '▁+', 'S3': '▁', 'S4': '0', 'S5': '▁=', 'S6': '▁'}
+            {'corr': '9', 'incorr': '8', 'text': '8 + 0 = ', 'S0': '▁', 'S1': '8', 'S2': '▁+', 'S3': '▁', 'S4': '0', 'S5': '▁=', 'S6': '▁'}
             
-- ✅ [List of math reason prompts](List%20of%20math%20reason%20prompts%207fad070b1fa5480e858b6fbef3217c2a.md)
-
-Find Llama-2 circuits for additive vs mult vs fibo seqs
-
-- ✅ run “2 4 6” - all single tokens
+        - 10 prompts takes too long, so just use 5
+- ✅ single digit multp circs
+    - this restricts to 1 to 3, since only 2*4 gets 8. Might as well make your own prompts here
+    - test the difference bewteen addition and multiplication by keeping operands, but changing operators to +
+- ✅ single prompt 2 4 8 1
+    - OR  use (1 2 4)
+    - “Find the next member of this sequence: “ improves this
+    - try corrupting by 0 2 4 instead
+- test new circs on prompts
     
-    Llama2_2468.ipynb
+    llama2_ablate_prompts_diff_circs_v2.ipynb
     
-- ✅ run “1 2 3”- all single tokens
+    [https://colab.research.google.com/drive/1zqKw-nkX51qh0f-yCZDriejyMfvdyKAW#scrollTo=H3SPe7ulULiu](https://colab.research.google.com/drive/1zqKw-nkX51qh0f-yCZDriejyMfvdyKAW#scrollTo=H3SPe7ulULiu)
     
-    Llama2_1234.ipynb
+    - 
     
-    - ✅ issue with Llama2_num_runModel_explrTests_v6.ipynb: the prompts go from (1,6), so last samples is “6 7 8 9” and supposed to predict ‘10’ as corr tok but you will get ‘1’. This means not accurate when getting logit diff score. The pos_dict used in dataset is also not matching the seq_pos_to_keep (does it matter?)
-    - ✅ Llama2_num_runModel_explrTests_v4.ipynb: this is single samp 12345, but fails
-        - useful code
-            
-            ```jsx
-            # logits[:, -1, :] selects the last token for all batches, here batch size is 1
-            last_token_logits = logits_original[:, -1, :]
-            values, indices = torch.topk(last_token_logits, 5, dim = -1)
-            for token_id in indices[0]:
-                print(model.tokenizer.decode(token_id.item()))
-            ```
-            
-- ✅ [Successor Heads Notes](Successor%20Heads%20Notes%203d2a9c73e41d4ca7903790b6e7914124.md) : questions on proj mat training
-- Llama2_2468: on impt ones, logit lens / ov scores
+    - single digit multp circs- does it change 2 4 8? can it change to 246 but adding in addition circ steering?
+    - try corrupting 1 2 4 by 0 2 4 instead
+    - test ablating by other prompts
 
 ---
 
-- even if components are different, check if they can be mapped to one another in structure preserving way; see if they have similar features (cosine) or functionality (attn heads, relational patterns, etc). There has to be SOME similarity. If not, check if backups similar to 1234 circuits occur if ablate main heads of 2468 circ. Run 2468 prompts on 1234 circuits (rest are ablated).
-- instead of plotting circuits based on high 80% performance level, plot only most essential components based on lower threshold (eg. 50% drop if not all used together)
-- Find classes of circuit types. Dispersed, concentrated.
-- Iteratively ablate by a path, breadth then depth
+- measure rankings and what tokens are in the other rankings
 
-- measure the correct answer for multiple tokens
-    1. first, we get how long the correct string answer is in terms of token IDs
-        1. we use only 1 sequence first, so this is easy
-    2. then, we keep on passing in the output autoregressively for the number of tokens the correct answer is. each pass, we measure the logit of the correct token of that pass, taking the difference with the logit of the last sequence member
-    3. we add up the logit diffs as an ablation score
+- threshold is inaccurate because if an impt component was removed before so that now perf is just above threshold, then a very unimportant component that just reduces by -1 would NOT be removed. but if a diff order- where the unimp component was first- then the unimpt component WOULD be removed. so order and threshold matter a lot.
+    - that’s why random is an option- but we cannot just take intersection or most freq then eval perf from that to check if still destroys perf, as that’s not dependent on connectivity?
+
+- issue with removing entire layer: removing some heads may increase performance, so that this offsets the perforamcne destroying when removing individual heads of that layer (their destruction is not enough to offset the favoring when removing entire other heads)
+
+- an issue with just “seeing the result” is that the prediction of them may be very low, and too close to the others
+    - same with just using correct logit. we can use any arbitrary incorrect token logit- no, this won’t work if the incorrect is just as low always (meaning corruption won’t make it go higher)
+
+- check if the error is with the code by running the code of Llama2_multitok on single prompt 1234
+    - Llama_2_multiTok_1234
+- why did sinlge tok fibo and 036 fail by having ablation cause “too much incr” (allowing most heads to be removed?) is it bc single prompt?
+- ablate by specific pos to check which pos the component attends to
+
+Multi-Tok issues (uncollapse “plan to implement ideas above”)
+
+- It might not be working because the sequence circuit doesn’t affect the first token of the 2-digit answer that much. See, in the prompts ablation nbs, it’s often changed from say “14” to “11”- so the first digit is the same.
+    - In our appendix, we can state we tried the “sum logits of 2 diigts” approach but found this result, so that’s why we go with just predicting the second (or last) digit.
+- ISSUE: this removes 20.17 and other impt heads like 16.0
+    
+    test zero ablation for 1234 to check if zero ablation is culprit
+    
+    check if new measure is culprit
+    
+- double check what tokenIDs the seq actually predicts- should be same as in `corr_tokenIDs`
+    - ✅ in clean, decode each pred top token (try for one)
+        - `print(f"Sequence so far: {model.to_string(tokens[0, :])!r}")`
+    - try for multiple
+
+- +2 interval circuit (multikTok)
+    - 1 3 5
+    - 3 5 7
+    - 11 13 15
+- read circs of: A Mechanistic Interpretation of Arithmetic Reasoning in Language Models
+    - models used
+        
+        ![Untitled](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Untitled.png)
+        
+    
+    D:\Documents\_library\__articles\llm interp\math behavior
+    
+    Shared circuits show a connection between seq cont, greater-than, and arithmetic. Unites these three papers.
+    
+    [https://github.com/alestolfo/lm-arithmetic](https://github.com/alestolfo/lm-arithmetic)
+    
+    [https://scholar.google.com/scholar?cites=13180253809186561554&as_sdt=5,31&sciodt=0,31&hl=en](https://scholar.google.com/scholar?cites=13180253809186561554&as_sdt=5,31&sciodt=0,31&hl=en)
+    
+    [https://aclanthology.org/2023.emnlp-main.435/](https://aclanthology.org/2023.emnlp-main.435/)
+    
+
+- automate avg of random runs
+- automate prompt testing after ablation
+- ablate mlps
+- mean ablate
+
+- run circ from 1234 on other tasks to get perf score, not just generate
+
+- Test prompts in a conversation. As the convo goes on, how does the ablated model handle reasoning? What if you TELL it the answer, even after it’s corrupted? Can you correct its wrong knowledge of the sequence order?
+    - Can we change the sequence order by telling or editing/steering?
 
 ---
 
-[https://www.alignmentforum.org/posts/pH6tyhEnngqWAXi9i/eis-xiii-reflections-on-anthropic-s-sae-research-circa-may](https://www.alignmentforum.org/posts/pH6tyhEnngqWAXi9i/eis-xiii-reflections-on-anthropic-s-sae-research-circa-may)
+To do next
 
-victor veisch (linear repr hypothesis)
+- find llama2 circuits: +2, +3 intervals, +100, multiply, fibonacci
+    - dataset size: 20 prompts, len 4 seqs (except fibon)
+- multiTok: spanish nw, months circs
+- ov scores, logit lens, attn pats
 
-- sparse features removal
-    
-    (A) Removing interpretable but irrelevant features improves performance,
-    (B) Keeping only interpretable and relevant features for steering drastically worsens performance,
-    
-    Doing some set operations, does this mean that it is the set of uninterpretable features that make it work?
-    Total features = Uninterpretable + Interpretable(relevant) + Interpretable(irrelevant)
-    
-    all < interpretable(relevant) + uninterpretable >> interpretable(relevant)
-    
+- find all heads which destroys spanish counting
 
-teaching clip to 10; is bad at counting
+- WHEN does it diverge from addition, multp, to plus 2? Needs instruction though. Try this by ablating circs and generating; this narrows the search to circ subsets instead of all 1024.
 
-image and text frozen, but bridge Adapter in between is trained, and still find neurons correspond to text concepts (bau)
+Optional small improvements:
 
-text-vision end to end is expensive, vision is relevant bc cheaper. is there circuit from text to vision?
+- “threshold” in iterative node pruning backws is too confusing.
+    - # eg. new_perc is still 30, thres is 20, so "too close to 100”
+    - But we should have 80 be threshold, not 20, so we have `(new_perc) > threshold` instead of `(100 - new_perc) < threshold` to decide removal. Easier to reason with when coding and debugging.
+        - however, then must change every nb and code in repo showcase
+- multi tok logit score: what if high on first tok, low on second tok pred? does it matter?
+- new measure of next score: don’t measure top 5, just get the first ranked output
+- Instead of taking in the entire corrupted sequence anew each generation, instead add a SINGLE new position to the new corrupted generated position. This allows the clean and corrupted to stay consistent. This is because the tokenizer would have tokens of different lengths for different strings, even if the strings are just “adding onto” previous strings. So the clean and corrupted could have different lengths!
+- If just measuring and not logit diff - stop at next space or until corr tok?
+- in main, mention appendix has expms for ablating new tokens by 0 or mean?
+- ~~clean up “ablate then generate” by re-tokenizing, which should use 0 ablation on the words that have been tokenized as now corrupted won’t correspond to previous words~~
 
-sae may fail to find true features. composed, but may try get features in more irreducible. vae men women glasses; train on 3/4 and it can gen to 4th. composability is good to prevent a neuron specific for men glasses and women glasses etc (combos). regualizre repr to be similar.
+optional, longer implementations:
 
-[https://arxiv.org/abs/1711.00066](https://arxiv.org/abs/1711.00066)
+- whittle down to find all paths for sequence continuation: ablate circuit, and see if it works. If it does, keep on searching for backups to ablate until it doesn’t work anymore.
+    - Could it may be distributed throughout the entire thing? If so, we should ablate PART of everything. Possibly using activations differences at every layer.
+- circuit for What are the months in a year?
+- ONLY ablate CERTAIN tokens in initial prompt
+- measure how much sequences generate is corr after it CONTINUES beyond the next member. [Notice sometimes it gets the next correct, but not the othres if it continues.](https://colab.research.google.com/drive/1LPw0da125JQy1qm7nGOFbGwwdO_Fz62M#scrollTo=uemHL8P9uLGk&line=3&uniqifier=1)
+    - perf score for multiple tokens: just add up.
 
-icloud compute a few thousand
+double checks:
 
-they needed uninterpretable for some reason
+- for an input where the growing string is diff for each tokenization, (uno cuatro cuatro), compare generating using retokenization vs concat tokens, and compare which one is the same as  `model.generate`.
+- zero ablate?
+    - how to find what tokens word gets tokenized into in newly concatenated prompt?
+    - actually, if we concat tokens, this won’t change what we pass in. So we can still mean ablate. If not, just zero ablate.
 
-[https://arxiv.org/pdf/2311.12786](https://arxiv.org/pdf/2311.12786)
-fine tune MI
-
----
-
-Future work
-
-- Find ways to get circuits for word problem prompts
-    - Instead of logit diff, assess score using another model. Find how much score matches. Score is say how much English is in there.
-
-Logit lens on features 
-
-[https://arxiv.org/pdf/2404.02431](https://arxiv.org/pdf/2404.02431)
-
-Finding and Controlling Language-Specific Neurons
-
-they didn’t steer features, so we can build on this
-
-[https://arxiv.org/pdf/2403.15491](https://arxiv.org/pdf/2403.15491)
-
-Open Source Conversational LLMs do not know most Spanish words
-
-Circuit Workflow
-
-1. test prompts, generate data
-2. auto ablate heads and MLPs to find impt ones
-3. on impt ones, logit lens / ov scores
-4. on impt ones, attn pats
-5. iter edge pruning + viz
+[To put in writing](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/To%20put%20in%20writing%20cc3ead9e8f8148068a2cd6d2aff95a3d.md)
 
 ---
-
-**Steps towards goal**
-
-Topic 1: features between English - Numbers - ForeignLanguage
-
-MOTIV: this essentially reproduces Gould et al but for a different domain
-
-1. Test prompts to ensure diff models can recognize different language numbers
-2. Test prompts to ensure diff models can handle math reasoning
-3. Alter English reasoning at certain layer: activation addition for language numbers
-4. feature decomposition in small models for actv addition
-5. features: differences in language domain vs similarities in index
-6. write about its use: understand language repr and abstraction better
-
-Topic 2: small circuits for intervaled sequence continuation  
-
-MOTIV: enhance circuit + feature analysis skills (not about analogies; save that for next paper)
-
-1. test prompts for diff models (may make table)
-2. find circuits, and show alter interval-1 can alter interval-2
-    1. seqlen circs
-    2. letters, spanish numwords and ranks and months
-3. alter circuits/features for math reasoning + equation prompts
-    1. compare to circs for these word problem + equation prompts
-4. possible recognition by features (unlikely, since all is numbers; is good for practice)
-5. write about its practical use: diverging circuits
-6. OPT: show for multiple models and ablate by diff pos (if nonseq words there)
-    1. OPT: larger models: try nnsight
-
----
-
-[brainstorm emnlp](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/brainstorm%20emnlp%205be09602f7df444d99a8659c5e4be02e.md)
-
-Experimental Details
-
-- For sequences, we only need ONE or a few prompts. Put in appendix circuits found using more prompts; but those are unnecessary. Successor heads does not use that many prompts.
-- Don’t worry too much about how it’s corrupted (zero, mean [repeat, random] ), or how it’s measured (metric, which is corr vs incorr token). Just some sort of corruption is all it takes to find IMPORTANT components. We don’t care about exact circuits (b/c we can’t find that anyways regardless of how rigorous our ablation is). Mention in main paper the less rigorous approach; say appendix contains more rigorous approach for smaller model on simpler task due to easier to measure single token answers.
-- Don’t worry too much about “what if alt hypothesis” (eg. is it just measuring repeating instead of actual seqs, or is it just memorizing, etc). Address that only if reviewers bring it up; if valid, improve in next paper
-- Don’t worry about measuring generated sequences that aren’t just next token. We measure those by human or chatgpt eval, not rigorous score. Only exact answer seqcont (eg. fibonacci) is measured by quant metrics. Then, those circuits are corrupted to obtain effects on word problems. We don’t obtain circuits for word problems.
 
 ---
 
 ### Future Work
 
+### Future Papers
+
+[Circuit func mapping](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Circuit%20func%20mapping%20c0805c4b41df47bea39344d637644b00.md)
+
+[Steering](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Steering%20234ffb7bcb1646309755764449cbe151.md)
+
+[Circular features](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/Circular%20features%2064fe86bffa3648aa808b1b3e991c7275.md)
+
+Feature Steering
+
 - steer at different places than just MLP0
+- Logit lens on features
 - decompose existing activation vectors on gpt-2 small, try to make them even better
     - improve SAEs to reduce num of dead feature neurons
 - decompose steering vectors in analogous seqcont domains
     - find features unique to each domain
     - mean of >2 prompts to get steer vecs for months to numbers
+
+Misc- Much Later
+
 - modularize ablation code even more so it doesn’t rely on unnecc Dataset class properties
     - Look at existing repos of similar papers to find which do it in cleaner ways (not dependent on specific dataset class but more generalizable and adaptable to other data)
     - Make a list of these repos
     - save a list of ‘go-to’ functions when needed (eg. get top logits, etc.) instead of searching for it in a specific repo. make a nb with sections, or notion
         - this is bc a textbook, google, and chatgpt are not tailored to you
-
-cognitive load problem solving for keeping track of how lines of code across function stacks interact: make a mental and/or external list of items to focus on to avoid being distracted and forgeting key concept/knowledge items to keep around each other
-
-**deep focus like a hackathon- jump from one chunk to another without distraction delays**
-
-check time, APM, speedrun (30-60m intervals; practice)
-
-not always rushing; diff paces for diff stages of problem solving
-
-Much Later
-
+- Find ways to get circuits for word problem prompts
+    - Instead of logit diff, assess score using another model. Find how much score matches. Score is say how much English is in there.
 - trace steering effect on component paths + feature paths for math reasoning tasks
 - we ablate components and by specific input token positions, so hook is dependent on input
 
@@ -682,14 +524,6 @@ llama2: incr, multp (num), fibo (num) ; letters, gt, decr
     
     [https://colab.research.google.com/drive/1QTuda1ipUrVbzu6WTL4BO3d4ALyY_W5y](https://colab.research.google.com/drive/1QTuda1ipUrVbzu6WTL4BO3d4ALyY_W5y)
     
-
-<<<
-
-[https://drive.google.com/drive/folders/1pXm-TS83EAfS4r3sqtSosx-J67SrnHEK](https://drive.google.com/drive/folders/1pXm-TS83EAfS4r3sqtSosx-J67SrnHEK)
-
-[https://github.com/apartresearch/seqcont_circuits/tree/main](https://github.com/apartresearch/seqcont_circuits/tree/main)
-
-[https://github.com/wlg1/seqcont_circ_expms](https://github.com/wlg1/seqcont_circ_expms)
 
 <<<
 
@@ -806,8 +640,6 @@ llama2: incr, multp (num), fibo (num) ; letters, gt, decr
 
 by averaging the differences in intermediate residual stream activations after a transformer block given paired sycophantic / non-sycophantic texts
 
-Larger models
-
 Toy model
 
 More complex sequences with in-context (eg. a1, a3, a2- alternating, etc. See if it can generalize)
@@ -819,8 +651,6 @@ random words at same intervals allows display as attn pat visual; but ablation d
 Eg) He had 1 pencil. Then he had 2 pencils. Afterwards, he got
 
 Ask chatgpt to generate several templates from code
-
-SAEs, feature ablation
 
 ---
 
@@ -1005,7 +835,7 @@ there is an alternative circuit that doesn’t use 9.1 but distributes the compu
         - Swap at different positions
         - Or random num at a pos
     - Move most of early heads to appendix if not that impt. Connect it with months, number words, etc. and relate why greater-than needs less early heads than incr digits.
-    - Find attnpat + OV scores of heads found from [manual adding and checking perf](Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
+    - Find attnpat + OV scores of heads found from [manual adding and checking perf](Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
         - [https://colab.research.google.com/drive/16b8SwFckyC7Gv3RPUX8mme_Y8dfw0o1g](https://colab.research.google.com/drive/16b8SwFckyC7Gv3RPUX8mme_Y8dfw0o1g)
     - record how induction is used differently in each circuit
         

@@ -51,6 +51,8 @@ List of Papers
 
 [List of papers- feature decomp](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/List%20of%20papers-%20feature%20decomp%20f3a180818cb44216b865f11272a96c7b.md)
 
+[useful papers to read](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/useful%20papers%20to%20read%206bc4d86682c94eddb7be4de174ef0e5a.md)
+
 Notes
 
 [Editing Machiavelli Prelims](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Editing%20Machiavelli%20Prelims%20a0708db298d544b388375641494a755f.md)

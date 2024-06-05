@@ -44,8 +44,18 @@
     If you have any specific concerns or questions about the annotations, please let me know!
     
 
+The left side is the pair of 2 tokens. The right sides combines parts of them into a new token.
+
 ---
 
 a) What are some more details of the learning algorithm+procedure used to train the index-space projection and domain-space projection in section 3.1 and Appendix L? eg) if it used SGD and Adam. Also why only 10 epochs? Interested in looking at this code if it is available.
 
 b) Were the closeness metrics loss functions and the commutative diagram used to frame the training procedure based on any previous paper's work?
+
+Does this diagram help ensure the enforced loss cosntraint is logically “strong”? (not sure what last part means)
+
+---
+
+![Untitled](Successor%20Heads%20Notes%203d2a9c73e41d4ca7903790b6e7914124/Untitled%202.png)
+
+Why doesn’t llama-7b generealize?

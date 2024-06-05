@@ -40,6 +40,10 @@
 
 [Guides- How to Rsch](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Guides-%20How%20to%20Rsch%20f7c39992641140dab85ee4e96ed97d39.md)
 
+### Schedule Plans
+
+[Oxford Intern plan](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Oxford%20Intern%20plan%205ab371ab105146779576123eac4c363e.md)
+
 ### Experiment Projects
 
 Ongoing

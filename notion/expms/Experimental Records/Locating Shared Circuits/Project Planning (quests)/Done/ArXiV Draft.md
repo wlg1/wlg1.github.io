@@ -1,4 +1,4 @@
-# ArXiV Draft v1
+# ArXiV Draft
 
 - ✅ Review hackathon project and convert to overleaf
     - ✅ Make table comparing copy scores between analogous seqs
@@ -15,7 +15,7 @@ Quick Lit Review
 - ✅ Msg some other authors to ask about how high lvl description of paper idea would do at a conference
 - ✅ Find “Next Heads” by coding “next scores”
     
-    [numseq_nextScores.ipynb](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/numseq_nextScores%20ipynb%202578dc5c770641f4bcb2045281d9b44a.md) 
+    [numseq_nextScores.ipynb](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/numseq_nextScores%20ipynb%202578dc5c770641f4bcb2045281d9b44a.md) 
     
 - ⚠️ gpt2_Neuron2Graph.ipynb
     
@@ -23,7 +23,7 @@ Quick Lit Review
     
     STUCK: can’t scrape neuron activations due to empty list. which (layer, neuron) is empty?
     
-- ✅ [Find more “next” heads](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/numseq_nextScores%20ipynb%202578dc5c770641f4bcb2045281d9b44a.md)
+- ✅ [Find more “next” heads](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/numseq_nextScores%20ipynb%202578dc5c770641f4bcb2045281d9b44a.md)
 - TBC- Read reviews of IOI for ICLR: [https://openreview.net/forum?id=NpsVSN6o4ul](https://openreview.net/forum?id=NpsVSN6o4ul)
 - ✅ Package natbib Warning: Citation `geva2020transformer' on page 1 undefined on input line 4.
     
@@ -204,8 +204,8 @@ Quick Lit Review
     H forces it to be in section, but causes large white spaces. ht is better to reduce white space, but it may not be in same section.
     
 - TBC- study: [Towards Automated Circuit Discovery for Mechanistic Interpretability](https://www.notion.so/Towards-Automated-Circuit-Discovery-for-Mechanistic-Interpretability-e22fd1e2478347ea9686424d6080b5b7?pvs=21)
-- (FIXED)⚠️ [Early head validation code](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20head%20validation%20code%20be7fc9bbf047474388f55bbe8f04eb17.md)
-- ⚠️ [SVD interpretable dirs](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/SVD%20interpretable%20dirs%2083533467cd334293af5913675fdeee97.md)
+- (FIXED)⚠️ [Early head validation code](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Early%20head%20validation%20code%20be7fc9bbf047474388f55bbe8f04eb17.md)
+- ⚠️ [SVD interpretable dirs](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/SVD%20interpretable%20dirs%2083533467cd334293af5913675fdeee97.md)
 - TBC- [Outline Plan](../../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Outline%20Plan%203935b02babc84c70a2be3545257d9b3e.md)
 
 Find common circuits for more numerical tasks (not just seq cont)
@@ -223,14 +223,14 @@ Path Patching
     
 - ✅ Outline path patching steps to get a circuit diagram
 - Construct a circuit diagram for numseqs/months, and compare w/ greater-than circuit diagram
-    - Find more causal evidence for edges BETWEEN components, not just "these are important components". Path patching between components to find these more precise interactions. [Path Patching](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Path%20Patching%20967be4e1a2b241418a9603911dda4561.md)
+    - Find more causal evidence for edges BETWEEN components, not just "these are important components". Path patching between components to find these more precise interactions. [Path Patching](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Path%20Patching%20967be4e1a2b241418a9603911dda4561.md)
         - get the right ‘abc dataset’ for digits; may use num among words. try and compare different corruptions (put in appendix, rmv test prompt failures in main section)
             
             ✅ RESULT: Tried different corruptions (repeat last, repeat all, etc) to compare path patching results. Traced back 9.1's impt heads (4.4, 5.5, 6.6) and back from those (0.1, 3.0)
             
             - OPTIONAL: email to ask for opinions on choice of corruption
             - mix different types of corruptions and take mean?
-- ⚠️ Mean ablation numseq by repeating last. [Mean Resampling Ablation](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Mean%20Resampling%20Ablation%20d7fd15fac3324baa96d82bada82340a1.md)
+- ⚠️ Mean ablation numseq by repeating last. [Mean Resampling Ablation](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Mean%20Resampling%20Ablation%20d7fd15fac3324baa96d82bada82340a1.md)
     - ✅ Check how Greater-Than circuit performs here
     - Brainstorm how to properly use and analyze path patching results to find the right heads
     - [Search Methods- ask ChatGPT](../../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Search%20Methods-%20ask%20ChatGPT%20c68457cff88c4c3ba4b7fc775684496a.md)
@@ -260,7 +260,7 @@ Path Patching
 - ⚠️ [gpt2-greater-than](../../gpt2-greater-than%201d1763531c964ad28af1ee43c2253f19.md)
     - try to use rust-circuits in colab
 - ✅ Turn ‘work backw’ to code. [Search Methods- brainstorm](../../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/Search%20Methods-%20brainstorm%2015a3020ab00b40adb79b0acf3622f5f4.md)
-- ✅ Automate to get edges: [Path Patching after Work Backw](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Path%20Patching%20after%20Work%20Backw%20926c3d71d6304852afcc271974028aec.md)
+- ✅ Automate to get edges: [Path Patching after Work Backw](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Path%20Patching%20after%20Work%20Backw%20926c3d71d6304852afcc271974028aec.md)
 - ✅ Wedn night: Book meeting or send msg on what has been done
 - ⚠️ Use threshold on edges instead of top 5.
     
@@ -373,18 +373,18 @@ Path Patching
 
 Shared Circuits for Similar Tasks
 
-- ✅- Test digits circuit on months, etc. [Months circuit](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Months%20circuit%20765ea1869818426298c439544a337efc.md)
-- ✅- path patch on months. [Months path patch](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Months%20path%20patch%20190601513e60424fbf7a9a8ef00a8317.md)
+- ✅- Test digits circuit on months, etc. [Months circuit](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Months%20circuit%20765ea1869818426298c439544a337efc.md)
+- ✅- path patch on months. [Months path patch](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Months%20path%20patch%20190601513e60424fbf7a9a8ef00a8317.md)
 - ✅- decr seq circuit
     
     [https://chat.openai.com/c/38b2ee8a-d6b6-405f-a993-fa129d1cd378](https://chat.openai.com/c/38b2ee8a-d6b6-405f-a993-fa129d1cd378)
     
-- ✅-  [numwords_mincirc_repeatLast](https://colab.research.google.com/drive/1hEEWySgGjWxy_UWpAuT5Oh_pf4hSAvmv#scrollTo=GCCCoO0V7L7J).ipynb. [Numwords path patch](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Numwords%20path%20patch%20324547790e19453c9c0dc07488a9b67b.md)
+- ✅-  [numwords_mincirc_repeatLast](https://colab.research.google.com/drive/1hEEWySgGjWxy_UWpAuT5Oh_pf4hSAvmv#scrollTo=GCCCoO0V7L7J).ipynb. [Numwords path patch](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Numwords%20path%20patch%20324547790e19453c9c0dc07488a9b67b.md)
 - ⚠️ 2, 4, 6 and other seq circuits
     
     existing: numseq_test_prompts_SMALL
     
-    new: [numseq_prompts](https://colab.research.google.com/drive/1rNRrvr4qzy_zjPUK-4mJHruwFKnomrnP#scrollTo=r9_yofz3WkYm), pt2.ipynb  [Add 2 prompts](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Add%202%20prompts%20cfe4115b82634ce1b89a1afd0df9c9ba.md) 
+    new: [numseq_prompts](https://colab.research.google.com/drive/1rNRrvr4qzy_zjPUK-4mJHruwFKnomrnP#scrollTo=r9_yofz3WkYm), pt2.ipynb  [Add 2 prompts](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Add%202%20prompts%20cfe4115b82634ce1b89a1afd0df9c9ba.md) 
     
 
 Circuit conn method
@@ -448,13 +448,13 @@ Attention Head Functionality
     - ✅ [4.4 is prev number head](https://colab.research.google.com/drive/1FThBbzvhipfGHb4jwdXLA6iXlIv75spp#scrollTo=HjXea78dIAif&line=6&uniqifier=1)
     - ✅ re-org draft to ‘early, mid, late’ instead of by technq to better compare evidence for each type
     - ✅ re-org next/copy scores to combine w/ mid/late
-- ✅ [How did prev papers diagnose early + mid? Try getting interpretations from prev papers that used the same heads](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
-- ✅ [look at attn patterns for more heads than just the top 10](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
+- ✅ [How did prev papers diagnose early + mid? Try getting interpretations from prev papers that used the same heads](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
+- ✅ [look at attn patterns for more heads than just the top 10](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
 
 Connectivity
 
-- 🐣 [Play around with manually sel heads for **incr digits circuit**, and check their func](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Manual%20path%20patch%208d30748bcf9448bf9a0b76ce78ed1dfb.md)
-    - 🐣 [**iter patch from manual sel**](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
+- 🐣 [Play around with manually sel heads for **incr digits circuit**, and check their func](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Manual%20path%20patch%208d30748bcf9448bf9a0b76ce78ed1dfb.md)
+    - 🐣 [**iter patch from manual sel**](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Early%20Head%20Analysis%20b73c8162b7334655ad1ff91fb236b69e.md)
         - ✅ re-run ablation on circ found from path patch (that adds nodes).
         - ✅ how much better is it than before adding nodes?
         - [✅ re-run ablation on circuit after ipp gets rid of nodes w/o outgoing edges.](../../Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c.md)
@@ -485,10 +485,10 @@ Conn/Fn:
     - ⚠️ repeating autoAblation
 - ✅ debug why `ioi_circuit_extraction.add_mean_ablation_hook` , when passing in full circuit for *seemingly* every pos, doesn’t get 100% of score. this is likely due to not every pos being accounted for.
     - ✅ SOLN: seems like `tokens.index(target_token)` is the issue because the repeated numbers have multiple indices. Instead, these indices should be put in prompt_dict when the prompt is created. add `pos_dict` to `prompts_list` before passing to `dataset` class
-- ✅ back to [repeatDigits_autoAblation](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/repeatDigits_autoAblation%206d3119d544f24f938eb4abe0016e9503.md)
+- ✅ back to [repeatDigits_autoAblation](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/repeatDigits_autoAblation%206d3119d544f24f938eb4abe0016e9503.md)
     - ✅ run backw once ablation on repeatDigits and compare circ to IOI
     - ✅ compare to repeatLetters
-- ✅ ablate by seq pos (found by attention pattern analysis) [QK ablation](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/QK%20ablation%20f9f1b2ff2d944674a98e5b872acd5009.md). ([revisit](../Done%20b715c92198314529880806d9f206803d.md))
+- ✅ ablate by seq pos (found by attention pattern analysis) [QK ablation](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/QK%20ablation%20f9f1b2ff2d944674a98e5b872acd5009.md). ([revisit](../Done%20b715c92198314529880806d9f206803d.md))
     - ✅ Change both of these (dict key is head type): **is seq pos q or k? See prev n**
         
         `CIRCUIT = {"number mover": lst,`
@@ -497,7 +497,7 @@ Conn/Fn:
         
         key vectors are always kept; query vectors only kept if specified
         
-    - ✅ ablate by among words (for number detectors). [amongWords- QK ablation](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/amongWords-%20QK%20ablation%20a6648bdac8b14573880294c84ead3474.md)
+    - ✅ ablate by among words (for number detectors). [amongWords- QK ablation](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/amongWords-%20QK%20ablation%20a6648bdac8b14573880294c84ead3474.md)
         - ✅ why not get 100% when pass in full circ?
             
             SOLN: the corrupted had repeated tokens in “Adam 1 Bob 2 Claire 3 Don 3 Eve”, so the repeated query seq pos index (the second 3) was not kept (non-ablated) when running `tokens.index(target_token)`. The previous dataset of “1 2 3 3” did not have this issue as the datasets always kept the query end pos non-ablated, which was coincidentally on the second 3. But in the new case, the last token was “Eve” so this did not occur.
@@ -573,7 +573,7 @@ Circuit Connectivity
             basically one of the main goals now is to figure out what components separate diff circuits, such as incr digits vs greater-than. I think the task described above can shed light on this as it is somewhere between those two tasks
             that's true, too many tasks would not fit the paper. I think that's all the new tasks I'll look into (we have around 8) so it'd be feasible to analyze them until next week (11/1). then we can get the first draft around that time on arxiv
             
-- 🐣 [logit lens decr](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/logit%20lens%20decr%2080b75441653c4fed99eb1f3919e37dfb.md)
+- 🐣 [logit lens decr](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/logit%20lens%20decr%2080b75441653c4fed99eb1f3919e37dfb.md)
 - ✅ daily [plan](../../Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4/_Brainstorm%20plans%20(chrono)%20a93e919e5bff4109bf54f6d3febb05c4.md)
 
 Circuit Connectivity- better corrupted dataset patching
@@ -650,7 +650,7 @@ Circuit Connectivity- better iterative algos for all tasks
         - How can greater-than not have heads that are recognizing words other than the digit? Surely, it must process the other words, too. Note this in “future work”?
 - ✅ ran iter N+E on decr
 - ✅ from outputted circ, rmv head one at a time to find how impt it is for circ
-    - [Impt Decr Circ Heads](../../Expm%20Results%208de8fe5b943641ec92c4496843189d36/Impt%20Decr%20Circ%20Heads%20109317c38d2d4bf2ba1c721d44e17d1a.md)
+    - [Impt Decr Circ Heads](../../Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36/Impt%20Decr%20Circ%20Heads%20109317c38d2d4bf2ba1c721d44e17d1a.md)
 - ✅ [numWords_pruneNodes_randAll](https://colab.research.google.com/drive/1QTv-4osLHadCAay0beew-xlXszPCG88s#scrollTo=Lk3bffnCYq-p).ipynb
 - ✅ incr months
     1. ✅ nodes: [months_mincirc_randAll](https://colab.research.google.com/drive/1lhQqlizYGMC11vzp6I9mJ3dyxIr8tV3l#scrollTo=VaxbugcfGlBA)
@@ -774,11 +774,11 @@ Circuit Functionality- Sims + Diffs
         
         The culprit is “eleven” is two tokens. Twelve is 1 token. yet how come dataset_1 doesn’t suffer from this?
         
-        ![Untitled](ArXiV%20Draft%20v1%2035c75a5f1929460fb199edd5fce9a6fe/Untitled.png)
+        ![Untitled](ArXiV%20Draft%2035c75a5f1929460fb199edd5fce9a6fe/Untitled.png)
         
         when eleven is in front, it’s split into 2 tokens. when elven has a space in front, it’s 1 token:
         
-        ![Untitled](ArXiV%20Draft%20v1%2035c75a5f1929460fb199edd5fce9a6fe/Untitled%201.png)
+        ![Untitled](ArXiV%20Draft%2035c75a5f1929460fb199edd5fce9a6fe/Untitled%201.png)
         
         One solution is to always use a space in front, even for start of seq
         
@@ -797,15 +797,15 @@ Circuit Functionality- Sims + Diffs
     
     T+2 is that it’s sometimes “second place”:
     
-    ![Untitled](ArXiV%20Draft%20v1%2035c75a5f1929460fb199edd5fce9a6fe/Untitled%202.png)
+    ![Untitled](ArXiV%20Draft%2035c75a5f1929460fb199edd5fce9a6fe/Untitled%202.png)
     
     Not always:
     
-    ![Untitled](ArXiV%20Draft%20v1%2035c75a5f1929460fb199edd5fce9a6fe/Untitled%203.png)
+    ![Untitled](ArXiV%20Draft%2035c75a5f1929460fb199edd5fce9a6fe/Untitled%203.png)
     
     actually this doesn’t work; it predict the next one instead of the repeat:
     
-    ![Untitled](ArXiV%20Draft%20v1%2035c75a5f1929460fb199edd5fce9a6fe/Untitled%204.png)
+    ![Untitled](ArXiV%20Draft%2035c75a5f1929460fb199edd5fce9a6fe/Untitled%204.png)
     
     - maybe just repeat all for T+2 or T+3 or i-1 mod R
     
@@ -951,4 +951,4 @@ Last Work before Finishing Draft V1
 
 **Previous To-Do list categories**
 
-[23 10 9 - 23 10 15](ArXiV%20Draft%20v1%2035c75a5f1929460fb199edd5fce9a6fe/23%2010%209%20-%2023%2010%2015%20546cb16c31664f68a2eb976d8a60e033.md)
+[23 10 9 - 23 10 15](ArXiV%20Draft%2035c75a5f1929460fb199edd5fce9a6fe/23%2010%209%20-%2023%2010%2015%20546cb16c31664f68a2eb976d8a60e033.md)

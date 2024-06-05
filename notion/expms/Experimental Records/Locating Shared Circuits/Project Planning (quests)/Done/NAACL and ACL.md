@@ -1,4 +1,4 @@
-# NAACL Draft v1
+# NAACL and ACL
 
 More Models (after Draft v1)
 
@@ -44,7 +44,7 @@ More Models (after Draft v1)
         
         For each list, the operation converts these values into a probability distribution, where each element is a probability corresponding to a class or category, typically in a machine learning classification task. In this case, each row could represent the log probabilities of different classes for a specific instance or time step in a sequence.
         
-        ![Untitled](NAACL%20Draft%20v1%20cff04ab3612d474cbca60c48f2967762/Untitled.png)
+        ![Untitled](NAACL%20and%20ACL%20cff04ab3612d474cbca60c48f2967762/Untitled.png)
         
     - diffs between correct log prob in sort vs clean demo
         
@@ -468,7 +468,7 @@ More Data, MLP and QKV node pruning and path patching
                 
                 As seen in ACDC, they do not interact with each other, but they ALWAYS go into an “overall” nodes. Also, q k v NEVER go into any node other than the overall node! The receiver node is always q k v, while sender node is never q k v.
                 
-                ![Untitled](NAACL%20Draft%20v1%20cff04ab3612d474cbca60c48f2967762/Untitled%201.png)
+                ![Untitled](NAACL%20and%20ACL%20cff04ab3612d474cbca60c48f2967762/Untitled%201.png)
                 
         - ✅ resid post
             

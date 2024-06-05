@@ -102,15 +102,19 @@
 
 ### Project Docs
 
+Overall plans
+
+[EMNLP overall plan](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/EMNLP%20overall%20plan%20c32b25f726554e429b3650b264829595.md)
+
+[**Steps towards goal**](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Steps%20towards%20goal%20054f79ebad4844c38f2de00137d42a8c.md)
+
 Brainstorming Notes
 
 [Brainstorming Notes](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Brainstorming%20Notes%203f11ad066e9b4a07b4eac05b6b2474c4.md)
 
-[Fibonacci plan](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Fibonacci%20plan%202e0e51805bee4b44ba09fe671e89ab19.md)
-
 [List of math reason prompts](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/List%20of%20math%20reason%20prompts%207fad070b1fa5480e858b6fbef3217c2a.md)
 
-[Successor Heads Notes](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Successor%20Heads%20Notes%203d2a9c73e41d4ca7903790b6e7914124.md)
+[brainstorm emnlp (1)](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/brainstorm%20emnlp%20(1)%20383f36f2ceda4b7f84ce73b25762747f.md)
 
 Writeup
 
@@ -122,17 +126,30 @@ Writeup
 
 [Tweet](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Tweet%20e0c5517bd2634b6b8e6bd6996c526923.md)
 
-Repo (push new expms here once cleaned up)
+Code + Repos (push new expms here once cleaned up)
 
-[https://github.com/apartresearch/model-editing-interference](https://github.com/apartresearch/model-editing-interference)
+[https://drive.google.com/drive/folders/1pXm-TS83EAfS4r3sqtSosx-J67SrnHEK](https://drive.google.com/drive/folders/1pXm-TS83EAfS4r3sqtSosx-J67SrnHEK)
+
+[https://github.com/apartresearch/seqcont_circuits/tree/main](https://github.com/apartresearch/seqcont_circuits/tree/main)
+
+[https://github.com/wlg1/seqcont_circ_expms](https://github.com/wlg1/seqcont_circ_expms)
+
+Scratchpad Notes
+
+[Successor Heads Notes](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Successor%20Heads%20Notes%203d2a9c73e41d4ca7903790b6e7914124.md)
+
+[Fibonacci plan](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Fibonacci%20plan%202e0e51805bee4b44ba09fe671e89ab19.md)
+
+[MultTok LogitDiff](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/MultTok%20LogitDiff%20ff8e7c2c11a6479f8b8edca9f9bb129c.md)
+
+[Foreign Language (1)](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Foreign%20Language%20(1)%2012bca38d24cf4fe387e834c7bd3df18f.md)
 
 Expm Results
 
-[Expm Results](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Expm%20Results%208de8fe5b943641ec92c4496843189d36.md)
+[Expm Results- NAACL](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Expm%20Results-%20NAACL%208de8fe5b943641ec92c4496843189d36.md)
 
-[Expm Results- Llama 2](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Expm%20Results-%20Llama%202%20bc7eb66db28f4bbda27403862beea6ec.md)
+[Expm Results- EMNLP](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638.md)
 
-- (old) all files: [https://drive.google.com/drive/folders/1WN6s8r0altehoiLdMR2dM5dyje47a_G5](https://drive.google.com/drive/folders/1WN6s8r0altehoiLdMR2dM5dyje47a_G5)
 - test other paper’s code: [https://drive.google.com/drive/folders/1GgF91n2YNLXJD2KHhHe1WUhXe4zRrqQe](https://drive.google.com/drive/folders/1GgF91n2YNLXJD2KHhHe1WUhXe4zRrqQe)
 
 Others’ code
@@ -150,3 +167,5 @@ Paper Reviews and Rebuttals
 [ACL 2024 reviews](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/ACL%202024%20reviews%2017531ea8c8354eeeab281b56b5672a92.md)
 
 [How to Improve](Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/How%20to%20Improve%20377ff9e7e3f5488f924b3dc428d31c74.md)
+
+[https://docs.google.com/file/d/1I5fAmJYo_4flT2i1-cv4jfj_hNfir213/edit?ts=66532fb8](https://docs.google.com/file/d/1I5fAmJYo_4flT2i1-cv4jfj_hNfir213/edit?ts=66532fb8)

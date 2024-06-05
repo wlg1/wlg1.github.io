@@ -1,4 +1,4 @@
-# brainstorm emnlp
+# brainstorm emnlp (1)
 
 get steering vecotr betwen numbers and months, and english numbers and spanish numbers. decompose this and use its features to steer the reasoning prompt. 
 
@@ -41,3 +41,10 @@ Cross model mapping on meaningful linguistic task: translate between language ma
 Translate activation addition from small model to a larger model
 
 - If use a model to translate, is that the same as just training SAE on larger model?
+
+Experimental Details
+
+- For sequences, we only need ONE or a few prompts. Put in appendix circuits found using more prompts; but those are unnecessary. Successor heads does not use that many prompts.
+- Don’t worry too much about how it’s corrupted (zero, mean [repeat, random] ), or how it’s measured (metric, which is corr vs incorr token). Just some sort of corruption is all it takes to find IMPORTANT components. We don’t care about exact circuits (b/c we can’t find that anyways regardless of how rigorous our ablation is). Mention in main paper the less rigorous approach; say appendix contains more rigorous approach for smaller model on simpler task due to easier to measure single token answers.
+- Don’t worry too much about “what if alt hypothesis” (eg. is it just measuring repeating instead of actual seqs, or is it just memorizing, etc). Address that only if reviewers bring it up; if valid, improve in next paper
+- Don’t worry about measuring generated sequences that aren’t just next token. We measure those by human or chatgpt eval, not rigorous score. Only exact answer seqcont (eg. fibonacci) is measured by quant metrics. Then, those circuits are corrupted to obtain effects on word problems. We don’t obtain circuits for word problems.

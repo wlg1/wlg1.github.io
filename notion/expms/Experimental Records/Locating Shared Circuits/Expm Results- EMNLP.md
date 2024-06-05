@@ -1,0 +1,13 @@
+# Expm Results- EMNLP
+
+[ablate_seqcont_thenMath_explora](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/ablate_seqcont_thenMath_explora%202dd1d8fc1ea6468084bf1811562b836f.md)
+
+[llama2_ablate_prompts_explora_v1.ipynb](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_explora_v1%20ipynb%20b1754a3f537e459f8cda41e71979bd75.md)
+
+[llama2_ablate_prompts_explora_v2.ipynb](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_explora_v2%20ipynb%20034368629f3e40869a4bc34a49180a49.md)
+
+[llama2_ablate_prompts_explora_v3.ipynb](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_explora_v3%20ipynb%2085fbfa1671f644ae8dfcc4cd49b10d71.md)
+
+[llama2_ablate_prompts_numwords_circ](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_numwords_circ%2013d41c80bbac4bb196f239f5745db7e2.md)
+
+[llama2_ablate_prompts_diff_circs](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_diff_circs%207fa2537e45b84049b77f3dad6b6f190d.md)
