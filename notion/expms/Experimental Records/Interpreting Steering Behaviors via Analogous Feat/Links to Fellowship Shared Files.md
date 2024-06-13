@@ -39,3 +39,9 @@ they needed uninterpretable for some reason
 
 [https://arxiv.org/pdf/2311.12786](https://arxiv.org/pdf/2311.12786)
 fine tune MI
+
+---
+
+Sparse clip circuits 
+
+Best of venom

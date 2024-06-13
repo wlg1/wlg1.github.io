@@ -685,3 +685,57 @@ ACL vers:
     While transformer models exhibit strong capabilities on linguistic tasks, their complex architectures make them difficult to interpret. Recent work has aimed to reverse engineer transformer models into human-readable representations called circuits that implement algorithmic functions. We extend this research by analyzing and comparing circuits for similar sequence continuation tasks, which include increasing sequences of Arabic numerals, number words, and months. By applying circuit interpretability analysis, we identify a key sub-circuit in GPT-2 responsible for detecting sequence members and for predicting the next member in a sequence. Our analysis reveals that semantically related sequences rely on shared circuit subgraphs with analogous roles. Overall, documenting shared computational structures enables better model behavior predictions, identification of errors, and safer editing procedures. This mechanistic understanding of transformers is a critical step towards building more robust, aligned, and interpretable language models.
     
 - ✅ [How to Improve](../../How%20to%20Improve%20377ff9e7e3f5488f924b3dc428d31c74.md)
+- FOR AFTER 2/15 ON ARXIV
+    
+    ✅ Pro+ cancel (then resub to pro after end date)
+    
+    ~~ahead1.5 similar types logic is wrong for months numbers~~
+    
+    ✅ 7.11 last token seq, may be ordering
+    
+    ✅ For most samples of all seq types logit lens
+    
+    ✅ Fig5 caption
+    
+    Fig 1 names, 
+    
+    ✅ logit lens ref date, 
+    
+    w mlp 11 graph has edge 4.4 to 7.11 error, 
+    
+    OV: clarify keyword bool is for each one not for all
+    
+    Get mutlpie circs on avg what is common 
+    
+    Fix the output of mkp 8pattenr appendix
+    
+    Ix metric using twice
+    
+    ✅ Head 0.5 sec 4 should be 5.0
+    
+    Drop 1.5 only nearly causes more than w0 numwords
+    
+    ✅ Were are appendix A
+    
+    Logit lens not always gets last seq member
+    
+    Attnpat num prompts
+    
+    Rewrite iter methods
+    
+    By the additives res
+    
+    They're not additive as drops don't add to 100
+    
+    On this sec expm setup
+    
+    Cite induction in ioi
+    
+    Export notion git
+    
+    Gt shares 9.1
+    
+- Predicted criticism:
+    - search for backup (L10 and 11?), negative heads
+    - dataset not semantically meaningful
+    - sequence positions at same intervals (but in pure it would’ve been the same)

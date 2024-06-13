@@ -1,5 +1,7 @@
 # Expm Results- EMNLP
 
+### Prelim on few samples
+
 [ablate_seqcont_thenMath_explora](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/ablate_seqcont_thenMath_explora%202dd1d8fc1ea6468084bf1811562b836f.md)
 
 [llama2_ablate_prompts_explora_v1.ipynb](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_explora_v1%20ipynb%20b1754a3f537e459f8cda41e71979bd75.md)
@@ -11,3 +13,17 @@
 [llama2_ablate_prompts_numwords_circ](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_numwords_circ%2013d41c80bbac4bb196f239f5745db7e2.md)
 
 [llama2_ablate_prompts_diff_circs](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_diff_circs%207fa2537e45b84049b77f3dad6b6f190d.md)
+
+[llama2_ablate_prompts_diff_circs_v2](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_diff_circs_v2%20db1ce166d8ed40278fe890da70506568.md)
+
+[llama2_ablate_prompts_ENcircs.ipynb](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_ENcircs%20ipynb%20880ecfe93ffc4a4490505699b643c343.md)
+
+[llama2_ablate_prompts_SPcircs.ipynb](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/llama2_ablate_prompts_SPcircs%20ipynb%2050261b4c29f84644b2ff45adb44209d5.md)
+
+---
+
+### Larger datasets
+
+[auto_prompt_test_simple_intv](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/auto_prompt_test_simple_intv%20ec5bc10f3ab847e186e94e8c07ccc578.md)
+
+[auto_prompt_test_simple_arithm](Expm%20Results-%20EMNLP%20df8b503260cf48d987a58d25103b6638/auto_prompt_test_simple_arithm%20304eca126dce403c824bed0755760737.md)

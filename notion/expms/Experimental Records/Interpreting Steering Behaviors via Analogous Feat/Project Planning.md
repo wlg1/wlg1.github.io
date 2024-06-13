@@ -178,6 +178,48 @@ Catch up to Anthropic research on feature clusters for AI Safety
     [https://transformer-circuits.pub/2024/scaling-monosemanticity/umap.html?targetId=34m_31164353](https://transformer-circuits.pub/2024/scaling-monosemanticity/umap.html?targetId=34m_31164353)
     
 
+- impt papers measuring analogous features
+    - platonic repr hypothesis
+    - similarity survey (2023)
+    - successor heads
+    - func eqv features
+
+[Similarity measurements](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Similarity%20measurements%2059d99860501849cfb9960f028265819b.md)
+
+Steer by feature relations of distance or causal. This is true steering by concepts. Concepts are captured by a network of features, not a single feature. A bridge vs golden gate Bridge. In that case, it's not saes. 
+
+Kernel is distance between samples, not features
+
+Structure preserving feature relations
+
+Feature must be at some threshold 
+
+Sim measure within model between hierarchical analogous concepts
+
+Trace backwards single token inputs or two contrasting differing by single input. Measure the feature dim for traits along each. Do this for both neurons, sae features, components. Then measure distances between these features. Is there a pattern?
+
+Ask gpt4 to critique and refine this
+
+Issue is hard to isolate commonality. What if more than one commonality? Even for vision models. For text, there's position. But sample at many pos, many contexts and they have commonality. If use synonymous tokens or of Same class.
+
+But sep features, like blue dog and red dog, can be two sae features. Analogous steering
+
+Topological
+
+Make sep shared team notion without all the info
+
+Alignment of steering vectors across models via features
+
+Nonlinear features
+
+No steering benchmark
+
+If bias exists in frozen embedding,  doctor closer to man in woman, is there inherent bias in clip output?
+
+Used to br frozen text and frozen img then just train Bridge. But now is training end to end, not separate img and txt models. Chameleon meta
+
+after sae transformation, we align two models by a cross-model sae. then, apply alignment-based measures
+
 slides: explain in a line how past/curr work in overlapping + diverging circuits (for seqcont) can help with studying overlapping + diverging feature circuit calculation for this project
 
 ---
@@ -219,7 +261,7 @@ https://github.com/minyoungg/platonic-rep
     What they actually show is that 1) affine maps do a pretty good job of translating between the representation spaces of different NNs across, and 2) as models get stronger, they tend to have representation spaces that align more closely with each other. There are a lot of other hypothesis that explain these results so I think they jump the gun a little by dedicating >half the paper to analysis
     
     1. One could be that neural networks are predisposed to learning spaces that can easily be mapped between with affine transformations. Another is that we might see a plateau in representation alignment once the models have eaten up all the low-hanging fruit on lossless abstractions
-    2. ***May 16, 2024 4:21 PM*May 16, 2024 4:21 PM*May 16, 2024 4:21 PM***
+    2. ***May 16, 2024 4:21 PM (EDT)*May 16, 2024 4:21 PM (EDT)*May 16, 2024 4:21 PM (EDT)***
         
         One thing to consider in their graphs that plot models on axes of language capability vs alignment with vision models is that it seems linear but if you switch out the language capabilities with the compute cost of training, you'll see what might end up being an asymptote
         

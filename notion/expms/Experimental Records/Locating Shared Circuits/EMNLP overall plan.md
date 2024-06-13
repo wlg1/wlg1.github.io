@@ -46,12 +46,16 @@ The main point is to just record observations (sims + diffs) and speculate on ho
 
 Variations of main approach to try
 
-- Ablate all pos
-    - ONLY ablate CERTAIN tokens in initial prompt
 - Mean ablate
     - zero ablate
+- single Tok (limited num of prompts)
+    - multiTok
+- Ablate all pos
+    - ONLY ablate CERTAIN tokens in initial prompt
 - Ablate the circuit (necessary- likely no backups)
     - keep only the circuit (sufficient- likely may be backups)
+    - keep only attn heads or MLPs
+    - ablate edges
 - Run each task separately to find circuits for each
     - Run tasks bundled together as 1
 
@@ -90,7 +94,24 @@ To-do and done
     - months
 - circuits (and sub-circs) ablated on prompts (pair)
 
+- try both entire circuits and top-50 subset of it on prompts
+- list of intersecting component sets (new nb for each; put this in folder)
+    - EN with incr +1
+        
+        llama2_ablate_prompts_ENcircs.ipynb
+        
+    - SP with incr +1
+    - EN with SP
+    - numeral seqs (diff intervals)
+    - EN, +1 with addition
+    - Addition with mutp
+    - EN, +1 with multp?
+    - All
+
 - things to make
+    - mean ablate
+    - ablate by pos
+    - ablate by edges?
 - things MADE
     - ✅ logit diff of multiple tokens
 
@@ -109,6 +130,8 @@ Overview Lists
     - 50 intervals
         - OPT: 100 intervals
     - fibonacci
+    - addition
+    - multiplication
     
     English:
     
@@ -116,6 +139,8 @@ Overview Lists
     - nw
     - months
         - OPT: days week
+    - word problems
+        - What number comes after 3002? Answer:
     
     Spanish: (or another language)
     
@@ -132,6 +157,7 @@ Overview Lists
     
     [https://chatgpt.com/c/8c5d7cb7-03e1-4fa0-8693-b61cca1f7922](https://chatgpt.com/c/8c5d7cb7-03e1-4fa0-8693-b61cca1f7922)
     
+- On single tokens. cannot output the incremented single token, unlike the successor head
 
 Arithmetic
 
@@ -141,23 +167,80 @@ Arithmetic
     - 5 x 6 =
     - 2 x 2 =
 
+llama2_testPrompts.ipynb
+
 Word problems
 
 - prompts llama2 succeeds on
-    - What are the months in a year?
+    
+    ✌️  :prompts that can be ablated by seq cont component sets **AND** random doesn’t work
+    
+    - ✌️ What are the months in a year?
+        - What are the months in a year? Give all of them as a list.
+        - What are the months in a year? Give all of them as a list. Be concise.
+        - ~~The months in a year are:~~
+        - The months in a year are: January,
+            - this is very similar to seq cont anyways
     - What are the days of the week?
-    - "What comes after the second item in a list? The next item in a list is the”
-    - "What comes after the first step in a process? Be concise.”
-    - "What comes after the second item in a list? Be concise.”
-    - "If today is the 14th of a month, what date will it be in 10 days?”
-    - Be concise. If today is the 11th of a month, what date will it be in 6 days?
-    - Be concise. In a cyclic pattern of colors: Red, Blue, Green, Yellow, what color comes after Green in the 3rd cycle?
+    - ✌️ "What comes after the second item in a list? The next item in a list is the”
+        - "What comes after the first step in a process? Be concise.”
+        - "What comes after the second item in a list? Be concise.”
+    - ✌️ "If today is the 14th of a month, what date will it be in 10 days?”
+        - ✌️Be concise. If today is the 11th of a month, what date will it be in 6 days?
+    - ~~Be concise. In a cyclic pattern of colors: Red, Blue, Green, Yellow, what color comes after Green in the 3rd cycle?~~
+    - ✌️ What number comes after 3?
+    - ✌️ What number comes after 3002? Answer:
+    - ✌️ Be concise. If this month is September, and 3 months pass, what is month name is it? Answer: December. If this month is March, and 3 months pass, what month name is it? Answer:
+        - ✌️ "Be concise. If this month is July, and 5 months pass, what is month name is it? Answer: December. If this month is March, and 5 months pass, what month name is it? Answer: “
+        - ✌️ Be concise. If this month is July, and 5 months pass, what is month name is it? Answer: December. If this month is April, and 5 months pass, what month name is it? Answer:
+        - ✌️ Be concise. If this month is July, and 4 months pass, what month name is it? Answer: October. If this month is April, and 4 months pass, what month name is it? Answer:
+    - What is the month that is 3 months after January? Answer: March. What is the month that is 3 months after March? Answer:
+    - What are all the months in Fall? List them in order.
+    - ✌️ Answer yes or [no. Is](http://no.is/) 16 greater than 11? Answer:
+    - ✌️ Be concise. What number is greater than 11? Answer:
 - prompts llama2 fails on
+    - The months in a year are:
+    - Two days after Monday is
     - "What comes after the second item in a list?”
         - hallucinates ‘apple banana..’
     - "Given the sequence 2, 4, 6, 8, ..., identify the 10th term. Be concise.”
     - Be concise. In the arithmetic sequence starting at 5 and increasing by 3 each time, what is the 7th term?”
     - Be concise. Starting on the 1st of January, what date falls 50 days later?
+    - Be concise. If this month is March, and 3 months pass, what month name is it? Answer:
+    - Be concise. If this month is September, and 3 months pass, what is month name is it? Answer: December. If this month is February, and 5 months pass, what month name is it? Answer:
+    - Be concise. If this month is July, and 5 months pass, what is month name is it? Answer: December. If this month is February, and 5 months pass, what month name is it? Answer:
+    - What are all the months in Winter? List them in order.”
+    - Be concise. In a cyclic pattern of colors: Red, Blue, Green, Yellow, what color comes after the 3rd color? (it says green)
+    - Qué viene después de uno?
+        - answers this in numerals correctly
+    - Sé conciso. Qué viene después de uno?
+        - answers this in numerals correctly
+
+- Spanish prompts llama-2 succeeds on
+    - ✌️ uno dos tres
+    - ✌️ What are the months in a year in Spanish?
+        - What are the months in a year in Spanish? Answer: Enero,
+    - ✌️ Be concise. List the months in Spanish. Answer:
+    - Be concise. What is uno plus cuatro? Answer:
+        - Gets it correct, but in numerals (5)
+        - must use ‘be concise’ and ‘Answer: ‘ ,else it rambles on unrelated topics liek the card game
+        - This doesn’t work either
+            
+            Be concise. Answer in Spanish. What is uno plus uno? Answer: dos. What is uno plus cuatro? Answer:
+            
+    - Be concise. What is cinco minus dos? Answer:
+        - arithm is too sensitive; random often works!
+- fails on
+    - uno dos tres cuatro cinco seis siete ocho nueve diez
+    - uno dos tres cuatro cinco seis
+    - cuatro cinco seis
+    - dos cuatro seis
+    - uno mas cuatro
+
+- french success
+    - un, deux, trois, quatre
+- french fail
+    - un, deux, trois, quatre
 
 The aim is to test that it not only fails the next token, but fails if it continues. Also to show that our discovery vs testing prompts don’t need to be in the same format. Thirdly, to show that if we don’t “feed it” enough hints to push it to give the next one, it will (as it loftily wanders) still give it if clean, but not if it’s corrupted
 
