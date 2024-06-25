@@ -75,6 +75,8 @@ Notes
 
 [Category Theory](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Category%20Theory%205b66977cb4c14102a0507ef2951ff993.md)
 
+[todd hamish meeting](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/todd%20hamish%20meeting%20817a3cdd501f431796470ff8499988c6.md)
+
 Code Docs
 
 [https://github.com/wlg1/deception_editing](https://github.com/wlg1/deception_editing)

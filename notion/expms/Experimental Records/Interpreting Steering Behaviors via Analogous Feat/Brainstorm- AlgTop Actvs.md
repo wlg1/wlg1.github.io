@@ -27,6 +27,10 @@ Clustering for Interp Papers
 - Uncovering Unique Concept Vectors through Latent Space Decomposition
     - laura and mara
 
+AlgTop data
+
+- On the Local Behavior of Spaces of Natural Images
+
 Notes
 
 - [https://www.notion.so/wlg1/Applied-AlgTop-7887ec7a79e046a6adc9b67809b50f4b](https://www.notion.so/Applied-AlgTop-7887ec7a79e046a6adc9b67809b50f4b?pvs=21)

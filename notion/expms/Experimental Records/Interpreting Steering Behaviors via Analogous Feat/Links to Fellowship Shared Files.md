@@ -6,6 +6,14 @@ researchers shared drives
 
 [Messages](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/Messages%204864980156af45d5bddeafa3e027a939.md)
 
+logistics
+
+[https://docs.google.com/document/d/1BzNU0jMXR_5UALD8DcTNa6DyOahiuEMi0GRxMZCKt6U/edit#heading=h.2h12ogoptwqm](https://docs.google.com/document/d/1BzNU0jMXR_5UALD8DcTNa6DyOahiuEMi0GRxMZCKt6U/edit#heading=h.2h12ogoptwqm)
+
+weekly meetings
+
+[https://docs.google.com/document/d/142cfwBBdMH1wfC_4-sIOttIrNbSqYVXhLdCByZ_XPzQ/edit#heading=h.m3oqqwledhc2](https://docs.google.com/document/d/142cfwBBdMH1wfC_4-sIOttIrNbSqYVXhLdCByZ_XPzQ/edit#heading=h.m3oqqwledhc2)
+
 ---
 
 [https://www.alignmentforum.org/posts/pH6tyhEnngqWAXi9i/eis-xiii-reflections-on-anthropic-s-sae-research-circa-may](https://www.alignmentforum.org/posts/pH6tyhEnngqWAXi9i/eis-xiii-reflections-on-anthropic-s-sae-research-circa-may)
