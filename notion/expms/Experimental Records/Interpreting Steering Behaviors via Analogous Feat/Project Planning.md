@@ -6,407 +6,6 @@
 
 ### Working on
 
-Reproduce SAE decomposition on Llama-2 CAA
-
-- 🐣 training_a_sparse_autoencoder.ipynb
-    
-    [https://www.alignmentforum.org/posts/f9EgfLSurAiqRJySD/open-source-sparse-autoencoders-for-all-residual-stream](https://www.alignmentforum.org/posts/f9EgfLSurAiqRJySD/open-source-sparse-autoencoders-for-all-residual-stream)
-    
-    [https://github.com/jbloomAus/SAELens](https://github.com/jbloomAus/SAELens)
-    
-    training_a_sparse_autoencoder_v1.ipynb: [https://colab.research.google.com/drive/1EUOEuFkIZ6pfYrcCwoNds9ejRQ269Pay](https://colab.research.google.com/drive/1EUOEuFkIZ6pfYrcCwoNds9ejRQ269Pay)
-    
-- ✅ GPT2_SAE_training_v1.ipynb
-    - ✅ Find training data for SAEs
-        
-        Data cands
-        
-        - SAE find paper: “All dictionaries were trained on 20M activation vectors obtained by running Pythia-70M over the Pile
-        
-        - [https://github.com/lyezene/alignment-regularization/blob/main/utils/gpt2_utils.py](https://github.com/lyezene/alignment-regularization/blob/main/utils/gpt2_utils.py)
-        
-        [https://huggingface.co/datasets/HuggingFaceFW/fineweb](https://huggingface.co/datasets/HuggingFaceFW/fineweb)
-        
-        - streaming=True
-            
-            When you use **`streaming=True`**, the dataset is not loaded into memory all at once. Instead, data is fetched and processed on-the-fly as you iterate over it. This means you can start working with the data almost immediately without waiting for the entire dataset to be downloaded and loaded into memory. Streaming is particularly useful when working with very large datasets, such as "The Pile," which are too large to fit entirely in memory.
-            
-        
-        [https://github.com/lyezene/alignment-regularization/blob/main/data/gpt2_dataset.py](https://github.com/lyezene/alignment-regularization/blob/main/data/gpt2_dataset.py)
-        
-        able to get actvs for gpt2 SMALL by passing all inputs as tokens in one batch with hook fn to save actvs in global list
-        
-        - [https://huggingface.co/jbloom/GPT2-Small-SAEs](https://huggingface.co/jbloom/GPT2-Small-SAEs)
-        
-        dataset used to train: [https://huggingface.co/datasets/Skylion007/openwebtext](https://huggingface.co/datasets/Skylion007/openwebtext)
-        
-        - 🐣 batch train, as computing all h at once runs out of memory
-            
-            saeWrapper.train()
-            
-            train_loader contains actvs
-            
-        - ✅ look at ARENA 1.2 for how to only save actvs from a certain layer using hook
-            - issues with storing hook actvs
-                
-                ```
-                    # h_store = pattern  # this won't work b/c replaces entire thing, so won't be stored
-                    # h_store.append(1) # if h_store = [], this will work
-                    h_store[:] = pattern  # this works b/c changes values, not replaces entire thing
-                ```
-                
-        - ✅ error when training SAE on dataset actvs
-            - issue details
-                
-                RuntimeError: Trying to backward through the graph a second time (or directly access saved tensors after they have already been freed). Saved intermediate values of the graph are freed when you call .backward() or autograd.grad(). Specify retain_graph=True if you need to backward through the graph a second time or if you need to access saved tensors after calling backward.
-                
-            
-            This is not about h size b/c even when using same sizes as when it worked without getting h from dataset, it has same error
-            
-            **SOLN**: notice your new h has this at the end when calling it, and other prev h didnt’ have this: `grad_fn=<UnsqueezeBackward0>)`
-            
-    - ✅ code to decompose steering vectors
-        
-        Look at CAA and Original steering code: [https://colab.research.google.com/drive/1ubDl3dEY7aj3C2iEZOSczRWahAIgiFZJ?usp=sharing](https://colab.research.google.com/drive/1ubDl3dEY7aj3C2iEZOSczRWahAIgiFZJ?usp=sharing)
-        
-        - ✅ Train with more samples and SAE instances
-    - ✅ find features that actv highest for sample X
-- 🐣 Scale up to more efficiently use mem for gpt-2-xl with more train data
-    
-    gpt2-xl is 1.5b. “RLHF interp” used up to pythia-160m. “SAE find” use Pythia-410M
-    
-    - ✅ ask amir for advice
-        
-        Hi, I found that deepmind was already doing activation steering by SAE features, and I'm looking to reproduce their work. I was wondering if you have any experience with training SAE models on models like gpt-xl with 1.5B params? I saw in your rlhf paper you work with pythia-160m. I can train gpt2 small with openwebtext, but even with a100 on colab i can only pass in around 100-1000 samples before I get out-of-mem errors.
-        
-        For details, I'm using hooks to only save activations for the relevant layer, though I'm passing all tokens in at once (I guess I should use mini batches). Do you have any other tips when dealing with memory issues? Also, this is the post I'm looking to reproduce, it may be helpful for sleeping agent feature decomposition too: [https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/progress-update-1-from-the-gdm-mech-interp-team-full-update#Activation_Steering_with_SAEs](https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/progress-update-1-from-the-gdm-mech-interp-team-full-update#Activation_Steering_with_SAEs)
-        
-- ✅ [JBloom May SAE workshop](SAE%206b08b4ad57a342bf9393d2ef0fa31c6b/JBloom%20May%20SAE%20workshop%20fe2e004ec02742a88a0c5a6ec61d7415.md)
-- ✅ [Patching](Patching%20c56dd40648f24f1c9095c38f63d50333.md)
-- ✅ Scale up to more efficiently use mem for **gpt-2-xl** with more train data
-    - training_a_sparse_autoencoder: (SAElens tutorial) [https://colab.research.google.com/drive/1EUOEuFkIZ6pfYrcCwoNds9ejRQ269Pay](https://colab.research.google.com/drive/1EUOEuFkIZ6pfYrcCwoNds9ejRQ269Pay)
-    - GPT2XL_SAElens_training: [https://colab.research.google.com/drive/1PVwCGx4n_HTxMKSjLSbBgxQIR8eas8tS#scrollTo=U4P9POScwSoZ](https://colab.research.google.com/drive/1PVwCGx4n_HTxMKSjLSbBgxQIR8eas8tS#scrollTo=U4P9POScwSoZ)
-        
-        tutorial code already uses batch training
-        
-        - ✅ change prompts. see what’s used by: [https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/progress-update-1-from-the-gdm-mech-interp-team-full-update#Activation_Steering_with_SAEs](https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/progress-update-1-from-the-gdm-mech-interp-team-full-update#Activation_Steering_with_SAEs)
-        - ✅ L4 is OOM
-        - L0, no save or save to wandb: Can train using A100
-            
-            ```
-            total_training_steps = 1000  # probably we should do more
-            batch_size = 4096
-            ```
-            
-            total iterations: 4096000 = 1000 * 4096
-            
-        
-        View results at: [https://wandb.ai/wlg100/sae_lens_exploraTest](https://wandb.ai/wlg100/sae_lens_exploraTest)
-        
-- ⚠️ ISSUE: It can train, saving to wandb, on L0 of gpt-2-xl, but not on L20 ( whether save or not)? even though same dims?
-    - ✅ works on L0, L1, L5, but not on L9, L10, L20
-- 🐣 [wandb arena 0.3](https://colab.research.google.com/drive/1Nqb3Iw6EjkRP3YUsi2iTopuccJGSZ4pE)
-    
-    [https://wandb.ai/home](https://wandb.ai/home)
-    
-    - how models saved on new wandb project?
-        
-        start new proj: `wandb.init`
-        
-        **save: `wandb.finish`**
-        
-    
-    ```jsx
-    def __init__():
-    	wandb.init()
-    	wandb.watch()
-    def train():	
-    	for epoch in epochs:
-    		wandb.log()
-    	wandb.finish()
-    ```
-    
-- 🐣 vast.ai
-    
-    [Compute](Compute%20e3182612433a4299b4035d5359548fa4.md) 
-    
-    - [https://arena3-chapter0-fundamentals.streamlit.app/](https://arena3-chapter0-fundamentals.streamlit.app/)
-        
-        scroll down to “**System Requirements” and “Virtual Machines”**
-        
-    
-    The GPUs on vast.ai, lambda labs are less powerful than colab pro+
-    
-- 🐣 sparse feature circuits: find relations between features
-    
-    [sparse feature circs explora](sparse%20feature%20circs%20explora%2000b39c6ce28e41f991fb17801204ec9d.md) 
-    
-    - ✅ Run README bash code to get and eval circs: [sparse_feature_circuits_explora.ipynb](https://colab.research.google.com/drive/1lnTXl1-zvrIbGpupijxPO7s52uxNJNaz)
-- [feature_trees_public](https://colab.research.google.com/drive/19k5r2lNvO1gzL1Zsek3EzJR1vT7sZO4g)
-    
-    [Feature clustering](Feature%20clustering%207ca3486abbae499b88169916fd33b8df.md) 
-    
-- ⚠️ find steering vectors for gpt-2-xl L5 and decompose thru SAE
-    - L5 only works up to: 1048576/4096000
-    - just hook cache L5. the saelens already does this; in the nb it just used exploratory analysis to cache which is not used in the actual training code, so comment that out
-    - saelens used a buffer
-- 🐣 gpt2Small_pretrained_steering.ipynb
-    - load pretrained SAE. See tutorial nb on saelens github
-        - ISSUE: there are no pretrained SAEs on MLP layers, only on res stream output layers
-    - train SAE on MLP0 of GPT-2 small using A.2 of successor heads paper
-- 🐣 GPT2_SAElens_training_MLP0.ipynb
-- ✅ [GPT2_SAE_MLP0_seqcont.ipynb](../Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79/Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c.md)
-    - ✅ Train it on integers, then see the highest features that light up on mod-10 tokens ending in 3
-        
-        NOTE: Most important means highest change in output after ablating. But here, we look for highest activations on these tokens. However, this doesn't mean much because certain features may fire highly for all numbers in general! So use the paper's definition of 'most important’
-        
-
-Literature Review on Hierarchical Feature Representations across Models
-
-- ✅ read: [https://www.anthropic.com/research/mapping-mind-language-model](https://www.anthropic.com/research/mapping-mind-language-model)
-    
-    Catch up to Anthropic research on feature clusters for AI Safety
-    
-    [**Scaling Monosemanticity- Extracting Interpretable Features from Claude 3 Sonnet**](https://www.notion.so/Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-3219b222ee8943ac9ba1a07963f975b0?pvs=21) 
-    
-    helps our research of building towards finding functionally equivalent features across models to define more universal definitions for features that have an effect on behavior
-    
-    They DIDN’T edit by “similar clusters” yet
-    
-    https://www.wired.com/story/anthropic-black-box-ai-research-neurons-features/
-    
-    Dictionary learning can’t identify anywhere close to all the concepts an LLM considers, he says, because in order to identify a feature you have to be looking for it. 
-    
-    [https://transformer-circuits.pub/2024/scaling-monosemanticity/umap.html?targetId=34m_31164353](https://transformer-circuits.pub/2024/scaling-monosemanticity/umap.html?targetId=34m_31164353)
-    
-- 🐣 Study: The Geometry of Categorical and Hierarchical Concepts in Large Language Models
-    - paper
-        
-        [The Geometry of Categorical and Hierarchical Concepts in LLMs](https://www.notion.so/The-Geometry-of-Categorical-and-Hierarchical-Concepts-in-LLMs-87f19f9d714c4a44abe7c02441c7c65b?pvs=21) 
-        
-        [https://news.ycombinator.com/item?id=40643665](https://news.ycombinator.com/item?id=40643665)
-        
-        [https://news.ycombinator.com/item?id=40640424](https://news.ycombinator.com/item?id=40640424)
-        
-        [https://x.com/victorveitch/status/1800221324348125617](https://x.com/victorveitch/status/1800221324348125617)
-        
-        [https://github.com/KihoPark/LLM_Categorical_Hierarchical_Representations](https://github.com/KihoPark/LLM_Categorical_Hierarchical_Representations)
-        
-        why do you need to prove thm 4 instead of stating it?
-        
-        if the simplex of elements is orthogonal to the vector repr of animal, since you can steer by vectors, that means you can steer by simplices. but simplices are more “detailed” and changable than vectors. so more precise. if these vectors are orthogonal, we can steer by them as “monosemantic” features?
-        
-        [The Linear Representation Hypothesis and](https://www.notion.so/The-Linear-Representation-Hypothesis-and-80d9fdf91ca94c51921e60bb8b0806d6?pvs=21) 
-        
-    - test code
-        
-        [https://colab.research.google.com/drive/1Kedm4GCSuf087zLXwC4VLPCBAvgp_gpv#scrollTo=Jyok6K5lZh_X](https://colab.research.google.com/drive/1Kedm4GCSuf087zLXwC4VLPCBAvgp_gpv#scrollTo=Jyok6K5lZh_X)
-        
-        - login and authorize gemma access: [https://huggingface.co/google/gemma-2b](https://huggingface.co/google/gemma-2b)
-        - [https://chatgpt.com/c/d81ffb5b-58ea-4748-855a-8d8b94ec5b22](https://chatgpt.com/c/d81ffb5b-58ea-4748-855a-8d8b94ec5b22)
-            - float64 is double, float32 is single (or Float). must match
-                - [https://stackoverflow.com/questions/60239051/pytorch-runtimeerror-expected-object-of-scalar-type-double-but-got-scalar-type](https://stackoverflow.com/questions/60239051/pytorch-runtimeerror-expected-object-of-scalar-type-double-but-got-scalar-type)
-- ✅ one-pg summary pdf to phil based on edited overleaf copy
-    - overleaf paper get rid of white space between title and intro if no authors
-        
-        [https://www.overleaf.com/project/6672b8361d6a3cad2420bafc](https://www.overleaf.com/project/6672b8361d6a3cad2420bafc)
-        
-        - [https://tex.stackexchange.com/questions/617824/removing-space-after-title](https://tex.stackexchange.com/questions/617824/removing-space-after-title)
-- ✅ [todd hamish meeting](todd%20hamish%20meeting%20817a3cdd501f431796470ff8499988c6.md)
-- 🐣 run code of “The Geometry of Categorical” on existing data
-    - ✅ `estimated_dir = hrc.estimate_cat_dir(train_lemmas, g, vocab_dict)`
-        - will only use code from hrc, not loaded from nb, so get rid of hrc when testing pdb (can’t use pdb by modifying code in downloaded repo)
-        - you must put all dependent fns from repo to nb if you use newly defined code in nb, since the original repo code calls within hrc lib, but now it won’t find those fns (eg. `category_to_indices`)
-        - ipdb> category_embeddings.dtype
-        torch.float32
-        - this is actually not just pdb, it’s ALL the code, so your changes with `cov.to(dtype=torch.float64)` didn’t take palce despite the error messages showing that in the code. this is because what’s in the files itself wasn’t what `hrc.estimate_cat_dir()` was, given you already imported hrc using `import hierarchical as hrc` and didn’t run that again after modifying the code! that’s why your error messages were also on the wrong line
-        - After
-        
-        ```
-        
-            category_embeddings = category_embeddings.to(dtype=torch.float64)
-        ```
-        
-        use 
-        
-        ```
-            train_g = train_g.to(dtype=torch.float64)
-            test_g = test_g.to(dtype=torch.float64)
-        ```
-        
-         before b_lda in the nb cell
-        
-    - ✅ email kiho (main author) about code issues
-    - explain train lda code
-        
-        [https://chatgpt.com/c/99e03fb2-6fd2-4a24-a25e-d4fdfe0ccd8f](https://chatgpt.com/c/99e03fb2-6fd2-4a24-a25e-d4fdfe0ccd8f)
-        
-        - lemmas
-            - "run" "runs" "ran" "running"
-            
-            The lemma for all these words is "run". When the code processes text, it converts all these inflected forms to their lemma to standardize the data.
-            
-    - modify 1_Animal_explora.ipynb
-        - before pass unembed to 2d_plot: `g = [g.to](http://g.to/)(dtype=torch.float64)`
-    - explain 1_Animal_explora and plotting
-        
-        [https://chatgpt.com/c/5c85cf0c-a1a8-4728-9419-10b5a40b347f](https://chatgpt.com/c/5c85cf0c-a1a8-4728-9419-10b5a40b347f)
-        
-        - explain: **Orthogonalization:** If `orthogonal` is True, make `dir2` orthogonal to `dir1`.
-            
-            Subtract this scaled vector from dir2 :
-            
-            `dir2 - (dir2 @ dir1) * dir1`
-            
-            This removes the component of `dir2` that is in the direction of `dir1`, leaving a vector that is orthogonal to `dir1`.
-            
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled.png)
-            
-        - are the unembedding vectors the dots?
-            
-            No, the unembedding vectors are not the dots. The dots represent the projection of tokens (data points) in the vocabulary onto the 2D subspaces defined by the given directions (e.g., \( \bar{\ell}*{animal} \), \( \bar{\ell}*{mammal} \), etc.). The unembedding vectors are used to project these high-dimensional data points onto the 2D plane.
-            
-            ### Detailed Explanation:
-            
-            - **Gray Dots:** These indicate all 256K tokens in the vocabulary, projected onto the 2D plane.
-            - **Colored Dots:** These represent specific categories such as "animal", "mammal", "bird", and "plant". Each category is projected onto the 2D plane using the directions defined by the corresponding unembedding vectors.
-            - **Vectors:** The blue and red vectors shown in the plots (e.g., \( \bar{\ell}*{animal} \), \( \bar{\ell}*{mammal} \), \( \bar{\ell}*{bird} - \bar{\ell}*{mammal} \)) are the directions used to span the 2D subspaces. These directions are derived from the unembedding vectors.
-        - where are the unembedding vecs
-            
-            The unembedding vectors are not directly visible in the plot as individual dots or points; instead, they are the directions (or axes) used to project the high-dimensional data onto the 2D plane. These vectors are represented by the arrows in the plots.
-            
-            - In the provided plots, the blue and red arrows represent the directions defined by the unembedding vectors.
-            - To make interpretation easier, the directions might be orthogonalized, ensuring that the axes (unembedding vectors) are perpendicular to each other.
-        - would orthogonalized change the directions of the unemb vectors? wouldnt that make them inacc?
-            
-            Orthogonalizing the unembedding vectors does indeed change their directions. However, this is done for a specific reason and doesn't necessarily make them inaccurate. Let's delve into why this is the case and how orthogonalization is used appropriately in these contexts.
-            
-            ### Understanding Orthogonalization
-            
-            Orthogonalization is the process of making two or more vectors perpendicular (orthogonal) to each other. In the context of the provided code, this is achieved by modifying `dir2` to ensure it is orthogonal to `dir1`.
-            
-            ### Why Orthogonalize?
-            
-            1. **Simplifying Interpretations:**
-                - Orthogonal vectors are easier to interpret because they ensure that the directions are independent and there is no overlap between the information they represent.
-                - In a 2D plot, having orthogonal axes ensures that the plot is more readable and the projections can be interpreted independently along each axis.
-                - For example, in the context of the given plots, having orthogonal directions for "animal" and "mammal" ensures that the plot clearly shows the distinction between these categories without one direction interfering with the interpretation of the other.
-            
-            ### Impact on Accuracy
-            
-            1. **Context of Use:**
-                - The primary context in the provided code is visualization. The orthogonalization is done to improve the interpretability of the 2D projection, not to directly alter the fundamental properties of the unembedding vectors in the model.
-                - The modified vectors still retain the essential properties needed for the specific visualization task.
-            2. **Preserving Semantic Relationships:**
-                - The orthogonalization process involves adjusting `dir2` to be perpendicular to `dir1`, but the key semantic relationships are preserved.
-                - The modified `dir2` (now orthogonal to `dir1`) still captures the relevant semantic information but in a way that ensures independence from `dir1`.
-        - what do you mean "the key semantic relationships are preserved" if the dirs change?
-            
-            When I say "the key semantic relationships are preserved," I mean that the essential distinctions and meanings represented by the unembedding vectors are still maintained even after orthogonalization. Let's clarify this concept further.
-            
-            ### Semantic Relationships and Directions
-            
-            1. **Original Directions:**
-                - The original unembedding vectors (e.g., \( \bar{\ell}*{animal} \), \( \bar{\ell}*{mammal} \)) represent specific semantic concepts in the high-dimensional space.
-                - Each direction captures the relationship of the tokens with respect to a particular category or concept.
-            2. **Effect of Orthogonalization:**
-                - Orthogonalization involves adjusting one vector to be perpendicular to another while retaining the direction's semantic meaning as much as possible.
-                - For example, making \( \bar{\ell}*{mammal} \) orthogonal to \( \bar{\ell}*{animal} \) changes the precise direction of \( \bar{\ell}_{mammal} \) but keeps it within the same semantic plane defined by "mammal" and "animal."
-            
-            ### Preservation of Semantic Relationships
-            
-            Even though the vectors' directions change during orthogonalization, their roles in distinguishing between different concepts are maintained. Here’s how:
-            
-            1. **Maintaining Distinctiveness:**
-                - The orthogonalized vectors still point towards the regions in the high-dimensional space that distinguish "animal" from "mammal."
-                - Although \( \bar{\ell}*{mammal} \) is adjusted to be perpendicular to \( \bar{\ell}*{animal} \), it continues to highlight the concept of "mammal" in a way that is now independent of "animal."
-            2. **Independent Axes for Clarity:**
-                - By making the vectors orthogonal, we ensure that the projection onto these axes is independent. This means that when projecting a high-dimensional vector onto these axes, the contribution of "animal" is separated from the contribution of "mammal."
-                - This separation helps in visualizing and interpreting the semantic contributions more clearly in the 2D space.
-            3. **Practical Visualization:**
-                - Consider a high-dimensional token that strongly represents a "mammal." Even after orthogonalization, projecting this token onto the orthogonalized \( \bar{\ell}_{mammal} \) will still result in a high value, indicating its strong association with "mammal."
-                - Similarly, a token strongly associated with "animal" will project significantly onto the orthogonalized \( \bar{\ell}_{animal} \).
-            
-            ### Example
-            
-            ### Before Orthogonalization:
-            
-            - **\( \bar{\ell}_{animal} \)**: Represents the "animal" concept.
-            - **\( \bar{\ell}_{mammal} \)**: Represents the "mammal" concept, which may have some overlap with "animal."
-            
-            ### After Orthogonalization:
-            
-            - **\( \bar{\ell}_{animal} \)**: Still represents the "animal" concept.
-            - **Orthogonalized \( \bar{\ell}_{mammal} \)**: Represents the "mammal" concept in a direction that is independent of "animal," emphasizing the distinct features of "mammal."
-            
-            ### Conclusion
-            
-            Orthogonalization changes the vectors' directions to make them perpendicular, enhancing clarity and interpretability in visualizations. Despite this change, the vectors continue to represent their respective semantic concepts independently. This way, the essential semantic relationships are preserved because the vectors still distinguish between different categories, albeit in a way that ensures their projections are independent and clear in the 2D space.
-            
-        - so the Unembedding vectors measure how much each token is for a specific vocab or diff of vocab tokens?
-            
-            Yes, unembedding vectors can be thought of as measuring how much each token corresponds to specific vocabulary items or differences between vocabulary items.
-            
-        - fig2: why do all red mammal cluster together and are on tail of mammal vector, but the animal blue points are not and are in a line seemingly perpendicular to the animal vector
-            
-            The clustering of red "mammal" points at the tail of the "mammal" vector indicates a strong, consistent association with the "mammal" category, leading to their tight grouping. In contrast, the spread of blue "animal" points in a line perpendicular to the "animal" vector reflects the diversity of the "animal" tokens and their weaker association with the specific "mammal" direction, resulting in a broader distribution.
-            
-        - why are the mammal points on top in left plot, but below in middle plot
-            
-            The mammal points appear higher in the left plot because they project strongly along the "mammal" vector when compared directly with "animal." In the middle plot, they appear lower because the projection axis
-            
-            ℓˉbird−ℓˉmammal\bar{\ell}_{bird} - \bar{\ell}_{mammal}
-            
-            ℓˉbird−ℓˉmammal emphasizes the distinction between birds and mammals, which positions mammal points closer to the origin or lower, reflecting their alignment with the mammal concept and divergence from bird-specific characteristics.
-            
-
-Observe how steering affects features downstream
-
-- 🐣 review existing code
-    - [gpt2Small_pretrained_steering.ipynb](https://colab.research.google.com/drive/1IUtIe0D6UBAJYlPC4eJl00l8fmpohhKG)
-    - [steer_vector_SVD_interp.ipynb](https://colab.research.google.com/drive/1fNOEHkxf1nvah0aC68AcYJgiHqvKP3k9)
-    - GPT2_SAE_MLP0_seqcont_explora_v1.ipynb
-        - **Find features that actv highest for sample X**
-    - [GPT2_SAE_MLP0_seqcont_explora_v2.ipynb](https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G)
-- 🐣 use gpt-2 small; regardless of whether steering does anything or features correspind to anything, just observe how it affects feature neurons from layer to layer
-    - use existing saes but new contrastive vectors. add vectors then hook the output of features in later layers. get the top changes
-    - interpret using dataset examples
-- ✅ ask about openai credits
-    
-    Hi did you see the proposal fazl gave as an example to get openai training credits? I was looking to see if
-    
-    I may start working with small toy models, so would be hard to estimate the budget for now (to say train saes on interpreting larger models). Looks like it would be helpful to know the dataset size to get the number of tokens needed; i'd look to see if I can estimate how this translates to activations to train saes, and decide if i can get an estimate to send a proposal or not
-    
-    actually this is only for openai api access, not llama, so you dont need it for saes
-    
-    only need it if doing auto interp by gpt4
-    
-    train saes on tvg servers
-    
-
-Run code of “The Geometry of Categorical” on new data related to behavior
-
-- ✅ email kiho on project ideas
-    
-    have been thinking about trying to find other universal patterns across models on how it differentiates related, hierarchical concepts (eg. animal to mammal, as described in your paper).
-    
-    It seems that there should be composable abstract patterns that these concepts have in common, but it does not appear trivial to locate precisely, and a lot of approaches are transforming activations into monosemantic features, in which an entire neuron represents "golden gate bridge" rather than composing "bridge" with more specific traits (though the sparse feature circuits paper is along the lines of how these features can be composed). Lastly, I am interested to see if these concepts that can be identified by feature relations (similar to the simplices in your paper) can be used for AI safety steering.
-    
-    As I am planning the feasible scope of this project, I was wondering if you have looked into this before, given that you have studied relations between hierarchical concepts, and if you have found 1) any dead ends I should avoid, or 2) have recommendations on what to look into (that you are not also looking into)?
-    
-    I am also looking for quick critiques on approaches I am looking to try. For instance, would it make sense to try to use SAEs to find feature circuits that may compose hierarchical concepts? Or would it not be guaranteed that an SAE would find composable features? I hypothesize the model is using relations between features to differentiate concepts, but it is hard to interpret this from activations.
-    
-    I meant steering by adding and subtracting via hierarchies (would it make sense to say "adding by simplices"?) In addition to activation addition, there is a paper "Successor Heads" that learns linear maps to extract a months_feature from February, and an ordinal_feature_4 from Thursday, then can perform  months_feature +  ordinal_feature_4 to get April. I was wondering if you think this can be generalized?
-    
-- ✅ msg constantin on succsesor heads
-    
-    This paper might be relevant to  your work on sequences: [https://arxiv.org/pdf/2312.09230](https://arxiv.org/pdf/2312.09230)
-    
-    I was looking to find more precise ways of steering by adding abstractions, and this successor heads paper found it could train linear maps to extract a months_feature from February, and an ordinal_feature_4 from Thursday, then can perform months_feature + ordinal_feature_4 to get April.
-    
-    Might be useful if you want to go over it sometime to critique if it is a good approach to generalize, I'm also reproducing some of its code now as its code is not available
-    
-
 Plan project by summarizing notes so far
 
 - 🐣 project summary
@@ -518,6 +117,52 @@ Plan project by summarizing notes so far
     
     Overall, I think “extending activation steering to do more targeted output changes” is a better topic statement than “explaining why activation addition works so well”. The latter statement was an older, high-level placeholder, and now with a more thorough literature review I can hone in on a less vague topic. I’ll write all of this up much clearer on Tuesday.
     
+- brainstorm why this approach can be useful
+    
+    Questions about research to pass- if not, weaker justification for doing it
+    
+    - ✅ msg andy zou and 1st author of ref vec on why steering is useful
+        
+        Hi, I read your paper on Representation Engineering and had questions about how model steering would be used in practice, as I'm working in a summer research internship with the TVG group at University of Oxford now and am looking to do work in model steering. However, I am trying to justify in a proposal why it would be useful in practice.
+        
+        In practice, say we want a model to refuse user behavior. We can use the steering vector during inference time for certain inputs, or all inputs. But can we just detect the user input + model output (not shown to the user yet) using another model or algorithm, and just not go through with the request?
+        
+        I think for other behaviors such as sycophancy it might make more sense though. But I was wondering why use the refusal vector over just not going through with a request that can be detected as harmful through other means? Thank you.
+        
+        My guesses for why to use steering would be:
+        
+        1) It may not be possible to perfectly detect what are bad / good outputs every time, so steering is an extra safety net
+        
+        2) We may still want the model to output something, so not throw everything out that’s good just because there’s some bad
+        
+        For comparing steering vs fine tuning, I think of 3 reasons: it’s cheaper, more interpretable, and more precise (less side effects, more predictable). 
+        
+    - Do steering communities care about steering specifics (which can be done by composing)? Justify its use in AI safety
+        
+        
+    - why feature decomposition can’t just be found via model splitting?
+    - do features across layers, like a circuit, influence behavior?
+    - When steering is used, the steering vector may be used for every user input. But why not just detect the input beforehand (using another model or algorithm to measure output) and not have the model output anything?
+    - Preserve invariant structure while changing style is useful for img2img, but what about text?
+    - The points about steering’s flaws from (Relational Composition) seem speculative.
+    - If care about specifics, why not just not steer on certain specific inputs? What about multiple steering vectors?
+    - How is steering even used in deployment? Is it just used on all inputs?
+- ✅ ask neel for updates on steering vec decomp
+    
+    Hi, it's been a while since I last thought about this topic as I was working on other research projects, but without giving out details, I was wondering if it's possible to say if decomposing steering vectors has since led to any promising results, or if it hasn't really been continued? New papers such as Refusal Vector seem to do really well with just difference-of-means and I'm guessing decomposition may have been tried on the refusal vector too. Just asking to see if this is a good avenue to pursue still or not
+    
+- ✅ **Editing Model Behavior, Proposal Brainstorm v1**
+    
+    [https://www.overleaf.com/project/6672b8361d6a3cad2420bafc](https://www.overleaf.com/project/6672b8361d6a3cad2420bafc)
+    
+- ✅ make slides
+    
+    [https://docs.google.com/presentation/d/1-FK73_RLgU6X3TkWdJmvPo-omlMVQ2bi532wXapvrC8/edit#slide=id.g2153ba3b593_0_372](https://docs.google.com/presentation/d/1-FK73_RLgU6X3TkWdJmvPo-omlMVQ2bi532wXapvrC8/edit#slide=id.g2153ba3b593_0_372)
+    
+    [https://chatgpt.com/c/391f2a1f-ed25-4997-b2d3-aa457dabf2c9](https://chatgpt.com/c/391f2a1f-ed25-4997-b2d3-aa457dabf2c9)
+    
+    [https://lucid.app/](https://lucid.app/)
+    
 
 Observe how steering affects features downstream
 
@@ -540,7 +185,7 @@ Observe how steering affects features downstream
                 1. Eg) Does the anger vector alter features related to anger?
             2. Generalize universal patterns across models and different classes of steering vectors (eg. vectors representing parent-child relations)
                 1. Eg) The anger vector always alters F1 and F2, where F1 = P*F2, F1 activates on “fearful” and F2 activates on “threat”
-            3. Patch back in feature ablated in later l
+            3. Patch back in feature ablated in later layers
                 - Put SAE reconstructions back into model
                     - See: [GPT2_SAE_MLP0_seqcont_explora_v2](https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G#scrollTo=K-wGX_O3xaH9).ipynb
         
@@ -549,17 +194,385 @@ Observe how steering affects features downstream
     
     [gpt2Small_pretrained_steering.ipynb](https://colab.research.google.com/drive/1IUtIe0D6UBAJYlPC4eJl00l8fmpohhKG)
     
-    - NOTE: pretrained use SAELens (which is built on transformerlens), and cache uses transformerlens. Only need to combine saes with tl for step 4
-    - 🐣 get contrastive activations for 2 prompts of gpt-2
+    This implementation simplifies away the wrappers that hide the fns to make it easier to understand the basics of the steering algorithms
+    
+    - ✅ STEP 1: get contrastive activations for 2 prompts of gpt-2
         - [hierConcepts_logitLens_llama2.ipynb](https://colab.research.google.com/drive/1sUeugm0DLrE_c8NAZy06XETeKdtwizWE#scrollTo=2UdLBhJPkFkf)
             - pass them both in batch, then take actvs of each batch index
-    - For third prompt, apply steering vector at layer k
-        - hook fn to add? look at prev repos how they did it
-        - `activation_additions` (turner et al repo) \ `activation_additions \ hook_utils.py`
-            - `hook_fns_from_activation_additions`
-        - find also recent papers doing steering to see if they use easier way
+    - ✅ STEP 2: For third prompt, apply steering vector at layer k
+        - ✅ hook fn to add? look at prev repos how they did it
+            - `activation_additions` (turner et al repo) \ `activation_additions \ hook_utils.py`
+                - `hook_fns_from_activation_additions`
+        - ✅ find also recent papers/blogs doing steering to see if they use easier way
             - [https://www.lesswrong.com/posts/ndyngghzFY388Dnew/implementing-activation-steering](https://www.lesswrong.com/posts/ndyngghzFY388Dnew/implementing-activation-steering)
-            
+            - ✅ ⚠️ TL ISSUE: `TypeError: act_add.<locals>.hook() got an unexpected keyword argument 'hook'`
+                - Wrapper (using HF) ISSUE : `AttributeError: 'GPT2LMHeadModel' object has no attribute 'layers’`
+                - `TL :`Try `run_with_hooks` instead of `add_hook`
+                    - runwithhooks: GPT2_SAE_MLP0_seqcont_explora_v2.ipynb
+                        
+                        [https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G#scrollTo=tNWEV_Mn9z31&line=5&uniqifier=1](https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G#scrollTo=tNWEV_Mn9z31&line=5&uniqifier=1)
+                        
+                    - no; b/c can’t use runwithhooks with generate
+            - ✅ `act_add.<locals>.hook()` issue isn’t due to adding steering vec, it’s the wrong way to add hook.
+                - ✅ SOLN: try adding hook like this instead: auto_prompt_test_simple_arithm_v2.ipynb
+                    
+                    [https://colab.research.google.com/drive/13OodYS3_MB7mHGP-4r0zhVNF1nvhZJTk#scrollTo=dg3XuWScAVvG&line=11&uniqifier=1](https://colab.research.google.com/drive/13OodYS3_MB7mHGP-4r0zhVNF1nvhZJTk#scrollTo=dg3XuWScAVvG&line=11&uniqifier=1)
+                    
+                    - instead of doing this
+                        
+                        ```jsx
+                        def act_add(steering_vec):
+                            def hook(activation):
+                                # return activation + steering_vec
+                                return activation
+                            return hook
+                        
+                        test_sentence = "I think cats are "
+                        model.add_hook(name=cache_name, hook=act_add(steering_vec))
+                        print(model.generate(test_sentence, max_new_tokens=10))
+                        ```
+                        
+                    - do this
+                        
+                        ```jsx
+                        from functools import partial
+                        
+                        def act_add(
+                            activation,
+                            hook,
+                            steering_vec 
+                        ):
+                            # return activation + steering_vec
+                            return activation
+                        
+                        hook_fn = partial(
+                                act_add,
+                                steering_vec=steering_vec
+                            )
+                        
+                        cache_name = 'blocks.5.hook_resid_post'
+                        model.reset_hooks(including_permanent=True)
+                        model.add_hook(cache_name, hook_fn)
+                        print(model.generate(test_sentence, max_new_tokens=10))
+                        ```
+                        
+                - ✅ ISSUE: but when using steering_vec with hook, get : `RuntimeError: The size of tensor a (6) must match the size of tensor b (2) at non-singleton dimension 1`
+                    - ✅ SOLN: unlike in the lesswrong post, you just take the LAST position, as seen here: [https://github.com/annahdo/implementing_activation_steering/blob/main/pytorch_hooks.ipynb](https://github.com/annahdo/implementing_activation_steering/blob/main/pytorch_hooks.ipynb)
+                        - In repeng, it’s added to every tok pos?
+                        - in caa blog post, rimsky states for generated, it’s added to every token pos after generation, but in initial prompt, it’s only added to last token pos
+                    - ✅ though this works, in each gen it only modifies the NEW last token pos, not all of them after the initial prompt’s end
+                        
+                        ```jsx
+                        steering_vec = steering_vec.unsqueeze(0)
+                        
+                        def act_add(
+                            # z: Float[Tensor, "batch seq head d_head"],
+                            # hook: HookPoint,
+                            activation,
+                            hook,
+                            steering_vec 
+                        ):
+                            # print(activation[:, -1, :].shape)
+                            # print(steering_vec[:, -1, :].shape)
+                            activation[:, -1, :] += steering_vec[:, -1, :]
+                            return activation
+                        ```
+                        
+                    - ✅ SOLN: this seems to change every pos after initial end
+                        
+                        ```jsx
+                        from functools import partial
+                        
+                        def act_add(
+                            activation,
+                            hook,
+                            steering_vec,
+                            initPromptLen
+                        ):
+                            activation[:, initPromptLen:, :] += steering_vec[:, -1, :]
+                            return activation
+                        
+                        hook_fn = partial(
+                                act_add,
+                                steering_vec=steering_vec,
+                                initPromptLen=initPromptLen
+                            )
+                        
+                        test_sentence = "I think cats are "
+                        initPromptLen = len(model.tokenizer.encode("I think cats are "))
+                        cache_name = 'blocks.5.hook_resid_post'
+                        model.reset_hooks(including_permanent=True)
+                        model.add_hook(cache_name, hook_fn)
+                        print(model.generate(test_sentence, max_new_tokens=10))
+                        ```
+                        
+                    - ✅ you should use a multiplier to change hate cats to love cats
+                        
+                        `activation[:, initPromptLen:, :] += steering_vec[:, -1, :] * 10`
+                        
+        - ✅ if rollouts are random, for a prompt, how many rollouts should we use? just set the generation to deterministic (see `Llama2_spanish_months.ipynb, test prompts)`
+    - ✅⚠️STEP 3: Cache activations from layer k to last layer L for unst & steered runs
+        - ⚠️ ISSUE: for multiple generated tokens, which activations do we store? it’s not just the “next” one. then we need to pass all of them thru SAEs. perhaps we can track ALL the activations of every pos? but it’s not really comparable.
+            - ✅ for now, just work with the immediate next generation  (for next token)
+    - ✅ STEP 4: Pass both those activations through their respective pre-trained SAEs
+        
+        NOTE: pretrained use SAELens (which is built on transformerlens), and cache uses transformerlens. Only need to combine saes with tl for step 4
+        
+        - ✅ see saelens tutorial, [basic_loading_and_analysing](https://colab.research.google.com/drive/1KpWSKZ8PlUVzT8tjcttWU62qNRfoRgzN).ipynb
+            - once get `feature_acts`, ignore the rest of that nb and use `GPT2_SAE_MLP0_seqcont_explora_v1.ipynb` and `GPT2_SAE_MLP0_seqcont_explora_v2.ipynb` to find most impt features from `feature_acts`
+        - ✅ find feature inds with highest values
+        - ✅ for each feature, find its highest actv tokens on pretrained sae’s dataset
+            - ✅ need to flatten (batch,seq) into batch*seq first because it's ANY batch_seq, even if in same batch or same pos
+            - ✅ top_acts_indices should be also be 1D. Then convert the indices into (batch, seq)
+            - ✅ broadcast steering vec to actv samps
+                
+                [https://chatgpt.com/c/609ca94e-8db3-4d52-8b8b-b28d5a644018](https://chatgpt.com/c/609ca94e-8db3-4d52-8b8b-b28d5a644018)
+                
+                activation[:, -1, :] += steering_vec[:, -1, :] * 3
+                if activation is
+                torch.Size([32, 128, 768])
+                
+                and steering_vec is [1, 128, 768), will pytorch broadcast steering_vec to every batch samp in first dim?
+                
+            - ✅ we’re finding top features AFTER steering? they’re not going to be found before steering since it’s not obvious they’d activate? so dataset examples should only activate after steering on batch_tokens
+                
+                
+    - STEP 5: Observe differences, before and after steering, for features from layer k to last layer
+        - pass their differences too
+- d**ecompose love-hate vector into features**
+
+feature inds or batch_seq inds may not be right because sae flattens them but saelens doesn’t give them as batch_seq. double check if you’re computing the right ones
+
+make shared github
+
+---
+
+- plan
+    
+    circuits plan:
+    
+    1. first find features for love-hate in gpt2
+    2. then find for safety vectors in larger models
+    
+    composable geometry plan:
+    
+    1. first find simplices for animal
+    2. then try to find for safety behaviors 
+    3. animal steering (cat to dog) and safety behavior simplex steering
+    4. see if concepts are also recombined in circuits
+    
+    First paper (ICLR) may just be about this technique in smaller models, such as love-hate or finding animal composability relations. (eg. this would still be a paper with impt findings, like how the IOI-SAE feature paper did this just for iOI). If have time, can extend to safety behaviors in larger models, but this may be for later paper
+    
+    geom paper may be separate if only find relns for animal, but can combine with steering vecs circuits if find geom relns for love-hate
+    
+    starting steering vecs (behavior interp circuits): love-hate (small), anger (xl)
+    
+    first find this in smaller models as a proof of concept, then consult with more experts by showing proof-of-concept to extend this to larger models
+    
+
+- add plan to slides: (add this to outline at start of slides)
+    
+    add expms done so far and findings, and why findings don’t mean doesn’t work- it may mean these features are impt
+    
+    ablate those features to see if they’re really impt, not just have highest actvs for prompt
+    
+
+---
+
+ablate all the impt L6 features after steering
+
+ablate and patch
+
+compare features before + after steering 
+
+VS before + after random additions
+
+post vs pre
+
+a * mammal + b*bird 
+
+First compare multiple steering vectors at diff layers
+
+Decompose them
+
+Perhaps downstream features not precise enough. Find them and steer only certain ones
+
+Algo to sel
+
+This is primary. Second is more specific fns
+
+if steer, do we get different feature coeffs from pass in unsteered actvs vs steered actvs?
+
+it’s okay if steering vector is done at post bc you cache the pre at later layers too, so just put them thru the pretrained saes
+
+it could be possible that they’re more interpretable? we get a higher percentage of nonzero feature coefficients after steering.
+
+resid pre vs resid post
+
+What is a change in feature considered impt? Traceback? All features should change. Some drastic changes. Perhaps steer feature and ablate another feature. But why not just ablate that feature?
+
+Can we distrust person type X but trust person type Y?
+
+first compare interpreting features without relation to steering vector. what do we find?
+
+then decompose steering vectors at each layer. compare their features. 
+
+plot these features before and after steering. what happens to their simplex relations?
+
+decompose sae into features
+
+but also steer features in later layers too, and the upstream ones that affect the steering vector
+
+claim: in IOI, they had stronger effect by steering features at multiple sites. another paper also argues that multiple vector steering is effective
+
+why not just get steering vectors for multiple layers? yes, but then we decompose them. and we also see what they affect. 
+
+an algorithm to select which multiple featuers across layers for steering is effective. develop it with chatgpt
+
+In slides list assumptions of hypothesis and state how will test them. And if doesn't hold true how project still successful
+
+If rind too compelx for safety vehavioes, then something in between ioi and deception or sycopjancu
+
+Do you need this? Useful?
+
+Task-specific SAEs vs s. Full-distribution SAEs
+
+“SAEs trained on either the IOI dataset (task-specific SAEs) or the LLM’s pre-training dataset (fulldistribution SAEs)”
+
+“task-specific SAEs allow us to edit attributes by changing fewer features compared to full-distribution SAEs.”
+
+why find circuit instead of just using steering vectors?
+
+because steering circuit is “better”?
+
+“(2) the features can be used to edit capability-relevant information in internal model representations”
+
+so you first need supervised dictionaries? so circuits act as supervision?
+
+[https://arxiv.org/pdf/2405.08366](https://arxiv.org/pdf/2405.08366)
+
+aim of original paper: 
+
+“we cannot directly evaluate the usefulness of features learned by an SAE, as we do
+not know the hypothetical ‘true’ features to begin with”
+
+- simple supervised methods can be used as a principled way to compute high-quality
+feature dictionaries in a task-specific context;
+
+• these dictionaries can be used as ‘skylines’ to evaluate and contextualize the performance of unsupervised methods, such as SAEs.
+
+---
+
+Run code of “The Geometry of Categorical” on new data related to behavior
+
+- brainstorm how to extend hierarchical concepts
+    - steer by animal simplex
+        - get convex hull that represents “animal” and add it?
+            - how do you even add this?
+            - estimate vector and convex hull using trained projection (LDA, linear map)- which to recommend?
+- put face features thru existing code (geom, circ) on multiple models and look for hierachy (dog face and human face orthon) and other patterns
+- find where hierarchy is detected in code nbs
+    
+    3_Noun_Heatmap.ipynb
+    
+    animal has cosine 1 with all others concepts bc they are all related to animal. but why 1, the max?
+    
+- understand `store_matrices.py`
+    
+    In “Linear Repr Hyp” paper, gamma (umembedding into output space) is transformed into g using the causal inner product by “unifying” it with the input (embedding) space prompt. This g is calculated by equation 3.8, and is the g of this code.
+    
+    In `1_Animal`, this g is used to obtain the condition in equation 4.1- g(relevant item in category) has similarity with the linear repr of the concept in category, but is orthogonal to irrelevant concepts
+    
+    `animals_g` is a dict of concept:tensor that takes a slice from  `g`, which is a tensor of shape `[256000, 2048])` , and puts it in in the concept. So g must have first index be vocab,  animals_g['mammal'].shape is `([194, 2048])`, it’s possible that’s 194 different animals? It’s different from animals_g['bird'].shape, which is`([115, 2048])`. So this first number is specific to each key in animals. 
+    
+    But g is just direction, not a vector with magniutde. So we need to use `estimate_cat_dir`
+    
+    `animals_token.keys()` : `dict_keys(['mammal', 'bird', 'reptile', 'fish', 'amphibian', 'insect'])`
+    
+    So there are only 6 categories of animals, and indeed, the first idnex of animals_g are types of those animals: `animals_token['mammal'][0:5]` is `['▁beaver', '▁Beaver', '▁panther', '▁Panthers', '▁Panther']`
+    
+
+to go over with kiho and other authors:
+
+1. propose steering project using hier concepts
+- ask about papers
+    1. Why do we need to unify input and output space? How does this help with steering?
+        1. is it that a concept in one space is “the same” as the concept in the other?
+        2. Author response: sec 3 of lin repr paper, the inner product is not interpr, the prob distr is preserved. the inner product in each space is arbitrary. what’s the right notion of inner product? 
+    2. animal may not be binary, but is it “not animal”? so would there be a vector for each polytope categorical concept? but dog isn’t a binary concept either, yet it’s a vector. and animal does have a vector representation l_animal that says animal is a binary feature. this is orthogonal to the simplex. but shouldn’t they be the same, as they’re both animal- so parallel, not orthogonal?
+        1. The animal dir is calculated here: `dirs.update({'animal': estimate_cat_dir(all_animals_tokens, g, vocab_dict)})`
+        2. or, is this simplex NOT the same as animal, but is the difference between each concept that’s NOT animal? in other words, it’s all the things that make each concept different from animal?
+        - Author response:
+            1. conditional prob: animal - dog is (dog | animal), so not really steering concept
+            2. embeddings space is probability distribtuion and is hard to find vector rep with dir and magn with 0 and 1. but only want to change target concept without changing other concepts. this may not be the right direction decomposition
+            3. if some value is subordinate to another value, should not affect the subvalued conditioned on the upper value. simplex ; position of trianlge (perpendicular line o fit) is parallel to animal. projection onto direction. 
+            4. this fig 3 spce is not the same as activation space. fig 3 is unembed space. so varying along fig 3 gives different probability in output. 3d subspace of vocab space
+            - gamma is original unemb vector, within weight matrix of unembed matrix. g is tranformed to causal inner product by centering and whitening ( uncorrelated and each have variance 1). unified means lambda bar w and gamma bar w are the same. they map to the same thing in causal inner product space.
+                1. dirs for animal bird etc, when add these to embedding, the intervention did work. but not sure if this is the real embedding from some context. so maybe intervening is out of space.
+                2. embd space means final layer hidden states of last hidden tokens. so both are after final layer. this paper computes what the model ends up with and if those representions have similiaries
+                3. intermediate layers are more complicated with logit lens. kiho says they’re not linear; after final layer, the last step is layer norm (which is not linear), but not concrete
+                4. contrastive sentences: if concept is sentiment, on movie reviews, is easy. but if we add this difference to news or other things, it will not give it. out of distribution. may be open problem. so train must match test. test out if train on news and add to movie. so that’s why we want a more general direction. what if used a very big dataset that contained those, perhaps is better. but test set should out of distribution. 
+                - do polytopes exist in intermediate space? the umbed should be at point of simplex.
+                    1. simplex not found in intermediate space yet but not that meaningful. decomposition
+                    2. steer by simplex: korean chinese english, their categorical concepts means
+                    3. direct sum in fig1a means thm 6 d and e means animal-plant dir is ortho to mammal-animl so subspace spanned by these diffs are orth to animal, so this simplex is orth to this dir. 
+                    4. define concept carefully. now, it’s actv after final layer so it’s for next word prediction. so intermediate feature is hard to define.
+                    5. polytope of clusters- try to find, may be a simplex
+                    6. ablate the simplex of (mammal bird reptile)- would that leave you with animal? then you could isolate a concept. so simplex are the differences. span(animal- mammal, animal-bird, etc). simplex can be more than 3 things. 
+                    7. animal is repr as binary vector. animal has no counterfactual definition. binary feature is animal and not animal, but not same as counterfactual
+                    8. an animal vector, the simplex polytope is not animal category, is the differences. 
+            1. adj mat in fig 5: if feature is conn by a subset relation, so 0 means no relation and 1 means they’re subset
+1. ask about code
+
+Analogous reasoning: finds missing structure and infers from it, just like knowing the first ind of tensor is batch, so we can understand that’s batch too. This structure must be represented somewhere. Especially for induction. How does it remember a pattern? 
+
+[https://arxiv.org/pdf/2302.07384](https://arxiv.org/pdf/2302.07384)
+
+The Geometry of Neural Nets’ Parameter Spaces Under Reparametrization
+
+---
+
+Start from existing features and find supporting features and backup features when ablated
+
+This will help us find the exact side effects too
+
+Subtract and decompose the patch
+
+My guess is if we don't find this others will find this soon
+
+yarin- STTEERING oxford
+
+The Geometry of Neural Nets’ Parameter Spaces Under Reparametrization
+
+Is it measuring similarity in some other space?
+
+why certain layers? perhaps it’s because those layers contain that feature. but it is also because those features have important interactions with downstream layers, like in a feature circuit? then if we modify the feature circuit, perhaps we can 1) improve the steering vector (see above measurements) or 2) obtain steering on more specific types of behaviors.
+
+multiple layers; multiple vectors may make it more specific
+
+don’t make activation addition be another black box; decompose and interpret it even further (like bio to chem to physics)
+
+Use differences to find features
+
+Why not just find features? Bc sv may not be found from saes. Can steering vector be found from saes?
+
+Not just feature interactions, but component. Then find features in components 
+
+Use diff of means to find vevs ghen decompose to find features and connect th9se features
+
+[https://www.lesswrong.com/posts/DtdzGwFh9dCfsekZZ/sparse-autoencoders-work-on-attention-layer-outputs](https://www.lesswrong.com/posts/DtdzGwFh9dCfsekZZ/sparse-autoencoders-work-on-attention-layer-outputs)
+
+https://transformer-circuits.pub/2021/framework/index.html
+
+read/write residual streams, so edges between components
+
+[https://medium.com/@zepingyu/123-cb62513f5d50](https://medium.com/@zepingyu/123-cb62513f5d50)
+
+ask austin about doing benchmarks
+
+reply to andys
+
+what if subtraction makes actvs go to negative? where do existing prompts fall in measurement of love-hate? can we measure this via projection? 
 
 ---
 
@@ -603,22 +616,17 @@ explain this in layman's terms. does it mean all features can be obtained by dif
 
 https://blog.kuzudb.com/post/wcoj/#a-thank-you--an-anecdote-about-knuths-reaction-to-the-term-worst-case-optimal
 
----
+[https://arxiv.org/pdf/2310.07837](https://arxiv.org/pdf/2310.07837)
 
-Run code of “The Geometry of Categorical” on new data related to behavior
+Measuring Feature Sparsity in Language Models
 
-- brainstorm how to extend hierarchical concepts
-    - steer by animal simplex
-        - get convex hull that represents “animal” and add it?
-            - how do you even add this?
-            - estimate vector and convex hull using trained projection (LDA, linear map)- which to recommend?
-- put face features thru existing code (geom, circ) on multiple models and look for hierachy (dog face and human face orthon) and other patterns
-- find where hierarchy is detected in code nbs
-    
-    3_Noun_Heatmap.ipynb
-    
-    animal has cosine 1 with all others concepts bc they are all related to animal. but why 1, the max?
-    
+[https://www.alignmentforum.org/posts/zj3GKWAnhPgTARByB/saes-discover-meaningful-features-in-the-ioi-task](https://www.alignmentforum.org/posts/zj3GKWAnhPgTARByB/saes-discover-meaningful-features-in-the-ioi-task)
+
+[https://arxiv.org/pdf/2405.08366](https://arxiv.org/pdf/2405.08366)
+
+[https://openreview.net/pdf?id=JdrVuEQih5](https://openreview.net/pdf?id=JdrVuEQih5)
+
+A Systematic Comparison of Sparse Autoencoder Variants for Model Steering on the IOI Task
 
 ---
 

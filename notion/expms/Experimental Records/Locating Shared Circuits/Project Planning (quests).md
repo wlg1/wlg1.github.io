@@ -182,7 +182,7 @@ seq ablation
 
 word problems 
 
-- fill out table with some prompts
+- ✅ fill out table with some prompts
     - "Be concise. If today is the 11th of a month, what date will it be in 6 days?”
     - **What are the months in a year?**
     - **What is the month that is 3 months after March?**
@@ -258,6 +258,12 @@ Submit to EMNLP
 ---
 
 ### Future Work
+
+[https://transformer-circuits.pub/2024/jan-update/index.html#](https://transformer-circuits.pub/2024/jan-update/index.html#)
+
+[**Multilingual Features in Large Models**](https://transformer-circuits.pub/2024/jan-update/index.html#dict-learning-scaling)
+
+Words meaning “two”
 
 - use same 50 runs of rand 4 heads for all
 - add seqcont sparse feature circs and circular to related works
