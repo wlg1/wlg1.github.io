@@ -4,6 +4,10 @@
 
 researchers shared drives
 
+[Notes on others work](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/Notes%20on%20others%20work%2032c6237809ea4e50a6102ed46f67b259.md)
+
+[July 8 meeting](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/July%208%20meeting%20dab2d68c00be4d58b4b91f78ceaeb75a.md)
+
 [Messages](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/Messages%204864980156af45d5bddeafa3e027a939.md)
 
 logistics
@@ -13,6 +17,10 @@ logistics
 weekly meetings
 
 [https://docs.google.com/document/d/142cfwBBdMH1wfC_4-sIOttIrNbSqYVXhLdCByZ_XPzQ/edit#heading=h.m3oqqwledhc2](https://docs.google.com/document/d/142cfwBBdMH1wfC_4-sIOttIrNbSqYVXhLdCByZ_XPzQ/edit#heading=h.m3oqqwledhc2)
+
+weekly progress
+
+[https://docs.google.com/document/d/1qd8WS5lAVnkxUGq5lRjybvHe5XBngFMygezEbgEneKA/edit](https://docs.google.com/document/d/1qd8WS5lAVnkxUGq5lRjybvHe5XBngFMygezEbgEneKA/edit)
 
 ---
 

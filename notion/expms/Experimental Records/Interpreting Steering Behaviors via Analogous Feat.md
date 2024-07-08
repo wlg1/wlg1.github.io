@@ -44,6 +44,12 @@ Project Management
     
     [Brainstorm- other ideas](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Brainstorm-%20other%20ideas%20d3f05b98dbc24ff69f05b90dd363df99.md)
     
+- new brainstorm
+    
+    [Geometry project ideas](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Geometry%20project%20ideas%20eb549c97d93548fc97e75e83fcba87a8.md)
+    
+    [SAE circuits brainstorm](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/SAE%20circuits%20brainstorm%20bbdf5ded4da24855b11d0e706f19f097.md)
+    
 
 List of Papers
 
@@ -51,31 +57,49 @@ List of Papers
 
 [List of papers- feature decomp](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/List%20of%20papers-%20feature%20decomp%20f3a180818cb44216b865f11272a96c7b.md)
 
+[Feature Geometry- Lit Review](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Feature%20Geometry-%20Lit%20Review%20384f2f70a32245a7a9aa5b1481cd85ab.md)
+
+[Steering- lit review](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Steering-%20lit%20review%206527215dd18f451eb430acd650280fdf.md)
+
+[Feature composition](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Feature%20composition%201d02c6bc5b894d819147b08e06ca53b5.md)
+
 [useful papers to read](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/useful%20papers%20to%20read%206bc4d86682c94eddb7be4de174ef0e5a.md)
+
+[Repr sim papers](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Repr%20sim%20papers%20f1e073e6e4124d3ba7b6929d92cee13d.md)
 
 Notes
 
-[Editing Machiavelli Prelims](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Editing%20Machiavelli%20Prelims%20a0708db298d544b388375641494a755f.md)
-
-[Sleeper Agents Replication](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Sleeper%20Agents%20Replication%205e70a34eff91418d851d1725584a9a0c.md)
-
-[Sleeper Agents Project Proposal](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Sleeper%20Agents%20Project%20Proposal%209cbba7a76ae642afa60daf7cfaf99957.md)
-
-[Editing Criticisms](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Editing%20Criticisms%2041b7567bd25d485e8771757d9f817bc0.md)
-
-[Tooling](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Tooling%20c8d74298b261420eb5a689cd8b6b8f28.md)
-
-[SAE](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/SAE%206b08b4ad57a342bf9393d2ef0fa31c6b.md)
-
-[Patching](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Patching%20c56dd40648f24f1c9095c38f63d50333.md)
+[Old docs](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Old%20docs%201a3cbae85bf64adf94fee4aade63548b.md)
 
 [Other Paper Notes](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Other%20Paper%20Notes%206602b9ac787d415a8c3d9d5df33b5d3c.md)
 
+[Tooling](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Tooling%20c8d74298b261420eb5a689cd8b6b8f28.md)
+
 [Compute](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Compute%20e3182612433a4299b4035d5359548fa4.md)
+
+[Patching](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Patching%20c56dd40648f24f1c9095c38f63d50333.md)
+
+[SAE](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/SAE%206b08b4ad57a342bf9393d2ef0fa31c6b.md)
+
+[Arguments for downstream feature-feature](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Arguments%20for%20downstream%20feature-feature%2081c8f79449d94debaa2314ba833b6e51.md)
+
+[Transformer math](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Transformer%20math%20c2362672e8be426094977e5a859a8b37.md)
+
+[UMAP](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/UMAP%206019e8cd74ca4abebc143f9f13760055.md)
 
 [Category Theory](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Category%20Theory%205b66977cb4c14102a0507ef2951ff993.md)
 
+[Computational Mechanics](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Computational%20Mechanics%20658e1faa4e114df99df04eb379bbbf89.md)
+
+Meeting notes
+
 [todd hamish meeting](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/todd%20hamish%20meeting%20817a3cdd501f431796470ff8499988c6.md)
+
+[Kiho](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Kiho%20e23ba8681d5d4f0688740c8974f03758.md)
+
+[Ashkan meeting notes](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Ashkan%20meeting%20notes%20cf47680d80a04812ac616fd4597e9e09.md)
+
+[Other](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Other%206947335eb16642f6b622b39a26e1ccff.md)
 
 Code Docs
 
@@ -87,6 +111,8 @@ Code Docs
 
 Expms Run
 
+[_Feature Geometry Expms Summary](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/_Feature%20Geometry%20Expms%20Summary%201beb35705e5c47cd89c1c6b7908094c0.md)
+
 [SVD explora tests](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/SVD%20explora%20tests%20e685dd8723454c0fbaed4e0d19478fd9.md)
 
 [[CAA_SAE_explrTests_v1.ipynb](https://colab.research.google.com/drive/1rv8d3VJBSLxtSbFGq1809VZB1BGPGiZe)](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/CAA_SAE_explrTests_v1%20ipynb%20ac477af8bdf54dc5bdf057884cfe0c2b.md)
@@ -94,6 +120,10 @@ Expms Run
 [sparse feature circs explora](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/sparse%20feature%20circs%20explora%2000b39c6ce28e41f991fb17801204ec9d.md)
 
 [Feature clustering](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Feature%20clustering%207ca3486abbae499b88169916fd33b8df.md)
+
+Other Results
+
+[Neuronpedia steering results](Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Neuronpedia%20steering%20results%20cef112a3d4444447ba4877a6da196737.md)
 
 Paper drafts
 

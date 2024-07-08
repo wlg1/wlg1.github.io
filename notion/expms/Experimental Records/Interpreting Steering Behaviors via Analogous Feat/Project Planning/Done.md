@@ -79,7 +79,7 @@ Meandering to find research topics
 - 🐣 Run prelim experiments for fine tuning interp on fine-tuned LLAma models + machiav
     - ISSUE: machiav ISN’T fine tuned, it’s given prompts. So its interpretability has nothing to do with fine tuning training, only in-context prompts.
 - ⚠️ Write up 1-page proposal for sleeper agents using fine tuned llama as proof of concept
-    - [Sleeper Agents Replication](../Sleeper%20Agents%20Replication%205e70a34eff91418d851d1725584a9a0c.md)
+    - [Sleeper Agents Replication](../Old%20docs%201a3cbae85bf64adf94fee4aade63548b/Sleeper%20Agents%20Replication%205e70a34eff91418d851d1725584a9a0c.md)
     - Email authors to ask about replication issues
     - ISSUE: the paper states they are already working on interpreting sleeper agents
 - ✅ [Brainstorm- related behavior](../Brainstorm-%20related%20behavior%20588d73c1315d48e3bb7db26038712fd8.md)
@@ -92,7 +92,7 @@ Meandering to find research topics
     [https://www.overleaf.com/project/6595bd526fe1eee6f40a8e4c](https://www.overleaf.com/project/6595bd526fe1eee6f40a8e4c)
     
 - ⚠️ Code to steer activations from Machiav and CAA ethical datasets
-    - [Editing Machiavelli Prelims](../Editing%20Machiavelli%20Prelims%20a0708db298d544b388375641494a755f.md)
+    - [Editing Machiavelli Prelims](../Old%20docs%201a3cbae85bf64adf94fee4aade63548b/Editing%20Machiavelli%20Prelims%20a0708db298d544b388375641494a755f.md)
     - Copy + paste ONE prompt from Machiavelli with TWO choices into CAA nnsight (bc storage)
         
         CAA repl: [Project Planning](../../ARENA%20notes%201a8ff2624cff486e9d91b13139420026/CAA%20Replication%20c7062646b89f46b2b623d72f722a7902/Project%20Planning%207fb9304394ea4a728098c812a60d7034.md) 
@@ -195,7 +195,7 @@ Meandering to find research topics
     One of my main aims was improving the anger vector by removing certain SAE features, and they did the exact same thing; I wasn't sure if my approach would've worked but now I have evidence it does! Neel said there's still a lot of work not done yet that they'll work on. I was thinking of interpreting how steering vectors affect feature circuits, which may improve selecting features- note their blog post states the wedding vector was not improved upon, so perhaps this can be done. So if anyone is also thinking of talking/working on that, let me know. Hopefully this work won't be also done by Deepmind too
     
 
-Reproduce SAE decomposition on Llama-2 CAA
+**EXPM**: Reproduce SAE decomposition on Llama-2 CAA & Successor Heads
 
 - 🐣 training_a_sparse_autoencoder.ipynb
     
@@ -575,6 +575,20 @@ Observe how steering affects features downstream
 
 Run code of “The Geometry of Categorical” on new data related to behavior
 
+- ✅ understand `store_matrices.py`
+    
+    In “Linear Repr Hyp” paper, gamma (umembedding into output space) is transformed into g using the causal inner product by “unifying” it with the input (embedding) space prompt. This g is calculated by equation 3.8, and is the g of this code.
+    
+    In `1_Animal`, this g is used to obtain the condition in equation 4.1- g(relevant item in category) has similarity with the linear repr of the concept in category, but is orthogonal to irrelevant concepts
+    
+    `animals_g` is a dict of concept:tensor that takes a slice from  `g`, which is a tensor of shape `[256000, 2048])` , and puts it in in the concept. So g must have first index be vocab,  animals_g['mammal'].shape is `([194, 2048])`, it’s possible that’s 194 different animals? It’s different from animals_g['bird'].shape, which is`([115, 2048])`. So this first number is specific to each key in animals. 
+    
+    But g is just direction, not a vector with magniutde. So we need to use `estimate_cat_dir`
+    
+    `animals_token.keys()` : `dict_keys(['mammal', 'bird', 'reptile', 'fish', 'amphibian', 'insect'])`
+    
+    So there are only 6 categories of animals, and indeed, the first idnex of animals_g are types of those animals: `animals_token['mammal'][0:5]` is `['▁beaver', '▁Beaver', '▁panther', '▁Panthers', '▁Panther']`
+    
 - ✅ email kiho on project ideas
     
     have been thinking about trying to find other universal patterns across models on how it differentiates related, hierarchical concepts (eg. animal to mammal, as described in your paper).
@@ -594,3 +608,470 @@ Run code of “The Geometry of Categorical” on new data related to behavior
     I was looking to find more precise ways of steering by adding abstractions, and this successor heads paper found it could train linear maps to extract a months_feature from February, and an ordinal_feature_4 from Thursday, then can perform months_feature + ordinal_feature_4 to get April.
     
     Might be useful if you want to go over it sometime to critique if it is a good approach to generalize, I'm also reproducing some of its code now as its code is not available
+    
+
+Plan project by summarizing notes so far
+
+- 🐣 project summary
+    
+    [https://docs.google.com/document/d/1sEoX0fw3JXorOaa5KtN3T-l8aG7aSWZhPmprL7-HDfo/edit](https://docs.google.com/document/d/1sEoX0fw3JXorOaa5KtN3T-l8aG7aSWZhPmprL7-HDfo/edit)
+    
+- 🐣 plan benchmark
+    - [https://chatgpt.com/c/e4f12e4e-9c3e-40fb-bf1f-4334a021399f](https://chatgpt.com/c/e4f12e4e-9c3e-40fb-bf1f-4334a021399f)
+        
+        Creating a benchmark to measure the effectiveness of steering vectors for large language models (LLMs) involves several key steps. Here’s a general outline of how you might approach this, along with some recommended papers and resources to help you learn more about creating benchmarks:
+        
+        ### Steps to Create a Benchmark
+        
+        1. **Define the Objective:**
+            - Clearly articulate what you want to measure with the benchmark. For steering vectors, this could include accuracy, robustness, bias reduction, and effectiveness in guiding model responses toward desired outcomes.
+        2. **Select or Create Tasks:**
+            - Choose a set of tasks that reflect the scenarios where steering vectors will be used. This could include question-answering, summarization, translation, dialogue systems, etc.
+        3. **Collect or Generate Data:**
+            - Gather or create datasets that represent the tasks. Ensure diversity in topics, difficulty levels, and linguistic variations to comprehensively evaluate the steering vectors.
+        4. **Establish Metrics:**
+            - Define the metrics to evaluate performance. Common metrics include accuracy, F1 score, BLEU score (for translation), ROUGE score (for summarization), and specific metrics for evaluating bias or ethical alignment.
+        5. **Baseline Models:**
+            - Include performance of baseline models (without steering vectors) to compare and measure the improvement brought by the steering vectors.
+        6. **Experimental Setup:**
+            - Design the experimental framework, including how to apply steering vectors, and how to measure their impact on model performance.
+        7. **Evaluation and Analysis:**
+            - Conduct experiments and analyze the results to determine the effectiveness of the steering vectors. Consider statistical significance and robustness of the results.
+        
+        ### Recommended Papers and Resources
+        
+        Here are some papers and resources that can help you learn more about creating benchmarks and measuring the effectiveness of steering vectors:
+        
+        1. **Benchmarking and Evaluation of Language Models:**
+            - "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding" by Alex Wang et al.
+            - "SuperGLUE: A Stickier Benchmark for General-Purpose Language Understanding Systems" by Alex Wang et al.
+            - "The GEM Benchmark: Natural Language Generation, its Evaluation and Metrics" by Sebastian Gehrmann et al.
+        2. **Steering and Control of Language Models:**
+            - "Steering GPT-3 to be more specific: Controlling Content Generation with Prompt Engineering" by Various Authors (explore relevant blog posts and articles on OpenAI’s blog).
+            - "Plug and Play Language Models: A Simple Approach to Controlled Text Generation" by Angela Fan et al.
+            - "Language Models are Few-Shot Learners" by Tom B. Brown et al.
+        3. **Evaluation Metrics and Bias Analysis:**
+            - "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?" by Emily Bender et al.
+            - "Fairness and Abstraction in Sociotechnical Systems" by Selbst et al. (for understanding fairness and bias considerations).
+        
+        ### Determining the Size of the Benchmark
+        
+        The size of the benchmark depends on the following factors:
+        
+        - **Diversity of Tasks:** Include a wide range of tasks to ensure comprehensive evaluation.
+        - **Data Size:** Ensure the datasets are large enough to provide statistically significant results but manageable within computational constraints.
+        - **Complexity:** Balance between simple and complex tasks to cover different aspects of model performance.
+        
+        For example, the GLUE benchmark includes 9 tasks with varying data sizes, while the SuperGLUE benchmark includes 10 more challenging tasks. Aim for a benchmark that includes at least 5-10 different tasks with adequate data points for each to ensure robust evaluation.
+        
+        ### Conclusion
+        
+        Creating a benchmark to measure the effectiveness of steering vectors for LLMs is a multifaceted task that requires careful planning and consideration of objectives, tasks, metrics, and experimental design. By leveraging existing research and frameworks, you can build a comprehensive benchmark that provides meaningful insights into the performance of steering vectors in LLMs.
+        
+- ✅ advice from others on project
+    - Minseon
+        
+        For the pros, she said that model steering seems to be promising field of research, such as a recent paper she learned of “Refusal in Language Models Is Mediated by a Single Direction” that showed the effectiveness of the refusal vector.
+        
+        For the cons, she said the statement in the summary, "explaining why activation steering works so effectively” is vague, so that I should explain why it’s effective. She said to make my hypothesis more direct and clearer.
+        
+        We also discussed other points but there were too many to list in a message.
+        
+        Choose to either make new benchmark or improve method but not both, as that would disqualify previous measurements. 
+        
+        Overall, from the conversation we decided my project can be restated as: interpreting how steering would affect multiple features in multiple layers, and aiming to develop better techniques to both find and target only intended features and not others. 
+        
+        It seems like a more concrete project plan statement because it is similar to the concrete experiments done by Neel Nanda cited in the project proposal. However, it is also general enough, as being too specific on a hypothesized approach that may be wrong would lead to dead ends, so I can re-adjust the specifics when needed. 
+        
+    - clement advice
+        
+        case study on previous behavior that failed with current techniques (like sleeper agents), or benchmark. with those, effectiveness of steering can be evaluated
+        
+        use cases of what people use activation steering for production / user experience - easier way, actv steering is more transparent
+        
+        ‘precise’ is hard to argue. methodlogy doesn’t matter. 
+        
+        I also just talked to Clement and got good advice about showing how my new approach to steering may be able to allow us to control model behavior more specifically using safety related vectors, such as not just allowing the model to refuse in general, but refuse specific things, such as refusing to answer chemistry. This could have applications to modifying models for more nuanced tasks to avoid generalizing in unintended ways, and improve alignment to specific human goals. I will write up a 1pg draft of this for tomorrow
+        
+- ✅ read workshop papers and revise project proposal
+    
+    Thanks for highlighting parts that should be clarified! I’m going to finish revising a clearer version of the project summary during Tuesday. Meanwhile I’ll elaborate more on the first 2 questions (and address the others later, since it’s already long) based on the previous works. I’ve attached this as a pdf since it’s lengthy, and here’s the link to the google docs:
+    
+    [https://docs.google.com/document/d/1yZ63OpguH7RjFxxUe53wRPg1Rno2Wmulmh3bAG4OrJA/edit?usp=sharing](https://docs.google.com/document/d/1yZ63OpguH7RjFxxUe53wRPg1Rno2Wmulmh3bAG4OrJA/edit?usp=sharing)
+    
+    1) The statement “explain why adding… works so well” is from the last line of the paper “Activation Addition” (Turner et al 2023) where they discuss future work. I agree this is a vague statement, even in the original paper. It seems, however, it can be implied from the paper that they mean to tie this to a statement from earlier in their paper: “Adding values to imprecisely targeted intermediate memory locations would not yield sensible results in most programs. Why expect this from Transformers?” The authors then go on to say, “Our hypothesis… is that neural networks represent features…. with a linear representation.” So they believe that if features are linear directions, you can just use their simple contrastive subtraction method to obtain a steering vector for most features.
+    
+    2) That explains what “why adding works” means; but now I believe I have a better way to phrase my topic than that statement. This better way is to address the limitations (A, B, C) stated below. Even if all features can be represented linearly and be obtained by a factor of a “difference-in-means” direction, there may still be many questions about its limitations, such as: A) how to find them (more optimally while minimizing noise) [see: [https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/full-post-progress-update-1-from-the-gdm-mech-interp-team](https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/full-post-progress-update-1-from-the-gdm-mech-interp-team) ], B) how to steer them while minimizing interference (mentioned in the paper discussed in the next point), and
+    
+    C) In the ICML MI Workshop (Spotlight) paper, “Relational Composition in Neural Networks” (Wattenberg and Viégas), the authors “argue that this success [of the linear rep hypothesis] is incomplete without an understanding of relational composition: how (or whether) neural nets combine these internal representations to represent more complicated relationships.” They give an example of this limitation: “A scene where a duck is perched on a capybara and one where the capybara is perched on the duck would have the same representation.” If “duck on capybara” is “good” while “capybara on duck” is a “threat”, we should steer the model to recognize the former as good and not the other way around- to accomplish this, we would require more targeted steering that looks at mechanisms other than just feature addition. Would we obtain specific features of “duck on capybara” vs “capybara on duck”? This seems inefficient due to the many combinations of concepts. Instead, we can obtain building blocks of concepts and find how they’re composed in the representation space, and alter these composition operations. This is ambitious, but perhaps we can build towards this in small but significant steps. 
+    
+    Pretraining and fine-tuning can do this, but the aim of editing/steering is to be more interpretable and less of a black box with uncertain outcomes that could possibly result in deceptive agents. With interpretability, it’s like we can use a MRI on deceptive agents to locate “problematic structures” in the geometry of representation space, and then perform surgery to fix them.
+    
+    Now, I have many ideas for approaches about finding how the model composes concepts in representation space. One of them builds on the ICML MI Workshop (Oral) paper, “The Geometry of Categorical and Hierarchical Concepts”, which assumes the linear representation hypothesis as true and extends it to find that “hierarchically related concepts are orthogonal… complex concepts are represented as polytopes constructed from direct sums of simplices.” This may mean we can manipulate composable concepts as a “hierarchy”, composing feature “knobs” from parent (animal) to child (mammal) to grandchild (cat). Perhaps, instead of finding features separate for each animal, we find a more abstract “animal feature” that all of them share, and then we find more specific animals by performing operations onto this animal feature. This is similar to inheritence in object-oriented programming, which promotes efficient code re-use (if used for the right scenarios). 
+    
+    I communicated via a few emails with the main author of that paper (who is also the main author of “The Linear Representation Hypothesis" that David mentioned) and he was interested in this idea of steering with more decomposed concepts, and I’m planning to meet with him this Thursday to better refine this plan. By then I would have a better plan written down, likely with some prelim steering expms (though not directly related to the hierarchical concepts code). I think in ~2 weeks, after running more steering experiments, I can talk to others like Nina Rimsky to discuss the steering aspects of this project better.
+    
+    Also, here are some other possible limitations of steering:
+    
+    i) I mentioned there may be questions such as “how to find features?” We can take two very large datasets where the only difference is one contains a concept and the other doesn’t, but there’s still a lot of uncertainty in how well this works, such as how do we get rid of a concept in the other dataset- do we just get replace it, or not mention it? But what if that concept isn’t a word, but a long description of a pattern (eg. the duck-capybara example)? Is it position dependent? How much does the dataset structure choice affect the vector you obtain? In addition to diff-of-means, we can use SAEs. But will SAEs always find features we want to change? Large enough SAEs may do this due to “feature splitting”, but we have to experiment with this further and compare across models.
+    
+    ii) The linear representation hypothesis also isn’t enough to describe the downstream effects of steering (eg. how one feature affects another then affects the output, like a circuit); this is a question I’m investigating in prelim experiments
+    
+    iii) While several papers have been written with evidence justifying the linear representation hypothesis, this hypothesis still has to go through more tests. Papers such as “Not All Language Model Features Are Linear” (Engels et al 2024) argue that not all features are linear; they present evidence of circular features (eg. months). If the linear representation hypothesis does not hold, then steering using just features as directions is not enough, which is a big limitation of steering we can tackle. 
+    
+    Overall, I think “extending activation steering to do more targeted output changes” is a better topic statement than “explaining why activation addition works so well”. The latter statement was an older, high-level placeholder, and now with a more thorough literature review I can hone in on a less vague topic. I’ll write all of this up much clearer on Tuesday.
+    
+- brainstorm why this approach can be useful
+    
+    Questions about research to pass- if not, weaker justification for doing it
+    
+    - ✅ msg andy zou and 1st author of ref vec on why steering is useful
+        
+        Hi, I read your paper on Representation Engineering and had questions about how model steering would be used in practice, as I'm working in a summer research internship with the TVG group at University of Oxford now and am looking to do work in model steering. However, I am trying to justify in a proposal why it would be useful in practice.
+        
+        In practice, say we want a model to refuse user behavior. We can use the steering vector during inference time for certain inputs, or all inputs. But can we just detect the user input + model output (not shown to the user yet) using another model or algorithm, and just not go through with the request?
+        
+        I think for other behaviors such as sycophancy it might make more sense though. But I was wondering why use the refusal vector over just not going through with a request that can be detected as harmful through other means? Thank you.
+        
+        My guesses for why to use steering would be:
+        
+        1) It may not be possible to perfectly detect what are bad / good outputs every time, so steering is an extra safety net
+        
+        2) We may still want the model to output something, so not throw everything out that’s good just because there’s some bad
+        
+        For comparing steering vs fine tuning, I think of 3 reasons: it’s cheaper, more interpretable, and more precise (less side effects, more predictable). 
+        
+    - Do steering communities care about steering specifics (which can be done by composing)? Justify its use in AI safety
+        
+        
+    - why feature decomposition can’t just be found via model splitting?
+    - do features across layers, like a circuit, influence behavior?
+    - When steering is used, the steering vector may be used for every user input. But why not just detect the input beforehand (using another model or algorithm to measure output) and not have the model output anything?
+    - Preserve invariant structure while changing style is useful for img2img, but what about text?
+    - The points about steering’s flaws from (Relational Composition) seem speculative.
+    - If care about specifics, why not just not steer on certain specific inputs? What about multiple steering vectors?
+    - How is steering even used in deployment? Is it just used on all inputs?
+- ✅ ask neel for updates on steering vec decomp
+    
+    Hi, it's been a while since I last thought about this topic as I was working on other research projects, but without giving out details, I was wondering if it's possible to say if decomposing steering vectors has since led to any promising results, or if it hasn't really been continued? New papers such as Refusal Vector seem to do really well with just difference-of-means and I'm guessing decomposition may have been tried on the refusal vector too. Just asking to see if this is a good avenue to pursue still or not
+    
+- ✅ **Editing Model Behavior, Proposal Brainstorm v1**
+    
+    [https://www.overleaf.com/project/6672b8361d6a3cad2420bafc](https://www.overleaf.com/project/6672b8361d6a3cad2420bafc)
+    
+- ✅ make slides
+    
+    [https://docs.google.com/presentation/d/1-FK73_RLgU6X3TkWdJmvPo-omlMVQ2bi532wXapvrC8/edit#slide=id.g2153ba3b593_0_372](https://docs.google.com/presentation/d/1-FK73_RLgU6X3TkWdJmvPo-omlMVQ2bi532wXapvrC8/edit#slide=id.g2153ba3b593_0_372)
+    
+    [https://chatgpt.com/c/391f2a1f-ed25-4997-b2d3-aa457dabf2c9](https://chatgpt.com/c/391f2a1f-ed25-4997-b2d3-aa457dabf2c9)
+    
+    [https://lucid.app/](https://lucid.app/)
+    
+
+**EXPM**: Observe how steering affects features downstream
+
+- ✅ implement ‘see what steering at a layer affect other features’
+    
+    [https://docs.google.com/presentation/d/1uvM4LbpBnPav2dD-t55jDpedaIfhJbgpbV3GhJ_UyC8/edit#slide=id.g2ce4bd20f45_0_722](https://docs.google.com/presentation/d/1uvM4LbpBnPav2dD-t55jDpedaIfhJbgpbV3GhJ_UyC8/edit#slide=id.g2ce4bd20f45_0_722)
+    
+    **TODO:** change these features and measure how the steering vector performs in output and on benchmarks (latter may be noted as next steps when presenting)
+    
+    - plan detailed steps
+        1. Difference of 2 contrastive prompts actvs at layer k of GPT-2
+            1. do contrastive sets later
+        2. For third prompt, apply steering vector at layer k
+        3. Cache activations from layer k to last layer L for unst & steered runs
+        4. Pass both those activations through their respective pre-trained SAEs
+        5. Observe differences, before and after steering, for features from layer k to last layer L
+            1. Obtain features via SAE, SVD, etc.
+        - Later work
+            1. Interpret features using dataset example labeling, unembedding methods (eg. logit lens), patching (for causal relations)
+                1. Eg) Does the anger vector alter features related to anger?
+            2. Generalize universal patterns across models and different classes of steering vectors (eg. vectors representing parent-child relations)
+                1. Eg) The anger vector always alters F1 and F2, where F1 = P*F2, F1 activates on “fearful” and F2 activates on “threat”
+            3. Patch back in feature ablated in later layers
+                - Put SAE reconstructions back into model
+                    - See: [GPT2_SAE_MLP0_seqcont_explora_v2](https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G#scrollTo=K-wGX_O3xaH9).ipynb
+        
+        ISSUE: how to identify analogous F1 and F2 across models?
+        
+    
+    [gpt2Small_pretrained_steering.ipynb](https://colab.research.google.com/drive/1IUtIe0D6UBAJYlPC4eJl00l8fmpohhKG)
+    
+    This implementation simplifies away the wrappers that hide the fns to make it easier to understand the basics of the steering algorithms
+    
+    - ✅ STEP 1: get contrastive activations for 2 prompts of gpt-2
+        - [hierConcepts_logitLens_llama2.ipynb](https://colab.research.google.com/drive/1sUeugm0DLrE_c8NAZy06XETeKdtwizWE#scrollTo=2UdLBhJPkFkf)
+            - pass them both in batch, then take actvs of each batch index
+    - ✅ STEP 2: For third prompt, apply steering vector at layer k
+        - ✅ hook fn to add? look at prev repos how they did it
+            - `activation_additions` (turner et al repo) \ `activation_additions \ hook_utils.py`
+                - `hook_fns_from_activation_additions`
+        - ✅ find also recent papers/blogs doing steering to see if they use easier way
+            - [https://www.lesswrong.com/posts/ndyngghzFY388Dnew/implementing-activation-steering](https://www.lesswrong.com/posts/ndyngghzFY388Dnew/implementing-activation-steering)
+            - ✅ ⚠️ TL ISSUE: `TypeError: act_add.<locals>.hook() got an unexpected keyword argument 'hook'`
+                - Wrapper (using HF) ISSUE : `AttributeError: 'GPT2LMHeadModel' object has no attribute 'layers’`
+                - `TL :`Try `run_with_hooks` instead of `add_hook`
+                    - runwithhooks: GPT2_SAE_MLP0_seqcont_explora_v2.ipynb
+                        
+                        [https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G#scrollTo=tNWEV_Mn9z31&line=5&uniqifier=1](https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G#scrollTo=tNWEV_Mn9z31&line=5&uniqifier=1)
+                        
+                    - no; b/c can’t use runwithhooks with generate
+            - ✅ `act_add.<locals>.hook()` issue isn’t due to adding steering vec, it’s the wrong way to add hook.
+                - ✅ SOLN: try adding hook like this instead: auto_prompt_test_simple_arithm_v2.ipynb
+                    
+                    [https://colab.research.google.com/drive/13OodYS3_MB7mHGP-4r0zhVNF1nvhZJTk#scrollTo=dg3XuWScAVvG&line=11&uniqifier=1](https://colab.research.google.com/drive/13OodYS3_MB7mHGP-4r0zhVNF1nvhZJTk#scrollTo=dg3XuWScAVvG&line=11&uniqifier=1)
+                    
+                    - instead of doing this
+                        
+                        ```jsx
+                        def act_add(steering_vec):
+                            def hook(activation):
+                                # return activation + steering_vec
+                                return activation
+                            return hook
+                        
+                        test_sentence = "I think cats are "
+                        model.add_hook(name=cache_name, hook=act_add(steering_vec))
+                        print(model.generate(test_sentence, max_new_tokens=10))
+                        ```
+                        
+                    - do this
+                        
+                        ```jsx
+                        from functools import partial
+                        
+                        def act_add(
+                            activation,
+                            hook,
+                            steering_vec 
+                        ):
+                            # return activation + steering_vec
+                            return activation
+                        
+                        hook_fn = partial(
+                                act_add,
+                                steering_vec=steering_vec
+                            )
+                        
+                        cache_name = 'blocks.5.hook_resid_post'
+                        model.reset_hooks(including_permanent=True)
+                        model.add_hook(cache_name, hook_fn)
+                        print(model.generate(test_sentence, max_new_tokens=10))
+                        ```
+                        
+                - ✅ ISSUE: but when using steering_vec with hook, get : `RuntimeError: The size of tensor a (6) must match the size of tensor b (2) at non-singleton dimension 1`
+                    - ✅ SOLN: unlike in the lesswrong post, you just take the LAST position, as seen here: [https://github.com/annahdo/implementing_activation_steering/blob/main/pytorch_hooks.ipynb](https://github.com/annahdo/implementing_activation_steering/blob/main/pytorch_hooks.ipynb)
+                        - In repeng, it’s added to every tok pos?
+                        - in caa blog post, rimsky states for generated, it’s added to every token pos after generation, but in initial prompt, it’s only added to last token pos
+                    - ✅ though this works, in each gen it only modifies the NEW last token pos, not all of them after the initial prompt’s end
+                        
+                        ```jsx
+                        steering_vec = steering_vec.unsqueeze(0)
+                        
+                        def act_add(
+                            # z: Float[Tensor, "batch seq head d_head"],
+                            # hook: HookPoint,
+                            activation,
+                            hook,
+                            steering_vec 
+                        ):
+                            # print(activation[:, -1, :].shape)
+                            # print(steering_vec[:, -1, :].shape)
+                            activation[:, -1, :] += steering_vec[:, -1, :]
+                            return activation
+                        ```
+                        
+                    - ✅ SOLN: this seems to change every pos after initial end
+                        
+                        ```jsx
+                        from functools import partial
+                        
+                        def act_add(
+                            activation,
+                            hook,
+                            steering_vec,
+                            initPromptLen
+                        ):
+                            activation[:, initPromptLen:, :] += steering_vec[:, -1, :]
+                            return activation
+                        
+                        hook_fn = partial(
+                                act_add,
+                                steering_vec=steering_vec,
+                                initPromptLen=initPromptLen
+                            )
+                        
+                        test_sentence = "I think cats are "
+                        initPromptLen = len(model.tokenizer.encode("I think cats are "))
+                        cache_name = 'blocks.5.hook_resid_post'
+                        model.reset_hooks(including_permanent=True)
+                        model.add_hook(cache_name, hook_fn)
+                        print(model.generate(test_sentence, max_new_tokens=10))
+                        ```
+                        
+                    - ✅ you should use a multiplier to change hate cats to love cats
+                        
+                        `activation[:, initPromptLen:, :] += steering_vec[:, -1, :] * 10`
+                        
+        - ✅ if rollouts are random, for a prompt, how many rollouts should we use? just set the generation to deterministic (see `Llama2_spanish_months.ipynb, test prompts)`
+    - ✅⚠️STEP 3: Cache activations from layer k to last layer L for unst & steered runs
+        - ⚠️ ISSUE: for multiple generated tokens, which activations do we store? it’s not just the “next” one. then we need to pass all of them thru SAEs. perhaps we can track ALL the activations of every pos? but it’s not really comparable.
+            - ✅ for now, just work with the immediate next generation  (for next token)
+    - ✅ STEP 4: Pass both those activations through their respective pre-trained SAEs
+        
+        NOTE: pretrained use SAELens (which is built on transformerlens), and cache uses transformerlens. Only need to combine saes with tl for step 4
+        
+        - ✅ see saelens tutorial, [basic_loading_and_analysing](https://colab.research.google.com/drive/1KpWSKZ8PlUVzT8tjcttWU62qNRfoRgzN).ipynb
+            - once get `feature_acts`, ignore the rest of that nb and use `GPT2_SAE_MLP0_seqcont_explora_v1.ipynb` and `GPT2_SAE_MLP0_seqcont_explora_v2.ipynb` to find most impt features from `feature_acts`
+        - ✅ find feature inds with highest values
+        - ✅ for each feature, find its highest actv tokens on pretrained sae’s dataset
+            - ✅ need to flatten (batch,seq) into batch*seq first because it's ANY batch_seq, even if in same batch or same pos
+            - ✅ top_acts_indices should be also be 1D. Then convert the indices into (batch, seq)
+            - ✅ broadcast steering vec to actv samps
+                
+                [https://chatgpt.com/c/609ca94e-8db3-4d52-8b8b-b28d5a644018](https://chatgpt.com/c/609ca94e-8db3-4d52-8b8b-b28d5a644018)
+                
+                activation[:, -1, :] += steering_vec[:, -1, :] * 3
+                if activation is
+                torch.Size([32, 128, 768])
+                
+                and steering_vec is [1, 128, 768), will pytorch broadcast steering_vec to every batch samp in first dim?
+                
+            - ✅ we’re finding top features AFTER steering? they’re not going to be found before steering since it’s not obvious they’d activate? so dataset examples should only activate after steering on batch_tokens
+                
+                
+    - ✅ STEP 5: Differences, before and after steering, for features from layer k to last layer
+        - pass their differences too
+        - feature inds or batch_seq inds may not be right because sae flattens them but saelens doesn’t give them as batch_seq. double check if you’re computing the right ones
+            
+            [https://chatgpt.com/c/d7e78853-306c-4763-8798-684d48c7bcb4](https://chatgpt.com/c/d7e78853-306c-4763-8798-684d48c7bcb4)
+            
+- ✅ figure out why saelens only trained resid_pre, not resid_post. in pytorch huggingface transformers, is resid post 5 the same as resid pre 6?
+    
+    In the context of the Hugging Face Transformers library and the architecture of Transformer models (like GPT), "resid post 5" and "resid pre 6" refer to the residual connections at different stages of the transformer layers.
+    
+    1. **resid post 5**: This typically refers to the output after the 5th transformer layer, including its residual connection.
+    2. **resid pre 6**: This typically refers to the input to the 6th transformer layer, before any operations (like self-attention or feed-forward) are applied in that layer.
+    
+    In the architecture of a Transformer model, the output of one layer (including its residual connection) is the input to the next layer. Hence, the output of the 5th layer (which includes the residual connection, i.e., "resid post 5") is indeed the input to the 6th layer (i.e., "resid pre 6").
+    
+    Therefore, **"resid post 5" is the same as "resid pre 6"**. They are different terms for the same data tensor within the model architecture, just viewed from the perspective of different layers.
+    
+- ✅ Why are dataset examples for 5_resid_post and 6_resid_pre different for the same features?
+    - This code outputs 1, showing they’re the exact same thing
+        
+        ```jsx
+        comparison_result = (unst_cache['blocks.6.hook_resid_pre'] == unst_cache['blocks.5.hook_resid_post'])
+        num_true = torch.sum(comparison_result).item()
+        total_elements = comparison_result.numel()
+        num_true / total_elements
+        ```
+        
+    - ✅ SOLN: they’re the same, but each time you run dataset examples, you get different results
+        
+        The code exhibits randomness due to the use of `activation_store.get_batch_tokens()`, which is likely fetching a random batch of tokens from a dataset each time it is called. This introduces variability in the examples displayed each run.
+        
+    - ✅ [https://jbloomaus.github.io/SAELens/api/#sae_lens.ActivationsStore](https://jbloomaus.github.io/SAELens/api/#sae_lens.ActivationsStore)
+    - ✅ `get_batch_tokens` doesn’t take num samples as arg, prob bc outdated vers but only old vers works for code in nb
+        - you can replace fn but this still misses args
+            
+            ```
+            def get_batch_tokens(self, batch_size: int | None = None):
+                """
+                Streams a batch of tokens from a dataset.
+                """
+                if not batch_size:
+                    batch_size = self.store_batch_size_prompts
+                sequences = []
+                # the sequences iterator yields fully formed tokens of size context_size, so we just need to cat these into a batch
+                for _ in range(batch_size):
+                    sequences.append(next(self.iterable_sequences))
+                return torch.stack(sequences, dim=0).to(self.model.W_E.device)
+            
+            activation_store.get_batch_tokens = get_batch_tokens
+            ```
+            
+        - stream from openwebtext from hugf
+            
+            cannot use 32 x 1024, or else out of memory
+            
+        - Using 128, we find 5 post and 6 pre are the same. Also, later layers have closer features. Why doesn’t it change later layers if it changes output signif?
+    - ✅ try samples from openwebtext that contain ‘love’ or ‘hate’ in them
+        - how do i modify it so that half of the samples have the word love or hate in them?
+            
+            [https://chatgpt.com/c/b739a774-7574-4d8d-a72c-269c04e42588](https://chatgpt.com/c/b739a774-7574-4d8d-a72c-269c04e42588)
+            
+    - NOTE: in dataset examples, when the activation of a (samp, feat) is 0 (so feature doesn’t activate on anything else), it will default to batch 0 and a seq in it, but that doesn’t mean anything
+- ✅ d**ecompose love-hate vector into features**
+    
+    [https://colab.research.google.com/drive/1IUtIe0D6UBAJYlPC4eJl00l8fmpohhKG#scrollTo=MBII3m57QCMZ](https://colab.research.google.com/drive/1IUtIe0D6UBAJYlPC4eJl00l8fmpohhKG#scrollTo=MBII3m57QCMZ)
+    
+    - Hi, got a question from the blog post. It was stated:
+        
+        [https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/full-post-progress-update-1-from-the-gdm-mech-interp-team](https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/full-post-progress-update-1-from-the-gdm-mech-interp-team)
+        
+        “look at the active features on the “ger” token of the “|BOS|An|ger|'' input.”
+        
+        Which dataset was used for this, and how many samples? For a certain steering vector in GPT2 small, I’m looking at the pretrained SAEs of SAELens and thinking about using the samples from activationstore (the activationstore of its pretrained sae gpt2 models uses Skylion007/openwebtext), though not sure if this is a good approach. 
+        
+    - what if we just steer this feature?
+        
+        ![Untitled](Done%201c002201437341e48b55b8276859a632/Untitled%203.png)
+        
+- just use neuronpedia to get max actv examples for top features
+    
+    I think I understand better now you find the top features and look up the top activating examples on neuronpedia; that's what the "Feature dashboard:" board is (I had used other code to get max actv examples)
+    
+    - you can also just directly search up features on neuronpedia
+        - actually i could've just search up keywords using explanations on neuronpedia, i just found the same neuron on it that way
+    - neuronpedia also already has clusters via umap
+- ✅ dog vs cat vs mammal vs animal
+    - search up on neuronpedia
+        - sae set: residual-JB (joseph bloom)
+        - dog: L6, F3986
+            - belongs to cluster 548, which is about animals
+            - cat also
+        - dog: L9, F12435, F3163
+        - just make a list on Neuronpedia’s site
+            - [https://www.neuronpedia.org/list/cly36o0ui003v4y1gs5e9mza7](https://www.neuronpedia.org/list/cly36o0ui003v4y1gs5e9mza7)
+            - how come top pos logits aren’t related to dogs, but top actv inputs are?
+    - steer those features while ablating others
+- ✅ [https://www.neuronpedia.org/steer/gemma-2b](https://www.neuronpedia.org/steer/gemma-2b)
+    
+    you can steer combinations of features already on neuronpedia
+    
+- ✅ [Neuronpedia steering results](../Neuronpedia%20steering%20results%20cef112a3d4444447ba4877a6da196737.md)
+
+Organize notes and contact people
+
+- ✅ msg bloom
+    - dyn paper for multiple steering
+        
+        [https://opensourcemechanistic.slack.com/archives/C06R43HV2CR/p1719852417968129](https://opensourcemechanistic.slack.com/archives/C06R43HV2CR/p1719852417968129)
+        
+    - ask proj ideas
+        
+        [https://opensourcemechanistic.slack.com/archives/D07ACHVNR1C/p1719854597705039](https://opensourcemechanistic.slack.com/archives/D07ACHVNR1C/p1719854597705039)
+        
+- ✅ msg conmy
+    
+    [https://opensourcemechanistic.slack.com/archives/D070QED11RP/p1719862027211289](https://opensourcemechanistic.slack.com/archives/D070QED11RP/p1719862027211289)
+    
+    Thanks for the links! I was wondering if you have any findings about how steering specific parts of "component roles" in a circuit might have a specific effect on the input? For instance, ablating/patching/steering at subject inhibitors might affect which subjects are inhibited. I saw Makelov's research does do name steering at specific components of the IOI circuit, but I think the paper's focus was more about studying supervised vs sae features. If you have done work similar to this I'm interested in generalizing this to other behaviors
+    
+- ✅ msg luke
+    
+    Thanks for mentioning issues about the side effect speculation today, I was wondering if you can write it down again in a msg so I can be more aware of what to address? I think it was said "the reason the steering vector may work at layer L and not earlier layers is because layer L and after would not have side effects, while earlier layers may". Or may be something else
+    
+    - Sorry, forgot to reply to your earlier message. The person working with Alex is called Jacob. I don't recall his last name but his initials are GW.
+    - Your description of what I said earlier is pretty accurate, but my question was a bit more general, and was more like "why think there is a meaningful explanation for side effects at all?", and then an example I gave is that side effects may differ massively based on the activations of the layer(s) you modify
+    
+    Thanks for the reply! I didn't get to the second part of my project talk yet, but it has something to do with comparing saes across models. I think your project is about finding better sae features for a model using a method you call alignment regularization; it's not directly related to what I'm thinking of, but I think you have some useful insights into how saes can better learn true features. Given that you have experience comparing saes I think I may have several questions to ask later if you have time in a few weeks. I'm running prelim geom experiments now so it'd be easier to explain once I finish them
+    
+    And by comparing sae features across models I mean a continuation of this: [https://transformer-circuits.pub/2023/monosemantic-features#phenomenology-universality](https://transformer-circuits.pub/2023/monosemantic-features#phenomenology-universality)
+    
+- [Geometry project ideas](../Geometry%20project%20ideas%20eb549c97d93548fc97e75e83fcba87a8.md)
+- [SAE circuits brainstorm](../SAE%20circuits%20brainstorm%20bbdf5ded4da24855b11d0e706f19f097.md)
+- [Feature Geometry- Lit Review](../Feature%20Geometry-%20Lit%20Review%20384f2f70a32245a7a9aa5b1481cd85ab.md)
+- [Steering when ablate or patch](../SAE%20circuits%20brainstorm%20bbdf5ded4da24855b11d0e706f19f097/Steering%20when%20ablate%20or%20patch%205a04e0db28a34e44965e7b6fbe79a925.md)

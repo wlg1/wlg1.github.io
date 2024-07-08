@@ -1,5 +1,13 @@
 # SAE
 
+[Training at scale](SAE%206b08b4ad57a342bf9393d2ef0fa31c6b/Training%20at%20scale%20dda12ef43b0e43d99c4cb630ea460461.md)
+
+[Feature visualzier](SAE%206b08b4ad57a342bf9393d2ef0fa31c6b/Feature%20visualzier%2021c7e6bfa2c141539e7eaf5783a6a16a.md)
+
+[SAEs on large models](SAE%206b08b4ad57a342bf9393d2ef0fa31c6b/SAEs%20on%20large%20models%204107692463a6493b8c7069a8c2910958.md)
+
+---
+
 [https://www.notion.so/wlg1/Scene-2-SAE-math-draft-v1-bde8381733a941299abac40ea63587a1](https://www.notion.so/Scene-2-SAE-math-draft-v1-bde8381733a941299abac40ea63587a1?pvs=21)
 
 Choosing better features is sort of like view selection.
@@ -18,3 +26,7 @@ saes: # train steps, params, gpus (make list)
     l1 for sparse, l2 for reconstuction
 
 ![Untitled](SAE%206b08b4ad57a342bf9393d2ef0fa31c6b/Untitled.png)
+
+---
+
+[https://github.com/callummcdougall/sae_vis/tree/main](https://github.com/callummcdougall/sae_vis/tree/main)

@@ -40,3 +40,30 @@
         - The A40, while still costly, offers a more balanced price point considering its dual capabilities in compute and graphics.
     
     In essence, the choice between A100 and A40 should be based on the specific requirements of your applications. If your primary focus is on AI and large-scale computational tasks, the A100 is the better choice. If you need a GPU that handles both compute-intensive and graphically-intensive applications, the A40 would be more appropriate.
+    
+
+---
+
+Use torr vision group nodes (see summer research drive)
+
+do it on home dir; 15gb on home dir; `df -h ~`
+
+scratch/local/ssd has TB to use
+
+remote ssh extension vscode
+
+if stucik vscode conn to node, just keep on entering password until get popup to allow
+
+**Alasdair Paren**
+
+torrnodes no slurm, but jay and arc have it
+
+tell #torrnodes whenever use a lot of gpus
+
+a week run should tell ppl; overnight and no one using more free
+
+140 hrs too much
+
+say which gpus using on which node
+
+same model twice same init; loss curve looks around the same

@@ -6,465 +6,1287 @@
 
 ### Working on
 
-Plan project by summarizing notes so far
+Geometry of Activations
 
-- 🐣 project summary
+- ✅ browse feature plotting code
+    - platonic repr
+        
+        [https://phillipi.github.io/prh/](https://phillipi.github.io/prh/)
+        
+        [https://github.com/minyoungg/platonic-rep](https://github.com/minyoungg/platonic-rep)
+        
+    - LLM categorical
+        - linear repr repo
+    - toy models superpos ARENA
+        - [https://colab.research.google.com/drive/1hoD36nsHp6K0E-YeFgPzxazlstb7HPyh#scrollTo=DRQ9j4ftyHXf](https://colab.research.google.com/drive/1hoD36nsHp6K0E-YeFgPzxazlstb7HPyh#scrollTo=DRQ9j4ftyHXf)
+        - [https://github.com/callummcdougall/ARENA_3.0/blob/main/chapter1_transformer_interp/exercises/part4_superposition_and_saes/utils.py](https://github.com/callummcdougall/ARENA_3.0/blob/main/chapter1_transformer_interp/exercises/part4_superposition_and_saes/utils.py)
+    - neuronpedia umap (ask joseph)
+- ✅ study categ geom paper thms
     
-    [https://docs.google.com/document/d/1sEoX0fw3JXorOaa5KtN3T-l8aG7aSWZhPmprL7-HDfo/edit](https://docs.google.com/document/d/1sEoX0fw3JXorOaa5KtN3T-l8aG7aSWZhPmprL7-HDfo/edit)
+    [https://chatgpt.com/c/daf9bf12-e7dd-472b-a765-00bb6857ce37](https://chatgpt.com/c/daf9bf12-e7dd-472b-a765-00bb6857ce37)
     
-- 🐣 plan benchmark
-    - [https://chatgpt.com/c/e4f12e4e-9c3e-40fb-bf1f-4334a021399f](https://chatgpt.com/c/e4f12e4e-9c3e-40fb-bf1f-4334a021399f)
+    thm 8
+    
+    There is no perpendicular direction (in 1D space) to adjust one point without affecting the others. In higher dimensions, if vectors are not collinear, you have the freedom to move perpendicularly to affect one variable without altering the relative positions of others. 
+    
+    - what's the probability of w2? is that a different point on the line?
         
-        Creating a benchmark to measure the effectiveness of steering vectors for large language models (LLMs) involves several key steps. Here’s a general outline of how you might approach this, along with some recommended papers and resources to help you learn more about creating benchmarks:
+        Let's break it down intuitively using the concept of collinear points and probabilities.
         
-        ### Steps to Create a Benchmark
+        When we talk about the vectors \(\bar{\ell}*{w_0}, \bar{\ell}*{w_1}, \bar{\ell}_{w_2}\) being on a line, we are essentially saying that the positions of these points can be described using a single dimension. In this case:
         
-        1. **Define the Objective:**
-            - Clearly articulate what you want to measure with the benchmark. For steering vectors, this could include accuracy, robustness, bias reduction, and effectiveness in guiding model responses toward desired outcomes.
-        2. **Select or Create Tasks:**
-            - Choose a set of tasks that reflect the scenarios where steering vectors will be used. This could include question-answering, summarization, translation, dialogue systems, etc.
-        3. **Collect or Generate Data:**
-            - Gather or create datasets that represent the tasks. Ensure diversity in topics, difficulty levels, and linguistic variations to comprehensively evaluate the steering vectors.
-        4. **Establish Metrics:**
-            - Define the metrics to evaluate performance. Common metrics include accuracy, F1 score, BLEU score (for translation), ROUGE score (for summarization), and specific metrics for evaluating bias or ethical alignment.
-        5. **Baseline Models:**
-            - Include performance of baseline models (without steering vectors) to compare and measure the improvement brought by the steering vectors.
-        6. **Experimental Setup:**
-            - Design the experimental framework, including how to apply steering vectors, and how to measure their impact on model performance.
-        7. **Evaluation and Analysis:**
-            - Conduct experiments and analyze the results to determine the effectiveness of the steering vectors. Consider statistical significance and robustness of the results.
+        1. **Probabilities along a Line**: If these vectors are collinear, any change in the probability of one attribute (e.g., \(w_2\)) will necessarily influence the relative probabilities of the other attributes (\(w_0\) and \(w_1\)) because all movements are constrained to the line they form.
+        2. **Probability of \(w_2\)**: The probability of \(w_2\) can be seen as a point along the line formed by \(\bar{\ell}*{w_0}, \bar{\ell}*{w_1}, \bar{\ell}_{w_2}\). To change the probability of \(w_2\), you have to move along this line. This movement will also affect the relative probabilities of \(w_0\) and \(w_1\).
+        3. **Impact of Collinearity**: Since there is no direction in the line that allows you to move independently to change the probability of \(w_2\) without also affecting \(w_0\) and \(w_1\), you can't adjust one without influencing the others.
         
-        ### Recommended Papers and Resources
+        To visualize this, think of the line as a tightrope. If you are walking along the tightrope (the line), every step forward or backward changes your position relative to all points on the tightrope. There's no way to step to the side (no perpendicular movement), so every move affects your relative position to all other points on the line.
         
-        Here are some papers and resources that can help you learn more about creating benchmarks and measuring the effectiveness of steering vectors:
+        In summary, the probability of \(w_2\) is represented by a point on this line. To change this probability (i.e., move this point), you must move along the line, inherently affecting the relative probabilities of \(w_0\) and \(w_1\) as well.
         
-        1. **Benchmarking and Evaluation of Language Models:**
-            - "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding" by Alex Wang et al.
-            - "SuperGLUE: A Stickier Benchmark for General-Purpose Language Understanding Systems" by Alex Wang et al.
-            - "The GEM Benchmark: Natural Language Generation, its Evaluation and Metrics" by Sebastian Gehrmann et al.
-        2. **Steering and Control of Language Models:**
-            - "Steering GPT-3 to be more specific: Controlling Content Generation with Prompt Engineering" by Various Authors (explore relevant blog posts and articles on OpenAI’s blog).
-            - "Plug and Play Language Models: A Simple Approach to Controlled Text Generation" by Angela Fan et al.
-            - "Language Models are Few-Shot Learners" by Tom B. Brown et al.
-        3. **Evaluation Metrics and Bias Analysis:**
-            - "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?" by Emily Bender et al.
-            - "Fairness and Abstraction in Sociotechnical Systems" by Selbst et al. (for understanding fairness and bias considerations).
+- ✅ review UMAP
+- ✅ find how actvs and weights plotted in
+    
+    [**Towards Monosemanticity**](https://www.notion.so/Towards-Monosemanticity-66d08a43363640ff9444550db9ca4151?pvs=21) 
+    
+    [https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html)
+    
+- ✅ plan feature geom sim measurement proj
+    
+    [Feature Geometry- Lit Review](Feature%20Geometry-%20Lit%20Review%20384f2f70a32245a7a9aa5b1481cd85ab.md) 
+    
+    [Geometry project ideas](Geometry%20project%20ideas%20eb549c97d93548fc97e75e83fcba87a8.md) 
+    
+- ✅ **EXPM**: plot pretrained sae features
+    - plot feature weights 2D
+        - ✅ [feature_weights_pca](https://colab.research.google.com/drive/1stczggQZRSRW7OU2mwoJ2XxDxhdfyqH5#scrollTo=MNk7IylTv610).ipynb
+            - ✅ use updated `basic_loading_and_analysing`.ipynb [https://colab.research.google.com/github/jbloomAus/SAELens/blob/main/tutorials/basic_loading_and_analysing.ipynb#scrollTo=XoMx3VZpv611](https://colab.research.google.com/github/jbloomAus/SAELens/blob/main/tutorials/basic_loading_and_analysing.ipynb#scrollTo=XoMx3VZpv611)
+            - ✅ [ask chatgpt to plot weights in pca and umap](https://chatgpt.com/c/68ebe2fd-6d96-4ba8-8bc1-574775aa47b9)
+                - ✅ pca works but usign A100 is faster
+                - ✅ debug umap
+                    
+                    ERROR: `AttributeError: module 'numpy.linalg._umath_linalg' has no attribute '_ilp64'`
+                    
+                    - [https://umap-learn.readthedocs.io/en/latest/](https://umap-learn.readthedocs.io/en/latest/)
+                    - [https://umap-learn.readthedocs.io/en/latest/faq.html#is-there-gpu-or-multicore-cpu-support](https://umap-learn.readthedocs.io/en/latest/faq.html#is-there-gpu-or-multicore-cpu-support)
+                    - transformerlens or saelens incompat w/ latest numpy? or gpu/cpu incompat
+        - ✅ [feature_weights_umap](https://colab.research.google.com/drive/1Nxw9hntiIAwu8iYpQWQyarRY9MuS4JR8#scrollTo=s7GJCvWj2yBE).ipynb: try saving pickled sae feature weights in nb that installs saelens, then plot in umap in separte nb
+            - cpu works
+        - analyze results
+            - [for the feature weight encoder matrix of a sparse autoencoder, torch.Size([768, 24576]), trained on activations of layer 8 of gpt-2 small, what does this plot mean? why don't I see clusters?](https://chatgpt.com/c/5a819a8f-6731-457c-88e5-74c09d9d70dd)
+            - make sure you’re plotting by the cols? for decoder?
+                
+                Yes, it does matter whether you plot by columns or rows of the weight matrix because it changes the meaning of the points in the UMAP plot.
+                
+                ### Plotting Rows vs. Columns
+                
+                1. **Plotting Rows of the Weight Matrix:**
+                    - Each row represents a different feature (in your case, 768 features).
+                    - The UMAP plot will show the relationships between these features in a lower-dimensional space.
+                    - This is useful if you want to understand how the features are related or clustered based on the autoencoder's weight matrix.
+                2. **Plotting Columns of the Weight Matrix:**
+                    - Each column represents a different input dimension (in your case, 24576 dimensions).
+                    - The UMAP plot will show the relationships between the input dimensions in a lower-dimensional space.
+                    - This is useful if you want to understand how the input dimensions are represented or clustered based on the autoencoder's weight matrix.
+                
+                ### Example: Plotting Rows
+                
+                If you want to visualize the relationships between the features, you should plot the rows of the weight matrix.
+                
+                ```python
+                import umap
+                import matplotlib.pyplot as plt
+                
+                # Assuming weight_matrix is your original matrix of size [768, 24576]
+                
+                # Initialize UMAP
+                reducer = umap.UMAP(n_neighbors=15, min_dist=0.1, metric='euclidean')
+                
+                # Fit and transform the data by rows
+                embedding = reducer.fit_transform(weight_matrix)
+                
+                # Plot the UMAP result
+                plt.figure(figsize=(10, 8))
+                plt.scatter(embedding[:, 0], embedding[:, 1], s=5, cmap='Spectral')
+                plt.title('UMAP of Weight Matrix by Rows (Features)')
+                plt.xlabel('UMAP Component 1')
+                plt.ylabel('UMAP Component 2')
+                plt.show()
+                
+                ```
+                
+                ### Example: Plotting Columns
+                
+                If you want to visualize the relationships between the input dimensions, you should transpose the weight matrix and plot the columns.
+                
+                ```python
+                # Transpose the weight matrix to get dimensions [24576, 768]
+                transposed_weight_matrix = weight_matrix.T
+                
+                # Initialize UMAP
+                reducer = umap.UMAP(n_neighbors=15, min_dist=0.1, metric='euclidean')
+                
+                # Fit and transform the data by columns
+                embedding = reducer.fit_transform(transposed_weight_matrix)
+                
+                # Plot the UMAP result
+                plt.figure(figsize=(10, 8))
+                plt.scatter(embedding[:, 0], embedding[:, 1], s=5, cmap='Spectral')
+                plt.title('UMAP of Weight Matrix by Columns (Input Dimensions)')
+                plt.xlabel('UMAP Component 1')
+                plt.ylabel('UMAP Component 2')
+                plt.show()
+                
+                ```
+                
+                ### Choosing Rows or Columns
+                
+                - **Choose Rows** if you are interested in the feature relationships.
+                - **Choose Columns** if you are interested in the input dimension relationships.
+                
+                Based on your previous context, if you want to see how the features encoded by the sparse autoencoder cluster, you should plot the rows of the weight matrix. If your interest lies in understanding how the original input dimensions (activations of layer 8 of GPT-2 small) cluster, then you should plot the columns.
+                
+            - how to compare two umap set of points to see if similar
+                
+                
+            - compare to neuronpedia
+                - ask slack / jb
+                    
+                    I was also wondering if I can ask this question on the [#neuronpedia](https://opensourcemechanistic.slack.com/archives/C06R43HV2CR) channel: I'm looking to understand the umap plots on neuronpedia better so I've been taking the feature weight matrix from saelens (sae.W_enc) and just plotting them in umap to see if I get similar plots/clusters. I was wondering if there's a paper or blog post about what Umap parameters (num_neigh, etc) were used?
+                    
+                    Were they similar to the parameters in Towards Monosemanticity (attached paragraph)? Also I suppose to use decoder rather than encoder weights
+                    
+    - plot feature actvs 2D
+        - ✅ plot feature actvs in pca
+            
+            same nb as weights
+            
+        - plot feature actvs in umap
+            - ✅ either umap wasn’t compat with GPU, OR umap lib wasn’t compatible with saelens lib (diff vers of numpy, etc).
+                - loading umap w/ saelens doesn’t work.
+                    - so we needed to save feature_acts from a separate nb that loaded saelens
+                - so test if umap compat with gpu. yes; it works with gpu
+                    - So when saving feature_acts from pca, can save as gpu. Note a cpu run cannot load a tensor that was saved from a gpu; must use `.cpu` before saving it
+            - there are clusters, but what are they?
+                
+                ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled.png)
+                
+    - interpret feature actvs
         
-        ### Determining the Size of the Benchmark
         
-        The size of the benchmark depends on the following factors:
+    - scale up using Torr node
+- ✅ msg luke on universal features converging across models
+    
+    comparing saes across models. I think your project is about finding better sae features for a model using a method you call alignment regularization; it's not directly related to what I'm thinking of, but I think you have some useful insights into how saes can better learn true features. Given that you have experience comparing saes I think I may have several questions to ask later if you have time in a few weeks. I'm running prelim geom experiments now so it'd be easier to explain once I finish them
+    
+    And by comparing sae features across models I mean a continuation of this: [https://transformer-circuits.pub/2023/monosemantic-features#phenomenology-universality](https://transformer-circuits.pub/2023/monosemantic-features#phenomenology-universality)
+    
+    To phrase it better, I was thinking about how your method would approximate the true features better in one LLM. For two LLMs that are initialized differently, the saes trained on each of them for a layer would likely not find many analogous features. But if you train better saes, say with your method using the aggregates of multiple saes, I was wondering how much they would "converge' to find universally similar features, esp when features splitting occurs as saes get bigger. Similar to the platonic rep hypothesis. Do you think they would converge?
+    
+- ✅ chatgpt on ‘hier geom’ causal inner product reasons
+    
+    [https://chatgpt.com/c/fbfde9a6-76fd-4c88-a2bd-267312a4d3df](https://chatgpt.com/c/fbfde9a6-76fd-4c88-a2bd-267312a4d3df)
+    
+    - Why do we need to use the causal inner product? Why couldn't the authors have just looked for simplex orthogonality relations directly in the embedding space (last token, last layer) or unembedding space separately?
+        1. **Unification of Embedding and Unembedding Spaces**:
+        The causal inner product allows for the unification of the context embedding space (Λ) and the token unembedding space (Γ) into a single representation space. This unification is essential because it ensures that concepts represented in these distinct spaces can be compared and analyzed under a common framework. The transformation using an invertible matrix \( A \) and a constant vector \( \gamma_0 \) aligns these spaces such that the Euclidean inner product in the transformed space respects the semantics of language【6:2†source】.
+        2. **Simplicity and Structure**:
+        The causal inner product allows for the representation of categorical and hierarchical concepts as simple geometric structures, such as simplices. This geometric representation is more interpretable and aligns with the hierarchical nature of semantic concepts. By ensuring orthogonality and maintaining a unified representation space, the causal inner product supports the formation of these geometric structures, facilitating easier manipulation and understanding of the concepts【6:12†source】【6:14†source】.
+        3. **Empirical Validation**:
+        The theoretical results are empirically validated using a large language model (Gemma-2B). The transformation to a canonical representation space via the causal inner product allows for the alignment of the embedding and unembedding representations, enabling the observation and measurement of the predicted geometric structures in practice. This empirical validation strengthens the theoretical foundation laid out by the authors【6:12†source】.
         
-        - **Diversity of Tasks:** Include a wide range of tasks to ensure comprehensive evaluation.
-        - **Data Size:** Ensure the datasets are large enough to provide statistically significant results but manageable within computational constraints.
-        - **Complexity:** Balance between simple and complex tasks to cover different aspects of model performance.
+        Directly looking for simplex orthogonality relations in either the embedding space or the unembedding space separately would not ensure the alignment of these spaces or respect the hierarchical and causal relationships between concepts. The causal inner product provides a rigorous mathematical framework that ensures these properties are maintained, enabling a more accurate and interpretable representation of semantic structures in language models.
         
-        For example, the GLUE benchmark includes 9 tasks with varying data sizes, while the SuperGLUE benchmark includes 10 more challenging tasks. Aim for a benchmark that includes at least 5-10 different tasks with adequate data points for each to ensure robust evaluation.
+    - Was LDA used to get a vector in the causal inner product's space? If we just look at individual activation spaces of a layer, do we need LDA or can we just look at the activation vector directly?
+        1. **Separate Classes**: The primary role of LDA is to find a projection that maximizes the separation between different classes (e.g., words belonging to different concepts) while minimizing the variance within each class. This helps in creating a clear distinction between concepts in the representation space.
+        2. **Minimize Variance**: By minimizing the within-class variance, LDA ensures that the projection of the unembedding vectors for tokens associated with a specific concept (e.g., "mammal") is consistent, which aligns with the requirement that concepts should have well-defined vector representations with minimal variance around a central value.
+        3. **Align with Theoretical Results**: The LDA-based estimation of vector representations aligns with the theoretical framework provided by the causal inner product, ensuring that the geometric properties such as orthogonality and simplex structures are preserved and observable in the empirical results.
+        
+        ### Looking at Individual Activation Spaces
+        
+        If we were to look at the activation vectors directly within an individual layer without transforming them via the causal inner product, there are some key considerations:
+        
+        1. **Representation Alignment**: Without the transformation provided by the causal inner product, the embeddings and unembeddings might not be aligned in a way that respects the semantic relationships between concepts. This misalignment can obscure the geometric structures (such as orthogonality and simplices) that are crucial for understanding the hierarchical relationships.
+        2. **Need for LDA**: In the individual activation spaces, LDA can still be beneficial because it helps in finding directions that separate different classes of concepts. However, if the goal is to directly observe activation vectors, LDA might not be strictly necessary if the vectors already exhibit clear separations. Yet, typically, raw activation vectors might not be as well-separated without some form of dimensionality reduction or projection technique like LDA.
+        3. **Empirical Consistency**: The empirical validation of theoretical results often requires transformations like LDA to ensure consistency with the theoretical framework. Direct observation of raw activation vectors might miss subtle relationships that are more apparent after applying LDA or similar techniques.
+        
+        ### 
+        
+    - actually LDA is used to get a vector for an attribute, which is a collection of tokens, using those tokens?
+        
+        Yes, you're correct. LDA (Linear Discriminant Analysis) is indeed used to get a vector representation for an attribute, which is essentially a collection of tokens. Here's a detailed explanation of how LDA is utilized in this context:
+        
+        ### Purpose of LDA in the Study
+        
+        LDA is employed to estimate the vector representations of attributes by utilizing the tokens associated with those attributes. Here's how this works:
+        
+        1. **Attribute and Token Relationship**: Each attribute (e.g., "mammal") is associated with a set of tokens (e.g., "dog," "cat," "elephant"). The goal is to find a vector that represents this attribute based on the embeddings of these tokens.
+        2. **Class Separation**: LDA helps in finding a projection that maximizes the separation between the tokens associated with the attribute and those that are not. This ensures that the vector representation of the attribute captures the distinguishing features of the tokens that belong to it.
+        3. **Minimizing Within-Class Variance**: LDA also minimizes the variance within the tokens of the same attribute. This means that the tokens associated with the attribute should have similar projections onto the resulting vector, making the representation consistent.
+        
+        ### Process of Using LDA
+        
+        Here's a step-by-step process of how LDA is used in this study:
+        
+        1. **Collect Tokens**: Gather the tokens that belong to the attribute (e.g., all tokens that can be considered "mammals").
+        2. **Compute Unembedding Vectors**: For each token, compute its unembedding vector in the representation space.
+        3. **Estimate the Vector Representation**: Use LDA to find the direction that best separates the tokens associated with the attribute from those that are not. This involves:
+            - Calculating the mean vector for the tokens of the attribute.
+            - Calculating the covariance matrix of these tokens.
+            - Finding the direction that maximizes the between-class variance and minimizes the within-class variance.
+        
+        ### Equation for LDA-based Vector Estimation
+        
+        The LDA-based estimation of the vector representation for an attribute \( w \) is given by:
+        \[ \ell_w = \frac{\text{Cov}(g_w)^{-1} \mathbb{E}(g_w)}{\|\text{Cov}(g_w)^{-1} \mathbb{E}(g_w)\|_2} \]
+        where \( g_w \) represents the unembedding vectors of the tokens associated with the attribute \( w \), and \(\text{Cov}(g_w)\) is the covariance matrix of these vectors.
+        
+        ### Empirical Validation
+        
+        Using LDA in this manner ensures that the resulting vector representation of the attribute aligns with the theoretical expectations, such as the orthogonality of hierarchically related concepts and the simplex structure of categorical concepts. This process helps in empirically validating the theoretical results by showing that the estimated vectors exhibit the expected geometric properties.
         
         ### Conclusion
         
-        Creating a benchmark to measure the effectiveness of steering vectors for LLMs is a multifaceted task that requires careful planning and consideration of objectives, tasks, metrics, and experimental design. By leveraging existing research and frameworks, you can build a comprehensive benchmark that provides meaningful insights into the performance of steering vectors in LLMs.
+        LDA is indeed used to get a vector for an attribute by utilizing the tokens associated with that attribute. This approach ensures that the resulting vector representation accurately captures the distinguishing features of the attribute and aligns with the theoretical framework provided by the causal inner product.
         
-- ✅ advice from others on project
-    - Minseon
+    - i dont see here how multiple tokens aer used? it says g_w is just a word sampled
         
-        For the pros, she said that model steering seems to be promising field of research, such as a recent paper she learned of “Refusal in Language Models Is Mediated by a Single Direction” that showed the effectiveness of the refusal vector.
+        The confusion arises from the notation and the explanation in the text. Let's clarify how multiple tokens are used to estimate the vector representation for an attribute using LDA:
         
-        For the cons, she said the statement in the summary, "explaining why activation steering works so effectively” is vague, so that I should explain why it’s effective. She said to make my hypothesis more direct and clearer.
+        ### Explanation of the Equation
         
-        We also discussed other points but there were too many to list in a message.
+        1. **Tokens Associated with Attribute \( w \)**:
+            - \( Y(w) \) represents the set of tokens associated with the attribute \( w \). For example, if \( w \) is "mammal," \( Y(w) \) might include tokens like "dog," "cat," "elephant," etc.
+        2. **Unembedding Vectors**:
+            - \( g_w \) represents the unembedding vector of a word sampled uniformly from \( Y(w) \). This means that for the calculation, each word in \( Y(w) \) has an unembedding vector \( g \), and \( g_w \) is the set of these vectors for all tokens in \( Y(w) \).
+        3. **Covariance Matrix**:
+            - The covariance matrix \( \text{Cov}(g_w) \) is computed using the unembedding vectors of all tokens in \( Y(w) \). This involves taking all the tokens associated with \( w \) and calculating the covariance of their unembedding vectors.
+        4. **LDA Estimation**:
+            - The vector \( \ell_w \) for the attribute \( w \) is estimated using these unembedding vectors. Specifically, the estimation involves calculating the mean vector \( \mathbb{E}(g_w) \) and the covariance matrix \( \text{Cov}(g_w) \) for the set of tokens.
         
-        Choose to either make new benchmark or improve method but not both, as that would disqualify previous measurements. 
+        ### Detailed Steps
         
-        Overall, from the conversation we decided my project can be restated as: interpreting how steering would affect multiple features in multiple layers, and aiming to develop better techniques to both find and target only intended features and not others. 
+        1. **Collect Tokens**:
+            - Gather all tokens that are associated with the attribute \( w \). This forms the set \( Y(w) \).
+        2. **Compute Unembedding Vectors**:
+            - For each token in \( Y(w) \), compute its unembedding vector. Let's denote the set of these vectors as \( \{ g_{w1}, g_{w2}, ..., g_{wn} \} \).
+        3. **Calculate Covariance Matrix**:
+            - Calculate the covariance matrix \( \text{Cov}(g_w) \) using the unembedding vectors of all tokens in \( Y(w) \). This matrix captures the variance and correlations of the vectors within the set.
+        4. **Estimate Vector Representation**:
+            - Use LDA to find a projection that separates the tokens associated with \( w \) from those not associated with it. The LDA process maximizes the separation between classes (tokens associated with \( w \) vs. those that are not) while minimizing the within-class variance.
+        5. **Compute the Vector**:
+            - The vector \( \ell_w \) is computed using the pseudo-inverse of the covariance matrix and the mean vector of the unembedding vectors. The formula provided in the text is:
+            \[
+            \ell_w = \left( \tilde{g}_w^T \mathbb{E}(g_w) \right) \tilde{g}_w, \quad \text{with} \quad \tilde{g}_w = \frac{\text{Cov}(g_w)^\dagger \mathbb{E}(g_w)}{\| \text{Cov}(g_w)^\dagger \mathbb{E}(g_w) \|_2}
+            \]
+            - Here, \( \mathbb{E}(g_w) \) is the mean of the unembedding vectors of tokens in \( Y(w) \), and \( \text{Cov}(g_w)^\dagger \) is the pseudo-inverse of the covariance matrix.
         
-        It seems like a more concrete project plan statement because it is similar to the concrete experiments done by Neel Nanda cited in the project proposal. However, it is also general enough, as being too specific on a hypothesized approach that may be wrong would lead to dead ends, so I can re-adjust the specifics when needed. 
+        ### Summary
         
-    - clement advice
+        While the text may seem to suggest using a single token, it actually involves using the set of tokens associated with the attribute to compute the mean and covariance matrix. These are then used in the LDA process to estimate the attribute's vector representation. Thus, multiple tokens are indeed used to derive the vector \( \ell_w \) for the attribute \( w \).
         
-        case study on previous behavior that failed with current techniques (like sleeper agents), or benchmark. with those, effectiveness of steering can be evaluated
+    - why were these attribute vectors such as “L_bird” used, rather than individual tokens such as “bird”?
         
-        use cases of what people use activation steering for production / user experience - easier way, actv steering is more transparent
+        The attribute vectors (e.g., \( \ell_{\text{bird}} \)) are used rather than individual token vectors (e.g., "bird") for several key reasons:
         
-        ‘precise’ is hard to argue. methodlogy doesn’t matter. 
+        ### 1. Capturing Generality and Abstraction
         
-        I also just talked to Clement and got good advice about showing how my new approach to steering may be able to allow us to control model behavior more specifically using safety related vectors, such as not just allowing the model to refuse in general, but refuse specific things, such as refusing to answer chemistry. This could have applications to modifying models for more nuanced tasks to avoid generalizing in unintended ways, and improve alignment to specific human goals. I will write up a 1pg draft of this for tomorrow
+        - **Attribute vectors** represent the general concept or category that encompasses all tokens associated with that attribute. For example, the attribute vector \( \ell_{\text{bird}} \) captures the essence of the concept "bird" which includes all specific instances of birds (like "sparrow," "eagle," "parrot").
+        - **Individual token vectors** represent specific words, which may only capture particular instances or narrower aspects of the attribute. The vector for "bird" might only reflect the specific usage of the word "bird" in the training data, rather than the entire category.
         
-- ✅ read workshop papers and revise project proposal
-    
-    Thanks for highlighting parts that should be clarified! I’m going to finish revising a clearer version of the project summary during Tuesday. Meanwhile I’ll elaborate more on the first 2 questions (and address the others later, since it’s already long) based on the previous works. I’ve attached this as a pdf since it’s lengthy, and here’s the link to the google docs:
-    
-    [https://docs.google.com/document/d/1yZ63OpguH7RjFxxUe53wRPg1Rno2Wmulmh3bAG4OrJA/edit?usp=sharing](https://docs.google.com/document/d/1yZ63OpguH7RjFxxUe53wRPg1Rno2Wmulmh3bAG4OrJA/edit?usp=sharing)
-    
-    1) The statement “explain why adding… works so well” is from the last line of the paper “Activation Addition” (Turner et al 2023) where they discuss future work. I agree this is a vague statement, even in the original paper. It seems, however, it can be implied from the paper that they mean to tie this to a statement from earlier in their paper: “Adding values to imprecisely targeted intermediate memory locations would not yield sensible results in most programs. Why expect this from Transformers?” The authors then go on to say, “Our hypothesis… is that neural networks represent features…. with a linear representation.” So they believe that if features are linear directions, you can just use their simple contrastive subtraction method to obtain a steering vector for most features.
-    
-    2) That explains what “why adding works” means; but now I believe I have a better way to phrase my topic than that statement. This better way is to address the limitations (A, B, C) stated below. Even if all features can be represented linearly and be obtained by a factor of a “difference-in-means” direction, there may still be many questions about its limitations, such as: A) how to find them (more optimally while minimizing noise) [see: [https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/full-post-progress-update-1-from-the-gdm-mech-interp-team](https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/full-post-progress-update-1-from-the-gdm-mech-interp-team) ], B) how to steer them while minimizing interference (mentioned in the paper discussed in the next point), and
-    
-    C) In the ICML MI Workshop (Spotlight) paper, “Relational Composition in Neural Networks” (Wattenberg and Viégas), the authors “argue that this success [of the linear rep hypothesis] is incomplete without an understanding of relational composition: how (or whether) neural nets combine these internal representations to represent more complicated relationships.” They give an example of this limitation: “A scene where a duck is perched on a capybara and one where the capybara is perched on the duck would have the same representation.” If “duck on capybara” is “good” while “capybara on duck” is a “threat”, we should steer the model to recognize the former as good and not the other way around- to accomplish this, we would require more targeted steering that looks at mechanisms other than just feature addition. Would we obtain specific features of “duck on capybara” vs “capybara on duck”? This seems inefficient due to the many combinations of concepts. Instead, we can obtain building blocks of concepts and find how they’re composed in the representation space, and alter these composition operations. This is ambitious, but perhaps we can build towards this in small but significant steps. 
-    
-    Pretraining and fine-tuning can do this, but the aim of editing/steering is to be more interpretable and less of a black box with uncertain outcomes that could possibly result in deceptive agents. With interpretability, it’s like we can use a MRI on deceptive agents to locate “problematic structures” in the geometry of representation space, and then perform surgery to fix them.
-    
-    Now, I have many ideas for approaches about finding how the model composes concepts in representation space. One of them builds on the ICML MI Workshop (Oral) paper, “The Geometry of Categorical and Hierarchical Concepts”, which assumes the linear representation hypothesis as true and extends it to find that “hierarchically related concepts are orthogonal… complex concepts are represented as polytopes constructed from direct sums of simplices.” This may mean we can manipulate composable concepts as a “hierarchy”, composing feature “knobs” from parent (animal) to child (mammal) to grandchild (cat). Perhaps, instead of finding features separate for each animal, we find a more abstract “animal feature” that all of them share, and then we find more specific animals by performing operations onto this animal feature. This is similar to inheritence in object-oriented programming, which promotes efficient code re-use (if used for the right scenarios). 
-    
-    I communicated via a few emails with the main author of that paper (who is also the main author of “The Linear Representation Hypothesis" that David mentioned) and he was interested in this idea of steering with more decomposed concepts, and I’m planning to meet with him this Thursday to better refine this plan. By then I would have a better plan written down, likely with some prelim steering expms (though not directly related to the hierarchical concepts code). I think in ~2 weeks, after running more steering experiments, I can talk to others like Nina Rimsky to discuss the steering aspects of this project better.
-    
-    Also, here are some other possible limitations of steering:
-    
-    i) I mentioned there may be questions such as “how to find features?” We can take two very large datasets where the only difference is one contains a concept and the other doesn’t, but there’s still a lot of uncertainty in how well this works, such as how do we get rid of a concept in the other dataset- do we just get replace it, or not mention it? But what if that concept isn’t a word, but a long description of a pattern (eg. the duck-capybara example)? Is it position dependent? How much does the dataset structure choice affect the vector you obtain? In addition to diff-of-means, we can use SAEs. But will SAEs always find features we want to change? Large enough SAEs may do this due to “feature splitting”, but we have to experiment with this further and compare across models.
-    
-    ii) The linear representation hypothesis also isn’t enough to describe the downstream effects of steering (eg. how one feature affects another then affects the output, like a circuit); this is a question I’m investigating in prelim experiments
-    
-    iii) While several papers have been written with evidence justifying the linear representation hypothesis, this hypothesis still has to go through more tests. Papers such as “Not All Language Model Features Are Linear” (Engels et al 2024) argue that not all features are linear; they present evidence of circular features (eg. months). If the linear representation hypothesis does not hold, then steering using just features as directions is not enough, which is a big limitation of steering we can tackle. 
-    
-    Overall, I think “extending activation steering to do more targeted output changes” is a better topic statement than “explaining why activation addition works so well”. The latter statement was an older, high-level placeholder, and now with a more thorough literature review I can hone in on a less vague topic. I’ll write all of this up much clearer on Tuesday.
-    
-- brainstorm why this approach can be useful
-    
-    Questions about research to pass- if not, weaker justification for doing it
-    
-    - ✅ msg andy zou and 1st author of ref vec on why steering is useful
+        ### 2. Reducing Variability and Noise
         
-        Hi, I read your paper on Representation Engineering and had questions about how model steering would be used in practice, as I'm working in a summer research internship with the TVG group at University of Oxford now and am looking to do work in model steering. However, I am trying to justify in a proposal why it would be useful in practice.
+        - **Attribute vectors** are calculated by aggregating information from multiple tokens, reducing the variability and noise inherent in individual word usage. This aggregation results in a more robust and stable representation of the concept.
+        - **Individual token vectors** can vary significantly depending on context and usage frequency, leading to less reliable representations if used in isolation.
         
-        In practice, say we want a model to refuse user behavior. We can use the steering vector during inference time for certain inputs, or all inputs. But can we just detect the user input + model output (not shown to the user yet) using another model or algorithm, and just not go through with the request?
+        ### 3. Semantic Coherence
         
-        I think for other behaviors such as sycophancy it might make more sense though. But I was wondering why use the refusal vector over just not going through with a request that can be detected as harmful through other means? Thank you.
+        - **Attribute vectors** ensure that the semantic properties of the entire category are captured. For instance, the vector \( \ell_{\text{bird}} \) is derived from multiple bird-related tokens, ensuring that the representation is semantically coherent and representative of the entire class.
+        - **Individual token vectors** might not fully capture the hierarchical or categorical relationships within the data, missing out on the broader semantic context.
         
-        My guesses for why to use steering would be:
+        ### 4. Facilitating Geometric Interpretations
         
-        1) It may not be possible to perfectly detect what are bad / good outputs every time, so steering is an extra safety net
+        - **Attribute vectors** allow for the application of geometric interpretations such as orthogonality and simplex structures. These interpretations are crucial for understanding relationships between different concepts and categories in the representation space.
+        - **Individual token vectors** do not provide a straightforward way to apply these geometric interpretations, as they are tied to specific instances rather than abstract categories.
         
-        2) We may still want the model to output something, so not throw everything out that’s good just because there’s some bad
+        ### 5. Enabling Hierarchical and Categorical Analysis
         
-        For comparing steering vs fine tuning, I think of 3 reasons: it’s cheaper, more interpretable, and more precise (less side effects, more predictable). 
+        - **Attribute vectors** support the analysis of hierarchical and categorical relationships, which is essential for understanding the structure of semantic representations in language models. For example, \( \ell_{\text{mammal}} \) and \( \ell_{\text{animal}} \) can be used to study the hierarchical relationship between mammals and animals.
+        - **Individual token vectors** do not easily facilitate this kind of analysis, as they do not inherently represent the broader categories or hierarchical levels.
         
-    - Do steering communities care about steering specifics (which can be done by composing)? Justify its use in AI safety
+        ### Practical Implementation
         
+        As detailed in the provided document, the authors used LDA to derive these attribute vectors from the unembedding vectors of multiple tokens associated with each attribute. This method ensures that the resulting vectors are representative of the entire category rather than just individual instances.
         
-    - why feature decomposition can’t just be found via model splitting?
-    - do features across layers, like a circuit, influence behavior?
-    - When steering is used, the steering vector may be used for every user input. But why not just detect the input beforehand (using another model or algorithm to measure output) and not have the model output anything?
-    - Preserve invariant structure while changing style is useful for img2img, but what about text?
-    - The points about steering’s flaws from (Relational Composition) seem speculative.
-    - If care about specifics, why not just not steer on certain specific inputs? What about multiple steering vectors?
-    - How is steering even used in deployment? Is it just used on all inputs?
-- ✅ ask neel for updates on steering vec decomp
-    
-    Hi, it's been a while since I last thought about this topic as I was working on other research projects, but without giving out details, I was wondering if it's possible to say if decomposing steering vectors has since led to any promising results, or if it hasn't really been continued? New papers such as Refusal Vector seem to do really well with just difference-of-means and I'm guessing decomposition may have been tried on the refusal vector too. Just asking to see if this is a good avenue to pursue still or not
-    
-- ✅ **Editing Model Behavior, Proposal Brainstorm v1**
-    
-    [https://www.overleaf.com/project/6672b8361d6a3cad2420bafc](https://www.overleaf.com/project/6672b8361d6a3cad2420bafc)
-    
-- ✅ make slides
-    
-    [https://docs.google.com/presentation/d/1-FK73_RLgU6X3TkWdJmvPo-omlMVQ2bi532wXapvrC8/edit#slide=id.g2153ba3b593_0_372](https://docs.google.com/presentation/d/1-FK73_RLgU6X3TkWdJmvPo-omlMVQ2bi532wXapvrC8/edit#slide=id.g2153ba3b593_0_372)
-    
-    [https://chatgpt.com/c/391f2a1f-ed25-4997-b2d3-aa457dabf2c9](https://chatgpt.com/c/391f2a1f-ed25-4997-b2d3-aa457dabf2c9)
-    
-    [https://lucid.app/](https://lucid.app/)
-    
-
-Observe how steering affects features downstream
-
-- implement ‘see what steering at a layer affect other features’
-    
-    [https://docs.google.com/presentation/d/1uvM4LbpBnPav2dD-t55jDpedaIfhJbgpbV3GhJ_UyC8/edit#slide=id.g2ce4bd20f45_0_722](https://docs.google.com/presentation/d/1uvM4LbpBnPav2dD-t55jDpedaIfhJbgpbV3GhJ_UyC8/edit#slide=id.g2ce4bd20f45_0_722)
-    
-    **TODO:** change these features and measure how the steering vector performs in output and on benchmarks (latter may be noted as next steps when presenting)
-    
-    - plan detailed steps
-        1. Difference of 2 contrastive prompts actvs at layer k of GPT-2
-            1. do contrastive sets later
-        2. For third prompt, apply steering vector at layer k
-        3. Cache activations from layer k to last layer L for unst & steered runs
-        4. Pass both those activations through their respective pre-trained SAEs
-        5. Observe differences, before and after steering, for features from layer k to last layer L
-            1. Obtain features via SAE, SVD, etc.
-        - Later work
-            1. Interpret features using dataset example labeling, unembedding methods (eg. logit lens), patching (for causal relations)
-                1. Eg) Does the anger vector alter features related to anger?
-            2. Generalize universal patterns across models and different classes of steering vectors (eg. vectors representing parent-child relations)
-                1. Eg) The anger vector always alters F1 and F2, where F1 = P*F2, F1 activates on “fearful” and F2 activates on “threat”
-            3. Patch back in feature ablated in later layers
-                - Put SAE reconstructions back into model
-                    - See: [GPT2_SAE_MLP0_seqcont_explora_v2](https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G#scrollTo=K-wGX_O3xaH9).ipynb
+        ### Conclusion
         
-        ISSUE: how to identify analogous F1 and F2 across models?
+        Using attribute vectors such as \( \ell_{\text{bird}} \) instead of individual tokens like "bird" allows for more general, stable, and semantically coherent representations. These vectors facilitate the analysis of hierarchical and categorical structures in the representation space of language models, which is essential for understanding and interpreting the underlying semantic relationships.
         
     
-    [gpt2Small_pretrained_steering.ipynb](https://colab.research.google.com/drive/1IUtIe0D6UBAJYlPC4eJl00l8fmpohhKG)
+    It seems like the statement “"the simplex of fish,mammal, bird is orthogonal to the vector representation of animal" is interpreted as span{¯ℓmammal,¯ℓbird,¯ℓfish} is orthogonal to L_animal. If so,  what does it mean that a * mammal + b*bird + c*fish is orthogonal to L_animal?
     
-    This implementation simplifies away the wrappers that hide the fns to make it easier to understand the basics of the steering algorithms
+    - Semantically what does a * mammal + b*bird + c*fish mean? How can a specific vector be a combination of those?
+        
+        **Example**: Interpolating between "mammal" and "bird" might create a vector that captures semantic similarities or shared characteristics, such as being warm-blooded.
+        
+    - do the vectors in span{¯ℓmammal,¯ℓbird,¯ℓfish} represent specific animals?
+        
+        The vectors in \(\text{span}\{\ell_{\text{mammal}}, \ell_{\text{bird}}, \ell_{\text{fish}}\}\) do not necessarily represent specific animals directly. Instead, they represent combinations of the attributes associated with mammals, birds, and fish. Here’s a more detailed explanation:
+        
+        ### Understanding the Span
+        
+        1. **Span of Vectors**:
+            - The span of \(\{\ell_{\text{mammal}}, \ell_{\text{bird}}, \ell_{\text{fish}}\}\) consists of all possible linear combinations of these vectors. Mathematically, this means any vector \( v \) in this span can be expressed as:
+            \[
+            v = a \cdot \ell_{\text{mammal}} + b \cdot \ell_{\text{bird}} + c \cdot \ell_{\text{fish}}
+            \]
+            - Here, \(a\), \(b\), and \(c\) are scalar coefficients.
+        
+        ### Semantic Interpretation
+        
+        1. **Attribute Combinations**:
+            - The vectors within this span represent different mixtures or combinations of the semantic attributes associated with mammals, birds, and fish. They do not correspond to specific animals but rather to abstract concepts that blend these attributes.
+        2. **Conceptual Space**:
+            - For example, a vector in this span might represent a general concept that has some mammalian traits, some avian traits, and some piscine traits. This is more about capturing the shared and overlapping characteristics rather than pinpointing specific animals.
+        3. **Abstract Entities**:
+            - Such combinations could be used to model abstract or hypothetical entities. For instance, in a hypothetical or fantasy context, a vector in this span could represent a creature with a mix of traits from mammals, birds, and fish.
+        
+        ### Specific Animals and Attribute Vectors
+        
+        1. **Representing Specific Animals**:
+            - Specific animals like "dog," "sparrow," or "salmon" would typically be represented by their own unique vectors, derived from their particular contexts and usage in the training data.
+            - These specific animal vectors would be located in the broader semantic space, which might be influenced by the attribute vectors \(\ell_{\text{mammal}}, \ell_{\text{bird}}, \ell_{\text{fish}}\), but not confined to their span.
+        2. **Hierarchical and Categorical Representation**:
+            - The span of these attribute vectors provides a subspace that helps in understanding and organizing the broader semantic space. It’s useful for analyzing relationships and hierarchies but doesn’t directly map to specific instances.
+        
+        ### Practical Example
+        
+        - **Combining Attributes**: If you have \(\ell_{\text{mammal}}\), \(\ell_{\text{bird}}\), and \(\ell_{\text{fish}}\), a vector \(0.5 \cdot \ell_{\text{mammal}} + 0.3 \cdot \ell_{\text{bird}} + 0.2 \cdot \ell_{\text{fish}}\) might represent an abstract concept that combines features of these three classes. This vector is not a direct representation of a specific animal but rather an abstract blend.
+        
+        ### Conclusion
+        
+        The vectors in \(\text{span}\{\ell_{\text{mammal}}, \ell_{\text{bird}}, \ell_{\text{fish}}\}\) represent abstract combinations of the attributes associated with mammals, birds, and fish. They do not correspond directly to specific animals but provide a useful subspace for exploring the relationships and characteristics of these broader categories. Specific animals are represented by their own unique vectors within the broader semantic space of the model.
+        
+- ✅ How does whitening matrix "make" variables uncorrelated? Shouldn't the correlation be how the variables truly are? Or is it transforming the data into a perspective such that when look at it from that basis, the data is uncorrelated on that basis?
     
-    - ✅ STEP 1: get contrastive activations for 2 prompts of gpt-2
-        - [hierConcepts_logitLens_llama2.ipynb](https://colab.research.google.com/drive/1sUeugm0DLrE_c8NAZy06XETeKdtwizWE#scrollTo=2UdLBhJPkFkf)
-            - pass them both in batch, then take actvs of each batch index
-    - ✅ STEP 2: For third prompt, apply steering vector at layer k
-        - ✅ hook fn to add? look at prev repos how they did it
-            - `activation_additions` (turner et al repo) \ `activation_additions \ hook_utils.py`
-                - `hook_fns_from_activation_additions`
-        - ✅ find also recent papers/blogs doing steering to see if they use easier way
-            - [https://www.lesswrong.com/posts/ndyngghzFY388Dnew/implementing-activation-steering](https://www.lesswrong.com/posts/ndyngghzFY388Dnew/implementing-activation-steering)
-            - ✅ ⚠️ TL ISSUE: `TypeError: act_add.<locals>.hook() got an unexpected keyword argument 'hook'`
-                - Wrapper (using HF) ISSUE : `AttributeError: 'GPT2LMHeadModel' object has no attribute 'layers’`
-                - `TL :`Try `run_with_hooks` instead of `add_hook`
-                    - runwithhooks: GPT2_SAE_MLP0_seqcont_explora_v2.ipynb
-                        
-                        [https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G#scrollTo=tNWEV_Mn9z31&line=5&uniqifier=1](https://colab.research.google.com/drive/1fxFZynvhH0IkvE2WzUWUAqntQY4h7s5G#scrollTo=tNWEV_Mn9z31&line=5&uniqifier=1)
-                        
-                    - no; b/c can’t use runwithhooks with generate
-            - ✅ `act_add.<locals>.hook()` issue isn’t due to adding steering vec, it’s the wrong way to add hook.
-                - ✅ SOLN: try adding hook like this instead: auto_prompt_test_simple_arithm_v2.ipynb
+    [https://chatgpt.com/c/3091fef0-4b87-41f9-8df3-c4c4ef37db3f](https://chatgpt.com/c/3091fef0-4b87-41f9-8df3-c4c4ef37db3f)
+    
+    The concept of whitening a matrix is indeed to transform the data into a new basis where the variables are uncorrelated and standardized. This transformation doesn't change the true relationships between the variables but provides a different perspective or basis where the correlations between the transformed variables are zero, and their variances are equal to one. Here’s how it works and why it’s useful:
+    
+    ### How Whitening Works
+    
+    1. **Centering the Data**: The first step is to center the data by subtracting the mean of each variable, making the dataset have a mean of zero for each variable.
+    2. **Covariance Matrix**: Compute the covariance matrix \( \Sigma \) of the centered data. This matrix contains the variances along the diagonal and the covariances off-diagonal, representing the relationships between the original variables.
+    3. **Eigenvalue Decomposition**: Perform eigenvalue decomposition on the covariance matrix:
+    \[
+    \Sigma = V \Lambda V^T
+    \]
+    where \( V \) is a matrix of eigenvectors, and \( \Lambda \) is a diagonal matrix of eigenvalues.
+    4. **Whitening Transformation**: The whitening matrix \( W \) is constructed using the eigenvectors and the inverse square root of the eigenvalues:
+    \[
+    W = \Lambda^{-\frac{1}{2}} V^T
+    \]
+    The whitened data \( X_{\text{whitened}} \) is obtained by multiplying the centered data \( X \) by the whitening matrix:
+    \[
+    X_{\text{whitened}} = X W
+    \]
+    
+    ### Why Whitening Makes Variables Uncorrelated
+    
+    The multiplication by the whitening matrix \( W \) transforms the original data into a new space where:
+    
+    - **Uncorrelated Variables**: The covariance matrix of \( X_{\text{whitened}} \) becomes the identity matrix \( I \), meaning the variables are uncorrelated. This is because the whitening transformation diagonalizes the covariance matrix and rescales the eigenvalues to one.
+    - **Unit Variance**: Each variable in the whitened data has a variance of one.
+    
+    ### Interpretation and Utility
+    
+    - **Perspective Transformation**: Whitening provides a new basis in which the data is analyzed. It doesn't alter the inherent relationships in the data but represents it in a way that is often more useful for certain algorithms and analyses (e.g., principal component analysis, independent component analysis).
+    - **Standardization**: Whitening standardizes the data, which can be particularly beneficial for machine learning algorithms that are sensitive to the scale and correlation of the data (e.g., gradient-based optimization algorithms).
+    
+    ### Summary
+    
+    Whitening transforms the data such that, in the new basis, the variables are uncorrelated and have unit variance. This transformation is a mathematical tool to facilitate certain analyses and algorithms, not a reflection of the "true" state of the variables in their original form. The true correlations remain in the original data, but in the transformed space, the data is easier to work with for various applications.
+    
+- ✅ email kiho on project idea
+    
+    Hi, I was wondering if you have some advice on adjusting this project plan:
+    
+    I was thinking about how to detect simplex structures in intermediate layers. A starting point would be to just look at the embedded activation vectors of individual tokens, and to use LDA to calculate vectors for the attribution sets they belong to. Then we can calculate the orthogonality relations of these attribute vectors. I have a few questions about how to extend the “Hierarchical concepts” paper to intermediate layers:
+    
+    1) The paper looks for the structure in a canonical representation space with the causal inner product, not just in the embedding space. Would we have to “unify” an intermediate layer embedding with the unembedding space, if this is possible right now? Or would it make sense to look for orthogonality relations of attribute vectors constructed directly by LDA from activation vectors of individual tokens?
+    
+    2) In Figure 5, my understanding is the adjacency matrix doesn’t depend on the vectors, but is already there from Wordnet, and we want to check if it appears in the cosine sim matrix (fig 5b) but not for child-parent (fig 5c). Can we do this for intemediate space experiments? Also, would fig 5c show there’s a “nested” hierarchy where (animal - mammal) may be manipulated separately from (mammal-elephant)?
+    
+    3) Experimentally, should we show this for polytopes of say span{4 members or more} and not just span{3 members}?
+    
+    (The question below is less important for planning, so not needed to answer now):
+    
+    A) Why were these attribute vectors such as “L_bird” used, rather than individual tokens such as “bird”? I’m guessing we’re not trying to study individual tokens, but a general “subspace” of an attribute; a set of tokens in an attribute set form a “cluster” and we want to obtain the vector that represents that cluster over other clusters (so LDA maximizes between-class variance). Then L_bird estimates this “subspace” better. But what’s a good response if someone questions why we don’t just use “bird”?
+    
+    B) It seems like the statement "the simplex of fish,mammal, bird is orthogonal to the vector representation of animal" is interpreted as span{¯ℓmammal,¯ℓbird,¯ℓfish} is orthogonal to L_animal. If (a * mammal - b*bird + c*fish) is a member of the span, what does that mean semantically (I think we pass in an input that contains “traits” of all three?) and does it mean that semantically speaking, those specific traits are orthogonal to L_animal?
+    
+- ✅ writeup geom plan (org notes just on it) and slides
+    
+    [https://docs.google.com/presentation/d/1AHuy77JmlQ0xzLxSiwVxaNS-5U3BLWn-z9HMoM2R-Rs/edit#slide=id.g2e9f646b02d_0_13](https://docs.google.com/presentation/d/1AHuy77JmlQ0xzLxSiwVxaNS-5U3BLWn-z9HMoM2R-Rs/edit#slide=id.g2e9f646b02d_0_13)
+    
+    - Universality by Geometry, v2
+        
+        [https://docs.google.com/presentation/d/1QQ9cnGzRH7MCkRF1RlQ_28M9gJ1j9ra3umWy96v5slc/edit#slide=id.g2ea1a29255c_0_71](https://docs.google.com/presentation/d/1QQ9cnGzRH7MCkRF1RlQ_28M9gJ1j9ra3umWy96v5slc/edit#slide=id.g2ea1a29255c_0_71)
+        
+    - how ph paper finds the “right” layer across 2 models to compare?
+    - understand mutual nearest neighbors. kernel alignment metric computes a score based on datapoints passed thru metrics.
+    - model stitching
+- ✅ **EXPM**: plot feature acts, and compare before vs after steering/ablating/patching
+    - in another layer, track how a specific set of features (eg. love or cat) changes after steering
+        - [save_actvs_afterSteer](https://colab.research.google.com/drive/1Kvb-MJUdSyolrmXTON2432l8UIAHQmwq#scrollTo=SRZ1lgrSBVBE).ipynb
+        - [feature_actvs_afterSteer_umap](https://colab.research.google.com/drive/1brV9lxVX9uR_GHtWprUqSFEWqgriB0ZX#scrollTo=4vuh4LF02nKs).ipynb
+            - get CCA scores, but it’s slow
+                
+                Canonical Correlation Analysis (CCA) can indeed be computationally intensive, especially for large datasets or high-dimensional feature spaces. If you’re finding CCA to be very slow, there are several approaches and alternative methods you can consider to make the comparison more efficient and effective.
+                
+                Here’s a comprehensive guide to faster and more efficient ways to compare UMAP embeddings, including methods to speed up CCA and other alternatives:
+                
+                ### 1. **Optimizing CCA Performance**
+                
+                If you still want to use CCA, here are some strategies to optimize its performance:
+                
+                ### **a. Reduce Dimensionality Before CCA**
+                
+                Reducing the dimensionality of your feature space before applying CCA can significantly speed up the computation. You can use PCA (Principal Component Analysis) or any other dimensionality reduction technique for this purpose.
+                
+                ```python
+                from sklearn.decomposition import PCA
+                from sklearn.cross_decomposition import CCA
+                
+                # Reduce dimensionality with PCA before CCA
+                pca1 = PCA(n_components=50)  # Adjust the number of components as needed
+                pca2 = PCA(n_components=50)
+                data1_reduced = pca1.fit_transform(embedding1)
+                data2_reduced = pca2.fit_transform(embedding2)
+                
+                # Apply CCA
+                cca = CCA(n_components=10)
+                cca.fit(data1_reduced, data2_reduced)
+                
+                # Transform the data
+                data1_c, data2_c = cca.transform(data1_reduced, data2_reduced)
+                
+                ```
+                
+                ### **b. Use Approximate CCA Algorithms**
+                
+                Consider using libraries or implementations optimized for large datasets. For instance, you can use the `sklearn` implementation of CCA, but there are also other libraries and frameworks designed for efficiency in large-scale computations.
+                
+                ### 2. **Alternative Methods for Comparing UMAP Embeddings**
+                
+                Here are several alternative methods for comparing UMAP embeddings that are generally faster and may provide useful insights:
+                
+                ### *a. **Procrustes Analysis**
+                
+                Procrustes analysis is a method for comparing the shapes of two datasets and can be done quickly with the `scipy` library.
+                
+                ```python
+                from scipy.spatial import procrustes
+                
+                # Perform Procrustes analysis
+                mtx1, mtx2, disparity = procrustes(embedding1, embedding2)
+                
+                print(f"Procrustes Disparity: {disparity}")
+                
+                ```
+                
+                ### *b. **k-Nearest Neighbors (k-NN) Consistency**
+                
+                Comparing the k-NN consistency measures how well the neighborhood structure is preserved across the two datasets.
+                
+                ```python
+                from sklearn.neighbors import NearestNeighbors
+                
+                def knn_consistency(embedding1, embedding2, n_neighbors=5):
+                    nbrs1 = NearestNeighbors(n_neighbors=n_neighbors).fit(embedding1)
+                    nbrs2 = NearestNeighbors(n_neighbors=n_neighbors).fit(embedding2)
+                    indices1 = nbrs1.kneighbors(return_distance=False)
+                    indices2 = nbrs2.kneighbors(return_distance=False)
+                    consistency = np.mean([len(np.intersect1d(indices1[i], indices2[i])) / n_neighbors for i in range(len(embedding1))])
+                    return consistency
+                
+                knn_consistency_score = knn_consistency(embedding1, embedding2)
+                print(f"k-NN Consistency: {knn_consistency_score}")
+                
+                ```
+                
+                ### *c. **Distance Correlation**
+                
+                Distance correlation measures both linear and non-linear relationships and is generally computationally efficient.
+                
+                ```python
+                from scipy.spatial.distance import pdist, squareform
+                from scipy.stats import pearsonr
+                
+                def distance_correlation(X, Y):
+                    X_dist = squareform(pdist(X, 'euclidean'))
+                    Y_dist = squareform(pdist(Y, 'euclidean'))
+                    corr, _ = pearsonr(X_dist.ravel(), Y_dist.ravel())
+                    return corr
+                
+                dist_corr = distance_correlation(embedding1, embedding2)
+                print(f"Distance Correlation: {dist_corr}")
+                
+                ```
+                
+                ### *d. **Mutual Nearest Neighbors (MNN) Analysis**
+                
+                Mutual nearest neighbors can also be used to compare embeddings, though it may be less common.
+                
+                ```python
+                from sklearn.neighbors import NearestNeighbors
+                
+                def mutual_nearest_neighbors(embedding1, embedding2, n_neighbors=5):
+                    nbrs1 = NearestNeighbors(n_neighbors=n_neighbors).fit(embedding1)
+                    nbrs2 = NearestNeighbors(n_neighbors=n_neighbors).fit(embedding2)
+                    indices1 = nbrs1.kneighbors(return_distance=False)
+                    indices2 = nbrs2.kneighbors(return_distance=False)
+                    mnn_count = 0
+                    for i in range(len(embedding1)):
+                        mnn_count += len(set(indices1[i]).intersection(indices2[i]))
+                    mnn_ratio = mnn_count / len(embedding1)
+                    return mnn_ratio
+                
+                mnn_score = mutual_nearest_neighbors(embedding1, embedding2)
+                print(f"Mutual Nearest Neighbors Ratio: {mnn_score}")
+                
+                ```
+                
+                ### 3. **Visualization for Initial Comparison**
+                
+                Sometimes, visual inspection of the UMAP embeddings can provide useful insights, and it is a quick first step:
+                
+                ```python
+                import matplotlib.pyplot as plt
+                
+                # Plot the UMAP results
+                fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+                axes[0].scatter(embedding1[:, 0], embedding1[:, 1], c='blue', label='Dataset 1')
+                axes[0].set_title('UMAP Projection of Dataset 1')
+                axes[0].legend()
+                
+                axes[1].scatter(embedding2[:, 0], embedding2[:, 1], c='green', label='Dataset 2')
+                axes[1].set_title('UMAP Projection of Dataset 2')
+                axes[1].legend()
+                
+                plt.show()
+                
+                ```
+                
+                ### 4. **Using UMAP’s `transform` for Different Seeds**
+                
+                To ensure consistent results across different seeds, you can set a fixed seed value for reproducibility in UMAP, but it's important to note that it does not eliminate the inherent randomness completely.
+                
+                ```python
+                import umap
+                
+                # UMAP with a fixed seed for reproducibility
+                reducer = umap.UMAP(random_state=42)
+                embedding1 = reducer.fit_transform(data1)
+                embedding2 = reducer.fit_transform(data2)
+                
+                ```
+                
+                ### 5. **Comparing UMAP Embeddings with Other Dimensionality Reduction Techniques**
+                
+                You might also want to compare UMAP embeddings using other dimensionality reduction techniques like t-SNE or PCA.
+                
+                ```python
+                from sklearn.manifold import TSNE
+                from sklearn.decomposition import PCA
+                
+                # t-SNE
+                tsne = TSNE(n_components=2, random_state=42)
+                embedding1_tsne = tsne.fit_transform(data1)
+                embedding2_tsne = tsne.fit_transform(data2)
+                
+                # PCA
+                pca = PCA(n_components=2)
+                embedding1_pca = pca.fit_transform(data1)
+                embedding2_pca = pca.fit_transform(data2)
+                
+                ```
+                
+                ### Summary Table of Methods and Performance
+                
+                | Method | Pros | Cons | Speed |
+                | --- | --- | --- | --- |
+                | CCA | Detailed canonical correlation analysis | Computationally intensive for large datasets | Slow |
+                | PCA + CCA | Reduces dimensionality before CCA | Requires setting PCA components properly | Moderate |
+                | Procrustes Analysis | Fast, effective for shape comparison | Measures only shape similarity | Fast |
+                | k-NN Consistency | Simple, measures neighborhood structure | May not capture all relationships | Fast |
+                | Distance Correlation | Captures both linear and non-linear relationships | Measures overall similarity | Fast |
+                | Mutual Nearest Neighbors | Measures neighborhood consistency | Less common, may be less intuitive | Fast |
+                | Visualization | Provides intuitive visual insights | Not a quantitative measure | Fast |
+                | Other Dimensionality Reduction (t-SNE, PCA) | Useful for comparison, can be faster | t-SNE can be slow for large datasets | Moderate |
+                
+                ### Conclusion
+                
+                While CCA can be slow, there are several alternative methods for comparing UMAP embeddings that are computationally more efficient. By reducing dimensionality, using alternative comparison methods, or employing effective visualization techniques, you can achieve meaningful comparisons without extensive computation times.
+                
+                You can choose the approach based on the size of your dataset, the specific aspects you are interested in comparing, and the computational resources available to you.
+                
+                ### Example Code with Optimizations and Alternatives
+                
+                Here’s a comprehensive example incorporating PCA for dimensionality reduction, along with Procrustes Analysis, Distance Correlation, and k-NN Consistency:
+                
+                ```python
+                import numpy as np
+                import umap
+                import cupy as cp
+                from sklearn.decomposition import PCA
+                from sklearn.neighbors import NearestNeighbors
+                from scipy.spatial import procrustes
+                from scipy.spatial.distance import pdist, squareform
+                from scipy.stats import pearsonr
+                from sklearn.datasets import make_blobs
+                from time import time
+                import matplotlib.pyplot as plt
+                
+                # Generate or load data
+                data1 = np.random.rand(10000, 50)  # Synthetic data
+                data2 = np.random.rand(10000, 50)  # Another synthetic dataset
+                
+                # Apply UMAP with a fixed random state
+                reducer = umap.UMAP(random_state=42)
+                embedding1 = reducer.fit_transform(data1)
+                embedding2 = reducer.fit_transform(data2)
+                
+                # Reduce dimensionality with PCA before CCA
+                pca1 = PCA(n_components=50)
+                pca2 = PCA(n_components=50)
+                data1_reduced = pca1.fit_transform(embedding1)
+                data2_reduced = pca2.fit_transform(embedding2)
+                
+                # Apply CCA
+                cca = CCA(n_components=
+                ```
+                
+            - can i use cca on umap?
+                
+                Yes, you can use Canonical Correlation Analysis (CCA) on UMAP embeddings to compare the embeddings of two different datasets. The idea is to first reduce the dimensionality of both datasets using UMAP, and then use CCA to find the linear combinations of the UMAP embeddings that are maximally correlated.
+                
+                ### Step-by-Step Guide
+                
+                Here is a step-by-step guide to apply CCA on UMAP embeddings:
+                
+                1. **Install the Required Libraries**:
+                Ensure you have `umap-learn`, `numpy`, `scikit-learn`, and `matplotlib` installed.
                     
-                    [https://colab.research.google.com/drive/13OodYS3_MB7mHGP-4r0zhVNF1nvhZJTk#scrollTo=dg3XuWScAVvG&line=11&uniqifier=1](https://colab.research.google.com/drive/13OodYS3_MB7mHGP-4r0zhVNF1nvhZJTk#scrollTo=dg3XuWScAVvG&line=11&uniqifier=1)
+                    ```python
+                    !pip install umap-learn numpy scikit-learn matplotlib
                     
-                    - instead of doing this
-                        
-                        ```jsx
-                        def act_add(steering_vec):
-                            def hook(activation):
-                                # return activation + steering_vec
-                                return activation
-                            return hook
-                        
-                        test_sentence = "I think cats are "
-                        model.add_hook(name=cache_name, hook=act_add(steering_vec))
-                        print(model.generate(test_sentence, max_new_tokens=10))
-                        ```
-                        
-                    - do this
-                        
-                        ```jsx
-                        from functools import partial
-                        
-                        def act_add(
-                            activation,
-                            hook,
-                            steering_vec 
-                        ):
-                            # return activation + steering_vec
-                            return activation
-                        
-                        hook_fn = partial(
-                                act_add,
-                                steering_vec=steering_vec
-                            )
-                        
-                        cache_name = 'blocks.5.hook_resid_post'
-                        model.reset_hooks(including_permanent=True)
-                        model.add_hook(cache_name, hook_fn)
-                        print(model.generate(test_sentence, max_new_tokens=10))
-                        ```
-                        
-                - ✅ ISSUE: but when using steering_vec with hook, get : `RuntimeError: The size of tensor a (6) must match the size of tensor b (2) at non-singleton dimension 1`
-                    - ✅ SOLN: unlike in the lesswrong post, you just take the LAST position, as seen here: [https://github.com/annahdo/implementing_activation_steering/blob/main/pytorch_hooks.ipynb](https://github.com/annahdo/implementing_activation_steering/blob/main/pytorch_hooks.ipynb)
-                        - In repeng, it’s added to every tok pos?
-                        - in caa blog post, rimsky states for generated, it’s added to every token pos after generation, but in initial prompt, it’s only added to last token pos
-                    - ✅ though this works, in each gen it only modifies the NEW last token pos, not all of them after the initial prompt’s end
-                        
-                        ```jsx
-                        steering_vec = steering_vec.unsqueeze(0)
-                        
-                        def act_add(
-                            # z: Float[Tensor, "batch seq head d_head"],
-                            # hook: HookPoint,
-                            activation,
-                            hook,
-                            steering_vec 
-                        ):
-                            # print(activation[:, -1, :].shape)
-                            # print(steering_vec[:, -1, :].shape)
-                            activation[:, -1, :] += steering_vec[:, -1, :]
-                            return activation
-                        ```
-                        
-                    - ✅ SOLN: this seems to change every pos after initial end
-                        
-                        ```jsx
-                        from functools import partial
-                        
-                        def act_add(
-                            activation,
-                            hook,
-                            steering_vec,
-                            initPromptLen
-                        ):
-                            activation[:, initPromptLen:, :] += steering_vec[:, -1, :]
-                            return activation
-                        
-                        hook_fn = partial(
-                                act_add,
-                                steering_vec=steering_vec,
-                                initPromptLen=initPromptLen
-                            )
-                        
-                        test_sentence = "I think cats are "
-                        initPromptLen = len(model.tokenizer.encode("I think cats are "))
-                        cache_name = 'blocks.5.hook_resid_post'
-                        model.reset_hooks(including_permanent=True)
-                        model.add_hook(cache_name, hook_fn)
-                        print(model.generate(test_sentence, max_new_tokens=10))
-                        ```
-                        
-                    - ✅ you should use a multiplier to change hate cats to love cats
-                        
-                        `activation[:, initPromptLen:, :] += steering_vec[:, -1, :] * 10`
-                        
-        - ✅ if rollouts are random, for a prompt, how many rollouts should we use? just set the generation to deterministic (see `Llama2_spanish_months.ipynb, test prompts)`
-    - ✅⚠️STEP 3: Cache activations from layer k to last layer L for unst & steered runs
-        - ⚠️ ISSUE: for multiple generated tokens, which activations do we store? it’s not just the “next” one. then we need to pass all of them thru SAEs. perhaps we can track ALL the activations of every pos? but it’s not really comparable.
-            - ✅ for now, just work with the immediate next generation  (for next token)
-    - ✅ STEP 4: Pass both those activations through their respective pre-trained SAEs
+                    ```
+                    
+                2. **Import Libraries**:
+                Import the necessary libraries for UMAP, CCA, and data manipulation.
+                    
+                    ```python
+                    import numpy as np
+                    import umap
+                    from sklearn.cross_decomposition import CCA
+                    import matplotlib.pyplot as plt
+                    
+                    ```
+                    
+                3. **Generate or Load Data**:
+                For demonstration purposes, let's create some synthetic data.
+                    
+                    ```python
+                    # Generate synthetic data for demonstration
+                    data1 = np.random.rand(100, 50)  # 100 samples with 50 features
+                    data2 = np.random.rand(100, 50)  # Another dataset with the same dimensions
+                    
+                    ```
+                    
+                4. **Apply UMAP**:
+                Use UMAP to reduce the dimensionality of both datasets.
+                    
+                    ```python
+                    # Apply UMAP to both datasets
+                    reducer = umap.UMAP(n_components=10, random_state=42)
+                    embedding1 = reducer.fit_transform(data1)
+                    embedding2 = reducer.fit_transform(data2)
+                    
+                    ```
+                    
+                5. **Apply CCA**:
+                Use CCA to find the linear combinations of the UMAP embeddings that are maximally correlated.
+                    
+                    ```python
+                    # Apply CCA on UMAP embeddings
+                    cca = CCA(n_components=2)  # Number of components to extract
+                    cca.fit(embedding1, embedding2)
+                    
+                    # Transform the data using CCA
+                    cca_embedding1, cca_embedding2 = cca.transform(embedding1, embedding2)
+                    
+                    # Optional: To see the correlation coefficients
+                    corrs = [np.corrcoef(cca_embedding1[:, i], cca_embedding2[:, i])[0, 1] for i in range(cca_embedding1.shape[1])]
+                    print("Canonical Correlation Coefficients:", corrs)
+                    
+                    ```
+                    
+                6. **Visualize the Results**:
+                Plot the first two canonical variables to visually inspect the correlation.
+                    
+                    ```python
+                    # Plot the first two canonical variables
+                    plt.figure(figsize=(12, 6))
+                    
+                    plt.subplot(1, 2, 1)
+                    plt.scatter(cca_embedding1[:, 0], cca_embedding1[:, 1], c='blue', label='UMAP Dataset 1')
+                    plt.title('Canonical Variables of UMAP Dataset 1')
+                    plt.xlabel('Canonical Variable 1')
+                    plt.ylabel('Canonical Variable 2')
+                    plt.legend()
+                    
+                    plt.subplot(1, 2, 2)
+                    plt.scatter(cca_embedding2[:, 0], cca_embedding2[:, 1], c='green', label='UMAP Dataset 2')
+                    plt.title('Canonical Variables of UMAP Dataset 2')
+                    plt.xlabel('Canonical Variable 1')
+                    plt.ylabel('Canonical Variable 2')
+                    plt.legend()
+                    
+                    plt.show()
+                    
+                    ```
+                    
+                
+                ### Complete Example Code
+                
+                Here's the complete code for applying CCA on UMAP embeddings and visualizing the results:
+                
+                ```python
+                # Install the required libraries
+                !pip install umap-learn numpy scikit-learn matplotlib
+                
+                # Import libraries
+                import numpy as np
+                import umap
+                from sklearn.cross_decomposition import CCA
+                import matplotlib.pyplot as plt
+                
+                # Generate synthetic data for demonstration
+                data1 = np.random.rand(100, 50)  # 100 samples with 50 features
+                data2 = np.random.rand(100, 50)  # Another dataset with the same dimensions
+                
+                # Apply UMAP to both datasets
+                reducer = umap.UMAP(n_components=10, random_state=42)
+                embedding1 = reducer.fit_transform(data1)
+                embedding2 = reducer.fit_transform(data2)
+                
+                # Apply CCA on UMAP embeddings
+                cca = CCA(n_components=2)  # Number of components to extract
+                cca.fit(embedding1, embedding2)
+                
+                # Transform the data using CCA
+                cca_embedding1, cca_embedding2 = cca.transform(embedding1, embedding2)
+                
+                # Optional: To see the correlation coefficients
+                corrs = [np.corrcoef(cca_embedding1[:, i], cca_embedding2[:, i])[0, 1] for i in range(cca_embedding1.shape[1])]
+                print("Canonical Correlation Coefficients:", corrs)
+                
+                # Plot the first two canonical variables
+                plt.figure(figsize=(12, 6))
+                
+                plt.subplot(1, 2, 1)
+                plt.scatter(cca_embedding1[:, 0], cca_embedding1[:, 1], c='blue', label='UMAP Dataset 1')
+                plt.title('Canonical Variables of UMAP Dataset 1')
+                plt.xlabel('Canonical Variable 1')
+                plt.ylabel('Canonical Variable 2')
+                plt.legend()
+                
+                plt.subplot(1, 2, 2)
+                plt.scatter(cca_embedding2[:, 0], cca_embedding2[:, 1], c='green', label='UMAP Dataset 2')
+                plt.title('Canonical Variables of UMAP Dataset 2')
+                plt.xlabel('Canonical Variable 1')
+                plt.ylabel('Canonical Variable 2')
+                plt.legend()
+                
+                plt.show()
+                
+                ```
+                
+                ### Explanation
+                
+                1. **UMAP**: Reduces the dimensionality of the datasets to a more manageable number of components (10 in this case).
+                2. **CCA**: Finds the linear combinations of the UMAP embeddings that are maximally correlated.
+                3. **Visualization**: Plots the first two canonical variables for both datasets to inspect the correlation visually.
+                
+                By following this approach, you can effectively use CCA on UMAP embeddings to compare the relationships between two datasets.
+                
+            - how to itnerpret this: Canonical Correlations: -0.23755626716455025
+                
+                Interpreting the results from Canonical Correlation Analysis (CCA) involves understanding both the canonical correlations and the correlation coefficients:
+                
+                ### Canonical Correlations
+                
+                The canonical correlations indicate the overall relationship between the sets of canonical variables. These values represent the strength of the linear relationships between the two sets of UMAP embeddings.
+                
+                - **Canonical Correlations**: These are the correlations between the first pair of canonical variables, the second pair, and so on. In your case, the canonical correlation values were found to be:
+                    - 0.23755626716455025
+                
+                The negative value here might indicate an inverse relationship for the first canonical variable pair. Canonical correlations close to 1 or -1 indicate strong linear relationships, while those close to 0 indicate weak relationships.
+                
+                ### Correlation Coefficients
+                
+                The correlation coefficients between the transformed UMAP embeddings (canonical variables) represent how well the corresponding pairs of canonical variables correlate with each other.
+                
+                - **Correlation Coefficients**: These values show the correlation between the pairs of canonical variables. In your case, the coefficients are:
+                    - [0.49006658992455354, 0.26686220794459087]
+                
+                Here's what these coefficients mean:
+                
+                1. **First Canonical Variable Pair**:
+                    - Correlation Coefficient: 0.49006658992455354
+                    - This indicates a moderate positive linear relationship between the first pair of canonical variables derived from the UMAP embeddings of the two datasets.
+                2. **Second Canonical Variable Pair**:
+                    - Correlation Coefficient: 0.26686220794459087
+                    - This indicates a weaker positive linear relationship between the second pair of canonical variables.
+                
+                ### Interpretation Summary
+                
+                - The first canonical correlation is negative, suggesting an inverse relationship for the first pair of canonical variables.
+                - The correlation coefficient for the first canonical variable pair is around 0.49, indicating a moderate positive relationship. This suggests that the first pair of canonical variables derived from the UMAP embeddings have a moderate positive linear association.
+                - The correlation coefficient for the second canonical variable pair is around 0.27, indicating a weak positive relationship.
+                
+                These results suggest that while there is some degree of linear association between the canonical variables derived from the UMAP embeddings of your datasets, the relationships are not very strong. This implies that the structures captured by the UMAP embeddings of the two datasets have moderate to weak linear relationships when examined through the lens of CCA.
+                
+                ### Improving Interpretability
+                
+                To further interpret and validate these results, you might consider:
+                
+                1. **Visual Inspection**:
+                    - Plot the pairs of canonical variables to visually inspect their relationships. This can help you understand the nature of the relationships better.
+                    
+                    ```python
+                    plt.figure(figsize=(12, 6))
+                    
+                    plt.subplot(1, 2, 1)
+                    plt.scatter(cca_embedding1[:, 0], cca_embedding2[:, 0], c='blue', label='First Canonical Variable Pair')
+                    plt.title('First Canonical Variable Pair')
+                    plt.xlabel('First Canonical Variable (Dataset 1)')
+                    plt.ylabel('First Canonical Variable (Dataset 2)')
+                    plt.legend()
+                    
+                    plt.subplot(1, 2, 2)
+                    plt.scatter(cca_embedding1[:, 1], cca_embedding2[:, 1], c='green', label='Second Canonical Variable Pair')
+                    plt.title('Second Canonical Variable Pair')
+                    plt.xlabel('Second Canonical Variable (Dataset 1)')
+                    plt.ylabel('Second Canonical Variable (Dataset 2)')
+                    plt.legend()
+                    
+                    plt.show()
+                    
+                    ```
+                    
+                2. **Dimensionality Reduction Before CCA**:
+                    - If the datasets are very high-dimensional, consider using PCA to reduce the dimensionality before applying UMAP and CCA. This can sometimes enhance the interpretability of the canonical variables.
+                3. **Investigating Other Relationships**:
+                    - If the linear relationships are weak, you might consider investigating non-linear relationships using other methods such as kernel CCA or distance correlation.
+                
+                By examining these additional aspects, you can gain deeper insights into the relationships between your datasets as captured by UMAP and analyzed by CCA.
+                
+- ✅ is there an issue with comparing umap due to randomness? how to better quantitatively compare them?
+    
+    [https://chatgpt.com/c/ca134e95-ac2c-4290-b9c7-107dbeba93fe](https://chatgpt.com/c/ca134e95-ac2c-4290-b9c7-107dbeba93fe)
+    
+    - umap is NOT random on projection (cosine sim) but becomes random after uniform nearest neighbor
+- ✅ [UMAP](UMAP%206019e8cd74ca4abebc143f9f13760055.md)
+
+Compare SAEs of Different Toy Models
+
+- ✅ ask #sparse-autoencoders OpenMI slack for prev work (chatgpt doesnt find anything)
+    
+    Hi, I'm looking to run experiments similar to this section:
+    
+    [https://transformer-circuits.pub/2023/monosemantic-features#phenomenology-universality](https://transformer-circuits.pub/2023/monosemantic-features#phenomenology-universality)
+    
+    which involves comparing "different dictionary learning runs trained on different activations from a different transformer with different random seeds but otherwise identical hyperparameters." I was wondering if anyone has also done anything similar to this before (say a blog post / repo) and if they found any additional insights not mentioned by the Towards Monosemanticity paper? Would add to my lit review too
+    
+    I may not have the resources to train on 100 billion tokens from the pile like Anthropic did, so looking to scale it down or do something similar with toy models, hoping the saes on these toy models would still find "true enough" features that could be compared
+    
+- ⚠️ **EXPM**: train saes on toy model
+    
+    Models to Reproduce
+    
+    [https://colab.research.google.com/drive/1elITv-IptxH-J8aeDDvjXLNsu7p5JbxL#scrollTo=Gh3FW5X2BrsM](https://colab.research.google.com/drive/1elITv-IptxH-J8aeDDvjXLNsu7p5JbxL#scrollTo=Gh3FW5X2BrsM)
+    
+    - [https://www.lesswrong.com/posts/z6QQJbtpkEAX3Aojj/interim-research-report-taking-features-out-of-superposition](https://www.lesswrong.com/posts/z6QQJbtpkEAX3Aojj/interim-research-report-taking-features-out-of-superposition)
+    - [https://www.lesswrong.com/posts/a5wwqza2cY3W7L9cj/sparse-autoencoders-find-composed-features-in-small-toy](https://www.lesswrong.com/posts/a5wwqza2cY3W7L9cj/sparse-autoencoders-find-composed-features-in-small-toy)
+    - [https://transformer-circuits.pub/2023/monosemantic-features#problem-setup](https://transformer-circuits.pub/2023/monosemantic-features#problem-setup)
+        - NOTE: these are not toy models, just 1L models, because trained on 100 billion tokens, so may not be reproducible. Try toy models.
+        - ✅ Model Dataset and Sizes
+            
+            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%201.png)
+            
+        - ✅ training feasibility how-to
+            - [https://chatgpt.com/c/13d7b189-1900-439f-ba71-a2a478416f7e](https://chatgpt.com/c/13d7b189-1900-439f-ba71-a2a478416f7e)
+            - [https://transformer-circuits.pub/2023/monosemantic-features#setup-transformer](https://transformer-circuits.pub/2023/monosemantic-features#setup-transformer)
+            - [https://transformer-circuits.pub/2023/monosemantic-features#appendix-transformer](https://transformer-circuits.pub/2023/monosemantic-features#appendix-transformer)
+        - ✅ tokenizer
+            
+            BPE tokenizer: **Byte-Pair Encoding tokenization**
+            
+            [https://arxiv.org/pdf/2101.00027](https://arxiv.org/pdf/2101.00027)
+            
+            We analyze the distribution of document lengths, as well as the number of bytes-per-token using the GPT-2 tokenizer
+            
+        - ISSUE: on `train_loader`, FileNotFoundError: [https://the-eye.eu/public/AI/pile/train/00.jsonl.zst](https://the-eye.eu/public/AI/pile/train/00.jsonl.zst)
+    - No_Position_Experiment.ipynb: [https://colab.research.google.com/github/TransformerLensOrg/TransformerLens/blob/main/demos/No_Position_Experiment.ipynb#scrollTo=seo_rX_d1uO6](https://colab.research.google.com/github/TransformerLensOrg/TransformerLens/blob/main/demos/No_Position_Experiment.ipynb#scrollTo=seo_rX_d1uO6)
+    - ARENA 1.4: Training Toy Model with Superposition
         
-        NOTE: pretrained use SAELens (which is built on transformerlens), and cache uses transformerlens. Only need to combine saes with tl for step 4
+        [https://colab.research.google.com/drive/1mHKZpkhYAr0WWAQo2Y6pXL08yNfJHOVx?usp=sharing#scrollTo=MtjKlA3D5DS0](https://colab.research.google.com/drive/1mHKZpkhYAr0WWAQo2Y6pXL08yNfJHOVx?usp=sharing#scrollTo=MtjKlA3D5DS0)
         
-        - ✅ see saelens tutorial, [basic_loading_and_analysing](https://colab.research.google.com/drive/1KpWSKZ8PlUVzT8tjcttWU62qNRfoRgzN).ipynb
-            - once get `feature_acts`, ignore the rest of that nb and use `GPT2_SAE_MLP0_seqcont_explora_v1.ipynb` and `GPT2_SAE_MLP0_seqcont_explora_v2.ipynb` to find most impt features from `feature_acts`
-        - ✅ find feature inds with highest values
-        - ✅ for each feature, find its highest actv tokens on pretrained sae’s dataset
-            - ✅ need to flatten (batch,seq) into batch*seq first because it's ANY batch_seq, even if in same batch or same pos
-            - ✅ top_acts_indices should be also be 1D. Then convert the indices into (batch, seq)
-            - ✅ broadcast steering vec to actv samps
-                
-                [https://chatgpt.com/c/609ca94e-8db3-4d52-8b8b-b28d5a644018](https://chatgpt.com/c/609ca94e-8db3-4d52-8b8b-b28d5a644018)
-                
-                activation[:, -1, :] += steering_vec[:, -1, :] * 3
-                if activation is
-                torch.Size([32, 128, 768])
-                
-                and steering_vec is [1, 128, 768), will pytorch broadcast steering_vec to every batch samp in first dim?
-                
-            - ✅ we’re finding top features AFTER steering? they’re not going to be found before steering since it’s not obvious they’d activate? so dataset examples should only activate after steering on batch_tokens
-                
-                
-    - STEP 5: Observe differences, before and after steering, for features from layer k to last layer
-        - pass their differences too
-- d**ecompose love-hate vector into features**
-
-feature inds or batch_seq inds may not be right because sae flattens them but saelens doesn’t give them as batch_seq. double check if you’re computing the right ones
-
-make shared github
+    - nanda tutorail: [https://colab.research.google.com/drive/1u8larhpxy8w4mMsJiSBddNOzFGj7_RTn?usp=sharing](https://colab.research.google.com/drive/1u8larhpxy8w4mMsJiSBddNOzFGj7_RTn?usp=sharing)
+- ✅ [Ashkan meeting notes](Ashkan%20meeting%20notes%20cf47680d80a04812ac616fd4597e9e09.md)
+- ✅ summary to fazl
+    
+    Hi, as a quick summary of last week, I was running experiments and researching for a new project topic I can discuss with you next meeting. After some discussions with the other interns and lab members such as Ashkan, I decided this new project was more novel and impactful. The topic is about improving the understanding of SAE feature universality via geometric metrics such as canonical correlation analysis. Essentially, it is an extension of this Anthropic work: [https://transformer-circuits.pub/2023/monosemantic-features#phenomenology-universality](https://transformer-circuits.pub/2023/monosemantic-features#phenomenology-universality)
+    
+    My approach, which has not been tried yet on SAE feature space, uses geometric measurement techniques similar to (Kornblith et al, 2019),  “Similarity of Neural Network Representations Revisited” (of which Geoffrey Hinton is a coauthor). My project’s aim is also similar to that paper.
+    
+    I talked with other interns who offered good advice for the next experimental steps. I also presented the project to Ashkan, who gave a lot of other good advice in our meeting and found the proposed approach to be viable and interesting. 
+    
+- ✅ [Sim of NN revisted](Repr%20sim%20papers%20f1e073e6e4124d3ba7b6929d92cee13d/Sim%20of%20NN%20revisted%2074743e14a51b4f7593e67ad7b2e92162.md)
+- ✅ [**Sholto Douglas & Trenton Bricken - How to Build & Understand GPT-7's Mind**](https://www.youtube.com/watch?v=UTuuTTnjxMQ&ab_channel=DwarkeshPatel)
+    - deception circuit
+    - universality
+    - doing research part-time into residency
+- ✅ **EXPM**: CCA on pretrained SAEs (across models)
+    
+    [CM_pretrained_SAE_save_actvs](https://colab.research.google.com/drive/1hzWwIq0iULPvZt-GFnY8TPNvqZiDgsen#scrollTo=V5O39_ub_e0_)
+    
+    - ✅ load two SAEs : gpt2, gemma-2b
+        - latest loading nb: https://github.com/jbloomAus/SAELens
+        - [https://jbloomaus.github.io/SAELens/sae_table/](https://jbloomaus.github.io/SAELens/sae_table/)
+            - [https://chatgpt.com/c/56aeb74d-8e2d-4673-a087-bdef0e1e37f6](https://chatgpt.com/c/56aeb74d-8e2d-4673-a087-bdef0e1e37f6)
+            - [https://www.lesswrong.com/posts/f9EgfLSurAiqRJySD/open-source-sparse-autoencoders-for-all-residual-stream](https://www.lesswrong.com/posts/f9EgfLSurAiqRJySD/open-source-sparse-autoencoders-for-all-residual-stream)
+    - ✅ get LLM then SAE actvs and save to drive
+    
+    [CM_pretrained_SAE_UMAP_CCA.ipynb](https://colab.research.google.com/drive/1lDWBYXwKSxOiwJzILvedjMCxNCkT0xsG#scrollTo=kUYRF57KNxrL)
+    
+    - ✅ for every pair of their middle layers, run UMAP then CCA
+        - make sure you use UMAP correctly
+        - [https://chatgpt.com/c/ca93999b-8aab-40e7-b5cf-fbacbb639bc6](https://chatgpt.com/c/ca93999b-8aab-40e7-b5cf-fbacbb639bc6)
+- Find features with high actv corr in pretrained SAEs (across models)
+    
+    [actv_corr_mat.ipynb](https://colab.research.google.com/drive/1iM4Ta6NLR9Ka4sG6q9YUzpla-Rezm0bx#scrollTo=qdOPsIx9vHIH)
+    
+    - ✅ "For each feature in run A/1, we find the closest feature by activation similarity in run B/1," what's an efficient algorithm to do this?
+        
+        [https://chatgpt.com/c/38c634db-f342-480d-bbf7-3371938dca51](https://chatgpt.com/c/38c634db-f342-480d-bbf7-3371938dca51)
+        
+    - BRUTE FORCE: for each input sample, get actvs for all features. a batch sample of N has N x F activations. So there are F vectors of size N. In the second SAE, ther are F_2 vectors of size N. We can take the cosine sim of every F vector with every F_2 vector to get a cosine sim, and find the highest
+        - ✅ load saved actvs
+        - cosine sim mat: [https://chatgpt.com/c/100362a0-be1e-4bc1-97ca-a97fed673706](https://chatgpt.com/c/100362a0-be1e-4bc1-97ca-a97fed673706)
+            
+            [https://claude.ai/chat/ca272816-0223-49f4-9660-bbf6cb726061](https://claude.ai/chat/ca272816-0223-49f4-9660-bbf6cb726061)
+            
+            - NOTE: this is not 1-1 mapping, but each feature has a ranking
+        - ✅ given cosine_sim_matrix , for each feature in A, find the top 3 features in B, and vice versa. make this into a function.
+        - function that finds the top 5 pairs with the highest sim
+            - compare these on neuronpedia
+                - jump to feature: [https://www.neuronpedia.org/gpt2-small](https://www.neuronpedia.org/gpt2-small)
+                - ISSUE: can’t jump to feature for L12 of gemma-2b, only L6
+                - Save gemma L6 feat actvs
+    - Reproduce Anthropic’s A vs B actvs plot
+        - ✅ take a slice of last dim of (batch*seq, features) for each A and B
+        - ✅ is this nonzero actvs? most tokens should be 0 for one feature
+            
+            no; plot says most actvs are around 0, if you look at the long line of pts at each axis’s 0 that represents how those pts are 0 at A but zero or nonzero at B, etc.
+            
+        - what data pts do they use? every (btach, seq) of a sample?
+            - two features would be similar in this sense if they take similar values over a diverse set of data.
+                - they cite SVCCA. So they must’ve tried it. once you try your obvious cca approaches, ask them what issues there were with it, and if any issues with yours.
+        - ✅ how come get nans in corrcoeff
+            
+            If you're getting NaN values in the correlation coefficient calculation, it's usually due to one of these reasons:
+            
+            1. Constant values: If all values in one or both of the tensors are the same (i.e., the tensor has zero variance), the correlation coefficient will be undefined (NaN).
+            2. Presence of NaN or infinity values: If your tensors contain NaN or infinity values, these will propagate through the correlation calculation.
+            3. All zero values: If one or both tensors contain all zeros, this can also lead to NaN in the correlation calculation.
+            
+            To diagnose and fix this issue, you can try the following:
+            
+            1. Check for constant values:
+            
+            ```python
+            print("A constant?:", torch.all(tensor_A == tensor_A[0]))
+            print("B constant?:", torch.all(tensor_B == tensor_B[0]))
+            
+            ```
+            
+            1. Check for NaN or infinity values:
+            
+            ```python
+            print("A has NaN:", torch.isnan(tensor_A).any())
+            print("B has NaN:", torch.isnan(tensor_B).any())
+            print("A has inf:", torch.isinf(tensor_A).any())
+            print("B has inf:", torch.isinf(tensor_B).any())
+            
+            ```
+            
+            1. Check for all zero values:
+            
+            ```python
+            print("A all zeros?:", torch.all(tensor_A == 0))
+            print("B all zeros?:", torch.all(tensor_B == 0))
+            
+            ```
+            
+            1. If you're still getting NaNs, you can try to calculate the correlation manually:
+            
+            ```python
+            def manual_correlation(x, y):
+                x_mean = x.mean()
+                y_mean = y.mean()
+                x_std = x.std()
+                y_std = y.std()
+            
+                if x_std == 0 or y_std == 0:
+                    return 0  # or you might want to return NaN here
+            
+                return ((x - x_mean) * (y - y_mean)).mean() / (x_std * y_std)
+            
+            corr = manual_correlation(tensor_A, tensor_B)
+            print("Manual correlation:", corr)
+            
+            ```
+            
+            1. If you're dealing with very small numbers, numerical precision issues could arise. In this case, you might want to scale your data:
+            
+            ```python
+            tensor_A_scaled = (tensor_A - tensor_A.mean()) / tensor_A.std()
+            tensor_B_scaled = (tensor_B - tensor_B.mean()) / tensor_B.std()
+            correlation = np.corrcoef(tensor_A_scaled.numpy(), tensor_B_scaled.numpy())[0, 1]
+            
+            ```
+            
+            After applying these checks and potential fixes, you should be able to identify the cause of the NaN values and address it appropriately. If you're still having issues, you might want to examine a small subset of your data to see if there are any unexpected patterns or values.
+            
+        - if A is first feature vector and so is B (For two models), is this is the same as their corrcoef: cosine_sim_matrix[0][0]
+            
+            You're on the right track, but there's an important distinction to make between correlation coefficients and cosine similarity. While they're related, they're not exactly the same. Let's break this down:
+            
+            1. Correlation coefficient (Pearson's r):
+                - Measures the linear relationship between two variables
+                - Ranges from -1 to 1
+                - Is invariant to scaling and shifting of the variables
+            2. Cosine similarity:
+                - Measures the cosine of the angle between two vectors in a multi-dimensional space
+                - Ranges from -1 to 1 for real numbers (1 for identical orientation, 0 for orthogonal, -1 for opposite orientation)
+                - Is invariant to scaling but not to shifting (direction)
+            
+            In many cases, especially when dealing with centered data (mean = 0), the cosine similarity and the Pearson correlation coefficient will be very close or even identical. However, they can differ significantly if the data is not centered.
+            
+            Given your context:
+            
+            - If `A` is the first feature vector from one model and `B` is the first feature vector from another model
+            - And `cosine_sim_matrix[0][0]` represents the cosine similarity between these two vectors
+            
+            Then `cosine_sim_matrix[0][0]` would indeed give you the cosine similarity between the first feature vectors of the two models. This is often a good measure of how similar the features are across models.
+            
+            To compare this with the correlation coefficient:
+            
+            ```python
+            import numpy as np
+            from scipy.spatial.distance import cosine
+            
+            # Assuming A and B are your feature vectors (as numpy arrays or torch tensors)
+            A = ...  # Your first feature vector from model A
+            B = ...  # Your first feature vector from model B
+            
+            # Convert to numpy if they're torch tensors
+            if torch.is_tensor(A):
+                A = A.numpy()
+            if torch.is_tensor(B):
+                B = B.numpy()
+            
+            # Cosine similarity
+            cosine_sim = 1 - cosine(A, B)  # cosine() returns distance, so we subtract from 1
+            
+            # Correlation coefficient
+            correlation = np.corrcoef(A, B)[0, 1]
+            
+            print(f"Cosine similarity: {cosine_sim}")
+            print(f"Correlation coefficient: {correlation}")
+            
+            ```
+            
+            If your data is centered (mean subtracted), these values should be very close. If not, they might differ. The choice between cosine similarity and correlation coefficient depends on your specific needs:
+            
+            - Use cosine similarity if you're interested in the angle between the vectors regardless of their magnitudes or if you want to ignore constant offsets.
+            - Use correlation coefficient if you're specifically interested in linear relationships and want to account for both the angle and the spread of the data.
+            
+            In the context of comparing feature activations across models, cosine similarity is often preferred because it focuses on the direction of the feature vectors rather than their exact magnitudes.
+            
+        - is "not invariant shifting" meaning will have diff values if translate vectors say diff origin, but not direction?
+            
+            You've got it exactly right. Let me break this down to clarify:
+            
+            1. "Not invariant to shifting" means that if you translate the vectors (i.e., add a constant to all elements), the cosine similarity can change.
+            2. This is in contrast to the direction of the vectors, which remains unchanged by translation.
+            
+            Here's a simple example to illustrate:
+            
+            Let's say we have two vectors:
+            A = [1, 2, 3]
+            B = [2, 3, 4]
+            
+            The cosine similarity between A and B will be some value, let's call it X.
+            
+            Now, if we shift both vectors by adding 10 to each element:
+            A' = [11, 12, 13]
+            B' = [12, 13, 14]
+            
+            The cosine similarity between A' and B' will be different from X.
+            
+            However, the direction of the vectors in space remains the same. If you were to plot these vectors, A and A' would point in the same direction, as would B and B'.
+            
+            This property is why cosine similarity is often used in text analysis and recommendation systems where the magnitude of the vectors might not be as important as their direction.
+            
+            In contrast, correlation coefficient is invariant to both scaling and shifting. If you add a constant to all elements of both vectors, the correlation coefficient will remain the same.
+            
+            This difference can be important depending on your specific application and what aspect of the data you're most interested in comparing.
+            
+        - give equation for corr coeff
+            
+            Certainly! The equation for the correlation coefficient, specifically Pearson's correlation coefficient, is as follows:
+            
+            r = Σ((x_i - x̄)(y_i - ȳ)) / (√Σ(x_i - x̄)² * √Σ(y_i - ȳ)²)
+            
+            Where:
+            
+            - r is the Pearson correlation coefficient
+            - x_i and y_i are individual sample pairs
+            - x̄ is the mean of all x values
+            - ȳ is the mean of all y values
+            - Σ represents the sum over all samples
+            
+            This can also be written as:
+            
+            r = cov(X,Y) / (σ_X * σ_Y)
+            
+            Where:
+            
+            - cov(X,Y) is the covariance of X and Y
+            - σ_X is the standard deviation of X
+            - σ_Y is the standard deviation of Y
+            
+            In computational terms, you might see it implemented like this:
+            
+            r = Σ((x_i - x̄)(y_i - ȳ)) / (n * σ_X * σ_Y)
+            
+            Where n is the number of samples.
+            
+            This formula calculates the normalized measure of the covariance between two variables X and Y, giving a value between -1 and 1, where:
+            
+            - 1 indicates a perfect positive linear correlation
+            - 0 indicates no linear correlation
+            - 1 indicates a perfect negative linear correlation
+            
+            The correlation coefficient measures both the strength and direction of the linear relationship between two variables.
+            
+    - reproduce their plot of finding highest mapping for each feature
+        
+        ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%202.png)
+        
+    - ✅ ask #neuronpedia for pretrained SAEs
+        
+        I saw in sae_table that there’s SAEs for the GPT2 small, Gemma-2B, and Mistrial-7B models. I also see several pretrained SAEs on other models (Llama-3, PMs, etc). I was wondering if there’s a list of links to uploaded pretrained SAEs in general (eg. GeLU-1L, tinystories, GPT2-medium)? 
+        
+        I’m guessing people may have filled out the form to upload them to Neuronpedia too and they’re currently being processed. Also, as seen in sae_table, we can load gemma-2b-res-jb layer 12 post, but not search/steer it on Neuronpedia. I was wondering why? Also, were there only SAEs for L0, L6 and L12 due to cost?
+        
 
 ---
 
-- plan
-    
-    circuits plan:
-    
-    1. first find features for love-hate in gpt2
-    2. then find for safety vectors in larger models
-    
-    composable geometry plan:
-    
-    1. first find simplices for animal
-    2. then try to find for safety behaviors 
-    3. animal steering (cat to dog) and safety behavior simplex steering
-    4. see if concepts are also recombined in circuits
-    
-    First paper (ICLR) may just be about this technique in smaller models, such as love-hate or finding animal composability relations. (eg. this would still be a paper with impt findings, like how the IOI-SAE feature paper did this just for iOI). If have time, can extend to safety behaviors in larger models, but this may be for later paper
-    
-    geom paper may be separate if only find relns for animal, but can combine with steering vecs circuits if find geom relns for love-hate
-    
-    starting steering vecs (behavior interp circuits): love-hate (small), anger (xl)
-    
-    first find this in smaller models as a proof of concept, then consult with more experts by showing proof-of-concept to extend this to larger models
-    
+### Future work
 
-- add plan to slides: (add this to outline at start of slides)
+- compare actvs using narrow dataset (eg. only Arabic)
+
+ISSUE: different tokenizers
+
+[https://chatgpt.com/c/7e74ddc0-0694-46da-9b4a-447ee68093c2](https://chatgpt.com/c/7e74ddc0-0694-46da-9b4a-447ee68093c2)
+
+- ask neuronpedia on advice for sae training
+
+https://github.com/jbloomAus/SAELens/issues/191
+
+[https://www.lesswrong.com/posts/5XmxmszdjzBQzqpmz/interpreting-preference-models-w-sparse-autoencoders](https://www.lesswrong.com/posts/5XmxmszdjzBQzqpmz/interpreting-preference-models-w-sparse-autoencoders)
+
+can feasibly train saes on: tinystories (up to 4L), gpt2
+
+[https://www.lesswrong.com/posts/f9EgfLSurAiqRJySD/open-source-sparse-autoencoders-for-all-residual-stream](https://www.lesswrong.com/posts/f9EgfLSurAiqRJySD/open-source-sparse-autoencoders-for-all-residual-stream)
+
+- what's the estimated cost for training effective saes for all layers of gpt-2 medium?
     
-    add expms done so far and findings, and why findings don’t mean doesn’t work- it may mean these features are impt
-    
-    ablate those features to see if they’re really impt, not just have highest actvs for prompt
+    [https://chatgpt.com/c/78867e7f-511e-4a8d-b5fd-c05473c92f99](https://chatgpt.com/c/78867e7f-511e-4a8d-b5fd-c05473c92f99)
     
 
----
+- matrix plot of cca for layer-layer similarity
 
-ablate all the impt L6 features after steering
+- proposal: (timestamped, ask fazl first before send to others)
+    - in-scope list of (justified) ideas and concrete plan to enact them
+    - out-of-scope future work
 
-ablate and patch
+1. train saes on toy model
+    - ask amir for advice
+        
+        hi, as part of my project, I'm looking to extend the results of
+        [https://transformer-circuits.pub/2023/monosemantic-features#phenomenology-universality](https://transformer-circuits.pub/2023/monosemantic-features#phenomenology-universality)
+        
+        in which they compare sae feature activations (of a dataset) for two 1-layer LLMs trained on The Pile with 100 billion tokens. Given that's infeasible for me, I'm looking to train 2 toy model LLMs and compare their saes with CCA, etc. The pretrained SAElens models are too different to compare (eg. gpt2, gemma, mistrial use diff tokenizers). I was wondering if you have any advice for picking the params for the toy models and their saes, and est time + costs? thanks!
+        
+    1. look for feature splitting
+2. sim code for between saes
+    1. ISSUE: your umap isn’t right by plotting the batch*seq; correct this
+    2. CCA or CKA
+3. in another layer, track how a specific set of features (eg. love or cat) changes after steering
 
-compare features before + after steering 
+- ISSUE: what if two LLMs use different tokenizer? then how do you compare if they have the same tokens? for now, try to compare LLMs with same tokenizer.
+- funcsim: are two features across models also connected to analogous features in later layers?
+- can you compare ground truth features as the intermediary? no- the "ground truth features" are model specific right, so it wouldn't make sense to see if two diff LLMs are learning the same ground truth feature
 
-VS before + after random additions
+- people to contact:
+    
+    (towards / scaling anthropic papers)
+    
+    ask fazl beforehand to ensure timestamp (no work leaks) [he knows who can be trusted as if they have incentive to not steal his work]
+    
+    8/20, code base distr sys: [https://boards.greenhouse.io/anthropic/jobs/4020305008](https://boards.greenhouse.io/anthropic/jobs/4020305008)
+    
+    - josh batson
+        
+        [https://www.youtube.com/watch?v=sQar5NNGbw4&ab_channel=Anthropic](https://www.youtube.com/watch?v=sQar5NNGbw4&ab_channel=Anthropic)
+        
+    - [https://www.trentonbricken.com/about/](https://www.trentonbricken.com/about/)
+        - [https://www.youtube.com/watch?v=UTuuTTnjxMQ&ab_channel=DwarkeshPatel](https://www.youtube.com/watch?v=UTuuTTnjxMQ&ab_channel=DwarkeshPatel)
+    - callum
 
-post vs pre
+- 8/8: contact anthropic
+    - started in july
+    - they cite SVCCA. So they must’ve tried it. once you try your obvious cca approaches, ask them what issues there were with it, and if any issues with yours.
+        - compare approaches; give pros/cons each
+    - show them the mapping of higher order structures and working with kiho
+        - eg) do they both arrange months circular? what other circulars found by algo?
+            - can we map the circular structures?
+    - toy model feature splitting: give cost estimates of llm and sae training
+    - complexity of mapping algorithms
 
-a * mammal + b*bird 
-
-First compare multiple steering vectors at diff layers
-
-Decompose them
-
-Perhaps downstream features not precise enough. Find them and steer only certain ones
-
-Algo to sel
-
-This is primary. Second is more specific fns
-
-if steer, do we get different feature coeffs from pass in unsteered actvs vs steered actvs?
-
-it’s okay if steering vector is done at post bc you cache the pre at later layers too, so just put them thru the pretrained saes
-
-it could be possible that they’re more interpretable? we get a higher percentage of nonzero feature coefficients after steering.
-
-resid pre vs resid post
-
-What is a change in feature considered impt? Traceback? All features should change. Some drastic changes. Perhaps steer feature and ablate another feature. But why not just ablate that feature?
-
-Can we distrust person type X but trust person type Y?
-
-first compare interpreting features without relation to steering vector. what do we find?
-
-then decompose steering vectors at each layer. compare their features. 
-
-plot these features before and after steering. what happens to their simplex relations?
-
-decompose sae into features
-
-but also steer features in later layers too, and the upstream ones that affect the steering vector
-
-claim: in IOI, they had stronger effect by steering features at multiple sites. another paper also argues that multiple vector steering is effective
-
-why not just get steering vectors for multiple layers? yes, but then we decompose them. and we also see what they affect. 
-
-an algorithm to select which multiple featuers across layers for steering is effective. develop it with chatgpt
-
-In slides list assumptions of hypothesis and state how will test them. And if doesn't hold true how project still successful
-
-If rind too compelx for safety vehavioes, then something in between ioi and deception or sycopjancu
-
-Do you need this? Useful?
-
-Task-specific SAEs vs s. Full-distribution SAEs
-
-“SAEs trained on either the IOI dataset (task-specific SAEs) or the LLM’s pre-training dataset (fulldistribution SAEs)”
-
-“task-specific SAEs allow us to edit attributes by changing fewer features compared to full-distribution SAEs.”
-
-why find circuit instead of just using steering vectors?
-
-because steering circuit is “better”?
-
-“(2) the features can be used to edit capability-relevant information in internal model representations”
-
-so you first need supervised dictionaries? so circuits act as supervision?
-
-[https://arxiv.org/pdf/2405.08366](https://arxiv.org/pdf/2405.08366)
-
-aim of original paper: 
-
-“we cannot directly evaluate the usefulness of features learned by an SAE, as we do
-not know the hypothetical ‘true’ features to begin with”
-
-- simple supervised methods can be used as a principled way to compute high-quality
-feature dictionaries in a task-specific context;
-
-• these dictionaries can be used as ‘skylines’ to evaluate and contextualize the performance of unsupervised methods, such as SAEs.
-
----
+- train a model to map between features from two saes
 
 Run code of “The Geometry of Categorical” on new data related to behavior
 
+- email kiho on interpreting paper and checking if method to measure simplex based on orth relations is right
+    - ask about comparing relations across models
+    - ask if using TDA to identify simplex works
+        - in a space of data point, how do I find which data points belong to an n-simplex, etc, using algorithms?
 - brainstorm how to extend hierarchical concepts
     - steer by animal simplex
         - get convex hull that represents “animal” and add it?
@@ -477,595 +1299,15 @@ Run code of “The Geometry of Categorical” on new data related to behavior
     
     animal has cosine 1 with all others concepts bc they are all related to animal. but why 1, the max?
     
-- understand `store_matrices.py`
-    
-    In “Linear Repr Hyp” paper, gamma (umembedding into output space) is transformed into g using the causal inner product by “unifying” it with the input (embedding) space prompt. This g is calculated by equation 3.8, and is the g of this code.
-    
-    In `1_Animal`, this g is used to obtain the condition in equation 4.1- g(relevant item in category) has similarity with the linear repr of the concept in category, but is orthogonal to irrelevant concepts
-    
-    `animals_g` is a dict of concept:tensor that takes a slice from  `g`, which is a tensor of shape `[256000, 2048])` , and puts it in in the concept. So g must have first index be vocab,  animals_g['mammal'].shape is `([194, 2048])`, it’s possible that’s 194 different animals? It’s different from animals_g['bird'].shape, which is`([115, 2048])`. So this first number is specific to each key in animals. 
-    
-    But g is just direction, not a vector with magniutde. So we need to use `estimate_cat_dir`
-    
-    `animals_token.keys()` : `dict_keys(['mammal', 'bird', 'reptile', 'fish', 'amphibian', 'insect'])`
-    
-    So there are only 6 categories of animals, and indeed, the first idnex of animals_g are types of those animals: `animals_token['mammal'][0:5]` is `['▁beaver', '▁Beaver', '▁panther', '▁Panthers', '▁Panther']`
-    
 
-to go over with kiho and other authors:
-
-1. propose steering project using hier concepts
-- ask about papers
-    1. Why do we need to unify input and output space? How does this help with steering?
-        1. is it that a concept in one space is “the same” as the concept in the other?
-        2. Author response: sec 3 of lin repr paper, the inner product is not interpr, the prob distr is preserved. the inner product in each space is arbitrary. what’s the right notion of inner product? 
-    2. animal may not be binary, but is it “not animal”? so would there be a vector for each polytope categorical concept? but dog isn’t a binary concept either, yet it’s a vector. and animal does have a vector representation l_animal that says animal is a binary feature. this is orthogonal to the simplex. but shouldn’t they be the same, as they’re both animal- so parallel, not orthogonal?
-        1. The animal dir is calculated here: `dirs.update({'animal': estimate_cat_dir(all_animals_tokens, g, vocab_dict)})`
-        2. or, is this simplex NOT the same as animal, but is the difference between each concept that’s NOT animal? in other words, it’s all the things that make each concept different from animal?
-        - Author response:
-            1. conditional prob: animal - dog is (dog | animal), so not really steering concept
-            2. embeddings space is probability distribtuion and is hard to find vector rep with dir and magn with 0 and 1. but only want to change target concept without changing other concepts. this may not be the right direction decomposition
-            3. if some value is subordinate to another value, should not affect the subvalued conditioned on the upper value. simplex ; position of trianlge (perpendicular line o fit) is parallel to animal. projection onto direction. 
-            4. this fig 3 spce is not the same as activation space. fig 3 is unembed space. so varying along fig 3 gives different probability in output. 3d subspace of vocab space
-            - gamma is original unemb vector, within weight matrix of unembed matrix. g is tranformed to causal inner product by centering and whitening ( uncorrelated and each have variance 1). unified means lambda bar w and gamma bar w are the same. they map to the same thing in causal inner product space.
-                1. dirs for animal bird etc, when add these to embedding, the intervention did work. but not sure if this is the real embedding from some context. so maybe intervening is out of space.
-                2. embd space means final layer hidden states of last hidden tokens. so both are after final layer. this paper computes what the model ends up with and if those representions have similiaries
-                3. intermediate layers are more complicated with logit lens. kiho says they’re not linear; after final layer, the last step is layer norm (which is not linear), but not concrete
-                4. contrastive sentences: if concept is sentiment, on movie reviews, is easy. but if we add this difference to news or other things, it will not give it. out of distribution. may be open problem. so train must match test. test out if train on news and add to movie. so that’s why we want a more general direction. what if used a very big dataset that contained those, perhaps is better. but test set should out of distribution. 
-                - do polytopes exist in intermediate space? the umbed should be at point of simplex.
-                    1. simplex not found in intermediate space yet but not that meaningful. decomposition
-                    2. steer by simplex: korean chinese english, their categorical concepts means
-                    3. direct sum in fig1a means thm 6 d and e means animal-plant dir is ortho to mammal-animl so subspace spanned by these diffs are orth to animal, so this simplex is orth to this dir. 
-                    4. define concept carefully. now, it’s actv after final layer so it’s for next word prediction. so intermediate feature is hard to define.
-                    5. polytope of clusters- try to find, may be a simplex
-                    6. ablate the simplex of (mammal bird reptile)- would that leave you with animal? then you could isolate a concept. so simplex are the differences. span(animal- mammal, animal-bird, etc). simplex can be more than 3 things. 
-                    7. animal is repr as binary vector. animal has no counterfactual definition. binary feature is animal and not animal, but not same as counterfactual
-                    8. an animal vector, the simplex polytope is not animal category, is the differences. 
-            1. adj mat in fig 5: if feature is conn by a subset relation, so 0 means no relation and 1 means they’re subset
-1. ask about code
-
-Analogous reasoning: finds missing structure and infers from it, just like knowing the first ind of tensor is batch, so we can understand that’s batch too. This structure must be represented somewhere. Especially for induction. How does it remember a pattern? 
-
-[https://arxiv.org/pdf/2302.07384](https://arxiv.org/pdf/2302.07384)
-
-The Geometry of Neural Nets’ Parameter Spaces Under Reparametrization
+[**Anthropic Beta Steering API**](https://docs.google.com/forms/d/e/1FAIpQLSc9HRcRFOdid4NJ4-Lyo3HdUybbevMqERWscJIbqilLQRuSQA/viewform)
 
 ---
 
-Start from existing features and find supporting features and backup features when ablated
-
-This will help us find the exact side effects too
-
-Subtract and decompose the patch
-
-My guess is if we don't find this others will find this soon
-
-yarin- STTEERING oxford
-
-The Geometry of Neural Nets’ Parameter Spaces Under Reparametrization
-
-Is it measuring similarity in some other space?
-
-why certain layers? perhaps it’s because those layers contain that feature. but it is also because those features have important interactions with downstream layers, like in a feature circuit? then if we modify the feature circuit, perhaps we can 1) improve the steering vector (see above measurements) or 2) obtain steering on more specific types of behaviors.
-
-multiple layers; multiple vectors may make it more specific
-
-don’t make activation addition be another black box; decompose and interpret it even further (like bio to chem to physics)
-
-Use differences to find features
-
-Why not just find features? Bc sv may not be found from saes. Can steering vector be found from saes?
-
-Not just feature interactions, but component. Then find features in components 
-
-Use diff of means to find vevs ghen decompose to find features and connect th9se features
-
-[https://www.lesswrong.com/posts/DtdzGwFh9dCfsekZZ/sparse-autoencoders-work-on-attention-layer-outputs](https://www.lesswrong.com/posts/DtdzGwFh9dCfsekZZ/sparse-autoencoders-work-on-attention-layer-outputs)
-
-https://transformer-circuits.pub/2021/framework/index.html
-
-read/write residual streams, so edges between components
-
-[https://medium.com/@zepingyu/123-cb62513f5d50](https://medium.com/@zepingyu/123-cb62513f5d50)
-
-ask austin about doing benchmarks
-
-reply to andys
-
-what if subtraction makes actvs go to negative? where do existing prompts fall in measurement of love-hate? can we measure this via projection? 
-
----
-
-[https://academia.stackexchange.com/questions/82582/oral-vs-poster-vs-workshop-which-is-the-most-prestigious-in-the-context-of-comp](https://academia.stackexchange.com/questions/82582/oral-vs-poster-vs-workshop-which-is-the-most-prestigious-in-the-context-of-comp)
-
-[https://openreview.net/group?id=ICML.cc/2024/Workshop/MI#tab-accept-oral](https://openreview.net/group?id=ICML.cc/2024/Workshop/MI#tab-accept-oral)
-
-[https://www.reddit.com/r/LocalLLaMA/comments/1dipzxs/full_paper_is_out_refusal_in_language_models_is/](https://www.reddit.com/r/LocalLLaMA/comments/1dipzxs/full_paper_is_out_refusal_in_language_models_is/)
-
-[https://openreview.net/pdf?id=zzCEiUIPk9](https://openreview.net/pdf?id=zzCEiUIPk9)
-
-[https://openreview.net/forum?id=bcV7rhBEcM](https://openreview.net/forum?id=bcV7rhBEcM)
-
-dict end to end
-
-[https://openreview.net/forum?id=DwhvppIZsD](https://openreview.net/forum?id=DwhvppIZsD)
-
-clip
-
-[https://openreview.net/forum?id=akCsMk4dDL](https://openreview.net/forum?id=akCsMk4dDL)
-
-steering vectors
-
-[https://openreview.net/forum?id=3eBdq2n848](https://openreview.net/forum?id=3eBdq2n848)
-
-**Controlling Large Language Model Agents with Entropic Activation Steering**
-
-[https://openreview.net/pdf?id=kUGkpykJdh](https://openreview.net/pdf?id=kUGkpykJdh)
-
-face
-
-[https://arxiv.org/abs/2306.03819](https://arxiv.org/abs/2306.03819)
-
-leace
-
-[https://chatgpt.com/c/9501c7d4-24df-4814-8ffd-0a2f0dc36393](https://chatgpt.com/c/9501c7d4-24df-4814-8ffd-0a2f0dc36393)
-
-explain this in layman's terms. does it mean all features can be obtained by difference of means?: [https://blog.eleuther.ai/diff-in-means/](https://blog.eleuther.ai/diff-in-means/)
-
-[https://blog.kuzudb.com/post/wcoj/](https://blog.kuzudb.com/post/wcoj/)
-
-https://blog.kuzudb.com/post/wcoj/#a-thank-you--an-anecdote-about-knuths-reaction-to-the-term-worst-case-optimal
-
-[https://arxiv.org/pdf/2310.07837](https://arxiv.org/pdf/2310.07837)
-
-Measuring Feature Sparsity in Language Models
-
-[https://www.alignmentforum.org/posts/zj3GKWAnhPgTARByB/saes-discover-meaningful-features-in-the-ioi-task](https://www.alignmentforum.org/posts/zj3GKWAnhPgTARByB/saes-discover-meaningful-features-in-the-ioi-task)
-
-[https://arxiv.org/pdf/2405.08366](https://arxiv.org/pdf/2405.08366)
-
-[https://openreview.net/pdf?id=JdrVuEQih5](https://openreview.net/pdf?id=JdrVuEQih5)
-
-A Systematic Comparison of Sparse Autoencoder Variants for Model Steering on the IOI Task
-
----
-
-- impt papers measuring analogous features
-    - the geometry of categorical and hierarchical
-        
-        questions to ask authors
-        
-        - did they do this for predictions?
-        
-        things to try
-        
-        - add simplices to steer different hierarchies
-        - do this for predictions
-        - how do steering vectors
-    - linear repr hypothesis
-    - platonic repr hypothesis
-    - circuit complexity vs geometry
-    - similarity survey (2023)
-    - successor heads- extracting addable abstractions (similar to activations vectors)
-        - try to break it (when does it not work?)
-    - func eqv features
-    - Transformer visualization via dictionary learning: contextualized embedding as a linear superposition of transformer factors
-- impt papers on steering feature relations
-    - sparse feature circuits
-    - ripple effects
-    - scaling monosemanticity
-    - Automatic Discovery of Visual Circuits
-        - [https://openreview.net/pdf/0fafa04c83370f95d637dc509e78e7d77ea3c9da.pdf](https://openreview.net/pdf/0fafa04c83370f95d637dc509e78e7d77ea3c9da.pdf)
-
-**Main topic**: Measure what groups of feature RELATIONS are affected by steering vectors (or other vector representations) across models to pinpoint that targetting them will improve steering vector by reducing noise
-
-- Steer by feature relations?
-- Sparse features can STILL have relations to one another in geometric space! AND we can decompose these vectors- bc they’re vectors.
-
-scaling monosem:
-
-Feature splitting 
-
-Features as Computational Intermediates
-
-[https://transformer-circuits.pub/2023/monosemantic-features/index.html#phenomenology-feature-splitting](https://transformer-circuits.pub/2023/monosemantic-features/index.html#phenomenology-feature-splitting)
-
-- san fran feature splits
-    
-    We also find evidence of [feature splitting](https://transformer-circuits.pub/2023/monosemantic-features/index.html#phenomenology-feature-splitting) [8] , a phenomenon in which features in smaller SAEs **“split” into multiple features in a larger SAE, which are geometrically close and semantically related to the original feature, but represent more specific concepts**. For instance, a “San Francisco” feature in the 1M SAE splits into two features in the 4M SAE and eleven fine-grained features in the 34M SAE.
-    
-    similar features have small angles between their dictionary vectors.
-    
-- idealized features
-    
-    We conjecture that there is some idealized set of features that dictionary learning would return if we provided it with an unlimited dictionary size. Often, these "true features" are clustered into sets of similar features, which the model puts in very tight superposition. Because the number of features is restricted, dictionary learning instead returns features which cover approximately the same territory as the idealized features, at the cost of being somewhat less specific.
-    
-    In this picture, the reason the dictionary vectors of conceptually similar features are similar is that they are likely to produce similar behaviors in the model, and so should be responsible for similar effects in the neuron activations. For instance, it would be natural for a feature that fires on periods to predict tokens with a leading space followed by a capital letter
-    
-
-if the sae is better, then we can steer by features. so will a very big sae decompose into many composable specific features? red dog → red, dog
-
-if so then we can steer by “analogous” hierarchical, wacky specific compositions
-
-does feature splitting occur earlier for sae from 12mil to 18mil, then take approach
-
-"feature relations" aren't as intuitive to humans for language as they are for vision (eg. we identify a face via relations between noses, eyes, etc but it's not as intuitive to phrase this for language concepts, though the anthropic papers do mention feature relations in the umap plots)
-
-Also I've thought about the "universal patterns" and I think that would be too ambitious for a project, given that identify some taxonomy of model representations would require a lot of models and careful descriptions of them, it would take a while, so I think I will pivot from that to something similar but less ambitious
-
-better interpret later layer features- sae paper doesn’t seem to do this? compared to ICA etc which is faster but less interprateable
-
-are there features that sae can’t isolate? feature splitting may do this, so try this
-
-use ACDC to locate the impt layers or components then train saes on the impt components of those layers
-
-would you get same sae features from unablated vs ablated unimpt components? this might get smaller sae with more precision
-
-if you have really good sae, you can just steer with those features, so don’t need steering vector?
-
-you still are interested in how steering those features affects other features? and can bthey be deocmposed
-
-are certain features only expressed in multiple layers?
-
-look at MI server #sparse-coding (logan riggs) says did try multiple layers but disentanglement using MLP, so expresses features in a diff language, so have to get something invariant to this translation
-
-2 layers, hypothesize MLP is destroying entanglement. can we stitch together two layers, extend sae architecture to include linear layer between or train a translator?
-
-platonci repr hypothesis paper
-
-certain steering vectors are composed of multiple layers?
-
-if i add together which features from sae base, can we reconstruct how the model is building a steering vector?
-
-basis of svd not guaranteed to be same basis as sae; energise of eigenvec are impts
-
-Just start by running prev relevant paper code on new data of your problem and look for patterns across them. Then modify them slightly to fit stepping stone questions of your problem you want to uncover
-
-Find an inscope subproblem that will help advance this field:
-
-** face relation, eyes nose mouth: dogs and humans
-
-find sae + lin probe features across models
-
-unify sae and lin probe? is there a way to compare them using cosine sim?
-
-ways to measure feature relns:
-
-1. cosine sim
-2. causal patching
-3. sim metrics across models
-4. clustering
-5. mapper, topo invariants (betti)
-6. func eqv patching cross-models (nikhil, cat the)
-7. jaccard (bau, gurnee)
-
-ask todd for linalg advice; pair prog on lin alg proj code on steering feature vectors and seeing effects on features in next layers
-
-[https://chatgpt.com/c/d5e58a44-0435-4126-9ec7-599afb64c2b0](https://chatgpt.com/c/d5e58a44-0435-4126-9ec7-599afb64c2b0)
-
-- how does it differ from regular linalg, looks like its just geom transf
-    
-    Projective Geometric Algebra (PGA) differs from regular linear algebra in several key ways, although it builds on linear algebra concepts. Here are the main differences:
-    
-    1. **Homogeneous Coordinates**:
-        - **Linear Algebra**: Typically deals with vectors in Euclidean space using Cartesian coordinates.
-        - **PGA**: Uses homogeneous coordinates to represent points, lines, and planes in projective space. This allows for the representation of points at infinity and more flexibility in handling geometric transformations.
-    2. **Geometric Interpretations**:
-        - **Linear Algebra**: Primarily concerned with vector spaces, linear transformations, and solving systems of linear equations.
-        - **PGA**: Extends these concepts to include geometric objects and their relationships. It is particularly well-suited for representing and manipulating geometric transformations such as rotations, translations, and scaling in a unified framework.
-    3. **Multivectors and Operations**:
-        - **Linear Algebra**: Focuses on operations involving vectors and matrices, such as dot products and matrix multiplication.
-        - **PGA**: Introduces multivectors (combinations of scalars, vectors, bivectors, etc.) and operations such as the geometric product, outer product, and inner product. These operations are designed to work naturally with geometric entities and transformations.
-    4. **Transformations**:
-        - **Linear Algebra**: Uses matrices to represent linear transformations. Transformations are typically applied to vectors.
-        - **PGA**: Uses the geometric algebra framework to represent and apply transformations directly to geometric objects (points, lines, planes) in a more intuitive and algebraically consistent manner.
-    5. **Unification of Geometric Concepts**:
-        - **Linear Algebra**: Requires different tools and methods to handle various geometric transformations and concepts (e.g., separate methods for translation, rotation, scaling).
-        - **PGA**: Provides a unified algebraic system that can handle a wide range of geometric transformations and relationships seamlessly. For example, a single framework can represent both rotations and translations, which are treated separately in traditional linear algebra.
-    6. **Higher-Dimensional Extensions**:
-        - **Linear Algebra**: Extends to higher dimensions but often with increasing complexity in handling geometric interpretations.
-        - **PGA**: Naturally extends to higher dimensions while maintaining consistent geometric interpretations and operations. This makes it powerful for applications in computer graphics, robotics, and physics.
-    
-    In summary, while PGA builds on the foundation of linear algebra, it extends and enhances it to provide a more comprehensive and unified approach to handling geometric transformations and relationships. This makes it particularly useful in fields that require sophisticated geometric reasoning and manipulation.
-    
-- why study multivectors ? what applications this has to nueral network latent spaces
-    
-    Studying multivectors and understanding their applications can offer several advantages, particularly in fields like computer graphics, robotics, physics, and even neural networks. Here’s an exploration of why multivectors are studied and their potential applications in neural network latent spaces:
-    
-    ### Why Study Multivectors?
-    
-    1. **Unified Framework for Geometric Transformations**:
-        - Multivectors provide a unified framework to represent and manipulate geometric transformations such as rotations, translations, and scaling. This is particularly useful in 3D graphics and robotics where complex transformations are common.
-    2. **Efficiency and Compactness**:
-        - Using multivectors can lead to more efficient algorithms and compact representations of geometric data. This can improve computational efficiency and reduce storage requirements.
-    3. **Intuitive Understanding of Geometric Relationships**:
-        - Multivectors offer a more intuitive way to understand and work with geometric relationships. They make it easier to reason about the interactions between different geometric entities (points, lines, planes).
-    4. **Extensibility to Higher Dimensions**:
-        - The framework of multivectors extends naturally to higher dimensions, providing a consistent way to handle complex geometric and algebraic problems in higher-dimensional spaces.
-    
-    ### Applications in Neural Network Latent Spaces
-    
-    1. **Enhanced Feature Representation**:
-        - In neural networks, particularly in deep learning, latent spaces represent compressed versions of input data. Using geometric algebra and multivectors, it may be possible to encode richer geometric relationships in these latent spaces, potentially leading to better feature representations.
-    2. **Improved Geometric Transformations**:
-        - Neural networks, especially convolutional neural networks (CNNs) used in image processing, can benefit from the robust and unified transformation capabilities of multivectors. For example, representing transformations in latent spaces more accurately could improve tasks like image recognition and object detection.
-    3. **Equivariance and Invariance**:
-        - Geometric algebra can help in designing neural network architectures that are equivariant or invariant to certain transformations. This means the network’s output can change predictably (or remain unchanged) when the input undergoes specific transformations, which is valuable in applications like computer vision and reinforcement learning.
-    4. **Learning Geometric Relationships**:
-        - Multivectors could enable neural networks to learn and encode geometric relationships directly. This is beneficial in tasks where spatial relationships are crucial, such as in 3D object recognition, scene understanding, and robotics.
-    5. **Regularization and Constraints**:
-        - Incorporating multivector representations can help impose geometric constraints and regularization in neural networks. This can lead to more robust and generalizable models by embedding prior geometric knowledge into the learning process.
-    
-    ### Example Use Cases
-    
-    1. **3D Computer Vision**:
-        - In 3D computer vision, using multivectors can improve the network’s ability to understand and process 3D shapes, perform object detection, and recognize objects from different viewpoints.
-    2. **Robotics**:
-        - For robotic manipulation and navigation, multivectors can help neural networks better understand and manipulate spatial relationships, leading to more accurate and efficient robot control.
-    3. **Physics Simulations**:
-        - In physics-based simulations, representing physical entities and their interactions using multivectors can lead to more accurate models that neural networks can learn from and predict.
-    4. **Generative Models**:
-        - In generative models like Variational Autoencoders (VAEs) and Generative Adversarial Networks (GANs), multivectors can improve the representation of latent spaces, leading to better generation of complex structures such as human faces, natural scenes, and 3D objects.
-    
-    In summary, studying multivectors and applying them in neural network latent spaces can lead to more powerful, efficient, and geometrically aware models. This can enhance performance in various applications, from computer vision and robotics to generative modeling and beyond.
-    
-- what relation do multivector have with simplicial complexes and hierarchical concepts in latent space
-    
-    Multivectors, simplicial complexes, and hierarchical concepts in latent spaces can interrelate in meaningful ways, particularly in the context of geometric and topological data analysis, and machine learning. Here's how they connect:
-    
-    ### Multivectors and Simplicial Complexes
-    
-    **Multivectors**:
-    
-    - Multivectors are elements of geometric algebra that can represent various geometric objects (scalars, vectors, bivectors, trivectors, etc.).
-    - They provide a compact and algebraically rich framework to describe geometric transformations and relationships.
-    
-    **Simplicial Complexes**:
-    
-    - Simplicial complexes are a combinatorial structure made up of simplices (points, line segments, triangles, and their higher-dimensional counterparts).
-    - They are used in computational topology to study the shape of data, particularly in persistent homology, which is a method in topological data analysis.
-    
-    **Relation**:
-    
-    - Multivectors can represent the oriented volumes of simplices in a geometric algebra framework. For instance, a bivector can represent an oriented area (a 2-simplex), and a trivector can represent an oriented volume (a 3-simplex).
-    - In computational topology, geometric algebra can be employed to perform operations on these simplices more efficiently and intuitively, leveraging the algebraic structure provided by multivectors.
-    
-    ### Hierarchical Concepts in Latent Space
-    
-    **Hierarchical Latent Spaces**:
-    
-    - In machine learning, particularly in neural networks, latent spaces are representations where data is encoded into a lower-dimensional space.
-    - Hierarchical latent spaces involve multiple levels of abstraction, where higher levels capture more abstract features and lower levels capture more concrete features.
-    
-    **Relation to Simplicial Complexes and Multivectors**:
-    
-    - **Simplicial Complexes**: These can be used to model hierarchical relationships within the data. For example, different layers of simplices can represent different levels of abstraction in the latent space, capturing hierarchical structures within the data.
-    - **Multivectors**: By leveraging the rich algebraic properties of multivectors, one can efficiently encode and manipulate these hierarchical structures. For example, a multivector can represent complex hierarchical relationships within the latent space, capturing interactions between different levels of features.
-    
-    ### Applications
-    
-    1. **Topological Data Analysis (TDA)**:
-        - **Using Simplicial Complexes**: TDA involves using simplicial complexes to study the topological features of data. Persistent homology, a TDA technique, can identify and analyze features at multiple scales, providing insights into the hierarchical structure of data.
-        - **Multivectors**: In TDA, multivectors can represent simplices in a way that facilitates geometric computations, making it easier to analyze and manipulate topological features.
-    2. **Neural Network Latent Spaces**:
-        - **Hierarchical Representations**: In neural networks, especially deep learning models, hierarchical latent spaces can be used to capture complex, multi-scale features of the input data.
-        - **Geometric and Topological Insights**: By representing these hierarchical features using simplicial complexes and multivectors, one can gain deeper geometric and topological insights into the latent space, potentially leading to better understanding and improvements in model architecture and performance.
-    3. **Geometric Deep Learning**:
-        - **Combining Concepts**: Geometric deep learning aims to extend deep learning techniques to non-Euclidean spaces (graphs, manifolds). Using multivectors and simplicial complexes can provide a framework for such extensions, allowing the models to capture more complex geometric and topological structures within the data.
-    
-    ### Summary
-    
-    - **Multivectors** provide a powerful algebraic tool to represent and manipulate geometric objects and transformations, which can be applied to simplicial complexes in computational topology.
-    - **Simplicial Complexes** are crucial for understanding the topological structure of data, especially in hierarchical and multi-scale contexts.
-    - **Hierarchical Latent Spaces** in neural networks benefit from these concepts by allowing for richer, multi-level representations of features, leading to potentially more robust and insightful models.
-    
-    By integrating these concepts, one can create more sophisticated models that leverage geometric and topological properties of data, leading to advancements in fields such as data analysis, machine learning, and beyond.
-    
-
-- run sparse feature circuits code
-
-repr eng: bias term from cojntrastive to steerm ; combine multiplying featuers ; inefficient transformation 
-
-Phi models toy models
-
-Eun kim
-
-is it same truth vector of PCA for all true-false contrastive statements? universal
-
-DOLA: DECODING BY CONTRASTING LAYERS IMPROVES
-FACTUALITY IN LARGE LANGUAGE MODELS
-
-https://arxiv.org/abs/2402.09090
-
-[Multimodal interp notes](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Multimodal%20interp%20notes%2046f2ab3a3b3642d2b1d09e8c1c9608bc.md)
-
-[https://www.simplexaisafety.com/](https://www.simplexaisafety.com/)
-
-[https://www.lesswrong.com/posts/gTZ2SxesbHckJ3CkF/transformers-represent-belief-state-geometry-in-their](https://www.lesswrong.com/posts/gTZ2SxesbHckJ3CkF/transformers-represent-belief-state-geometry-in-their)
-
-[https://www.lesswrong.com/posts/mBw7nc4ipdyeeEpWs/why-would-belief-states-have-a-fractal-structure-and-why](https://www.lesswrong.com/posts/mBw7nc4ipdyeeEpWs/why-would-belief-states-have-a-fractal-structure-and-why)
-
-https://youtu.be/5dggwz76Qys?si=k-Ef1u0WDpaoAZiR
-
-Compu mechanics wolfram
-
-https://people.maths.ox.ac.uk/nanda/
-
-can we use sae as filter function in mapper to construct a simplicial complex? the clustering is based on the sae feature space?
-
-[https://x.com/viditnanda/status/1778540829998805094](https://x.com/viditnanda/status/1778540829998805094)
-
-[https://x.com/viditnanda/status/1778540829998805094](https://x.com/viditnanda/status/1778540829998805094)
-
-venhoff00@gmail.com
-
-features correspond to syntactic aspects. syntax becomes one single semantic aspect
-
-multiple polysemantic features together act as monosemantic 
-
-find circuit for function vector
-
-is it solving higher lvl task
-
-**Discovering Latent Knowledge in Language Models Without Supervision**
-
-[https://imtiazhumayun.github.io/grokking/](https://imtiazhumayun.github.io/grokking/)
-
-obsidian graph tool
-
-https://x.com/dashstander/status/1802501901209960638?t=-IkIBrku8L07piuMukRbMw&s=19
-
-https://x.com/chanindav/status/1802933505367953430?t=sQxME-k8gzgJRopimlS9IA&s=19
-
-https://youtu.be/jSAT_RuJ_Cg?si=WVPy2CwFiKIXVMA4
-
-Arc challenge
-
-14m dreamcoder
-
-Filter local during training to grok
-
-Filter local in early layers to global analogies (contact logit lens Thang)
-
-Find evidence of simplices in more than just animals first then contact vidit
-
-Contact kiho on ideas
-
-ask minseon on opinions of adv exmps by topoact; grok
-
----
-
-Researchers so far;
-
-Phil fazl
-
-Austin
-
-Possible:
-
-Clement louis luke amir
-
-Todd
-
-Vidit
-
-Kiho Victor
-
-bei wang- Utah algtop
-
-Konstantin
-
-Euan
-
-Conmy
-
-Multicellular (future work)
-
----
-
-[Similarity measurements](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Similarity%20measurements%2059d99860501849cfb9960f028265819b.md)
-
-Steer by feature relations of distance or causal. This is true steering by concepts. Concepts are captured by a network of features, not a single feature. A bridge vs golden gate Bridge. In that case, it's not saes. 
-
-Kernel is distance between samples, not features
-
-Structure preserving feature relations
-
-Feature must be at some threshold 
-
-Sim measure within model between hierarchical analogous concepts
-
-measure common subspace
-
-Relation in terms of containment, and replacement mapping, not just distance. Locked in to map multiple chains of connecting relns
-
-Trace backwards single token inputs or two contrasting differing by single input. Measure the feature dim for traits along each. Do this for both neurons, sae features, components. Then measure distances between these features. Is there a pattern?
-
-Ask gpt4 to critique and refine this
-
-Issue is hard to isolate commonality. What if more than one commonality? Even for vision models. For text, there's position. But sample at many pos, many contexts and they have commonality. If use synonymous tokens or of Same class.
-
-https://youtu.be/zBnkO8p32w0?si=sDj_TTxkAYy5HdgY
-
-But sep features, like blue dog and red dog, can be two sae features. Analogous steering
-
-Topological
-
-Make sep shared team notion without all the info
-
-Alignment of steering vectors across models via features
-
-Nonlinear features
-
-No steering benchmark
-
-If bias exists in frozen embedding,  doctor closer to man in woman, is there inherent bias in clip output?
-
-Used to br frozen text and frozen img then just train Bridge. But now is training end to end, not separate img and txt models. Chameleon meta
-
-after sae transformation, we align two models by a cross-model sae. then, apply alignment-based measures
-
-slides: explain in a line how past/curr work in overlapping + diverging circuits (for seqcont) can help with studying overlapping + diverging feature circuit calculation for this project
-
----
-
-kmeans cluster to find inputs that activate the same features
-
-Steer models with similar features from same or related cluster- what's the difference? Is there a correlation between feature similarity and output effect?
-
-[https://transformer-circuits.pub/2024/april-update/index.html#ablation-exps](https://transformer-circuits.pub/2024/april-update/index.html#ablation-exps)
-
-dampen and ablation have simialr effect, much bigger than doubling
-
-steering is both subtracting and adding. feature steering in successor heads is abalting then adding
-
-any corruption of actv patching with ordered seqs finds successor heads
-
-bloom trained gpt2-small saes, so just use pretrained there. A6000 has 80Gb for [vast.ai](http://vast.ai) for tinystories and pythia 160m. even this takes 8hrs
-
-to choose threshold, relative effect: how steering changes circuit relative to non-steering
-
-attribution patching is less precise but more efficient
-
-ablate and scale pre-existing gpt-2 small circuits from marks
-
-error terms of saes to circuits
-
-if run model without this, not accurate. but 
-
-if they could ablate features in feature circuits for small, may also be able to steer with small. steer grammar rules
-
-https://arxiv.org/abs/2405.07987
-
-[https://twitter.com/phillip_isola/status/1790488966308769951](https://twitter.com/phillip_isola/status/1790488966308769951)
-
-https://github.com/minyoungg/platonic-rep
-
-- remarks
-    
-    What they actually show is that 1) affine maps do a pretty good job of translating between the representation spaces of different NNs across, and 2) as models get stronger, they tend to have representation spaces that align more closely with each other. There are a lot of other hypothesis that explain these results so I think they jump the gun a little by dedicating >half the paper to analysis
-    
-    1. One could be that neural networks are predisposed to learning spaces that can easily be mapped between with affine transformations. Another is that we might see a plateau in representation alignment once the models have eaten up all the low-hanging fruit on lossless abstractions
-    2. ***May 16, 2024 4:21 PM (EDT)*May 16, 2024 4:21 PM (EDT)*May 16, 2024 4:21 PM (EDT)***
-        
-        One thing to consider in their graphs that plot models on axes of language capability vs alignment with vision models is that it seems linear but if you switch out the language capabilities with the compute cost of training, you'll see what might end up being an asymptote
-        
-
-https://www.reddit.com/r/MachineLearning/s/ElJYeGM9JX
-
-[https://twitter.com/hamandcheese/status/1707158049834639663](https://twitter.com/hamandcheese/status/1707158049834639663)
-
-[https://twitter.com/mattecapu](https://twitter.com/mattecapu)
-
-[https://twitter.com/bgavran3](https://twitter.com/bgavran3)
-
----
-
-### Future Work
+Steering circuits
 
 - [The fact that both features contribute to the final output indicates that the model has partially predicted a sentiment from John's statement (the second feature) but will do more downstream processing on the content of his statement (as represented by the first feature) as well.](https://www.notion.so/Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-3219b222ee8943ac9ba1a07963f975b0?pvs=21)
     - Can we better formalize these causal relations between features?
-- success heads: change form numerals to ranks
 - 80Gb instead of 40Gb for A100- vast ai may specify this
 - automatically find steering vectors using dataset samples
 - [https://www.lesswrong.com/posts/qykrYY6rXXM7EEs8Q/understanding-sae-features-with-the-logit-lens#Characterizing_Features_via_the_Logit_Weight_Distribution](https://www.lesswrong.com/posts/qykrYY6rXXM7EEs8Q/understanding-sae-features-with-the-logit-lens#Characterizing_Features_via_the_Logit_Weight_Distribution)
@@ -1076,9 +1318,7 @@ https://www.reddit.com/r/MachineLearning/s/ElJYeGM9JX
     
     decompose cheese vector
     
-- saelens: train sae on gpt2-xl L20 and put steering vector through it, then interpret top features\
-- mapper
-- Feature complexity paper
+- saelens: train sae on gpt2-xl L20 and put steering vector through it, then interpret top features
 - [**Scaling Laws for Dictionary Learning**](https://transformer-circuits.pub/2024/april-update/index.html#scaling-laws)
     - [https://transformer-circuits.pub/2024/april-update/index.html](https://transformer-circuits.pub/2024/april-update/index.html)
     - [https://transformer-circuits.pub/2024/april-update/index.html#ablation-exps](https://transformer-circuits.pub/2024/april-update/index.html#ablation-exps)
@@ -1097,19 +1337,8 @@ instead of deleting file, transfer new code into shared nb by deleting all old c
 
 ---
 
-- store their steering vectors
-- add by features of decomposed steering vectors (which are just mean diffs of sample sets)
-- auto-label dataset examples of a feature
-- cluster by features
-- cluster by samples
-
----
-
-- is it 3rd last b/c adds end of seq token somehow in some operation? Find this operation
-- clean up nbs and update repo
 - Method to reduce dead neurons using loss constraints which force learned wright's to have activations be within useful feature range
-- Code to decompose CAA activations + steered actvs
-    - then do Machiav activations
 - Steering is by prompts, not model. CMAP is by model. Compare them.
 - [https://apartresearch.com/project/from-sparse-to-dense-refining-the-machiavelli-benchmark-for-real-world-ai-safety](https://apartresearch.com/project/from-sparse-to-dense-refining-the-machiavelli-benchmark-for-real-world-ai-safety)
 - Study: https://github.com/nrimsky/CAA
+    - is it 3rd last b/c adds end of seq token somehow in some operation? Find this operation
