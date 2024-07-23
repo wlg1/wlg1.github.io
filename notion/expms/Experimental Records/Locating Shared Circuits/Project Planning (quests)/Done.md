@@ -583,7 +583,7 @@ Steer numbers to ranks of single tokens
 
 Train SAEs on GPT2 Small [reproduce s.head feature steering]
 
-- ✅ [GPT2_SAE_MLP0_seqcont.ipynb](../../Interpreting%20Steering%20Behaviors%20via%20Analogous%20Feat%208e01703d090b40ddbbb9ed25baec5b60/Project%20Planning%20b4b05f73d85e409f8409b209e44ed692.md)
+- ✅ [GPT2_SAE_MLP0_seqcont.ipynb](../../Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Project%20Planning%20b4b05f73d85e409f8409b209e44ed692.md)
     - ✅ Train it on integers, then see the highest features that light up on mod-10 tokens ending in 3
         
         NOTE: Most important means highest change in output after ablating. But here, we look for highest activations on these tokens. However, this doesn't mean much because certain features may fire highly for all numbers in general! So use the paper's definition of 'most important’
