@@ -1904,3 +1904,1076 @@ Compare SAEs of Different (Small) Models
     Model B’s feature appears to fire on more tokens, possibly because it captures more concepts. That is, while these tokens are 0 in model A (1L-21M)’s feature 16251, model B (2L-33M)’s feature 3301 is nonzero for them.
     
 - ✅ fazl meet: [7 12](../Fazl%20meeintg%20fb1fec5aea894f4aa13ec302d8c6a66f/7%2012%2077b28515af034c5f9ff61902f4c8b81a.md)
+
+Feature Manifold Expm Planning
+
+- ✅ [Will meet](../Will%20meet%20c258bd9c464d453a90a6c7110cece677.md)
+- ✅ [read actv atlas](../Feature%20manifold%20papers%20722de0b743c34f82b13a975f7c6b143e.md) (more focus on this when analyzing data; for now, focus on setup expms)
+- ✅ issues with topoact results- why demo not same as paper/lecture pres?
+    
+    [https://tdavislab.github.io/TopoAct/single-layer-view.html](https://tdavislab.github.io/TopoAct/single-layer-view.html)
+    
+    this is polysemantic
+    
+- ✅ look into topology mapper in python
+    - ✅ topoact github is just html code, no algtop algos
+    - https://github.com/tdavislab/TopoBERT/blob/master/backend/server/graph_generator.py
+    - tell chatgpt to read Towards and Topoact, then: “Given those two papers, how would you design experiments and code to apply mapper to feature activations? Given setup details”
+        
+        [https://chatgpt.com/c/42f8db48-047d-44d9-8283-95a81e980ba7](https://chatgpt.com/c/42f8db48-047d-44d9-8283-95a81e980ba7)
+        
+        - how do i adopt mapper to be used on the feature activations of a sparse autoencoder, in which the features are a pytorch tensor of (batch, seqlen, featuredim), obtained by the code: feature_acts = sae.encode(h_store) ? Refer to the attached python code for how to get sae features.
+            
+            `tinystories_actv_save_v2.ipynb as .py`
+            
+        - explain all the code from 3. Mapper Construction onwards in detail and intuitively, using analogies when needed for non trivial concepts
+            
+            ### 3. Mapper Construction
+            
+            ### Create Cover
+            
+            We start by dividing the data into overlapping regions (cover sets), which helps us understand local structures and how they connect globally.
+            
+            ### Code Explanation
+            
+            ```python
+            def create_cover(filtered, intervals, overlap):
+                min_val, max_val = np.min(filtered, axis=0), np.max(filtered, axis=0)
+                steps = (max_val - min_val) / (intervals - 1) * (1 + overlap)
+                cover = []
+                for i in range(intervals):
+                    for j in range(intervals):
+                        cover.append(((min_val[0] + i * steps[0], min_val[0] + (i + 1) * steps[0]),
+                                      (min_val[1] + j * steps[1], min_val[1] + (j + 1) * steps[1])))
+                return cover
+            
+            ```
+            
+            - **Filtered**: The reduced-dimension data (e.g., from PCA).
+            - **Intervals**: Number of intervals to divide each dimension into.
+            - **Overlap**: Degree of overlap between intervals.
+            - **Steps**: Calculated based on the range of data values and overlap.
+            
+            We create a grid of intervals in the lower-dimensional space and store these as pairs of ranges.
+            
+            ### Intuition
+            
+            Imagine spreading a mesh net over a terrain (our data). The intervals define the mesh's squares, and overlap ensures the squares cover the terrain more smoothly.
+            
+            ### Cluster Within Cover Sets
+            
+            For each cover set, cluster the data points that fall within it. This helps in identifying local groupings of data.
+            
+            ### Code Explanation
+            
+            ```python
+            def cluster_cover(cover, filtered, activations):
+                clusters = []
+                for (x_range, y_range) in cover:
+                    indices = np.where((filtered[:, 0] >= x_range[0]) & (filtered[:, 0] < x_range[1]) &
+                                       (filtered[:, 1] >= y_range[0]) & (filtered[:, 1] < y_range[1]))[0]
+                    if len(indices) > 0:
+                        clustering = DBSCAN().fit(activations[indices])
+                        clusters.append((indices, clustering.labels_))
+                return clusters
+            
+            ```
+            
+            - **DBSCAN**: A clustering algorithm that groups points closely packed together, marking outliers.
+            - **Indices**: Points falling within the cover set.
+            - **Clusters**: Each cover set’s clustered points.
+            
+            ### Intuition
+            
+            Think of the mesh net's squares as neighborhoods. We examine each neighborhood to find clusters of houses (data points) that are close together, ignoring outliers.
+            
+            ### 4. Topological Summary
+            
+            ### Construct Mapper Graph
+            
+            We build a graph representing the clusters and their connections.
+            
+            ### Code Explanation
+            
+            ```python
+            import networkx as nx
+            
+            def construct_mapper_graph(clusters):
+                G = nx.Graph()
+                for idx, (indices, labels) in enumerate(clusters):
+                    for label in np.unique(labels):
+                        if label != -1:
+                            cluster_indices = indices[labels == label]
+                            G.add_node((idx, label), members=cluster_indices)
+                for i, (indices1, labels1) in enumerate(clusters):
+                    for j, (indices2, labels2) in enumerate(clusters):
+                        if i < j:
+                            common_indices = np.intersect1d(indices1, indices2)
+                            if len(common_indices) > 0:
+                                for label1 in np.unique(labels1):
+                                    if label1 != -1:
+                                        members1 = indices1[labels1 == label1]
+                                        for label2 in np.unique(labels2):
+                                            if label2 != -1:
+                                                members2 = indices2[labels2 == label2]
+                                                if len(np.intersect1d(members1, members2)) > 0:
+                                                    G.add_edge((i, label1), (j, label2))
+                return G
+            
+            mapper_graph = construct_mapper_graph(clusters)
+            
+            ```
+            
+            - **Nodes**: Represent clusters in each cover set.
+            - **Edges**: Connect clusters sharing data points across different cover sets.
+            
+            ### Intuition
+            
+            Imagine a social network where each node is a group of friends (clusters), and an edge represents shared friends (common data points) between groups.
+            
+            ### 5. Visualization
+            
+            ### Visualizing the Graph
+            
+            Use a spring layout to visualize the constructed graph.
+            
+            ### Code Explanation
+            
+            ```python
+            import matplotlib.pyplot as plt
+            
+            pos = nx.spring_layout(mapper_graph)
+            nx.draw(mapper_graph, pos, with_labels=True, node_size=50, node_color="blue")
+            plt.show()
+            
+            ```
+            
+            - **Spring Layout**: Positions nodes based on simulated physical forces to enhance visualization clarity.
+            - **Draw**: Visualizes the graph with nodes and edges.
+            
+            ### Intuition
+            
+            Visualize the network as a map of cities (clusters) connected by roads (edges). The spring layout helps position cities so that the map is clear and roads are easy to follow.
+            
+            ### Conclusion
+            
+            This process creates a simplified representation of high-dimensional data using the Mapper algorithm, providing insights into the structure and relationships within the data. Each step, from cover creation to graph visualization, helps in understanding complex data in a more intuitive way.
+            
+    - mapper_fAct_explora.ipynb
+        - compare to random data
+        - is empty plot always a bug? where did the pts go? do you expect random data to all be noise and thus have empty plot?
+            
+            When applying the Mapper algorithm to random data, it is not necessarily expected that all data will be classified as noise, resulting in an empty plot. However, it is common because random data lacks structure. Here are some points to consider:
+            
+            ### Expectation for Random Data
+            
+            1. **Lack of Structure**:
+                - Random data often does not have the dense regions necessary for clustering algorithms like DBSCAN to form clusters.
+                - This can result in many points being labeled as noise (`1`).
+            2. **Parameter Sensitivity**:
+                - The clustering parameters (`eps` and `min_samples` in DBSCAN) might not be suitable for the random data.
+                - Random data might require different settings to form clusters, though meaningful clusters may still not be found.
+            3. **Real-World Data vs. Random Data**:
+                - Real-world data typically has inherent patterns and structures, making it more likely to form meaningful clusters.
+                - Random data lacks such patterns, leading to more points being identified as noise.
+            
+            ### Practical Steps
+            
+            - **Verify Data Distribution**: Check the distribution of your random data.
+                
+                ```python
+                plt.scatter(filtered_random_data[:, 0], filtered_random_data[:, 1], alpha=0.5)
+                plt.title("Filtered Random Data Points")
+                plt.xlabel("PCA Component 1")
+                plt.ylabel("PCA Component 2")
+                plt.show()
+                
+                ```
+                
+            - **Adjust Clustering Parameters**:
+                
+                ```python
+                random_clusters = cluster_cover(random_cover, filtered_random_data, reshaped_random_data, eps=0.3, min_samples=3)
+                
+                ```
+                
+            - **Check Clusters**:
+                
+                ```python
+                for idx, (indices, labels) in enumerate(random_clusters):
+                    print(f"Cluster {idx}: {len(indices)} points, labels: {np.unique(labels)}")
+                
+                ```
+                
+            
+            ### Example
+            
+            If you still encounter an empty plot after adjustments, it suggests that the random data does not form clusters under the given parameters. This is typical and highlights the contrast between structured real-world data and random noise, validating the effectiveness of the Mapper algorithm in capturing meaningful structures in real data.
+            
+            By experimenting with different parameters and visualizing the data, you can better understand the behavior of random data in comparison to real data and the appropriateness of clustering algorithms like DBSCAN.
+            
+        - i got this for feature activations. are activations usually in a circle? if not what could this mean
+            
+            Activations typically are not expected to form a perfect circle. If your feature activations form a circular pattern, it could indicate several things:
+            
+            1. **Dimensionality Reduction Artifact**: If you used PCA or another dimensionality reduction technique, the circular pattern might result from how the algorithm projected the data into a lower-dimensional space.
+            2. **Periodic Structure in Data**: The underlying data might have periodicity or cyclical patterns that are being captured in the activations.
+            3. **Model Regularity**: The model might have learned a regular, cyclical pattern from the training data, which is reflected in the activations.
+            
+            ### Steps to Investigate Further
+            
+            1. **Verify Dimensionality Reduction**:
+                - Check the explained variance ratio of the PCA components to ensure that the circle is not an artifact of the reduction process.
+                
+                ```python
+                print(pca.explained_variance_ratio_)
+                
+                ```
+                
+            2. **Analyze the Source Data**:
+                - Investigate the input data to see if there are any inherent periodic or cyclic patterns.
+                
+                ```python
+                plt.plot(h_store[0].detach().numpy())  # Example for the first sequence
+                plt.title("Input Data Sample")
+                plt.show()
+                
+                ```
+                
+            3. **Check Model Training**:
+                - Ensure that the model training process did not introduce regularities that might cause this pattern.
+                - Check for overfitting or regularization artifacts.
+            4. **Compare with Random Data**:
+                - Generate random data and pass it through the model to see if a similar circular pattern appears.
+                
+                ```python
+                random_data = np.random.randn(*h_store.shape)
+                random_activations = sae.encode(torch.from_numpy(random_data).float())
+                filtered_random_data = pca.transform(random_activations.view(-1, featuredim).detach().numpy())
+                plt.scatter(filtered_random_data[:, 0], filtered_random_data[:, 1], alpha=0.5)
+                plt.title("Filtered Random Data Points")
+                plt.show()
+                
+                ```
+                
+            
+            ### Conclusion
+            
+            While a circular pattern in activations is unusual, it's essential to analyze the steps leading to this result and verify if it's due to the model, the data, or the dimensionality reduction technique. By performing these checks, you can better understand the cause and take appropriate steps to address any issues.
+            
+        - how do i plot the pca before mapper
+        - what do the indices on this plot mean?
+            
+            The indices on this plot likely represent the clusters and their labels as identified by the Mapper algorithm. In the format `(x, y)`, each pair can be interpreted as follows:
+            
+            1. **Cluster Index (`x`)**: This is the index of the cover set in which the cluster was found. Cover sets are created during the Mapper construction process by dividing the data space into overlapping regions.
+            2. **Cluster Label (`y`)**: This is the label assigned by the clustering algorithm (e.g., DBSCAN) within that cover set. Each unique label represents a distinct cluster, and `1` typically indicates noise or outliers.
+            
+            Given the circular arrangement, this pattern likely results from how the data was reduced and clustered, with each node representing a cluster from a specific cover set and showing how they connect.
+            
+            In summary, the indices `(x, y)` indicate which cover set (region of the data space) a cluster belongs to (`x`) and the cluster label within that cover set (`y`). This representation helps in understanding the topological relationships between different clusters in the data.
+            
+        - the feature actvs were of shape torch.Size([195, 128, 16384]). why are they so few pts in mapper plot? also, why isn't the mapper plot a graph with edges?
+            
+            Given your feature activations are of shape `torch.Size([195, 128, 16384])`, there are a few reasons why you might see only a few points and no edges in the Mapper plot:
+            
+            ### 1. Dimensionality Reduction Impact
+            
+            The high dimensionality of the feature activations (16384 dimensions) is drastically reduced to 2 dimensions using PCA. This could result in loss of significant structural information, leading to fewer meaningful clusters.
+            
+            ### 2. Clustering Parameters
+            
+            The DBSCAN parameters (`eps` and `min_samples`) might not be optimal for the reduced data, causing many points to be labeled as noise (`-1`). Adjusting these parameters could help.
+            
+            ### 3. Overlapping Cover Sets
+            
+            The choice of cover intervals and overlap affects how many points fall into multiple cover sets, influencing the number of clusters formed.
+            
+            ### 4. Graph Construction
+            
+            For edges to appear, there must be shared points between clusters across cover sets. If no such shared points exist, no edges will be drawn.
+            
+            ### Detailed Steps to Address These Issues
+            
+            ### 1. Verify Dimensionality Reduction
+            
+            Ensure that the PCA retains enough variance:
+            
+            ```python
+            from sklearn.decomposition import PCA
+            
+            # Perform PCA and check explained variance ratio
+            pca = PCA(n_components=2)
+            pca_acts = pca.fit_transform(reshaped_acts)
+            print(pca.explained_variance_ratio_)
+            
+            ```
+            
+            Ensure enough variance is captured, or consider increasing the number of components and then using t-SNE or UMAP for 2D visualization.
+            
+            ### 2. Adjust DBSCAN Parameters
+            
+            Experiment with different `eps` and `min_samples`:
+            
+            ```python
+            from sklearn.cluster import DBSCAN
+            
+            def cluster_cover(cover, filtered, activations, eps=0.5, min_samples=5):
+                clusters = []
+                for idx, (x_range, y_range) in enumerate(cover):
+                    indices = np.where((filtered[:, 0] >= x_range[0]) & (filtered[:, 0] < x_range[1]) &
+                                       (filtered[:, 1] >= y_range[0]) & (filtered[:, 1] < y_range[1]))[0]
+                    if len(indices) > 0:
+                        clustering = DBSCAN(eps=eps, min_samples=min_samples).fit(activations[indices])
+                        clusters.append((idx, clustering.labels_))
+                return clusters
+            
+            # Adjust eps and min_samples
+            random_clusters = cluster_cover(random_cover, filtered_acts, reshaped_acts, eps=0.3, min_samples=3)
+            
+            ```
+            
+            ### 3. Visualize PCA Before Applying Mapper
+            
+            ```python
+            import matplotlib.pyplot as plt
+            
+            plt.scatter(pca_acts[:, 0], pca_acts[:, 1], alpha=0.5)
+            plt.title("PCA of Feature Activations")
+            plt.xlabel("Principal Component 1")
+            plt.ylabel("Principal Component 2")
+            plt.show()
+            
+            ```
+            
+            ### 4. Verify Mapper Graph Construction
+            
+            Check if nodes and edges are being added correctly:
+            
+            ```python
+            import networkx as nx
+            
+            def construct_mapper_graph(clusters):
+                G = nx.Graph()
+                for idx, (indices, labels) in enumerate(clusters):
+                    for label in np.unique(labels):
+                        if label != -1:
+                            cluster_indices = indices[labels == label]
+                            G.add_node((idx, label), members=cluster_indices)
+                for i, (indices1, labels1) in enumerate(clusters):
+                    for j, (indices2, labels2) in enumerate(clusters):
+                        if i < j:
+                            common_indices = np.intersect1d(indices1, indices2)
+                            if len(common_indices) > 0:
+                                for label1 in np.unique(labels1):
+                                    if label1 != -1:
+                                        members1 = indices1[labels1 == label1]
+                                        for label2 in np.unique(labels2):
+                                            if label2 != -1:
+                                                members2 = indices2[labels2 == label2]
+                                                if len(np.intersect1d(members1, members2)) > 0:
+                                                    G.add_edge((i, label1), (j, label2))
+                return G
+            
+            random_mapper_graph = construct_mapper_graph(random_clusters)
+            print(nx.info(random_mapper_graph))
+            
+            # Visualize the Mapper graph
+            pos = nx.spring_layout(random_mapper_graph)
+            nx.draw(random_mapper_graph, pos, with_labels=True, node_size=50, node_color="blue")
+            plt.title("Mapper Graph")
+            plt.show()
+            
+            ```
+            
+            ### Conclusion
+            
+            The fewer points and lack of edges indicate that most points are considered noise or not shared between clusters. Adjusting parameters and ensuring proper data preprocessing can help in obtaining a more meaningful Mapper graph.
+            
+
+Feature Splitting Expms
+
+- ⚠️ [Arabic script feature splitting](../Arabic%20script%20feature%20splitting%20776f6c550d954080824fcc18a0fcac16.md)
+    - [https://www.neuronpedia.org/gpt2-small/?sourceSet=res_fs768-jb&selectedLayers=[]&sortIndexes=[]&ignoreBos=true&q=arabic](https://www.neuronpedia.org/gpt2-small/?sourceSet=res_fs768-jb&selectedLayers=%5B%5D&sortIndexes=%5B%5D&ignoreBos=true&q=arabic%0A)
+        
+        The pull down menu has the SAE for each feature split
+        
+        - How to find arabic script? Just type in the search terms used in Towards?
+    - ask neuronpeia slack
+    [](https://www.neuronpedia.org/gpt2-small/?sourceSet=res_fs768-jb&selectedLayers=%5B%5D&sortIndexes=%5B%5D&ignoreBos=true&q=arabic%0A)
+        
+        Hi, I was looking for recs on how to use Neuronpedia to search for languages such as Arabic, and have a few questions:
+        
+        1) Should I just try a variety of examples such as ال or phrases such as **كيف حالك ?**
+        
+        2) Is there a way to search by explanation like “Arabic”, not just by dataset examples?
+        
+        3) The “towards mono” paper mentions characters like ث are tokenized into `\xd8` `\xab`. Would it make more sense to search for the script characters or their utf-8 encodings? (guessing the former since I see japanese characters in the dataset examples)
+        
+        4) I’ve been trying to find Arabic script features in GPT-2 small L8 SAEs (and its feature splitting variants). Would the model unlikely have Arabic (due to its training dataset); if so, has anyone found Arabic features in publically available models, or believe there could be? Haven’t found this in Gemma-2 either.training 
+        
+        Lastly, are there separate channels/chats for asking questions about the neuronpedia interface VS asking specific research questions that use neuronpedia?
+        
+
+Following are in: [TS Feature Split Expms](../TS%20Feature%20Split%20Expms%2047b1224c6561451ca1ddd9fd26293517.md) 
+
+- ✅**EXPM:** train sae feature split on tinystories
+    - ✅ figure out fs factors
+        - In Towards, 4096/512 = 8, 16384/4096 = 4, so not constant factor
+        - in [saetable](https://jbloomaus.github.io/SAELens/sae_table/#gpt2-small-res-jb-feature-splitting), they just keep doubling
+    - train_ts_sae_1L-21M uses 1024 * 16, so just use 1024 * 32, 1024 * 8, etc. These are extremes so need for finer unless find feature splitting with those; if not, refine params before fs
+        - ✅ train_ts_sae_1L-21M_df-8192.ipynb
+        - ✅ train_ts_sae_1L-21M_df-16384.ipynb
+        - ✅ train_ts_sae_2L-33M_MLP0_df-8192.ipynb
+        - train_ts_sae_2L-33M_MLP0_df-16384.ipynb
+- 🐣 [SAE training skills to learn](../SAE%206b08b4ad57a342bf9393d2ef0fa31c6b.md)
+- 🐣 **EXPM:** save actvs for two fs models: df-8192
+    - [ts_actv_save_MLP0_df-8192.ipynb](https://colab.research.google.com/drive/1v9ohVNqrCpMgVpIN-NCsMozQ2YAqhYV9)
+
+Feature Relation Mapping Expms
+
+- ✅ **EXPM:** map feature relns in 1L to 2L (dfeat = **16384**) - UMAP
+    
+    [ts_actv_save_1L_2L_featRelns.ipynb](https://colab.research.google.com/drive/1yxw5HJn2h9v4OpAkSdpHvKeAvR3CIpHE)
+    
+    - ✅ loop through entire dataset is too long; just choose a very max batch size
+        - we want each word to not be overrepresented but there’s a disproportionate amount
+            
+            ![Untitled](Done%201c002201437341e48b55b8276859a632/Untitled%205.png)
+            
+        - instead of saying just one word means accept sample, loop through each sample and find samples until the max num for that word is reached
+            - it’s okay if king appears in these other words’ samples, as long as there’s enough of the other words. no need to same num
+        - save as: fActs_ts_1L_21M_featrelns_v1.pkl
+    - ⚠️ get sentences just about: king-queen-princess ***and*** father-mother-daughter
+        
+        ![Untitled](Done%201c002201437341e48b55b8276859a632/Untitled%206.png)
+        
+        Not really feature specific to daughter. Perhaps we can use feature splitting to constrain it to specifically fire for daughter?
+        
+        - issue: top actv features fire on unrelated words like ‘and’, and are often repetitive
+    - ✅ instead of find ‘top actv features’ (meaningless), use a search fn that finds features which activate for specific dataset tokens.
+        - ⚠️ One way is: don’t use entire batch tokens, but only snippets that have ‘princess’ in it
+            
+            This is bc too many words
+            
+            - ISSUE: to create this dataset, you’d be loop through windows of each sample. that takes a long time; the second method below is easier to code
+        - ✅ One way is: get top 5 snippets for ALL features, then search to display only features that have the search keywords in their top 5 snippets
+            - ✅ search function for features actv on keyword
+                - ✅ for each feature, store their top 5 snippets in a list.
+                    
+                    we can also only store ‘keyword relevant’ snips, but this is inefficient if we want to search through ANY keyword
+                    
+                - ✅ brute search thru every feature and every list to see if keyword appears
+                    - ✅ it’s not just enough for the keyword to appear; it has to be highlighted
+            - ⚠️ ask chatgpt to improve this with better algo
+            - ⚠️ [https://docs.neuronpedia.org/search](https://docs.neuronpedia.org/search)
+    - ⚠️ ISSUE: there’s not a monosemantic princess feature. rather, it’s mixed with a bunch of other related concepts
+        
+        We should probably look for he/male to king, and she/female to queen, etc. that are MORE separated
+        
+        There’s princess features that are more related to fairy tales, and other more related to pronouns, and others related to family
+        
+        we can’t get a clean princess feature, BUT we can still compare subspaces of fairy tales, and say they’re more CCA similar to each other than other subspaces
+        
+    - ✅ to find how separated semantic clusters are, we should plot a umap then label the features using GPT-4 data analysis (direct input of rows). then we can find similar clusters across models to get subspaces to compare.
+        
+        [ts_1L_2L_UMAP](https://colab.research.google.com/drive/1Cl7nohl7hyaKz17bHbrkDgkADf-0DPqZ#scrollTo=kUYRF57KNxrL).ipynb
+        
+        - ✅ plot umap of decoder weights first as closer to anthropic
+            
+            [https://transformer-circuits.pub/2023/monosemantic-features#appendix-umap](https://transformer-circuits.pub/2023/monosemantic-features#appendix-umap)
+            
+            - ✅ save decoder weights in [ts_actv_save_1L_2L_featRelns](https://colab.research.google.com/drive/1yxw5HJn2h9v4OpAkSdpHvKeAvR3CIpHE#scrollTo=PXCAAVFcup6L&line=1&uniqifier=1).ipynb
+            - ✅ whats the diff between these two code, do they both use 2 components? are the components the axis displayed?
+                
+                [https://chatgpt.com/c/046b8a82-8582-4083-8519-fa159a6e4bb0](https://chatgpt.com/c/046b8a82-8582-4083-8519-fa159a6e4bb0)
+                
+                In both snippets, UMAP reduces the data to 2 components.
+                
+            - ✅ decoder weight matrix umap has much more structure than the encoder W
+            - ✅ the decoder matrix has dims (features_sae, features_LLM). Does the umap have a point for each feature_sae row?
+                
+                Yes, in the context of UMAP applied to the decoder matrix with dimensions (features_sae, features_LLM), each row corresponds to a feature from the sparse autoencoder (SAE). Therefore, the UMAP would generate a point for each row (feature_sae), representing how each SAE feature is embedded in the reduced 2-dimensional space.
+                
+                Given that the decoder matrix maps SAE features to LLM features, the UMAP visualization shows the relationship and distribution of these SAE features in a lower-dimensional space, highlighting patterns and clusters among the features learned by the autoencoders.
+                
+        - ⚠️ try cca
+            - -0.99
+                
+                Canonical correlation measures the relationship between two sets of variables. The value ranges from -1 to 1, where:
+                
+                - A value of 1 indicates a perfect positive correlation.
+                - A value of -1 indicates a perfect negative correlation.
+                - A value of 0 indicates no correlation.
+                
+                Given the canonical correlation value of -0.9918, this indicates a very strong negative correlation between the two sets of variables. This means that as values in one set increase, values in the other set decrease almost perfectly in a linear fashion.
+                
+                Therefore, this is not a "low" correlation; it is actually very high in magnitude, just negative. This indicates a very strong linear relationship between the two sets of variables, but in opposite directions.
+                
+            - what does that mean for the umap of two decoder weights of a sparse autoencoder? read what saes are here before answering: [https://transformer-circuits.pub/2023/monosemantic-features#](https://transformer-circuits.pub/2023/monosemantic-features#)
+                
+                A sparse autoencoder (SAE) aims to extract interpretable features from a neural network by decomposing the activation space into more components than neurons, helping understand the model's behavior. When using UMAP to visualize two decoder weight matrices from such an SAE, a strong negative canonical correlation (like -0.9918) suggests the two weight matrices are almost perfect opposites. This implies that the features learned by the autoencoder are highly distinct in their contributions to the network, emphasizing the SAE's ability to separate features effectively.
+                
+                For more detailed context, visit [Transformer Circuits](https://transformer-circuits.pub/2023/monosemantic-features).
+                
+            - does that mean the features are not similar across the two models? these are decoder weights on two saes from two separate models trained on the same dataset
+                
+                A canonical correlation of -0.9918 between the UMAP embeddings of decoder weights from two sparse autoencoders trained on the same dataset indicates that the features are highly dissimilar across the two models. This strong negative correlation means that when one model assigns a high value to a feature, the other model assigns a correspondingly low value, suggesting that the features learned by each model capture different aspects or perspectives of the same data.
+                
+                For more information on sparse autoencoders and their applications, refer to the [Transformer Circuits](https://transformer-circuits.pub/2023/monosemantic-features) article.
+                
+        - ✅ given a list of size features_sae with strings, create an interactive umap plot such that hovering over a point will display the feature id and string (from the list) in a box above the plot, and another code such that hovering over a point will display the same thing in a box next to the cursor
+        - ✅ output stored dataset examples into a file, then input to gpt-4 for labeling
+            
+            [ts_actv_save_1L_2L_featRelns](https://colab.research.google.com/drive/1yxw5HJn2h9v4OpAkSdpHvKeAvR3CIpHE#scrollTo=PXCAAVFcup6L&line=1&uniqifier=1).ipynb: [https://colab.research.google.com/drive/1yxw5HJn2h9v4OpAkSdpHvKeAvR3CIpHE#scrollTo=n1_YKW1I10YZ&line=1&uniqifier=1](https://colab.research.google.com/drive/1yxw5HJn2h9v4OpAkSdpHvKeAvR3CIpHE#scrollTo=n1_YKW1I10YZ&line=1&uniqifier=1)
+            
+            - ✅ use 500 any samples (not specific keywords), max len 128
+                - 1000 x 512 gets OOM on A100
+            - ✅ in python, given a dict of "feature int : list of 5 strings", what's the best format to save it in as an output to give to gpt-4 to give a short description that summarizes the 5 strings? there are 16300 features. give code
+                
+                [https://chatgpt.com/c/b273493b-8db6-4ce0-9c91-c1dba50bb1b6](https://chatgpt.com/c/b273493b-8db6-4ce0-9c91-c1dba50bb1b6)
+                
+            - ⚠️ This is a json file containing dictionaries of “feature id” and “strings”. For each feature id, give a short description (less than a sentence; the shorter the better) that summarizes the 5 strings in the list in “strings”. Focus especially on the token within “[bold u dark_orange]{new_str_token}[/]”. Output the “feature_id” with your short description summary of it in a format you find best for loading into python, such as json. Don't display what you output, save it all to a json file and just give me the file
+                
+                
+                - the entire 16000 features file is too big, so try splitting into segments of ~5000
+            - ✅ if gpt4 can’t handle labeling that many, just show dataset examples for now
+                - just get highlighted token for top 5 samples
+        - ✅ label features on umap
+            - ✅ to create two side by side plots such that hovering over any pt in a plot will bring up the hovered label
+        - ✅ do this across models to look for similarities
+    - it appears that while the actual arrangement of points in UMAP are different each run due to randomness, the relative clusterings and topologically distances apart remain the same
+- 🐣 **EXPM:** for correlated features, side by side umaps such that hovering over one feature will locate the highest corr feature in the other plot and both of their labels
+    - ✅ first try cosine on weights (this probably doesn’t make any sense)
+        
+        Histogram: We see weights have VERY low correlations, so try activations now
+        
+    - ✅ now get actvs on anySamps for both models
+        
+        ts_actv_save_1L_2L_anySamps.ipynb
+        
+        - fActs_ts_1L_21M_anySamps_v1.pkl
+    - ✅ [get actv correlations](https://colab.research.google.com/drive/1Cl7nohl7hyaKz17bHbrkDgkADf-0DPqZ#scrollTo=fRJdgEFbD_c7&line=1&uniqifier=1)
+        - ✅ [is there any way to speed this up for 64000 x 16384 matrices:](https://chatgpt.com/c/b9d1b869-2d27-48b8-ab1f-b3db82f750f0)
+            
+            To speed up your function for handling 64000 x 16384 matrices, you can utilize the power of PyTorch for vectorized operations and GPU acceleration. This way, you can avoid looping over the columns and instead perform the operations in parallel. Here's a refactored version of your function:
+            
+            ```python
+            import torch
+            import numpy as np
+            
+            def top_ind_from_B(ind, reshaped_activations_A, reshaped_activations_B):
+                # Select a column from matrix B (e.g., the first column)
+                column_A = reshaped_activations_B[:, ind]
+            
+                # Ensure tensors are on GPU
+                if torch.cuda.is_available():
+                    reshaped_activations_A = reshaped_activations_A.to('cuda')
+                    reshaped_activations_B = reshaped_activations_B.to('cuda')
+                    column_A = column_A.to('cuda')
+            
+                # Calculate means and standard deviations
+                mean_A = column_A.mean()
+                std_A = column_A.std()
+            
+                # Mask columns with zero standard deviation
+                std_B = reshaped_activations_A.std(dim=0)
+                valid_columns_mask = std_B != 0
+            
+                # Compute correlations for valid columns
+                valid_reshaped_activations_A = reshaped_activations_A[:, valid_columns_mask]
+                mean_B = valid_reshaped_activations_A.mean(dim=0)
+                std_B = valid_reshaped_activations_A.std(dim=0)
+            
+                covariance = ((valid_reshaped_activations_A - mean_B) * (column_A - mean_A).unsqueeze(1)).mean(dim=0)
+                correlations = covariance / (std_A * std_B)
+            
+                # Fill correlations with -inf where columns were invalid
+                all_correlations = torch.full((reshaped_activations_A.shape[1],), float('-inf')).to(correlations.device)
+                all_correlations[valid_columns_mask] = correlations
+            
+                # Get the indices of the top 10 columns in B with the highest correlations
+                top_10_indices = torch.topk(all_correlations, 10).indices.cpu().numpy()
+                top_10_correlations = all_correlations[top_10_indices].cpu().numpy()
+            
+                return top_10_indices, top_10_correlations
+            
+            # Example usage
+            reshaped_activations_A = torch.randn(64000, 16384)
+            reshaped_activations_B = torch.randn(64000, 16384)
+            
+            top_10_indices, top_10_correlations = top_ind_from_B(0, reshaped_activations_A, reshaped_activations_B)
+            print(f'Top 10 indices: {top_10_indices}')
+            print(f'Top 10 correlations: {top_10_correlations}')
+            
+            ```
+            
+            ### Key Optimizations:
+            
+            1. **Vectorization**: We avoid explicit Python loops by using PyTorch's broadcasting and vectorized operations.
+            2. **GPU Acceleration**: The function checks for the availability of a CUDA-compatible GPU and transfers tensors to the GPU for computation.
+            3. **Masking Invalid Columns**: We handle zero standard deviation columns by creating a mask and filling invalid correlations with `inf`.
+            
+            This approach should significantly speed up your computation by leveraging PyTorch's efficient tensor operations and, if available, GPU acceleration.
+            
+        - ✅ use this sped up code to find the highest correlated feature from A to B for every of the 16384 features
+            - ✅ this is still slow. can you speed it up say with matrix multp for all features at once?
+            - ✅ ISSUE: same indices, and values are nan
+        - ✅ save dataset to drive, then load in umap nb to do ds interpret after corr pairs
+            - ISSUE: needs model.tokenizer to convert token to str
+                
+                `AttributeError: module 'pyarrow.lib' has no attribute 'ListViewType’`
+                
+                Importing Transformelens is incompatible with umap lib!
+                
+            - ✅ TRY: load hf’s tokenizer and use decode
+                
+                [https://chatgpt.com/c/c334dba9-cf63-4e76-8f4c-1475c1284a44](https://chatgpt.com/c/c334dba9-cf63-4e76-8f4c-1475c1284a44)
+                
+    - 🐣 given a dictionary that maps every point number from the first plot to a point number in the second plot, make a side by side interative plot like above but where hovering over a point in one plot will also bring up the hovered label in the second plot. also, when a point is hovered over, it turns yellow and its point partner also turns yellow
+        - [https://chatgpt.com/c/a6434589-5715-49ff-9c2f-dfa11065ef73](https://chatgpt.com/c/a6434589-5715-49ff-9c2f-dfa11065ef73)
+            - that doesn't work. I mean this: here's a dictionary mapping the two features_list and features_list_2: feat_map = {3:40, 60:5, ...} as an example only. take this as input. now, when you hover over element 3 in the left plot, then that not only brings up a hovered label for element 3 in the left, but brings up a hovered label for element 40 on the right. and so forth. ALSO you didn't make the points yellow when they're hovered over!
+        - [https://claude.ai/chat/32d6c56e-9a46-4505-8ae1-3b358129b832](https://claude.ai/chat/32d6c56e-9a46-4505-8ae1-3b358129b832)
+            - it has to work in colab. if not possible to do in colab, what are the steps to do this somewhere else for free
+                
+                I apologize for the confusion. You're right to point out that some of the more advanced interactive features might not work directly in Colab due to limitations in how it handles JavaScript callbacks. Let's explore a few options:
+                
+                1. Simplified Colab Version:
+                We can create a simpler version that works in Colab but with limited interactivity. This won't have the cross-plot highlighting, but it will still show hover information.
+                2. Using Plotly Dash (can be done for free):
+                This is a more robust solution that allows for full interactivity, but it requires setting up a small web application.
+                
+                Let's start with the simplified Colab version, and then I'll explain how to set up the fully interactive version using Plotly Dash.
+                
+                Simplified Colab Version:
+                
+                ```python
+                import umap
+                import pandas as pd
+                import plotly.graph_objects as go
+                from plotly.subplots import make_subplots
+                import numpy as np
+                
+                # Assume weight_matrix_np, weight_matrix_2, fList_model_A, and fList_model_B are already defined
+                
+                # Initialize UMAP
+                reducer = umap.UMAP(n_neighbors=15, min_dist=0.01, metric='euclidean')
+                
+                # Fit and transform the data by rows
+                embedding1 = reducer.fit_transform(weight_matrix_np)
+                embedding2 = reducer.fit_transform(weight_matrix_2)
+                
+                # Create DataFrames for Plotly
+                df1 = pd.DataFrame(embedding1, columns=['UMAP Component 1', 'UMAP Component 2'])
+                df1['Feature ID'] = range(len(embedding1))
+                df1['Feature Description'] = fList_model_A[:len(embedding1)]
+                
+                df2 = pd.DataFrame(embedding2, columns=['UMAP Component 1', 'UMAP Component 2'])
+                df2['Feature ID'] = range(len(embedding2))
+                df2['Feature Description'] = fList_model_B[:len(embedding2)]
+                
+                # Create side by side plots using Plotly subplots
+                fig = make_subplots(rows=1, cols=2, subplot_titles=('UMAP Projection of Dataset 1', 'UMAP Projection of Dataset 2'))
+                
+                # Add first scatter plot
+                fig.add_trace(
+                    go.Scatter(
+                        x=df1['UMAP Component 1'], y=df1['UMAP Component 2'],
+                        mode='markers', marker=dict(color='blue', size=8),
+                        text=df1['Feature ID'], customdata=np.array(df1[['Feature Description']]),
+                        hovertemplate='<b>Feature ID:</b> %{text}<br><b>Description:</b> %{customdata[0]}'
+                    ),
+                    row=1, col=1
+                )
+                
+                # Add second scatter plot
+                fig.add_trace(
+                    go.Scatter(
+                        x=df2['UMAP Component 1'], y=df2['UMAP Component 2'],
+                        mode='markers', marker=dict(color='green', size=8),
+                        text=df2['Feature ID'], customdata=np.array(df2[['Feature Description']]),
+                        hovertemplate='<b>Feature ID:</b> %{text}<br><b>Description:</b> %{customdata[0]}'
+                    ),
+                    row=1, col=2
+                )
+                
+                # Update layout
+                fig.update_layout(
+                    title_text='UMAP Projections of Datasets',
+                    showlegend=False,
+                    hovermode='closest'
+                )
+                
+                fig.update_xaxes(title_text='UMAP Component 1', row=1, col=1)
+                fig.update_xaxes(title_text='UMAP Component 1', row=1, col=2)
+                fig.update_yaxes(title_text='UMAP Component 2', row=1, col=1)
+                fig.update_yaxes(title_text='UMAP Component 2', row=1, col=2)
+                
+                fig.show()
+                
+                ```
+                
+                This version will work in Colab and provide basic interactivity (hovering to see point information), but it won't have the cross-plot highlighting feature.
+                
+                For the fully interactive version with cross-plot highlighting, you'll need to use Plotly Dash. Here are the steps to set this up for free:
+                
+                1. Set up a free Heroku account ([https://www.heroku.com/](https://www.heroku.com/)).
+                2. Install the Heroku CLI on your local machine.
+                3. Create a new Python file (e.g., `app.py`) with the Dash application code.
+                4. Create a `requirements.txt` file listing the required Python packages.
+                5. Create a `Procfile` for Heroku deployment.
+                6. Initialize a Git repository, commit your files, and push to Heroku.
+                
+                Here's a basic structure for the `app.py` file:
+                
+                ```python
+                import dash
+                from dash import dcc, html
+                from dash.dependencies import Input, Output
+                import plotly.graph_objects as go
+                from plotly.subplots import make_subplots
+                import pandas as pd
+                import numpy as np
+                import umap
+                
+                # Initialize your data and UMAP embeddings here
+                # (You'll need to load your data or compute it on the fly)
+                
+                app = dash.Dash(__name__)
+                server = app.server  # Needed for Heroku deployment
+                
+                app.layout = html.Div([
+                    dcc.Graph(id='umap-plots')
+                ])
+                
+                @app.callback(
+                    Output('umap-plots', 'figure'),
+                    Input('umap-plots', 'hoverData')
+                )
+                def update_graph(hoverData):
+                    # Create your figure here, similar to the Colab version
+                    # Use hoverData to implement the cross-plot highlighting
+                
+                    return fig
+                
+                if __name__ == '__main__':
+                    app.run_server(debug=True)
+                
+                ```
+                
+                This is a basic structure and would need to be filled out with your specific data and plot creation code.
+                
+                The main advantage of using Dash is that it allows for more complex interactivity and updating of the plots based on user input, which is necessary for the cross-plot highlighting feature you requested.
+                
+                Would you like me to provide more details on any part of this process?
+                
+            - can it work in colab? why wouldn't it?
+                
+                I apologize for any confusion in my previous responses. You're right to question this, and I appreciate the opportunity to clarify.
+                
+                Upon further consideration, it is indeed possible to create an interactive plot with cross-plot highlighting in Google Colab. My initial hesitation was unwarranted, as Colab does support Plotly's JavaScript callbacks when properly implemented.
+                
+                Here's a version that should work in Colab with the cross-plot highlighting feature:
+                
+                ```python
+                import umap
+                import pandas as pd
+                import plotly.graph_objects as go
+                from plotly.subplots import make_subplots
+                import numpy as np
+                from IPython.display import display, HTML
+                
+                # Assume weight_matrix_np, weight_matrix_2, fList_model_A, and fList_model_B are already defined
+                
+                # Initialize UMAP
+                reducer = umap.UMAP(n_neighbors=15, min_dist=0.01, metric='euclidean')
+                
+                # Fit and transform the data by rows
+                embedding1 = reducer.fit_transform(weight_matrix_np)
+                embedding2 = reducer.fit_transform(weight_matrix_2)
+                
+                # Create DataFrames for Plotly
+                df1 = pd.DataFrame(embedding1, columns=['UMAP Component 1', 'UMAP Component 2'])
+                df1['Feature ID'] = range(len(embedding1))
+                df1['Feature Description'] = fList_model_A[:len(embedding1)]
+                
+                df2 = pd.DataFrame(embedding2, columns=['UMAP Component 1', 'UMAP Component 2'])
+                df2['Feature ID'] = range(len(embedding2))
+                df2['Feature Description'] = fList_model_B[:len(embedding2)]
+                
+                # Create side by side plots using Plotly subplots
+                fig = make_subplots(rows=1, cols=2, subplot_titles=('UMAP Projection of Dataset 1', 'UMAP Projection of Dataset 2'))
+                
+                # Add first scatter plot
+                trace1 = go.Scatter(
+                    x=df1['UMAP Component 1'], y=df1['UMAP Component 1'],
+                    mode='markers', marker=dict(color='blue', size=8),
+                    text=df1['Feature ID'], customdata=np.array(df1[['Feature Description']]),
+                    hovertemplate='<b>Feature ID:</b> %{text}<br><b>Description:</b> %{customdata[0]}',
+                    name='Dataset 1'
+                )
+                fig.add_trace(trace1, row=1, col=1)
+                
+                # Add second scatter plot
+                trace2 = go.Scatter(
+                    x=df2['UMAP Component 1'], y=df2['UMAP Component 1'],
+                    mode='markers', marker=dict(color='green', size=8),
+                    text=df2['Feature ID'], customdata=np.array(df2[['Feature Description']]),
+                    hovertemplate='<b>Feature ID:</b> %{text}<br><b>Description:</b> %{customdata[0]}',
+                    name='Dataset 2'
+                )
+                fig.add_trace(trace2, row=1, col=2)
+                
+                # Update layout
+                fig.update_layout(
+                    title_text='UMAP Projections of Datasets',
+                    showlegend=False,
+                    hovermode='closest'
+                )
+                
+                fig.update_xaxes(title_text='UMAP Component 1', row=1, col=1)
+                fig.update_xaxes(title_text='UMAP Component 1', row=1, col=2)
+                fig.update_yaxes(title_text='UMAP Component 2', row=1, col=1)
+                fig.update_yaxes(title_text='UMAP Component 2', row=1, col=2)
+                
+                # Create a dictionary to map points from plot 1 to plot 2 (replace this with your actual mapping)
+                point_mapping = {i: i for i in range(len(embedding1))}  # Example: one-to-one mapping
+                
+                # Add JavaScript code for interactivity
+                js_code = """
+                <script>
+                var originalColors = {
+                    'Dataset 1': 'blue',
+                    'Dataset 2': 'green'
+                };
+                
+                function resetColors(gd, trace) {
+                    var update = {
+                        'marker.color': [originalColors[trace.name]]
+                    };
+                    Plotly.restyle(gd, update, [trace.index]);
+                }
+                
+                function highlightPoint(gd, trace, ptNumber) {
+                    var update = {
+                        'marker.color': trace.marker.color.map((_, i) => i === ptNumber ? 'yellow' : originalColors[trace.name])
+                    };
+                    Plotly.restyle(gd, update, [trace.index]);
+                }
+                
+                var point_mapping = %s;
+                
+                gd = document.getElementById('%s')
+                gd.on('plotly_hover', function(data) {
+                    var trace = data.points[0].data;
+                    var ptNumber = data.points[0].pointNumber;
+                
+                    highlightPoint(gd, trace, ptNumber);
+                
+                    if (trace.name === 'Dataset 1' && point_mapping.hasOwnProperty(ptNumber)) {
+                        var otherTrace = gd.data[1];
+                        highlightPoint(gd, otherTrace, point_mapping[ptNumber]);
+                    } else if (trace.name === 'Dataset 2') {
+                        var otherTrace = gd.data[0];
+                        var matchingPoint = Object.keys(point_mapping).find(key => point_mapping[key] === ptNumber);
+                        if (matchingPoint !== undefined) {
+                            highlightPoint(gd, otherTrace, parseInt(matchingPoint));
+                        }
+                    }
+                });
+                
+                gd.on('plotly_unhover', function(data) {
+                    resetColors(gd, gd.data[0]);
+                    resetColors(gd, gd.data[1]);
+                });
+                </script>
+                """
+                
+                # Generate a unique ID for the graph div
+                import random
+                import string
+                graph_id = ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))
+                
+                # Update the layout to include the graph ID
+                fig.update_layout(
+                    autosize=False,
+                    width=1000,
+                    height=500,
+                )
+                
+                # Show the plot
+                fig.show()
+                
+                # Display the JavaScript code
+                display(HTML(js_code % (point_mapping, graph_id)))
+                
+                ```
+                
+                This code should work in Colab and provide the cross-plot highlighting feature you requested. Here's why it works:
+                
+                1. We create the Plotly figure as before.
+                2. We generate a unique ID for the graph div to ensure we can target it with our JavaScript.
+                3. We create a JavaScript code block that includes the functions for highlighting and resetting colors, as well as the event listeners for hover and unhover events.
+                4. We use the `display(HTML())` function to inject this JavaScript code into the notebook after the plot is displayed.
+                
+                The reason this approach works in Colab is that we're not relying on Plotly's built-in JavaScript callback system (which can be more limited in notebook environments). Instead, we're manually injecting our JavaScript code into the notebook, which allows us to add custom interactivity.
+                
+                I apologize again for my earlier confusion. This solution should provide the interactive features you're looking for while working within the Colab environment. Let me know if you need any clarification or have any questions about this implementation!
+                
+        - [try giving these instructions from scratch without preexisting code](https://chatgpt.com/c/cf944c0e-1b61-4282-8964-479c87456b40)
+            
+            
+        - [try gpt4 instead of 4o](https://chatgpt.com/c/2fd82b53-8ea9-4f77-9f35-ca84047b9d61)
+        - [https://stackoverflow.com/questions/70944316/plotly-highlight-data-point-and-nearest-three-points-on-hover](https://stackoverflow.com/questions/70944316/plotly-highlight-data-point-and-nearest-three-points-on-hover)
+        - [what's an easy alternative way to do this if i'm not confined to running in colab, and what clear steps to do this?](https://chatgpt.com/c/2fd82b53-8ea9-4f77-9f35-ca84047b9d61)  (ctlr+f this phrase in chat)
+            
+            For a scenario where you're not confined to running in Colab and can use a broader range of tools, creating an interactive web application using JavaScript directly alongside Python could be an excellent way to handle interactive, linked UMAP visualizations. Using a combination of a Python backend (Flask or FastAPI) to serve the data and a frontend using libraries like Plotly.js or D3.js can give you much more control and flexibility over the interactive elements.
+            
+            ### Step-by-Step Guide to Setting Up an Interactive Visualization with Flask and Plotly.js:
+            
+            ### Step 1: Setup Your Environment
+            
+            Ensure Python is installed and set up a new virtual environment:
+            
+            ```bash
+            python -m venv venv
+            source venv/bin/activate  # On Windows use `venv\\Scripts\\activate`
+            pip install flask umap-learn numpy sklearn
+            
+            ```
+            
+            ### Step 2: Prepare Your Python Script (Backend)
+            
+            Create a Flask app to serve UMAP data and the HTML for the frontend:
+            
+            1. **Flask App Setup**:
+            
+            ```python
+            from flask import Flask, jsonify, render_template
+            import umap
+            from sklearn.datasets import make_blobs
+            
+            app = Flask(__name__)
+            
+            # Generate sample data
+            data1, _ = make_blobs(n_samples=100, centers=3, n_features=5, random_state=42)
+            data2, _ = make_blobs(n_samples=100, centers=3, n_features=5, random_state=84)
+            
+            # Perform UMAP
+            reducer1 = umap.UMAP()
+            embedding1 = reducer1.fit_transform(data1)
+            reducer2 = umap.UMAP()
+            embedding2 = reducer2.fit_transform(data2)
+            
+            # Map indices
+            feat_map = {i: (99-i) for i in range(100)}
+            
+            @app.route('/')
+            def index():
+                return render_template('index.html')
+            
+            @app.route('/data')
+            def data():
+                return jsonify({
+                    'embedding1': embedding1.tolist(),
+                    'embedding2': embedding2.tolist(),
+                    'map': feat_map
+                })
+            
+            if __name__ == '__main__':
+                app.run(debug=True)
+            
+            ```
+            
+            1. **HTML and JavaScript (Frontend)**:
+            Create a file `templates/index.html` in the same directory as your Flask app:
+            
+            ```html
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>UMAP Visualizations</title>
+                <script src="<https://cdn.plot.ly/plotly-latest.min.js>"></script>
+            </head>
+            <body>
+                <div id="plot1" style="width:600px; height:500px;"></div>
+                <div id="plot2" style="width:600px; height:500px;"></div>
+            
+                <script>
+                    fetch('/data')
+                        .then(response => response.json())
+                        .then(data => {
+                            const trace1 = {
+                                x: data.embedding1.map(d => d[0]),
+                                y: data.embedding1.map(d => d[1]),
+                                mode: 'markers',
+                                type: 'scatter',
+                                text: Object.keys(data.map),
+                                hoverinfo: 'text'
+                            };
+            
+                            const trace2 = {
+                                x: data.embedding2.map(d => d[0]),
+                                y: data.embedding2.map(d => d[1]),
+                                mode: 'markers',
+                                type: 'scatter',
+                                text: Object.values(data.map),
+                                hoverinfo: 'text'
+                            };
+            
+                            const layout = { hovermode: 'closest' };
+            
+                            Plotly.newPlot('plot1', [trace1], layout);
+                            Plotly.newPlot('plot2', [trace2], layout);
+            
+                            const plots = [document.getElementById('plot1'), document.getElementById('plot2')];
+            
+                            plots.forEach((plot, index) => {
+                                plot.on('plotly_hover', function(data) {
+                                    let ptNumber = data.points[0].pointNumber;
+                                    let mapIndex = index === 0 ? data.map[ptNumber] : Object.keys(data.map).find(key => data.map[key] === ptNumber);
+                                    Plotly.Fx.hover(index === 0 ? 'plot2' : 'plot1', [{curveNumber: 0, pointNumber: mapIndex}], 'xy');
+                                });
+                            });
+                        });
+                </script>
+            </body>
+            </html>
+            
+            ```
+            
+            ### Step 3: Run Your Application
+            
+            Run the Flask app by executing `python <filename>.py`. Visit `localhost:5000` in your web browser to view the interactive UMAP plots.
+            
+            ### Summary:
+            
+            This setup allows for a high degree of interactivity by directly manipulating data on the client side with JavaScript. You can hover over points in one plot to highlight corresponding points in another plot, using Plotly.js for visualization and Flask for serving the data and the webpage. This method leverages the full capabilities of modern web technologies for interactive data visualization.
+            
+        - can i save umap embeddings in colab and use them for this flask app
+
+[Overleaf Draft](https://www.overleaf.com/project/6697d06e15b57400bac20e26/detacher)
+
+- ✅ send to fazl
+    
+    Hi, I have created an overleaf draft for the project that includes:
+    
+    1) An abstract + 1 sentence summary + main contributions outline,
+    
+    2) Some background info and motivation (will expand upon this soon),
+    
+    3) Progress of some experiments run so far + notable results
+    
+    4) Concrete next steps from now to the end of the projectThis is the link to the overleaf:
+    
+    [https://www.overleaf.com/project/6697d06e15b57400bac20e26/detacher](https://www.overleaf.com/project/6697d06e15b57400bac20e26/detacher)
+    
+    I have also attached a pdf of it (I will make more improvements after I finish the experiments I'm running today and tomorrow, so this pdf will be updated later)
+    
+- ✅ fazl reply
+    - Which specific LLM architectures do you plan to compare in this study? How many different architectures will be included, and what are their key differences?
+    - What criteria will you use to determine the similarity of feature spaces across different LLM architectures? How do you plan to quantify and compare these similarities?
+    - What specific evidence do you expect to find supporting the existence of Feature Manifolds? How might this evidence compare to or extend previous findings?
+    - What are your hypotheses regarding the generalizability of your potential findings? Do you expect similar results across all types of LLM architectures, or do you anticipate limitations to the universality you might observe?
+    - If your study yields positive results, what implications do you foresee for the transferability of interpretability methods across different LLM architectures? How might this impact future research in mech interp?
+    - Can you elaborate on how your potential findings might be applied practically in areas like feature steering or transfer learning?

@@ -69,3 +69,10 @@ IF OOM: try to load just actvs, reshape (del orig), and save corrs BEFORE load w
     - get sentences just about: princess-dragon-knight
 
 ---
+
+Topological Data Analysis
+
+- [mapper_example.ipynb](https://colab.research.google.com/drive/1qBX9sQ5iwlcX17lwrmiXl36Yzfg6hkNP#scrollTo=f_AY6TPyE3PC): orig data of tutorial
+- [SAE_DW_mapper_explora.ipynb](https://colab.research.google.com/drive/1DFsPl7EFa0SDNjlopjKmtFTcV2PfvGmQ#scrollTo=NwyZqjVONo6H): for 16k, `ts-1L-21M_Wdec`
+    - [SAE_DW_mapper_explora_v1.ipynb](https://colab.research.google.com/drive/1sbFaxO0tpWgGJIA4VZ0R8xL_Jzj-TjZL): all others
+    - [mapper_pretrained_saelens_dw.ipynb](https://colab.research.google.com/drive/1Dj41zt3JLqxImeZub6w7XEI95Qj07KkS)

@@ -85,6 +85,8 @@ Project Management
     
     [Other Paper Notes](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Other%20Paper%20Notes%206602b9ac787d415a8c3d9d5df33b5d3c.md)
     
+    [LLMs](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/LLMs%20be7ba697b12244f39c181f24a0204eca.md)
+    
     [Tooling](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Tooling%20c8d74298b261420eb5a689cd8b6b8f28.md)
     
     [Compute](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Compute%20e3182612433a4299b4035d5359548fa4.md)
@@ -96,6 +98,8 @@ Project Management
     [Arguments for downstream feature-feature](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Arguments%20for%20downstream%20feature-feature%2081c8f79449d94debaa2314ba833b6e51.md)
     
     [Transformer math](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Transformer%20math%20c2362672e8be426094977e5a859a8b37.md)
+    
+    [SAE AlgTop](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/SAE%20AlgTop%209dda4810e41c4eaf91002696758eb4a3.md)
     
     [UMAP](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/UMAP%206019e8cd74ca4abebc143f9f13760055.md)
     
@@ -139,6 +143,10 @@ Expms Run
 
 [TS Feature Split Expms](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/TS%20Feature%20Split%20Expms%2047b1224c6561451ca1ddd9fd26293517.md)
 
+[AlgTop Explora](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/AlgTop%20Explora%20880f6e49fb09483f94155492009bd222.md)
+
+[SAE Mapper Explora](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632.md)
+
 Other Results
 
 [Neuronpedia steering results](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Neuronpedia%20steering%20results%20cef112a3d4444447ba4877a6da196737.md)
@@ -146,6 +154,8 @@ Other Results
 Code Docs
 
 [https://github.com/wlg1/univ_feat_geom/tree/main](https://github.com/wlg1/univ_feat_geom/tree/main)
+
+[https://drive.google.com/drive/folders/1zEYl1sMeTFI-JnmhdbJvboVuSDoQNY0t](https://drive.google.com/drive/folders/1zEYl1sMeTFI-JnmhdbJvboVuSDoQNY0t)
 
 [_old steering proj](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/_old%20steering%20proj%2064dc4fa6c87347789d031450c458d421.md)
 
