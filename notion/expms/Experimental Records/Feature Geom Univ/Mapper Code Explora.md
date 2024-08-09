@@ -1,4 +1,4 @@
-# AlgTop Explora
+# Mapper Code Explora
 
 - ✅ look into topology mapper in python
     - ✅ topoact github is just html code, no algtop algos
@@ -423,3 +423,5 @@ This uses kmapper
 ---
 
 [https://www.kaggle.com/code/lavasesha/topological-data-analysis-using-keppler-mapper](https://www.kaggle.com/code/lavasesha/topological-data-analysis-using-keppler-mapper)
+
+https://giotto-ai.github.io/gtda-docs/0.2.0/notebooks/mapper_quickstart.html

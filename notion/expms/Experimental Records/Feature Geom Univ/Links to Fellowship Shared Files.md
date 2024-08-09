@@ -14,7 +14,13 @@ researchers shared drives
 
 [July 22](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/July%2022%20efc7a8234d4145cb95b9d13579818f61.md)
 
+[July 29 meeting](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/July%2029%20meeting%20b59cf5f6b99541609c9d1c5c19c71d21.md)
+
+[aug 5th meeting](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/aug%205th%20meeting%20aa722651ec76486c8027ca9279d95893.md)
+
 [Messages](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/Messages%204864980156af45d5bddeafa3e027a939.md)
+
+Onboard: [https://github.com/torrvision/OnBoard](https://github.com/torrvision/OnBoard) | TVG website: [https://github.com/torrvision/torrvision.github.io](https://github.com/torrvision/torrvision.github.io) | WIKI: [https://github.com/torrvision/GroupWiKi](https://github.com/torrvision/GroupWiKi) | Torrnode wiki: [https://github.com/torrvision/TorrNode](https://github.com/torrvision/TorrNode)
 
 logistics
 

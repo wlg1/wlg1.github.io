@@ -1,5 +1,7 @@
 # email- why algtop needed
 
+(before project started)
+
 Question about Mapper from papers
 
 Hi, I saw that you had published work involving Mapper. I had some questions about the algorithm, as I am thinking about applying it and citing your work. Namely, I am wondering why concepts from algebraic topology are needed.
@@ -14,4 +16,13 @@ Thank you.
 
 Deleted: 
 
-and would like to answer well when I am questioned about it by others.
+and would like to answer well when I am questioned about it by others. 
+
+---
+
+asked:
+
+- zhou325@sci.utah.edu
+- [spalande@danforthcenter.org](mailto:spalande@danforthcenter.org)>
+
+---

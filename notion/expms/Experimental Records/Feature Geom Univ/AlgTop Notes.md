@@ -1,9 +1,15 @@
-# SAE AlgTop
+# AlgTop Notes
 
 - [inf and sup](https://mathstrek.blog/2012/11/09/basic-analysis-sequence-convergence-1/)
     
-    ![Untitled](SAE%20AlgTop%209dda4810e41c4eaf91002696758eb4a3/Untitled.png)
+    ![Untitled](AlgTop%20Notes%209dda4810e41c4eaf91002696758eb4a3/Untitled.png)
     
+
+[Algebraic Topology](https://www.notion.so/Algebraic-Topology-fb8c945c889f4167ac704d21621b6968?pvs=21) 
+
+[Applied AlgTop](https://www.notion.so/Applied-AlgTop-7887ec7a79e046a6adc9b67809b50f4b?pvs=21) 
+
+Is the global part of mapper the refined pullback, and rhe local part the clustering within each cluster
 
 ---
 
@@ -11,7 +17,7 @@ An Introduction to Topological Data (Chazel, Michel)
 
 - Hausdorf
     
-    ![Untitled](SAE%20AlgTop%209dda4810e41c4eaf91002696758eb4a3/Untitled%201.png)
+    ![Untitled](AlgTop%20Notes%209dda4810e41c4eaf91002696758eb4a3/Untitled%201.png)
     
 
 Homology H = Z / B = Cycles with same boundary
@@ -203,7 +209,7 @@ Homology H = Z / B = Cycles with same boundary
     
     The filter function in the Mapper algorithm is a property-based mapping that highlights specific features or aspects of the data. It is not a metric but serves to reduce the dimensionality of the data and facilitate the construction of the Mapper graph, which reveals the topological and geometric structure of the data.
     
-- how do we calculate the preimage of a filter function?
+- Computationally, how do we calculate the preimage of a filter function? Computationally, how to calcualte x and y belong to the same path-connected component of the pre-images of the open sets around f(x) and f(y)?
     
     To calculate the preimage of a filter function and determine if \(x\) and \(y\) belong to the same path-connected component of the preimages of the open sets around \(f(x)\) and \(f(y)\), you can follow these computational steps:
     
@@ -339,6 +345,247 @@ Homology H = Z / B = Cycles with same boundary
     ### Conclusion
     
     By following these steps, you can computationally determine if \(x\) and \(y\) belong to the same path-connected component of the preimages of the open sets around \(f(x)\) and \(f(y)\). This involves computing the preimages, clustering within those preimages, constructing a graph based on cluster overlaps, and checking for connectivity within the graph.
+    
+- Is mapper or some other algo to compute simp complex required to use before using persistence homology
+    
+    While using the Mapper algorithm or other methods to compute a simplicial complex can be helpful in preparing data for persistent homology analysis, it is not strictly required. Persistent homology can be computed directly from the data using various types of complexes, depending on the nature of the data and the desired analysis. Here are some common methods and approaches:
+    
+    ### Common Complexes Used in Persistent Homology
+    
+    1. **Vietoris-Rips Complex**:
+        - This is constructed from a set of points in a metric space.
+        - For a given radius \( \epsilon \), a k-simplex is formed for any set of \( k+1 \) points that are pairwise within \( \epsilon \) distance of each other.
+        - It is commonly used in persistent homology due to its straightforward computation from pairwise distances.
+    2. **Cech Complex**:
+        - Also constructed from a set of points in a metric space.
+        - For a given radius \( \epsilon \), a k-simplex is formed if the \( k+1 \) points have a common intersection in their \(\epsilon\)-radius balls.
+        - It closely approximates the true topological structure but can be more computationally intensive.
+    3. **Alpha Complex**:
+        - Derived from the Delaunay triangulation of a point set.
+        - Simplices are included based on a parameter \(\alpha\) that controls the size of the simplices.
+        - It is a subcomplex of the Delaunay triangulation and is often used due to its computational efficiency.
+    4. **Cubical Complex**:
+        - Used for data represented on a regular grid, such as images or voxel data.
+        - Constructs complexes from higher-dimensional cubes instead of simplices.
+    
+    ### Mapper and Simplicial Complexes
+    
+    - **Mapper Algorithm**: Mapper creates a simplicial complex from high-dimensional data by using a filter function, clustering within intervals, and constructing a nerve complex. This complex can then be analyzed using persistent homology.
+    - **Other Algorithms**: Algorithms like Witness complexes or methods specific to particular types of data (e.g., pixel data, time series) can also be used to form simplicial complexes suitable for persistent homology analysis.
+    
+    ### Workflow for Persistent Homology
+    
+    1. **Data Preparation**:
+        - Obtain or preprocess the data into a suitable format (point cloud, distance matrix, etc.).
+    2. **Complex Construction**:
+        - Choose a method to construct a simplicial complex. This could be Vietoris-Rips, Cech, Alpha, or another suitable complex based on the data and analysis goals.
+    3. **Persistent Homology Calculation**:
+        - Compute the persistent homology of the constructed complex using software libraries like GUDHI, Dionysus, Ripser, or JavaPlex.
+    
+    ### Example Workflow with Vietoris-Rips Complex
+    
+    1. **Data**: Assume we have a point cloud \( P \).
+    2. **Distance Matrix**:
+        
+        ```python
+        from scipy.spatial.distance import pdist, squareform
+        distance_matrix = squareform(pdist(P))
+        
+        ```
+        
+    3. **Vietoris-Rips Complex**:
+        
+        ```python
+        import gudhi as gd
+        rips_complex = gd.RipsComplex(distance_matrix=distance_matrix, max_edge_length=2.0)
+        simplex_tree = rips_complex.create_simplex_tree(max_dimension=2)
+        
+        ```
+        
+    4. **Persistence Calculation**:
+        
+        ```python
+        persistence = simplex_tree.persistence()
+        gd.plot_persistence_diagram(persistence)
+        
+        ```
+        
+    
+    ### Conclusion
+    
+    While using Mapper or other algorithms to compute a simplicial complex is useful and often necessary for analyzing complex high-dimensional data, persistent homology can be directly computed from data using appropriate complexes such as Vietoris-Rips, Cech, or Alpha complexes. The choice of method depends on the nature of the data and the specific requirements of the analysis.
+    
+- Advantage of each complex type? If looking to make complex from feature weights of sae decoder trained on llms activations like in Towards Monosemanticity, which to use?
+    
+    When deciding which type of complex to use for analyzing feature weights of a stacked autoencoder (SAE) decoder trained on large language model (LLM) activations, it’s important to understand the advantages of each type of complex. Here’s an overview:
+    
+    ### Advantages of Each Complex Type
+    
+    1. **Vietoris-Rips Complex**:
+        - **Advantages**:
+            - Easy to construct from a distance matrix.
+            - Captures the topology of the data at multiple scales by varying the distance threshold.
+            - Efficient and well-supported by many TDA software libraries.
+        - **Disadvantages**:
+            - Can become computationally expensive for large datasets due to the high number of simplices formed.
+    2. **Cech Complex**:
+        - **Advantages**:
+            - Provides a more accurate representation of the underlying topology compared to Vietoris-Rips because it considers the actual intersection of balls.
+        - **Disadvantages**:
+            - More computationally intensive to construct.
+            - Requires explicit radius information for the balls around points.
+    3. **Alpha Complex**:
+        - **Advantages**:
+            - More efficient than Cech and Vietoris-Rips for higher-dimensional data because it relies on Delaunay triangulation.
+            - Provides a good balance between computational efficiency and topological accuracy.
+        - **Disadvantages**:
+            - Depends on geometric properties and may not be straightforward for all types of data.
+    4. **Cubical Complex**:
+        - **Advantages**:
+            - Naturally suited for data represented on a grid, such as image data or voxel data.
+            - Efficient to compute for grid-like data structures.
+        - **Disadvantages**:
+            - Less suitable for non-grid data or unstructured point clouds.
+    
+    ### Choosing the Right Complex for Feature Weights from SAE Decoder
+    
+    Given the context of analyzing feature weights of an SAE decoder trained on LLM activations, we need to consider the structure and nature of the data:
+    
+    - **High-Dimensional Data**: The feature weights are likely high-dimensional vectors.
+    - **Continuous Features**: Weights are continuous values, not naturally grid-like.
+    - **Topological Features**: The goal might be to understand the topology of the feature space to identify patterns or structures.
+    
+    ### Recommended Complex
+    
+    **Alpha Complex**:
+    
+    - **Rationale**: Alpha complexes are particularly suited for high-dimensional data and provide a good balance between accuracy and computational efficiency. They leverage Delaunay triangulation, which can handle the high-dimensional structure of feature weights effectively.
+    
+    ### Implementation Steps
+    
+    1. **Extract Feature Weights**: Obtain the feature weights from the SAE decoder.
+    2. **Construct Alpha Complex**:
+        - Use Delaunay triangulation to form the complex.
+        - Adjust the parameter \(\alpha\) to control the size of simplices and capture the topology at different scales.
+    3. **Compute Persistent Homology**:
+        - Use software like GUDHI to compute and visualize the persistent homology of the alpha complex.
+    
+    ### Example with GUDHI
+    
+    ```python
+    import gudhi as gd
+    import numpy as np
+    from scipy.spatial import Delaunay
+    
+    # Assume `feature_weights` is an array of shape (n_samples, n_features)
+    feature_weights = np.random.rand(100, 50)  # Example feature weights
+    
+    # Compute Delaunay triangulation
+    delaunay = Delaunay(feature_weights)
+    simplex_tree = gd.AlphaComplex(points=feature_weights, simplices=delaunay.simplices).create_simplex_tree()
+    
+    # Compute persistence
+    persistence = simplex_tree.persistence()
+    gd.plot_persistence_diagram(persistence)
+    
+    ```
+    
+    ### Conclusion
+    
+    For analyzing feature weights of an SAE decoder trained on LLM activations, an Alpha complex is recommended due to its efficiency and suitability for high-dimensional data. It provides a robust method for capturing the topological features of the data, facilitating deeper insights into the structure of the feature space.
+    
+- Why use both mapper and ph? Why not just ph if ph also finds simplicial complex?
+    
+    Using both Mapper and persistent homology (PH) together can provide complementary insights that each method alone might not fully capture. Here's an explanation of why you might use both:
+    
+    ### Persistent Homology (PH)
+    
+    **Advantages**:
+    
+    1. **Direct Topological Analysis**: PH directly analyzes the topological features (like connected components, loops, voids) of the data by constructing simplicial complexes such as Vietoris-Rips, Cech, or Alpha complexes.
+    2. **Multiscale Analysis**: PH excels at studying the persistence of topological features across multiple scales, providing a rich understanding of the data's structure over a range of resolutions.
+    3. **Quantitative Summaries**: PH gives quantitative summaries like persistence diagrams or barcodes, which capture the birth and death of topological features as the scale parameter changes.
+    
+    **Limitations**:
+    
+    1. **Global View**: PH provides a global view of the topological features and may miss localized or specific structural details within the data.
+    2. **Complexity**: For very high-dimensional or complex data, the simplicial complexes used in PH can become computationally expensive to construct and analyze.
+    
+    ### Mapper Algorithm
+    
+    **Advantages**:
+    
+    1. **Visualization**: Mapper provides a visual representation of the data's topological structure, making it easier to interpret and explore.
+    2. **Local Structures**: By clustering the data and representing the relationships between clusters, Mapper can highlight local structures and features that might be missed by a purely global analysis.
+    3. **Flexible**: Mapper allows for the use of various filter functions, which can be tailored to highlight specific aspects of the data that are of interest.
+    
+    **Limitations**:
+    
+    1. **Dependence on Parameters**: The results of Mapper can be sensitive to the choice of filter function, cover, and clustering method.
+    2. **Qualitative**: While Mapper provides a qualitative visual summary, it doesn't offer the same rigorous quantitative persistence information as PH.
+    
+    ### Combining Mapper and Persistent Homology
+    
+    **Complementary Insights**:
+    
+    1. **Local and Global Analysis**: Mapper can highlight local structures and provide a visual overview of the data, while PH can quantify the persistence of global topological features. Together, they provide a more comprehensive understanding of the data.
+    2. **Enhanced Interpretation**: Mapper's visual output can guide the interpretation of the persistence diagrams from PH. For example, features seen in the Mapper graph can help explain the significance of particular persistent features in the PH analysis.
+    3. **Parameter Tuning**: Insights from Mapper can inform the choice of parameters for PH, such as the scale at which to construct complexes.
+    
+    ### Practical Example
+    
+    Consider a scenario where you have high-dimensional data from LLM activations, and you want to understand both the local clustering of activations and the global topological structure of the feature space.
+    
+    1. **Mapper**: Use Mapper to create a visual representation of the data, revealing clusters of activations and their relationships.
+    2. **PH on Mapper Complex**: Apply persistent homology to the simplicial complex generated by Mapper to quantify the persistence of topological features within this structure.
+    3. **Direct PH**: Also apply PH directly to the original data using an appropriate complex (e.g., Alpha complex) to capture the global topological features across different scales.
+    
+    ### Example Workflow
+    
+    ```python
+    import gudhi as gd
+    import numpy as np
+    from sklearn.cluster import DBSCAN
+    
+    # Assuming feature_weights is an array of shape (n_samples, n_features)
+    feature_weights = np.random.rand(100, 50)  # Example feature weights
+    
+    # Step 1: Use Mapper
+    # Apply a filter function, e.g., PCA
+    from sklearn.decomposition import PCA
+    pca = PCA(n_components=2)
+    filter_values = pca.fit_transform(feature_weights)
+    
+    # Define cover and clustering (simple example with intervals and DBSCAN)
+    intervals = np.linspace(min(filter_values[:, 0]), max(filter_values[:, 0]), num=10)
+    clusters = []
+    for i in range(len(intervals) - 1):
+        subset = feature_weights[(filter_values[:, 0] >= intervals[i]) & (filter_values[:, 0] < intervals[i + 1])]
+        if subset.shape[0] > 0:
+            clustering = DBSCAN(eps=0.5, min_samples=2).fit(subset)
+            clusters.append(clustering.labels_)
+    
+    # Construct Mapper graph (simplified for illustration)
+    import networkx as nx
+    G = nx.Graph()
+    # Add nodes and edges based on cluster overlap (this is illustrative; real construction is more complex)
+    
+    # Step 2: Apply PH on Mapper's simplicial complex
+    # (This step would involve creating a simplicial complex from the Mapper output)
+    
+    # Step 3: Direct PH on original data
+    alpha_complex = gd.AlphaComplex(points=feature_weights).create_simplex_tree()
+    persistence = alpha_complex.persistence()
+    gd.plot_persistence_diagram(persistence)
+    
+    ```
+    
+    ### Conclusion
+    
+    Using both Mapper and persistent homology together allows for a more nuanced analysis of the data, combining the strengths of visual, local cluster analysis with rigorous, global topological quantification. This combined approach can be particularly powerful for complex, high-dimensional datasets like those arising from LLM activations.
+    
+- Can ph also be visualized? Since mapper and ph construct different simp comps so the mapper viz isn't same as ph viz if want to show what ph found
+    
     
 
 - 🐣 mapper topology questions
@@ -666,7 +913,7 @@ For example,
 
 - img of filter function that’s not height
     
-    ![Untitled](SAE%20AlgTop%209dda4810e41c4eaf91002696758eb4a3/Untitled%202.png)
+    ![Untitled](AlgTop%20Notes%209dda4810e41c4eaf91002696758eb4a3/Untitled%202.png)
     
 
 Computationally, the following reasoning is used to find clusters:
@@ -701,7 +948,7 @@ Filter function: For example, given SAE feature decoder weights measured in LLM 
 
 - reeb graph
     
-    ![Untitled](SAE%20AlgTop%209dda4810e41c4eaf91002696758eb4a3/Untitled%203.png)
+    ![Untitled](AlgTop%20Notes%209dda4810e41c4eaf91002696758eb4a3/Untitled%203.png)
     
 
 Reeb graph vs Mapper:
@@ -719,9 +966,15 @@ https://youtu.be/5Rwk1_adTp4?si=ofgfMfbovkNtt3TB
 
 ---
 
+[https://www.quantmetry.com/blog/topological-data-analysis-with-mapper/](https://www.quantmetry.com/blog/topological-data-analysis-with-mapper/)
+
+---
+
 topobert paper
 
 [https://github.com/tdavislab/TopoBERT/blob/master/backend/server/graph_generator.py](https://github.com/tdavislab/TopoBERT/blob/master/backend/server/graph_generator.py)
+
+---
 
 Ml mapper lens
 

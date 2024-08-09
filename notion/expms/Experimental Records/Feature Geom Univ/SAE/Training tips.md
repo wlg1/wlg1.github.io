@@ -28,6 +28,8 @@
         Thus, privileged neuron bases often show non-zero kurtosis due to their specialized nature.
         
 
+https://docs.google.com/document/u/0/d/1lHvRXJsbi41bNGZ_znGN7DmlLXITXyWyISan7Qx2y6s/mobilebasic#heading=h.j9b3g3x1o1z4
+
 ---
 
 [https://transformer-circuits.pub/2023/monosemantic-features#:~:text=To create the dataset for autoencoder training](https://transformer-circuits.pub/2023/monosemantic-features#:~:text=To%20create%20the%20dataset%20for%20autoencoder%20training)
@@ -50,3 +52,5 @@ saes: # train steps, params, gpus (make list)
     l1 for sparse, l2 for reconstuction
 
 ![Untitled](Training%20tips%2097054f2568c04b06910600e546c60b99/Untitled.png)
+
+[https://venturebeat.com/ai/deepmind-makes-big-jump-toward-interpreting-llms-with-sparse-autoencoders/](https://venturebeat.com/ai/deepmind-makes-big-jump-toward-interpreting-llms-with-sparse-autoencoders/)

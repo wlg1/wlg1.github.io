@@ -1,6 +1,6 @@
 # SAE Mapper Explora
 
-- 🐣 [AlgTop Explora](AlgTop%20Explora%20880f6e49fb09483f94155492009bd222.md) : python tutorial mapper on Dweights
+- 🐣 [Mapper Code Explora](Mapper%20Code%20Explora%20880f6e49fb09483f94155492009bd222.md) : python tutorial mapper on Dweights
     
     …\_prog\repos-cloned\YouTube-Blog\mapper
     
@@ -322,7 +322,7 @@
         
         - poss struc?
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%204.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled.png)
             
 - 🐣 study params of new Mapper plot
     - What lens was used?
@@ -587,27 +587,27 @@
         - do they form these edges as they all overlap on the same features? (eg. the “.” or the “one” community subgraphs)
         - the “one” subgraph is wing on bottom, and “.” subgraph is wing on top. is their path/etc distance similar across model’s feature spaces?
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%205.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled%201.png)
             
 - ✅ compare mapper graphs of 1L and 2L, 16k MLP0
     - both models have a “one” subgraph
         - 1L
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%206.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled%202.png)
             
         - 2L
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%207.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled%203.png)
             
         - there are 5 nodes in the 1L subgraph, and 4 nodes in the 2L subgraph. The common nodes seem to form a “tetrahedron-like” (connectivity wise, but in 2D) subgraph, and the 1L has 5 nodes as it has a “dangling” node which contains 20 features. The 1L clusters have around 40-100 features, while the 2L clusters have around 200.
     - 1L has “.” subgraph, and 2L has “,” subgraph
         - 1L
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%208.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled%204.png)
             
         - 2L
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%209.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled%205.png)
             
     - What’s the “path distance” from say the “one” community subgraph to the “.” community subgraph across models?
         
@@ -615,11 +615,11 @@
     - Both models have a “tail” containing two “a” feature clusters, though this tail is longer in the 1L model. The tails in both feature spaces seems separated by the wings with many “polysemantic” clusters of unrelated features in between.
         - 1L
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%2010.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled%206.png)
             
         - 2L
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%2011.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled%207.png)
             
     - summary (msg to kiho)
         
@@ -628,11 +628,11 @@
     - there’s a leaf in both models that’s a feel feature
         - 1L
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%2012.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled%208.png)
             
         - 2L
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%2013.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled%209.png)
             
 - ✅ mapper on pretrained gpt-2 saelens models
     - ✅ download L8 labels from : [https://www.neuronpedia.org/gpt2sm-res-jb](https://www.neuronpedia.org/gpt2sm-res-jb)
@@ -647,4 +647,4 @@
         - really big and scattered, not a very large conn component cluster like in the ts models
         - there’s a structure (cluster) corresponding to phrases/nouns
             
-            ![Untitled](Project%20Planning%20b4b05f73d85e409f8409b209e44ed692/Untitled%2014.png)
+            ![Untitled](SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632/Untitled%2010.png)

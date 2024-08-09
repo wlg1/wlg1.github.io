@@ -44,9 +44,8 @@ TS 1L vs 2L Feature Splitting Expms
 - map correlated features
     - [ts_1L_2L_UMAP_df32768.ipynb](https://colab.research.google.com/drive/1dQPHGIpv0uHQt72rG-pMIB0b7z4nA0T_#scrollTo=-ZqeAFR6EEgs)
 - combined UMAP
-    
-    [fs_UMAP_v0.ipynb](https://colab.research.google.com/drive/1swzOhJPlBvZNQrZjBW6xZdYalAVkmZjh#scrollTo=HTJhjkZ1yVt4)
-    
+    - [fs_UMAP_v0.ipynb](https://colab.research.google.com/drive/1swzOhJPlBvZNQrZjBW6xZdYalAVkmZjh#scrollTo=HTJhjkZ1yVt4): relu, 30k epochs
+    - [fs_UMAP_v1](https://colab.research.google.com/drive/1Ubxrtvycgo0NWr6svNQj93AKt2ZNT7ap).ipynb: topk 32, 100k epochs
 
 Feature Relation Mapping Expms
 
@@ -76,3 +75,13 @@ Topological Data Analysis
 - [SAE_DW_mapper_explora.ipynb](https://colab.research.google.com/drive/1DFsPl7EFa0SDNjlopjKmtFTcV2PfvGmQ#scrollTo=NwyZqjVONo6H): for 16k, `ts-1L-21M_Wdec`
     - [SAE_DW_mapper_explora_v1.ipynb](https://colab.research.google.com/drive/1sbFaxO0tpWgGJIA4VZ0R8xL_Jzj-TjZL): all others
     - [mapper_pretrained_saelens_dw.ipynb](https://colab.research.google.com/drive/1Dj41zt3JLqxImeZub6w7XEI95Qj07KkS)
+
+---
+
+Synth Actvs
+
+- [synthData_explora.ipynb](https://colab.research.google.com/drive/1lHOtRa8KHIZuqbetilKkZFypfHDnSz2M#scrollTo=PLIDVkYupqYY) : expms using luke’s code (few mods)
+- [synthData_explora_v2.ipynb](https://colab.research.google.com/drive/1S9GlHc60Y_SD3EN4D27GBLSpGPPhrR-l#scrollTo=Tdr-XiFEGDgR) : compare drastic mods to luke’s code for synth data
+    - [test_synthActvs.ipynb](https://colab.research.google.com/drive/16HzLfM-3OG_5AkPlkAz63fSltx85zRnB): clean up and send to Robert Huben to check
+- [synthData_explora_v3](https://colab.research.google.com/drive/1g44mZQNDMx7RiUvvIeZkeSYmN1srD53U).ipynb: new saes
+- V: cleaned up new code only (no luke’s code)

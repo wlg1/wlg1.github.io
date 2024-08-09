@@ -2,20 +2,11 @@
 
 [Project Planning](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Project%20Planning%20b4b05f73d85e409f8409b209e44ed692.md)
 
+[Study Plan](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Study%20Plan%20fbd78b22eebb4aceaa9131641767f17a.md)
+
 ---
 
 ### Docs
-
-Overall Plan
-
-[Project Proposal](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Project%20Proposal%20f68a82cc910f4a7c98cafbcb52b07fa5.md)
-
-- old titles
-    
-    **Interpreting Steering Behaviors via Analogous Features**
-    
-
-<<<
 
 Project Management
 
@@ -25,9 +16,13 @@ Project Management
 
 [Conferences](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Conferences%20ed505f1b06fb4f6995c1d12b2039134a.md)
 
-<<<
-
 - Brainstorming
+    - old overall plan
+        
+        [Project Proposal](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Project%20Proposal%20f68a82cc910f4a7c98cafbcb52b07fa5.md)
+        
+        **Interpreting Steering Behaviors via Analogous Features**
+        
     
     [Brainstorm- CCS Machiav (prev proj)](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Brainstorm-%20CCS%20Machiav%20(prev%20proj)%20b1c8459c616d4bc283b13e861d6bcf11.md)
     
@@ -99,7 +94,11 @@ Project Management
     
     [Transformer math](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Transformer%20math%20c2362672e8be426094977e5a859a8b37.md)
     
-    [SAE AlgTop](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/SAE%20AlgTop%209dda4810e41c4eaf91002696758eb4a3.md)
+    [To contact](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/To%20contact%20d2c2ad3dcb8845f9917c6d5b0fba82cf.md)
+    
+    [Ph](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Ph%20beb3009d457e4c89b1d2dff981c07f39.md)
+    
+    [AlgTop Notes](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/AlgTop%20Notes%209dda4810e41c4eaf91002696758eb4a3.md)
     
     [UMAP](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/UMAP%206019e8cd74ca4abebc143f9f13760055.md)
     
@@ -143,7 +142,7 @@ Expms Run
 
 [TS Feature Split Expms](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/TS%20Feature%20Split%20Expms%2047b1224c6561451ca1ddd9fd26293517.md)
 
-[AlgTop Explora](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/AlgTop%20Explora%20880f6e49fb09483f94155492009bd222.md)
+[Mapper Code Explora](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Mapper%20Code%20Explora%20880f6e49fb09483f94155492009bd222.md)
 
 [SAE Mapper Explora](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632.md)
 
