@@ -59,7 +59,7 @@ NOTE: Table is bad is the ones within a row are not comparable. We should use a 
 | "The teacher is Alice. The teacher is Bob. The teacher is David. The teacher is” | 13.54% |
 | "Alice is king. Bob is queen. Alice. Carol is red. David is queen.” | 9.45% |
 | "The student is John. The pet is Mary. Connor went to the store. The human is”
-[ Change subjects ]:
+**[ Change subjects ]:**
 "The student is Alice. The pet is Bob. Connor went to the store. The human is” | 6.57%, 6.41% |
 | "Alice. Bob. David.” | 6.01% |
 
@@ -78,7 +78,7 @@ NOTE: Table is bad is the ones within a row are not comparable. We should use a 
 3.04%  | Alice| |
 | "Alice is king. Bob is queen. The lion is Alice. Carol is king. David is queen. The lion is” | 67.79% Da
 6.12% Alice |
-| "Alice. Bob. David. Alice. Bob.” | 63.72% |
+| "Alice. Bob. David. Alice. Bob.” | **`63.72`**% |
 | "The teacher is Alice. The teacher is Bob. The teacher is Bob. The teacher is” | 61.43% Bob
 21.15% Alice |
 | "The teacher is Alice. The teacher is Bob. The teacher is Alice. The teacher is” | 45.84% (Bob)

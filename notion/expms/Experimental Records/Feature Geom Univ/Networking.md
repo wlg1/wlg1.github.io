@@ -160,6 +160,15 @@ Alignment Forum
         
         **Q2:** I was also wondering if it would make sense to somehow get already hard coded features from some decomposition? Say if we just use encoder weights, from a sparse feature space of another SAE trained on an actual llm, as ground truth features. But I think that has issues, such as the features found may have biases from the specific llm training mixed in and wouldn't be good to generate other simulated llms from it. Possibly also breaks other assumptions.
         
+    - meeting: 8/14
+    - ✅ ask Max if using subset of correlated subset of features (based on actv values and ablation) works.
+        - this is key as it’s your new method to implement; the GTF synth actvs are secondary to this.
+        - it’s not ‘just apply old sim metrics’; it’s WHICH subset of features to select to try this!
+    - issue with jaccard nn approach is it’s highly sensitive on which are picked, and on num_neigh. need more subsets
+        - if both have “common core feat” that still counts as “common arrangement”?
+        - vary params to see if diffrence ‘persists’ across diff param scales?
+        - obviously they would be close to each other in the same space
+            - the main question is- are the arrangements also similar? what do we mean by “arrangements”? look at mapper? ask these questions
 - austin
 
 <<<
@@ -178,6 +187,17 @@ Alignment Forum
         I was wondering if you would be interested to meet and talk about a possible collaboration in the field? I can discuss the main research questions and experiments. Alternatively, if you know anyone else in the field (such as Masters/PhD students) who may be interested in talking, I would be happy to meet with them too. If you or your students are not looking to collaborate, I am also looking to just consult with experts in the field, and can include them in the paper’s Acknowledgements. I am free any time next week (Aug 5th) or later, except at 12-1pm Mondays (BST) and at 2-3pm Fridays (BST). I am located at the Information Engineering Building. Thank you!
         
 
+<<<
+
+Visualizations
+
+- **enjalot**
+    
+    Hi, I saw your cool tool for UMAP visualizations in the Eleuther slack server! I'm working on a research paper involving comparing 2 SAE UMAPs side by side. I have simple Python code such that hovering over a feature point in one UMAP displays highly activation tokens, and I'm looking to modify it such that hovering over a point in one UMAP will create a hover box over another point in a second UMAP, based on a mapping between the two features in each UMAP.
+    
+    I was wondering if you have any advice for how to achieve this? I can also send the UMAP html files, code, and data if you want to take a look. If you are interested in implementing or collaborating, I am also interested in looking for collaborators or people to consult with whom I can add to the paper's acknowledgements (the project finishes at the end of Sept and I can discuss more on what it is if you want to join). Thanks!
+    
+
 ---
 
 ### Not contacted yet
@@ -195,17 +215,15 @@ Sim metrics
 
 Algtop
 
+- contact these authors
+    - Representation Topology Divergence
+    - [https://dl.acm.org/doi/10.1145/3604433](https://dl.acm.org/doi/10.1145/3604433)
+    - [https://dblp.org/pid/250/3875.html](https://dblp.org/pid/250/3875.html)
 - List of algtop + nn people to contact
     - zhou325@sci.utah.edu
     - [**Emilie Purvine**](https://scholar.google.com/citations?user=_i4Kv1wAAAAJ&hl=en)
     - Alexandria Volkening
     - [https://www.danieltolosa.com/](https://www.danieltolosa.com/)
-- contact these authors
-    
-    [https://dl.acm.org/doi/10.1145/3604433](https://dl.acm.org/doi/10.1145/3604433)
-    
-    [https://dblp.org/pid/250/3875.html](https://dblp.org/pid/250/3875.html)
-    
 - List of algtop people to contact
     - vidit
     - [spalande@danforthcenter.org](mailto:spalande@danforthcenter.org)

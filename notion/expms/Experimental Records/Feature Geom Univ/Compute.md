@@ -1,5 +1,15 @@
 # Compute
 
+- [https://github.com/EleutherAI/cookbook](https://github.com/EleutherAI/cookbook)
+    
+    [https://discordapp.com/channels/729741769192767510/794042109048651818/1272216457459142749](https://discordapp.com/channels/729741769192767510/794042109048651818/1272216457459142749)
+    
+- Copy of How to get GPUs and make them brrrrrr
+
+- see luke’s notes on gpu usage in [aug 5th meeting](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/aug%205th%20meeting%20aa722651ec76486c8027ca9279d95893.md)
+    - [https://datacrunch.io/](https://datacrunch.io/)
+- use bad gpus torrnodes 1-6 if not train anything impt. how much to train hundreds of saes?
+
 - RTX A4000 on [vast.ai](http://vast.ai/) vs A100 on colab
     
     When comparing the performance of NVIDIA's RTX A4000 with the A100, especially in the context of using them on platforms like [Vast.ai](http://vast.ai/) and Google Colab, there are several key aspects to consider:

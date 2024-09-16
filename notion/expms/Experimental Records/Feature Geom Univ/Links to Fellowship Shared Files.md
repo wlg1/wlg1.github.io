@@ -18,6 +18,22 @@ researchers shared drives
 
 [aug 5th meeting](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/aug%205th%20meeting%20aa722651ec76486c8027ca9279d95893.md)
 
+[Aug 12 meeting](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/Aug%2012%20meeting%2039b3811d6aa9407b8b2b5da2aa415fea.md)
+
+- christian meeting
+    
+    
+    ---
+    
+    learning dynamics: learning of LLM and fine tuning then train SAEs. do correlations get stronger as you train or add more data?
+    
+    false positives, correlations between different analysis techniques to combine outputs to get better? like portfolios in finance. 
+    
+
+[Aug 19th](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/Aug%2019th%20b76441c0458b4ed58af84d705203f467.md)
+
+[Sept 2](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/Sept%202%201d56760caaab471a91adc1097ca5852a.md)
+
 [Messages](Links%20to%20Fellowship%20Shared%20Files%207210eabe5bac45a0adee1dd6f1d92cd9/Messages%204864980156af45d5bddeafa3e027a939.md)
 
 Onboard: [https://github.com/torrvision/OnBoard](https://github.com/torrvision/OnBoard) | TVG website: [https://github.com/torrvision/torrvision.github.io](https://github.com/torrvision/torrvision.github.io) | WIKI: [https://github.com/torrvision/GroupWiKi](https://github.com/torrvision/GroupWiKi) | Torrnode wiki: [https://github.com/torrvision/TorrNode](https://github.com/torrvision/TorrNode)

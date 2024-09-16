@@ -2,7 +2,7 @@
 
 LOGISTICS
 
-[https://mango-ambulance-93a.notion.site/ARENA-3-0-Virtual-Landing-Page-8f7193af31b445c586efed03e995fb74](https://www.notion.so/ARENA-3-0-Landing-Page-virtual-8f7193af31b445c586efed03e995fb74?pvs=21)
+[https://mango-ambulance-93a.notion.site/ARENA-3-0-Virtual-Landing-Page-8f7193af31b445c586efed03e995fb74](https://www.notion.so/8f7193af31b445c586efed03e995fb74?pvs=21)
 
 Submit exercises here:
 

@@ -1,5 +1,7 @@
 # Mapper Code Explora
 
+---
+
 - ✅ look into topology mapper in python
     - ✅ topoact github is just html code, no algtop algos
     - tell chatgpt to read Towards and Topoact, then: “Given those two papers, how would you design experiments and code to apply mapper to feature activations? Given setup details”

@@ -88,7 +88,7 @@ Project Management
     
     [Patching](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Patching%20c56dd40648f24f1c9095c38f63d50333.md)
     
-    [SAE](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/SAE%206b08b4ad57a342bf9393d2ef0fa31c6b.md)
+    [SAE ](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/SAE%206b08b4ad57a342bf9393d2ef0fa31c6b.md)
     
     [Arguments for downstream feature-feature](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Arguments%20for%20downstream%20feature-feature%2081c8f79449d94debaa2314ba833b6e51.md)
     
@@ -101,6 +101,10 @@ Project Management
     [AlgTop Notes](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/AlgTop%20Notes%209dda4810e41c4eaf91002696758eb4a3.md)
     
     [UMAP](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/UMAP%206019e8cd74ca4abebc143f9f13760055.md)
+    
+    [Mapper](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Mapper%20c4be8be4e15e4ff7b70908fd3512434b.md)
+    
+    [Neurosci](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Neurosci%20fbc2a326713a4b4f80c2dd0667ce881d.md)
     
     [Category Theory](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Category%20Theory%205b66977cb4c14102a0507ef2951ff993.md)
     
@@ -145,6 +149,8 @@ Expms Run
 [Mapper Code Explora](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Mapper%20Code%20Explora%20880f6e49fb09483f94155492009bd222.md)
 
 [SAE Mapper Explora](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/SAE%20Mapper%20Explora%2025727d275b3b4da1bd2f67d2a0c30632.md)
+
+[Pers Hom Code Explora](Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60/Pers%20Hom%20Code%20Explora%20b1cd6485f6a74fc1903d80c10f78a4bd.md)
 
 Other Results
 

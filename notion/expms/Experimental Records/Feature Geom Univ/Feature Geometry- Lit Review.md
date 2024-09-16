@@ -11,7 +11,7 @@ https://github.com/minyoungg/platonic-rep
     What they actually show is that 1) affine maps do a pretty good job of translating between the representation spaces of different NNs across, and 2) as models get stronger, they tend to have representation spaces that align more closely with each other. There are a lot of other hypothesis that explain these results so I think they jump the gun a little by dedicating >half the paper to analysis
     
     1. One could be that neural networks are predisposed to learning spaces that can easily be mapped between with affine transformations. Another is that we might see a plateau in representation alignment once the models have eaten up all the low-hanging fruit on lossless abstractions
-    2. ***May 16, 2024 4:21 PM (EDT)*May 16, 2024 4:21 PM (EDT)*May 16, 2024 4:21 PM (EDT)***
+    2. ***May 16, 2024 4:21 PM*May 16, 2024 4:21 PM*May 16, 2024 4:21 PM***
         
         One thing to consider in their graphs that plot models on axes of language capability vs alignment with vision models is that it seems linear but if you switch out the language capabilities with the compute cost of training, you'll see what might end up being an asymptote
         

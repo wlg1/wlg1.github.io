@@ -1,5 +1,20 @@
 # Conferences
 
+- [https://unireps.org/2024/](https://unireps.org/2024/)
+    
+    **Sep 20, 2024**
+    
+- [https://www.neurreps.org/call-for-papers](https://www.neurreps.org/call-for-papers)
+    - **September 13, 2024**
+
+[https://compositional-learning.github.io/](https://compositional-learning.github.io/)
+
+[https://interpretable-ai-workshop.github.io/](https://interpretable-ai-workshop.github.io/)
+
+aug 30th
+
+---
+
 You will likely be working from April 15th - June 15th, and during April, submit funding applications to try to get funding for June, July, Aug. OR apply to MATS for funding.
 
 [https://iclr.cc/Conferences/2024/CallForPapers](https://iclr.cc/Conferences/2024/CallForPapers)

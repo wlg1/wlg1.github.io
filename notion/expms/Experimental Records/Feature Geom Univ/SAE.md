@@ -74,3 +74,12 @@ llama-3: We are working on an automated pipeline to explain the SAE features, an
 https://discord.com/channels/1080558777608183829/1103144701458133062/1265055582012964956
 
 Moe
+
+- [openai feature splitting viz for topk](https://openaipublic.blob.core.windows.net/sparse-autoencoder/sae-viewer/index.html#/model/gpt2-small/family/v5_l8_postmlp/num_features/32768/num_active_features/8/feature/0)
+
+---
+
+top K replace L1. top K just picks top dictionary features and zeros the rest.
+
+reconstruction loss not reliable because if 0, still get high scores
+so use natural language loss instead
