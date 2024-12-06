@@ -1,0 +1,368 @@
+﻿An SAE Steering Vector for Ordinal Sequence Projection onto Natural Numbers
+Michael Lan
+Dates worked on: 8/30 - 8/31, and 10/5/24
+
+
+
+Summary: In Gemma2-2b, residual stream layer 20, I found a steering vector that steers certain model outputs that belong to a sequence (which maps onto the natural numbers) to the natural number index they project onto. 
+Eg) “This month is July, next month is” 
+        → August (unsteered output)
+→ 8 (steered output)
+
+
+Code: steering_gemma2_2b_L20_ordinalSeqs.ipynb
+
+
+Detailed Summary: 1) First, I analyze a steering vector made from LLM activations, which is decent at steering; however, it is not able to steer all prompts to the correct natural number index. To improve its effectiveness, I compare four approaches that use SAEs: 
+2) I construct the steering vector from mean SAE activations, then add it in SAE space; this is the “SAE steering vector”.
+3) I decompose the LLM steering vector into SAE space to retain only the most important features. I add the reconstruction of this in LLM space (this does not work well)
+4) I add this LLM decomposition from (3) (after ablating features) directly in SAE space
+5) I retain only the most important features of the SAE steering vector
+
+
+Figure 1: Comparing the five steering vector variations. Three out of four SAE approaches (in blue, purple, and light blue) demonstrate improvement over the LLM steering vector (in red).
+  
+
+
+
+
+
+________________
+
+
+Methods
+
+
+These steering vectors do not take differences in mean between two domains [2]; they also do not subtract out the existing “domain” feature of a representation (eg. they do not remove the “number words” or “months” abstraction). They just add. A multiplier factor is also used.
+
+
+Steering vector # 1: LLM mean activations
+To obtain the steering vector applied to LLM space, I pass individual tokens of “1” to “10” through Gemma2-2B. Then, I take the mean of these activations to get the steering vector. To steer the model, the steering vector is added to the last token, layer 20 SAE activations of a new prompt input’s forward pass. The altered LLM activations are patched back to the original model, and the new model output is observed.
+
+
+Steering vector # 2: SAE mean activations
+I construct the steering vector from mean SAE activations, then add it in SAE space; this is the “SAE steering vector”. To obtain this steering vector applied to SAE space, I pass individual tokens of “1” to “10” through Gemma2-2B, and extract their SAE activations at residual stream layer 20. Then, I take the mean of these activations to get the steering vector. To steer the model, the steering vector is added to the last token, layer 20 SAE activations of a new prompt input’s forward pass. The SAE activations are reconstructed into LLM activations and are patched back to the original model. This is similar to directly steering multiple features in SAE space at once, like in “Scaling Monosemanticity” [3].  
+
+
+Steering vector #3: SAE-Decomposed LLM (SV #1) Added to LLM Space
+I decompose the LLM steering vector (SV #1) into SAE space to retain only “semantically relevant” features. I add the reconstruction of this in LLM space.
+
+
+The features are interpreted using labels downloaded from “Download Explanations” on https://www.neuronpedia.org/ *. Then, I manually assessed which ones appeared irrelevant based on these labels (assuming these features are mostly monosemantic, which they may not be). An example of an “irrelevant feature” would be feature 11527, which has the label, “the start of a document”. Details of how these features were selected can be found on the colab (link). 
+        * As of 31st Aug, this button appears to be missing (may just be temporary/relocated)
+
+
+Steering vector #4: SAE-Decomposed LLM (SV #1) Added to SAE Space
+I add the LLM decomposition from (3) (after ablating features) directly in SAE space.
+
+
+Steering vector #5: Filtered SAE Steering Vector (SV #2) 
+I retain only the most important features of the SAE steering vector (SV #2). This turns out to be nearly identical to Approach #4, as the same features are ablated.
+
+
+
+
+________________
+
+
+Experimental Set-Up
+
+
+Models: I test on Gemma2-2B, and load SAE residual stream layer 20 from Gemma Scope.
+
+
+Prompt Types:
+I test 7 types of prompts, and Figure 2 uses abbreviations to refer to them. These are:
+Figure 2 Abbreviation
+	Example
+	numwords
+	two three four five
+	months
+	February March April May
+	days
+	Tuesday Wednesday Thursday
+	tomorrow_is
+	Today is Tuesday, tomorrow is
+	nextMonth_is
+	This month is February, next month is
+	descr_numwords
+	eleven ten nine eight
+	spanish_numwords
+	dos tres cuatro cinco
+	
+
+For numwords and months, each prompt contains four sequence members because four members allows the model to be more effective at predicting the next member, while also not being too long (which would reduce the number of possible samples to test). For days, prompts only contain three members as there are only seven possible sequence members in total.
+
+
+Metrics
+The correct expected answer is the natural number index a sequence member projects onto. In Figure 2, the accuracy score for a prompt type is the percentage of prompts that are correctly steered in that prompt type set. In Figure 1, the average accuracy score takes the average of all accuracy scores for the seven prompt types. For the accuracy scores, I only evaluate prompts that have answers up to 9. I did not find cyclic prompts that the model could complete correctly (unsteered), and did not evaluate prompts related to mod-10 steering. 
+
+
+I do not evaluate this for a single multiplier factor, as I aim to evaluate how well a steering vector works if it was given the “best possible multiplier factor”, specific to each prompt type. As I did not do a search over multiplier types, I test multiplier factors 1 and 3, and take the highest (max) score of the two factors. For instance, for k*(steering_vec), if using k=1 gives score 0.2, and using k=3 gives score 0.4, then I would use score 0.4 to calculate the accuracy score. The full results that include individual multiplier factor scores can be found within each steering vector’s section in the colab notebook.
+
+
+Experiment Checks
+To strengthen our claims, we want to rule out other competing explanations for our observations. Thus, I tested steering with non-sequence prompts such as:
+* "aa a a"
+* "I AM A CAT"
+* "Bob and Mary went to store"
+* "my favorite colour is"
+
+
+These prompts were not found to be steered towards “patterns” of integers. 
+
+
+I did not include prompts whose correct index would be 0, as I found that many “non-sequence continuation” prompts were steered to 0, suggesting that 0 is the default “nonsense” projection into the natural numbers space that tokens which are not part of an ordinal sequence are mapped to. Thus, this reduces the number of false positives. For instance, the non-sequence prompts from above are all steered to 0, for multipliers 1 and 10.
+Lastly, we can check that the prompts are steered because of this specific vector with this ability; in other words, this ensures not just any nudges would cause “October” to be moved to “10”. I found that adding vectors other than this specific vector would not correctly project a token to its natural number index; eg) “number words - months” vector would often just nudge the token to a ‘ ‘ space character. As we found it non-trivial to steer a predicted token to its index correctly, I did not think it was necessary to try adding random vectors.
+________________
+
+
+Experimental Results
+
+
+Positive Results:
+
+
+Summary: 
+We obtain a steering vector that can project sequence members onto their correct natural number index.
+* It can steer number words, months, and days 
+* It can steer word problems related to month and day sequences
+* It can steer Spanish number words
+* It can steer decreasing sequences of number words
+
+
+
+
+
+
+
+
+
+
+
+
+Table 1: SAE Steering Vector (#1) : For this task, using a multiplier of 3, this vector has a 100% accuracy score (which means all the steered outputs match the correct natural number index). Link to Colab Code.
+Prompt
+	Correct 
+Index
+	Steered
+Output
+	Unsteered 
+Output
+	This month is January, next month is
+	2
+	2
+	February
+	This month is February, next month is
+	3
+	3
+	March
+	This month is March, next month is
+	4
+	4
+	April
+	This month is April, next month is
+	5
+	5
+	May
+	This month is May, next month is
+	6
+	6
+	June
+	This month is June, next month is
+	7
+	7
+	July
+	This month is July, next month is
+	8
+	8
+	August
+	This month is August, next month is
+	9
+	9
+	September
+	
+
+
+
+Figure 2: Accuracy Scores for each steering vector for all 7 tasks. I omit Steering Vector #3 (SAE-Decomposed LLM that is reconstructed) as its scores were all below 0.1
+  
+
+
+
+
+
+
+
+
+
+
+
+Figure 2: (continued)
+  
+
+
+
+
+
+Negative Results:
+
+
+The following approaches were found to not be effective (from tests run so far, but these tests may not have been that thorough):
+* Steering using differences of months-(number words)
+* Taking the highest activating features in a batch of prompts for months-only (vs number words only), and ablating them 
+   * Maybe this can work for numerals? Did not have time to try this
+* Taking the highest activating features in a batch of prompts, and steering them 
+   * Also did not spend too much time on this
+* Searching for steerable number related features using Neuronpedia labels
+* Patching in features specific to one domain to another
+* (and more that have not been mentioned here due to time constraints)
+
+
+________________
+
+
+Interpretation of Results (Discussion Summary)
+
+
+From the average accuracy scores in Figure 1, I can assess a ranking of the five steering vector variations:
+1. Steering vector #2: SAE mean activations
+2. Steering vector #5: Filtered SAE Steering Vector (SV #2) [nearly identical as ranking 1]
+3. Steering vector #4: SAE-Decomposed LLM (SV #1) Added to SAE Space
+4. Steering vector #1: LLM mean activations
+5. Steering vector #3: SAE-Decomposed LLM (SV #1) Added to LLM Space
+
+
+Overall, these results would suggest that it is more effective to add this decomposed LLM steering vector directly in SAE space than it is to reconstruct it and add it back to LLM space.
+
+
+However, I am not sure why SV #3 performed so much worse. I will double check in the future if there is some bug. Steering vector #5 was very similar to SV #2, as they shared many of the “irrelevant features” to ablate. I also did not try decomposing SV #1, then adding to SAE space without ablating.
+
+
+This investigation mirrors the “Successor Heads” paper’s construction of the “index-space projection” linear map that projects a token to its ordinal sequence index [1]. It also builds on previous work with decomposing steering vectors using saes. [0]
+
+
+________________
+
+
+Counter-Arguments to Hypothesis
+
+
+The main hypothesis is that this vector is a steering vector that performs ordinal sequence projection. One alternative hypothesis that runs counter to this vector steering to the natural number projection is that is may just be a “number boosting vector” That is, if one adds the unembedding vectors each number token, then since the activations for all number tokens are boosted, then the output of a month like “July” will output “7” just because “July” has higher cosine similarity with “7” than other number token outputs. There are also other counter-arguments to look into. This gives perspective on what "illusion pitfalls" to look for in the future. 
+
+
+For now, we can run some quick tests to check if it is boosting. For instance: 
+I created a steering vector from only digits 1 to 4, and it seemed like it was able to obtain similar (but less good) results for "unseen" numbers like September -> 9, etc: 
+https://colab.research.google.com/drive/1sbN7SGKgUc-DkQkcv3tKyPS1Hl9N8d_c#scrollTo=Bil_rmtgbsob&line=2&uniqifier=1
+
+
+I also created a steering vector from only digits 6 to 9, and it seemed like it was able to obtain similar (but less good) results for "unseen" numbers like Tuesday -> 2, etc: 
+https://colab.research.google.com/drive/1sbN7SGKgUc-DkQkcv3tKyPS1Hl9N8d_c#scrollTo=tbav9b8jcLFS&line=7&uniqifier=1
+
+
+In summary, these quick tests provide some evidence that the vector can be made from numerals (digits) from set X, but still steer digits that do not belong to set X.
+
+
+Another related hypothesis is that these show the vectors are moving the activations towards a "numerals" subspace. So the tokens "close" to it (eg. August) would have a higher cosine sim to tokens that are within this subspace, but other tokens that don't have a counterpart would be closer to "0".
+
+
+________________
+
+
+Follow-Up Questions
+
+
+Due to this project being a preliminary investigation that requires more tests to draw more general conclusions, its findings do not rule out certain statements. Multiple tests are required to ensure a result is not due to random chance.
+
+
+Also, the code can be cleaned up (add Typing in function arguments, etc.)
+
+
+There are many possible follow-up questions / extensions to this preliminary investigations:
+* Evaluate this for SAEs at multiple layers, not just layer 20. Investigate more models
+* Does a similar phenomenon exist for other types of domains? Eg) Safety-related
+* Auto-ablate certain features: a model (one on the level of gpt-4; either the same one or another) can look at the feature labels and choose which features to ablate / steer [this is a general research question]
+* We can add the LLM recon of the SAE sv (directly constructed from SAE activations), but given that adding in LLM space seems worse, I did not do this as it may be redundant
+* Measure the cosine similarity of these steering vectors (SAE and recon LLM)
+* Measure effect on model output logits. Which ones increase the correct answer more?
+   * What if we manipulate certain features specifically? Which ones have the highest change in output (logit diff) after ablation?
+* Try using token 0 when constructing steering vectors
+* Look at not just the next token, but several generated multiple tokens
+* Investigate mod-10 sequences
+
+
+________________
+
+
+References
+
+
+[0] https://www.alignmentforum.org/posts/C5KAZQib3bzzpeyrg/full-post-progress-update-1-from-the-gdm-mech-interp-team
+
+
+[1] https://arxiv.org/abs/2312.09230
+
+
+[2] https://blog.eleuther.ai/diff-in-means/
+
+
+[3] https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html
+
+
+________________
+
+
+Appendix A: Differences From the Successor Heads Paper
+
+
+The “Successor Heads” paper found successor heads with the following effect described in their Figure 1:
+
+
+  
+
+
+
+There are several differences between my approach vs the Successor Heads paper’s approach:
+
+
+
+
+	My Selection Ques Expms
+	Successor Heads
+	Models Used
+	Gemma2-2B
+	GPT2, Pythia, Llama [Various parameters up to 10B]
+	Layer that SAE trained on
+	Residual Stream Layer 20
+	MLP 0
+	Output Tracked
+	Model Output
+	Unembedding of S.Head
+	Network Flow
+	Entire Model
+	OV-circuit with S.Head
+	
+
+To avoid confusion about what approach I’m comparing to, in “Successor Heads”, there are two approaches that the authors use to manipulate the output to project onto the natural numbers: 1) Mod-10 Feature Steering (within-domain), and 2) Index-Space Projection (across domains).
+
+
+For 1) Mod-10 Feature Steering (Section 3.4), the authors find “the most important” SAE feature that is common to all tokens in a mod-10 class (eg. mod_5 = {5, 15, 25, … 95}.) “The most important” feature, or f(i) , was defined as the feature that caused the highest change in output probability after ablation.
+
+
+Afterwards, the authors subtract the input token’s corresponding f(i) from the MLP0 activations (presumably, to the SAE activations of MLP0) and add a new f(z) to steer an internal representation to a new representation within an ordinal sequence domain.
+
+
+For instance, the input token “fifth” is steered as follows:
+
+
+  
+
+
+
+Unsteered, the model would produce “sixth” when the above result is passed through a successor head and then unembedded. But after steering, the model would produce “eighth”, as the intermediate representation has been steered to represent “seventh” instead.
+
+
+My approach does not steer a representation to a new member within a domain. Instead, it steers a representation to its analogue across domains. As such, my approach is more similar to the “index-space projection” linear map of this paper.
+
+
+For 2) “index-space projection” (Section 3.1), the authors train 3 linear maps: a vocabulary space decoding function, an index-space projection, and a domain-space projection. From what I observe in the paper, these linear maps do not use SAEs (though I may have to double check more), and thus is quite different from the approach I use for this selection question task. However, the two approaches are similar in their goals.
