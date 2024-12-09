@@ -14,3 +14,7 @@
     
 
 Manim will definitely help to show function deformations (more efficient when pre-made than live lectures)
+
+Create networking comminity for jobs and to gain experience
+
+Aim to prevent scams somehow

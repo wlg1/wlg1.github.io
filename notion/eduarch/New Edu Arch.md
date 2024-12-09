@@ -20,4 +20,6 @@ New Problem Solving Organizations
 
 New Education Outreach Strategies
 
+[How to Teach These](New%20Edu%20Arch%20dc976b626c6d44fbb5b3b55d79a42eb8/How%20to%20Teach%20These%20153afed922dc80c4b809e6136e7dc71c.md)
+
 [Streaming Community](New%20Edu%20Arch%20dc976b626c6d44fbb5b3b55d79a42eb8/Streaming%20Community%2048b465d9729842d2b6be729212b1c3a4.md)

@@ -44,27 +44,39 @@
 
 [Oxford Intern plan](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Oxford%20Intern%20plan%205ab371ab105146779576123eac4c363e.md)
 
+[Q4 2024](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Q4%202024%20117afed922dc802b8e71d8a56782ce75.md)
+
 ### Experiment Projects
 
 Ongoing
 
-[Feature Geom Univ](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60.md)
-
 [Locating Shared Circuits](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Locating%20Shared%20Circuits%2045e3959d9536467ba08a6f99a756df79.md)
 
-[Concept Hierarchy Subvectors](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Concept%20Hierarchy%20Subvectors%201a3f902d677c4593b7eebfe4009cd3c0.md)
+[Feature Geom Univ](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Feature%20Geom%20Univ%208e01703d090b40ddbbb9ed25baec5b60.md)
 
-[Sleeper Agents Feature Editing](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Sleeper%20Agents%20Feature%20Editing%2018e798edf7b544a2a8fd78b4c717b30a.md)
+[EEG ANNs](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/EEG%20ANNs%20133afed922dc80e79e57c7d6f7183fc0.md)
 
-[Multimodal Interp Survey](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Multimodal%20Interp%20Survey%20b32c593275f9413cb12d2c6f7c62510d.md)
+- locking meme propagating mechanisms
+    
+    utub desc: thinking and emergence... one topic is AI safety
+    study patterns of how GoL locked in work
+    use catg th to reason proba what analogous patterns go thru based on distrb of pattern domains
+    how featuers evolve in training and agent comms
+    
 
-[ARENA notes](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/ARENA%20notes%201a8ff2624cff486e9d91b13139420026.md)
+[Cross Editing Backdoor Models](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Cross%20Editing%20Backdoor%20Models%2018e798edf7b544a2a8fd78b4c717b30a.md)
 
 Postponed
 
 [_Project Ideas_](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/_Project%20Ideas_%205d516ef4cb104f8fa0397ff0793ae0d4.md)
 
 [Postponed Projects](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Postponed%20Projects%20a8d1660ad8394f389d9ec0d01d070b02.md)
+
+[Concept Hierarchy Subvectors](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Concept%20Hierarchy%20Subvectors%201a3f902d677c4593b7eebfe4009cd3c0.md)
+
+[Multimodal Interp Survey](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Multimodal%20Interp%20Survey%20b32c593275f9413cb12d2c6f7c62510d.md)
+
+[ARENA notes](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/ARENA%20notes%201a8ff2624cff486e9d91b13139420026.md)
 
 Finished
 
@@ -101,6 +113,8 @@ Finished
 [Journals, Conferences and Workshops](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Journals,%20Conferences%20and%20Workshops%206812ab43707a406c9fabad42b60342ee.md)
 
 [Reviews and Revisions](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Reviews%20and%20Revisions%20a50f6c11143a4df5b0cbf3957a5acf72.md)
+
+[Networking](Experimental%20Records%2033ca6dad981343abb00a974a6c4e3607/Networking%20146afed922dc80a99c5cc23e241a506f.md)
 
 ---
 

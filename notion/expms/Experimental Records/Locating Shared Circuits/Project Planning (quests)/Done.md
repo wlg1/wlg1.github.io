@@ -1657,7 +1657,7 @@ Run Llama-2 Circuits for multi-prompts and multi-token answers
         2. ✅ create separate datasets based on how many tokens are in correct answer. test this by generate. place these datasets in lists with index corresponding to N.
             - ✅ when CORRUPT: for prompt_dict in list_of_prompts:  # cannot use prompts_list as var, else will get global instead of fn arg (more priority)
         3. in get original score, run the Nth dataset N times and sum up the logits for the N runs. Then take the final summed logit score for these N datasets, and take the mean over the number of samples for ALL datasets.
-            - ✅ SCORING CORR ID LOGIT: for each prompt, dataset.corr_tokenIDs needs to store the correct token for not just the next char, but all chars up to the corr ans string. look at shape of this to better understand how to modify this.
+            - ✅ SCORING CORRect ID LOGIT: for each prompt, dataset.corr_tokenIDs needs to store the correct token for not just the next char, but all chars up to the corr ans string. look at shape of this to better understand how to modify this.
                 
                 ```
                 # corr_tokenIDs is list of lists. Each list represents the "next" correct token
@@ -1739,7 +1739,7 @@ Run Llama-2 Circuits for multi-prompts and multi-token answers
                 8. ✅ Finally, for each ansLen, CONCAT (since this is how `.mean()` works, not by adding but by batch rows) all samples into one matrix, then use `.mean()` like in `get_logit_diff`
                 - ~~ACTUALLY- we don’t need to modify correct token IDs to be a list of lists, nor modify prompt_list’s corr tok IDs, because we can separate out ansLen by dataset! So not within dataset; each dataset has its own ansLen!~~
                     - NO- we still need to separate this out. The dataset with ansLen = 2 must have TWO correct token IDs- one for the first run, the second for the second run.
-            - ✅ DO NOT put the “corr token” as the next token- USE THE TOP PRED TOKEN! So you need to decode BOTH the corr token and the top pred token!
+            - ✅ DO NOT put the “correct token” as the next token- USE THE TOP PRED TOKEN! So you need to decode BOTH the corr token and the top pred token!
             - double check what tokenIDs the seq actually predicts- should be same as in `corr_tokenIDs`
                 - ✅ in clean, decode each pred top token (try for one)
                     - `print(f"Sequence so far: {model.to_string(tokens[0, :])!r}")`
@@ -1918,3 +1918,381 @@ Run Llama-2 Circuits for multi-prompts and multi-token answers
     - single digit multp circs- does it change 2 4 8? can it change to 246 but adding in addition circ steering?
     - try corrupting 1 2 4 by 0 2 4 instead
     - test ablating by other prompts
+
+Review expms so far and writeup draft
+
+- ✅ Select what natural language + arithm prompts work so far on ablating seqpos circuits and put them on overleaf draft. Review reading overleaf draft, expm results + work done
+    - Put list of circuits + subcircuits tested on overleaf (make a table or list)
+    - Put list of prompts
+    - Table of what pairs work together well (left is circuit, right is prompts for that)
+        - overall, put pairs in a 2D plot?
+- ✅ test more prompts
+    
+    [llama2_testPrompts.ipynb](https://colab.research.google.com/drive/1eN-R_GU92RQVITGI7p8vJbfnH5B3DQzK#scrollTo=DcZG9rm2IAiA)
+    
+    - spanish natural language prompts
+- ✅ get circ overlap for numerals (1-9), months, numwords
+    - list of numerals circs so far
+        
+        Llama2_numerals.ipynb: this is inaccurate bc it uses 1-12, but last few are double tok answers
+        
+        Llama2_numerals_1to10.ipynb: goes up to 9, so 5 prompts. **use this one**
+        
+        Llama2_promptsGiveFirstDigit.ipynb: uses 1 prompt “10 11 12 13 1”
+        
+    - find_circ_overlap.ipynb
+        - no need to restrict months to 1 to 9 bc it’s just a few more prompts than numerals
+    - test their intersection on prompts
+        
+        llama2_ablate_prompts_ENcircs.ipynb
+        
+    - test on more months reasoning prompts
+- ✅ In [EMNLP overall plan](../EMNLP%20overall%20plan%20c32b25f726554e429b3650b264829595.md), mark by ✌️ which prompts could be ablated by seqcont sets AND not random
+- 🐣 Summarize observations so far and organize overleaf
+    - They CAN affect other intervaled sequences
+    
+    Rather than natural language, you should turn your focus to be on interpreting circuits. Because they don’t really affect natural language.
+    
+    ISSUE: there aren’t a lot of diverse word problems, because they’re just variations of seqcont or arithmetic. So of course they would affect each other.
+    
+    Perhaps Spanish really is more interesting. Focus on that more. Steering? But you don’t have SAEs, and Kojima already did that.
+    
+    Word problems involving months or spanish words are more interesting. But the issue is that (as seen in llama2_ablate_prompts_explora_v2.ipynb) that MOST RANDOM 10 HEADS is enough to destroy uno dos tres. And we see that only the months circuit can destroy months listing.
+    
+    What about months reasoning? it cannot do `“Be concise. If this month is March, and 3 months pass, what month name is it? Answer: “`. But it CAN do `"Be concise. If this month is September, and 3 months pass, what is month name is it? Answer: December. If this month is March, and 3 months pass, what month name is it? Answer: “`
+    
+    Spanish months reasoning?
+    
+    - 3 month templates (EN, SP), days of week templates (EN, SP)
+    - same, but state spanish months
+        - cannot do spanish reasoning
+    - days of week
+        - issue: the days of week are broken into multiple tokens
+        - ablate both days of week and months
+
+Obtain statistics for large datasets of prompt generation
+
+- 🐣 automate prompt testing after ablation for multiple intervaled seq and arithmetic prompts (multi-tok answers)
+    
+    [auto_prompt_test_simple_intv.ipynb](https://colab.research.google.com/drive/1g6Nrljl8g_m1wRifQwWD3lG8dyx1PnLA#scrollTo=PDP2cpaiZpPX)
+    
+    - check if correct answer is next (check num toks and compare model to string with stored corr answer)
+        - ✅ slower- run fn on one prompt at a time
+            - in `ablate_auto_score,` make sure you include the first char (which is eval before the loop that adds chars). keep all within loop
+                - before, we needed the next_char outside the loop to create the new corrupted dataset. but now we don’t need that dataset because we’re doing 0 ablation.
+        - faster- or num toks in correct ans, run matrix of prompts through. get top tok (by logit) for each. `to_string` and append. after num_toks_ans, +1 if matches.
+            - [https://chatgpt.com/c/4bfe50c1-4337-4dbf-9afd-0f9320cd6f17](https://chatgpt.com/c/4bfe50c1-4337-4dbf-9afd-0f9320cd6f17)
+    - automate avg of random ablation runs
+        - ✅ add outer loop to above where select random components not overlapping main set
+        - make sure not just overlap with any 50 components, but not the top 50 components of each circ!
+            - get top 50 components in order, then use them as the ‘not to overlap’
+    - test if top50 of circs work just as well to destroy? if so, random 50.
+    - start from 3 (odd nums) for 2 4 6
+        - start from 0, 1, 2 for +3 (mod classes)
+    - ✅ is there a pattern to what number it says after certain ablations?
+        - no- ablating num circs, incorr member is usually rand number
+- 🐣 do this with arithmetic
+    - ✅ slow: auto_prompt_test_simple_arithm.ipynb
+    - fast MM
+- 🐣 test ablating word prompts from benchmark
+    - math word problem benchmarks
+        
+        [https://paperswithcode.com/dataset/gsm8k](https://paperswithcode.com/dataset/gsm8k)
+        
+        [https://github.com/openai/grade-school-math](https://github.com/openai/grade-school-math)
+        
+        [https://ar5iv.labs.arxiv.org/html/2403.04706](https://ar5iv.labs.arxiv.org/html/2403.04706)
+        
+        Common 7B Language Models Already Possess Strong Math Capabilities
+        
+    - “ Surprisingly, we find that with supervised fine-tuning on just thousands of math questions”
+        - so without fine tuning, it will not work as well
+    - llama2_testPrompts_gsm8k.ipynb
+- ✅ get avg perf scores (logit diffs) for arithm, seq cont, and some word problem prompts
+    
+    auto_prompt_test_simple_intv.ipynb
+    
+    - ✅ sum corrTok logits: see Llama_2_multiTok_1234.ipynb
+        - [this is for matrices](https://colab.research.google.com/drive/1eGTXSqxhNGzWmiQZRyl8r04tT4I4NBV0#scrollTo=EHGTp_6LpqlP&line=17&uniqifier=1)
+        - remember to use `logits[range(logits.size(0)), -1, ansTok_IDs]`, not `next_token`
+- ⚠️ ablate circ on a word problem prompt from GSM8K
+    
+    llama2_testPrompts_gsm8k.ipynb
+    
+    - ⚠️ the issue with this is that the random heads ablated may be crucial for word problem reasoning too.
+        - but if not a lot of random heads chosen, bc if intersect_all works, then this could work. But intersect_all doesn’t work
+- ✅ llama2_ablate_prompts_SPcircs.ipynb
+    - ✅ unfortunately, it can’t do spanish months correctly for most but a few prompts
+    - ✅ it can’t count in French either; “Continue to count in French” doesn’t help. yet it can recognize those words.
+    - ✅ can do: dos cuatro siete
+    - ✅ it can do spanish addition
+    - ablate on spanish components
+- ✅ make table of prompt vs ablated so far
+
+Interpret Shared Llama-2 Circuit
+
+- ✅ Attn pats of 5 impt heads Llama-2 on main three tasks
+    - need to use “among words” dataset (sliced a lot) to know what is attended to
+        - don’t use space in front of months when highlighting
+    - Llama2_inOrderDigitsMonths_attnPat
+        - bc digits are two tokens, use numwords and months instead
+    - look for seq detection heads, successor heads
+- ✅ Attn pats of 5 impt heads Llama-2 on 2 spanish tasks
+    - months must be lowercase, else llama2 splits them into >1
+    - some prompts shouldn’t be used bc they split months into > 1, making it use padding
+- ✅ Attn pats of 5 impt heads Llama-2 on Intervals (+2, +3, +10, +100, +1000)
+
+interval-k func components
+
+- ✅ circ by give first digit of correct ans: interval-2, +3, +10, +100
+    
+    Llama2_plus2seq_GiveFirstDigit.ipynb
+    
+    dataset size: 10 prompts, len 4 seqs
+    
+    - ✅ interval-2 circ
+        - for incorr, compare to only the last digit of last seqmem
+        - for corrupted, maybe it’s better to use repeats because it makes the incorrect answer be predicted. however, to stay consistent with GPT2, just use rand.
+        - rmv entire attn layer first to see if indiv heads should be rmved
+        - **find most impt mlps from circ**
+        - maybe we don’t need entire interval-X circ, just impt heads? but the run-time is the same anyways
+    - ✅ interval-3 circ
+- 🐣 then try multitok (not give first digit) by use logit diff for two digits
+    
+    Llama2_multiTok_logitDiff_+2.ipynb
+    
+    - ✅ here, we're only using double digits
+    - ✅ zero ablation due to size mismatch
+    - rmv MLPs by ansPos
+
+seq ablation
+
+- ⚠️ 50 prompts: Get numcorrect and total logit scores for seqcont and arithm
+    
+    auto_prompt_test_simple_intv_v2.ipynb
+    
+    - using summed correct tok logit is too large (not disparate enough)
+        - use logit diff instead of summing correct ans?
+        - if we use logit diff, we cannot have the incorr token be of different length than the correct token len
+        - just forget about logit diff for now
+- ✅ 50 prompts: Get numcorrect for seqcont and arithm
+    - auto_prompt_test_simple_intv_v3.ipynb
+    - auto_prompt_test_simple_arithm_v2.ipynb
+- ✅ `auto_prompt_test_simple_intv_v4`.ipynb: save the random datasets used, chosen by `choose_heads_to_remove`
+    - for 10 runs, for 50 pairs that was 500 pairs. Instead, for ALL tasks, use the same 10 rand ablated chosen component sets. Save these. This makes results more consistent across prompts.
+    - comapre intersect all to same num of rand heads ablated
+- 🐣 improve speed of eval prompts by using MM
+    
+    faster_ablation.ipynb
+    
+    - issue: different ans lengths
+        - soln: split into diff runs
+    - this can’t be done for word problems because they’re of different lengths
+- 🐣 manually score a few spanish prompts
+    
+    llama2_ablate_prompts_SPcircs_v2.ipynb
+    
+
+word problems 
+
+- ✅ fill out table with some prompts
+    - "Be concise. If today is the 11th of a month, what date will it be in 6 days?”
+    - **What are the months in a year?**
+    - **What is the month that is 3 months after March?**
+    - If this month is March, and 3 months pass, what month name is it? Answer:
+    - What number comes after 3002? Answer:
+    - "What comes after the second item in a list? The next item in a list is the”
+- ✅ get ablated outputs, then pass file to GPT-4 to score
+    
+    [llama2_ablate_prompts_ENcircs_v2.ipynb](https://colab.research.google.com/drive/1TXRJzLOLcb-2kOXkpmH7bYUeYw8nmQRb#scrollTo=DcZG9rm2IAiA)
+    
+    - write code for a function to generalize this prompt structure for N more prompts that vary the month and numbers (eg. 11th and 6 should be varied). generate the correct answer too.
+        - [https://chatgpt.com/c/3ba28238-ac62-4fec-b8b3-6a9660c435d5](https://chatgpt.com/c/3ba28238-ac62-4fec-b8b3-6a9660c435d5)
+    - evaluate using gpt4o
+        - give a list of the correct prompts, but only in the original format of the input file. For instance, just write "Be concise. If today is July 23th, then in 22 days it will be" not including "August 14th". Use the same format as the first file i gave. give this as a downloadable file
+            
+            [https://chatgpt.com/c/23ef9d22-8cbb-4194-8fde-d3c91837d397](https://chatgpt.com/c/23ef9d22-8cbb-4194-8fde-d3c91837d397)
+            
+        - how many of these are correct? don't explain, just give the percentage
+            
+            [https://chatgpt.com/c/79e5e0ab-3c13-444f-92ff-9606cbac160d](https://chatgpt.com/c/79e5e0ab-3c13-444f-92ff-9606cbac160d)
+            
+        - this is a list of lists. the outer lists correspond to a prompt, and the lists within that are the runs within a prompt. take the number correct over the runs for each prompt to get a score. then, take the mean of this score over total number of prompts. don't explain, just give the final percentage
+            
+            [https://chatgpt.com/c/762bde3a-f74d-4221-b63e-10a23332fb9f](https://chatgpt.com/c/762bde3a-f74d-4221-b63e-10a23332fb9f)
+            
+        - given 100 prompts, and 10 runs per prompt, is it the same to count the number of correct runs of (# prompts * # runs) and take that over (# prompts * # runs), vs taking the mean for runs with each prompt, then taking the mean of all these scores for all prompts?
+            
+            [https://chatgpt.com/c/1e170e40-7647-4ee0-8e74-c3d6d810cf0f](https://chatgpt.com/c/1e170e40-7647-4ee0-8e74-c3d6d810cf0f)
+            
+    - "Be concise. If today is the 11th of a month, what date will it be in 6 days?”
+        - ISSUE: random for 100 gets this wrong too often!
+            - what about using only 16 heads, bc we use the intersection? what about using just the 4 impt heads?
+    - debug why some ans are all 0% correct for rand: likely because they weren't correct even when unablated. we find they aren't; but why were they above? start anew in v3 to save these output reulsts.
+- ✅ [llama2_ablate_prompts_ENcircs_v3](https://colab.research.google.com/drive/1fnTz5WplNfhzbdaCog6LoizOE4eOodvf).ipynb : clean up
+    - ✅ dont run rand circs. load the `template_1_prompts` to have it eval from scratch again
+    - ✅ which of these prompts are correct? then in a downloadable file, give a list of the correct prompts, but without the correct answer. For instance, just write "Be concise. If today is July 23th, then in 22 days it will be" not including "August 14th". what percentage are correct?
+        
+        chatgpt fails, so just use your own fns!
+        
+    - ✅ now try new rand dataset, but use your own fns to eval correct datae instead of chatgpt
+    - SOLN: the reason why the saved “correct_prompst” ahve different outputs is because the original ones have a space at the end- having the space gives a higher chance the model has correct output! so keep the space! You must also get rid of extra padding <s>,
+    - SOLN 2: also, ‘be concise’ in front when eval MAKES IT WORSE! So don’t use it!
+    - 
+- ✅ v3: use simpler prompts that are less sensitive to ablations
+    - **What are the months in a year?**
+- ✅ v4:
+    - Be concise. If this month is April, and four months pass, what month is it?
+        - llama-2 completes this wrong, whether you use two or 4
+    - However, it CAN get this right:
+        - If this month is April, and 4 months pass, what month is it? Answer:
+            - four also works
+    - give the indicse which are correct, and take a subset of the list using those indices to keep only the correct ones. python
+        - [https://chatgpt.com/c/9636d324-5583-4541-a3b9-836275eef8c8](https://chatgpt.com/c/9636d324-5583-4541-a3b9-836275eef8c8)
+    - I will give you a list of outputs (a python list) and a list of correct answers. assess which members of the list are correct, and return the correct member indices
+        - [https://chatgpt.com/c/fd2874ce-e283-48c6-933e-1bdf1f57333a](https://chatgpt.com/c/fd2874ce-e283-48c6-933e-1bdf1f57333a)
+    - write code so that for each string in a list, after the word "Answer:", the code checks if the corresponding member (from the same index) of a "correct answers list" appears after "Answer:" at least once. if so, return the index of that list
+    - ;copy of v4: old outputs where chatgpt messed up with eval lists and getting what’s correct (fills in when told not to!), keep it to know how it messed up
+- ✅ analysis writing
+    
+    try both circular and non-circular
+    
+    future work: nonlinear features and sequence continuation. circular sequence continuation, mod. 
+    
+    how nonlinear features are involved in circuits, steering nonlinear features
+    
+
+Submit to EMNLP
+
+- ✅ finish writing and submit
+- [https://www.reddit.com/r/MachineLearning/comments/1fkqxhh/d_emnlp_2024_results_notifications/](https://www.reddit.com/r/MachineLearning/comments/1fkqxhh/d_emnlp_2024_results_notifications/)
+    - [https://www.reddit.com/r/MachineLearning/comments/141cg5n/d_emnlp_short_and_long_papers_and_findings/?rdt=45088](https://www.reddit.com/r/MachineLearning/comments/141cg5n/d_emnlp_short_and_long_papers_and_findings/?rdt=45088)
+
+**EMNLP Camera-Ready Vers**
+
+**Area Chair 5uES: 4**
+
+- ✅ in many cases, the concerns can be alleviated by moving results from appendix to the main paper, and demoting background from main paper to appendix.
+    
+    too much in background to mv to appendix, so just mv appendix results up
+    
+    actually can move iterative edge ablation to appendix
+    
+- ✅ Please also add a section or sections that explicitly acknowledge methodological assumptions, and the potential criticisms/limitations of those assumptions (as raised by reviewers and discussed during the rebuttal period). be upfront about the fact that these methods are subject to criticism and revision, and that findings hinge on certain methodological assumptions which may or may not hold up as this research field progresses.
+    
+    write in limitations
+    
+
+ **Reviewer wCcR: 3**
+
+- ✅ Gould et al
+    
+    However, as illustrated in Figure 1 of Gould et al. (2023), their research focuses on a single attention head, whereas our circuits are larger, as shown in Figure 9. Our paper examines the connections between both attention heads and MLPs, including providing evidence for sequence detection heads, which Gould et al. (2023) did not identify. We can focus on these differences more in the Related Work.
+    
+- ✅  highlighting arithmetic more in the main paper
+    
+    
+- [ ❌ skip this] causal interventions: Another unanswered question is what is the representation of the next member retrieval circuit? Could the authors use their findings to intervene on representations to make the model prefer April to come after May rather than vice versa?
+- [❌ skip this] evaluating faithfulness
+
+**Reviewer UCVR: 3**
+
+- ✅ In Section 4.2, the phrase "which includes heads 4.4, 7.11, and 9.1" is used without providing any explanation for what 4.4, 7.11, and 9.1 specifically refer to.
+    
+    These are the attention heads mentioned in the paper, as noted by the word “head”. The phrase “attention head” can be used in this paragraph in a revision for clarity.
+    
+- ✅ no code
+    
+    include code in abstract
+    
+
+**Reviewer iMJF: 3**
+
+- ✅ Some important results (such as Table 2) are not shown in the main body of the paper
+- 🐣 While the qualitative attention maps (Figures 2, 3, and 4) effectively illustrate the proposed functions of these attention heads, each is only based on a single forward pass with a single input sequence: To clarify, for Figures 2 to 4, we take the mean of dataset samples to calculate the attention scores, but display only one sample on the axes for demonstration purposes, so they are not only based on a single input sequence.
+    
+    We will add more figures showing other samples in the appendix to make this clear.
+    
+- ✅ The description of the “iterative pruning for nodes” on page 4 section is unclear. “At each step, ablation is performed by patching in the mean activations of a corrupted dataset at a candidate node, plus all the nodes not in our candidate circuit.” What exactly does the “plus all the nodes not in our candidate circuit” part mean?
+    
+    The iterative method starts with all the nodes unpruned, meaning they are all in the candidate circuit. Each step, it checks if a node can be pruned- if so, it is not in a candidate set. The meaning of “all the nodes not in our candidate set” refers to all the nodes that have thus far, at the current step in the algorithm, been labeled as not part of the circuit.
+    
+- ✅ In section 4.1 (page 5), there is an example “Kyle was born in February… Grant was born in April. Madison is born in” - here the months are not consecutive to the previous one; if the reviewer’s understanding is accurate, this would not be a valid example in the dataset, since all sequences should be consecutive items in an ordinal sequence?
+    
+    This phrase uses the ellipsis “...” to indicate that it is cutting out the middle part of the sample for page limit concerns. It refers to a sample that has consecutive months.
+    
+- ❌ The components… seem to be especially generalizable to sequence continuation tasks that do not share the same abstract representation
+    
+    Our paper does experiment on sequences with numbers above 12, as shown in Table 2 of Appendix A. In these experiments, we find that these components are involved in sequences such as (2, 4 6) and (100, 200, 300). Thus, these components are generalizable to more cases than numbers 1 to 12. We had also ran a few experiments involving multi-token answers using the sum of logits, but did not include these in the paper. Overall, we found that using single-token answers could already show the points we set out to make, as single-token answers were also used in previous works (Wang et al 2023, Hanna et al 2023) [1, 2].
+    
+- 🐣 some claims left unsupported by any empirical evidence (L507)
+    
+    Spanish Tasks Functionality
+    
+
+ **Reviewer 4G7j: 3.5**
+
+- ✅ In Section 7, the term "important components" should be clarified. Specifically, the components that are the same as those in the sequence continuation tasks should be mentioned to show the relation between these tasks.
+    
+    These refer to the components “ 4.4, 7.11, and 9.1 and MLP9” in GPT-2, and components “5.25, 16.0, and 20.17” in Llama-2. We will look to move this phrase to be earlier in the paper and clarify on the which components are important.
+    
+- 🐣 Regarding arithmetic in Section 7, for the claim that ablations do not destroy the model's multiplication ability, no proper proof is provided. The performance degradation for multiplication task (with ablations) should be included in Table 2.
+    
+    We will add in experiments in the Appendix showing that ablations do not destroy the model's multiplication.
+    
+
+**Reviewer Hry6: 3**
+
+- 🐣 vs gould
+    
+    To address the concerns with the similarity to Gould et al. (2023), we find that the detailed analysis of successor heads by Gould et al. (2023) is more specialized for single-token succession and is valuable in that context. In contrast, our research offers a broader perspective on multiple-token sequence continuation. Additionally, the independent work of Gould et al. (2023) further supports the validity of our findings, demonstrating that successor heads operate on similar sequence continuation member types (numbers, months, etc.). Furthermore, their study was conducted concurrently with ours, so we were unaware of their findings at the time of our experiments. However, as illustrated in Figure 1 of Gould et al. (2023), while their research focuses on a single attention head, our focus is on significantly larger circuits, which includes connections between both attention heads and MLPs.
+    
+- 🐣 **re: the corrupted examples**: that you used other datasets and found the same thing is good to know; I would point to that specific part of Appendix F in your discussion of the corrupted dataset.
+- 🐣 **re: faithfulness of circuits on other tasks**: nice that you have these results! maybe gesture to these in the main text, and discuss a bit the way in which you operationalize circuit similarity
+- 🐣 While logit diff has many nice qualities, it isn't compatible with tasks where there is more than one correct / incorrect answer.
+    
+    Our understanding of this statement is that the reviewer is referring to how in IOI, the wrong answer is always assumed to be the repeated name (Eg. John), while in sequence continuation, the wrong answer is more arbitrarily defined. We noticed that for logit rankings, in IOI, the wrong answer name was usually close in ranking to the right answer name; we also noticed that for sequence continuation, the most recent member in the input was often close in ranking to the right next member answer. Thus we ran experiments for both corruptions using “last repeated member”, and found similar results (with the same important circuit components) as using random numbers for all members. We decided to corrupt all members with random numbers for stronger ablation. We agree that log prob diff is a good metric, but logit diff also works to show that these components have a noticeable effect on the tasks.
+    
+- 🐣 GPT-2: random selection of a comparable number of attention heads and MLPs that did not include the shared sub-circuit of the 4 important attention heads and MLP 9
+    
+    We also found the model cannot perform well, on average, when using a random selection of a comparable number of attention heads and MLPs that did not include the shared sub-circuit of the 4 important attention heads and MLP 9; we can include these results again in a revised version of the paper.
+    
+- 🐣 mv appendix
+    
+    In our drafts, Appendix B (GPT-2 conn) was originally included in the main text, but was moved to the Appendix for space issues to include Section 7. We can move the main results of Appendix B back to the main text in a revised version of the paper.
+    
+
+Other revisions
+
+- ✅ numerals circuit: show head impt by rmv from circuit
+- 🐣 same 50 random heads
+- 🐣 more runs for nlp prompts
+- ✅ python -m aclpubcheck --p long
+
+EMNLP Poster
+
+[https://docs.google.com/presentation/d/1rPajmieOjpK-WbjMDoJ76S10CxUAyYKUiP-7yKEMfvY/edit#slide=id.g30cc3f0e046_3_0](https://docs.google.com/presentation/d/1rPajmieOjpK-WbjMDoJ76S10CxUAyYKUiP-7yKEMfvY/edit#slide=id.g30cc3f0e046_3_0)
+
+- ✅ [study template and previous vers](https://docs.google.com/presentation/d/1ZxKMuCxel8Ea_B_g_PGR95puLumc0u6ZePb9hN2fAKU/edit#slide=id.g30b48f4530e_0_12)
+    - [https://jacob-haimes.github.io/uploads/benchmark-inflation_poster_v4.2.pdf](https://jacob-haimes.github.io/uploads/benchmark-inflation_poster_v4.2.pdf)
+- 🐣 make a **Flowchart to Results**
+- ✅ make heatmaps look better
+    - [Copy of randOrderDigitsMonths_attnPat.ipynb](https://colab.research.google.com/drive/1EL4KzXN3czm_tZAhqee8UBBwR36C1dQj#scrollTo=Be91y5UJC5fM)
+    - llma2: [https://colab.research.google.com/drive/1OYScPmTMbYaXFoC31trnK6AYzdUZ3f7c#scrollTo=ywI5t3rBGDfG](https://colab.research.google.com/drive/1OYScPmTMbYaXFoC31trnK6AYzdUZ3f7c#scrollTo=ywI5t3rBGDfG)
+- ✅ I'm thinking what information to include. I have right now:
+    - Motivation + figure
+    - Short illustration of how ablation work (may be too simple)
+    - Results for performance drop after ablation
+    - Attention head heatmaps
+    - Something about successor heads
+    - Conclusion
+    
+    Then the poster has little room. However, this is all for GPT-2. I also have these for Llama-2, but wondering if I should include them (not enough room)
+    
+- ✅ in latex, make new table that combines both GPT-2 and Llama-2 for performance drop
+- 🐣 table for intervals and etc
+- ✅ [pdf form](https://docs.google.com/presentation/d/1GLEQRRb_kYG2JOsZiXRbXy0-UhjZj-kBjxpHiNGn3_g/edit#slide=id.g2fed801969c_0_0)
+- ✅ [path patching figure](https://arena3-chapter1-transformer-interp.streamlit.app/[1.4.1]_Indirect_Object_Identification)
+- ✅ [work on slides](https://docs.google.com/presentation/d/1Clyot-a6DVj108ZW4BB2Q-RRXSG8gLPpl_327b65hhU/edit#slide=id.g30cb51a3313_0_77)
+    - [EMNLP Presentation- Apart template](https://docs.google.com/presentation/d/1Gfb0sTR3SLMdzDugXGxyAF-8h_XP7Q9MI6bNsoHgIZA/edit#slide=id.g2a28c6e0e50_0_51)
+- ✅ [**final**](https://docs.google.com/presentation/d/1Z68AbJkbIvRLN61kKm7ULvaucTIIg_tFhoUJLGtjcgo/edit#slide=id.g30daec692d8_0_0)

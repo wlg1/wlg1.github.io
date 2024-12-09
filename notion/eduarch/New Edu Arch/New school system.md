@@ -2,6 +2,10 @@
 
 [New Grading System](New%20school%20system%20b7d7ec9f945f4c3ba8a1c91764108dc7/New%20Grading%20System%20f9c0ca0df0cc46cf94ed4afd9bbf92de.md)
 
+[Natural selection of what to teach](New%20school%20system%20b7d7ec9f945f4c3ba8a1c91764108dc7/Natural%20selection%20of%20what%20to%20teach%20138afed922dc80d4a92fc596d4723dcd.md)
+
+[Curriculum](New%20school%20system%20b7d7ec9f945f4c3ba8a1c91764108dc7/Curriculum%2014aafed922dc803dbc1bea38aa61f43c.md)
+
 Dire life questions:
 
 Base

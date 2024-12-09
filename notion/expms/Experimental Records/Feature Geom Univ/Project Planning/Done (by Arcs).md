@@ -11,3 +11,9 @@
 [Pretrained SAE Expms](Done%20(by%20Arcs)%201c002201437341e48b55b8276859a632/Pretrained%20SAE%20Expms%2084fa53a2d95d4a8988affa18f7053e95.md)
 
 [Analogous Steering Expms](Done%20(by%20Arcs)%201c002201437341e48b55b8276859a632/Analogous%20Steering%20Expms%207fd323b8e3644ceeb8f6477da6eace78.md)
+
+[Semantic subspace matching](Done%20(by%20Arcs)%201c002201437341e48b55b8276859a632/Semantic%20subspace%20matching%2011eafed922dc80b5ac94dbb7e4b73137.md)
+
+[Debug non-concept features issues](Done%20(by%20Arcs)%201c002201437341e48b55b8276859a632/Debug%20non-concept%20features%20issues%2011eafed922dc80b280acc110c87a93e0.md)
+
+[Path to ICLR 2024](Done%20(by%20Arcs)%201c002201437341e48b55b8276859a632/Path%20to%20ICLR%202024%2011eafed922dc8023ac21d78fdc91a0e6.md)

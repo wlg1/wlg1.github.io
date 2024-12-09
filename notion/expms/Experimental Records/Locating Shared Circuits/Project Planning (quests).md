@@ -6,252 +6,20 @@
 
 ### Working on
 
-Review expms so far and writeup draft
+Clean up code
 
-- ✅ Select what natural language + arithm prompts work so far on ablating seqpos circuits and put them on overleaf draft. Review reading overleaf draft, expm results + work done
-    - Put list of circuits + subcircuits tested on overleaf (make a table or list)
-    - Put list of prompts
-    - Table of what pairs work together well (left is circuit, right is prompts for that)
-        - overall, put pairs in a 2D plot?
-- ✅ test more prompts
-    
-    [llama2_testPrompts.ipynb](https://colab.research.google.com/drive/1eN-R_GU92RQVITGI7p8vJbfnH5B3DQzK#scrollTo=DcZG9rm2IAiA)
-    
-    - spanish natural language prompts
-- ✅ get circ overlap for numerals (1-9), months, numwords
-    - list of numerals circs so far
-        
-        Llama2_numerals.ipynb: this is inaccurate bc it uses 1-12, but last few are double tok answers
-        
-        Llama2_numerals_1to10.ipynb: goes up to 9, so 5 prompts. **use this one**
-        
-        Llama2_promptsGiveFirstDigit.ipynb: uses 1 prompt “10 11 12 13 1”
-        
-    - find_circ_overlap.ipynb
-        - no need to restrict months to 1 to 9 bc it’s just a few more prompts than numerals
-    - test their intersection on prompts
-        
-        llama2_ablate_prompts_ENcircs.ipynb
-        
-    - test on more months reasoning prompts
-- ✅ In [EMNLP overall plan](EMNLP%20overall%20plan%20c32b25f726554e429b3650b264829595.md), mark by ✌️ which prompts could be ablated by seqcont sets AND not random
-- 🐣 Summarize observations so far and organize overleaf
-    - They CAN affect other intervaled sequences
-    
-    Rather than natural language, you should turn your focus to be on interpreting circuits. Because they don’t really affect natural language.
-    
-    ISSUE: there aren’t a lot of diverse word problems, because they’re just variations of seqcont or arithmetic. So of course they would affect each other.
-    
-    Perhaps Spanish really is more interesting. Focus on that more. Steering? But you don’t have SAEs, and Kojima already did that.
-    
-    Word problems involving months or spanish words are more interesting. But the issue is that (as seen in llama2_ablate_prompts_explora_v2.ipynb) that MOST RANDOM 10 HEADS is enough to destroy uno dos tres. And we see that only the months circuit can destroy months listing.
-    
-    What about months reasoning? it cannot do `“Be concise. If this month is March, and 3 months pass, what month name is it? Answer: “`. But it CAN do `"Be concise. If this month is September, and 3 months pass, what is month name is it? Answer: December. If this month is March, and 3 months pass, what month name is it? Answer: “`
-    
-    Spanish months reasoning?
-    
-    - 3 month templates (EN, SP), days of week templates (EN, SP)
-    - same, but state spanish months
-        - cannot do spanish reasoning
-    - days of week
-        - issue: the days of week are broken into multiple tokens
-        - ablate both days of week and months
+- ✅ make new copy of code folder and delete old explora files
+    - ✅ clean up word probs into: llama2_word_problems.ipynb
+    - ✅ clean up llama2 expms nbs into their own folders in repo’s notebooks
+    - ✅ clean up llama 2 iter note pruning nbs
+    - ✅ clean up llama2 attnpats and ovscores nbs
+- ✅ [lllama2_plus1and2_logit_lens](https://colab.research.google.com/drive/1bZ7RUOI9iGqCEIf6qKYybP0ORxuq9wr1#scrollTo=53hE6w62EDLv): are there succsesor MLPs? Somewhat at MLP 20, but [ablation doesn’t show it as hugely impt. it is pretty impt though](https://colab.research.google.com/drive/1Z4SBtG5ZN_Jji7Z9fmhqNlKUqTovpDDW#scrollTo=I9SR5ETh6BWw)
+- ✅ practice poster story + potential Q&A you think of when looking at poster
+    - sufficient: if you’re just looking at output instead of logit difference, and you knock everything out and keep just the circuit to obtain the same answer, what if there are other circuits? this doesn’t prove those components are important for the task. but this is good for in-depth analysis of comparing performance scores by tweaking parts of the circuit and seeing what happens
+    - necessary: this is easier to just see if output changes
+    - both are helpful, but we only tried knocking out the circuit for intervaled seqs as it was faster/easier, and this was one of the last tasks we did as the deadline was approaching
 
-Obtain statistics for large datasets of prompt generation
-
-- 🐣 automate prompt testing after ablation for multiple intervaled seq and arithmetic prompts (multi-tok answers)
-    
-    [auto_prompt_test_simple_intv.ipynb](https://colab.research.google.com/drive/1g6Nrljl8g_m1wRifQwWD3lG8dyx1PnLA#scrollTo=PDP2cpaiZpPX)
-    
-    - check if correct answer is next (check num toks and compare model to string with stored corr answer)
-        - ✅ slower- run fn on one prompt at a time
-            - in `ablate_auto_score,` make sure you include the first char (which is eval before the loop that adds chars). keep all within loop
-                - before, we needed the next_char outside the loop to create the new corrupted dataset. but now we don’t need that dataset because we’re doing 0 ablation.
-        - faster- or num toks in correct ans, run matrix of prompts through. get top tok (by logit) for each. `to_string` and append. after num_toks_ans, +1 if matches.
-            - [https://chatgpt.com/c/4bfe50c1-4337-4dbf-9afd-0f9320cd6f17](https://chatgpt.com/c/4bfe50c1-4337-4dbf-9afd-0f9320cd6f17)
-    - automate avg of random ablation runs
-        - ✅ add outer loop to above where select random components not overlapping main set
-        - make sure not just overlap with any 50 components, but not the top 50 components of each circ!
-            - get top 50 components in order, then use them as the ‘not to overlap’
-    - test if top50 of circs work just as well to destroy? if so, random 50.
-    - start from 3 (odd nums) for 2 4 6
-        - start from 0, 1, 2 for +3 (mod classes)
-    - ✅ is there a pattern to what number it says after certain ablations?
-        - no- ablating num circs, incorr member is usually rand number
-- 🐣 do this with arithmetic
-    - ✅ slow: auto_prompt_test_simple_arithm.ipynb
-    - fast MM
-- 🐣 test ablating word prompts from benchmark
-    - math word problem benchmarks
-        
-        [https://paperswithcode.com/dataset/gsm8k](https://paperswithcode.com/dataset/gsm8k)
-        
-        [https://github.com/openai/grade-school-math](https://github.com/openai/grade-school-math)
-        
-        [https://ar5iv.labs.arxiv.org/html/2403.04706](https://ar5iv.labs.arxiv.org/html/2403.04706)
-        
-        Common 7B Language Models Already Possess Strong Math Capabilities
-        
-    - “ Surprisingly, we find that with supervised fine-tuning on just thousands of math questions”
-        - so without fine tuning, it will not work as well
-    - llama2_testPrompts_gsm8k.ipynb
-- ✅ get avg perf scores (logit diffs) for arithm, seq cont, and some word problem prompts
-    
-    auto_prompt_test_simple_intv.ipynb
-    
-    - ✅ sum corrTok logits: see Llama_2_multiTok_1234.ipynb
-        - [this is for matrices](https://colab.research.google.com/drive/1eGTXSqxhNGzWmiQZRyl8r04tT4I4NBV0#scrollTo=EHGTp_6LpqlP&line=17&uniqifier=1)
-        - remember to use `logits[range(logits.size(0)), -1, ansTok_IDs]`, not `next_token`
-- ⚠️ ablate circ on a word problem prompt from GSM8K
-    
-    llama2_testPrompts_gsm8k.ipynb
-    
-    - ⚠️ the issue with this is that the random heads ablated may be crucial for word problem reasoning too.
-        - but if not a lot of random heads chosen, bc if intersect_all works, then this could work. But intersect_all doesn’t work
-- ✅ llama2_ablate_prompts_SPcircs.ipynb
-    - ✅ unfortunately, it can’t do spanish months correctly for most but a few prompts
-    - ✅ it can’t count in French either; “Continue to count in French” doesn’t help. yet it can recognize those words.
-    - ✅ can do: dos cuatro siete
-    - ✅ it can do spanish addition
-    - ablate on spanish components
-- ✅ make table of prompt vs ablated so far
-
-Interpret Shared Llama-2 Circuit
-
-- ✅ Attn pats of 5 impt heads Llama-2 on main three tasks
-    - need to use “among words” dataset (sliced a lot) to know what is attended to
-        - don’t use space in front of months when highlighting
-    - Llama2_inOrderDigitsMonths_attnPat
-        - bc digits are two tokens, use numwords and months instead
-    - look for seq detection heads, successor heads
-- ✅ Attn pats of 5 impt heads Llama-2 on 2 spanish tasks
-    - months must be lowercase, else llama2 splits them into >1
-    - some prompts shouldn’t be used bc they split months into > 1, making it use padding
-- ✅ Attn pats of 5 impt heads Llama-2 on Intervals (+2, +3, +10, +100, +1000)
-
-interval-k func components
-
-- ✅ circ by give first digit of correct ans: interval-2, +3, +10, +100
-    
-    Llama2_plus2seq_GiveFirstDigit.ipynb
-    
-    dataset size: 10 prompts, len 4 seqs
-    
-    - ✅ interval-2 circ
-        - for incorr, compare to only the last digit of last seqmem
-        - for corrupted, maybe it’s better to use repeats because it makes the incorrect answer be predicted. however, to stay consistent with GPT2, just use rand.
-        - rmv entire attn layer first to see if indiv heads should be rmved
-        - **find most impt mlps from circ**
-        - maybe we don’t need entire interval-X circ, just impt heads? but the run-time is the same anyways
-    - ✅ interval-3 circ
-- 🐣 then try multitok (not give first digit) by use logit diff for two digits
-    
-    Llama2_multiTok_logitDiff_+2.ipynb
-    
-    - ✅ here, we're only using double digits
-    - ✅ zero ablation due to size mismatch
-    - rmv MLPs by ansPos
-
-seq ablation
-
-- ⚠️ 50 prompts: Get numcorrect and total logit scores for seqcont and arithm
-    
-    auto_prompt_test_simple_intv_v2.ipynb
-    
-    - using summed correct tok logit is too large (not disparate enough)
-        - use logit diff instead of summing correct ans?
-        - if we use logit diff, we cannot have the incorr token be of different length than the correct token len
-        - just forget about logit diff for now
-- ✅ 50 prompts: Get numcorrect for seqcont and arithm
-    - auto_prompt_test_simple_intv_v3.ipynb
-    - auto_prompt_test_simple_arithm_v2.ipynb
-- ✅ `auto_prompt_test_simple_intv_v4`.ipynb: save the random datasets used, chosen by `choose_heads_to_remove`
-    - for 10 runs, for 50 pairs that was 500 pairs. Instead, for ALL tasks, use the same 10 rand ablated chosen component sets. Save these. This makes results more consistent across prompts.
-    - comapre intersect all to same num of rand heads ablated
-- 🐣 improve speed of eval prompts by using MM
-    
-    faster_ablation.ipynb
-    
-    - issue: different ans lengths
-        - soln: split into diff runs
-    - this can’t be done for word problems because they’re of different lengths
-- 🐣 manually score a few spanish prompts
-    
-    llama2_ablate_prompts_SPcircs_v2.ipynb
-    
-
-word problems 
-
-- ✅ fill out table with some prompts
-    - "Be concise. If today is the 11th of a month, what date will it be in 6 days?”
-    - **What are the months in a year?**
-    - **What is the month that is 3 months after March?**
-    - If this month is March, and 3 months pass, what month name is it? Answer:
-    - What number comes after 3002? Answer:
-    - "What comes after the second item in a list? The next item in a list is the”
-- ✅ get ablated outputs, then pass file to GPT-4 to score
-    
-    [llama2_ablate_prompts_ENcircs_v2.ipynb](https://colab.research.google.com/drive/1TXRJzLOLcb-2kOXkpmH7bYUeYw8nmQRb#scrollTo=DcZG9rm2IAiA)
-    
-    - write code for a function to generalize this prompt structure for N more prompts that vary the month and numbers (eg. 11th and 6 should be varied). generate the correct answer too.
-        - [https://chatgpt.com/c/3ba28238-ac62-4fec-b8b3-6a9660c435d5](https://chatgpt.com/c/3ba28238-ac62-4fec-b8b3-6a9660c435d5)
-    - evaluate using gpt4o
-        - give a list of the correct prompts, but only in the original format of the input file. For instance, just write "Be concise. If today is July 23th, then in 22 days it will be" not including "August 14th". Use the same format as the first file i gave. give this as a downloadable file
-            
-            [https://chatgpt.com/c/23ef9d22-8cbb-4194-8fde-d3c91837d397](https://chatgpt.com/c/23ef9d22-8cbb-4194-8fde-d3c91837d397)
-            
-        - how many of these are correct? don't explain, just give the percentage
-            
-            [https://chatgpt.com/c/79e5e0ab-3c13-444f-92ff-9606cbac160d](https://chatgpt.com/c/79e5e0ab-3c13-444f-92ff-9606cbac160d)
-            
-        - this is a list of lists. the outer lists correspond to a prompt, and the lists within that are the runs within a prompt. take the number correct over the runs for each prompt to get a score. then, take the mean of this score over total number of prompts. don't explain, just give the final percentage
-            
-            [https://chatgpt.com/c/762bde3a-f74d-4221-b63e-10a23332fb9f](https://chatgpt.com/c/762bde3a-f74d-4221-b63e-10a23332fb9f)
-            
-        - given 100 prompts, and 10 runs per prompt, is it the same to count the number of correct runs of (# prompts * # runs) and take that over (# prompts * # runs), vs taking the mean for runs with each prompt, then taking the mean of all these scores for all prompts?
-            
-            [https://chatgpt.com/c/1e170e40-7647-4ee0-8e74-c3d6d810cf0f](https://chatgpt.com/c/1e170e40-7647-4ee0-8e74-c3d6d810cf0f)
-            
-    - "Be concise. If today is the 11th of a month, what date will it be in 6 days?”
-        - ISSUE: random for 100 gets this wrong too often!
-            - what about using only 16 heads, bc we use the intersection? what about using just the 4 impt heads?
-    - debug why some ans are all 0% correct for rand: likely because they weren't correct even when unablated. we find they aren't; but why were they above? start anew in v3 to save these output reulsts.
-- ✅ [llama2_ablate_prompts_ENcircs_v3](https://colab.research.google.com/drive/1fnTz5WplNfhzbdaCog6LoizOE4eOodvf).ipynb : clean up
-    - ✅ dont run rand circs. load the `template_1_prompts` to have it eval from scratch again
-    - ✅ which of these prompts are correct? then in a downloadable file, give a list of the correct prompts, but without the correct answer. For instance, just write "Be concise. If today is July 23th, then in 22 days it will be" not including "August 14th". what percentage are correct?
-        
-        chatgpt fails, so just use your own fns!
-        
-    - ✅ now try new rand dataset, but use your own fns to eval correct datae instead of chatgpt
-    - SOLN: the reason why the saved “correct_prompst” ahve different outputs is because the original ones have a space at the end- having the space gives a higher chance the model has correct output! so keep the space! You must also get rid of extra padding <s>,
-    - SOLN 2: also, ‘be concise’ in front when eval MAKES IT WORSE! So don’t use it!
-    - 
-- ✅ v3: use simpler prompts that are less sensitive to ablations
-    - **What are the months in a year?**
-- ✅ v4:
-    - Be concise. If this month is April, and four months pass, what month is it?
-        - llama-2 completes this wrong, whether you use two or 4
-    - However, it CAN get this right:
-        - If this month is April, and 4 months pass, what month is it? Answer:
-            - four also works
-    - give the indicse which are correct, and take a subset of the list using those indices to keep only the correct ones. python
-        - [https://chatgpt.com/c/9636d324-5583-4541-a3b9-836275eef8c8](https://chatgpt.com/c/9636d324-5583-4541-a3b9-836275eef8c8)
-    - I will give you a list of outputs (a python list) and a list of correct answers. assess which members of the list are correct, and return the correct member indices
-        - [https://chatgpt.com/c/fd2874ce-e283-48c6-933e-1bdf1f57333a](https://chatgpt.com/c/fd2874ce-e283-48c6-933e-1bdf1f57333a)
-    - write code so that for each string in a list, after the word "Answer:", the code checks if the corresponding member (from the same index) of a "correct answers list" appears after "Answer:" at least once. if so, return the index of that list
-    - ;copy of v4: old outputs where chatgpt messed up with eval lists and getting what’s correct (fills in when told not to!), keep it to know how it messed up
-- ✅ analysis writing
-    
-    try both circular and non-circular
-    
-    future work: nonlinear features and sequence continuation. circular sequence continuation, mod. 
-    
-    how nonlinear features are involved in circuits, steering nonlinear features
-    
-
-Submit to EMNLP
-
-- ✅ finish writing and submit
+[EMNLP prepa](Project%20Planning%20(quests)%203798a71e7c5d4a888cad9a7d25a1275c/EMNLP%20prepa%20139afed922dc80d48c1be70146462e0e.md)
 
 ---
 
@@ -259,14 +27,27 @@ Submit to EMNLP
 
 ### Future Work
 
+- clean up code within nbs
+    - llama2 ablation
+    - llama 2 iter note pruning
+    - llama2 attnpats and ovscores
+
+<<<
+
+[monotonic repr paper](https://aclanthology.org/2024.acl-short.18.pdf)
+
 [https://transformer-circuits.pub/2024/jan-update/index.html#](https://transformer-circuits.pub/2024/jan-update/index.html#)
 
 [**Multilingual Features in Large Models**](https://transformer-circuits.pub/2024/jan-update/index.html#dict-learning-scaling)
 
 Words meaning “two”
 
+More tests
+
 - use same 50 runs of rand 4 heads for all
 - add seqcont sparse feature circs and circular to related works
+- run more tests on 7.11: try rand order vs in-order seq prompts
+- for NLP prompts, instead of “destroying  circuit”, try “ablating all but the circuit”
 
 seq ablation
 
